@@ -96,6 +96,7 @@ table.ht .tnum{display:inline-flex;width:20px;height:20px;border-radius:5px;back
 table.ht tr.win .tnum{background:var(--good)}
 table.ht td.l{vertical-align:middle}
 table.ht .c2{display:flex;flex-direction:column;line-height:1.18}
+table.ht .c2r{align-items:flex-end}
 table.ht .tname{font-weight:700;max-width:112px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 table.ht .tjk{color:var(--ink);font-weight:600;max-width:88px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 table.ht .tsub{font-size:.63rem;color:var(--muted);max-width:150px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-weight:400}
@@ -203,6 +204,12 @@ function sledFmt(h){
   const s = d>0 ? "+"+d : (d<0 ? ""+d : "±0");
   return b+"("+s+")";
 }
+const sledTop = h => h.sled_kg!=null ? h.sled_kg.toFixed(0) : "—";
+function sledSub(h){
+  if(h.sled_kg==null || h.sled_diff==null) return "";
+  const d = h.sled_diff;
+  return "(" + (d>0 ? "+"+d : (d<0 ? ""+d : "±0")) + ")";
+}
 document.getElementById("gen").textContent = "予測生成 "+DB.generated;
 
 const dates = [...new Set(RACES.map(r=>r.date))].sort();
@@ -294,7 +301,7 @@ function tableView(hs, hasResult){
         +`<span class="tsub">${(h.sex||'')+(h.age!=null?h.age:'')}${h.trainer?'・'+cleanInst(h.trainer):''}</span></div></td>`
       +`<td class="l"><div class="c2"><span class="tjk">${h.jockey||'—'}</span>`
         +`<span class="tsub num">${recFmt(h.jockey_record)}</span></div></td>`
-      +`<td class="num">${sledFmt(h)}</td>`
+      +`<td class="num"><div class="c2 c2r"><span>${sledTop(h)}</span><span class="tsub num">${sledSub(h)}</span></div></td>`
       +`<td class="abil num">${h.ability!=null?h.ability.toFixed(1):'—'}</td>`
       +`<td class="win-c num">${pct(h.win_prob)}</td>`
       +`<td class="num">${pct(h.place2)}</td>`
