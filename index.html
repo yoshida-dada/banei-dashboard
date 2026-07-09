@@ -134,12 +134,40 @@ table.ht .fin.top{color:var(--good);font-weight:800}
 .aptline{margin-top:8px;font-size:.7rem;color:var(--muted);display:flex;gap:10px;flex-wrap:wrap}
 .aptline b{color:var(--ink);font-weight:700}
 
-/* scatter */
-.mapwrap{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:12px 12px 8px;box-shadow:var(--shadow)}
-.maplead{font-size:.74rem;color:var(--muted);margin-bottom:8px;line-height:1.5}
+/* aptitude */
 canvas{width:100%;height:auto;display:block;touch-action:pan-y}
-.legend{display:flex;gap:14px;justify-content:center;font-size:.68rem;color:var(--muted);margin-top:6px;flex-wrap:wrap}
-.legend .sw{display:inline-block;width:9px;height:9px;border-radius:50%;margin-right:4px;vertical-align:-1px}
+.legend{display:flex;gap:14px;justify-content:center;font-size:.68rem;color:var(--muted);margin-top:8px;flex-wrap:wrap}
+.legend .sw{display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:4px;vertical-align:-1px}
+.apthint{font-size:.76rem;color:var(--muted);margin:10px 2px 8px;line-height:1.5}
+.apthint b{color:var(--ink)}
+.hmwrap{overflow-x:auto;border:1px solid var(--border);border-radius:12px;box-shadow:var(--shadow);background:var(--surface)}
+table.hm{border-collapse:collapse;width:100%;min-width:520px;font-size:.8rem}
+table.hm th{font-size:.64rem;color:var(--muted);font-weight:700;padding:6px 5px;text-align:center;white-space:pre-line;border-bottom:1px solid var(--border)}
+table.hm th.l,table.hm td.l{text-align:left}
+table.hm td{padding:0;border-bottom:1px solid var(--border2);text-align:center}
+table.hm td.l{padding:5px 7px}
+.hcell{height:34px;display:flex;flex-direction:column;align-items:center;justify-content:center;line-height:1.05;border-radius:6px;margin:2px}
+.hcell .r{font-weight:800;font-variant-numeric:tabular-nums;font-size:.82rem}
+.hcell .n{font-size:.56rem;opacity:.75}
+.hcell.empty{color:var(--muted);background:repeating-linear-gradient(45deg,transparent,transparent 4px,var(--border2) 4px,var(--border2) 5px)}
+.hmn{display:inline-flex;width:19px;height:19px;border-radius:5px;background:var(--ink);color:var(--bg);font-weight:800;font-size:.68rem;align-items:center;justify-content:center;margin-right:5px}
+.hmnm{font-weight:700;font-size:.8rem}.hmwp{color:var(--muted);font-size:.68rem}
+.slider-row{display:flex;align-items:center;gap:12px;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:11px 13px;margin-bottom:10px;box-shadow:var(--shadow);flex-wrap:wrap}
+.slider-row input[type=range]{flex:1;min-width:150px;accent-color:var(--edge)}
+.mval{font-weight:800;font-size:1.2rem;color:var(--edge);font-variant-numeric:tabular-nums;min-width:64px}
+.mlab{font-size:.68rem;color:var(--muted)}
+.rankrow{display:grid;grid-template-columns:120px 1fr 52px;gap:8px;align-items:center;padding:3px 0}
+.rankrow .who{display:flex;align-items:center;gap:6px;min-width:0}
+.rankrow .who .rn{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-size:.82rem;font-weight:600}
+.rtrack{height:19px;background:var(--surface2);border:1px solid var(--border2);border-radius:6px;overflow:hidden;position:relative}
+.rfill{height:100%;background:var(--good);border-radius:6px 0 0 6px}
+.rankrow.dim{opacity:.5}
+.rmeta{font-size:.68rem;color:var(--muted);text-align:right;font-variant-numeric:tabular-nums;line-height:1.15}
+.wptick{position:absolute;top:-2px;bottom:-2px;width:2px;background:var(--accent)}
+.cardapt{margin-top:10px;border-top:1px solid var(--border2);padding-top:8px}
+.cardapt .lab{font-size:.68rem;color:var(--muted);display:flex;justify-content:space-between;align-items:baseline;gap:8px;margin-bottom:4px}
+.cardapt .lab b{color:var(--accent);font-weight:700;font-variant-numeric:tabular-nums}
+.carddots{width:100%;height:auto;display:block}
 .nodata{font-size:.7rem;color:var(--muted);margin-top:7px}
 
 .foot{font-size:.72rem;color:var(--muted);line-height:1.7;margin-top:26px;border-top:1px solid var(--border);padding-top:14px}
@@ -170,16 +198,17 @@ canvas{width:100%;height:auto;display:block;touch-action:pan-y}
     </div>
   </div>
   <div id="horses"></div>
-  <div class="sect">馬場適性マップ（連対時の平均タイム × 勝率）</div>
-  <div class="mapwrap">
-    <div class="maplead" id="maplead"></div>
-    <canvas id="map"></canvas>
-    <div class="legend">
-      <span><span class="sw" style="background:var(--wet)"></span>連対時が高水分（速い馬場）寄り</span>
-      <span><span class="sw" style="background:var(--dry)"></span>低水分（乾いた馬場）寄り</span>
+  <div class="secthead">
+    <span class="sect">馬場適性（このレースの出走馬）</span>
+    <div class="vtoggle" id="dimseg">
+      <button data-d="time" aria-pressed="true">決着タイム</button>
+      <button data-d="moist" aria-pressed="false">馬場水分</button>
     </div>
-    <div class="nodata" id="nodata"></div>
   </div>
+  <div class="apthint" id="heatlead"></div>
+  <div id="heatmap"></div>
+  <div class="apthint" id="slidlead" style="margin-top:20px"></div>
+  <div id="slider"></div>
   <div class="foot" id="foot"></div>
 </div>
 
@@ -213,7 +242,8 @@ function sledSub(h){
 document.getElementById("gen").textContent = "予測生成 "+DB.generated;
 
 const dates = [...new Set(RACES.map(r=>r.date))].sort();
-let curDate = dates[0], curRno = 1, view = "table", sortMode = "rank";
+let curDate = dates[0], curRno = 1, view = "table", sortMode = "rank", dim = "time";
+const target = { time: 115, moist: 1.7 };
 
 // build date pills
 document.getElementById("dates").innerHTML = dates.map(d=>
@@ -284,9 +314,10 @@ function render(){
     : (a,b)=>(a.rank||99)-(b.rank||99));
   const host = document.getElementById("horses");
   if(view==="table") host.innerHTML = tableView(hs, hasResult);
-  else host.innerHTML = cardView(hs, maxW, hasResult);
+  else { host.innerHTML = cardView(hs, maxW, hasResult);
+    hs.forEach(h=>drawCardDots(document.getElementById("cd_"+h.num), h)); }
 
-  drawMap(r);
+  renderAptitude(r);
 }
 
 function tableView(hs, hasResult){
@@ -342,77 +373,129 @@ function cardView(hs, maxW, hasResult){
       +`<div class="m"><div class="t">連対率</div><div class="v num">${pct(h.place2)}</div></div>`
       +`<div class="m"><div class="t">複勝率</div><div class="v num">${pct(h.place3)}</div></div></div>`
       +`<div class="wbar"><span style="width:${((h.win_prob||0)/maxW*100).toFixed(1)}%"></span></div>`
-      +market+apt+`</div>`;
+      +market+apt
+      +`<div class="cardapt"><div class="lab"><span>過去走 タイム×着順（緑=3着内）</span>`
+      +`<b>3着内平均 ${h.place3_time_avg!=null?h.place3_time_avg.toFixed(0)+'s':'—'}</b></div>`
+      +`<canvas class="carddots" id="cd_${h.num}"></canvas></div>`
+      +`</div>`;
   }).join("");
 }
 
-// ---- 馬場適性 散布図 ----
+// ---- 馬場適性（① ヒートマップ / ② スライダー / ③ カード内ドット） ----
 function cssvar(n){ return getComputedStyle(document.documentElement).getPropertyValue(n).trim(); }
-function drawMap(r){
-  const pts = r.horses.filter(h=>h.ren_time_avg!=null && h.win_prob!=null);
-  const none = r.horses.filter(h=>h.ren_time_avg==null).map(h=>h.num);
-  document.getElementById("nodata").textContent = none.length
-    ? `適性データなし（連対履歴なし）: ${none.map(n=>n+'番').join(' / ')}` : "";
-  document.getElementById("maplead").innerHTML =
-    `縦軸＝予測勝率、横軸＝<b>連対したときの平均タイム</b>。<b>左ほど速い馬場が得意</b>・上ほど本命。`
-    +`点の色は連対時の平均水分（青＝高水分/速い馬場、茶＝乾いた馬場）。今日の馬場は`
-    +`<b>${r.moisture!=null?r.moisture+'%':'不明'}</b>。`;
-
-  const cv = document.getElementById("map");
-  const W = cv.clientWidth || 520, H = Math.round(W*0.62);
-  const dpr = window.devicePixelRatio||1;
-  cv.width = W*dpr; cv.height = H*dpr;
-  const ctx = cv.getContext("2d"); ctx.scale(dpr,dpr);
-  ctx.clearRect(0,0,W,H);
-  const padL=38, padR=14, padT=12, padB=30;
-  const ink=cssvar('--ink'), muted=cssvar('--muted'), border=cssvar('--border2'),
-        good=cssvar('--good'), accent=cssvar('--accent'), dry=cssvar('--dry'), wet=cssvar('--wet');
-
-  if(!pts.length){ ctx.fillStyle=muted; ctx.font="13px system-ui"; ctx.textAlign="center";
-    ctx.fillText("このレースは適性データがありません",W/2,H/2); return; }
-
-  const xs = pts.map(p=>p.ren_time_avg);
-  let xmin=Math.min(...xs), xmax=Math.max(...xs);
-  if(xmax-xmin<2){ xmin-=2; xmax+=2; } else { const pad=(xmax-xmin)*0.12; xmin-=pad; xmax+=pad; }
-  const ymax = Math.max(...pts.map(p=>p.win_prob))*1.15 || 0.1;
-  const X = v => padL + (v-xmin)/(xmax-xmin)*(W-padL-padR);
-  const Y = v => H-padB - v/ymax*(H-padT-padB);
-
-  // grid + y labels (勝率)
-  ctx.strokeStyle=border; ctx.fillStyle=muted; ctx.font="10px system-ui"; ctx.lineWidth=1;
-  const ysteps=4;
-  for(let i=0;i<=ysteps;i++){ const yv=ymax*i/ysteps, y=Y(yv);
-    ctx.beginPath();ctx.moveTo(padL,y);ctx.lineTo(W-padR,y);ctx.stroke();
-    ctx.textAlign="right";ctx.textBaseline="middle";ctx.fillText((yv*100).toFixed(0)+"%",padL-5,y); }
-  // x axis labels
-  ctx.textAlign="left";ctx.textBaseline="top";
-  ctx.fillText("← 速い ("+xmin.toFixed(0)+"s)",padL,H-padB+6);
-  ctx.textAlign="right"; ctx.fillText("遅い ("+xmax.toFixed(0)+"s) →",W-padR,H-padB+6);
-  ctx.save();ctx.translate(10,padT+(H-padT-padB)/2);ctx.rotate(-Math.PI/2);
-  ctx.textAlign="center";ctx.textBaseline="middle";ctx.fillText("勝率",0,0);ctx.restore();
-
-  // moisture color scale
-  function col(m){ if(m==null) return muted;
-    const t=Math.max(0,Math.min(1,(m-0.5)/(2.5-0.5)));
-    const c1=[192,138,62], c2=[47,127,174]; // dry -> wet
-    const c=c1.map((a,i)=>Math.round(a+(c2[i]-a)*t)); return `rgb(${c[0]},${c[1]},${c[2]})`; }
-
-  pts.sort((a,b)=>a.win_prob-b.win_prob);
-  pts.forEach(p=>{
-    const x=X(p.ren_time_avg), y=Y(p.win_prob);
-    const rad = 8 + (p.ability? Math.max(0,(p.ability-45))*0.12 : 0);
-    ctx.beginPath();ctx.arc(x,y,rad,0,7);
-    ctx.fillStyle=col(p.ren_moist_avg);ctx.globalAlpha=.82;ctx.fill();ctx.globalAlpha=1;
-    ctx.lineWidth=1.5;ctx.strokeStyle= p.position===1?good:"rgba(0,0,0,.15)";ctx.stroke();
-    ctx.fillStyle="#fff";ctx.font="bold 11px system-ui";ctx.textAlign="center";ctx.textBaseline="middle";
-    ctx.fillText(p.num,x,y);
+const DIMS = {
+  time: {
+    key:"wt", label:"決着タイム", unit:"s",
+    bands:[{lo:-1,hi:100,label:"超速\n<100"},{lo:100,hi:115,label:"速\n100–115"},
+           {lo:115,hi:130,label:"標準\n115–130"},{lo:130,hi:145,label:"遅\n130–145"},{lo:145,hi:9999,label:"超遅\n≥145"}],
+    slMin:90, slMax:160, slStep:1, slWin:8, slFmt:v=>v.toFixed(0)+"s",
+    what:"そのレースの<b>勝ちタイム</b>（馬場の速さ・条件。着順とは独立）", windo:"速い決着／重い決着",
+  },
+  moist: {
+    key:"m", label:"馬場水分", unit:"%",
+    bands:[{lo:-1,hi:1.0,label:"乾\n<1.0"},{lo:1.0,hi:1.7,label:"やや乾\n1.0–1.7"},
+           {lo:1.7,hi:2.3,label:"標準\n1.7–2.3"},{lo:2.3,hi:3.0,label:"湿\n2.3–3.0"},{lo:3.0,hi:99,label:"多湿\n≥3.0"}],
+    slMin:0.5, slMax:4.0, slStep:0.1, slWin:0.5, slFmt:v=>v.toFixed(1)+"%",
+    what:"その走の<b>馬場水分</b>", windo:"湿ったら／乾いたら",
+  },
+};
+function rateColor(rate,n){
+  if(rate==null) return "transparent";
+  const dark = matchMedia("(prefers-color-scheme:dark)").matches || document.documentElement.dataset.theme==="dark";
+  const base1 = dark?[30,42,34]:[236,244,238], c2=[26,120,72];
+  const rgb = base1.map((a,i)=>Math.round(a+(c2[i]-a)*rate));
+  return `rgba(${rgb[0]},${rgb[1]},${rgb[2]},${0.4+0.6*Math.min(n,6)/6})`;
+}
+const textOn = rate => rate!=null && rate>0.55 ? "#fff" : "var(--ink)";
+function bandStats(past,cfg,b){
+  const rs = past.filter(x=>{ const v=x[cfg.key]; return v!=null && v>b.lo && v<=b.hi; });
+  const n=rs.length, p3=rs.filter(x=>x.p<=3).length;
+  return {n, rate: n? p3/n : null};
+}
+function renderAptitude(r){
+  document.querySelectorAll("#dimseg button").forEach(b=>b.setAttribute("aria-pressed",b.dataset.d===dim));
+  renderHeatmap(r); renderSlider(r);
+}
+function renderHeatmap(r){
+  const cfg = DIMS[dim];
+  const hs = [...r.horses].sort((a,b)=>(b.win_prob||0)-(a.win_prob||0));
+  const th = `<th class="l">馬（予測順）</th>`+cfg.bands.map(b=>`<th>${b.label}</th>`).join("");
+  const rows = hs.map(h=>{
+    const cells = cfg.bands.map(b=>{
+      const s = bandStats(h.past||[],cfg,b);
+      if(!s.n) return `<td><div class="hcell empty">—</div></td>`;
+      return `<td><div class="hcell" style="background:${rateColor(s.rate,s.n)};color:${textOn(s.rate)}">`
+        +`<span class="r">${pct(s.rate)}</span><span class="n">${s.n}走</span></div></td>`;
+    }).join("");
+    return `<tr><td class="l"><span class="hmn">${h.num}</span><span class="hmnm">${h.name}</span> `
+      +`<span class="hmwp">予測${pct(h.win_prob)}</span></td>${cells}</tr>`;
+  }).join("");
+  document.getElementById("heatlead").innerHTML =
+    `① 帯別ヒートマップ ― 列＝${cfg.what}の帯。セル＝その帯で<b>複勝圏(3着内)に入った割合</b>（濃い緑ほど得意）＋走数。斜線＝未経験。`;
+  document.getElementById("heatmap").innerHTML =
+    `<div class="hmwrap"><table class="hm"><thead><tr>${th}</tr></thead><tbody>${rows}</tbody></table></div>`
+    +`<div class="legend"><span>複勝率:</span><span><span class="sw" style="background:${rateColor(0.15,6)}"></span>低</span>`
+    +`<span><span class="sw" style="background:${rateColor(0.5,6)}"></span>中</span>`
+    +`<span><span class="sw" style="background:${rateColor(0.85,6)}"></span>高</span></div>`;
+}
+function renderSlider(r){
+  const cfg = DIMS[dim], t = target[dim], W = cfg.slWin, lo=t-W, hi=t+W;
+  const rows = r.horses.map(h=>{
+    const rs = (h.past||[]).filter(x=>{ const v=x[cfg.key]; return v!=null && v>=lo && v<=hi; });
+    const n=rs.length, p3=rs.filter(x=>x.p<=3).length;
+    return {h,n,rate:n?p3/n:null};
   });
+  rows.sort((a,b)=>(b.rate??-1)-(a.rate??-1)||b.n-a.n);
+  const body = rows.map(o=>{
+    const w = o.rate!=null?Math.round(o.rate*100):0;
+    const tick = o.h.win_prob!=null?`<span class="wptick" style="left:${Math.min(99,Math.round(o.h.win_prob*100))}%"></span>`:"";
+    return `<div class="rankrow${o.rate==null?' dim':''}"><div class="who"><span class="hmn">${o.h.num}</span><span class="rn">${o.h.name}</span></div>`
+      +`<div class="rtrack"><span class="rfill" style="width:${w}%"></span>${tick}</div>`
+      +`<div class="rmeta">${o.rate!=null?pct(o.rate):'該当なし'}<br>${o.n}走</div></div>`;
+  }).join("");
+  document.getElementById("slidlead").innerHTML =
+    `② 想定条件スライダー ― <b>${cfg.label}</b>を動かすと各馬をその帯(±${W}${cfg.unit})の複勝率で並べ替え（発走前に「${cfg.windo}誰が有利か」を試す）。赤線＝今走モデル予測勝率。`;
+  document.getElementById("slider").innerHTML =
+    `<div class="slider-row"><div><div class="mval num" id="mval">${cfg.slFmt(t)}</div><div class="mlab">想定${cfg.label}</div></div>`
+    +`<input type="range" min="${cfg.slMin}" max="${cfg.slMax}" step="${cfg.slStep}" value="${t}" id="mslider"></div><div>${body}</div>`;
+  const sl = document.getElementById("mslider");
+  sl.addEventListener("input", ()=>{ target[dim]=parseFloat(sl.value);
+    document.getElementById("mval").textContent=cfg.slFmt(target[dim]);
+    const y=window.scrollY; renderSlider(get()); window.scrollTo(0,y);
+  });
+}
+function drawCardDots(cv, h){
+  if(!cv) return;
+  const past = (h.past||[]).filter(p=>p.t!=null && p.p!=null);
+  const W = cv.clientWidth||300, H = Math.round(W*0.42), dpr=devicePixelRatio||1;
+  cv.width=W*dpr; cv.height=H*dpr; const c=cv.getContext("2d"); c.scale(dpr,dpr); c.clearRect(0,0,W,H);
+  const padL=26,padR=8,padT=8,padB=15;
+  const good=cssvar("--good"),muted=cssvar("--muted"),grid=cssvar("--border2"),accent=cssvar("--accent");
+  if(!past.length){ c.fillStyle=muted;c.font="11px system-ui";c.textAlign="center";c.textBaseline="middle";
+    c.fillText("過去走データなし",W/2,H/2); return; }
+  const ts = past.map(p=>p.t).concat(h.place3_time_avg!=null?[h.place3_time_avg]:[]);
+  let xmin=Math.min(...ts), xmax=Math.max(...ts);
+  if(xmax-xmin<8){xmin-=8;xmax+=8;} else {const pd=(xmax-xmin)*0.1;xmin-=pd;xmax+=pd;}
+  const fs=Math.max(h.field_size||10, ...past.map(p=>p.p), 8);
+  const X=v=>padL+(v-xmin)/(xmax-xmin)*(W-padL-padR);
+  const Y=p=>padT+(p-1)/(fs-1)*(H-padT-padB);
+  c.strokeStyle=grid;c.lineWidth=1;c.fillStyle=muted;c.font="8px system-ui";c.textBaseline="middle";
+  [1,3].forEach(p=>{const y=Y(p);c.beginPath();c.moveTo(padL,y);c.lineTo(W-padR,y);c.stroke();
+    c.textAlign="right";c.fillText(p+"着",padL-3,y);});
+  if(h.place3_time_avg!=null){ const x=X(h.place3_time_avg);
+    c.strokeStyle=accent;c.lineWidth=1.5;c.setLineDash([4,3]);c.beginPath();c.moveTo(x,padT+2);c.lineTo(x,H-padB);c.stroke();c.setLineDash([]);
+    c.fillStyle=accent;c.font="bold 9px system-ui";c.textAlign="center";c.textBaseline="bottom";c.fillText(h.place3_time_avg.toFixed(0)+"s",x,padT+2); }
+  c.fillStyle=muted;c.font="8px system-ui";c.textBaseline="top";
+  c.textAlign="left";c.fillText("速い←",padL,H-padB+3); c.textAlign="right";c.fillText("→遅い",W-padR,H-padB+3);
+  past.forEach(p=>{ const x=X(p.t),y=Y(Math.min(p.p,fs));
+    c.beginPath();c.arc(x,y,2.6,0,7);c.fillStyle=p.p<=3?good:muted;c.globalAlpha=p.p<=3?0.9:0.35;c.fill();c.globalAlpha=1; });
 }
 
 document.getElementById("foot").innerHTML =
   "能力指数はクラス・ソリ重量・馬場水分で補正した基準タイム＋Eloの合成。勝率/連対率/複勝率は"
   +"Plackett-Luce（順位確率）モデルによる推定。<b>予測は当日の馬場水分に応じて動的に変わります</b>。"
-  +"「連対時の平均タイム/水分」は過去に馬券圏内(2着以内)だったときの平均で、馬ごとの得意馬場の目安。"
+  +"下部の馬場適性は各馬の過去走（レース日以前のみ＝リーク防止）から集計。「決着タイム」はそのレースの勝ちタイムで、馬場の速さ・条件を表す（着順と独立）。"
+  +"カードのドット図は横=その馬の走破タイム・縦=着順、緑=3着内、赤破線=3着内平均タイム。"
   +"騎手名の下の成績は<b>この騎手がこの馬に騎乗した時の (1着,2着,3着,4着以下) 回数</b>（過去騎乗なしは「初騎乗」）。"
   +"斤量は今走のソリ重量で、括弧内は前回からの増減。"
   +" オッズは予測に用いず表示のみ。";
@@ -429,11 +512,17 @@ document.querySelectorAll("#stoggle button").forEach(b=>b.addEventListener("clic
   document.querySelectorAll("#stoggle button").forEach(x=>x.setAttribute("aria-pressed",x===b));
   render();
 }));
+// 適性の分類軸トグル（決着タイム / 馬場水分）
+document.querySelectorAll("#dimseg button").forEach(b=>b.addEventListener("click",()=>{
+  dim=b.dataset.d; renderAptitude(get());
+}));
 
 // init
 renderRacePills(); sync();
-// redraw scatter on resize / theme change
-let rz; window.addEventListener("resize",()=>{clearTimeout(rz);rz=setTimeout(()=>drawMap(get()),150);});
+// redraw canvases on resize
+let rz; window.addEventListener("resize",()=>{clearTimeout(rz);rz=setTimeout(()=>{
+  if(view==="card"){ const r=get(); r.horses.forEach(h=>drawCardDots(document.getElementById("cd_"+h.num), h)); }
+},160);});
 }
 // データ読込: 埋め込み(アーティファクト) or ローカルの data.json(ローカルサーバで自動更新)
 (function(){
