@@ -72,6 +72,11 @@ table.bt-tbl tr:last-child td{border-bottom:none}
 .bt-tbl .bt{font-size:.72rem;padding:2px 8px;border-radius:6px;background:var(--surface2);border:1px solid var(--border);font-weight:700}
 .bt-tbl .combo{font-weight:800;letter-spacing:.02em}
 .bt-tbl .evp{color:var(--accent);font-weight:800}
+.cart-row{display:flex;align-items:center;gap:14px;margin-top:12px;flex-wrap:wrap}
+.cart-btn{background:var(--accent);color:#fff;border:none;border-radius:10px;padding:11px 18px;font-size:.92rem;font-weight:800;font-family:inherit;cursor:pointer;box-shadow:var(--shadow)}
+.cart-btn:hover{filter:brightness(1.06)}
+.cart-btn:focus-visible{outline:2px solid var(--edge);outline-offset:2px}
+.cart-total{font-weight:800;font-variant-numeric:tabular-nums;font-size:1rem}
 .result{display:flex;gap:8px;margin-top:11px}
 .rescell{flex:1;background:var(--surface2);border:1px solid var(--border2);border-radius:10px;padding:8px 4px;text-align:center}
 .rescell .t{font-size:.64rem;color:var(--muted);letter-spacing:.02em}
@@ -205,10 +210,10 @@ table.hm td.l{padding:5px 7px}
     <div class="vtoggle" id="vtoggle">
       <button data-v="table" aria-pressed="true">表</button>
       <button data-v="card" aria-pressed="false">カード</button>
+      <button data-v="bets" aria-pressed="false">買い目</button>
     </div>
   </div>
   <div id="horses"></div>
-  <div id="betsbox"></div>
   <div class="secthead">
     <span class="sect">馬場適性（このレースの出走馬）</span>
     <div class="vtoggle" id="dimseg">
@@ -255,6 +260,7 @@ document.getElementById("gen").textContent = "予測生成 "+DB.generated;
 const dates = [...new Set(RACES.map(r=>r.date))].sort();
 let curDate = dates[0], curRno = 1, view = "table", sortMode = "rank", dim = "time";
 const target = { time: 115, moist: 1.7 };
+const STAGE = { pre:"事前予測", moist:"水分反映", odds:"買い目確定" };
 
 // build date pills
 document.getElementById("dates").innerHTML = dates.map(d=>
@@ -291,7 +297,6 @@ function render(){
     ? `<span class="chip moist">馬場水分 ${r.moisture}%</span>`
     : `<span class="chip pre">馬場水分 未定</span>`;
   const preBadge = hasResult ? "" : `<span class="chip pre">発走前・暫定</span>`;
-  const STAGE = {pre:"事前予測", moist:"水分反映", odds:"買い目確定"};
   const updChip = r.updated_at
     ? `<span class="chip upd">🕛 ${(STAGE[r.update_stage]||'更新')} ${String(r.updated_at).slice(11)}</span>` : "";
   let resultRow;
@@ -329,33 +334,43 @@ function render(){
     : (a,b)=>(a.rank||99)-(b.rank||99));
   const host = document.getElementById("horses");
   if(view==="table") host.innerHTML = tableView(hs, hasResult);
-  else { host.innerHTML = cardView(hs, maxW, hasResult);
+  else if(view==="card"){ host.innerHTML = cardView(hs, maxW, hasResult);
     hs.forEach(h=>drawCardDots(document.getElementById("cd_"+h.num), h)); }
+  else { host.innerHTML = betsView(r);
+    const cb=document.getElementById("cartbtn"); if(cb) cb.addEventListener("click",()=>onAddToCart(r)); }
 
-  renderBets(r);
   renderAptitude(r);
 }
 
-function renderBets(r){
-  const box = document.getElementById("betsbox");
-  if(!("bets" in r) || r.bets===undefined || r.bets===null){ box.innerHTML=""; return; }
-  const bets = r.bets||[];
+function betsView(r){
+  const stage = STAGE[r.update_stage]||'—';
   const tm = r.updated_at ? String(r.updated_at).slice(11) : "";
+  if(!("bets" in r) || r.bets===undefined || r.bets===null){
+    return `<div class="explain">このレースはまだ買い目が確定していません。買い目は<b>発走7分前</b>に最新オッズから算出されます。`
+      +`現在の段階: <b>${stage}</b>${tm?`（${tm}）`:''}。</div>`;
+  }
+  const bets = r.bets||[];
   if(!bets.length){
-    box.innerHTML = `<div class="sect">買い目（${tm} 時点）</div>`
-      +`<div class="explain">この時点でEV基準（尾部ガード適用）を満たす買い目はありません＝<b>見送り</b>。</div>`;
-    return;
+    return `<div class="explain">${tm} 時点でEV基準（尾部ガード適用）を満たす買い目はありません＝<b>見送り</b>。</div>`;
   }
   const total = bets.reduce((s,b)=>s+b.stake,0);
   const rows = bets.map(b=>`<tr><td class="l"><span class="bt">${b.bet_type_jp}</span></td>`
     +`<td class="l combo">${b.combo}</td><td class="num">${b.odds!=null?b.odds.toFixed(1):'—'}</td>`
     +`<td class="num evp">${b.ev.toFixed(2)}</td><td class="num">${pct(b.prob)}</td>`
     +`<td class="num">¥${b.stake.toLocaleString()}</td></tr>`).join("");
-  box.innerHTML = `<div class="sect">買い目（${tm} 時点・アドバイザリ）</div>`
-    +`<div class="betwrap"><table class="bt-tbl"><thead><tr><th class="l">券種</th><th class="l">買い目</th>`
+  return `<div class="betwrap"><table class="bt-tbl"><thead><tr><th class="l">券種</th><th class="l">買い目</th>`
     +`<th>オッズ</th><th>EV</th><th>確率</th><th>賭金</th></tr></thead><tbody>${rows}</tbody></table></div>`
-    +`<div class="explain">合計 <b>¥${total.toLocaleString()}</b>（予算3,000円/レース・尾部ガード適用の単勝/複勝/ワイド）。`
-    +`EV＝予測確率×オッズが1.10以上のみ。<b>表示用の目安であり自動購入はしません</b>。</div>`;
+    +`<div class="cart-row"><button class="cart-btn" id="cartbtn">🛒 馬券をカゴに追加（楽天競馬）</button>`
+    +`<span class="cart-total">合計 ¥${total.toLocaleString()}</span></div>`
+    +`<div class="explain">${tm} 時点の最新オッズで算出。EV＝予測確率×オッズが1.10以上・尾部ガードの単勝/複勝/ワイド、予算3,000円/レース。`
+    +`<b>表示用の目安。カゴ追加は接続方法の確定後に実装予定です</b>。</div>`;
+}
+function onAddToCart(r){
+  const bets = r.bets||[];
+  if(!bets.length){ alert("追加できる買い目がありません。"); return; }
+  const lines = bets.map(b=>`${b.bet_type_jp} ${b.combo}  ¥${b.stake.toLocaleString()}`).join("\n");
+  alert("【楽天競馬 カゴ追加（準備中）】\n\n以下の買い目を追加予定:\n\n"+lines
+    +"\n\n※実際のカゴ追加は、楽天競馬への接続方法（URL連携 or ブラウザ自動化）の確定後に実装します。");
 }
 
 function tableView(hs, hasResult){
