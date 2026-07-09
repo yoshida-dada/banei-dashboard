@@ -1,0 +1,17 @@
+{
+  "name": "ばんえい予測レビュー",
+  "short_name": "ばんえい予測",
+  "description": "帯広ばんえいのレース単位予測（能力指数・勝率・連対率・複勝率）と馬場適性マップ",
+  "lang": "ja",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#f5efe4",
+  "theme_color": "#c1462a",
+  "icons": [
+    { "src": "icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}
