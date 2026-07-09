@@ -62,6 +62,16 @@ header{padding:14px 14px 8px;max-width:560px;margin:0 auto}
 .chip b{color:var(--ink)}
 .chip.moist{background:var(--edge-soft);color:var(--edge);border-color:transparent;font-weight:700}
 .chip.pre{background:var(--accent-soft);color:var(--accent);border-color:transparent;font-weight:700}
+.chip.upd{background:var(--edge-soft);color:var(--edge);border-color:transparent;font-weight:700}
+.betwrap{overflow-x:auto;border:1px solid var(--border);border-radius:12px;box-shadow:var(--shadow);background:var(--surface)}
+table.bt-tbl{border-collapse:collapse;width:100%;min-width:420px;font-size:.85rem}
+table.bt-tbl th{font-size:.66rem;color:var(--muted);font-weight:700;padding:7px 8px;text-align:right;white-space:nowrap;border-bottom:1px solid var(--border)}
+table.bt-tbl th.l,table.bt-tbl td.l{text-align:left}
+table.bt-tbl td{padding:7px 8px;text-align:right;border-bottom:1px solid var(--border2);font-variant-numeric:tabular-nums;white-space:nowrap}
+table.bt-tbl tr:last-child td{border-bottom:none}
+.bt-tbl .bt{font-size:.72rem;padding:2px 8px;border-radius:6px;background:var(--surface2);border:1px solid var(--border);font-weight:700}
+.bt-tbl .combo{font-weight:800;letter-spacing:.02em}
+.bt-tbl .evp{color:var(--accent);font-weight:800}
 .result{display:flex;gap:8px;margin-top:11px}
 .rescell{flex:1;background:var(--surface2);border:1px solid var(--border2);border-radius:10px;padding:8px 4px;text-align:center}
 .rescell .t{font-size:.64rem;color:var(--muted);letter-spacing:.02em}
@@ -198,6 +208,7 @@ table.hm td.l{padding:5px 7px}
     </div>
   </div>
   <div id="horses"></div>
+  <div id="betsbox"></div>
   <div class="secthead">
     <span class="sect">馬場適性（このレースの出走馬）</span>
     <div class="vtoggle" id="dimseg">
@@ -280,6 +291,9 @@ function render(){
     ? `<span class="chip moist">馬場水分 ${r.moisture}%</span>`
     : `<span class="chip pre">馬場水分 未定</span>`;
   const preBadge = hasResult ? "" : `<span class="chip pre">発走前・暫定</span>`;
+  const STAGE = {pre:"事前予測", moist:"水分反映", odds:"買い目確定"};
+  const updChip = r.updated_at
+    ? `<span class="chip upd">🕛 ${(STAGE[r.update_stage]||'更新')} ${String(r.updated_at).slice(11)}</span>` : "";
   let resultRow;
   if(hasResult){
     resultRow =
@@ -303,8 +317,9 @@ function render(){
     +`<div class="chips"><span class="chip">クラス <b>${r.class||'—'}</b></span>`
     +moistChip
     +`<span class="chip">${r.field_size}頭</span>`
+    +(r.post_time?`<span class="chip">発走 <b>${r.post_time}</b></span>`:'')
     +(hasResult?`<span class="chip">決着 <b>${r.win_time||'—'}</b></span>`:'')
-    +preBadge+`</div>`
+    +preBadge+updChip+`</div>`
     +`<div class="result">`+resultRow+`</div></div>`;
 
   // horses
@@ -317,7 +332,30 @@ function render(){
   else { host.innerHTML = cardView(hs, maxW, hasResult);
     hs.forEach(h=>drawCardDots(document.getElementById("cd_"+h.num), h)); }
 
+  renderBets(r);
   renderAptitude(r);
+}
+
+function renderBets(r){
+  const box = document.getElementById("betsbox");
+  if(!("bets" in r) || r.bets===undefined || r.bets===null){ box.innerHTML=""; return; }
+  const bets = r.bets||[];
+  const tm = r.updated_at ? String(r.updated_at).slice(11) : "";
+  if(!bets.length){
+    box.innerHTML = `<div class="sect">買い目（${tm} 時点）</div>`
+      +`<div class="explain">この時点でEV基準（尾部ガード適用）を満たす買い目はありません＝<b>見送り</b>。</div>`;
+    return;
+  }
+  const total = bets.reduce((s,b)=>s+b.stake,0);
+  const rows = bets.map(b=>`<tr><td class="l"><span class="bt">${b.bet_type_jp}</span></td>`
+    +`<td class="l combo">${b.combo}</td><td class="num">${b.odds!=null?b.odds.toFixed(1):'—'}</td>`
+    +`<td class="num evp">${b.ev.toFixed(2)}</td><td class="num">${pct(b.prob)}</td>`
+    +`<td class="num">¥${b.stake.toLocaleString()}</td></tr>`).join("");
+  box.innerHTML = `<div class="sect">買い目（${tm} 時点・アドバイザリ）</div>`
+    +`<div class="betwrap"><table class="bt-tbl"><thead><tr><th class="l">券種</th><th class="l">買い目</th>`
+    +`<th>オッズ</th><th>EV</th><th>確率</th><th>賭金</th></tr></thead><tbody>${rows}</tbody></table></div>`
+    +`<div class="explain">合計 <b>¥${total.toLocaleString()}</b>（予算3,000円/レース・尾部ガード適用の単勝/複勝/ワイド）。`
+    +`EV＝予測確率×オッズが1.10以上のみ。<b>表示用の目安であり自動購入はしません</b>。</div>`;
 }
 
 function tableView(hs, hasResult){
