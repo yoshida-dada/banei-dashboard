@@ -194,7 +194,7 @@ const CAP = {1:['#ffffff','#1a1a1a'],2:['#2b2b2b','#ffffff'],3:['#e23b32','#ffff
   7:['#ef8a1a','#ffffff'],8:['#ff8fb3','#1a1a1a']};
 function capStyle(g){ const c=CAP[g]; return c?`background:${c[0]};color:${c[1]};border:1px solid rgba(0,0,0,.22)`:''; }
 const cleanInst = s => (s||"").replace(/[（(][^）)]*[）)]/g,"").trim();  // 「（ばんえい）」等を除去
-const recFmt = r => (r && r.length===4) ? "("+r.join(",")+")" : "—";   // (1着,2着,3着,4着)
+const recFmt = r => (r && r.length===4) ? "("+r.join(",")+")" : "初騎乗";   // 当該馬×騎手の(1着,2着,3着,4着)
 function sledFmt(h){
   if(h.sled_kg==null) return "—";
   const b = h.sled_kg.toFixed(0);
@@ -406,6 +406,8 @@ document.getElementById("foot").innerHTML =
   "能力指数はクラス・ソリ重量・馬場水分で補正した基準タイム＋Eloの合成。勝率/連対率/複勝率は"
   +"Plackett-Luce（順位確率）モデルによる推定。<b>予測は当日の馬場水分に応じて動的に変わります</b>。"
   +"「連対時の平均タイム/水分」は過去に馬券圏内(2着以内)だったときの平均で、馬ごとの得意馬場の目安。"
+  +"騎手名の下の成績は<b>この騎手がこの馬に騎乗した時の (1着,2着,3着,4着以下) 回数</b>（過去騎乗なしは「初騎乗」）。"
+  +"斤量は今走のソリ重量で、括弧内は前回からの増減。"
   +" オッズは予測に用いず表示のみ。";
 
 // view toggle
