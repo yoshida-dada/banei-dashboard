@@ -360,17 +360,19 @@ function betsView(r){
     +`<td class="num">¥${b.stake.toLocaleString()}</td></tr>`).join("");
   return `<div class="betwrap"><table class="bt-tbl"><thead><tr><th class="l">券種</th><th class="l">買い目</th>`
     +`<th>オッズ</th><th>EV</th><th>確率</th><th>賭金</th></tr></thead><tbody>${rows}</tbody></table></div>`
-    +`<div class="cart-row"><button class="cart-btn" id="cartbtn">🛒 馬券をカゴに追加（楽天競馬）</button>`
+    +`<div class="cart-row"><button class="cart-btn" id="cartbtn">🛒 楽天競馬で投票（買い目コピー）</button>`
     +`<span class="cart-total">合計 ¥${total.toLocaleString()}</span></div>`
     +`<div class="explain">${tm} 時点の最新オッズで算出。EV＝予測確率×オッズが1.10以上・尾部ガードの単勝/複勝/ワイド、予算3,000円/レース。`
-    +`<b>表示用の目安。カゴ追加は接続方法の確定後に実装予定です</b>。</div>`;
+    +`楽天競馬は外部からカゴへ自動追加するURL連携が無いため、ボタンで<b>買い目をコピー＋投票画面を開き</b>、そこで入力してください。</div>`;
 }
 function onAddToCart(r){
   const bets = r.bets||[];
   if(!bets.length){ alert("追加できる買い目がありません。"); return; }
   const lines = bets.map(b=>`${b.bet_type_jp} ${b.combo}  ¥${b.stake.toLocaleString()}`).join("\n");
-  alert("【楽天競馬 カゴ追加（準備中）】\n\n以下の買い目を追加予定:\n\n"+lines
-    +"\n\n※実際のカゴ追加は、楽天競馬への接続方法（URL連携 or ブラウザ自動化）の確定後に実装します。");
+  try{ navigator.clipboard && navigator.clipboard.writeText(lines); }catch(e){}
+  window.open("https://keiba.rakuten.co.jp/", "_blank", "noopener");
+  alert("買い目をクリップボードにコピーし、楽天競馬を開きました。\n\n"+lines
+    +"\n\n※楽天競馬は外部からカゴへ自動追加するURL連携を提供していないため、投票画面で入力してください。");
 }
 
 function tableView(hs, hasResult){
