@@ -94,8 +94,12 @@ table.ht tr.scr td{opacity:.5}
 table.ht .tnum{display:inline-flex;width:20px;height:20px;border-radius:5px;background:var(--ink);color:var(--bg);
   font-weight:800;font-size:.72rem;align-items:center;justify-content:center}
 table.ht tr.win .tnum{background:var(--good)}
-table.ht .tname{font-weight:700;max-width:96px;overflow:hidden;text-overflow:ellipsis;display:inline-block;vertical-align:middle}
-table.ht .tjk{color:var(--muted);max-width:64px;overflow:hidden;text-overflow:ellipsis;display:inline-block;vertical-align:middle}
+table.ht td.l{vertical-align:middle}
+table.ht .c2{display:flex;flex-direction:column;line-height:1.18}
+table.ht .tname{font-weight:700;max-width:112px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+table.ht .tjk{color:var(--ink);font-weight:600;max-width:88px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+table.ht .tsub{font-size:.63rem;color:var(--muted);max-width:150px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-weight:400}
+table.ht .tsub.num{font-variant-numeric:tabular-nums}
 table.ht .abil{color:var(--accent);font-weight:800}
 table.ht .win-c{font-weight:800}
 table.ht .fin{font-size:.68rem;color:var(--muted)}
@@ -113,8 +117,10 @@ table.ht .fin.top{color:var(--good);font-weight:800}
   font-weight:800;font-size:.86rem;display:flex;align-items:center;justify-content:center}
 .hname{font-weight:700;font-size:.94rem;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .hnamewrap{flex:1;min-width:0}
+.hsub{font-size:.72rem;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin-top:1px}
 .hjk{font-size:.72rem;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin-top:1px}
 .hjk::before{content:"騎 ";opacity:.6}
+.hjk .jrec{color:var(--ink);font-weight:600}
 .finish{flex:none;font-size:.66rem;color:var(--muted);border:1px solid var(--border);border-radius:6px;padding:2px 6px}
 .finish.top{color:var(--good);border-color:var(--good)}
 .mgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin-top:10px}
@@ -187,6 +193,16 @@ const CAP = {1:['#ffffff','#1a1a1a'],2:['#2b2b2b','#ffffff'],3:['#e23b32','#ffff
   4:['#2f6fd0','#ffffff'],5:['#f3d000','#1a1a1a'],6:['#2f9e44','#ffffff'],
   7:['#ef8a1a','#ffffff'],8:['#ff8fb3','#1a1a1a']};
 function capStyle(g){ const c=CAP[g]; return c?`background:${c[0]};color:${c[1]};border:1px solid rgba(0,0,0,.22)`:''; }
+const cleanInst = s => (s||"").replace(/[（(][^）)]*[）)]/g,"").trim();  // 「（ばんえい）」等を除去
+const recFmt = r => (r && r.length===4) ? "("+r.join(",")+")" : "—";   // (1着,2着,3着,4着)
+function sledFmt(h){
+  if(h.sled_kg==null) return "—";
+  const b = h.sled_kg.toFixed(0);
+  if(h.sled_diff==null) return b;
+  const d = h.sled_diff;
+  const s = d>0 ? "+"+d : (d<0 ? ""+d : "±0");
+  return b+"("+s+")";
+}
 document.getElementById("gen").textContent = "予測生成 "+DB.generated;
 
 const dates = [...new Set(RACES.map(r=>r.date))].sort();
@@ -274,9 +290,11 @@ function tableView(hs, hasResult){
     const top = h.position!=null && h.position<=3;
     return `<tr class="${isWin?'win':''} ${scratched?'scr':''}">`
       +`<td class="l"><span class="tnum" style="${capStyle(h.gate)}">${h.num}</span></td>`
-      +`<td class="l"><span class="tname">${h.name||''}</span></td>`
-      +`<td class="l"><span class="tjk">${h.jockey||'—'}</span></td>`
-      +`<td class="num">${h.sled_kg!=null?h.sled_kg.toFixed(0):'—'}</td>`
+      +`<td class="l"><div class="c2"><span class="tname">${h.name||''}</span>`
+        +`<span class="tsub">${(h.sex||'')+(h.age!=null?h.age:'')}${h.trainer?'・'+cleanInst(h.trainer):''}</span></div></td>`
+      +`<td class="l"><div class="c2"><span class="tjk">${h.jockey||'—'}</span>`
+        +`<span class="tsub num">${recFmt(h.jockey_record)}</span></div></td>`
+      +`<td class="num">${sledFmt(h)}</td>`
       +`<td class="abil num">${h.ability!=null?h.ability.toFixed(1):'—'}</td>`
       +`<td class="win-c num">${pct(h.win_prob)}</td>`
       +`<td class="num">${pct(h.place2)}</td>`
@@ -286,8 +304,8 @@ function tableView(hs, hasResult){
       +`<td class="fin ${top?'top':''}">${fin}</td></tr>`;
   }).join("");
   return `<div class="tblwrap"><table class="ht"><thead><tr>`
-    +`<th class="l">馬</th><th class="l">馬名</th><th class="l">騎手</th>`
-    +`<th>ソリkg</th><th>能力</th><th>勝率</th><th>連対</th><th>複勝</th>`
+    +`<th class="l">馬</th><th class="l">馬名 / 馬齢・厩舎</th><th class="l">騎手 / 成績</th>`
+    +`<th>斤量</th><th>能力</th><th>勝率</th><th>連対</th><th>複勝</th>`
     +`<th>オッズ</th><th>人気</th><th>着</th></tr></thead>`
     +`<tbody>${rows}</tbody></table></div>`;
 }
@@ -299,7 +317,7 @@ function cardView(hs, maxW, hasResult){
     const finish = !hasResult ? "発走前" : (h.position!=null ? `${h.position}着` : "除外");
     const market = `<div class="aptline"><span>オッズ <b class="num">${h.odds!=null?h.odds.toFixed(1):'—'}</b></span>`
       +`<span>人気 <b class="num">${h.popularity?h.popularity+'番':'—'}</b></span>`
-      +`<span>ソリ <b class="num">${h.sled_kg!=null?h.sled_kg.toFixed(0)+'kg':'—'}</b></span></div>`;
+      +`<span>斤量 <b class="num">${sledFmt(h)}</b></span></div>`;
     const apt = h.ren_time_avg!=null
       ? `<div class="aptline"><span>連対時平均 <b class="num">${secFmt(h.ren_time_avg)}</b></span>`
         +`<span>連対時水分 <b class="num">${h.ren_moist_avg!=null?h.ren_moist_avg.toFixed(1)+'%':'—'}</b></span>`
@@ -308,7 +326,8 @@ function cardView(hs, maxW, hasResult){
     return `<div class="horse ${isWin?'winner':''} ${scratched?'scratched':''}">`
       +`<div class="hh"><span class="rk">${h.rank}</span><span class="hnum num" style="${capStyle(h.gate)}">${h.num}</span>`
       +`<span class="hnamewrap"><span class="hname">${h.name||''}</span>`
-      +`<span class="hjk">${h.jockey||'騎手不明'}</span></span>`
+      +`<span class="hsub">${(h.sex||'')+(h.age!=null?h.age:'')}${h.trainer?' ・ '+cleanInst(h.trainer):''}</span>`
+      +`<span class="hjk">${h.jockey||'騎手不明'} <span class="jrec">${recFmt(h.jockey_record)}</span></span></span>`
       +`<span class="finish ${h.position!=null&&h.position<=3?'top':''}">${finish}</span></div>`
       +`<div class="mgrid">`
       +`<div class="m abil"><div class="t">能力指数</div><div class="v num">${h.ability!=null?h.ability.toFixed(1):'—'}</div></div>`
