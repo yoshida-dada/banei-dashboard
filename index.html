@@ -63,6 +63,13 @@ header{padding:14px 14px 8px;max-width:560px;margin:0 auto}
 .chip.moist{background:var(--edge-soft);color:var(--edge);border-color:transparent;font-weight:700}
 .chip.pre{background:var(--accent-soft);color:var(--accent);border-color:transparent;font-weight:700}
 .chip.upd{background:var(--edge-soft);color:var(--edge);border-color:transparent;font-weight:700}
+.assess{display:flex;align-items:center;gap:9px;margin-top:11px;font-size:.84rem;flex-wrap:wrap}
+.assess .al{font-weight:800;padding:3px 12px;border-radius:999px;font-size:.82rem;white-space:nowrap}
+.assess .an{color:var(--muted)}
+.assess.ax .al{background:var(--good-soft);color:var(--good)}
+.assess.two .al{background:var(--edge-soft);color:var(--edge)}
+.assess.mix .al{background:var(--surface2);color:var(--muted);border:1px solid var(--border)}
+.assess.chaos .al{background:var(--accent-soft);color:var(--accent)}
 .betwrap{overflow-x:auto;border:1px solid var(--border);border-radius:12px;box-shadow:var(--shadow);background:var(--surface)}
 table.bt-tbl{border-collapse:collapse;width:100%;min-width:420px;font-size:.85rem}
 table.bt-tbl th{font-size:.66rem;color:var(--muted);font-weight:700;padding:7px 8px;text-align:right;white-space:nowrap;border-bottom:1px solid var(--border)}
@@ -299,6 +306,18 @@ document.querySelectorAll("#dates .dpill").forEach(p=>p.addEventListener("click"
   curDate=p.dataset.d; curRno=racesFor(curDate)[0].race_no; renderRacePills(); sync();
 }));
 
+// レース短評（勝率分布から軸の堅さ・混戦度を判定）
+function raceAssessment(r){
+  const hs=[...r.horses].filter(h=>h.win_prob!=null&&h.win_prob>0).sort((a,b)=>b.win_prob-a.win_prob);
+  if(hs.length<3) return null;
+  const p1=hs[0].win_prob,p2=hs[1].win_prob,p3=hs[2].win_prob, g12=p1-p2, g23=p2-p3;
+  const a=hs[0].num, b=hs[1].num;
+  if(p1>=0.30 && g12>=0.10) return {label:"軸鉄板", note:`${a}番が抜けて堅い`, cls:"ax"};
+  if(p1>=0.25 && g12>=0.06) return {label:"軸有力", note:`${a}番が本命、相手を絞って`, cls:"ax"};
+  if(p1>=0.20 && p2>=0.17 && g23>=0.05) return {label:"2強", note:`${a}番・${b}番の一騎打ち`, cls:"two"};
+  if(p1<0.19) return {label:"大混戦", note:"抜けた馬なし・波乱含み", cls:"chaos"};
+  return {label:"混戦", note:"有力数頭で拮抗", cls:"mix"};
+}
 function render(){
   const r = get(); if(!r) return;
   // meta
@@ -311,6 +330,8 @@ function render(){
   const preBadge = hasResult ? "" : `<span class="chip pre">発走前・暫定</span>`;
   const updChip = r.updated_at
     ? `<span class="chip upd">🕛 ${(STAGE[r.update_stage]||'更新')} ${String(r.updated_at).slice(11)}</span>` : "";
+  const asm = raceAssessment(r);
+  const asHtml = asm ? `<div class="assess ${asm.cls}"><span class="al">${asm.label}</span><span class="an">${asm.note}</span></div>` : "";
   let resultRow;
   if(hasResult){
     resultRow =
@@ -337,6 +358,7 @@ function render(){
     +(r.post_time?`<span class="chip">発走 <b>${r.post_time}</b></span>`:'')
     +(hasResult?`<span class="chip">決着 <b>${r.win_time||'—'}</b></span>`:'')
     +preBadge+updChip+`</div>`
+    +asHtml
     +`<div class="result">`+resultRow+`</div></div>`;
 
   // horses
@@ -584,7 +606,7 @@ function renderHeatmap(r){
       return `<td><div class="hcell" style="background:${rateColor(s.rate,s.n)};color:${textOn(s.rate)}">`
         +`<span class="r">${pct(s.rate)}</span><span class="n">${s.n}走</span></div></td>`;
     }).join("");
-    return `<tr><td class="l"><span class="hmn">${h.num}</span><span class="hmnm">${h.name}</span> `
+    return `<tr><td class="l"><span class="hmn" style="${capStyle(h.gate)}">${h.num}</span><span class="hmnm">${h.name}</span> `
       +`<span class="hmwp">予測${pct(h.win_prob)}</span></td>${cells}</tr>`;
   }).join("");
   document.getElementById("heatlead").innerHTML =
@@ -606,7 +628,7 @@ function renderSlider(r){
   const body = rows.map(o=>{
     const w = o.rate!=null?Math.round(o.rate*100):0;
     const tick = o.h.win_prob!=null?`<span class="wptick" style="left:${Math.min(99,Math.round(o.h.win_prob*100))}%"></span>`:"";
-    return `<div class="rankrow${o.rate==null?' dim':''}"><div class="who"><span class="hmn">${o.h.num}</span><span class="rn">${o.h.name}</span></div>`
+    return `<div class="rankrow${o.rate==null?' dim':''}"><div class="who"><span class="hmn" style="${capStyle(o.h.gate)}">${o.h.num}</span><span class="rn">${o.h.name}</span></div>`
       +`<div class="rtrack"><span class="rfill" style="width:${w}%"></span>${tick}</div>`
       +`<div class="rmeta">${o.rate!=null?pct(o.rate):'該当なし'}<br>${o.n}走</div></div>`;
   }).join("");
