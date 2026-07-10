@@ -153,6 +153,7 @@ table.ht .fin.top{color:var(--good);font-weight:800}
 .m{background:var(--surface2);border:1px solid var(--border2);border-radius:8px;padding:6px 4px;text-align:center}
 .m .t{font-size:.6rem;color:var(--muted);letter-spacing:.01em}
 .m .v{font-size:.98rem;font-weight:800;margin-top:1px}
+.m .msub{font-size:.58rem;color:var(--muted);margin-top:1px;font-weight:600}
 .m.abil .v{color:var(--accent)}
 .wbar{margin-top:9px;height:7px;background:var(--border2);border-radius:99px;overflow:hidden}
 .wbar span{display:block;height:100%;background:linear-gradient(90deg,var(--accent),var(--accent))}
@@ -488,7 +489,8 @@ function tableView(hs, hasResult){
       +`<td class="l"><div class="c2"><span class="tjk">${h.jockey||'—'}</span>`
         +`<span class="tsub num">${recFmt(h.jockey_record)}</span></div></td>`
       +`<td class="num"><div class="c2 c2r"><span>${sledTop(h)}</span><span class="tsub num">${sledSub(h)}</span></div></td>`
-      +`<td class="abil num">${h.ability!=null?h.ability.toFixed(1):'—'}</td>`
+      +`<td class="num"><div class="c2 c2r"><span class="abil">${h.ability!=null?h.ability.toFixed(1):'—'}</span>`
+        +`<span class="tsub num">${h.elo!=null?h.elo:'—'}</span></div></td>`
       +`<td class="win-c num">${pct(h.win_prob)}</td>`
       +`<td class="num">${pct(h.place2)}</td>`
       +`<td class="num">${pct(h.place3)}</td>`
@@ -498,7 +500,7 @@ function tableView(hs, hasResult){
   }).join("");
   return `<div class="tblwrap"><table class="ht"><thead><tr>`
     +`<th class="l">馬</th><th class="l">馬名 / 馬齢・厩舎</th><th class="l">騎手 / 成績</th>`
-    +`<th>斤量</th><th>能力</th><th>勝率</th><th>連対</th><th>複勝</th>`
+    +`<th>斤量</th><th>能力/Elo</th><th>勝率</th><th>連対</th><th>複勝</th>`
     +`<th>オッズ</th><th>人気</th><th>着</th></tr></thead>`
     +`<tbody>${rows}</tbody></table></div>`;
 }
@@ -523,7 +525,7 @@ function cardView(hs, maxW, hasResult){
       +`<span class="hjk">${h.jockey||'騎手不明'} <span class="jrec">${recFmt(h.jockey_record)}</span></span></span>`
       +`<span class="finish ${h.position!=null&&h.position<=3?'top':''}">${finish}</span></div>`
       +`<div class="mgrid">`
-      +`<div class="m abil"><div class="t">能力指数</div><div class="v num">${h.ability!=null?h.ability.toFixed(1):'—'}</div></div>`
+      +`<div class="m abil"><div class="t">能力指数</div><div class="v num">${h.ability!=null?h.ability.toFixed(1):'—'}</div><div class="msub num">Elo ${h.elo!=null?h.elo:'—'}</div></div>`
       +`<div class="m"><div class="t">勝率</div><div class="v num">${pct(h.win_prob)}</div></div>`
       +`<div class="m"><div class="t">連対率</div><div class="v num">${pct(h.place2)}</div></div>`
       +`<div class="m"><div class="t">複勝率</div><div class="v num">${pct(h.place3)}</div></div></div>`
