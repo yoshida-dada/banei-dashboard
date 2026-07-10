@@ -211,8 +211,16 @@ table.hm td.l{padding:5px 7px}
 .nodata{font-size:.7rem;color:var(--muted);margin-top:7px}
 .colspanel{background:var(--surface);border:1px solid var(--border);border-radius:11px;padding:10px 13px;margin:0 0 11px;box-shadow:var(--shadow)}
 .colshint{font-size:.7rem;color:var(--muted);margin-bottom:8px;font-weight:700}
-.colchk{display:inline-flex;align-items:center;gap:6px;font-size:.82rem;margin:3px 12px 3px 0;cursor:pointer}
+.colchk{display:inline-flex;align-items:center;gap:6px;font-size:.82rem;margin:0;cursor:pointer}
 .colchk input{width:17px;height:17px;accent-color:var(--accent);cursor:pointer}
+.collist{display:flex;flex-direction:column;gap:1px}
+.colrow{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:5px 2px;border-bottom:1px solid var(--border2)}
+.colrow:last-child{border-bottom:none}
+.colmove{display:flex;gap:5px;flex:none}
+.mv{background:var(--surface2);border:1px solid var(--border);color:var(--ink);border-radius:6px;width:32px;height:30px;font-size:.82rem;cursor:pointer;font-family:inherit;line-height:1}
+.mv:disabled{opacity:.28;cursor:default}
+.fixed{font-size:.6rem;color:var(--muted);border:1px solid var(--border);border-radius:5px;padding:0 5px;margin-left:3px}
+.colreset{margin-top:10px;background:none;border:none;color:var(--edge);font-size:.78rem;font-weight:700;cursor:pointer;font-family:inherit;text-decoration:underline;padding:0}
 
 .foot{font-size:.72rem;color:var(--muted);line-height:1.7;margin-top:26px;border-top:1px solid var(--border);padding-top:14px}
 </style>
@@ -546,9 +554,18 @@ const COLS = [
    td:(h,hasResult)=>{ const top=h.position!=null&&h.position<=3; const fin=!hasResult?"—":(h.position!=null?`${h.position}着`:"除外"); return `<td class="fin ${top?'top':''}">${fin}</td>`; }},
 ];
 function colHidden(){ try{ return new Set(JSON.parse(localStorage.getItem("cols_hidden")||"[]")); }catch(e){ return new Set(); } }
+const DEFAULT_ORDER = COLS.map(c=>c.key);
+function colOrder(){
+  let ord; try{ ord=JSON.parse(localStorage.getItem("cols_order")||"null"); }catch(e){ ord=null; }
+  if(!Array.isArray(ord)) ord=DEFAULT_ORDER.slice();
+  ord=ord.filter(k=>COLS.some(c=>c.key===k));
+  DEFAULT_ORDER.forEach(k=>{ if(!ord.includes(k)) ord.push(k); });
+  return ord;
+}
+function orderedCols(){ const m=Object.fromEntries(COLS.map(c=>[c.key,c])); return colOrder().map(k=>m[k]); }
 function tableView(hs, hasResult){
   const hidden=colHidden();
-  const cols=COLS.filter(c=>c.always||!hidden.has(c.key));
+  const cols=orderedCols().filter(c=>c.always||!hidden.has(c.key));
   const rows=hs.map(h=>{
     const scr=hasResult && h.odds==null && h.position==null;
     const isWin=h.position===1;
@@ -559,14 +576,27 @@ function tableView(hs, hasResult){
 function renderColsPanel(){
   const p=document.getElementById("colsPanel"); if(!p) return;
   const hidden=colHidden();
-  p.innerHTML = `<div class="colshint">表に表示する列（この端末に保存・表ビューに適用）</div>`
-    + COLS.filter(c=>!c.always).map(c=>`<label class="colchk"><input type="checkbox" data-col="${c.key}" ${hidden.has(c.key)?'':'checked'}>${c.label}</label>`).join("");
-  p.querySelectorAll("input[data-col]").forEach(cb=>cb.addEventListener("change",()=>{
-    const h=colHidden();
-    if(cb.checked) h.delete(cb.dataset.col); else h.add(cb.dataset.col);
-    localStorage.setItem("cols_hidden", JSON.stringify([...h]));
-    render();
+  const ord=orderedCols();
+  p.innerHTML = `<div class="colshint">表示する列と順序（チェック=表示、▲▼で並び替え。この端末に保存・表ビューに適用）</div>`
+    + `<div class="collist">` + ord.map((c,i)=>
+        `<div class="colrow">`
+        +`<label class="colchk"><input type="checkbox" data-col="${c.key}" ${c.always?'checked disabled':(hidden.has(c.key)?'':'checked')}>${c.label}${c.always?' <span class="fixed">固定</span>':''}</label>`
+        +`<span class="colmove"><button class="mv" data-col="${c.key}" data-dir="-1" ${i===0?'disabled':''}>▲</button>`
+        +`<button class="mv" data-col="${c.key}" data-dir="1" ${i===ord.length-1?'disabled':''}>▼</button></span></div>`).join("")
+    + `</div><button class="colreset" id="colReset">既定の列・順序に戻す</button>`;
+  p.querySelectorAll("input[data-col]:not([disabled])").forEach(cb=>cb.addEventListener("change",()=>{
+    const h=colHidden(); if(cb.checked) h.delete(cb.dataset.col); else h.add(cb.dataset.col);
+    localStorage.setItem("cols_hidden", JSON.stringify([...h])); render();
   }));
+  p.querySelectorAll(".mv").forEach(btn=>btn.addEventListener("click",()=>{
+    const o=colOrder(), k=btn.dataset.col, i=o.indexOf(k), j=i+parseInt(btn.dataset.dir);
+    if(j<0||j>=o.length) return;
+    o.splice(i,1); o.splice(j,0,k);
+    localStorage.setItem("cols_order", JSON.stringify(o));
+    render(); renderColsPanel();
+  }));
+  const rb=document.getElementById("colReset");
+  if(rb) rb.addEventListener("click",()=>{ localStorage.removeItem("cols_order"); localStorage.removeItem("cols_hidden"); render(); renderColsPanel(); });
 }
 
 function cardView(hs, maxW, hasResult){
