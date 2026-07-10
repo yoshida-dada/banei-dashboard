@@ -209,6 +209,10 @@ table.hm td.l{padding:5px 7px}
 .cardapt .lab b{color:var(--accent);font-weight:700;font-variant-numeric:tabular-nums}
 .carddots{width:100%;height:auto;display:block}
 .nodata{font-size:.7rem;color:var(--muted);margin-top:7px}
+.colspanel{background:var(--surface);border:1px solid var(--border);border-radius:11px;padding:10px 13px;margin:0 0 11px;box-shadow:var(--shadow)}
+.colshint{font-size:.7rem;color:var(--muted);margin-bottom:8px;font-weight:700}
+.colchk{display:inline-flex;align-items:center;gap:6px;font-size:.82rem;margin:3px 12px 3px 0;cursor:pointer}
+.colchk input{width:17px;height:17px;accent-color:var(--accent);cursor:pointer}
 
 .foot{font-size:.72rem;color:var(--muted);line-height:1.7;margin-top:26px;border-top:1px solid var(--border);padding-top:14px}
 </style>
@@ -237,7 +241,9 @@ table.hm td.l{padding:5px 7px}
       <button data-v="card" aria-pressed="false">カード</button>
       <button data-v="bets" aria-pressed="false">買い目</button>
     </div>
+    <button class="setbtn" id="colsToggle">⚙ 列</button>
   </div>
+  <div id="colsPanel" class="colspanel" style="display:none"></div>
   <div id="horses"></div>
   <div class="secthead">
     <span class="sect">馬場適性（このレースの出走馬）</span>
@@ -516,36 +522,51 @@ function featColor(v){ if(v==null) return "var(--muted)"; if(v>=6.5) return "var
 function featSpan(v){ return `<span style="color:${featColor(v)};font-weight:800">${v!=null?v.toFixed(1):'—'}</span>`; }
 function featBar(label,v){ const w=Math.max(0,Math.min(100,(v||0)*10));
   return `<div class="ft"><span class="fl">${label}</span><span class="fbar"><span style="width:${w}%;background:${featColor(v)}"></span></span><span class="fv num">${v!=null?v.toFixed(1):'—'}</span></div>`; }
+// テーブルの列定義（always=常時表示。それ以外は「⚙列」で表示/非表示できる）
+const COLS = [
+  {key:"num", label:"馬番", always:true, th:'<th class="l">馬</th>',
+   td:h=>`<td class="l"><span class="tnum" style="${capStyle(h.gate)}">${h.num}</span></td>`},
+  {key:"name", label:"馬名・馬齢・厩舎", always:true, th:'<th class="l">馬名 / 馬齢・厩舎</th>',
+   td:h=>`<td class="l"><div class="c2"><span class="tname">${h.name||''}</span><span class="tsub">${(h.sex||'')+(h.age!=null?h.age:'')}${h.trainer?'・'+cleanInst(h.trainer):''}</span></div></td>`},
+  {key:"jockey", label:"騎手・成績", th:'<th class="l">騎手 / 成績</th>',
+   td:h=>`<td class="l"><div class="c2"><span class="tjk">${h.jockey||'—'}</span><span class="tsub num">${recFmt(h.jockey_record)}</span></div></td>`},
+  {key:"sled", label:"斤量", th:'<th>斤量</th>',
+   td:h=>`<td class="num"><div class="c2 c2r"><span>${sledTop(h)}</span><span class="tsub num">${sledSub(h)}</span></div></td>`},
+  {key:"abil", label:"能力/Elo", th:'<th>能力/Elo</th>',
+   td:h=>`<td class="num"><div class="c2 c2r"><span class="abil">${h.ability!=null?h.ability.toFixed(1):'—'}</span><span class="tsub num">${h.elo!=null?h.elo:'—'}</span></div></td>`},
+  {key:"obstacle", label:"障害力", th:'<th>障害</th>', td:h=>`<td class="num">${featSpan(h.f_obstacle)}</td>`},
+  {key:"finish", label:"終い指数", th:'<th>終い</th>', td:h=>`<td class="num">${featSpan(h.f_finish)}</td>`},
+  {key:"weight", label:"重量適性", th:'<th>重量</th>', td:h=>`<td class="num">${featSpan(h.f_weight)}</td>`},
+  {key:"win", label:"勝率", always:true, th:'<th>勝率</th>', td:h=>`<td class="win-c num">${pct(h.win_prob)}</td>`},
+  {key:"place2", label:"連対率", th:'<th>連対</th>', td:h=>`<td class="num">${pct(h.place2)}</td>`},
+  {key:"place3", label:"複勝率", th:'<th>複勝</th>', td:h=>`<td class="num">${pct(h.place3)}</td>`},
+  {key:"odds", label:"オッズ", th:'<th>オッズ</th>', td:h=>`<td class="num">${h.odds!=null?h.odds.toFixed(1):'—'}</td>`},
+  {key:"pop", label:"人気", th:'<th>人気</th>', td:h=>`<td class="num">${h.popularity?h.popularity:'—'}</td>`},
+  {key:"fin", label:"着順", th:'<th>着</th>',
+   td:(h,hasResult)=>{ const top=h.position!=null&&h.position<=3; const fin=!hasResult?"—":(h.position!=null?`${h.position}着`:"除外"); return `<td class="fin ${top?'top':''}">${fin}</td>`; }},
+];
+function colHidden(){ try{ return new Set(JSON.parse(localStorage.getItem("cols_hidden")||"[]")); }catch(e){ return new Set(); } }
 function tableView(hs, hasResult){
-  const rows = hs.map(h=>{
-    const scratched = hasResult && h.odds==null && h.position==null;
-    const isWin = h.position===1;
-    const fin = !hasResult ? "—" : (h.position!=null ? `${h.position}着` : "除外");
-    const top = h.position!=null && h.position<=3;
-    return `<tr class="${isWin?'win':''} ${scratched?'scr':''}">`
-      +`<td class="l"><span class="tnum" style="${capStyle(h.gate)}">${h.num}</span></td>`
-      +`<td class="l"><div class="c2"><span class="tname">${h.name||''}</span>`
-        +`<span class="tsub">${(h.sex||'')+(h.age!=null?h.age:'')}${h.trainer?'・'+cleanInst(h.trainer):''}</span></div></td>`
-      +`<td class="l"><div class="c2"><span class="tjk">${h.jockey||'—'}</span>`
-        +`<span class="tsub num">${recFmt(h.jockey_record)}</span></div></td>`
-      +`<td class="num"><div class="c2 c2r"><span>${sledTop(h)}</span><span class="tsub num">${sledSub(h)}</span></div></td>`
-      +`<td class="num"><div class="c2 c2r"><span class="abil">${h.ability!=null?h.ability.toFixed(1):'—'}</span>`
-        +`<span class="tsub num">${h.elo!=null?h.elo:'—'}</span></div></td>`
-      +`<td class="num">${featSpan(h.f_obstacle)}</td>`
-      +`<td class="num">${featSpan(h.f_finish)}</td>`
-      +`<td class="num">${featSpan(h.f_weight)}</td>`
-      +`<td class="win-c num">${pct(h.win_prob)}</td>`
-      +`<td class="num">${pct(h.place2)}</td>`
-      +`<td class="num">${pct(h.place3)}</td>`
-      +`<td class="num">${h.odds!=null?h.odds.toFixed(1):'—'}</td>`
-      +`<td class="num">${h.popularity?h.popularity:'—'}</td>`
-      +`<td class="fin ${top?'top':''}">${fin}</td></tr>`;
+  const hidden=colHidden();
+  const cols=COLS.filter(c=>c.always||!hidden.has(c.key));
+  const rows=hs.map(h=>{
+    const scr=hasResult && h.odds==null && h.position==null;
+    const isWin=h.position===1;
+    return `<tr class="${isWin?'win':''} ${scr?'scr':''}">`+cols.map(c=>c.td(h,hasResult)).join("")+`</tr>`;
   }).join("");
-  return `<div class="tblwrap"><table class="ht"><thead><tr>`
-    +`<th class="l">馬</th><th class="l">馬名 / 馬齢・厩舎</th><th class="l">騎手 / 成績</th>`
-    +`<th>斤量</th><th>能力/Elo</th><th>障害</th><th>終い</th><th>重量</th><th>勝率</th><th>連対</th><th>複勝</th>`
-    +`<th>オッズ</th><th>人気</th><th>着</th></tr></thead>`
-    +`<tbody>${rows}</tbody></table></div>`;
+  return `<div class="tblwrap"><table class="ht"><thead><tr>${cols.map(c=>c.th).join("")}</tr></thead><tbody>${rows}</tbody></table></div>`;
+}
+function renderColsPanel(){
+  const p=document.getElementById("colsPanel"); if(!p) return;
+  const hidden=colHidden();
+  p.innerHTML = `<div class="colshint">表に表示する列（この端末に保存・表ビューに適用）</div>`
+    + COLS.filter(c=>!c.always).map(c=>`<label class="colchk"><input type="checkbox" data-col="${c.key}" ${hidden.has(c.key)?'':'checked'}>${c.label}</label>`).join("");
+  p.querySelectorAll("input[data-col]").forEach(cb=>cb.addEventListener("change",()=>{
+    const h=colHidden();
+    if(cb.checked) h.delete(cb.dataset.col); else h.add(cb.dataset.col);
+    localStorage.setItem("cols_hidden", JSON.stringify([...h]));
+    render();
+  }));
 }
 
 function cardView(hs, maxW, hasResult){
@@ -719,6 +740,10 @@ document.querySelectorAll("#stoggle button").forEach(b=>b.addEventListener("clic
 document.querySelectorAll("#dimseg button").forEach(b=>b.addEventListener("click",()=>{
   dim=b.dataset.d; renderAptitude(get());
 }));
+// 表示列パネルの開閉
+const _ctg=document.getElementById("colsToggle");
+if(_ctg) _ctg.addEventListener("click",()=>{ const p=document.getElementById("colsPanel");
+  const show=p.style.display==="none"; p.style.display=show?"block":"none"; if(show) renderColsPanel(); });
 
 // init
 renderRacePills(); sync();
