@@ -358,6 +358,18 @@ function backendCfg(){
   return { url:(localStorage.getItem("voting_backend")||"").replace(/\/+$/,""),
            token:localStorage.getItem("voting_token")||"" };
 }
+// PCの run_all.ps1 が publish する backend.json からトンネルURLを自動取得（手入力不要に）。
+async function loadBackendConfig(){
+  try{
+    const r = await fetch("./backend.json?cb="+Date.now(), {cache:"no-store"});
+    if(!r.ok) return;
+    const j = await r.json();
+    if(j && j.url && localStorage.getItem("voting_backend")!==j.url){
+      localStorage.setItem("voting_backend", j.url);
+      if(view==="bets"){ stopLive(); render(); }
+    }
+  }catch(e){}
+}
 function fmtCountdown(s){
   if(s==null) return "—";
   if(s<=0) return "締切";
@@ -377,8 +389,8 @@ function settingsHtml(){
   const cfg=backendCfg();
   return `<div class="betset"><button class="setbtn" id="setToggle">⚙ 投票バックエンド設定${cfg.url?' ✓':''}</button>`
     +`<div class="setfields" id="setFields" style="display:none">`
-    +`<label>Backend URL (https)<input id="beUrl" value="${cfg.url}" placeholder="https://xxxx.trycloudflare.com"></label>`
-    +`<label>Token<input id="beToken" value="${cfg.token}" placeholder="run_voting.ps1 が表示するトークン"></label>`
+    +`<label>Backend URL (https) ※run_all.ps1起動で自動設定<input id="beUrl" value="${cfg.url}" placeholder="自動取得されます"></label>`
+    +`<label>Token（最初の一度だけ入力）<input id="beToken" value="${cfg.token}" placeholder="run_all.ps1 が表示するトークン"></label>`
     +`<button class="savebtn" id="beSave">保存して接続</button></div></div>`;
 }
 function staticBetsBody(r){
@@ -662,6 +674,8 @@ document.querySelectorAll("#dimseg button").forEach(b=>b.addEventListener("click
 
 // init
 renderRacePills(); sync();
+// バックエンドURLを自動取得（PCで run_all.ps1 起動時に反映される）
+loadBackendConfig(); setInterval(loadBackendConfig, 90000);
 // redraw canvases on resize
 let rz; window.addEventListener("resize",()=>{clearTimeout(rz);rz=setTimeout(()=>{
   if(view==="card"){ const r=get(); r.horses.forEach(h=>drawCardDots(document.getElementById("cd_"+h.num), h)); }
