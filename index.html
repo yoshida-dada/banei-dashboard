@@ -66,6 +66,7 @@ header{padding:14px 14px 8px;max-width:560px;margin:0 auto}
 .assess{display:flex;align-items:center;gap:9px;margin-top:11px;font-size:.84rem;flex-wrap:wrap}
 .assess .al{font-weight:800;padding:3px 12px;border-radius:999px;font-size:.82rem;white-space:nowrap}
 .assess .an{color:var(--muted)}
+.assess .an2{color:var(--edge);font-weight:600}
 .assess.ax .al{background:var(--good-soft);color:var(--good)}
 .assess.two .al{background:var(--edge-soft);color:var(--edge)}
 .assess.mix .al{background:var(--surface2);color:var(--muted);border:1px solid var(--border)}
@@ -161,6 +162,12 @@ table.ht .fin.top{color:var(--good);font-weight:800}
 .m .t{font-size:.6rem;color:var(--muted);letter-spacing:.01em}
 .m .v{font-size:.98rem;font-weight:800;margin-top:1px}
 .m .msub{font-size:.58rem;color:var(--muted);margin-top:1px;font-weight:600}
+.feats{margin-top:9px;display:flex;flex-direction:column;gap:5px}
+.ft{display:flex;align-items:center;gap:8px;font-size:.72rem}
+.ft .fl{flex:none;width:52px;color:var(--muted);font-weight:700}
+.ft .fbar{flex:1;height:7px;background:var(--border2);border-radius:99px;overflow:hidden}
+.ft .fbar span{display:block;height:100%;border-radius:99px}
+.ft .fv{flex:none;width:26px;text-align:right;font-weight:700}
 .m.abil .v{color:var(--accent)}
 .wbar{margin-top:9px;height:7px;background:var(--border2);border-radius:99px;overflow:hidden}
 .wbar span{display:block;height:100%;background:linear-gradient(90deg,var(--accent),var(--accent))}
@@ -306,17 +313,23 @@ document.querySelectorAll("#dates .dpill").forEach(p=>p.addEventListener("click"
   curDate=p.dataset.d; curRno=racesFor(curDate)[0].race_no; renderRacePills(); sync();
 }));
 
-// レース短評（勝率分布から軸の堅さ・混戦度を判定）
+// レース短評（勝率分布から軸の堅さ・混戦度を判定。Eloの裏付けも併記）
 function raceAssessment(r){
   const hs=[...r.horses].filter(h=>h.win_prob!=null&&h.win_prob>0).sort((a,b)=>b.win_prob-a.win_prob);
   if(hs.length<3) return null;
-  const p1=hs[0].win_prob,p2=hs[1].win_prob,p3=hs[2].win_prob, g12=p1-p2, g23=p2-p3;
-  const a=hs[0].num, b=hs[1].num;
-  if(p1>=0.30 && g12>=0.10) return {label:"軸鉄板", note:`${a}番が抜けて堅い`, cls:"ax"};
-  if(p1>=0.25 && g12>=0.06) return {label:"軸有力", note:`${a}番が本命、相手を絞って`, cls:"ax"};
-  if(p1>=0.20 && p2>=0.17 && g23>=0.05) return {label:"2強", note:`${a}番・${b}番の一騎打ち`, cls:"two"};
-  if(p1<0.19) return {label:"大混戦", note:"抜けた馬なし・波乱含み", cls:"chaos"};
-  return {label:"混戦", note:"有力数頭で拮抗", cls:"mix"};
+  const p1=hs[0].win_prob,p2=hs[1].win_prob,p3=hs[2].win_prob,p4=hs[3]?hs[3].win_prob:0;
+  const g12=p1-p2,g23=p2-p3,g34=p3-p4, a=hs[0].num,b=hs[1].num,c=hs[2].num;
+  const eloTop=[...hs].sort((x,y)=>(y.elo||0)-(x.elo||0))[0];
+  const eloNote = eloTop.num===a ? "Eloも最上位で裏付けあり" : `Elo最上位は${eloTop.num}番`;
+  let o;
+  if(p1>=0.34 && g12>=0.14) o={label:"軸鉄板",note:`${a}番が明確に抜けている`,cls:"ax"};
+  else if(p1>=0.26 && g12>=0.07) o={label:"軸有力",note:`${a}番が本命、相手を絞って`,cls:"ax"};
+  else if(p1>=0.22 && p2>=0.18 && g23>=0.06) o={label:"2強",note:`${a}番・${b}番の一騎打ち`,cls:"two"};
+  else if(p3>=0.15 && g34>=0.05) o={label:"3強",note:`${a}・${b}・${c}番の上位3頭`,cls:"two"};
+  else if(p1<0.18) o={label:"大混戦",note:"抜けた馬なし・波乱含み",cls:"chaos"};
+  else o={label:"混戦",note:"有力数頭で拮抗",cls:"mix"};
+  o.eloNote=eloNote;
+  return o;
 }
 function render(){
   const r = get(); if(!r) return;
@@ -331,7 +344,7 @@ function render(){
   const updChip = r.updated_at
     ? `<span class="chip upd">🕛 ${(STAGE[r.update_stage]||'更新')} ${String(r.updated_at).slice(11)}</span>` : "";
   const asm = raceAssessment(r);
-  const asHtml = asm ? `<div class="assess ${asm.cls}"><span class="al">${asm.label}</span><span class="an">${asm.note}</span></div>` : "";
+  const asHtml = asm ? `<div class="assess ${asm.cls}"><span class="al">${asm.label}</span><span class="an">${asm.note}<span class="an2">・${asm.eloNote}</span></span></div>` : "";
   let resultRow;
   if(hasResult){
     resultRow =
@@ -498,6 +511,11 @@ function onAddToCart(r){
   alert("買い目をコピーし、楽天競馬を開きました。\n\n"+lines+"\n\n※投票画面で入力してください（PCバックエンド接続時はワンタップでカゴ投入できます）。");
 }
 
+// 予想材料スコア（0-10, 5=そのレース平均）の色・表示
+function featColor(v){ if(v==null) return "var(--muted)"; if(v>=6.5) return "var(--good)"; if(v<=4.0) return "var(--accent)"; return "var(--ink)"; }
+function featSpan(v){ return `<span style="color:${featColor(v)};font-weight:800">${v!=null?v.toFixed(1):'—'}</span>`; }
+function featBar(label,v){ const w=Math.max(0,Math.min(100,(v||0)*10));
+  return `<div class="ft"><span class="fl">${label}</span><span class="fbar"><span style="width:${w}%;background:${featColor(v)}"></span></span><span class="fv num">${v!=null?v.toFixed(1):'—'}</span></div>`; }
 function tableView(hs, hasResult){
   const rows = hs.map(h=>{
     const scratched = hasResult && h.odds==null && h.position==null;
@@ -513,6 +531,9 @@ function tableView(hs, hasResult){
       +`<td class="num"><div class="c2 c2r"><span>${sledTop(h)}</span><span class="tsub num">${sledSub(h)}</span></div></td>`
       +`<td class="num"><div class="c2 c2r"><span class="abil">${h.ability!=null?h.ability.toFixed(1):'—'}</span>`
         +`<span class="tsub num">${h.elo!=null?h.elo:'—'}</span></div></td>`
+      +`<td class="num">${featSpan(h.f_obstacle)}</td>`
+      +`<td class="num">${featSpan(h.f_finish)}</td>`
+      +`<td class="num">${featSpan(h.f_weight)}</td>`
       +`<td class="win-c num">${pct(h.win_prob)}</td>`
       +`<td class="num">${pct(h.place2)}</td>`
       +`<td class="num">${pct(h.place3)}</td>`
@@ -522,7 +543,7 @@ function tableView(hs, hasResult){
   }).join("");
   return `<div class="tblwrap"><table class="ht"><thead><tr>`
     +`<th class="l">馬</th><th class="l">馬名 / 馬齢・厩舎</th><th class="l">騎手 / 成績</th>`
-    +`<th>斤量</th><th>能力/Elo</th><th>勝率</th><th>連対</th><th>複勝</th>`
+    +`<th>斤量</th><th>能力/Elo</th><th>障害</th><th>終い</th><th>重量</th><th>勝率</th><th>連対</th><th>複勝</th>`
     +`<th>オッズ</th><th>人気</th><th>着</th></tr></thead>`
     +`<tbody>${rows}</tbody></table></div>`;
 }
@@ -552,6 +573,7 @@ function cardView(hs, maxW, hasResult){
       +`<div class="m"><div class="t">連対率</div><div class="v num">${pct(h.place2)}</div></div>`
       +`<div class="m"><div class="t">複勝率</div><div class="v num">${pct(h.place3)}</div></div></div>`
       +`<div class="wbar"><span style="width:${((h.win_prob||0)/maxW*100).toFixed(1)}%"></span></div>`
+      +`<div class="feats">${featBar('障害力',h.f_obstacle)}${featBar('終い',h.f_finish)}${featBar('重量適性',h.f_weight)}</div>`
       +market+apt
       +`<div class="cardapt"><div class="lab"><span>過去走 タイム×着順（緑=3着内）</span>`
       +`<b>3着内平均 ${h.place3_time_avg!=null?h.place3_time_avg.toFixed(0)+'s':'—'}</b></div>`
@@ -677,6 +699,8 @@ document.getElementById("foot").innerHTML =
   +"カードのドット図は横=その馬の走破タイム・縦=着順、緑=3着内、赤破線=3着内平均タイム。"
   +"騎手名の下の成績は<b>この騎手がこの馬に騎乗した時の (1着,2着,3着,4着以下) 回数</b>（過去騎乗なしは「初騎乗」）。"
   +"斤量は今走のソリ重量で、括弧内は前回からの増減。"
+  +"「能力/Elo」の下段はEloレーティング（実戦の相対的な強さ）。「障害/終い/重量」は障害力・終い指数・重量適性（0-10、5がそのレースの平均目安・高いほど優位）。"
+  +"レース名の下の短評は勝率分布からの目安。"
   +" オッズは予測に用いず表示のみ。";
 
 // view toggle
