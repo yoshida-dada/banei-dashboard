@@ -299,7 +299,7 @@ document.getElementById("gen").textContent = "予測生成 "+DB.generated;
 const dates = [...new Set(RACES.map(r=>r.date))].sort();
 let curDate = dates[0], curRno = 1, view = "table", sortMode = "rank", dim = "time";
 const target = { time: 115, moist: 1.7 };
-const STAGE = { pre:"事前予測", moist:"水分反映", odds:"買い目確定" };
+const STAGE = { pre:"事前予測", moist:"水分反映", odds:"買い目確定", result:"結果確定" };
 let liveWS=null, cdTimer=null, liveState=null;
 
 // build date pills
@@ -356,7 +356,7 @@ function render(){
     : `<span class="chip pre">馬場水分 未定</span>`;
   const preBadge = hasResult ? "" : `<span class="chip pre">発走前・暫定</span>`;
   const updChip = r.updated_at
-    ? `<span class="chip upd">🕛 ${(STAGE[r.update_stage]||'更新')} ${String(r.updated_at).slice(11)}</span>` : "";
+    ? `<span class="chip upd">🕛 ${(STAGE[r.update_stage]||'更新')} ${String(r.updated_at).slice(5,16).replace('-','/')}</span>` : "";
   const asm = raceAssessment(r);
   const asHtml = asm ? `<div class="assess ${asm.cls}"><span class="al">${asm.label}</span><span class="an">${asm.note}<span class="an2">・${asm.eloNote}</span></span></div>` : "";
   let resultRow;
