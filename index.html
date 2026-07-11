@@ -12,18 +12,18 @@
   --bg:#f5efe4; --surface:#fffdf9; --surface2:#faf5ec; --ink:#231d13; --muted:#6f6353;
   --border:#e7ddca; --border2:#efe7d7; --accent:#c1462a; --accent-soft:#f3ddd3;
   --good:#2f7d55; --good-soft:#dcefe1; --edge:#137a7a; --edge-soft:#d5ecec;
-  --track:#e6dcc7; --dry:#c08a3e; --wet:#2f7fae;
+  --track:#e6dcc7; --dry:#c08a3e; --wet:#2f7fae; --ev-hue:#c8891f;
   --shadow:0 1px 2px rgba(60,40,10,.06),0 8px 22px -12px rgba(60,40,10,.16);
 }
 @media (prefers-color-scheme:dark){:root{
   --bg:#15110b; --surface:#1f1911; --surface2:#251e14; --ink:#efe7d8; --muted:#a2917a;
   --border:#332a1d; --border2:#2a2216; --accent:#e0663f; --accent-soft:#3a221a;
   --good:#57b07f; --good-soft:#1b2f22; --edge:#3fb0b0; --edge-soft:#123030;
-  --track:#3a3020; --dry:#d19a4e; --wet:#4d9fce;
+  --track:#3a3020; --dry:#d19a4e; --wet:#4d9fce; --ev-hue:#e6b450;
   --shadow:0 1px 2px rgba(0,0,0,.3),0 10px 28px -14px rgba(0,0,0,.65);
 }}
-:root[data-theme="light"]{--bg:#f5efe4;--surface:#fffdf9;--surface2:#faf5ec;--ink:#231d13;--muted:#6f6353;--border:#e7ddca;--border2:#efe7d7;--accent:#c1462a;--accent-soft:#f3ddd3;--good:#2f7d55;--good-soft:#dcefe1;--edge:#137a7a;--edge-soft:#d5ecec;--track:#e6dcc7;--dry:#c08a3e;--wet:#2f7fae;--shadow:0 1px 2px rgba(60,40,10,.06),0 8px 22px -12px rgba(60,40,10,.16);}
-:root[data-theme="dark"]{--bg:#15110b;--surface:#1f1911;--surface2:#251e14;--ink:#efe7d8;--muted:#a2917a;--border:#332a1d;--border2:#2a2216;--accent:#e0663f;--accent-soft:#3a221a;--good:#57b07f;--good-soft:#1b2f22;--edge:#3fb0b0;--edge-soft:#123030;--track:#3a3020;--dry:#d19a4e;--wet:#4d9fce;--shadow:0 1px 2px rgba(0,0,0,.3),0 10px 28px -14px rgba(0,0,0,.65);}
+:root[data-theme="light"]{--bg:#f5efe4;--surface:#fffdf9;--surface2:#faf5ec;--ink:#231d13;--muted:#6f6353;--border:#e7ddca;--border2:#efe7d7;--accent:#c1462a;--accent-soft:#f3ddd3;--good:#2f7d55;--good-soft:#dcefe1;--edge:#137a7a;--edge-soft:#d5ecec;--track:#e6dcc7;--dry:#c08a3e;--wet:#2f7fae;--ev-hue:#c8891f;--shadow:0 1px 2px rgba(60,40,10,.06),0 8px 22px -12px rgba(60,40,10,.16);}
+:root[data-theme="dark"]{--bg:#15110b;--surface:#1f1911;--surface2:#251e14;--ink:#efe7d8;--muted:#a2917a;--border:#332a1d;--border2:#2a2216;--accent:#e0663f;--accent-soft:#3a221a;--good:#57b07f;--good-soft:#1b2f22;--edge:#3fb0b0;--edge-soft:#123030;--track:#3a3020;--dry:#d19a4e;--wet:#4d9fce;--ev-hue:#e6b450;--shadow:0 1px 2px rgba(0,0,0,.3),0 10px 28px -14px rgba(0,0,0,.65);}
 *{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%}
 body{margin:0;background:var(--bg);color:var(--ink);
@@ -138,9 +138,17 @@ table.ht .abil{color:var(--accent);font-weight:800}
 table.ht .win-c{font-weight:800}
 table.ht .fin{font-size:.68rem;color:var(--muted)}
 table.ht .fin.top{color:var(--good);font-weight:800}
+/* 単勝ROI>1 ハイライト（スキャン連続でだんだん濃く） */
+table.ht tr.ev1{background:color-mix(in srgb,var(--ev-hue) 13%,transparent)}
+table.ht tr.ev2{background:color-mix(in srgb,var(--ev-hue) 26%,transparent)}
+table.ht tr.ev3{background:color-mix(in srgb,var(--ev-hue) 42%,transparent)}
+table.ht .roi{color:color-mix(in srgb,var(--ev-hue) 78%,var(--ink));font-weight:800}
 
 /* horse cards */
 .horse{background:var(--surface);border:1px solid var(--border);border-radius:13px;padding:11px 12px;margin-bottom:9px;box-shadow:var(--shadow)}
+.horse.ev1{border-color:color-mix(in srgb,var(--ev-hue) 45%,var(--border));background:color-mix(in srgb,var(--ev-hue) 7%,var(--surface))}
+.horse.ev2{border-color:color-mix(in srgb,var(--ev-hue) 68%,var(--border));background:color-mix(in srgb,var(--ev-hue) 13%,var(--surface))}
+.horse.ev3{border-color:var(--ev-hue);background:color-mix(in srgb,var(--ev-hue) 20%,var(--surface));box-shadow:0 0 0 1px var(--ev-hue),var(--shadow)}
 .horse.winner{border-color:var(--good);box-shadow:0 0 0 1px var(--good),var(--shadow)}
 .horse.scratched{opacity:.5}
 .hh{display:flex;align-items:center;gap:9px}
@@ -155,8 +163,9 @@ table.ht .fin.top{color:var(--good);font-weight:800}
 .hjk{font-size:.72rem;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin-top:1px}
 .hjk::before{content:"騎 ";opacity:.6}
 .hjk .jrec{color:var(--ink);font-weight:600}
-.finish{flex:none;font-size:.66rem;color:var(--muted);border:1px solid var(--border);border-radius:6px;padding:2px 6px}
+.finish{flex:none;font-size:.66rem;color:var(--muted);border:1px solid var(--border);border-radius:6px;padding:2px 6px;text-align:center;line-height:1.25}
 .finish.top{color:var(--good);border-color:var(--good)}
+.finish .rtime{display:block;font-size:.82em;font-weight:700;font-variant-numeric:tabular-nums;opacity:.85}
 .mgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin-top:10px}
 .m{background:var(--surface2);border:1px solid var(--border2);border-radius:8px;padding:6px 4px;text-align:center}
 .m .t{font-size:.6rem;color:var(--muted);letter-spacing:.01em}
@@ -172,6 +181,7 @@ table.ht .fin.top{color:var(--good);font-weight:800}
 .wbar{margin-top:9px;height:7px;background:var(--border2);border-radius:99px;overflow:hidden}
 .wbar span{display:block;height:100%;background:linear-gradient(90deg,var(--accent),var(--accent))}
 .aptline{margin-top:8px;font-size:.7rem;color:var(--muted);display:flex;gap:10px;flex-wrap:wrap}
+.aptline .roi{color:color-mix(in srgb,var(--ev-hue) 82%,var(--ink))}
 .aptline b{color:var(--ink);font-weight:700}
 
 /* aptitude */
@@ -279,6 +289,7 @@ const CAP = {1:['#ffffff','#1a1a1a'],2:['#2b2b2b','#ffffff'],3:['#e23b32','#ffff
   7:['#ef8a1a','#ffffff'],8:['#ff8fb3','#1a1a1a']};
 function capStyle(g){ const c=CAP[g]; return c?`background:${c[0]};color:${c[1]};border:1px solid rgba(0,0,0,.22)`:''; }
 const cleanInst = s => (s||"").replace(/[（(][^）)]*[）)]/g,"").trim();  // 「（ばんえい）」等を除去
+const evCls = h => h && h.ev_streak>0 ? "ev"+Math.min(h.ev_streak,3) : "";  // 単勝ROI>1 の連続回数→色の濃さ
 const recFmt = r => (r && r.length===4) ? "("+r.join(",")+")" : "初騎乗";   // 当該馬×騎手の(1着,2着,3着,4着)
 function sledFmt(h){
   if(h.sled_kg==null) return "—";
@@ -299,7 +310,7 @@ document.getElementById("gen").textContent = "予測生成 "+DB.generated;
 const dates = [...new Set(RACES.map(r=>r.date))].sort();
 let curDate = dates[0], curRno = 1, view = "table", sortMode = "rank", dim = "time";
 const target = { time: 115, moist: 1.7 };
-const STAGE = { pre:"事前予測", moist:"水分反映", odds:"買い目確定", result:"結果確定" };
+const STAGE = { pre:"事前予測", moist:"水分反映", evscan:"オッズEV", odds:"買い目確定", result:"結果確定" };
 let liveWS=null, cdTimer=null, liveState=null;
 
 // build date pills
@@ -548,10 +559,11 @@ const COLS = [
   {key:"win", label:"勝率", always:true, th:'<th>勝率</th>', td:h=>`<td class="win-c num">${pct(h.win_prob)}</td>`},
   {key:"place2", label:"連対率", th:'<th>連対</th>', td:h=>`<td class="num">${pct(h.place2)}</td>`},
   {key:"place3", label:"複勝率", th:'<th>複勝</th>', td:h=>`<td class="num">${pct(h.place3)}</td>`},
-  {key:"odds", label:"オッズ", th:'<th>オッズ</th>', td:h=>`<td class="num">${h.odds!=null?h.odds.toFixed(1):'—'}</td>`},
+  {key:"odds", label:"オッズ・単勝ROI", th:'<th>オッズ / ROI</th>',
+   td:h=>`<td class="num"><div class="c2 c2r"><span>${h.odds!=null?h.odds.toFixed(1):'—'}</span><span class="tsub num ${h.ev!=null&&h.ev>1?'roi':''}">${h.ev!=null?'×'+h.ev.toFixed(2):'—'}</span></div></td>`},
   {key:"pop", label:"人気", th:'<th>人気</th>', td:h=>`<td class="num">${h.popularity?h.popularity:'—'}</td>`},
-  {key:"fin", label:"着順", th:'<th>着</th>',
-   td:(h,hasResult)=>{ const top=h.position!=null&&h.position<=3; const fin=!hasResult?"—":(h.position!=null?`${h.position}着`:"除外"); return `<td class="fin ${top?'top':''}">${fin}</td>`; }},
+  {key:"fin", label:"着順・決着タイム", th:'<th>着 / 決着</th>',
+   td:(h,hasResult)=>{ const top=h.position!=null&&h.position<=3; const fin=!hasResult?"—":(h.position!=null?`${h.position}着`:"除外"); const rt=hasResult&&h.result_time?h.result_time:"—"; return `<td class="fin ${top?'top':''}"><div class="c2 c2r"><span>${fin}</span><span class="tsub num">${rt}</span></div></td>`; }},
 ];
 function colHidden(){ try{ return new Set(JSON.parse(localStorage.getItem("cols_hidden")||"[]")); }catch(e){ return new Set(); } }
 const DEFAULT_ORDER = COLS.map(c=>c.key);
@@ -569,7 +581,7 @@ function tableView(hs, hasResult){
   const rows=hs.map(h=>{
     const scr=hasResult && h.odds==null && h.position==null;
     const isWin=h.position===1;
-    return `<tr class="${isWin?'win':''} ${scr?'scr':''}">`+cols.map(c=>c.td(h,hasResult)).join("")+`</tr>`;
+    return `<tr class="${isWin?'win':''} ${scr?'scr':''} ${evCls(h)}">`+cols.map(c=>c.td(h,hasResult)).join("")+`</tr>`;
   }).join("");
   return `<div class="tblwrap"><table class="ht"><thead><tr>${cols.map(c=>c.th).join("")}</tr></thead><tbody>${rows}</tbody></table></div>`;
 }
@@ -603,16 +615,18 @@ function cardView(hs, maxW, hasResult){
   return hs.map(h=>{
     const scratched = hasResult && h.odds==null && h.position==null;
     const isWin = h.position===1;
-    const finish = !hasResult ? "発走前" : (h.position!=null ? `${h.position}着` : "除外");
+    const finish = !hasResult ? "発走前" : (h.position!=null ? `${h.position}着${h.result_time?`<small class="rtime">${h.result_time}</small>`:""}` : "除外");
+    const roiPos = h.ev!=null && h.ev>1;
     const market = `<div class="aptline"><span>オッズ <b class="num">${h.odds!=null?h.odds.toFixed(1):'—'}</b></span>`
       +`<span>人気 <b class="num">${h.popularity?h.popularity+'番':'—'}</b></span>`
-      +`<span>斤量 <b class="num">${sledFmt(h)}</b></span></div>`;
+      +`<span>斤量 <b class="num">${sledFmt(h)}</b></span>`
+      +`<span>単勝ROI <b class="num ${roiPos?'roi':''}">${h.ev!=null?'×'+h.ev.toFixed(2):'—'}</b></span></div>`;
     const apt = h.ren_time_avg!=null
       ? `<div class="aptline"><span>連対時平均 <b class="num">${secFmt(h.ren_time_avg)}</b></span>`
         +`<span>連対時水分 <b class="num">${h.ren_moist_avg!=null?h.ren_moist_avg.toFixed(1)+'%':'—'}</b></span>`
         +`<span>連対 <b class="num">${h.ren_n}回</b></span></div>`
       : `<div class="aptline">連対履歴なし（適性データ不足）</div>`;
-    return `<div class="horse ${isWin?'winner':''} ${scratched?'scratched':''}">`
+    return `<div class="horse ${isWin?'winner':''} ${scratched?'scratched':''} ${evCls(h)}">`
       +`<div class="hh"><span class="rk">${h.rank}</span><span class="hnum num" style="${capStyle(h.gate)}">${h.num}</span>`
       +`<span class="hnamewrap"><span class="hname">${h.name||''}</span>`
       +`<span class="hsub">${(h.sex||'')+(h.age!=null?h.age:'')}${h.trainer?' ・ '+cleanInst(h.trainer):''}</span>`
@@ -752,6 +766,7 @@ document.getElementById("foot").innerHTML =
   +"斤量は今走のソリ重量で、括弧内は前回からの増減。"
   +"「能力/Elo」の下段はEloレーティング（実戦の相対的な強さ）。「障害/終い/重量」は障害力・終い指数・重量適性（0-10、5がそのレースの平均目安・高いほど優位）。"
   +"レース名の下の短評は勝率分布からの目安。"
+  +" <b>単勝ROI＝勝率×オッズ</b>。発走30/20/10分前にオッズを取得し、ROI>1（＝妙味あり）の馬を<span style=\"color:var(--ev-hue);font-weight:800\">金色</span>で強調。連続で条件を満たすほど背景を濃く（1回→薄, 3回→濃）表示します。"
   +" オッズは予測に用いず表示のみ。";
 
 // view toggle
