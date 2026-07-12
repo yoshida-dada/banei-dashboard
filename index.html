@@ -562,6 +562,8 @@ const COLS = [
   {key:"odds", label:"オッズ・単勝EV", th:'<th>オッズ / EV</th>',
    td:h=>`<td class="num"><div class="c2 c2r"><span>${h.odds!=null?h.odds.toFixed(1):'—'}</span><span class="tsub num ${h.ev_buy?'roi':''}">${h.ev!=null?'×'+h.ev.toFixed(2):'—'}</span></div></td>`},
   {key:"pop", label:"人気", th:'<th>人気</th>', td:h=>`<td class="num">${h.popularity?h.popularity:'—'}</td>`},
+  {key:"prize", label:"本年賞金・クラス", th:'<th>本年賞金/級</th>',
+   td:h=>`<td class="num"><div class="c2 c2r"><span>${h.prize_year!=null?(h.prize_year/10).toFixed(0)+'万':'—'}</span><span class="tsub">${h.horse_class||'—'}</span></div></td>`},
   {key:"fin", label:"着順・決着タイム", th:'<th>着 / 決着</th>',
    td:(h,hasResult)=>{ const top=h.position!=null&&h.position<=3; const fin=!hasResult?"—":(h.position!=null?`${h.position}着`:"除外"); const rt=hasResult&&h.result_time?h.result_time:"—"; return `<td class="fin ${top?'top':''}"><div class="c2 c2r"><span>${fin}</span><span class="tsub num">${rt}</span></div></td>`; }},
 ];
@@ -622,6 +624,12 @@ function cardView(hs, maxW, hasResult){
       +`<span>斤量 <b class="num">${sledFmt(h)}</b></span>`
       +`<span>市場勝率 <b class="num">${h.p_market!=null?(h.p_market*100).toFixed(0)+'%':'—'}</b></span>`
       +`<span>単勝EV <b class="num ${roiPos?'roi':''}">${h.ev!=null?'×'+h.ev.toFixed(2):'—'}</b></span></div>`;
+    const prizeLine = h.horse_class
+      ? `<div class="aptline"><span>格付 <b>${h.horse_class}</b></span>`
+        +`<span>番組賞金 <b class="num">${h.prize_program!=null?(h.prize_program/10).toFixed(0)+'万':'—'}</b></span>`
+        +`<span>本年賞金 <b class="num">${h.prize_year!=null?(h.prize_year/10).toFixed(0)+'万':'—'}</b></span>`
+        +`<span>勢い <b class="num">${h.year_form!=null?h.year_form.toFixed(1):'—'}</b></span></div>`
+      : "";
     const apt = h.ren_time_avg!=null
       ? `<div class="aptline"><span>連対時平均 <b class="num">${secFmt(h.ren_time_avg)}</b></span>`
         +`<span>連対時水分 <b class="num">${h.ren_moist_avg!=null?h.ren_moist_avg.toFixed(1)+'%':'—'}</b></span>`
@@ -640,7 +648,7 @@ function cardView(hs, maxW, hasResult){
       +`<div class="m"><div class="t">複勝率</div><div class="v num">${pct(h.place3)}</div></div></div>`
       +`<div class="wbar"><span style="width:${((h.win_prob||0)/maxW*100).toFixed(1)}%"></span></div>`
       +`<div class="feats">${featBar('障害力',h.f_obstacle)}${featBar('終い',h.f_finish)}${featBar('重量適性',h.f_weight)}</div>`
-      +market+apt
+      +market+prizeLine+apt
       +`<div class="cardapt"><div class="lab"><span>過去走 タイム×着順（緑=3着内）</span>`
       +`<b>3着内平均 ${h.place3_time_avg!=null?h.place3_time_avg.toFixed(0)+'s':'—'}</b></div>`
       +`<canvas class="carddots" id="cd_${h.num}"></canvas></div>`
@@ -766,6 +774,9 @@ document.getElementById("foot").innerHTML =
   +"騎手名の下の成績は<b>この騎手がこの馬に騎乗した時の (1着,2着,3着,4着以下) 回数</b>（過去騎乗なしは「初騎乗」）。"
   +"斤量は今走のソリ重量で、括弧内は前回からの増減。"
   +"「能力/Elo」の下段はEloレーティング（実戦の相対的な強さ）。「障害/終い/重量」は障害力・終い指数・重量適性（0-10、5がそのレースの平均目安・高いほど優位）。"
+  +"「本年賞金/級」はばんえい公式格付けの本年賞金(万円)と所属クラス。クラスは番組賞金の帯で決まる(open≥1300万…C2<220万)。"
+  +"番組賞金=地力(累積・Eloと重複)、本年賞金=今年の勢い。カードの「勢い」はレース内での本年賞金の相対(0-10)。"
+  +"※格付けは表示・研究用で、現時点では予測ウェイトに未算入(前向き検証後に評価)。データ日以前の最新のみ参照(リーク防止)。"
   +"レース名の下の短評は勝率分布からの目安。"
   +" <b>単勝EV＝市場ブレンド勝率×オッズ×0.8(ヘアカット)</b>。市場ブレンド勝率は、モデル勝率と市場（オッズ由来・控除率除去）確率のログ線形プール(モデル寄与35%)で、モデルの過信を市場で補正した値（「市場勝率」列も参照）。"
   +" 発走30/20/10分前にオッズを取得し、EV≧1.25（＝妙味あり）の馬を<span style=\"color:var(--ev-hue);font-weight:800\">金色</span>で強調。連続で条件を満たすほど背景を濃く（1回→薄, 3回→濃）。"
