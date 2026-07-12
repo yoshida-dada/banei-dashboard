@@ -556,6 +556,7 @@ const COLS = [
   {key:"obstacle", label:"障害力", th:'<th>障害</th>', td:h=>`<td class="num">${featSpan(h.f_obstacle)}</td>`},
   {key:"finish", label:"終い指数", th:'<th>終い</th>', td:h=>`<td class="num">${featSpan(h.f_finish)}</td>`},
   {key:"weight", label:"重量適性", th:'<th>重量</th>', td:h=>`<td class="num">${featSpan(h.f_weight)}</td>`},
+  {key:"kuzure", label:"安定性", th:'<th>安定</th>', td:h=>`<td class="num">${featSpan(h.f_kuzure)}</td>`},
   {key:"win", label:"勝率", always:true, th:'<th>勝率</th>', td:h=>`<td class="win-c num">${pct(h.win_prob)}</td>`},
   {key:"place2", label:"連対率", th:'<th>連対</th>', td:h=>`<td class="num">${pct(h.place2)}</td>`},
   {key:"place3", label:"複勝率", th:'<th>複勝</th>', td:h=>`<td class="num">${pct(h.place3)}</td>`},
@@ -647,7 +648,7 @@ function cardView(hs, maxW, hasResult){
       +`<div class="m"><div class="t">連対率</div><div class="v num">${pct(h.place2)}</div></div>`
       +`<div class="m"><div class="t">複勝率</div><div class="v num">${pct(h.place3)}</div></div></div>`
       +`<div class="wbar"><span style="width:${((h.win_prob||0)/maxW*100).toFixed(1)}%"></span></div>`
-      +`<div class="feats">${featBar('障害力',h.f_obstacle)}${featBar('終い',h.f_finish)}${featBar('重量適性',h.f_weight)}</div>`
+      +`<div class="feats">${featBar('障害力',h.f_obstacle)}${featBar('終い',h.f_finish)}${featBar('重量適性',h.f_weight)}${featBar('安定',h.f_kuzure)}</div>`
       +market+prizeLine+apt
       +`<div class="cardapt"><div class="lab"><span>過去走 タイム×着順（緑=3着内）</span>`
       +`<b>3着内平均 ${h.place3_time_avg!=null?h.place3_time_avg.toFixed(0)+'s':'—'}</b></div>`
@@ -773,7 +774,8 @@ document.getElementById("foot").innerHTML =
   +"カードのドット図は横=その馬の走破タイム・縦=着順、緑=3着内、赤破線=3着内平均タイム。"
   +"騎手名の下の成績は<b>この騎手がこの馬に騎乗した時の (1着,2着,3着,4着以下) 回数</b>（過去騎乗なしは「初騎乗」）。"
   +"斤量は今走のソリ重量で、括弧内は前回からの増減。"
-  +"「能力/Elo」の下段はEloレーティング（実戦の相対的な強さ）。「障害/終い/重量」は障害力・終い指数・重量適性（0-10、5がそのレースの平均目安・高いほど優位）。"
+  +"「能力/Elo」の下段はEloレーティング（実戦の相対的な強さ）。「障害/終い/重量/安定」は障害力・終い指数・重量適性・安定性（0-10、5が平均目安・高いほど優位）。"
+  +"「安定」は過去走の大崩れ(第2障害での失速等)の少なさ＝馬単位の信頼度(高いほど堅実)。現時点では予測ウェイトに未算入(過去検証で係数評価後に配分)。"
   +"「本年賞金/級」はばんえい公式格付けの本年賞金(万円)と所属クラス。クラスは番組賞金の帯で決まる(open≥1300万…C2<220万)。"
   +"番組賞金=地力(累積・Eloと重複)、本年賞金=今年の勢い。カードの「勢い」はレース内での本年賞金の相対(0-10)。"
   +"※格付けは表示・研究用で、現時点では予測ウェイトに未算入(前向き検証後に評価)。データ日以前の最新のみ参照(リーク防止)。"
