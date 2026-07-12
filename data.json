@@ -4678,15 +4678,15 @@
    "predicted_top": 1,
    "market_fav": 9,
    "winner": null,
-   "update_stage": "evscan",
-   "updated_at": "2026-07-12 14:55",
+   "update_stage": "odds",
+   "updated_at": "2026-07-12 14:58",
    "horses": [
     {
      "num": 1,
      "name": "ヒサノタイガー",
      "win_prob": 0.2085,
      "rank": 1,
-     "odds": 8.8,
+     "odds": 7.3,
      "position": null,
      "result_time": null,
      "jockey": "西謙一",
@@ -4731,9 +4731,9 @@
       }
      ],
      "place3_time_avg": null,
-     "p_market": 0.0899,
-     "win_prob_blend": 0.1342,
-     "ev": 0.94,
+     "p_market": 0.1088,
+     "win_prob_blend": 0.1495,
+     "ev": 0.87,
      "ev_buy": false,
      "ev_streak": 0
     },
@@ -4742,7 +4742,7 @@
      "name": "ホクセイヒビキ",
      "win_prob": 0.1707,
      "rank": 2,
-     "odds": 4.6,
+     "odds": 4.9,
      "position": null,
      "result_time": null,
      "jockey": "鈴木恵",
@@ -4781,9 +4781,9 @@
       }
      ],
      "place3_time_avg": null,
-     "p_market": 0.172,
-     "win_prob_blend": 0.1908,
-     "ev": 0.7,
+     "p_market": 0.1622,
+     "win_prob_blend": 0.1807,
+     "ev": 0.71,
      "ev_buy": false,
      "ev_streak": 0
     },
@@ -4792,7 +4792,7 @@
      "name": "ヒメトラルビー",
      "win_prob": 0.1544,
      "rank": 3,
-     "odds": 23.9,
+     "odds": 21.0,
      "position": null,
      "result_time": null,
      "jockey": "大友一",
@@ -4826,9 +4826,9 @@
       }
      ],
      "place3_time_avg": null,
-     "p_market": 0.0331,
-     "win_prob_blend": 0.0631,
-     "ev": 1.21,
+     "p_market": 0.0378,
+     "win_prob_blend": 0.0677,
+     "ev": 1.14,
      "ev_buy": false,
      "ev_streak": 0
     },
@@ -4837,7 +4837,7 @@
      "name": "ポップコーン",
      "win_prob": 0.1426,
      "rank": 4,
-     "odds": 5.0,
+     "odds": 5.3,
      "position": null,
      "result_time": null,
      "jockey": "渡来心",
@@ -4882,8 +4882,8 @@
       }
      ],
      "place3_time_avg": null,
-     "p_market": 0.1582,
-     "win_prob_blend": 0.1697,
+     "p_market": 0.1499,
+     "win_prob_blend": 0.1612,
      "ev": 0.68,
      "ev_buy": false,
      "ev_streak": 0
@@ -4893,7 +4893,7 @@
      "name": "マルモロングラン",
      "win_prob": 0.1025,
      "rank": 5,
-     "odds": 20.3,
+     "odds": 17.6,
      "position": null,
      "result_time": null,
      "jockey": "阿部武",
@@ -4927,9 +4927,9 @@
       }
      ],
      "place3_time_avg": null,
-     "p_market": 0.039,
-     "win_prob_blend": 0.0608,
-     "ev": 0.99,
+     "p_market": 0.0451,
+     "win_prob_blend": 0.0658,
+     "ev": 0.93,
      "ev_buy": false,
      "ev_streak": 0
     },
@@ -4938,7 +4938,7 @@
      "name": "ニシキライデン",
      "win_prob": 0.1025,
      "rank": 6,
-     "odds": 4.5,
+     "odds": 4.7,
      "position": null,
      "result_time": null,
      "jockey": "長澤幸",
@@ -4995,8 +4995,8 @@
       }
      ],
      "place3_time_avg": null,
-     "p_market": 0.1758,
-     "win_prob_blend": 0.1619,
+     "p_market": 0.1691,
+     "win_prob_blend": 0.1553,
      "ev": 0.58,
      "ev_buy": false,
      "ev_streak": 0
@@ -5006,13 +5006,13 @@
      "name": "メオトコトブキ",
      "win_prob": 0.0628,
      "rank": 7,
-     "odds": 25.2,
+     "odds": 21.0,
      "position": null,
      "result_time": null,
      "jockey": "西将太",
      "gate": 6,
      "sled_kg": 490.0,
-     "popularity": 8,
+     "popularity": 7,
      "age": 2,
      "sex": "牡",
      "trainer": "平田義（ばんえい）",
@@ -5051,9 +5051,9 @@
       }
      ],
      "place3_time_avg": null,
-     "p_market": 0.0314,
-     "win_prob_blend": 0.0445,
-     "ev": 0.9,
+     "p_market": 0.0378,
+     "win_prob_blend": 0.0494,
+     "ev": 0.83,
      "ev_buy": false,
      "ev_streak": 0
     },
@@ -5062,7 +5062,7 @@
      "name": "イワキファンファン",
      "win_prob": 0.0373,
      "rank": 8,
-     "odds": 2.8,
+     "odds": 3.0,
      "position": null,
      "result_time": null,
      "jockey": "島津新",
@@ -5113,8 +5113,8 @@
       }
      ],
      "place3_time_avg": null,
-     "p_market": 0.2825,
-     "win_prob_blend": 0.1547,
+     "p_market": 0.2648,
+     "win_prob_blend": 0.146,
      "ev": 0.35,
      "ev_buy": false,
      "ev_streak": 0
@@ -5124,7 +5124,7 @@
      "name": "スーパーメジャー",
      "win_prob": 0.0187,
      "rank": 9,
-     "odds": 43.5,
+     "odds": 32.6,
      "position": null,
      "result_time": null,
      "jockey": "中村太",
@@ -5181,11 +5181,40 @@
       }
      ],
      "place3_time_avg": null,
-     "p_market": 0.0182,
-     "win_prob_blend": 0.0204,
-     "ev": 0.71,
+     "p_market": 0.0244,
+     "win_prob_blend": 0.0243,
+     "ev": 0.63,
      "ev_buy": false,
      "ev_streak": 0
+    }
+   ],
+   "bets": [
+    {
+     "bet_type": "wide",
+     "bet_type_jp": "ワイド",
+     "combo": "2-3",
+     "odds": 38.8,
+     "ev": 2.26,
+     "prob": 0.0729,
+     "stake": 700
+    },
+    {
+     "bet_type": "wide",
+     "bet_type_jp": "ワイド",
+     "combo": "1-2",
+     "odds": 10.7,
+     "ev": 1.41,
+     "prob": 0.1649,
+     "stake": 1100
+    },
+    {
+     "bet_type": "wide",
+     "bet_type_jp": "ワイド",
+     "combo": "2-4",
+     "odds": 7.8,
+     "ev": 1.26,
+     "prob": 0.2025,
+     "stake": 1200
     }
    ]
   },
