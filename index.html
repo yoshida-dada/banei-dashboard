@@ -462,7 +462,7 @@ function staticBetsBody(r){
       +`ライブ投票するにはPCで <code>run_voting.ps1</code> と <code>run_tunnel.ps1</code> を起動し、上の設定にURL+トークンを入力してください。</div>`;
   }
   const bets=r.bets||[];
-  if(!bets.length) return `<div class="explain">${tm} 時点で買い目なし＝<b>見送り</b>。</div>`;
+  if(!bets.length) return `<div class="explain">${tm} 時点で<b>EV≧1.25（市場ブレンド＋ヘアカット後）の妙味なし＝<b>見送り</b></b>。</div>`;
   const t=betsTable(bets);
   return t.html+`<div class="cart-row"><button class="cart-btn" id="cartbtn">🛒 楽天競馬で投票（買い目コピー）</button>`
     +`<span class="cart-total">合計 ¥${t.total.toLocaleString()}</span></div>`
@@ -493,7 +493,7 @@ function renderLive(){
   const head=`<div class="livehead"><span class="cd">締切まで <b>${cd}</b></span>`
     +`<span class="livetm">🕛 ライブ ${st.updated_at?String(st.updated_at).slice(11):''}</span></div>`;
   const bets=st.bets||[];
-  if(!bets.length){ box.innerHTML=head+`<div class="explain">現時点で買い目なし＝<b>見送り</b>（オッズ変動で変わる場合あり）。</div>`; return; }
+  if(!bets.length){ box.innerHTML=head+`<div class="explain">現時点で<b>EV≧1.25の妙味なし＝見送り</b>（オッズ変動で変わる場合あり）。</div>`; return; }
   const t=betsTable(bets);
   box.innerHTML=head+t.html
     +`<div class="cart-row"><button class="cart-btn" id="cartbtn">🛒 馬券をカゴに追加（楽天競馬）</button>`
@@ -559,8 +559,8 @@ const COLS = [
   {key:"win", label:"勝率", always:true, th:'<th>勝率</th>', td:h=>`<td class="win-c num">${pct(h.win_prob)}</td>`},
   {key:"place2", label:"連対率", th:'<th>連対</th>', td:h=>`<td class="num">${pct(h.place2)}</td>`},
   {key:"place3", label:"複勝率", th:'<th>複勝</th>', td:h=>`<td class="num">${pct(h.place3)}</td>`},
-  {key:"odds", label:"オッズ・単勝ROI", th:'<th>オッズ / ROI</th>',
-   td:h=>`<td class="num"><div class="c2 c2r"><span>${h.odds!=null?h.odds.toFixed(1):'—'}</span><span class="tsub num ${h.ev!=null&&h.ev>1?'roi':''}">${h.ev!=null?'×'+h.ev.toFixed(2):'—'}</span></div></td>`},
+  {key:"odds", label:"オッズ・単勝EV", th:'<th>オッズ / EV</th>',
+   td:h=>`<td class="num"><div class="c2 c2r"><span>${h.odds!=null?h.odds.toFixed(1):'—'}</span><span class="tsub num ${h.ev_buy?'roi':''}">${h.ev!=null?'×'+h.ev.toFixed(2):'—'}</span></div></td>`},
   {key:"pop", label:"人気", th:'<th>人気</th>', td:h=>`<td class="num">${h.popularity?h.popularity:'—'}</td>`},
   {key:"fin", label:"着順・決着タイム", th:'<th>着 / 決着</th>',
    td:(h,hasResult)=>{ const top=h.position!=null&&h.position<=3; const fin=!hasResult?"—":(h.position!=null?`${h.position}着`:"除外"); const rt=hasResult&&h.result_time?h.result_time:"—"; return `<td class="fin ${top?'top':''}"><div class="c2 c2r"><span>${fin}</span><span class="tsub num">${rt}</span></div></td>`; }},
@@ -616,11 +616,12 @@ function cardView(hs, maxW, hasResult){
     const scratched = hasResult && h.odds==null && h.position==null;
     const isWin = h.position===1;
     const finish = !hasResult ? "発走前" : (h.position!=null ? `${h.position}着${h.result_time?`<small class="rtime">${h.result_time}</small>`:""}` : "除外");
-    const roiPos = h.ev!=null && h.ev>1;
+    const roiPos = !!h.ev_buy;
     const market = `<div class="aptline"><span>オッズ <b class="num">${h.odds!=null?h.odds.toFixed(1):'—'}</b></span>`
       +`<span>人気 <b class="num">${h.popularity?h.popularity+'番':'—'}</b></span>`
       +`<span>斤量 <b class="num">${sledFmt(h)}</b></span>`
-      +`<span>単勝ROI <b class="num ${roiPos?'roi':''}">${h.ev!=null?'×'+h.ev.toFixed(2):'—'}</b></span></div>`;
+      +`<span>市場勝率 <b class="num">${h.p_market!=null?(h.p_market*100).toFixed(0)+'%':'—'}</b></span>`
+      +`<span>単勝EV <b class="num ${roiPos?'roi':''}">${h.ev!=null?'×'+h.ev.toFixed(2):'—'}</b></span></div>`;
     const apt = h.ren_time_avg!=null
       ? `<div class="aptline"><span>連対時平均 <b class="num">${secFmt(h.ren_time_avg)}</b></span>`
         +`<span>連対時水分 <b class="num">${h.ren_moist_avg!=null?h.ren_moist_avg.toFixed(1)+'%':'—'}</b></span>`
@@ -766,8 +767,9 @@ document.getElementById("foot").innerHTML =
   +"斤量は今走のソリ重量で、括弧内は前回からの増減。"
   +"「能力/Elo」の下段はEloレーティング（実戦の相対的な強さ）。「障害/終い/重量」は障害力・終い指数・重量適性（0-10、5がそのレースの平均目安・高いほど優位）。"
   +"レース名の下の短評は勝率分布からの目安。"
-  +" <b>単勝ROI＝勝率×オッズ</b>。発走30/20/10分前にオッズを取得し、ROI>1（＝妙味あり）の馬を<span style=\"color:var(--ev-hue);font-weight:800\">金色</span>で強調。連続で条件を満たすほど背景を濃く（1回→薄, 3回→濃）表示します。"
-  +" オッズは予測に用いず表示のみ。";
+  +" <b>単勝EV＝市場ブレンド勝率×オッズ×0.8(ヘアカット)</b>。市場ブレンド勝率は、モデル勝率と市場（オッズ由来・控除率除去）確率のログ線形プール(モデル寄与35%)で、モデルの過信を市場で補正した値（「市場勝率」列も参照）。"
+  +" 発走30/20/10分前にオッズを取得し、EV≧1.25（＝妙味あり）の馬を<span style=\"color:var(--ev-hue);font-weight:800\">金色</span>で強調。連続で条件を満たすほど背景を濃く（1回→薄, 3回→濃）。"
+  +" オッズ自体は能力評価に用いず、EV/市場ブレンドの計算にのみ使用（表示は実オッズ）。";
 
 // view toggle
 document.querySelectorAll("#vtoggle button").forEach(b=>b.addEventListener("click",()=>{
