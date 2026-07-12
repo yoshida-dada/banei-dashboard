@@ -233,10 +233,44 @@ table.hm td.l{padding:5px 7px}
 .colreset{margin-top:10px;background:none;border:none;color:var(--edge);font-size:.78rem;font-weight:700;cursor:pointer;font-family:inherit;text-decoration:underline;padding:0}
 
 .foot{font-size:.72rem;color:var(--muted);line-height:1.7;margin-top:26px;border-top:1px solid var(--border);padding-top:14px}
+/* トップタブ（レース予測 / 成績） */
+.brand{display:flex;align-items:center;gap:9px;flex-wrap:wrap}
+.toptabs{display:flex;gap:0;border:1px solid var(--border);border-radius:8px;overflow:hidden;margin-left:auto}
+.toptabs button{background:var(--surface);border:none;color:var(--muted);font-family:inherit;font-size:.74rem;font-weight:700;padding:5px 12px;cursor:pointer}
+.toptabs button[aria-pressed="true"]{background:var(--accent);color:#fff}
+.toptabs button:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
+/* 成績タブ */
+#track{padding-top:16px}
+.tkh{font-weight:800;font-size:1.05rem}
+.tksub{font-size:.72rem;color:var(--muted);margin:2px 0 14px}
+.tiles{display:grid;grid-template-columns:repeat(2,1fr);gap:9px}
+.tile{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:11px 12px;box-shadow:var(--shadow)}
+.tile .tl{font-size:.66rem;color:var(--muted);font-weight:600}
+.tile .tv{font-size:1.5rem;font-weight:800;font-variant-numeric:tabular-nums;margin-top:1px;line-height:1.1}
+.tile .tv.pos{color:var(--good)} .tile .tv.neg{color:var(--accent)}
+.tile .tn{font-size:.62rem;color:var(--muted);margin-top:1px}
+.tksect{font-weight:800;font-size:.84rem;margin:20px 0 9px}
+.barrow{display:flex;align-items:center;gap:8px;margin:6px 0;font-size:.72rem}
+.barrow .bl{width:112px;flex:none;color:var(--ink)}
+.bartrack{flex:1;height:17px;background:var(--surface2);border:1px solid var(--border2);border-radius:5px;position:relative;overflow:hidden}
+.barfill{height:100%;border-radius:4px 0 0 4px}
+.ref100{position:absolute;top:-3px;bottom:-3px;width:2px;background:var(--ink);opacity:.55}
+.barrow .bv{width:56px;flex:none;text-align:right;font-weight:800;font-variant-numeric:tabular-nums}
+.tktbl{width:100%;border-collapse:collapse;font-size:.72rem;font-variant-numeric:tabular-nums}
+.tktbl th,.tktbl td{padding:6px 6px;text-align:right;border-bottom:1px solid var(--border2);white-space:nowrap}
+.tktbl th:first-child,.tktbl td:first-child{text-align:left}
+.tktbl th{color:var(--muted);font-size:.64rem;font-weight:700}
+.tksvg{width:100%;height:auto;display:block;margin-top:4px;background:var(--surface);border:1px solid var(--border);border-radius:12px}
+.tknote{font-size:.68rem;color:var(--muted);margin-top:8px;line-height:1.6}
+.tkwarn{background:var(--accent-soft);border:1px solid var(--accent);border-radius:9px;padding:8px 11px;font-size:.7rem;color:var(--ink);margin-bottom:14px}
 </style>
 
 <header>
   <div class="brand"><span class="dot"></span>ばんえい予測レビュー<small id="gen"></small></div>
+  <div class="toptabs" id="toptabs">
+    <button data-t="race" aria-pressed="true">レース予測</button>
+    <button data-t="track" aria-pressed="false">成績</button>
+  </div>
 </header>
 
 <div class="nav">
@@ -246,7 +280,7 @@ table.hm td.l{padding:5px 7px}
   </div>
 </div>
 
-<div class="wrap">
+<div class="wrap" id="mainwrap">
   <div id="meta"></div>
   <div class="secthead">
     <span class="sect">出走馬 予測</span>
@@ -277,7 +311,10 @@ table.hm td.l{padding:5px 7px}
   <div class="foot" id="foot"></div>
 </div>
 
+<div class="wrap" id="track" style="display:none"></div>
+
 <script id="data" type="application/json">/*__DATA__*/</script>
+<script id="trackdata" type="application/json">/*__TRACKING__*/</script>
 <script>
 function boot(DB){
 const RACES = DB.races;
@@ -809,6 +846,82 @@ if(_ctg) _ctg.addEventListener("click",()=>{ const p=document.getElementById("co
 renderRacePills(); sync();
 // バックエンドURLを自動取得（PCで run_all.ps1 起動時に反映される）
 loadBackendConfig(); setInterval(loadBackendConfig, 90000);
+
+// ===== 成績タブ（P2） =====
+const tkPct = v => v==null ? "—" : (v*100).toFixed(1)+"%";
+const tkRoi = v => v==null ? "—" : (v*100).toFixed(0)+"%";
+function svgCalib(cal){
+  const W=300,H=200,pad=28;
+  const sx=v=>pad+(v/100)*(W-pad-8), sy=v=>H-pad-(v/100)*(H-pad-8);
+  let g=`<line x1="${sx(0)}" y1="${sy(0)}" x2="${sx(100)}" y2="${sy(100)}" stroke="var(--muted)" stroke-dasharray="4 3" stroke-width="1"/>`;
+  g+=`<line x1="${pad}" y1="${sy(0)}" x2="${W-8}" y2="${sy(0)}" stroke="var(--border)"/><line x1="${pad}" y1="${sy(0)}" x2="${pad}" y2="8" stroke="var(--border)"/>`;
+  [0,25,50,75,100].forEach(t=>{ g+=`<text x="${sx(t)}" y="${H-pad+12}" font-size="8" fill="var(--muted)" text-anchor="middle">${t}</text>`;
+    g+=`<text x="${pad-4}" y="${sy(t)+3}" font-size="8" fill="var(--muted)" text-anchor="end">${t}</text>`; });
+  const mn=Math.max(...cal.map(c=>c.n),1);
+  cal.forEach(c=>{ const r=3+5*Math.sqrt(c.n/mn);
+    g+=`<circle cx="${sx(c.pred)}" cy="${sy(c.actual)}" r="${r.toFixed(1)}" fill="var(--accent)" opacity="0.72"/>`; });
+  g+=`<text x="${W/2}" y="${H-3}" font-size="8.5" fill="var(--muted)" text-anchor="middle">予測勝率%</text>`;
+  return `<svg class="tksvg" viewBox="0 0 ${W} ${H}" role="img" aria-label="キャリブレーション">${g}</svg>`;
+}
+function svgPnl(pnl){
+  const W=320,H=140,pad=10, n=pnl.length; if(!n) return "";
+  const cums=pnl.map(p=>p.cum), mn=Math.min(0,...cums), mx=Math.max(0,...cums), rng=(mx-mn)||1;
+  const sx=i=>pad+(i/Math.max(n-1,1))*(W-2*pad), sy=v=>H-pad-((v-mn)/rng)*(H-2*pad);
+  let g=`<line x1="${pad}" y1="${sy(0)}" x2="${W-pad}" y2="${sy(0)}" stroke="var(--muted)" stroke-dasharray="3 3" stroke-width="1"/>`;
+  const last=cums[n-1], col=last>=0?"var(--good)":"var(--accent)";
+  g+=`<polyline points="${pnl.map((p,i)=>`${sx(i).toFixed(1)},${sy(p.cum).toFixed(1)}`).join(" ")}" fill="none" stroke="${col}" stroke-width="2"/>`;
+  g+=`<text x="${W-pad}" y="13" font-size="9.5" fill="${col}" text-anchor="end" font-weight="800">${last>=0?'+':''}${last.toLocaleString()}円</text>`;
+  return `<svg class="tksvg" viewBox="0 0 ${W} ${H}" role="img" aria-label="累積損益">${g}</svg>`;
+}
+function renderTrack(T){
+  const el=document.getElementById("track");
+  if(!T){ el.innerHTML='<div class="meta">成績データがありません。</div>'; return; }
+  const h=T.hit||{}, b=(T.bets||{}).overall||{}, bl=T.baselines||{};
+  const cls=v=>v==null?"":(v>=1?"pos":"neg");
+  let html=`<div class="tkh">成績トラッキング</div>`
+    +`<div class="tksub">期間 ${T.period.from||'—'} 〜 ${T.period.to||'—'}（${T.period.race_days}開催日・集計${T.races_settled}レース）</div>`;
+  if(T.races_settled<30) html+=`<div class="tkwarn">⚠ サンプルが小さい（${T.races_settled}レース）ため数値は暫定です。開催が進むほど信頼できます。</div>`;
+  html+=`<div class="tiles">`
+    +`<div class="tile"><div class="tl">予測トップ的中率</div><div class="tv">${tkPct(h.top1_rate)}</div><div class="tn">${h.top1_hits||0}/${h.top1_n||0}　1番人気=${tkPct(h.fav_rate)}</div></div>`
+    +`<div class="tile"><div class="tl">買い目ROI</div><div class="tv ${cls(b.roi)}">${tkRoi(b.roi)}</div><div class="tn">${b.n||0}点 / ${(b.stake||0).toLocaleString()}円→${(b.return||0).toLocaleString()}円</div></div>`
+    +`<div class="tile"><div class="tl">1番人気ベタ買い</div><div class="tv ${cls(bl.fav_win_roi)}">${tkRoi(bl.fav_win_roi)}</div><div class="tn">単勝100円/レース</div></div>`
+    +`<div class="tile"><div class="tl">全単勝均等買い</div><div class="tv ${cls(bl.all_win_roi)}">${tkRoi(bl.all_win_roi)}</div><div class="tn">控除率の目安</div></div></div>`;
+  const rois=[["買い目",b.roi],["1番人気ベタ",bl.fav_win_roi],["全単勝均等",bl.all_win_roi]].filter(x=>x[1]!=null);
+  if(rois.length){ const mx=Math.max(1.2,...rois.map(x=>x[1]));
+    html+=`<div class="tksect">回収率（ROI）比較</div>`;
+    rois.forEach(([lab,v])=>{ const w=Math.min(v/mx*100,100), ref=1/mx*100, col=v>=1?"var(--good)":"var(--accent)";
+      html+=`<div class="barrow"><span class="bl">${lab}</span><span class="bartrack"><span class="barfill" style="width:${w.toFixed(0)}%;background:${col}"></span><span class="ref100" style="left:${ref.toFixed(0)}%"></span></span><span class="bv">${tkRoi(v)}</span></div>`; });
+    html+=`<div class="tknote">縦線＝100%（損益分岐）。100%超で黒字。</div>`; }
+  const types=[["win","単勝"],["place","複勝"],["wide","ワイド"]].filter(([k])=>T.bets[k]);
+  if(types.length){ html+=`<div class="tksect">券種別 買い目成績</div><table class="tktbl"><thead><tr><th>券種</th><th>点数</th><th>投資</th><th>払戻</th><th>的中</th><th>ROI</th></tr></thead><tbody>`;
+    types.forEach(([k,lab])=>{ const a=T.bets[k];
+      html+=`<tr><td>${lab}</td><td>${a.n}</td><td>${a.stake.toLocaleString()}</td><td>${a.return.toLocaleString()}</td><td>${a.hits}</td><td>${tkRoi(a.roi)}</td></tr>`; });
+    html+=`</tbody></table>`; }
+  if((T.calibration||[]).length){ html+=`<div class="tksect">キャリブレーション（予測勝率 vs 実勝率）</div>`+svgCalib(T.calibration)
+    +`<div class="tknote">点＝予測勝率帯（大きさ=頭数）。対角線に近いほど正確。線より下＝過信（予測ほど勝てていない）。</div>`; }
+  if((T.pnl||[]).length){ html+=`<div class="tksect">買い目 累積損益（時系列）</div>`+svgPnl(T.pnl)
+    +`<div class="tknote">買い目を表示オッズ×的中で払い戻した場合の累積損益。破線＝損益分岐。</div>`; }
+  html+=`<div class="foot">成績は archive/*.json の予測・買い目に、DB の確定着順を突き合わせて集計（結果はDB＝翌朝の自動取込が正）。実購入は行っていません。生成 ${(T.generated||'').replace('T',' ').slice(0,16)}</div>`;
+  el.innerHTML=html;
+}
+function switchTop(t){
+  const isTrack=t==="track";
+  document.querySelector(".nav").style.display=isTrack?"none":"";
+  document.getElementById("mainwrap").style.display=isTrack?"none":"";
+  document.getElementById("track").style.display=isTrack?"block":"none";
+  document.querySelectorAll("#toptabs button").forEach(x=>x.setAttribute("aria-pressed", x.dataset.t===t));
+  if(isTrack && !window.__TRACK_LOADED) loadTracking();
+}
+function loadTracking(){
+  window.__TRACK_LOADED=true;
+  const el=document.getElementById("trackdata"), raw=el?el.textContent:"";
+  if(raw && raw.indexOf("__TRACKING__")===-1){ try{ renderTrack(JSON.parse(raw)); return; }catch(e){} }
+  document.getElementById("track").innerHTML='<div class="meta">成績データ読込中…</div>';
+  fetch("./tracking.json?t="+Date.now()).then(r=>r.json()).then(renderTrack)
+    .catch(()=>{ document.getElementById("track").innerHTML='<div class="meta">成績データ(tracking.json)はまだありません。開催後に生成されます。</div>'; });
+}
+document.querySelectorAll("#toptabs button").forEach(b=>b.addEventListener("click",()=>switchTop(b.dataset.t)));
+
 // redraw canvases on resize
 let rz; window.addEventListener("resize",()=>{clearTimeout(rz);rz=setTimeout(()=>{
   if(view==="card"){ const r=get(); r.horses.forEach(h=>drawCardDots(document.getElementById("cd_"+h.num), h)); }
