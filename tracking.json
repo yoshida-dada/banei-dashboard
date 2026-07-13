@@ -1,5 +1,5 @@
 {
- "generated": "2026-07-13T09:07:33",
+ "generated": "2026-07-14T08:01:50",
  "period": {
   "from": "2026-07-11",
   "to": "2026-07-13",
@@ -162,6 +162,7 @@
   }
  ],
  "baselines": {
+  "pred_win_roi": 0.947,
   "fav_win_roi": 1.205,
   "all_win_roi": 0.667
  }

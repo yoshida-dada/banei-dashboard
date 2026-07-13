@@ -839,8 +839,9 @@ document.getElementById("foot").innerHTML =
   +"番組賞金=地力(累積・Eloと重複)、本年賞金=今年の勢い。カードの「勢い」はレース内での本年賞金の相対(0-10)。"
   +"※格付けは表示・研究用で、現時点では予測ウェイトに未算入(前向き検証後に評価)。データ日以前の最新のみ参照(リーク防止)。"
   +"レース名の下の短評は勝率分布からの目安。"
-  +" <b>単勝EV＝市場ブレンド勝率×オッズ×0.8(ヘアカット)</b>。市場ブレンド勝率は、モデル勝率と市場（オッズ由来・控除率除去）確率のログ線形プール(モデル寄与35%)で、モデルの過信を市場で補正した値（「市場勝率」列も参照）。"
-  +" 発走30/20/10分前にオッズを取得し、EV≧1.25（＝妙味あり）の馬を<span style=\"color:var(--ev-hue);font-weight:800\">金色</span>で強調。連続で条件を満たすほど背景を濃く（1回→薄, 3回→濃）。"
+  +" <b>単勝EV＝市場ブレンド勝率×オッズ</b>。市場ブレンド勝率は、モデル勝率と市場（オッズ由来・控除率除去）確率のログ線形プール(モデル寄与35%)で、モデルの過信を市場で補正した値（「市場勝率」列も参照）。"
+  +" 発走30/20/10分前にオッズを取得し、<b>EV>1（＝妙味あり）</b>の馬を<span style=\"color:var(--ev-hue);font-weight:800\">金色</span>で強調。連続で条件を満たすほど背景を濃く（1回→薄, 3回→濃）。"
+  +" ※実際の買い目（購入候補）は、オッズ変動を見込んだより保守的な条件（ヘアカット×0.8・EV≧1.25）で選定します。"
   +" オッズ自体は能力評価に用いず、EV/市場ブレンドの計算にのみ使用（表示は実オッズ）。";
 
 // view toggle
@@ -906,9 +907,9 @@ function renderTrack(T){
   html+=`<div class="tiles">`
     +`<div class="tile"><div class="tl">予測トップ的中率</div><div class="tv">${tkPct(h.top1_rate)}</div><div class="tn">${h.top1_hits||0}/${h.top1_n||0}　1番人気=${tkPct(h.fav_rate)}</div></div>`
     +`<div class="tile"><div class="tl">買い目ROI</div><div class="tv ${cls(b.roi)}">${tkRoi(b.roi)}</div><div class="tn">${b.n||0}点 / ${(b.stake||0).toLocaleString()}円→${(b.return||0).toLocaleString()}円</div></div>`
-    +`<div class="tile"><div class="tl">1番人気ベタ買い</div><div class="tv ${cls(bl.fav_win_roi)}">${tkRoi(bl.fav_win_roi)}</div><div class="tn">単勝100円/レース</div></div>`
-    +`<div class="tile"><div class="tl">全単勝均等買い</div><div class="tv ${cls(bl.all_win_roi)}">${tkRoi(bl.all_win_roi)}</div><div class="tn">控除率の目安</div></div></div>`;
-  const rois=[["買い目",b.roi],["1番人気ベタ",bl.fav_win_roi],["全単勝均等",bl.all_win_roi]].filter(x=>x[1]!=null);
+    +`<div class="tile"><div class="tl">予測1位ベタ買い</div><div class="tv ${cls(bl.pred_win_roi)}">${tkRoi(bl.pred_win_roi)}</div><div class="tn">AI本命 単勝100円/R</div></div>`
+    +`<div class="tile"><div class="tl">市場1位ベタ買い</div><div class="tv ${cls(bl.fav_win_roi)}">${tkRoi(bl.fav_win_roi)}</div><div class="tn">1番人気 単勝100円/R</div></div></div>`;
+  const rois=[["買い目",b.roi],["予測1位ベタ",bl.pred_win_roi],["市場1位ベタ",bl.fav_win_roi],["全単勝均等",bl.all_win_roi]].filter(x=>x[1]!=null);
   if(rois.length){ const mx=Math.max(1.2,...rois.map(x=>x[1]));
     html+=`<div class="tksect">回収率（ROI）比較</div>`;
     rois.forEach(([lab,v])=>{ const w=Math.min(v/mx*100,100), ref=1/mx*100, col=v>=1?"var(--good)":"var(--accent)";

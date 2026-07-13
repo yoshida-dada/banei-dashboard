@@ -271,7 +271,7 @@
      "place3_time_avg": 128.1,
      "p_market": 0.2937,
      "win_prob_blend": 0.3447,
-     "ev": 0.74,
+     "ev": 0.93,
      "ev_buy": false,
      "ev_streak": 0
     },
@@ -824,7 +824,7 @@
      "place3_time_avg": 123.1,
      "p_market": 0.2937,
      "win_prob_blend": 0.2966,
-     "ev": 0.64,
+     "ev": 0.8,
      "ev_buy": false,
      "ev_streak": 0
     },
@@ -1311,7 +1311,7 @@
      "place3_time_avg": 141.3,
      "p_market": 0.1442,
      "win_prob_blend": 0.1152,
-     "ev": 0.51,
+     "ev": 0.63,
      "ev_buy": false,
      "ev_streak": 0
     },
@@ -1744,7 +1744,7 @@
      "place3_time_avg": 148.1,
      "p_market": 0.1117,
      "win_prob_blend": 0.0897,
-     "ev": 0.51,
+     "ev": 0.64,
      "ev_buy": false,
      "ev_streak": 0
     },
@@ -2327,7 +2327,7 @@
      "place3_time_avg": 132.7,
      "p_market": 0.0352,
      "win_prob_blend": 0.0378,
-     "ev": 0.68,
+     "ev": 0.85,
      "ev_buy": false,
      "ev_streak": 0
     },
@@ -2886,7 +2886,7 @@
      "place3_time_avg": 131.0,
      "p_market": 0.0575,
      "win_prob_blend": 0.0477,
-     "ev": 0.53,
+     "ev": 0.66,
      "ev_buy": false,
      "ev_streak": 0
     },
@@ -3392,8 +3392,8 @@
      "place3_time_avg": 127.3,
      "p_market": 0.012,
      "win_prob_blend": 0.0162,
-     "ev": 0.86,
-     "ev_buy": false,
+     "ev": 1.07,
+     "ev_buy": true,
      "ev_streak": 0
     },
     {
@@ -3891,7 +3891,7 @@
      "place3_time_avg": 130.0,
      "p_market": 0.026,
      "win_prob_blend": 0.0261,
-     "ev": 0.64,
+     "ev": 0.8,
      "ev_buy": false,
      "ev_streak": 0
     },
@@ -4384,7 +4384,7 @@
      "place3_time_avg": 128.0,
      "p_market": 0.026,
      "win_prob_blend": 0.026,
-     "ev": 0.63,
+     "ev": 0.79,
      "ev_buy": false,
      "ev_streak": 0
     }
@@ -4445,7 +4445,7 @@
      "place3_time_avg": null,
      "p_market": 0.1689,
      "win_prob_blend": 0.2018,
-     "ev": 0.76,
+     "ev": 0.95,
      "ev_buy": false,
      "ev_streak": 0
     },
@@ -4488,8 +4488,8 @@
      "place3_time_avg": null,
      "p_market": 0.0786,
      "win_prob_blend": 0.1152,
-     "ev": 0.93,
-     "ev_buy": false,
+     "ev": 1.16,
+     "ev_buy": true,
      "ev_streak": 0
     },
     {
@@ -4531,7 +4531,7 @@
      "place3_time_avg": null,
      "p_market": 0.3968,
      "win_prob_blend": 0.3154,
-     "ev": 0.5,
+     "ev": 0.63,
      "ev_buy": false,
      "ev_streak": 0
     },
@@ -4574,7 +4574,7 @@
      "place3_time_avg": null,
      "p_market": 0.0189,
      "win_prob_blend": 0.0434,
-     "ev": 1.46,
+     "ev": 1.83,
      "ev_buy": true,
      "ev_streak": 3
     },
@@ -4617,8 +4617,8 @@
      "place3_time_avg": null,
      "p_market": 0.0312,
      "win_prob_blend": 0.0588,
-     "ev": 1.19,
-     "ev_buy": false,
+     "ev": 1.49,
+     "ev_buy": true,
      "ev_streak": 0
     },
     {
@@ -4660,7 +4660,7 @@
      "place3_time_avg": null,
      "p_market": 0.0159,
      "win_prob_blend": 0.0354,
-     "ev": 1.41,
+     "ev": 1.76,
      "ev_buy": true,
      "ev_streak": 2
     },
@@ -4715,8 +4715,8 @@
      "place3_time_avg": null,
      "p_market": 0.0141,
      "win_prob_blend": 0.0228,
-     "ev": 1.03,
-     "ev_buy": false,
+     "ev": 1.28,
+     "ev_buy": true,
      "ev_streak": 0
     },
     {
@@ -4765,7 +4765,7 @@
      "place3_time_avg": null,
      "p_market": 0.0329,
      "win_prob_blend": 0.0396,
-     "ev": 0.76,
+     "ev": 0.95,
      "ev_buy": false,
      "ev_streak": 0
     },
@@ -4820,7 +4820,7 @@
      "place3_time_avg": null,
      "p_market": 0.126,
      "win_prob_blend": 0.0929,
-     "ev": 0.47,
+     "ev": 0.59,
      "ev_buy": false,
      "ev_streak": 0
     },
@@ -4868,7 +4868,7 @@
      "place3_time_avg": null,
      "p_market": 0.1167,
      "win_prob_blend": 0.0748,
-     "ev": 0.41,
+     "ev": 0.51,
      "ev_buy": false,
      "ev_streak": 0
     }
@@ -4966,7 +4966,7 @@
      "place3_time_avg": null,
      "p_market": 0.4863,
      "win_prob_blend": 0.405,
-     "ev": 0.52,
+     "ev": 0.65,
      "ev_buy": false,
      "ev_streak": 0
     },
@@ -5009,7 +5009,7 @@
      "place3_time_avg": null,
      "p_market": 0.034,
      "win_prob_blend": 0.0703,
-     "ev": 1.29,
+     "ev": 1.61,
      "ev_buy": true,
      "ev_streak": 3
     },
@@ -5052,7 +5052,7 @@
      "place3_time_avg": null,
      "p_market": 0.0302,
      "win_prob_blend": 0.0651,
-     "ev": 1.34,
+     "ev": 1.68,
      "ev_buy": true,
      "ev_streak": 3
     },
@@ -5095,7 +5095,7 @@
      "place3_time_avg": null,
      "p_market": 0.2288,
      "win_prob_blend": 0.2282,
-     "ev": 0.62,
+     "ev": 0.78,
      "ev_buy": false,
      "ev_streak": 0
     },
@@ -5150,7 +5150,7 @@
      "place3_time_avg": null,
      "p_market": 0.1235,
      "win_prob_blend": 0.1147,
-     "ev": 0.58,
+     "ev": 0.72,
      "ev_buy": false,
      "ev_streak": 0
     },
@@ -5205,8 +5205,8 @@
      "place3_time_avg": null,
      "p_market": 0.0279,
      "win_prob_blend": 0.0404,
-     "ev": 0.9,
-     "ev_buy": false,
+     "ev": 1.13,
+     "ev_buy": true,
      "ev_streak": 0
     },
     {
@@ -5260,7 +5260,7 @@
      "place3_time_avg": null,
      "p_market": 0.0255,
      "win_prob_blend": 0.0324,
-     "ev": 0.79,
+     "ev": 0.99,
      "ev_buy": false,
      "ev_streak": 0
     },
@@ -5315,7 +5315,7 @@
      "place3_time_avg": null,
      "p_market": 0.0271,
      "win_prob_blend": 0.0285,
-     "ev": 0.65,
+     "ev": 0.82,
      "ev_buy": false,
      "ev_streak": 0
     },
@@ -5370,7 +5370,7 @@
      "place3_time_avg": null,
      "p_market": 0.0168,
      "win_prob_blend": 0.0154,
-     "ev": 0.57,
+     "ev": 0.71,
      "ev_buy": false,
      "ev_streak": 0
     }
@@ -5450,8 +5450,8 @@
      "place3_time_avg": null,
      "p_market": 0.1164,
      "win_prob_blend": 0.1572,
-     "ev": 0.86,
-     "ev_buy": false,
+     "ev": 1.07,
+     "ev_buy": true,
      "ev_streak": 0
     },
     {
@@ -5493,8 +5493,8 @@
      "place3_time_avg": null,
      "p_market": 0.0347,
      "win_prob_blend": 0.0643,
-     "ev": 1.17,
-     "ev_buy": false,
+     "ev": 1.47,
+     "ev_buy": true,
      "ev_streak": 1
     },
     {
@@ -5536,7 +5536,7 @@
      "place3_time_avg": null,
      "p_market": 0.273,
      "win_prob_blend": 0.2412,
-     "ev": 0.56,
+     "ev": 0.7,
      "ev_buy": false,
      "ev_streak": 0
     },
@@ -5579,7 +5579,7 @@
      "place3_time_avg": null,
      "p_market": 0.0243,
      "win_prob_blend": 0.0495,
-     "ev": 1.29,
+     "ev": 1.61,
      "ev_buy": true,
      "ev_streak": 3
     },
@@ -5622,8 +5622,8 @@
      "place3_time_avg": null,
      "p_market": 0.0322,
      "win_prob_blend": 0.0589,
-     "ev": 1.16,
-     "ev_buy": false,
+     "ev": 1.45,
+     "ev_buy": true,
      "ev_streak": 3
     },
     {
@@ -5665,7 +5665,7 @@
      "place3_time_avg": null,
      "p_market": 0.0208,
      "win_prob_blend": 0.0413,
-     "ev": 1.26,
+     "ev": 1.57,
      "ev_buy": true,
      "ev_streak": 3
     },
@@ -5713,7 +5713,7 @@
      "place3_time_avg": null,
      "p_market": 0.3299,
      "win_prob_blend": 0.2448,
-     "ev": 0.47,
+     "ev": 0.59,
      "ev_buy": false,
      "ev_streak": 0
     },
@@ -5768,7 +5768,7 @@
      "place3_time_avg": null,
      "p_market": 0.0816,
      "win_prob_blend": 0.0667,
-     "ev": 0.52,
+     "ev": 0.65,
      "ev_buy": false,
      "ev_streak": 0
     },
@@ -5818,7 +5818,7 @@
      "place3_time_avg": null,
      "p_market": 0.0384,
      "win_prob_blend": 0.0369,
-     "ev": 0.61,
+     "ev": 0.76,
      "ev_buy": false,
      "ev_streak": 0
     },
@@ -5873,7 +5873,7 @@
      "place3_time_avg": null,
      "p_market": 0.0486,
      "win_prob_blend": 0.0391,
-     "ev": 0.51,
+     "ev": 0.64,
      "ev_buy": false,
      "ev_streak": 0
     }
@@ -6010,7 +6010,7 @@
      "place3_time_avg": null,
      "p_market": 0.315,
      "win_prob_blend": 0.3176,
-     "ev": 0.64,
+     "ev": 0.79,
      "ev_buy": false,
      "ev_streak": 0
     },
@@ -6065,8 +6065,8 @@
      "place3_time_avg": null,
      "p_market": 0.062,
      "win_prob_blend": 0.0908,
-     "ev": 0.92,
-     "ev_buy": false,
+     "ev": 1.15,
+     "ev_buy": true,
      "ev_streak": 0
     },
     {
@@ -6126,7 +6126,7 @@
      "place3_time_avg": null,
      "p_market": 0.2129,
      "win_prob_blend": 0.1947,
-     "ev": 0.58,
+     "ev": 0.72,
      "ev_buy": false,
      "ev_streak": 0
     },
@@ -6176,7 +6176,7 @@
      "place3_time_avg": null,
      "p_market": 0.0804,
      "win_prob_blend": 0.0953,
-     "ev": 0.75,
+     "ev": 0.93,
      "ev_buy": false,
      "ev_streak": 0
     },
@@ -6237,8 +6237,8 @@
      "place3_time_avg": 148.0,
      "p_market": 0.0536,
      "win_prob_blend": 0.0722,
-     "ev": 0.85,
-     "ev_buy": false,
+     "ev": 1.06,
+     "ev_buy": true,
      "ev_streak": 0
     },
     {
@@ -6305,7 +6305,7 @@
      "place3_time_avg": 132.1,
      "p_market": 0.1432,
      "win_prob_blend": 0.1133,
-     "ev": 0.5,
+     "ev": 0.62,
      "ev_buy": false,
      "ev_streak": 0
     },
@@ -6367,7 +6367,7 @@
      "place3_time_avg": 131.6,
      "p_market": 0.0263,
      "win_prob_blend": 0.0299,
-     "ev": 0.72,
+     "ev": 0.89,
      "ev_buy": false,
      "ev_streak": 0
     },
@@ -6440,7 +6440,7 @@
      "place3_time_avg": 159.4,
      "p_market": 0.0224,
      "win_prob_blend": 0.0256,
-     "ev": 0.72,
+     "ev": 0.9,
      "ev_buy": false,
      "ev_streak": 0
     },
@@ -6513,7 +6513,7 @@
      "place3_time_avg": null,
      "p_market": 0.0163,
      "win_prob_blend": 0.0185,
-     "ev": 0.72,
+     "ev": 0.9,
      "ev_buy": false,
      "ev_streak": 0
     },
@@ -6580,7 +6580,7 @@
      "place3_time_avg": 181.5,
      "p_market": 0.0679,
      "win_prob_blend": 0.0421,
-     "ev": 0.39,
+     "ev": 0.49,
      "ev_buy": false,
      "ev_streak": 0
     }
@@ -6786,7 +6786,7 @@
      "place3_time_avg": 129.0,
      "p_market": 0.1545,
      "win_prob_blend": 0.192,
-     "ev": 0.78,
+     "ev": 0.98,
      "ev_buy": false,
      "ev_streak": 0
     },
@@ -6961,7 +6961,7 @@
      "place3_time_avg": 158.8,
      "p_market": 0.1313,
      "win_prob_blend": 0.1517,
-     "ev": 0.73,
+     "ev": 0.91,
      "ev_buy": false,
      "ev_streak": 0
     },
@@ -7178,7 +7178,7 @@
      "place3_time_avg": 139.4,
      "p_market": 0.1791,
      "win_prob_blend": 0.1843,
-     "ev": 0.65,
+     "ev": 0.81,
      "ev_buy": false,
      "ev_streak": 0
     },
@@ -7389,8 +7389,8 @@
      "place3_time_avg": 154.4,
      "p_market": 0.0563,
      "win_prob_blend": 0.0793,
-     "ev": 0.89,
-     "ev_buy": false,
+     "ev": 1.11,
+     "ev_buy": true,
      "ev_streak": 0
     },
     {
@@ -7552,7 +7552,7 @@
      "place3_time_avg": 130.5,
      "p_market": 0.3283,
      "win_prob_blend": 0.2239,
-     "ev": 0.43,
+     "ev": 0.54,
      "ev_buy": false,
      "ev_streak": 0
     },
@@ -7751,7 +7751,7 @@
      "place3_time_avg": 137.2,
      "p_market": 0.0464,
      "win_prob_blend": 0.0527,
-     "ev": 0.72,
+     "ev": 0.9,
      "ev_buy": false,
      "ev_streak": 0
     },
@@ -7920,7 +7920,7 @@
      "place3_time_avg": 148.2,
      "p_market": 0.0353,
      "win_prob_blend": 0.0437,
-     "ev": 0.78,
+     "ev": 0.97,
      "ev_buy": false,
      "ev_streak": 0
     },
@@ -8120,7 +8120,7 @@
      "place3_time_avg": 134.1,
      "p_market": 0.0309,
      "win_prob_blend": 0.0359,
-     "ev": 0.73,
+     "ev": 0.92,
      "ev_buy": false,
      "ev_streak": 0
     },
@@ -8325,7 +8325,7 @@
      "place3_time_avg": 134.8,
      "p_market": 0.0379,
      "win_prob_blend": 0.0364,
-     "ev": 0.61,
+     "ev": 0.76,
      "ev_buy": false,
      "ev_streak": 0
     }
@@ -8501,7 +8501,7 @@
      "place3_time_avg": 125.6,
      "p_market": 0.3607,
      "win_prob_blend": 0.3393,
-     "ev": 0.6,
+     "ev": 0.75,
      "ev_buy": false,
      "ev_streak": 0
     },
@@ -8706,7 +8706,7 @@
      "place3_time_avg": 130.5,
      "p_market": 0.256,
      "win_prob_blend": 0.241,
-     "ev": 0.6,
+     "ev": 0.75,
      "ev_buy": false,
      "ev_streak": 0
     },
@@ -8893,7 +8893,7 @@
      "place3_time_avg": 135.9,
      "p_market": 0.1221,
      "win_prob_blend": 0.117,
-     "ev": 0.61,
+     "ev": 0.76,
      "ev_buy": false,
      "ev_streak": 0
     },
@@ -9038,7 +9038,7 @@
      "place3_time_avg": 131.4,
      "p_market": 0.077,
      "win_prob_blend": 0.0841,
-     "ev": 0.69,
+     "ev": 0.87,
      "ev_buy": false,
      "ev_streak": 0
     },
@@ -9213,7 +9213,7 @@
      "place3_time_avg": 122.9,
      "p_market": 0.0615,
      "win_prob_blend": 0.0724,
-     "ev": 0.75,
+     "ev": 0.93,
      "ev_buy": false,
      "ev_streak": 0
     },
@@ -9412,8 +9412,8 @@
      "place3_time_avg": 136.0,
      "p_market": 0.0232,
      "win_prob_blend": 0.036,
-     "ev": 0.99,
-     "ev_buy": false,
+     "ev": 1.23,
+     "ev_buy": true,
      "ev_streak": 0
     },
     {
@@ -9605,7 +9605,7 @@
      "place3_time_avg": 142.8,
      "p_market": 0.0403,
      "win_prob_blend": 0.0507,
-     "ev": 0.8,
+     "ev": 1.0,
      "ev_buy": false,
      "ev_streak": 0
     },
@@ -9780,7 +9780,7 @@
      "place3_time_avg": 132.0,
      "p_market": 0.0162,
      "win_prob_blend": 0.0202,
-     "ev": 0.79,
+     "ev": 0.99,
      "ev_buy": false,
      "ev_streak": 0
     },
@@ -9980,7 +9980,7 @@
      "place3_time_avg": 122.1,
      "p_market": 0.0124,
      "win_prob_blend": 0.0156,
-     "ev": 0.8,
+     "ev": 1.0,
      "ev_buy": false,
      "ev_streak": 0
     },
@@ -10185,7 +10185,7 @@
      "place3_time_avg": 138.6,
      "p_market": 0.0305,
      "win_prob_blend": 0.0237,
-     "ev": 0.49,
+     "ev": 0.62,
      "ev_buy": false,
      "ev_streak": 0
     }
@@ -10416,8 +10416,8 @@
      "place3_time_avg": 121.5,
      "p_market": 0.0756,
      "win_prob_blend": 0.1146,
-     "ev": 0.94,
-     "ev_buy": false,
+     "ev": 1.18,
+     "ev_buy": true,
      "ev_streak": 0
     },
     {
@@ -10615,7 +10615,7 @@
      "place3_time_avg": 113.4,
      "p_market": 0.5989,
      "win_prob_blend": 0.4308,
-     "ev": 0.45,
+     "ev": 0.56,
      "ev_buy": false,
      "ev_streak": 0
     },
@@ -10814,7 +10814,7 @@
      "place3_time_avg": 112.7,
      "p_market": 0.1097,
      "win_prob_blend": 0.1337,
-     "ev": 0.76,
+     "ev": 0.95,
      "ev_buy": false,
      "ev_streak": 0
     },
@@ -11025,8 +11025,8 @@
      "place3_time_avg": 109.9,
      "p_market": 0.0309,
      "win_prob_blend": 0.0571,
-     "ev": 1.15,
-     "ev_buy": false,
+     "ev": 1.44,
+     "ev_buy": true,
      "ev_streak": 1
     },
     {
@@ -11230,8 +11230,8 @@
      "place3_time_avg": 115.6,
      "p_market": 0.0548,
      "win_prob_blend": 0.0781,
-     "ev": 0.89,
-     "ev_buy": false,
+     "ev": 1.11,
+     "ev_buy": true,
      "ev_streak": 0
     },
     {
@@ -11441,8 +11441,8 @@
      "place3_time_avg": 126.7,
      "p_market": 0.0207,
      "win_prob_blend": 0.0387,
-     "ev": 1.17,
-     "ev_buy": false,
+     "ev": 1.46,
+     "ev_buy": true,
      "ev_streak": 0
     },
     {
@@ -11640,8 +11640,8 @@
      "place3_time_avg": 117.2,
      "p_market": 0.032,
      "win_prob_blend": 0.048,
-     "ev": 0.93,
-     "ev_buy": false,
+     "ev": 1.17,
+     "ev_buy": true,
      "ev_streak": 0
     },
     {
@@ -11953,8 +11953,8 @@
      "place3_time_avg": 143.2,
      "p_market": 0.0348,
      "win_prob_blend": 0.0489,
-     "ev": 0.88,
-     "ev_buy": false,
+     "ev": 1.1,
+     "ev_buy": true,
      "ev_streak": 0
     },
     {
@@ -12260,8 +12260,8 @@
      "place3_time_avg": 140.6,
      "p_market": 0.01,
      "win_prob_blend": 0.0167,
-     "ev": 1.04,
-     "ev_buy": false,
+     "ev": 1.3,
+     "ev_buy": true,
      "ev_streak": 1
     },
     {
@@ -12447,7 +12447,7 @@
      "place3_time_avg": 109.6,
      "p_market": 0.0326,
      "win_prob_blend": 0.0334,
-     "ev": 0.64,
+     "ev": 0.8,
      "ev_buy": false,
      "ev_streak": 0
     }
@@ -12808,7 +12808,7 @@
      "place3_time_avg": 118.6,
      "p_market": 0.2472,
      "win_prob_blend": 0.2171,
-     "ev": 0.56,
+     "ev": 0.69,
      "ev_buy": false,
      "ev_streak": 0
     },
@@ -13013,7 +13013,7 @@
      "place3_time_avg": 113.4,
      "p_market": 0.1297,
      "win_prob_blend": 0.1393,
-     "ev": 0.68,
+     "ev": 0.85,
      "ev_buy": false,
      "ev_streak": 0
     },
@@ -13542,7 +13542,7 @@
      "place3_time_avg": 116.1,
      "p_market": 0.1364,
      "win_prob_blend": 0.137,
-     "ev": 0.64,
+     "ev": 0.79,
      "ev_buy": false,
      "ev_streak": 0
     },
@@ -14102,7 +14102,7 @@
      "place3_time_avg": 121.3,
      "p_market": 0.1114,
      "win_prob_blend": 0.1144,
-     "ev": 0.65,
+     "ev": 0.81,
      "ev_buy": false,
      "ev_streak": 0
     },
@@ -14451,7 +14451,7 @@
      "place3_time_avg": 117.6,
      "p_market": 0.1146,
      "win_prob_blend": 0.1141,
-     "ev": 0.63,
+     "ev": 0.79,
      "ev_buy": false,
      "ev_streak": 0
     },
@@ -14812,7 +14812,7 @@
      "place3_time_avg": 114.1,
      "p_market": 0.07,
      "win_prob_blend": 0.0814,
-     "ev": 0.74,
+     "ev": 0.92,
      "ev_buy": false,
      "ev_streak": 0
     },
@@ -15335,7 +15335,7 @@
      "place3_time_avg": 121.9,
      "p_market": 0.092,
      "win_prob_blend": 0.0884,
-     "ev": 0.61,
+     "ev": 0.76,
      "ev_buy": false,
      "ev_streak": 0
     },
@@ -15912,8 +15912,8 @@
      "place3_time_avg": 125.4,
      "p_market": 0.0276,
      "win_prob_blend": 0.0378,
-     "ev": 0.87,
-     "ev_buy": false,
+     "ev": 1.08,
+     "ev_buy": true,
      "ev_streak": 0
     },
     {
@@ -16339,7 +16339,7 @@
      "place3_time_avg": 129.3,
      "p_market": 0.0507,
      "win_prob_blend": 0.048,
-     "ev": 0.6,
+     "ev": 0.75,
      "ev_buy": false,
      "ev_streak": 0
     },
@@ -16880,7 +16880,7 @@
      "place3_time_avg": 123.8,
      "p_market": 0.0205,
      "win_prob_blend": 0.0226,
-     "ev": 0.69,
+     "ev": 0.87,
      "ev_buy": false,
      "ev_streak": 0
     }
@@ -17386,7 +17386,7 @@
      "place3_time_avg": 117.2,
      "p_market": 0.3918,
      "win_prob_blend": 0.3431,
-     "ev": 0.55,
+     "ev": 0.69,
      "ev_buy": false,
      "ev_streak": 0
     },
@@ -17981,7 +17981,7 @@
      "place3_time_avg": 107.8,
      "p_market": 0.112,
      "win_prob_blend": 0.1392,
-     "ev": 0.78,
+     "ev": 0.97,
      "ev_buy": false,
      "ev_streak": 0
     },
@@ -18564,7 +18564,7 @@
      "place3_time_avg": 117.1,
      "p_market": 0.1244,
      "win_prob_blend": 0.1328,
-     "ev": 0.67,
+     "ev": 0.84,
      "ev_buy": false,
      "ev_streak": 0
     },
@@ -18925,7 +18925,7 @@
      "place3_time_avg": 115.4,
      "p_market": 0.1667,
      "win_prob_blend": 0.1541,
-     "ev": 0.58,
+     "ev": 0.72,
      "ev_buy": false,
      "ev_streak": 0
     },
@@ -19508,7 +19508,7 @@
      "place3_time_avg": 117.1,
      "p_market": 0.0816,
      "win_prob_blend": 0.0799,
-     "ev": 0.61,
+     "ev": 0.77,
      "ev_buy": false,
      "ev_streak": 0
     },
@@ -20085,7 +20085,7 @@
      "place3_time_avg": 113.4,
      "p_market": 0.0589,
      "win_prob_blend": 0.0633,
-     "ev": 0.67,
+     "ev": 0.84,
      "ev_buy": false,
      "ev_streak": 0
     },
@@ -20620,8 +20620,8 @@
      "place3_time_avg": 110.1,
      "p_market": 0.0197,
      "win_prob_blend": 0.0281,
-     "ev": 0.9,
-     "ev_buy": false,
+     "ev": 1.12,
+     "ev_buy": true,
      "ev_streak": 0
     },
     {
@@ -21137,7 +21137,7 @@
      "place3_time_avg": 116.8,
      "p_market": 0.0245,
      "win_prob_blend": 0.0286,
-     "ev": 0.73,
+     "ev": 0.92,
      "ev_buy": false,
      "ev_streak": 0
     },
@@ -21642,8 +21642,8 @@
      "place3_time_avg": 124.1,
      "p_market": 0.0117,
      "win_prob_blend": 0.0171,
-     "ev": 0.91,
-     "ev_buy": false,
+     "ev": 1.14,
+     "ev_buy": true,
      "ev_streak": 0
     },
     {
@@ -22141,8 +22141,8 @@
      "place3_time_avg": 114.7,
      "p_market": 0.0086,
      "win_prob_blend": 0.0138,
-     "ev": 1.0,
-     "ev_buy": false,
+     "ev": 1.26,
+     "ev_buy": true,
      "ev_streak": 0
     }
    ],
@@ -22634,7 +22634,7 @@
      "place3_time_avg": 109.0,
      "p_market": 0.1694,
      "win_prob_blend": 0.1888,
-     "ev": 0.71,
+     "ev": 0.89,
      "ev_buy": false,
      "ev_streak": 0
     },
@@ -23151,7 +23151,7 @@
      "place3_time_avg": 107.4,
      "p_market": 0.1809,
      "win_prob_blend": 0.1838,
-     "ev": 0.65,
+     "ev": 0.81,
      "ev_buy": false,
      "ev_streak": 0
     },
@@ -23620,7 +23620,7 @@
      "place3_time_avg": 110.2,
      "p_market": 0.1225,
      "win_prob_blend": 0.1396,
-     "ev": 0.73,
+     "ev": 0.91,
      "ev_buy": false,
      "ev_streak": 0
     },
@@ -24053,8 +24053,8 @@
      "place3_time_avg": 104.0,
      "p_market": 0.0465,
      "win_prob_blend": 0.0636,
-     "ev": 0.87,
-     "ev_buy": false,
+     "ev": 1.09,
+     "ev_buy": true,
      "ev_streak": 0
     },
     {
@@ -24516,8 +24516,8 @@
      "place3_time_avg": 108.3,
      "p_market": 0.0388,
      "win_prob_blend": 0.0536,
-     "ev": 0.88,
-     "ev_buy": false,
+     "ev": 1.1,
+     "ev_buy": true,
      "ev_streak": 0
     },
     {
@@ -24925,7 +24925,7 @@
      "place3_time_avg": 104.6,
      "p_market": 0.1531,
      "win_prob_blend": 0.1246,
-     "ev": 0.52,
+     "ev": 0.65,
      "ev_buy": false,
      "ev_streak": 0
     },
@@ -25232,7 +25232,7 @@
      "place3_time_avg": 107.6,
      "p_market": 0.0983,
      "win_prob_blend": 0.0902,
-     "ev": 0.58,
+     "ev": 0.73,
      "ev_buy": false,
      "ev_streak": 0
     },
@@ -25749,7 +25749,7 @@
      "place3_time_avg": 110.7,
      "p_market": 0.0362,
      "win_prob_blend": 0.0403,
-     "ev": 0.71,
+     "ev": 0.89,
      "ev_buy": false,
      "ev_streak": 0
     },
@@ -26266,8 +26266,8 @@
      "place3_time_avg": 103.9,
      "p_market": 0.0172,
      "win_prob_blend": 0.0244,
-     "ev": 0.91,
-     "ev_buy": false,
+     "ev": 1.13,
+     "ev_buy": true,
      "ev_streak": 0
     },
     {
@@ -26735,7 +26735,7 @@
      "place3_time_avg": 104.6,
      "p_market": 0.1372,
      "win_prob_blend": 0.0912,
-     "ev": 0.42,
+     "ev": 0.53,
      "ev_buy": false,
      "ev_streak": 0
     }
@@ -27148,7 +27148,7 @@
      "place3_time_avg": 113.3,
      "p_market": 0.4158,
      "win_prob_blend": 0.3545,
-     "ev": 0.54,
+     "ev": 0.67,
      "ev_buy": false,
      "ev_streak": 0
     },
@@ -27737,7 +27737,7 @@
      "place3_time_avg": 108.9,
      "p_market": 0.1234,
      "win_prob_blend": 0.149,
-     "ev": 0.76,
+     "ev": 0.95,
      "ev_buy": false,
      "ev_streak": 0
     },
@@ -28105,7 +28105,7 @@
      "place3_time_avg": 112.4,
      "p_market": 0.1646,
      "win_prob_blend": 0.1658,
-     "ev": 0.64,
+     "ev": 0.8,
      "ev_buy": false,
      "ev_streak": 0
     },
@@ -28700,7 +28700,7 @@
      "place3_time_avg": 105.5,
      "p_market": 0.1612,
      "win_prob_blend": 0.1478,
-     "ev": 0.58,
+     "ev": 0.72,
      "ev_buy": false,
      "ev_streak": 0
     },
@@ -29181,8 +29181,8 @@
      "place3_time_avg": 111.9,
      "p_market": 0.0482,
      "win_prob_blend": 0.0655,
-     "ev": 0.86,
-     "ev_buy": false,
+     "ev": 1.07,
+     "ev_buy": true,
      "ev_streak": 0
     },
     {
@@ -29710,8 +29710,8 @@
      "place3_time_avg": 116.5,
      "p_market": 0.0243,
      "win_prob_blend": 0.0381,
-     "ev": 0.99,
-     "ev_buy": false,
+     "ev": 1.24,
+     "ev_buy": true,
      "ev_streak": 0
     },
     {
@@ -30317,8 +30317,8 @@
      "place3_time_avg": 111.8,
      "p_market": 0.0194,
      "win_prob_blend": 0.0327,
-     "ev": 1.07,
-     "ev_buy": false,
+     "ev": 1.34,
+     "ev_buy": true,
      "ev_streak": 0
     },
     {
@@ -30810,7 +30810,7 @@
      "place3_time_avg": 109.1,
      "p_market": 0.0369,
      "win_prob_blend": 0.0374,
-     "ev": 0.64,
+     "ev": 0.8,
      "ev_buy": false,
      "ev_streak": 0
     },
@@ -31339,8 +31339,8 @@
      "place3_time_avg": 120.5,
      "p_market": 0.0061,
      "win_prob_blend": 0.0093,
-     "ev": 0.96,
-     "ev_buy": false,
+     "ev": 1.2,
+     "ev_buy": true,
      "ev_streak": 0
     }
    ],
