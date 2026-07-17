@@ -1,8 +1,9 @@
 /* ばんえい予測レビュー PWA サービスワーカー
    - HTML(index.html/ナビゲーション) と data.json は network-first（更新を確実に反映、オフライン時はキャッシュ）
    - アイコン/マニフェスト等の静的アセットは cache-first
-   ※ 外殻(index.html)更新を確実に届けるため v2 で network-first に変更。CACHE名を上げて旧キャッシュを破棄。*/
-const CACHE = "banei-review-v2";
+   ※ 外殻(index.html)更新を確実に届けるため v2 で network-first に変更。CACHE名を上げて旧キャッシュを破棄。
+   ※ v3: 発走前通知（showNotification / notificationclick / push）に対応。*/
+const CACHE = "banei-review-v3";
 const SHELL = [
   "./",
   "./index.html",
@@ -57,4 +58,34 @@ self.addEventListener("fetch", (e) => {
   }
   // その他アセットは cache-first
   e.respondWith(caches.match(e.request).then((r) => r || fetch(e.request)));
+});
+
+// --- 発走前通知（KEIRIN 踏襲）---
+// 通常はページ側の setTimeout から registration.showNotification で発火する。
+// 将来サーバから Web Push する場合に備え push ハンドラも用意（同一実装）。
+self.addEventListener("push", (e) => {
+  let d = {};
+  try { d = e.data ? e.data.json() : {}; } catch (_) { d = { body: e.data ? e.data.text() : "" }; }
+  const title = d.title || "ばんえい予測レビュー";
+  const opts = {
+    body: d.body || "",
+    tag: d.tag || "banei",
+    renotify: true,
+    icon: "./icon-192.png",
+    badge: "./icon-192.png",
+    data: { url: d.url || "./" },
+  };
+  e.waitUntil(self.registration.showNotification(title, opts));
+});
+
+// 通知タップでダッシュボードを前面化（既存タブがあれば再利用）
+self.addEventListener("notificationclick", (e) => {
+  e.notification.close();
+  const url = (e.notification.data && e.notification.data.url) || "./";
+  e.waitUntil(
+    self.clients.matchAll({ type: "window", includeUncontrolled: true }).then((cs) => {
+      for (const c of cs) { if ("focus" in c) return c.focus(); }
+      return self.clients.openWindow ? self.clients.openWindow(url) : null;
+    })
+  );
 });
