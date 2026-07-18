@@ -1,6 +1,6 @@
 {
  "date": "2026-07-18",
- "archived_at": "2026-07-18 19:53",
+ "archived_at": "2026-07-18 20:00",
  "races": [
   {
    "date": "2026-07-18",
@@ -34173,28 +34173,28 @@
    "race_no": 12,
    "race_name": "Ｃ２－１",
    "class": "C2",
-   "moisture": null,
+   "moisture": 2.2,
    "field_size": 10,
    "post_time": "20:30",
    "win_time": null,
    "predicted_top": 10,
-   "market_fav": 10,
+   "market_fav": 2,
    "winner": null,
-   "update_stage": "pre",
-   "updated_at": "2026-07-18 12:30",
+   "update_stage": "moist",
+   "updated_at": "2026-07-18 20:00",
    "horses": [
     {
      "num": 10,
      "name": "ジェイワールド",
-     "win_prob": 0.187,
+     "win_prob": 0.2038,
      "rank": 1,
-     "odds": 4.5,
+     "odds": 10.4,
      "position": null,
      "result_time": null,
      "jockey": "西将太",
      "gate": 8,
      "sled_kg": 590.0,
-     "popularity": 1,
+     "popularity": 8,
      "age": 3,
      "sex": "牡",
      "trainer": "金山明（ばんえい）",
@@ -34207,8 +34207,8 @@
      "prize_year": 636,
      "horse_class": "C2",
      "year_form": 7.3,
-     "place2": 0.3581,
-     "place3": 0.5116,
+     "place2": 0.3869,
+     "place3": 0.5473,
      "ability": 61.7,
      "sled_prev": 590.0,
      "sled_diff": 0,
@@ -34394,23 +34394,24 @@
       }
      ],
      "place3_time_avg": 128.8,
-     "p_market": 0.1767,
-     "win_prob_blend": 0.193,
-     "ev": 0.87,
-     "ev_buy": false
+     "p_market": 0.0765,
+     "win_prob_blend": 0.1112,
+     "ev": 1.16,
+     "ev_buy": true,
+     "ev_streak": 1
     },
     {
      "num": 2,
      "name": "ブレイブハート",
-     "win_prob": 0.1814,
+     "win_prob": 0.1958,
      "rank": 2,
-     "odds": 13.6,
+     "odds": 5.0,
      "position": null,
      "result_time": null,
      "jockey": "菊池一",
      "gate": 2,
      "sled_kg": 590.0,
-     "popularity": 8,
+     "popularity": 1,
      "age": 3,
      "sex": "牡",
      "trainer": "槻舘重（ばんえい）",
@@ -34423,8 +34424,8 @@
      "prize_year": 507,
      "horse_class": "C2",
      "year_form": 6.0,
-     "place2": 0.3489,
-     "place3": 0.5006,
+     "place2": 0.3742,
+     "place3": 0.5326,
      "ability": 62.1,
      "sled_prev": 590.0,
      "sled_diff": 0,
@@ -34604,23 +34605,24 @@
       }
      ],
      "place3_time_avg": 121.1,
-     "p_market": 0.0585,
-     "win_prob_blend": 0.093,
-     "ev": 1.27,
-     "ev_buy": true
+     "p_market": 0.1591,
+     "win_prob_blend": 0.1766,
+     "ev": 0.88,
+     "ev_buy": false,
+     "ev_streak": 0
     },
     {
      "num": 4,
      "name": "ジェイワンダー",
-     "win_prob": 0.1331,
+     "win_prob": 0.1236,
      "rank": 3,
-     "odds": 9.0,
+     "odds": 6.2,
      "position": null,
      "result_time": null,
      "jockey": "鈴木恵",
      "gate": 4,
      "sled_kg": 590.0,
-     "popularity": 6,
+     "popularity": 3,
      "age": 3,
      "sex": "牡",
      "trainer": "松田道（ばんえい）",
@@ -34633,8 +34635,8 @@
      "prize_year": 285,
      "horse_class": "C2",
      "year_form": 2.5,
-     "place2": 0.265,
-     "place3": 0.3947,
+     "place2": 0.2489,
+     "place3": 0.3748,
      "ability": 55.9,
      "sled_prev": 590.0,
      "sled_diff": 0,
@@ -34820,17 +34822,18 @@
       }
      ],
      "place3_time_avg": 131.3,
-     "p_market": 0.0884,
-     "win_prob_blend": 0.1092,
-     "ev": 0.98,
-     "ev_buy": false
+     "p_market": 0.1283,
+     "win_prob_blend": 0.1307,
+     "ev": 0.81,
+     "ev_buy": false,
+     "ev_streak": 0
     },
     {
      "num": 7,
      "name": "グローリースター",
-     "win_prob": 0.1134,
+     "win_prob": 0.1064,
      "rank": 4,
-     "odds": 5.4,
+     "odds": 5.3,
      "position": null,
      "result_time": null,
      "jockey": "中原蓮",
@@ -34849,8 +34852,8 @@
      "prize_year": 429,
      "horse_class": "C2",
      "year_form": 5.0,
-     "place2": 0.2287,
-     "place3": 0.3456,
+     "place2": 0.2166,
+     "place3": 0.3303,
      "ability": 60.0,
      "sled_prev": 590.0,
      "sled_diff": 0,
@@ -35001,23 +35004,24 @@
       }
      ],
      "place3_time_avg": 123.8,
-     "p_market": 0.1473,
-     "win_prob_blend": 0.1439,
-     "ev": 0.78,
-     "ev_buy": false
+     "p_market": 0.1501,
+     "win_prob_blend": 0.1373,
+     "ev": 0.73,
+     "ev_buy": false,
+     "ev_streak": 0
     },
     {
      "num": 6,
      "name": "モトイチヒメ",
-     "win_prob": 0.0738,
+     "win_prob": 0.075,
      "rank": 5,
-     "odds": 6.8,
+     "odds": 10.9,
      "position": null,
      "result_time": null,
      "jockey": "金田利",
      "gate": 6,
      "sled_kg": 570.0,
-     "popularity": 5,
+     "popularity": 9,
      "age": 3,
      "sex": "牝",
      "trainer": "林　豊（ばんえい）",
@@ -35030,8 +35034,8 @@
      "prize_year": 507,
      "horse_class": "C2",
      "year_form": 6.0,
-     "place2": 0.1524,
-     "place3": 0.2366,
+     "place2": 0.1555,
+     "place3": 0.2424,
      "ability": 54.1,
      "sled_prev": 560.0,
      "sled_diff": 10,
@@ -35205,23 +35209,223 @@
       }
      ],
      "place3_time_avg": 131.9,
-     "p_market": 0.117,
-     "win_prob_blend": 0.1066,
-     "ev": 0.72,
-     "ev_buy": false
+     "p_market": 0.073,
+     "win_prob_blend": 0.076,
+     "ev": 0.83,
+     "ev_buy": false,
+     "ev_streak": 0
+    },
+    {
+     "num": 1,
+     "name": "ザッチカラ",
+     "win_prob": 0.0665,
+     "rank": 6,
+     "odds": 31.4,
+     "position": null,
+     "result_time": null,
+     "jockey": "赤塚健",
+     "gate": 1,
+     "sled_kg": 590.0,
+     "popularity": 10,
+     "age": 3,
+     "sex": "牡",
+     "trainer": "林　豊（ばんえい）",
+     "elo": 1552,
+     "f_obstacle": 5.5,
+     "f_finish": 7.1,
+     "f_weight": 4.0,
+     "f_kuzure": 6.1,
+     "prize_program": 1114,
+     "prize_year": 225,
+     "horse_class": "C2",
+     "year_form": 1.1,
+     "place2": 0.1385,
+     "place3": 0.2171,
+     "ability": 55.5,
+     "sled_prev": 590.0,
+     "sled_diff": 0,
+     "jockey_record": [
+      0,
+      0,
+      0,
+      2
+     ],
+     "ren_n": 4,
+     "ren_time_avg": 126.8,
+     "ren_time_min": 120.2,
+     "ren_time_max": 144.0,
+     "ren_moist_avg": 1.72,
+     "past": [
+      {
+       "m": 0.8,
+       "p": 1,
+       "t": 144.0,
+       "wt": 144.0
+      },
+      {
+       "m": 3.3,
+       "p": 2,
+       "t": 120.2,
+       "wt": 116.7
+      },
+      {
+       "m": 0.6,
+       "p": 3,
+       "t": 162.5,
+       "wt": 146.6
+      },
+      {
+       "m": 2.2,
+       "p": 7,
+       "t": 136.3,
+       "wt": 115.5
+      },
+      {
+       "m": 1.9,
+       "p": 5,
+       "t": 177.9,
+       "wt": 149.3
+      },
+      {
+       "m": 1.1,
+       "p": 7,
+       "t": 171.5,
+       "wt": 153.9
+      },
+      {
+       "m": 1.2,
+       "p": 4,
+       "t": 204.1,
+       "wt": 175.4
+      },
+      {
+       "m": 1.8,
+       "p": 8,
+       "t": 127.9,
+       "wt": 106.1
+      },
+      {
+       "m": 3.6,
+       "p": 5,
+       "t": 111.5,
+       "wt": 107.4
+      },
+      {
+       "m": 1.6,
+       "p": 2,
+       "t": 122.5,
+       "wt": 119.9
+      },
+      {
+       "m": 2.7,
+       "p": 6,
+       "t": 140.8,
+       "wt": 124.9
+      },
+      {
+       "m": 2.5,
+       "p": 8,
+       "t": 131.2,
+       "wt": 106.9
+      },
+      {
+       "m": 2.3,
+       "p": 8,
+       "t": 121.2,
+       "wt": 106.1
+      },
+      {
+       "m": 2.6,
+       "p": 10,
+       "t": 141.3,
+       "wt": 115.0
+      },
+      {
+       "m": 2.3,
+       "p": 9,
+       "t": 169.0,
+       "wt": 124.7
+      },
+      {
+       "m": 1.6,
+       "p": 8,
+       "t": 139.9,
+       "wt": 111.5
+      },
+      {
+       "m": 1.9,
+       "p": 5,
+       "t": 151.6,
+       "wt": 123.0
+      },
+      {
+       "m": 1.0,
+       "p": 7,
+       "t": 105.1,
+       "wt": 93.7
+      },
+      {
+       "m": 1.5,
+       "p": 10,
+       "t": 125.4,
+       "wt": 86.3
+      },
+      {
+       "m": 1.3,
+       "p": 9,
+       "t": 148.6,
+       "wt": 114.5
+      },
+      {
+       "m": 1.0,
+       "p": 8,
+       "t": 120.4,
+       "wt": 91.5
+      },
+      {
+       "m": 1.6,
+       "p": 7,
+       "t": 146.3,
+       "wt": 111.7
+      },
+      {
+       "m": 1.0,
+       "p": 9,
+       "t": 175.5,
+       "wt": 121.0
+      },
+      {
+       "m": 0.6,
+       "p": 5,
+       "t": 149.3,
+       "wt": 121.2
+      },
+      {
+       "m": 1.2,
+       "p": 1,
+       "t": 120.6,
+       "wt": 120.6
+      }
+     ],
+     "place3_time_avg": 134.0,
+     "p_market": 0.0253,
+     "win_prob_blend": 0.0366,
+     "ev": 1.15,
+     "ev_buy": true,
+     "ev_streak": 1
     },
     {
      "num": 9,
      "name": "ツカサキング",
-     "win_prob": 0.073,
-     "rank": 6,
-     "odds": 5.4,
+     "win_prob": 0.0639,
+     "rank": 7,
+     "odds": 7.3,
      "position": null,
      "result_time": null,
      "jockey": "島津新",
      "gate": 8,
      "sled_kg": 590.0,
-     "popularity": 2,
+     "popularity": 5,
      "age": 3,
      "sex": "牡",
      "trainer": "大河和（ばんえい）",
@@ -35234,8 +35438,8 @@
      "prize_year": 396,
      "horse_class": "C2",
      "year_form": 4.5,
-     "place2": 0.1508,
-     "place3": 0.2343,
+     "place2": 0.1333,
+     "place3": 0.2093,
      "ability": 57.1,
      "sled_prev": 590.0,
      "sled_diff": 0,
@@ -35415,221 +35619,24 @@
       }
      ],
      "place3_time_avg": 135.0,
-     "p_market": 0.1473,
-     "win_prob_blend": 0.1233,
-     "ev": 0.67,
-     "ev_buy": false
-    },
-    {
-     "num": 1,
-     "name": "ザッチカラ",
-     "win_prob": 0.0661,
-     "rank": 7,
-     "odds": 27.2,
-     "position": null,
-     "result_time": null,
-     "jockey": "赤塚健",
-     "gate": 1,
-     "sled_kg": 590.0,
-     "popularity": 9,
-     "age": 3,
-     "sex": "牡",
-     "trainer": "林　豊（ばんえい）",
-     "elo": 1552,
-     "f_obstacle": 5.5,
-     "f_finish": 7.1,
-     "f_weight": 4.0,
-     "f_kuzure": 6.1,
-     "prize_program": 1114,
-     "prize_year": 225,
-     "horse_class": "C2",
-     "year_form": 1.1,
-     "place2": 0.1371,
-     "place3": 0.2139,
-     "ability": 55.5,
-     "sled_prev": 590.0,
-     "sled_diff": 0,
-     "jockey_record": [
-      0,
-      0,
-      0,
-      2
-     ],
-     "ren_n": 4,
-     "ren_time_avg": 126.8,
-     "ren_time_min": 120.2,
-     "ren_time_max": 144.0,
-     "ren_moist_avg": 1.72,
-     "past": [
-      {
-       "m": 0.8,
-       "p": 1,
-       "t": 144.0,
-       "wt": 144.0
-      },
-      {
-       "m": 3.3,
-       "p": 2,
-       "t": 120.2,
-       "wt": 116.7
-      },
-      {
-       "m": 0.6,
-       "p": 3,
-       "t": 162.5,
-       "wt": 146.6
-      },
-      {
-       "m": 2.2,
-       "p": 7,
-       "t": 136.3,
-       "wt": 115.5
-      },
-      {
-       "m": 1.9,
-       "p": 5,
-       "t": 177.9,
-       "wt": 149.3
-      },
-      {
-       "m": 1.1,
-       "p": 7,
-       "t": 171.5,
-       "wt": 153.9
-      },
-      {
-       "m": 1.2,
-       "p": 4,
-       "t": 204.1,
-       "wt": 175.4
-      },
-      {
-       "m": 1.8,
-       "p": 8,
-       "t": 127.9,
-       "wt": 106.1
-      },
-      {
-       "m": 3.6,
-       "p": 5,
-       "t": 111.5,
-       "wt": 107.4
-      },
-      {
-       "m": 1.6,
-       "p": 2,
-       "t": 122.5,
-       "wt": 119.9
-      },
-      {
-       "m": 2.7,
-       "p": 6,
-       "t": 140.8,
-       "wt": 124.9
-      },
-      {
-       "m": 2.5,
-       "p": 8,
-       "t": 131.2,
-       "wt": 106.9
-      },
-      {
-       "m": 2.3,
-       "p": 8,
-       "t": 121.2,
-       "wt": 106.1
-      },
-      {
-       "m": 2.6,
-       "p": 10,
-       "t": 141.3,
-       "wt": 115.0
-      },
-      {
-       "m": 2.3,
-       "p": 9,
-       "t": 169.0,
-       "wt": 124.7
-      },
-      {
-       "m": 1.6,
-       "p": 8,
-       "t": 139.9,
-       "wt": 111.5
-      },
-      {
-       "m": 1.9,
-       "p": 5,
-       "t": 151.6,
-       "wt": 123.0
-      },
-      {
-       "m": 1.0,
-       "p": 7,
-       "t": 105.1,
-       "wt": 93.7
-      },
-      {
-       "m": 1.5,
-       "p": 10,
-       "t": 125.4,
-       "wt": 86.3
-      },
-      {
-       "m": 1.3,
-       "p": 9,
-       "t": 148.6,
-       "wt": 114.5
-      },
-      {
-       "m": 1.0,
-       "p": 8,
-       "t": 120.4,
-       "wt": 91.5
-      },
-      {
-       "m": 1.6,
-       "p": 7,
-       "t": 146.3,
-       "wt": 111.7
-      },
-      {
-       "m": 1.0,
-       "p": 9,
-       "t": 175.5,
-       "wt": 121.0
-      },
-      {
-       "m": 0.6,
-       "p": 5,
-       "t": 149.3,
-       "wt": 121.2
-      },
-      {
-       "m": 1.2,
-       "p": 1,
-       "t": 120.6,
-       "wt": 120.6
-      }
-     ],
-     "place3_time_avg": 134.0,
-     "p_market": 0.0292,
-     "win_prob_blend": 0.0416,
-     "ev": 1.13,
-     "ev_buy": true
+     "p_market": 0.109,
+     "win_prob_blend": 0.0933,
+     "ev": 0.68,
+     "ev_buy": false,
+     "ev_streak": 0
     },
     {
      "num": 3,
      "name": "ワフラーム",
-     "win_prob": 0.0641,
+     "win_prob": 0.0596,
      "rank": 8,
-     "odds": 0.0,
+     "odds": 9.3,
      "position": null,
      "result_time": null,
      "jockey": "長澤幸",
      "gate": 3,
      "sled_kg": 570.0,
-     "popularity": 10,
+     "popularity": 6,
      "age": 3,
      "sex": "牝",
      "trainer": "服部義（ばんえい）",
@@ -35642,8 +35649,8 @@
      "prize_year": 618,
      "horse_class": "C2",
      "year_form": 7.2,
-     "place2": 0.1331,
-     "place3": 0.2079,
+     "place2": 0.1246,
+     "place3": 0.1962,
      "ability": 54.6,
      "sled_prev": 560.0,
      "sled_diff": 10,
@@ -35829,23 +35836,24 @@
       }
      ],
      "place3_time_avg": 132.7,
-     "p_market": null,
-     "win_prob_blend": null,
-     "ev": null,
-     "ev_buy": false
+     "p_market": 0.0855,
+     "win_prob_blend": 0.0778,
+     "ev": 0.72,
+     "ev_buy": false,
+     "ev_streak": 0
     },
     {
      "num": 5,
      "name": "ジェイパワー",
-     "win_prob": 0.0592,
+     "win_prob": 0.0572,
      "rank": 9,
-     "odds": 9.0,
+     "odds": 9.6,
      "position": null,
      "result_time": null,
      "jockey": "中村太",
      "gate": 5,
      "sled_kg": 590.0,
-     "popularity": 6,
+     "popularity": 7,
      "age": 3,
      "sex": "牡",
      "trainer": "小林長（ばんえい）",
@@ -35858,8 +35866,8 @@
      "prize_year": 600,
      "horse_class": "C2",
      "year_form": 7.0,
-     "place2": 0.1233,
-     "place3": 0.1931,
+     "place2": 0.1198,
+     "place3": 0.1888,
      "ability": 57.5,
      "sled_prev": 580.0,
      "sled_diff": 10,
@@ -36021,23 +36029,24 @@
       }
      ],
      "place3_time_avg": 119.0,
-     "p_market": 0.0884,
-     "win_prob_blend": 0.0822,
-     "ev": 0.74,
-     "ev_buy": false
+     "p_market": 0.0829,
+     "win_prob_blend": 0.0751,
+     "ev": 0.72,
+     "ev_buy": false,
+     "ev_streak": 0
     },
     {
      "num": 8,
      "name": "イワキロマン",
-     "win_prob": 0.049,
+     "win_prob": 0.0483,
      "rank": 10,
-     "odds": 5.4,
+     "odds": 7.2,
      "position": null,
      "result_time": null,
      "jockey": "今井千",
      "gate": 7,
      "sled_kg": 560.0,
-     "popularity": 2,
+     "popularity": 4,
      "age": 3,
      "sex": "牝",
      "trainer": "村上慎（ばんえい）",
@@ -36050,8 +36059,8 @@
      "prize_year": 336,
      "horse_class": "C2",
      "year_form": 3.5,
-     "place2": 0.1026,
-     "place3": 0.1617,
+     "place2": 0.1016,
+     "place3": 0.1611,
      "ability": 57.3,
      "sled_prev": 570.0,
      "sled_diff": -10,
@@ -36166,10 +36175,11 @@
       }
      ],
      "place3_time_avg": 130.0,
-     "p_market": 0.1473,
-     "win_prob_blend": 0.1073,
-     "ev": 0.58,
-     "ev_buy": false
+     "p_market": 0.1105,
+     "win_prob_blend": 0.0853,
+     "ev": 0.61,
+     "ev_buy": false,
+     "ev_streak": 0
     }
    ]
   }
