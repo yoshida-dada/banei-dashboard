@@ -245,6 +245,25 @@ table.hm td.l{padding:5px 7px}
 .fixed{font-size:.6rem;color:var(--muted);border:1px solid var(--border);border-radius:5px;padding:0 5px;margin-left:3px}
 .colreset{margin-top:10px;background:none;border:none;color:var(--edge);font-size:.78rem;font-weight:700;cursor:pointer;font-family:inherit;text-decoration:underline;padding:0}
 
+/* 着順メダル（金/銀/銅）。各レコード先頭 */
+.medal{display:inline-flex;width:17px;height:17px;border-radius:50%;align-items:center;justify-content:center;
+  font-size:.66rem;font-weight:800;flex:none;border:1px solid rgba(0,0,0,.25);box-shadow:0 1px 1px rgba(0,0,0,.18)}
+.medal.m1{background:linear-gradient(160deg,#ffe479,#e0af1a);color:#5a3d00}
+.medal.m2{background:linear-gradient(160deg,#eef1f4,#b3b9c1);color:#3a4048}
+.medal.m3{background:linear-gradient(160deg,#f0b98a,#c9743a);color:#4a2708}
+table.ht .numcell{display:inline-flex;align-items:center;gap:4px}
+.horse .hh .medal{margin-right:1px}
+/* 払戻金セクション（結果確定後） */
+.paysect{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:11px 13px;margin-top:10px;box-shadow:var(--shadow)}
+.payhead{font-weight:800;font-size:.9rem;margin-bottom:8px}
+.paytbl{width:100%;border-collapse:collapse;font-size:.75rem;font-variant-numeric:tabular-nums}
+.paytbl th,.paytbl td{padding:6px 6px;border-bottom:1px solid var(--border2);text-align:right;vertical-align:top;line-height:1.5}
+.paytbl th{color:var(--muted);font-size:.64rem;font-weight:700}
+.paytbl th:first-child,.paytbl td:first-child{text-align:left}
+.paytbl .pt-bt{font-weight:700;white-space:nowrap}
+.paytbl .pt-combo{text-align:left;white-space:nowrap}
+.paytbl .pt-pay{font-weight:800;color:var(--good)}
+.paynote{font-size:.64rem;color:var(--muted);margin-top:7px}
 .foot{font-size:.72rem;color:var(--muted);line-height:1.7;margin-top:26px;border-top:1px solid var(--border);padding-top:14px}
 /* トップタブ（レース予測 / 成績） */
 .brand{display:flex;align-items:center;gap:9px;flex-wrap:wrap}
@@ -308,6 +327,7 @@ table.hm td.l{padding:5px 7px}
 
 <div class="wrap" id="mainwrap">
   <div id="meta"></div>
+  <div id="payouts"></div>
   <div class="secthead">
     <span class="sect">出走馬 予測</span>
     <div class="vtoggle" id="stoggle">
@@ -420,6 +440,26 @@ function raceAssessment(r){
   o.eloNote=eloNote;
   return o;
 }
+// 着順メダル（1着=金,2着=銀,3着=銅）。各レコード先頭に表示。
+const medal = p => (p>=1 && p<=3) ? `<span class="medal m${p}" title="${p}着">${p}</span>` : "";
+// 払戻金セクション（結果確定後・全券種）
+function renderPayouts(r){
+  const el=document.getElementById("payouts"); if(!el) return;
+  const p=r.payouts;
+  if(!p || !p.length){ el.innerHTML=""; return; }
+  const order=["単勝","複勝","ワイド","馬連","馬単","三連複","三連単"];
+  const byType={};
+  p.forEach(x=>{ (byType[x.bet_type_jp]=byType[x.bet_type_jp]||[]).push(x); });
+  const rows=order.filter(jp=>byType[jp]).map(jp=>{ const items=byType[jp];
+    return `<tr><td class="pt-bt">${jp}</td>`
+      +`<td class="pt-combo num">${items.map(i=>i.combo).join("<br>")}</td>`
+      +`<td class="pt-pay num">${items.map(i=>"¥"+Number(i.payout).toLocaleString()).join("<br>")}</td>`
+      +`<td class="pt-pop num">${items.map(i=>i.popularity!=null?i.popularity+"番":"—").join("<br>")}</td></tr>`;
+  }).join("");
+  el.innerHTML=`<div class="paysect"><div class="payhead">💰 払戻金</div>`
+    +`<table class="paytbl"><thead><tr><th>券種</th><th>組合せ</th><th>払戻</th><th>人気</th></tr></thead><tbody>${rows}</tbody></table>`
+    +`<div class="paynote">払戻は100円あたり（単勝・複勝・ワイド・馬連・馬単・三連複・三連単）。</div></div>`;
+}
 function render(){
   const r = get(); if(!r) return;
   // meta
@@ -464,6 +504,7 @@ function render(){
     +preBadge+updChip+`</div>`
     +asHtml
     +`<div class="result">`+resultRow+`</div></div>`;
+  renderPayouts(r);
 
   // horses
   const maxW = Math.max(...r.horses.map(h=>h.win_prob||0), .0001);
@@ -610,7 +651,7 @@ function featBar(label,v){ const w=Math.max(0,Math.min(100,(v||0)*10));
 // テーブルの列定義（always=常時表示。それ以外は「⚙列」で表示/非表示できる）
 const COLS = [
   {key:"num", label:"馬番", always:true, th:'<th class="l">馬</th>',
-   td:h=>`<td class="l"><span class="tnum" style="${capStyle(h.gate)}">${h.num}</span></td>`},
+   td:h=>`<td class="l"><span class="numcell">${medal(h.position)}<span class="tnum" style="${capStyle(h.gate)}">${h.num}</span></span></td>`},
   {key:"name", label:"馬名・馬齢・厩舎", always:true, th:'<th class="l">馬名 / 馬齢・厩舎</th>',
    td:h=>`<td class="l"><div class="c2"><span class="tname">${h.name||''}</span><span class="tsub">${(h.sex||'')+(h.age!=null?h.age:'')}${h.trainer?'・'+cleanInst(h.trainer):''}</span></div></td>`},
   {key:"jockey", label:"騎手・成績", th:'<th class="l">騎手 / 成績</th>',
@@ -703,7 +744,7 @@ function cardView(hs, maxW, hasResult){
         +`<span>連対 <b class="num">${h.ren_n}回</b></span></div>`
       : `<div class="aptline">連対履歴なし（適性データ不足）</div>`;
     return `<div class="horse ${isWin?'winner':''} ${scratched?'scratched':''} ${evCls(h)}">`
-      +`<div class="hh"><span class="rk">${h.rank}</span><span class="hnum num" style="${capStyle(h.gate)}">${h.num}</span>`
+      +`<div class="hh">${medal(h.position)}<span class="rk">${h.rank}</span><span class="hnum num" style="${capStyle(h.gate)}">${h.num}</span>`
       +`<span class="hnamewrap"><span class="hname">${h.name||''}</span>`
       +`<span class="hsub">${(h.sex||'')+(h.age!=null?h.age:'')}${h.trainer?' ・ '+cleanInst(h.trainer):''}</span>`
       +`<span class="hjk">${h.jockey||'騎手不明'} <span class="jrec">${recFmt(h.jockey_record)}</span></span></span>`
