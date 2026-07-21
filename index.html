@@ -301,6 +301,15 @@ table.ht .numcell{display:inline-flex;align-items:center;gap:4px}
 .tksvg{width:100%;height:auto;display:block;margin-top:4px;background:var(--surface);border:1px solid var(--border);border-radius:12px}
 .tknote{font-size:.68rem;color:var(--muted);margin-top:8px;line-height:1.6}
 .tkwarn{background:var(--accent-soft);border:1px solid var(--accent);border-radius:9px;padding:8px 11px;font-size:.7rem;color:var(--ink);margin-bottom:14px}
+/* 馬券ロジック 期間フィルタ */
+.lgpreset{display:flex;gap:6px;flex-wrap:wrap;margin:8px 0 6px}
+.lgpreset button{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:5px 10px;font-size:.7rem;font-weight:700;color:var(--ink);cursor:pointer;font-family:inherit}
+.lgpreset button:hover{border-color:var(--accent)}
+.lgfilt{display:flex;align-items:center;gap:6px;font-size:.72rem;color:var(--muted);margin-bottom:8px;flex-wrap:wrap}
+.lgfilt select{font-family:inherit;font-size:.74rem;padding:4px 6px;border:1px solid var(--border);border-radius:7px;background:var(--surface);color:var(--ink)}
+.lgtbl .lgname{white-space:normal;font-weight:600;max-width:190px;line-height:1.35}
+.lgtbl .lgpos{color:var(--good);font-weight:800}
+.lgtbl .lgneg{color:var(--muted);font-weight:700}
 </style>
 
 <header>
@@ -362,6 +371,7 @@ table.ht .numcell{display:inline-flex;align-items:center;gap:4px}
 
 <script id="data" type="application/json">/*__DATA__*/</script>
 <script id="trackdata" type="application/json">/*__TRACKING__*/</script>
+<script id="logicdata" type="application/json">/*__LOGIC__*/</script>
 <script>
 function boot(DB){
 const RACES = DB.races;
@@ -975,8 +985,57 @@ function renderTrack(T){
     +`<div class="tknote">点＝予測勝率帯（大きさ=頭数）。対角線に近いほど正確。線より下＝過信（予測ほど勝てていない）。</div>`; }
   if((T.pnl||[]).length){ html+=`<div class="tksect">買い目 累積損益（時系列）</div>`+svgPnl(T.pnl)
     +`<div class="tknote">買い目を表示オッズ×的中で払い戻した場合の累積損益。破線＝損益分岐。</div>`; }
+  html+=`<div class="tksect">🎫 馬券ロジック検証（期間フィルタ可）</div><div id="logicsect"></div>`;
   html+=`<div class="foot">成績は archive/*.json の予測・買い目に、DB の確定着順を突き合わせて集計（結果はDB＝翌朝の自動取込が正）。実購入は行っていません。生成 ${(T.generated||'').replace('T',' ').slice(0,16)}</div>`;
   el.innerHTML=html;
+  renderLogic();
+}
+let logicFrom=null, logicTo=null;
+function renderLogic(){
+  const box=document.getElementById("logicsect"); if(!box) return;
+  const L=window.__LOGIC;
+  if(!L || !L.daily){ box.innerHTML='<div class="tknote">馬券ロジックデータを読み込み中…（logic_backtest.json）</div>'; return; }
+  const dates=Object.keys(L.daily).sort();
+  if(!dates.length){ box.innerHTML='<div class="tknote">データがありません。</div>'; return; }
+  if(!logicFrom || dates.indexOf(logicFrom)<0) logicFrom=dates[0];
+  if(!logicTo || dates.indexOf(logicTo)<0) logicTo=dates[dates.length-1];
+  if(logicFrom>logicTo){ const t=logicFrom; logicFrom=logicTo; logicTo=t; }
+  const agg={};
+  dates.forEach(d=>{ if(d<logicFrom||d>logicTo) return; const day=L.daily[d];
+    Object.keys(day).forEach(n=>{ const v=day[n]; const a=agg[n]||(agg[n]=[0,0,0,0]);
+      a[0]+=v[0]; a[1]+=v[1]; a[2]+=v[2]; a[3]+=v[3]; }); });
+  const rows=(L.logics||Object.keys(agg)).filter(n=>agg[n]&&agg[n][1]>0)
+    .map(n=>{const v=agg[n];return {n,nb:v[0],st:v[1],rt:v[2],hi:v[3],roi:v[2]/v[1]};})
+    .sort((a,b)=>b.roi-a.roi);
+  const nD=dates.filter(d=>d>=logicFrom&&d<=logicTo).length;
+  const opt=sel=>dates.map(d=>`<option value="${d}" ${d===sel?'selected':''}>${d.slice(5).replace('-','/')}</option>`).join("");
+  const preset=`<div class="lgpreset"><button data-lp="all">全期間</button><button data-lp="m1">直近1ヶ月</button><button data-lp="w2">直近2週</button><button data-lp="last">最新開催</button></div>`;
+  const filt=`<div class="lgfilt"><span>期間</span><select id="lgFrom">${opt(logicFrom)}</select><span>〜</span><select id="lgTo">${opt(logicTo)}</select></div>`;
+  const tbl=`<div class="tblwrap"><table class="tktbl lgtbl"><thead><tr><th>ロジック</th><th>R数</th><th>回収率</th><th>的中</th></tr></thead><tbody>`
+    +rows.map(r=>`<tr><td class="lgname">${r.n}</td><td>${r.nb}</td><td class="${r.roi>=1?'lgpos':'lgneg'}">${(r.roi*100).toFixed(0)}%</td><td>${r.hi}</td></tr>`).join("")
+    +`</tbody></table></div>`;
+  box.innerHTML=preset+filt
+    +`<div class="tknote">対象 ${logicFrom}〜${logicTo}（${nD}開催日）。3000円/R・100円単位・実払戻ベース。◎=予測1位/◯2/▲3/△4/☆5。②EV系はオッズのある回のみ。<b>回収率100%超で黒字</b>。小サンプルでは1本の高配当で大きく振れます。</div>`
+    +tbl;
+  box.querySelectorAll("#lgFrom,#lgTo").forEach(s=>s.addEventListener("change",()=>{
+    logicFrom=document.getElementById("lgFrom").value; logicTo=document.getElementById("lgTo").value; renderLogic(); }));
+  box.querySelectorAll(".lgpreset button").forEach(b=>b.addEventListener("click",()=>{
+    const last=dates[dates.length-1];
+    const back=x=>{const dt=new Date(last); dt.setDate(dt.getDate()-x); return dt.toISOString().slice(0,10);};
+    const lp=b.dataset.lp;
+    if(lp==="all"){ logicFrom=dates[0]; logicTo=last; }
+    else if(lp==="m1"){ logicFrom=dates.find(d=>d>=back(30))||dates[0]; logicTo=last; }
+    else if(lp==="w2"){ logicFrom=dates.find(d=>d>=back(14))||dates[0]; logicTo=last; }
+    else if(lp==="last"){ let i=dates.length-1; const blk=[dates[i]];
+      while(i>0){ const g=(new Date(dates[i])-new Date(dates[i-1]))/86400000; if(g<=2){ blk.unshift(dates[i-1]); i--; } else break; }
+      logicFrom=blk[0]; logicTo=blk[blk.length-1]; }
+    renderLogic(); }));
+}
+function loadLogic(){
+  const el=document.getElementById("logicdata"), raw=el?el.textContent:"";
+  if(raw && raw.indexOf("__LOGIC__")===-1){ try{ window.__LOGIC=JSON.parse(raw); renderLogic(); return; }catch(e){} }
+  fetch("./logic_backtest.json?t="+Date.now()).then(r=>r.json()).then(j=>{ window.__LOGIC=j; renderLogic(); })
+    .catch(()=>{ const b=document.getElementById("logicsect"); if(b) b.innerHTML='<div class="tknote">馬券ロジックデータ(logic_backtest.json)はまだありません。</div>'; });
 }
 function switchTop(t){
   const isTrack=t==="track";
@@ -988,6 +1047,7 @@ function switchTop(t){
 }
 function loadTracking(){
   window.__TRACK_LOADED=true;
+  loadLogic();
   const el=document.getElementById("trackdata"), raw=el?el.textContent:"";
   if(raw && raw.indexOf("__TRACKING__")===-1){ try{ renderTrack(JSON.parse(raw)); return; }catch(e){} }
   document.getElementById("track").innerHTML='<div class="meta">成績データ読込中…</div>';
