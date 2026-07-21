@@ -251,6 +251,7 @@ table.hm td.l{padding:5px 7px}
 .medal.m1{background:linear-gradient(160deg,#ffe479,#e0af1a);color:#5a3d00}
 .medal.m2{background:linear-gradient(160deg,#eef1f4,#b3b9c1);color:#3a4048}
 .medal.m3{background:linear-gradient(160deg,#f0b98a,#c9743a);color:#4a2708}
+.medal.medal-ph{background:none;border-color:transparent;box-shadow:none}  /* 空の枠（発走前・4着以下でも幅を確保） */
 table.ht .numcell{display:inline-flex;align-items:center;gap:4px}
 .horse .hh .medal{margin-right:1px}
 /* 払戻金セクション（結果確定後） */
@@ -440,8 +441,10 @@ function raceAssessment(r){
   o.eloNote=eloNote;
   return o;
 }
-// 着順メダル（1着=金,2着=銀,3着=銅）。各レコード先頭に表示。
-const medal = p => (p>=1 && p<=3) ? `<span class="medal m${p}" title="${p}着">${p}</span>` : "";
+// 着順メダル（1着=金,2着=銀,3着=銅）。枠は常に確保（プレースホルダー）し、着順確定後のみ表示。
+const medal = p => (p>=1 && p<=3)
+  ? `<span class="medal m${p}" title="${p}着">${p}</span>`
+  : `<span class="medal medal-ph"></span>`;
 // 払戻金セクション（結果確定後・全券種）
 function renderPayouts(r){
   const el=document.getElementById("payouts"); if(!el) return;
