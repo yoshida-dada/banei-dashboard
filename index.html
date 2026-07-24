@@ -310,6 +310,14 @@ table.ht .numcell{display:inline-flex;align-items:center;gap:4px}
 .lgtbl .lgname{white-space:normal;font-weight:600;max-width:190px;line-height:1.35}
 .lgtbl .lgpos{color:var(--good);font-weight:800}
 .lgtbl .lgneg{color:var(--muted);font-weight:700}
+/* バックエンド（オッズ収集ポーラー）稼働表示バナー（P2） */
+.bestatus{display:flex;align-items:center;gap:8px;justify-content:center;font-size:12px;font-weight:700;padding:5px 10px;border-bottom:1px solid var(--line,#2a2a2a)}
+.bestatus .bdot{width:9px;height:9px;border-radius:50%;flex:none}
+.bestatus.on{background:rgba(46,160,67,.12);color:#2ea043}
+.bestatus.on .bdot{background:#2ea043;box-shadow:0 0 0 3px rgba(46,160,67,.20);animation:bpulse 2s infinite}
+.bestatus.off{background:rgba(127,127,127,.08);color:var(--muted,#888)}
+.bestatus.off .bdot{background:var(--muted,#888)}
+@keyframes bpulse{0%,100%{opacity:1}50%{opacity:.35}}
 </style>
 
 <header>
@@ -319,6 +327,7 @@ table.ht .numcell{display:inline-flex;align-items:center;gap:4px}
     <button data-t="track" aria-pressed="false">成績</button>
   </div>
 </header>
+<div id="beStatus" class="bestatus off" hidden></div>
 
 <div class="nav">
   <div class="nav-in">
@@ -930,6 +939,25 @@ if(_ctg) _ctg.addEventListener("click",()=>{ const p=document.getElementById("co
 renderRacePills(); sync();
 // バックエンドURLを自動取得（PCで run_all.ps1 起動時に反映される）
 loadBackendConfig(); setInterval(loadBackendConfig, 90000);
+// バックエンド（オッズ収集ポーラー）の稼働状態を backend_status.json から読み、上部バナーに表示。
+async function loadBackendStatus(){
+  const el=document.getElementById("beStatus"); if(!el) return;
+  try{
+    const r=await fetch("./backend_status.json?cb="+Date.now(),{cache:"no-store"});
+    if(!r.ok){ el.hidden=true; return; }
+    const j=await r.json();
+    const upd=j.updated_at? new Date(j.updated_at):null;
+    const ageMin=upd? (Date.now()-upd.getTime())/60000 : 999;
+    const fresh=(j.running===true)&&(ageMin<12);   // push間引き10分+余裕
+    el.hidden=false;
+    el.className="bestatus "+(fresh?"on":"off");
+    const t=upd? upd.toLocaleTimeString('ja-JP',{hour:'2-digit',minute:'2-digit'}):"—";
+    el.innerHTML='<span class="bdot"></span>'+(fresh
+      ? `バックエンド稼働中 — ${j.message||"オッズ収集"}（更新 ${t}）`
+      : `バックエンド停止中${j.updated_at?`（最終 ${t}）`:""}`);
+  }catch(e){ el.hidden=true; }
+}
+loadBackendStatus(); setInterval(loadBackendStatus, 60000);
 
 // ===== 成績タブ（P2） =====
 const tkPct = v => v==null ? "—" : (v*100).toFixed(1)+"%";
