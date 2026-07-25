@@ -4220,8 +4220,8 @@
    "predicted_top": 6,
    "market_fav": 6,
    "winner": null,
-   "update_stage": "evscan",
-   "updated_at": "2026-07-25 16:46",
+   "update_stage": "odds",
+   "updated_at": "2026-07-25 16:48",
    "horses": [
     {
      "num": 6,
@@ -4428,7 +4428,7 @@
       }
      ],
      "place3_time_avg": 120.5,
-     "p_market": 0.233,
+     "p_market": 0.2339,
      "win_prob_blend": 0.2423,
      "ev": 0.82,
      "ev_buy": false,
@@ -4439,7 +4439,7 @@
      "name": "スズカゼ",
      "win_prob": 0.2184,
      "rank": 2,
-     "odds": 4.7,
+     "odds": 4.4,
      "position": null,
      "result_time": null,
      "jockey": "吉田理",
@@ -4783,9 +4783,9 @@
       }
      ],
      "place3_time_avg": 128.9,
-     "p_market": 0.1686,
-     "win_prob_blend": 0.1876,
-     "ev": 0.88,
+     "p_market": 0.1808,
+     "win_prob_blend": 0.1958,
+     "ev": 0.86,
      "ev_buy": false,
      "ev_streak": 0
     },
@@ -4794,13 +4794,13 @@
      "name": "マルホンカムイ",
      "win_prob": 0.1379,
      "rank": 3,
-     "odds": 6.4,
+     "odds": 6.6,
      "position": null,
      "result_time": null,
      "jockey": "金田利",
      "gate": 7,
      "sled_kg": 600.0,
-     "popularity": 4,
+     "popularity": 5,
      "age": 4,
      "sex": "牡",
      "trainer": "金田勇（ばんえい）",
@@ -5072,9 +5072,9 @@
       }
      ],
      "place3_time_avg": 125.6,
-     "p_market": 0.1238,
-     "win_prob_blend": 0.1307,
-     "ev": 0.84,
+     "p_market": 0.1205,
+     "win_prob_blend": 0.1281,
+     "ev": 0.85,
      "ev_buy": false,
      "ev_streak": 0
     },
@@ -5083,7 +5083,7 @@
      "name": "ブラックバカラ",
      "win_prob": 0.1351,
      "rank": 4,
-     "odds": 3.8,
+     "odds": 4.2,
      "position": null,
      "result_time": null,
      "jockey": "大友一",
@@ -5427,9 +5427,9 @@
       }
      ],
      "place3_time_avg": 127.3,
-     "p_market": 0.2085,
-     "win_prob_blend": 0.1821,
-     "ev": 0.69,
+     "p_market": 0.1894,
+     "win_prob_blend": 0.1706,
+     "ev": 0.72,
      "ev_buy": false,
      "ev_streak": 0
     },
@@ -5444,7 +5444,7 @@
      "jockey": "島津新",
      "gate": 5,
      "sled_kg": 600.0,
-     "popularity": 5,
+     "popularity": 4,
      "age": 4,
      "sex": "牡",
      "trainer": "林　豊（ばんえい）",
@@ -5788,7 +5788,7 @@
       }
      ],
      "place3_time_avg": 128.9,
-     "p_market": 0.1219,
+     "p_market": 0.1224,
      "win_prob_blend": 0.1049,
      "ev": 0.68,
      "ev_buy": false,
@@ -5799,7 +5799,7 @@
      "name": "アサヒファイヤー",
      "win_prob": 0.0561,
      "rank": 6,
-     "odds": 15.0,
+     "odds": 14.4,
      "position": null,
      "result_time": null,
      "jockey": "渡来心",
@@ -5975,9 +5975,9 @@
       }
      ],
      "place3_time_avg": 110.3,
-     "p_market": 0.0528,
-     "win_prob_blend": 0.0548,
-     "ev": 0.82,
+     "p_market": 0.0552,
+     "win_prob_blend": 0.0563,
+     "ev": 0.81,
      "ev_buy": false,
      "ev_streak": 0
     },
@@ -5986,7 +5986,7 @@
      "name": "ハゴロモグレース",
      "win_prob": 0.0376,
      "rank": 7,
-     "odds": 30.1,
+     "odds": 26.9,
      "position": null,
      "result_time": null,
      "jockey": "阿部武",
@@ -6348,9 +6348,9 @@
       }
      ],
      "place3_time_avg": 133.5,
-     "p_market": 0.0263,
-     "win_prob_blend": 0.0303,
-     "ev": 0.91,
+     "p_market": 0.0296,
+     "win_prob_blend": 0.0326,
+     "ev": 0.88,
      "ev_buy": false,
      "ev_streak": 0
     },
@@ -6359,7 +6359,7 @@
      "name": "ホクセイハスゴイ",
      "win_prob": 0.0357,
      "rank": 8,
-     "odds": 31.6,
+     "odds": 29.4,
      "position": null,
      "result_time": null,
      "jockey": "菊池一",
@@ -6679,9 +6679,9 @@
       }
      ],
      "place3_time_avg": 140.8,
-     "p_market": 0.0251,
-     "win_prob_blend": 0.0288,
-     "ev": 0.91,
+     "p_market": 0.0271,
+     "win_prob_blend": 0.0302,
+     "ev": 0.89,
      "ev_buy": false,
      "ev_streak": 0
     },
@@ -6690,7 +6690,7 @@
      "name": "カブトダイヤ",
      "win_prob": 0.034,
      "rank": 9,
-     "odds": 19.8,
+     "odds": 19.3,
      "position": null,
      "result_time": null,
      "jockey": "阿部優",
@@ -6896,9 +6896,9 @@
       }
      ],
      "place3_time_avg": 110.1,
-     "p_market": 0.04,
-     "win_prob_blend": 0.0384,
-     "ev": 0.76,
+     "p_market": 0.0412,
+     "win_prob_blend": 0.0391,
+     "ev": 0.75,
      "ev_buy": false,
      "ev_streak": 0
     },
@@ -7210,7 +7210,8 @@
      "ev_buy": false,
      "ev_streak": 0
     }
-   ]
+   ],
+   "bets": []
   },
   {
    "date": "2026-07-25",
