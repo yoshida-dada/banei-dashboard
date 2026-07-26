@@ -1,6 +1,6 @@
 {
  "date": "2026-07-26",
- "archived_at": "2026-07-26 19:31",
+ "archived_at": "2026-07-26 19:33",
  "races": [
   {
    "date": "2026-07-26",
@@ -19323,8 +19323,8 @@
    "predicted_top": 2,
    "market_fav": 2,
    "winner": null,
-   "update_stage": "evscan",
-   "updated_at": "2026-07-26 19:31",
+   "update_stage": "odds",
+   "updated_at": "2026-07-26 19:33",
    "horses": [
     {
      "num": 2,
@@ -19639,8 +19639,8 @@
       }
      ],
      "place3_time_avg": 112.9,
-     "p_market": 0.4566,
-     "win_prob_blend": 0.3819,
+     "p_market": 0.4565,
+     "win_prob_blend": 0.3818,
      "ev": 0.65,
      "ev_buy": false,
      "ev_streak": 0
@@ -20223,7 +20223,7 @@
      ],
      "place3_time_avg": 114.5,
      "p_market": 0.2985,
-     "win_prob_blend": 0.2837,
+     "win_prob_blend": 0.2836,
      "ev": 0.74,
      "ev_buy": false,
      "ev_streak": 0
@@ -20710,7 +20710,7 @@
      ],
      "place3_time_avg": 115.0,
      "p_market": 0.1008,
-     "win_prob_blend": 0.1197,
+     "win_prob_blend": 0.1196,
      "ev": 0.92,
      "ev_buy": false,
      "ev_streak": 0
@@ -20720,7 +20720,7 @@
      "name": "アスノチカラ",
      "win_prob": 0.0922,
      "rank": 4,
-     "odds": 27.7,
+     "odds": 27.6,
      "position": null,
      "result_time": null,
      "jockey": "赤塚健",
@@ -21232,8 +21232,8 @@
       }
      ],
      "place3_time_avg": 120.5,
-     "p_market": 0.028,
-     "win_prob_blend": 0.0459,
+     "p_market": 0.0281,
+     "win_prob_blend": 0.046,
      "ev": 1.27,
      "ev_buy": true,
      "ev_streak": 3
@@ -22920,7 +22920,7 @@
      "name": "ミナミジュウジセイ",
      "win_prob": 0.0477,
      "rank": 8,
-     "odds": 80.4,
+     "odds": 80.6,
      "position": null,
      "result_time": null,
      "jockey": "大友一",
@@ -23492,7 +23492,7 @@
       }
      ],
      "place3_time_avg": 116.4,
-     "p_market": 0.0097,
+     "p_market": 0.0096,
      "win_prob_blend": 0.0182,
      "ev": 1.47,
      "ev_buy": true,
@@ -23503,7 +23503,7 @@
      "name": "ハゴロモファルコン",
      "win_prob": 0.0444,
      "rank": 9,
-     "odds": 25.9,
+     "odds": 26.0,
      "position": null,
      "result_time": null,
      "jockey": "林康文",
@@ -24033,8 +24033,8 @@
       }
      ],
      "place3_time_avg": 110.1,
-     "p_market": 0.03,
-     "win_prob_blend": 0.0371,
+     "p_market": 0.0298,
+     "win_prob_blend": 0.037,
      "ev": 0.96,
      "ev_buy": false,
      "ev_streak": 0
@@ -24044,7 +24044,7 @@
      "name": "ジェイサンダー",
      "win_prob": 0.0283,
      "rank": 10,
-     "odds": 60.5,
+     "odds": 59.2,
      "position": null,
      "result_time": null,
      "jockey": "阿部武",
@@ -24628,13 +24628,14 @@
       }
      ],
      "place3_time_avg": 115.3,
-     "p_market": 0.0128,
-     "win_prob_blend": 0.0183,
-     "ev": 1.11,
+     "p_market": 0.0131,
+     "win_prob_blend": 0.0185,
+     "ev": 1.1,
      "ev_buy": true,
      "ev_streak": 3
     }
-   ]
+   ],
+   "bets": []
   },
   {
    "date": "2026-07-26",
