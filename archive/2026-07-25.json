@@ -1,6 +1,6 @@
 {
  "date": "2026-07-25",
- "archived_at": "2026-07-27 21:18",
+ "archived_at": "2026-07-27 21:44",
  "races": [
   {
    "date": "2026-07-25",
@@ -3740,7 +3740,11 @@
      "payout": 45950,
      "popularity": 219
     }
-   ]
+   ],
+   "track_offset": -23.6,
+   "track_z": -2.13,
+   "track_label": "軽",
+   "track_n": 2
   },
   {
    "date": "2026-07-25",
@@ -4523,7 +4527,11 @@
      "payout": 17510,
      "popularity": 45
     }
-   ]
+   ],
+   "track_offset": -20.8,
+   "track_z": -1.69,
+   "track_label": "軽",
+   "track_n": 3
   },
   {
    "date": "2026-07-25",
@@ -7607,7 +7615,11 @@
      "payout": 5880,
      "popularity": 20
     }
-   ]
+   ],
+   "track_offset": -13.9,
+   "track_z": -0.61,
+   "track_label": "標準",
+   "track_n": 4
   },
   {
    "date": "2026-07-25",
@@ -9689,7 +9701,11 @@
      "payout": 15310,
      "popularity": 42
     }
-   ]
+   ],
+   "track_offset": -15.9,
+   "track_z": -0.92,
+   "track_label": "軽",
+   "track_n": 5
   },
   {
    "date": "2026-07-25",
@@ -10427,7 +10443,11 @@
      "payout": 3560,
      "popularity": 3
     }
-   ]
+   ],
+   "track_offset": -20.2,
+   "track_z": -1.6,
+   "track_label": "軽",
+   "track_n": 6
   },
   {
    "date": "2026-07-25",
@@ -15592,7 +15612,11 @@
      "payout": 9440,
      "popularity": 28
     }
-   ]
+   ],
+   "track_offset": -17.3,
+   "track_z": -1.15,
+   "track_label": "軽",
+   "track_n": 7
   },
   {
    "date": "2026-07-25",
@@ -20721,7 +20745,11 @@
      "payout": 7030,
      "popularity": 16
     }
-   ]
+   ],
+   "track_offset": -15.7,
+   "track_z": -0.9,
+   "track_label": "軽",
+   "track_n": 8
   },
   {
    "date": "2026-07-25",
@@ -26000,7 +26028,11 @@
      "payout": 9920,
      "popularity": 32
     }
-   ]
+   ],
+   "track_offset": -15.2,
+   "track_z": -0.82,
+   "track_label": "軽",
+   "track_n": 9
   },
   {
    "date": "2026-07-25",
@@ -30201,7 +30233,11 @@
      "payout": 7520,
      "popularity": 25
     }
-   ]
+   ],
+   "track_offset": -15.2,
+   "track_z": -0.81,
+   "track_label": "軽",
+   "track_n": 10
   },
   {
    "date": "2026-07-25",
@@ -34245,7 +34281,11 @@
      "payout": 125170,
      "popularity": 371
     }
-   ]
+   ],
+   "track_offset": -14.3,
+   "track_z": -0.68,
+   "track_label": "標準",
+   "track_n": 11
   }
  ]
 }
