@@ -342,6 +342,17 @@ table.ht .numcell{display:inline-flex;align-items:center;gap:4px}
 .otbl .ospk{padding:2px 4px}
 .ospark{display:block;margin:0 auto}
 .oanom{color:#d1495b}
+.otbl tbody tr.orowc{cursor:pointer}
+.otbl tbody tr.orowc:hover{background:rgba(127,127,127,.08)}
+.otbl tbody tr.osel-row{background:var(--accent-soft,rgba(76,155,232,.16));box-shadow:inset 3px 0 0 var(--accent)}
+.ochint{font-size:.72rem;color:var(--muted);margin:10px 0 4px}
+.ochart{border:1px solid var(--border);border-radius:8px;padding:10px 8px;background:var(--surface)}
+.ochart .ocht{font-size:.74rem;font-weight:700;color:var(--ink);margin-bottom:6px;line-height:1.4}
+.ochart svg{display:block;width:100%;height:auto}
+.oaxis{fill:var(--muted);font-size:9px}
+.olgd{display:flex;flex-wrap:wrap;gap:8px 12px;margin-top:8px;justify-content:center}
+.olg{font-size:.72rem;color:var(--ink);display:inline-flex;align-items:center;gap:4px}
+.olg i{width:12px;height:3px;border-radius:2px;display:inline-block}
 </style>
 
 <header>
@@ -1111,7 +1122,7 @@ function loadTracking(){
     .catch(()=>{ document.getElementById("track").innerHTML='<div class="meta">成績データ(tracking.json)はまだありません。開催後に生成されます。</div>'; });
 }
 // ===== オッズ履歴ビューア（P2、締切前オッズ時系列） =====
-window.__ODDS={data:null,day:0,race:0,bet:"win"};
+window.__ODDS={data:null,day:0,race:0,bet:"win",horse:null};
 var ODDS_BET_LABELS={win:"単勝",place:"複勝",exacta:"馬単",quinella:"馬複",trifecta:"三連単",trio:"三連複"};
 var ODDS_BET_ORDER=["win","place","exacta","quinella","trifecta","trio"];
 function loadOdds(){
@@ -1119,7 +1130,7 @@ function loadOdds(){
   const host=document.getElementById("odds");
   host.innerHTML='<div class="meta">オッズ履歴を読込中…</div>';
   fetch("./odds_history.json?t="+Date.now()).then(r=>r.json()).then(d=>{
-    window.__ODDS.data=d; window.__ODDS.day=0; window.__ODDS.race=0; window.__ODDS.bet="win"; renderOdds();
+    window.__ODDS.data=d; window.__ODDS.day=0; window.__ODDS.race=0; window.__ODDS.bet="win"; window.__ODDS.horse=null; renderOdds();
   }).catch(()=>{ host.innerHTML='<div class="meta">オッズ履歴(odds_history.json)はまだありません。開催後に生成されます。</div>'; });
 }
 function oddsSpark(series,w=96,h=24){
@@ -1134,6 +1145,38 @@ function oddsSpark(series,w=96,h=24){
   const down=series[series.length-1][1]<series[0][1];
   const col=down?"#2ea043":"#d1495b";
   return `<svg class="ospark" width="${w}" height="${h}" viewBox="0 0 ${w} ${h}"><polyline points="${pts}" fill="none" stroke="${col}" stroke-width="1.5" stroke-linejoin="round"/></svg>`;
+}
+var ODDS_BET_COLORS={win:"#4c9be8",place:"#63c76a",exacta:"#e3b341",quinella:"#c77dff",trifecta:"#f2749b",trio:"#f0883e"};
+function oddsTMin(t){ const p=(t||"").split(":"); return p.length===2?(+p[0]*60+ +p[1]):null; }
+function oddsTLbl(m){ const h=Math.floor(m/60),mm=m%60; return (h<10?"0":"")+h+":"+(mm<10?"0":"")+mm; }
+// 選択した馬の全券種オッズを1枚に重ねる（初回=1.0基準の比率。線が同時刻に揃って動く＝複数券種で同調＝インサイダー疑い）
+function renderOddsChart(race,num){
+  const bets=race.bets||{};
+  const set=[];
+  ODDS_BET_ORDER.forEach(bt=>{
+    const rows=bets[bt]; if(!rows) return;
+    const row=rows.find(r=>r.num===num);
+    if(row&&row.series&&row.series.length>=2) set.push({bt,name:ODDS_BET_LABELS[bt]||bt,series:row.series});
+  });
+  if(!set.length) return '<div class="meta">この馬のオッズ時系列がありません。</div>';
+  const allT=[]; set.forEach(s=>s.series.forEach(p=>{const m=oddsTMin(p[0]); if(m!=null)allT.push(m);}));
+  const t0=Math.min(...allT),t1=Math.max(...allT),tr=(t1-t0)||1;
+  const ratios=[]; set.forEach(s=>{const o0=s.series[0][1]||1; s.norm=s.series.map(p=>[oddsTMin(p[0]),p[1]/o0]); s.norm.forEach(q=>{if(q[0]!=null)ratios.push(q[1]);});});
+  const rmin=Math.min(...ratios),rmax=Math.max(...ratios),rr=(rmax-rmin)||1;
+  const W=340,H=190,padL=30,padR=8,padT=12,padB=20,iw=W-padL-padR,ih=H-padT-padB;
+  const X=m=>padL+((m-t0)/tr)*iw, Y=r=>padT+(1-(r-rmin)/rr)*ih;
+  const lines=set.map(s=>{
+    const pts=s.norm.filter(q=>q[0]!=null).map(q=>X(q[0]).toFixed(1)+","+Y(q[1]).toFixed(1)).join(" ");
+    return `<polyline points="${pts}" fill="none" stroke="${ODDS_BET_COLORS[s.bt]}" stroke-width="1.7" stroke-linejoin="round"/>`;
+  }).join("");
+  const base=`<line x1="${padL}" y1="${Y(1).toFixed(1)}" x2="${W-padR}" y2="${Y(1).toFixed(1)}" stroke="var(--border)" stroke-dasharray="3 3"/>`;
+  const yl=`<text x="2" y="${(Y(rmax)+3).toFixed(1)}" class="oaxis">${rmax.toFixed(2)}x</text><text x="2" y="${Y(1).toFixed(1)}" class="oaxis">1.0x</text><text x="2" y="${(Y(rmin)).toFixed(1)}" class="oaxis">${rmin.toFixed(2)}x</text>`;
+  const xl=`<text x="${padL}" y="${H-5}" class="oaxis">${oddsTLbl(t0)}</text><text x="${W-padR}" y="${H-5}" text-anchor="end" class="oaxis">${oddsTLbl(t1)}</text>`;
+  const legend=set.map(s=>`<span class="olg"><i style="background:${ODDS_BET_COLORS[s.bt]}"></i>${s.name}</span>`).join("");
+  const nm=(race.bets.win.find(r=>r.num===num)||{}).name||"";
+  return `<div class="ochart"><div class="ocht">${num}番 ${nm} ・ 全券種オッズ推移（初回=1.0基準の比率／複数券種が同時刻に同調して動く＝インサイダー疑い）</div>`
+    +`<svg width="100%" viewBox="0 0 ${W} ${H}" preserveAspectRatio="xMidYMid meet">${base}${lines}${yl}${xl}</svg>`
+    +`<div class="olgd">${legend}</div></div>`;
 }
 function renderOdds(){
   const S=window.__ODDS,d=S.data,host=document.getElementById("odds");
@@ -1154,11 +1197,15 @@ function renderOdds(){
   const isCombo=(S.bet!=="win"&&S.bet!=="place");
   const rowsArr=(bets[S.bet]||[]).filter(r=>r.series&&r.series.length);
   const hs=[...rowsArr].sort((a,b)=>(a.last==null?9e9:a.last)-(b.last==null?9e9:b.last));
+  // 選択馬（未選択/このレースに居なければ先頭＝最人気）
+  const roster=(bets.win||[]).map(r=>r.num);
+  if(S.horse==null || roster.indexOf(S.horse)<0) S.horse=hs.length?hs[0].num:(roster[0]||null);
   const rows=hs.map(h=>{
     const dr=h.drift, drCls=dr==null?"":(dr<-0.5?"odn":(dr>0.5?"oup":"")), drTxt=dr==null?"—":(dr>0?"+"+dr.toFixed(1):dr.toFixed(1));
     const anom=(h.last!=null&&h.last<=4&&h.pos!=null&&h.pos>3)?' <span class="oanom" title="低オッズ(人気)なのに着外">⚠</span>':'';
     const posTxt=h.pos!=null?(h.pos+"着"):"—", posCls=h.pos===1?"opos1":(h.pos&&h.pos<=3?"opos3":"");
-    return `<tr><td class="onum">${h.num}</td><td class="l">${h.name}${anom}</td>`
+    const selCls=h.num===S.horse?" osel-row":"";
+    return `<tr class="orowc${selCls}" data-num="${h.num}"><td class="onum">${h.num}</td><td class="l">${h.name}${anom}</td>`
       +`<td>${h.pop!=null?h.pop:"—"}</td><td>${h.first!=null?h.first.toFixed(1):"—"}</td>`
       +`<td class="olast">${h.last!=null?h.last.toFixed(1):"—"}</td>`
       +`<td class="${drCls}">${drTxt}</td><td class="ospk">${oddsSpark(h.series)}</td>`
@@ -1170,10 +1217,17 @@ function renderOdds(){
     : `${ODDS_BET_LABELS[S.bet]}オッズの推移`;
   host.innerHTML=`<div class="osel"><div class="orow" id="odays">${dayBtns}</div><div class="orow" id="oraces">${raceBtns}</div><div class="orow obetrow">${betBtns}</div></div>`
     +`<div class="ometa">${day.date} ${race.no}R ${race.class||""}${race.post?" ・ 発走"+race.post:""}<br><span class="muted">${desc}（<b style="color:#2ea043">緑=短縮(資金流入)</b> / <b style="color:#d1495b">赤=上昇</b> / ⚠=低オッズなのに着外）・終オッズ順</span></div>`
-    +`<div class="otblwrap"><table class="otbl"><thead><tr><th>馬番</th><th class="l">馬名</th><th>人気</th><th>${oddsHead}</th><th>${oddsHead2}</th><th>変動</th><th>推移</th><th>着</th></tr></thead><tbody>${rows}</tbody></table></div>`;
+    +`<div class="otblwrap"><table class="otbl"><thead><tr><th>馬番</th><th class="l">馬名</th><th>人気</th><th>${oddsHead}</th><th>${oddsHead2}</th><th>変動</th><th>推移</th><th>着</th></tr></thead><tbody>${rows}</tbody></table></div>`
+    +`<div class="ochint">▼ 馬をタップすると全券種のオッズ推移を1枚で比較</div>`
+    +`<div id="ochartwrap">${S.horse!=null?renderOddsChart(race,S.horse):""}</div>`;
   host.querySelectorAll("[data-day]").forEach(b=>b.onclick=()=>{S.day=+b.dataset.day;S.race=0;renderOdds();});
   host.querySelectorAll("[data-race]").forEach(b=>b.onclick=()=>{S.race=+b.dataset.race;renderOdds();});
   host.querySelectorAll("[data-bet]").forEach(b=>b.onclick=()=>{S.bet=b.dataset.bet;renderOdds();});
+  host.querySelectorAll(".orowc").forEach(tr=>tr.onclick=()=>{
+    S.horse=+tr.dataset.num;
+    host.querySelectorAll(".orowc").forEach(x=>x.classList.toggle("osel-row",+x.dataset.num===S.horse));
+    document.getElementById("ochartwrap").innerHTML=renderOddsChart(race,S.horse);
+  });
 }
 document.querySelectorAll("#toptabs button").forEach(b=>b.addEventListener("click",()=>switchTop(b.dataset.t)));
 
