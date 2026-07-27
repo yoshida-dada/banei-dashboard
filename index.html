@@ -76,6 +76,10 @@ header{padding:calc(14px + env(safe-area-inset-top)) calc(14px + env(safe-area-i
 .chip.pre{background:var(--accent-soft);color:var(--accent);border-color:transparent;font-weight:700}
 .chip.cancel{background:color-mix(in srgb,var(--muted) 22%,var(--surface));color:var(--ink);border-color:transparent;font-weight:800}
 .chip.upd{background:var(--edge-soft);color:var(--edge);border-color:transparent;font-weight:700}
+.chip.trk{border-color:transparent;font-weight:700}
+.chip.trk-l{background:rgba(76,155,232,.16);color:#4c9be8}
+.chip.trk-h{background:rgba(240,136,62,.18);color:#d9822b}
+.chip.trk-s{background:rgba(127,127,127,.12);color:var(--muted)}
 .assess{display:flex;align-items:center;gap:9px;margin-top:11px;font-size:.84rem;flex-wrap:wrap}
 .assess .al{font-weight:800;padding:3px 12px;border-radius:999px;font-size:.82rem;white-space:nowrap}
 .assess .an{color:var(--muted)}
@@ -529,6 +533,10 @@ function render(){
   const moistChip = r.moisture!=null
     ? `<span class="chip moist">馬場水分 ${r.moisture}%</span>`
     : `<span class="chip pre">馬場水分 未定</span>`;
+  // 当日馬場判定（結果タイム由来。軽=基準より速い/重=遅い、直近開催比のzスコアで相対判定）
+  const trackChip = r.track_label
+    ? `<span class="chip trk ${r.track_label==='軽'?'trk-l':r.track_label==='重'?'trk-h':'trk-s'}" title="当日ここまで${r.track_n||0}レースの結果タイムから推定（基準比${r.track_offset>0?'+':''}${r.track_offset}秒 / z=${r.track_z}）">当日馬場 <b>${r.track_label}</b></span>`
+    : '';
   const preBadge = cancelled ? `<span class="chip cancel">🌧 中止（悪天候）</span>`
     : (hasResult ? "" : `<span class="chip pre">発走前・暫定</span>`);
   const updChip = r.updated_at
@@ -557,6 +565,7 @@ function render(){
     `<div class="meta"><div class="top"><span class="rname">${r.race_no}R ${r.race_name||''}</span></div>`
     +`<div class="chips"><span class="chip">クラス <b>${r.class||'—'}</b></span>`
     +moistChip
+    +trackChip
     +`<span class="chip">${r.field_size}頭</span>`
     +(r.post_time?`<span class="chip">発走 <b>${r.post_time}</b></span>`:'')
     +(hasResult?`<span class="chip">決着 <b>${r.win_time||'—'}</b></span>`:'')
