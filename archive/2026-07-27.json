@@ -1,6 +1,6 @@
 {
  "date": "2026-07-27",
- "archived_at": "2026-07-27 18:09",
+ "archived_at": "2026-07-27 18:14",
  "races": [
   {
    "date": "2026-07-27",
@@ -5786,8 +5786,8 @@
    "predicted_top": 8,
    "market_fav": 9,
    "winner": 4,
-   "update_stage": "pre",
-   "updated_at": "2026-07-27 18:05",
+   "update_stage": "result",
+   "updated_at": "2026-07-27 18:14",
    "horses": [
     {
      "num": 8,
@@ -5997,7 +5997,8 @@
      "p_market": 0.0799,
      "win_prob_blend": 0.1133,
      "ev": 1.11,
-     "ev_buy": true
+     "ev_buy": true,
+     "ev_streak": 0
     },
     {
      "num": 6,
@@ -6351,7 +6352,8 @@
      "p_market": 0.1187,
      "win_prob_blend": 0.1385,
      "ev": 0.91,
-     "ev_buy": false
+     "ev_buy": false,
+     "ev_streak": 0
     },
     {
      "num": 9,
@@ -6459,7 +6461,8 @@
      "p_market": 0.4124,
      "win_prob_blend": 0.3004,
      "ev": 0.57,
-     "ev_buy": false
+     "ev_buy": false,
+     "ev_streak": 0
     },
     {
      "num": 2,
@@ -6621,7 +6624,8 @@
      "p_market": 0.0478,
      "win_prob_blend": 0.0722,
      "ev": 1.18,
-     "ev_buy": true
+     "ev_buy": true,
+     "ev_streak": 0
     },
     {
      "num": 4,
@@ -6754,7 +6758,8 @@
      "p_market": 0.2304,
      "win_prob_blend": 0.2008,
      "ev": 0.68,
-     "ev_buy": false
+     "ev_buy": false,
+     "ev_streak": 0
     },
     {
      "num": 10,
@@ -7072,7 +7077,8 @@
      "p_market": 0.0122,
      "win_prob_blend": 0.0285,
      "ev": 1.83,
-     "ev_buy": true
+     "ev_buy": true,
+     "ev_streak": 0
     },
     {
      "num": 5,
@@ -7426,7 +7432,8 @@
      "p_market": 0.0568,
      "win_prob_blend": 0.0745,
      "ev": 1.03,
-     "ev_buy": true
+     "ev_buy": true,
+     "ev_streak": 0
     },
     {
      "num": 3,
@@ -7786,7 +7793,8 @@
      "p_market": 0.0148,
      "win_prob_blend": 0.0272,
      "ev": 1.44,
-     "ev_buy": true
+     "ev_buy": true,
+     "ev_streak": 0
     },
     {
      "num": 7,
@@ -7978,7 +7986,8 @@
      "p_market": 0.0221,
      "win_prob_blend": 0.0337,
      "ev": 1.19,
-     "ev_buy": true
+     "ev_buy": true,
+     "ev_streak": 0
     },
     {
      "num": 1,
@@ -8320,7 +8329,8 @@
      "p_market": 0.0049,
      "win_prob_blend": 0.0109,
      "ev": 1.74,
-     "ev_buy": true
+     "ev_buy": true,
+     "ev_streak": 0
     }
    ]
   },
