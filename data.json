@@ -69641,8 +69641,8 @@
    "predicted_top": 7,
    "market_fav": 5,
    "winner": 5,
-   "update_stage": "pre",
-   "updated_at": "2026-07-27 18:05",
+   "update_stage": "result",
+   "updated_at": "2026-07-27 18:47",
    "horses": [
     {
      "num": 7,
@@ -71434,6 +71434,85 @@
      "ev": 1.0,
      "ev_buy": true
     }
+   ],
+   "payouts": [
+    {
+     "bet_type": "win",
+     "bet_type_jp": "単勝",
+     "combo": "5",
+     "payout": 220,
+     "popularity": 1
+    },
+    {
+     "bet_type": "place",
+     "bet_type_jp": "複勝",
+     "combo": "5",
+     "payout": 110,
+     "popularity": 1
+    },
+    {
+     "bet_type": "place",
+     "bet_type_jp": "複勝",
+     "combo": "7",
+     "payout": 120,
+     "popularity": 2
+    },
+    {
+     "bet_type": "place",
+     "bet_type_jp": "複勝",
+     "combo": "6",
+     "payout": 130,
+     "popularity": 3
+    },
+    {
+     "bet_type": "wide",
+     "bet_type_jp": "ワイド",
+     "combo": "5-7",
+     "payout": 180,
+     "popularity": 1
+    },
+    {
+     "bet_type": "wide",
+     "bet_type_jp": "ワイド",
+     "combo": "5-6",
+     "payout": 220,
+     "popularity": 2
+    },
+    {
+     "bet_type": "wide",
+     "bet_type_jp": "ワイド",
+     "combo": "6-7",
+     "payout": 240,
+     "popularity": 3
+    },
+    {
+     "bet_type": "quinella",
+     "bet_type_jp": "馬連",
+     "combo": "5-7",
+     "payout": 450,
+     "popularity": 1
+    },
+    {
+     "bet_type": "exacta",
+     "bet_type_jp": "馬単",
+     "combo": "5→7",
+     "payout": 1030,
+     "popularity": 3
+    },
+    {
+     "bet_type": "trio",
+     "bet_type_jp": "三連複",
+     "combo": "5-6-7",
+     "payout": 580,
+     "popularity": 1
+    },
+    {
+     "bet_type": "trifecta",
+     "bet_type_jp": "三連単",
+     "combo": "5→7→6",
+     "payout": 2460,
+     "popularity": 1
+    }
    ]
   },
   {
@@ -71448,8 +71527,8 @@
    "predicted_top": 7,
    "market_fav": 7,
    "winner": 4,
-   "update_stage": "pre",
-   "updated_at": "2026-07-27 18:05",
+   "update_stage": "result",
+   "updated_at": "2026-07-27 18:47",
    "horses": [
     {
      "num": 7,
@@ -71819,6 +71898,85 @@
      "ev": 0.62,
      "ev_buy": false
     }
+   ],
+   "payouts": [
+    {
+     "bet_type": "win",
+     "bet_type_jp": "単勝",
+     "combo": "4",
+     "payout": 420,
+     "popularity": 2
+    },
+    {
+     "bet_type": "place",
+     "bet_type_jp": "複勝",
+     "combo": "4",
+     "payout": 230,
+     "popularity": 4
+    },
+    {
+     "bet_type": "place",
+     "bet_type_jp": "複勝",
+     "combo": "5",
+     "payout": 230,
+     "popularity": 5
+    },
+    {
+     "bet_type": "place",
+     "bet_type_jp": "複勝",
+     "combo": "3",
+     "payout": 350,
+     "popularity": 6
+    },
+    {
+     "bet_type": "wide",
+     "bet_type_jp": "ワイド",
+     "combo": "4-5",
+     "payout": 600,
+     "popularity": 11
+    },
+    {
+     "bet_type": "wide",
+     "bet_type_jp": "ワイド",
+     "combo": "3-5",
+     "payout": 690,
+     "popularity": 12
+    },
+    {
+     "bet_type": "wide",
+     "bet_type_jp": "ワイド",
+     "combo": "3-4",
+     "payout": 730,
+     "popularity": 15
+    },
+    {
+     "bet_type": "quinella",
+     "bet_type_jp": "馬連",
+     "combo": "3-4",
+     "payout": 1940,
+     "popularity": 9
+    },
+    {
+     "bet_type": "exacta",
+     "bet_type_jp": "馬単",
+     "combo": "4→3",
+     "payout": 3490,
+     "popularity": 17
+    },
+    {
+     "bet_type": "trio",
+     "bet_type_jp": "三連複",
+     "combo": "3-4-5",
+     "payout": 3210,
+     "popularity": 15
+    },
+    {
+     "bet_type": "trifecta",
+     "bet_type_jp": "三連単",
+     "combo": "4→3→5",
+     "payout": 22830,
+     "popularity": 131
+    }
    ]
   },
   {
@@ -71833,8 +71991,8 @@
    "predicted_top": 5,
    "market_fav": 4,
    "winner": 9,
-   "update_stage": "pre",
-   "updated_at": "2026-07-27 18:05",
+   "update_stage": "result",
+   "updated_at": "2026-07-27 18:47",
    "horses": [
     {
      "num": 5,
@@ -72281,6 +72439,85 @@
      "ev": 0.92,
      "ev_buy": false
     }
+   ],
+   "payouts": [
+    {
+     "bet_type": "win",
+     "bet_type_jp": "単勝",
+     "combo": "9",
+     "payout": 950,
+     "popularity": 5
+    },
+    {
+     "bet_type": "place",
+     "bet_type_jp": "複勝",
+     "combo": "8",
+     "payout": 220,
+     "popularity": 4
+    },
+    {
+     "bet_type": "place",
+     "bet_type_jp": "複勝",
+     "combo": "9",
+     "payout": 300,
+     "popularity": 5
+    },
+    {
+     "bet_type": "place",
+     "bet_type_jp": "複勝",
+     "combo": "5",
+     "payout": 370,
+     "popularity": 6
+    },
+    {
+     "bet_type": "wide",
+     "bet_type_jp": "ワイド",
+     "combo": "8-9",
+     "payout": 700,
+     "popularity": 8
+    },
+    {
+     "bet_type": "wide",
+     "bet_type_jp": "ワイド",
+     "combo": "5-8",
+     "payout": 960,
+     "popularity": 17
+    },
+    {
+     "bet_type": "wide",
+     "bet_type_jp": "ワイド",
+     "combo": "5-9",
+     "payout": 1110,
+     "popularity": 18
+    },
+    {
+     "bet_type": "quinella",
+     "bet_type_jp": "馬連",
+     "combo": "8-9",
+     "payout": 2300,
+     "popularity": 10
+    },
+    {
+     "bet_type": "exacta",
+     "bet_type_jp": "馬単",
+     "combo": "9→8",
+     "payout": 4670,
+     "popularity": 22
+    },
+    {
+     "bet_type": "trio",
+     "bet_type_jp": "三連複",
+     "combo": "5-8-9",
+     "payout": 9140,
+     "popularity": 32
+    },
+    {
+     "bet_type": "trifecta",
+     "bet_type_jp": "三連単",
+     "combo": "9→8→5",
+     "payout": 60810,
+     "popularity": 194
+    }
    ]
   },
   {
@@ -72295,8 +72532,8 @@
    "predicted_top": 6,
    "market_fav": 1,
    "winner": 8,
-   "update_stage": "pre",
-   "updated_at": "2026-07-27 18:05",
+   "update_stage": "result",
+   "updated_at": "2026-07-27 18:47",
    "horses": [
     {
      "num": 6,
@@ -72678,6 +72915,85 @@
      "ev": 0.73,
      "ev_buy": false
     }
+   ],
+   "payouts": [
+    {
+     "bet_type": "win",
+     "bet_type_jp": "単勝",
+     "combo": "8",
+     "payout": 350,
+     "popularity": 2
+    },
+    {
+     "bet_type": "place",
+     "bet_type_jp": "複勝",
+     "combo": "8",
+     "payout": 140,
+     "popularity": 3
+    },
+    {
+     "bet_type": "place",
+     "bet_type_jp": "複勝",
+     "combo": "6",
+     "payout": 140,
+     "popularity": 2
+    },
+    {
+     "bet_type": "place",
+     "bet_type_jp": "複勝",
+     "combo": "3",
+     "payout": 210,
+     "popularity": 5
+    },
+    {
+     "bet_type": "wide",
+     "bet_type_jp": "ワイド",
+     "combo": "6-8",
+     "payout": 320,
+     "popularity": 2
+    },
+    {
+     "bet_type": "wide",
+     "bet_type_jp": "ワイド",
+     "combo": "3-6",
+     "payout": 490,
+     "popularity": 9
+    },
+    {
+     "bet_type": "wide",
+     "bet_type_jp": "ワイド",
+     "combo": "3-8",
+     "payout": 520,
+     "popularity": 11
+    },
+    {
+     "bet_type": "quinella",
+     "bet_type_jp": "馬連",
+     "combo": "3-8",
+     "payout": 1480,
+     "popularity": 6
+    },
+    {
+     "bet_type": "exacta",
+     "bet_type_jp": "馬単",
+     "combo": "8→3",
+     "payout": 1760,
+     "popularity": 6
+    },
+    {
+     "bet_type": "trio",
+     "bet_type_jp": "三連複",
+     "combo": "3-6-8",
+     "payout": 1940,
+     "popularity": 7
+    },
+    {
+     "bet_type": "trifecta",
+     "bet_type_jp": "三連単",
+     "combo": "8→3→6",
+     "payout": 9520,
+     "popularity": 26
+    }
    ]
   },
   {
@@ -72692,8 +73008,8 @@
    "predicted_top": 8,
    "market_fav": 8,
    "winner": 4,
-   "update_stage": "pre",
-   "updated_at": "2026-07-27 18:05",
+   "update_stage": "result",
+   "updated_at": "2026-07-27 18:47",
    "horses": [
     {
      "num": 8,
@@ -73246,6 +73562,85 @@
      "ev": 0.54,
      "ev_buy": false
     }
+   ],
+   "payouts": [
+    {
+     "bet_type": "win",
+     "bet_type_jp": "単勝",
+     "combo": "4",
+     "payout": 650,
+     "popularity": 3
+    },
+    {
+     "bet_type": "place",
+     "bet_type_jp": "複勝",
+     "combo": "8",
+     "payout": 120,
+     "popularity": 1
+    },
+    {
+     "bet_type": "place",
+     "bet_type_jp": "複勝",
+     "combo": "4",
+     "payout": 160,
+     "popularity": 2
+    },
+    {
+     "bet_type": "place",
+     "bet_type_jp": "複勝",
+     "combo": "5",
+     "payout": 330,
+     "popularity": 7
+    },
+    {
+     "bet_type": "wide",
+     "bet_type_jp": "ワイド",
+     "combo": "4-8",
+     "payout": 280,
+     "popularity": 3
+    },
+    {
+     "bet_type": "wide",
+     "bet_type_jp": "ワイド",
+     "combo": "5-8",
+     "payout": 1070,
+     "popularity": 18
+    },
+    {
+     "bet_type": "wide",
+     "bet_type_jp": "ワイド",
+     "combo": "4-5",
+     "payout": 1460,
+     "popularity": 20
+    },
+    {
+     "bet_type": "quinella",
+     "bet_type_jp": "馬連",
+     "combo": "4-8",
+     "payout": 840,
+     "popularity": 2
+    },
+    {
+     "bet_type": "exacta",
+     "bet_type_jp": "馬単",
+     "combo": "4→8",
+     "payout": 2630,
+     "popularity": 11
+    },
+    {
+     "bet_type": "trio",
+     "bet_type_jp": "三連複",
+     "combo": "4-5-8",
+     "payout": 4780,
+     "popularity": 21
+    },
+    {
+     "bet_type": "trifecta",
+     "bet_type_jp": "三連単",
+     "combo": "4→8→5",
+     "payout": 27810,
+     "popularity": 110
+    }
    ]
   },
   {
@@ -73260,8 +73655,8 @@
    "predicted_top": 9,
    "market_fav": 4,
    "winner": 10,
-   "update_stage": "pre",
-   "updated_at": "2026-07-27 18:05",
+   "update_stage": "result",
+   "updated_at": "2026-07-27 18:47",
    "horses": [
     {
      "num": 9,
@@ -75398,6 +75793,85 @@
      "win_prob_blend": 0.0281,
      "ev": 0.89,
      "ev_buy": false
+    }
+   ],
+   "payouts": [
+    {
+     "bet_type": "win",
+     "bet_type_jp": "単勝",
+     "combo": "10",
+     "payout": 610,
+     "popularity": 3
+    },
+    {
+     "bet_type": "place",
+     "bet_type_jp": "複勝",
+     "combo": "7",
+     "payout": 120,
+     "popularity": 2
+    },
+    {
+     "bet_type": "place",
+     "bet_type_jp": "複勝",
+     "combo": "9",
+     "payout": 180,
+     "popularity": 3
+    },
+    {
+     "bet_type": "place",
+     "bet_type_jp": "複勝",
+     "combo": "10",
+     "payout": 230,
+     "popularity": 4
+    },
+    {
+     "bet_type": "wide",
+     "bet_type_jp": "ワイド",
+     "combo": "7-9",
+     "payout": 410,
+     "popularity": 4
+    },
+    {
+     "bet_type": "wide",
+     "bet_type_jp": "ワイド",
+     "combo": "7-10",
+     "payout": 470,
+     "popularity": 6
+    },
+    {
+     "bet_type": "wide",
+     "bet_type_jp": "ワイド",
+     "combo": "9-10",
+     "payout": 690,
+     "popularity": 10
+    },
+    {
+     "bet_type": "quinella",
+     "bet_type_jp": "馬連",
+     "combo": "7-10",
+     "payout": 2660,
+     "popularity": 8
+    },
+    {
+     "bet_type": "exacta",
+     "bet_type_jp": "馬単",
+     "combo": "10→7",
+     "payout": 4910,
+     "popularity": 18
+    },
+    {
+     "bet_type": "trio",
+     "bet_type_jp": "三連複",
+     "combo": "7-9-10",
+     "payout": 3030,
+     "popularity": 10
+    },
+    {
+     "bet_type": "trifecta",
+     "bet_type_jp": "三連単",
+     "combo": "10→7→9",
+     "payout": 15540,
+     "popularity": 49
     }
    ]
   },
@@ -77958,6 +78432,85 @@
      "ev": 1.74,
      "ev_buy": true,
      "ev_streak": 0
+    }
+   ],
+   "payouts": [
+    {
+     "bet_type": "win",
+     "bet_type_jp": "単勝",
+     "combo": "4",
+     "payout": 340,
+     "popularity": 2
+    },
+    {
+     "bet_type": "place",
+     "bet_type_jp": "複勝",
+     "combo": "4",
+     "payout": 200,
+     "popularity": 2
+    },
+    {
+     "bet_type": "place",
+     "bet_type_jp": "複勝",
+     "combo": "6",
+     "payout": 220,
+     "popularity": 3
+    },
+    {
+     "bet_type": "place",
+     "bet_type_jp": "複勝",
+     "combo": "10",
+     "payout": 1180,
+     "popularity": 9
+    },
+    {
+     "bet_type": "wide",
+     "bet_type_jp": "ワイド",
+     "combo": "4-6",
+     "payout": 580,
+     "popularity": 7
+    },
+    {
+     "bet_type": "wide",
+     "bet_type_jp": "ワイド",
+     "combo": "4-10",
+     "payout": 2690,
+     "popularity": 23
+    },
+    {
+     "bet_type": "wide",
+     "bet_type_jp": "ワイド",
+     "combo": "6-10",
+     "payout": 3550,
+     "popularity": 30
+    },
+    {
+     "bet_type": "quinella",
+     "bet_type_jp": "馬連",
+     "combo": "4-10",
+     "payout": 14660,
+     "popularity": 26
+    },
+    {
+     "bet_type": "exacta",
+     "bet_type_jp": "馬単",
+     "combo": "4→10",
+     "payout": 12720,
+     "popularity": 34
+    },
+    {
+     "bet_type": "trio",
+     "bet_type_jp": "三連複",
+     "combo": "4-6-10",
+     "payout": 20000,
+     "popularity": 56
+    },
+    {
+     "bet_type": "trifecta",
+     "bet_type_jp": "三連単",
+     "combo": "4→10→6",
+     "payout": 118360,
+     "popularity": 264
     }
    ]
   },
@@ -83272,6 +83825,106 @@
      "ev": 1.05,
      "ev_buy": true,
      "ev_streak": 0
+    }
+   ],
+   "payouts": [
+    {
+     "bet_type": "win",
+     "bet_type_jp": "単勝",
+     "combo": "5",
+     "payout": 130,
+     "popularity": 1
+    },
+    {
+     "bet_type": "win",
+     "bet_type_jp": "単勝",
+     "combo": "4",
+     "payout": 370,
+     "popularity": 6
+    },
+    {
+     "bet_type": "place",
+     "bet_type_jp": "複勝",
+     "combo": "5",
+     "payout": 120,
+     "popularity": 1
+    },
+    {
+     "bet_type": "place",
+     "bet_type_jp": "複勝",
+     "combo": "9",
+     "payout": 130,
+     "popularity": 2
+    },
+    {
+     "bet_type": "place",
+     "bet_type_jp": "複勝",
+     "combo": "4",
+     "payout": 190,
+     "popularity": 5
+    },
+    {
+     "bet_type": "wide",
+     "bet_type_jp": "ワイド",
+     "combo": "5-9",
+     "payout": 170,
+     "popularity": 1
+    },
+    {
+     "bet_type": "wide",
+     "bet_type_jp": "ワイド",
+     "combo": "4-5",
+     "payout": 310,
+     "popularity": 3
+    },
+    {
+     "bet_type": "wide",
+     "bet_type_jp": "ワイド",
+     "combo": "4-9",
+     "payout": 710,
+     "popularity": 11
+    },
+    {
+     "bet_type": "quinella",
+     "bet_type_jp": "馬連",
+     "combo": "4-5",
+     "payout": 1180,
+     "popularity": 4
+    },
+    {
+     "bet_type": "exacta",
+     "bet_type_jp": "馬単",
+     "combo": "5→4",
+     "payout": 670,
+     "popularity": 4
+    },
+    {
+     "bet_type": "exacta",
+     "bet_type_jp": "馬単",
+     "combo": "4→5",
+     "payout": 1470,
+     "popularity": 10
+    },
+    {
+     "bet_type": "trio",
+     "bet_type_jp": "三連複",
+     "combo": "4-5-9",
+     "payout": 1570,
+     "popularity": 3
+    },
+    {
+     "bet_type": "trifecta",
+     "bet_type_jp": "三連単",
+     "combo": "5→4→9",
+     "payout": 3580,
+     "popularity": 17
+    },
+    {
+     "bet_type": "trifecta",
+     "bet_type_jp": "三連単",
+     "combo": "4→5→9",
+     "payout": 6270,
+     "popularity": 43
     }
    ]
   },
