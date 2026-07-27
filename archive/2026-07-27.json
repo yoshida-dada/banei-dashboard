@@ -1,6 +1,6 @@
 {
  "date": "2026-07-27",
- "archived_at": "2026-07-27 18:41",
+ "archived_at": "2026-07-27 18:43",
  "races": [
   {
    "date": "2026-07-27",
@@ -13660,8 +13660,8 @@
    "predicted_top": 1,
    "market_fav": 1,
    "winner": null,
-   "update_stage": "evscan",
-   "updated_at": "2026-07-27 18:41",
+   "update_stage": "odds",
+   "updated_at": "2026-07-27 18:43",
    "horses": [
     {
      "num": 1,
@@ -17692,7 +17692,7 @@
      "win_prob_blend": 0.0228,
      "ev": 1.1,
      "ev_buy": true,
-     "ev_streak": 2
+     "ev_streak": 3
     },
     {
      "num": 4,
@@ -18205,7 +18205,8 @@
      "ev_buy": false,
      "ev_streak": 0
     }
-   ]
+   ],
+   "bets": []
   },
   {
    "date": "2026-07-27",
