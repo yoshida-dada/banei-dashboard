@@ -1149,7 +1149,8 @@ function oddsSpark(series,w=96,h=24){
 var ODDS_BET_COLORS={win:"#4c9be8",place:"#63c76a",exacta:"#e3b341",quinella:"#c77dff",trifecta:"#f2749b",trio:"#f0883e"};
 function oddsTMin(t){ const p=(t||"").split(":"); return p.length===2?(+p[0]*60+ +p[1]):null; }
 function oddsTLbl(m){ const h=Math.floor(m/60),mm=m%60; return (h<10?"0":"")+h+":"+(mm<10?"0":"")+mm; }
-// 選択した馬の全券種オッズを1枚に重ねる（初回=1.0基準の比率。線が同時刻に揃って動く＝複数券種で同調＝インサイダー疑い）
+// 選択した馬の全券種オッズを1枚に重ねる（生の合成オッズ。縦線=時刻。線が同時刻に揃って下降＝複数券種で同時に資金流入＝インサイダー疑い）
+function oddsNiceStep(span){ const cands=[1,2,5,10,15,30,60]; const t=span/7; for(const c of cands) if(c>=t) return c; return 60; }
 function renderOddsChart(race,num){
   const bets=race.bets||{};
   const set=[];
@@ -1159,26 +1160,34 @@ function renderOddsChart(race,num){
     if(row&&row.series&&row.series.length>=2) set.push({bt,name:ODDS_BET_LABELS[bt]||bt,series:row.series});
   });
   if(!set.length) return '<div class="meta">この馬のオッズ時系列がありません。</div>';
-  const allT=[]; set.forEach(s=>s.series.forEach(p=>{const m=oddsTMin(p[0]); if(m!=null)allT.push(m);}));
+  const allT=[],allO=[];
+  set.forEach(s=>s.series.forEach(p=>{const m=oddsTMin(p[0]); if(m!=null){allT.push(m);allO.push(p[1]);}}));
   const t0=Math.min(...allT),t1=Math.max(...allT),tr=(t1-t0)||1;
-  const ratios=[]; set.forEach(s=>{const o0=s.series[0][1]||1; s.norm=s.series.map(p=>[oddsTMin(p[0]),p[1]/o0]); s.norm.forEach(q=>{if(q[0]!=null)ratios.push(q[1]);});});
-  const rmin=Math.min(...ratios),rmax=Math.max(...ratios),rr=(rmax-rmin)||1;
-  const W=340,H=190,padL=30,padR=8,padT=12,padB=20,iw=W-padL-padR,ih=H-padT-padB;
-  const X=m=>padL+((m-t0)/tr)*iw, Y=r=>padT+(1-(r-rmin)/rr)*ih;
+  let omin=Math.min(...allO),omax=Math.max(...allO);
+  const opad=((omax-omin)*0.08)||0.2; omin=Math.max(0,omin-opad); omax=omax+opad; const or=(omax-omin)||1;
+  const W=340,H=200,padL=34,padR=8,padT=12,padB=22,iw=W-padL-padR,ih=H-padT-padB;
+  const X=m=>padL+((m-t0)/tr)*iw, Y=o=>padT+(1-(o-omin)/or)*ih;
+  // 縦補助線（時刻グリッド）＋時刻ラベル
+  const step=oddsNiceStep(t1-t0); let vlines="",xlabels="";
+  for(let m=Math.ceil(t0/step)*step; m<=t1+0.001; m+=step){
+    const x=X(m).toFixed(1);
+    vlines+=`<line x1="${x}" y1="${padT}" x2="${x}" y2="${padT+ih}" stroke="var(--border)" stroke-width="0.5" opacity="0.6"/>`;
+    xlabels+=`<text x="${x}" y="${H-6}" text-anchor="middle" class="oaxis">${oddsTLbl(m)}</text>`;
+  }
+  // 各券種の生オッズ折れ線
   const lines=set.map(s=>{
-    const pts=s.norm.filter(q=>q[0]!=null).map(q=>X(q[0]).toFixed(1)+","+Y(q[1]).toFixed(1)).join(" ");
+    const pts=s.series.map(p=>{const m=oddsTMin(p[0]); return m==null?null:X(m).toFixed(1)+","+Y(p[1]).toFixed(1);}).filter(Boolean).join(" ");
     return `<polyline points="${pts}" fill="none" stroke="${ODDS_BET_COLORS[s.bt]}" stroke-width="1.7" stroke-linejoin="round"/>`;
   }).join("");
-  const base=`<line x1="${padL}" y1="${Y(1).toFixed(1)}" x2="${W-padR}" y2="${Y(1).toFixed(1)}" stroke="var(--border)" stroke-dasharray="3 3"/>`;
-  const yl=`<text x="2" y="${(Y(rmax)+3).toFixed(1)}" class="oaxis">${rmax.toFixed(2)}x</text><text x="2" y="${Y(1).toFixed(1)}" class="oaxis">1.0x</text><text x="2" y="${(Y(rmin)).toFixed(1)}" class="oaxis">${rmin.toFixed(2)}x</text>`;
-  const tmid=Math.round((t0+t1)/2);
-  const xl=`<text x="${padL}" y="${H-5}" class="oaxis">${oddsTLbl(t0)}</text>`
-    +`<text x="${X(tmid).toFixed(1)}" y="${H-5}" text-anchor="middle" class="oaxis">${oddsTLbl(tmid)}</text>`
-    +`<text x="${W-padR}" y="${H-5}" text-anchor="end" class="oaxis">${oddsTLbl(t1)}</text>`;
+  // y目盛（生オッズ倍）
+  const ymid=(omin+omax)/2;
+  const yl=`<text x="2" y="${(Y(omax)+7).toFixed(1)}" class="oaxis">${omax.toFixed(1)}</text>`
+    +`<text x="2" y="${(Y(ymid)+3).toFixed(1)}" class="oaxis">${ymid.toFixed(1)}</text>`
+    +`<text x="2" y="${Y(omin).toFixed(1)}" class="oaxis">${omin.toFixed(1)}</text>`;
   const legend=set.map(s=>`<span class="olg"><i style="background:${ODDS_BET_COLORS[s.bt]}"></i>${s.name}</span>`).join("");
   const nm=(race.bets.win.find(r=>r.num===num)||{}).name||"";
-  return `<div class="ochart"><div class="ocht">${num}番 ${nm} ・ 全券種オッズ推移（初回=1.0基準の比率／複数券種が同時刻に同調して動く＝インサイダー疑い）</div>`
-    +`<svg width="100%" viewBox="0 0 ${W} ${H}" preserveAspectRatio="xMidYMid meet">${base}${lines}${yl}${xl}</svg>`
+  return `<div class="ochart"><div class="ocht">${num}番 ${nm} ・ 全券種オッズ推移（生の合成オッズ・倍／縦線=時刻。複数券種が同時刻に同調して下降＝資金同時流入＝インサイダー疑い）</div>`
+    +`<svg width="100%" viewBox="0 0 ${W} ${H}" preserveAspectRatio="xMidYMid meet">${vlines}${lines}${yl}${xlabels}</svg>`
     +`<div class="olgd">${legend}</div></div>`;
 }
 function renderOdds(){
