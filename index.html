@@ -357,6 +357,19 @@ table.ht .numcell{display:inline-flex;align-items:center;gap:4px}
 .olgd{display:flex;flex-wrap:wrap;gap:8px 12px;margin-top:8px;justify-content:center}
 .olg{font-size:.72rem;color:var(--ink);display:inline-flex;align-items:center;gap:4px}
 .olg i{width:12px;height:3px;border-radius:2px;display:inline-block}
+/* 八百長ラベル登録（オッズ履歴タブ・馬別チャート下） */
+.olabelbox{border:1px solid var(--border);border-radius:8px;padding:9px 8px;margin-top:8px;background:var(--surface)}
+.olabelhead{font-size:.74rem;font-weight:700;color:var(--ink);margin-bottom:6px}
+.olabelrow{display:flex;flex-wrap:wrap;gap:6px}
+.olabelnote{font-size:.72rem;color:var(--muted)}
+.lbtn{background:var(--surface);border:1px solid var(--border);color:var(--muted);font-family:inherit;font-size:.72rem;font-weight:700;padding:5px 10px;border-radius:14px;cursor:pointer}
+.lbtn:disabled{opacity:.5;cursor:default}
+.lbtn.ls1.on{background:#d1495b;color:#fff;border-color:#d1495b}
+.lbtn.ls2.on{background:#4c9be8;color:#fff;border-color:#4c9be8}
+.lbtn.ls3.on{background:#d9822b;color:#fff;border-color:#d9822b}
+.lbtn.ls4.on{background:#2ea043;color:#fff;border-color:#2ea043}
+.lbtn.ls5.on{background:#a371f7;color:#fff;border-color:#a371f7}
+.lbtn.lbtn-clear.on{background:var(--muted);color:#fff;border-color:var(--muted)}
 </style>
 
 <header>
@@ -1131,7 +1144,7 @@ function loadTracking(){
     .catch(()=>{ document.getElementById("track").innerHTML='<div class="meta">成績データ(tracking.json)はまだありません。開催後に生成されます。</div>'; });
 }
 // ===== オッズ履歴ビューア（P2、締切前オッズ時系列） =====
-window.__ODDS={data:null,day:0,race:0,bet:"win",horse:null};
+window.__ODDS={data:null,day:0,race:0,bet:"win",horse:null,labels:null,labelsRaceId:null,labelsFetching:null,labelBusy:null};
 var ODDS_BET_LABELS={win:"単勝",place:"複勝",exacta:"馬単",quinella:"馬複",trifecta:"三連単",trio:"三連複"};
 var ODDS_BET_ORDER=["win","place","exacta","quinella","trifecta","trio"];
 function loadOdds(){
@@ -1161,6 +1174,75 @@ function oddsTLbl(m){ const h=Math.floor(m/60),mm=m%60; return (h<10?"0":"")+h+"
 // 選択した馬の全券種オッズを1枚に重ねる（初回=1.0基準の比率で正規化。縦線=2分周期の時刻グリッド。
 // 線が同一縦線＝同時刻で揃って下降＝複数券種で同時に資金流入＝インサイダー疑い）
 var ODDS_GRID_MIN=2;   // 縦補助線の周期（分）
+// ---- 八百長ラベル登録（P2オッズ履歴タブ／voting_server.pyの/labels,/labelを流用） ----
+var ODDS_LABEL_DEFS=[
+  {type:"仕掛け",cls:"ls1"},
+  {type:"引き",cls:"ls2"},
+  {type:"ヤレズ",cls:"ls3"},
+  {type:"フリー",cls:"ls4"},
+  {type:"押出し",cls:"ls5"}
+];
+// race_idが変わったときだけ再取得。取得後はキャッシュ(S.labels)から都度描画。
+function ensureOddsLabels(raceId){
+  const S=window.__ODDS;
+  if(!raceId || S.labelsRaceId===raceId || S.labelsFetching===raceId) return;
+  const cfg=backendCfg(); if(!cfg.url) return;
+  S.labelsFetching=raceId;
+  fetch(cfg.url+"/labels?race_id="+encodeURIComponent(raceId)+"&token="+encodeURIComponent(cfg.token))
+    .then(res=>res.json()).then(j=>{
+      if(S.labelsFetching!==raceId) return; // 待機中に別レースへ切替済み
+      const map={}; (j.labels||[]).forEach(l=>{ map[l.horse_number]=l; });
+      S.labels=map; S.labelsRaceId=raceId; S.labelsFetching=null;
+      refreshOddsLabelBox();
+    }).catch(()=>{ if(S.labelsFetching===raceId) S.labelsFetching=null; });
+}
+function oddsLabelBoxHtml(race,num){
+  const cfg=backendCfg();
+  if(!cfg.url) return `<div class="olabelnote">ラベル登録にはバックエンド接続が必要です。</div>`;
+  const S=window.__ODDS, rid=race.race_id;
+  ensureOddsLabels(rid);
+  if(S.labelsRaceId!==rid) return `<div class="olabelnote">ラベル読込中…</div>`;
+  const cur=(S.labels&&S.labels[num])?S.labels[num]:null, curType=cur?cur.label_type:null;
+  const busy=S.labelBusy===num;
+  const btns=ODDS_LABEL_DEFS.map(dfn=>`<button class="lbtn ${dfn.cls}${curType===dfn.type?' on':''}" data-ltype="${dfn.type}"${busy?' disabled':''}>${dfn.type}</button>`).join("")
+    +`<button class="lbtn lbtn-clear${!curType?' on':''}" data-ltype=""${busy?' disabled':''}>クリア</button>`;
+  return `<div class="olabelhead">八百長ラベル登録${busy?'（送信中…）':''}</div><div class="olabelrow">${btns}</div>`;
+}
+function wireOddsLabelBox(race,num){
+  const box=document.getElementById("olabelbox"); if(!box||num==null) return;
+  box.querySelectorAll(".lbtn").forEach(b=>{
+    b.onclick=()=>{
+      const S=window.__ODDS;
+      const cur=(S.labels&&S.labels[num])?S.labels[num].label_type:null;
+      let ltype=b.dataset.ltype;
+      if(ltype && ltype===cur) ltype=""; // 選択中ボタンの再クリックでクリア
+      postOddsLabel(race.race_id,num,ltype);
+    };
+  });
+}
+function refreshOddsLabelBox(){
+  const box=document.getElementById("olabelbox"); if(!box) return;
+  const S=window.__ODDS,d=S.data; if(!d) return;
+  const day=d.days[S.day], race=day&&day.races[S.race];
+  if(!race||S.horse==null) return;
+  box.innerHTML=oddsLabelBoxHtml(race,S.horse);
+  wireOddsLabelBox(race,S.horse);
+}
+function postOddsLabel(raceId,num,ltype){
+  const cfg=backendCfg(); const S=window.__ODDS;
+  S.labelBusy=num; refreshOddsLabelBox();
+  fetch(cfg.url+"/label?token="+encodeURIComponent(cfg.token),{method:"POST",headers:{"Content-Type":"application/json"},
+    body:JSON.stringify({race_id:raceId,horse_number:num,label_type:ltype,note:""})})
+    .then(res=>res.json()).then(j=>{
+      S.labelBusy=null;
+      if(!j||j.ok!==true){ alert("ラベル登録に失敗しました:\n"+JSON.stringify(j)); refreshOddsLabelBox(); return; }
+      if(!S.labels) S.labels={};
+      if(ltype) S.labels[num]=j.label||{race_id:raceId,horse_number:num,label_type:ltype};
+      else delete S.labels[num];
+      refreshOddsLabelBox();
+    })
+    .catch(e=>{ S.labelBusy=null; alert("送信エラー: "+e+"\nバックエンド(PC)とトンネルが起動しているか確認してください。"); refreshOddsLabelBox(); });
+}
 function renderOddsChart(race,num){
   const bets=race.bets||{};
   const set=[];
@@ -1198,7 +1280,8 @@ function renderOddsChart(race,num){
   const nm=(race.bets.win.find(r=>r.num===num)||{}).name||"";
   return `<div class="ochart"><div class="ocht">${num}番 ${nm} ・ 全券種オッズ推移（初回=1.0基準の比率／縦線=2分周期。複数券種が同一縦線で揃って下降＝資金同時流入＝インサイダー疑い）</div>`
     +`<svg width="100%" viewBox="0 0 ${W} ${H}" preserveAspectRatio="xMidYMid meet">${vlines}${base}${lines}${yl}${xlabels}</svg>`
-    +`<div class="olgd">${legend}</div></div>`;
+    +`<div class="olgd">${legend}</div></div>`
+    +`<div class="olabelbox" id="olabelbox">${oddsLabelBoxHtml(race,num)}</div>`;
 }
 function renderOdds(){
   const S=window.__ODDS,d=S.data,host=document.getElementById("odds");
@@ -1249,7 +1332,9 @@ function renderOdds(){
     S.horse=+tr.dataset.num;
     host.querySelectorAll(".orowc").forEach(x=>x.classList.toggle("osel-row",+x.dataset.num===S.horse));
     document.getElementById("ochartwrap").innerHTML=renderOddsChart(race,S.horse);
+    wireOddsLabelBox(race,S.horse);
   });
+  if(S.horse!=null) wireOddsLabelBox(race,S.horse);
 }
 document.querySelectorAll("#toptabs button").forEach(b=>b.addEventListener("click",()=>switchTop(b.dataset.t)));
 
