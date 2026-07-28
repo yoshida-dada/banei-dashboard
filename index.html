@@ -356,6 +356,8 @@ table.ht .numcell{display:inline-flex;align-items:center;gap:4px}
 .osustext{font-size:.76rem;color:var(--ink);line-height:1.6}
 .osustext.muted{color:var(--muted)}
 .osusbox .osusnote{margin:6px 0 0}
+.ipushrow{display:flex;align-items:center;gap:8px;margin:8px 0 2px;flex-wrap:wrap}
+.ipushnote{font-size:.7rem;color:var(--muted)}
 .otbl tbody tr.orowc{cursor:pointer}
 .otbl tbody tr.orowc:hover{background:rgba(127,127,127,.08)}
 .otbl tbody tr.osel-row{background:var(--accent-soft,rgba(76,155,232,.16));box-shadow:inset 3px 0 0 var(--accent)}
@@ -1377,6 +1379,7 @@ function renderOdds(){
     : `${ODDS_BET_LABELS[S.bet]}オッズの推移`;
   host.innerHTML=`<div class="osel"><div class="orow" id="odays">${dayBtns}</div><div class="orow" id="oraces">${raceBtns}</div><div class="orow obetrow">${betBtns}</div></div>`
     +`<div class="ometa">${day.date} ${race.no}R ${race.class||""}${race.post?" ・ 発走"+race.post:""}<br><span class="muted">${desc}（<b style="color:#2ea043">緑=短縮(資金流入)</b> / <b style="color:#d1495b">赤=上昇</b> / ⚠=低オッズなのに着外）・終オッズ順</span></div>`
+    +`<div class="ipushrow"><button class="obtn" id="insiderPushBtn">🚨 インサイダー警報</button><span class="ipushnote">怪しさスコアが急上昇した際にスマホへ通知（要バックエンド接続・PC稼働中のみ届きます）</span></div>`
     +`<div class="otblwrap"><table class="otbl"><thead><tr><th>馬番</th><th class="l">馬名</th><th>人気</th><th>${oddsHead}</th><th>${oddsHead2}</th><th>変動</th><th>推移</th><th>着</th><th>怪しさ</th></tr></thead><tbody>${rows}</tbody></table></div>`
     +`<div class="osusnote">怪しさ列は八百長（インサイダー投票）検知の実験的スコアです。検証サンプルがまだ少ないため参考値としてご覧ください。</div>`
     +`<div class="ochint">▼ 馬をタップすると全券種のオッズ推移を1枚で比較</div>`
@@ -1391,6 +1394,8 @@ function renderOdds(){
     wireOddsLabelBox(race,S.horse);
   });
   if(S.horse!=null) wireOddsLabelBox(race,S.horse);
+  const ipb=document.getElementById("insiderPushBtn");
+  if(ipb){ ipb.onclick=toggleInsiderPush; insiderPushSubscription().then(refreshInsiderPushBtn); }
 }
 document.querySelectorAll("#toptabs button").forEach(b=>b.addEventListener("click",()=>switchTop(b.dataset.t)));
 
@@ -1502,4 +1507,56 @@ if ("serviceWorker" in navigator) {
   })();
   refreshBtn();
 })();
+
+// --- インサイダー警報（八百長検知の怪しさスコア急上昇時のWeb Push、2026-07-28）---
+// service-worker.js の push ハンドラは既に実装済み（このJSはpushManagerへの購読・解除のみ担当）。
+// PC(voting_server.py)がオッズをポーリング中に閾値超えを検知した時だけ届く（PC稼働中のみ）。
+function b64ToUint8Array(base64String){
+  const padding="=".repeat((4-base64String.length%4)%4);
+  const base64=(base64String+padding).replace(/-/g,"+").replace(/_/g,"/");
+  const raw=atob(base64);
+  const arr=new Uint8Array(raw.length);
+  for(let i=0;i<raw.length;i++) arr[i]=raw.charCodeAt(i);
+  return arr;
+}
+function insiderPushSubscription(){
+  if(!("serviceWorker" in navigator) || !("PushManager" in window)) return Promise.resolve(null);
+  return navigator.serviceWorker.ready.then(reg=>reg.pushManager.getSubscription()).catch(()=>null);
+}
+function refreshInsiderPushBtn(sub){
+  const btn=document.getElementById("insiderPushBtn"); if(!btn) return;
+  if(!("PushManager" in window)){ btn.textContent="🚨 非対応"; btn.disabled=true; return; }
+  btn.textContent = sub ? "🚨 警報ON" : "🚨 インサイダー警報";
+  btn.setAttribute("aria-pressed", sub?"true":"false");
+}
+async function toggleInsiderPush(){
+  const cfg=backendCfg();
+  if(!cfg.url){ alert("先に「レース予測」タブ内の投票設定でバックエンドURL・トークンを設定してください。"); return; }
+  const existing = await insiderPushSubscription();
+  if(existing){
+    try{
+      await fetch(cfg.url+"/push-subscribe?token="+encodeURIComponent(cfg.token),
+        {method:"DELETE",headers:{"Content-Type":"application/json"},
+         body:JSON.stringify({endpoint:existing.endpoint})});
+      await existing.unsubscribe();
+    }catch(e){ alert("解除に失敗しました: "+e); }
+    refreshInsiderPushBtn(await insiderPushSubscription());
+    return;
+  }
+  try{
+    const perm = await Notification.requestPermission();
+    if(perm!=="granted"){ alert("通知が許可されませんでした。"); return; }
+    const r = await fetch(cfg.url+"/push-vapid-key?token="+encodeURIComponent(cfg.token));
+    const j = await r.json();
+    if(!j.public_key){ alert("VAPID鍵の取得に失敗しました。PC側でgenerate_vapid_keys.pyの実行を確認してください。"); return; }
+    const reg = await navigator.serviceWorker.ready;
+    const sub = await reg.pushManager.subscribe({userVisibleOnly:true, applicationServerKey:b64ToUint8Array(j.public_key)});
+    const raw = sub.toJSON();
+    await fetch(cfg.url+"/push-subscribe?token="+encodeURIComponent(cfg.token),
+      {method:"POST",headers:{"Content-Type":"application/json"},
+       body:JSON.stringify({endpoint:raw.endpoint, keys:raw.keys})});
+    refreshInsiderPushBtn(sub);
+    alert("インサイダー警報を有効にしました。怪しさスコアが閾値を超えた際、PCが稼働していればスマホに通知します。");
+  }catch(e){ alert("購読に失敗しました: "+e); }
+}
 </script>
