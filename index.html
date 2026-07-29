@@ -382,6 +382,24 @@ table.ht .numcell{display:inline-flex;align-items:center;gap:4px}
 .lbtn.ls4.on{background:#2ea043;color:#fff;border-color:#2ea043}
 .lbtn.ls5.on{background:#a371f7;color:#fff;border-color:#a371f7}
 .lbtn.lbtn-clear.on{background:var(--muted);color:#fff;border-color:var(--muted)}
+/* 八百長ラベル一覧タブ（P5） */
+.lhead{font-size:.86rem;font-weight:800;margin:4px 0 8px}
+.lchiprow{flex-wrap:wrap}
+.lchip.ls1.on{background:#d1495b;color:#fff;border-color:#d1495b}
+.lchip.ls2.on{background:#4c9be8;color:#fff;border-color:#4c9be8}
+.lchip.ls3.on{background:#d9822b;color:#fff;border-color:#d9822b}
+.lchip.ls4.on{background:#2ea043;color:#fff;border-color:#2ea043}
+.lchip.ls5.on{background:#a371f7;color:#fff;border-color:#a371f7}
+.lsearchrow{margin:10px 0}
+.lsearchrow input{width:100%;box-sizing:border-box;padding:7px 10px;border:1px solid var(--border);border-radius:8px;background:var(--surface);color:var(--ink);font-family:inherit;font-size:.8rem}
+.ltblwrap{overflow-x:auto}
+.ltbl .lnote{font-size:.72rem;color:var(--muted);max-width:220px;white-space:normal}
+.lbadge{display:inline-block;padding:2px 8px;border-radius:10px;font-size:.7rem;font-weight:800;color:#fff}
+.lbadge.ls1{background:#d1495b}
+.lbadge.ls2{background:#4c9be8}
+.lbadge.ls3{background:#d9822b}
+.lbadge.ls4{background:#2ea043}
+.lbadge.ls5{background:#a371f7}
 </style>
 
 <header>
@@ -390,6 +408,7 @@ table.ht .numcell{display:inline-flex;align-items:center;gap:4px}
     <button data-t="race" aria-pressed="true">レース予測</button>
     <button data-t="track" aria-pressed="false">成績</button>
     <button data-t="odds" aria-pressed="false">オッズ履歴</button>
+    <button data-t="labels" aria-pressed="false">八百長ラベル</button>
   </div>
 </header>
 <div id="beStatus" class="bestatus off" hidden></div>
@@ -443,6 +462,7 @@ table.ht .numcell{display:inline-flex;align-items:center;gap:4px}
 
 <div class="wrap" id="track" style="display:none"></div>
 <div class="wrap" id="odds" style="display:none"></div>
+<div class="wrap" id="labels" style="display:none"></div>
 
 <script id="data" type="application/json">/*__DATA__*/</script>
 <script id="trackdata" type="application/json">/*__TRACKING__*/</script>
@@ -1142,9 +1162,11 @@ function switchTop(t){
   document.getElementById("mainwrap").style.display=isRace?"":"none";
   document.getElementById("track").style.display=t==="track"?"block":"none";
   document.getElementById("odds").style.display=t==="odds"?"block":"none";
+  document.getElementById("labels").style.display=t==="labels"?"block":"none";
   document.querySelectorAll("#toptabs button").forEach(x=>x.setAttribute("aria-pressed", x.dataset.t===t));
   if(t==="track" && !window.__TRACK_LOADED) loadTracking();
   if(t==="odds" && !window.__ODDS_LOADED) loadOdds();
+  if(t==="labels" && !window.__LABELS_LOADED) loadInsiderLabels();
 }
 function loadTracking(){
   window.__TRACK_LOADED=true;
@@ -1396,6 +1418,59 @@ function renderOdds(){
   if(S.horse!=null) wireOddsLabelBox(race,S.horse);
   const ipb=document.getElementById("insiderPushBtn");
   if(ipb){ ipb.onclick=toggleInsiderPush; insiderPushSubscription().then(refreshInsiderPushBtn); }
+}
+
+// ===== 八百長ラベル一覧タブ（P5、build_insider_labels.py が出力する insider_labels.json）=====
+window.__LABELS={data:null, filter:"all", q:""};
+function loadInsiderLabels(){
+  window.__LABELS_LOADED=true;
+  const host=document.getElementById("labels");
+  host.innerHTML='<div class="meta">ラベル一覧を読込中…</div>';
+  fetch("./insider_labels.json?t="+Date.now()).then(r=>r.json()).then(d=>{
+    window.__LABELS.data=(d&&d.labels)||[];
+    renderInsiderLabels();
+  }).catch(()=>{ host.innerHTML='<div class="meta">ラベル一覧(insider_labels.json)はまだありません。</div>'; });
+}
+function renderInsiderLabels(){
+  const S=window.__LABELS, host=document.getElementById("labels"), all=S.data||[];
+  if(!all.length){ host.innerHTML='<div class="meta">登録済みのラベルがありません。オッズ履歴タブから登録できます。</div>'; return; }
+
+  const counts={}; ODDS_LABEL_DEFS.forEach(d=>counts[d.type]=0);
+  all.forEach(l=>{ if(counts[l.label_type]!=null) counts[l.label_type]++; });
+
+  const chipAll=`<button class="obtn lchip${S.filter==="all"?' on':''}" data-f="all">すべて (${all.length})</button>`;
+  const chips=ODDS_LABEL_DEFS.map(d=>
+    `<button class="obtn lchip ${d.cls}${S.filter===d.type?' on':''}" data-f="${d.type}">${d.type} (${counts[d.type]||0})</button>`
+  ).join("");
+
+  const q=S.q.trim();
+  const rows=all.filter(l=>{
+    if(S.filter!=="all" && l.label_type!==S.filter) return false;
+    if(!q) return true;
+    const hay=[l.horse_name,l.owner,l.trainer,l.jockey,l.note].filter(Boolean).join(" ");
+    return hay.indexOf(q)>=0;
+  });
+
+  const clsOf=t=>{ const d=ODDS_LABEL_DEFS.find(x=>x.type===t); return d?d.cls:""; };
+  const body=rows.map(l=>{
+    return `<tr><td>${l.race_date||"—"}</td><td>${l.race_number!=null?l.race_number+"R":"—"}</td>`
+      +`<td class="onum">${l.horse_number}</td><td class="l">${l.horse_name||"—"}</td>`
+      +`<td><span class="lbadge ${clsOf(l.label_type)}">${l.label_type}</span></td>`
+      +`<td class="l">${l.owner||"—"}</td><td class="l">${l.trainer||"—"}</td><td class="l">${l.jockey||"—"}</td>`
+      +`<td>${l.position!=null?l.position+"着":"—"}</td>`
+      +`<td class="l lnote">${l.note?l.note.replace(/</g,"&lt;"):""}</td></tr>`;
+  }).join("");
+
+  host.innerHTML=`<div class="lhead">八百長ラベル一覧（${rows.length}/${all.length}件）</div>`
+    +`<div class="orow lchiprow">${chipAll}${chips}</div>`
+    +`<div class="lsearchrow"><input type="text" id="lsearch" placeholder="馬名・馬主・厩舎・騎手・メモで検索" value="${S.q.replace(/"/g,"&quot;")}"></div>`
+    +`<div class="ltblwrap"><table class="otbl ltbl"><thead><tr><th>開催日</th><th>R</th><th>馬番</th><th class="l">馬名</th>`
+    +`<th>ラベル</th><th class="l">馬主</th><th class="l">厩舎</th><th class="l">騎手</th><th>着</th><th class="l">メモ</th></tr></thead>`
+    +`<tbody>${body||'<tr><td colspan="10" class="meta">該当するラベルがありません。</td></tr>'}</tbody></table></div>`;
+
+  host.querySelectorAll("[data-f]").forEach(b=>b.onclick=()=>{ S.filter=b.dataset.f; renderInsiderLabels(); });
+  const inp=document.getElementById("lsearch");
+  if(inp){ inp.oninput=()=>{ S.q=inp.value; renderInsiderLabels(); }; inp.focus(); inp.setSelectionRange(inp.value.length,inp.value.length); }
 }
 document.querySelectorAll("#toptabs button").forEach(b=>b.addEventListener("click",()=>switchTop(b.dataset.t)));
 
