@@ -339,20 +339,20 @@ table.ht .numcell{display:inline-flex;align-items:center;gap:4px}
 .otbl td.l{text-align:left}
 .otbl .onum{color:var(--muted);font-weight:700}
 .otbl .olast{font-weight:800}
-.otbl .odn{color:#2ea043;font-weight:800}
-.otbl .oup{color:#d1495b;font-weight:800}
+.otbl .odn{color:#d1495b;font-weight:800}
+.otbl .oup{color:#2ea043;font-weight:800}
 .otbl .opos1{color:#e3b341;font-weight:800}
 .otbl .opos3{color:var(--ink);font-weight:700}
 .otbl .ospk{padding:2px 4px}
 .ospark{display:block;margin:0 auto}
 .oanom{color:#d1495b}
-/* 符号付き怪しさスコア（2026-07-30）: 負=売れる方向(資金流入)=赤、正=売れない方向(資金流出)=青 */
+/* 符号付き怪しさスコア（2026-07-30、2026-07-30配色統一）: 負=売れる方向(資金流入)=赤、正=売れない方向(資金流出)=緑 */
 .otbl .osus-sell{color:#d1495b;font-weight:800}
-.otbl .osus-notsell{color:#2a78d6;font-weight:800}
+.otbl .osus-notsell{color:#2ea043;font-weight:800}
 .otbl .osus-lo{color:var(--muted)}
 /* しきい値超え行の背景強調（2026-07-30） */
 .otbl tbody tr.orow-sell{background:color-mix(in srgb, #d1495b 12%, var(--surface))}
-.otbl tbody tr.orow-notsell{background:color-mix(in srgb, #2a78d6 12%, var(--surface))}
+.otbl tbody tr.orow-notsell{background:color-mix(in srgb, #2ea043 12%, var(--surface))}
 .otbl tbody tr.orow-sell:hover,.otbl tbody tr.orow-notsell:hover{filter:brightness(0.96)}
 .otbl tbody tr.orow-sell.osel-row,.otbl tbody tr.orow-notsell.osel-row{box-shadow:inset 3px 0 0 var(--accent)}
 /* 初/終オッズの2段表示（表示幅削減、2026-07-30） */
@@ -1218,7 +1218,7 @@ function suspicionFor(raceId,num){
   return r[String(num)]||null;
 }
 // 2026-07-30: 符号付き怪しさスコア。負=売れる方向(オッズ下落=資金流入)=赤、正=売れない方向
-// (オッズ上昇=資金流出/切り捨て)=青。大きさが同じでも方向で色を変える（ユーザー指定の配色）。
+// (オッズ上昇=資金流出/切り捨て)=緑。大きさが同じでも方向で色を変える（「変動」列と統一した配色）。
 function suspicionCls(signedScore){
   if(signedScore==null) return "osus-lo";
   if(signedScore<-0.05) return "osus-sell";
@@ -1430,7 +1430,7 @@ function renderOdds(){
       ? (susScore<0?" orow-sell":" orow-notsell") : "";
     return `<tr class="orowc${selCls}${rowFlagCls}" data-num="${h.num}"><td class="onum">${h.num}</td><td class="l">${h.name}${anom}</td>`
       +`<td>${h.pop!=null?h.pop:"—"}</td>`
-      +`<td class="${susCls}" title="八百長検知の符号付き怪しさスコア(参考値)。負=売れる方向(赤)、正=売れない方向(青)">${susTxt}</td>`
+      +`<td class="${susCls}" title="八百長検知の符号付き怪しさスコア(参考値)。負=売れる方向(赤)、正=売れない方向(緑)">${susTxt}</td>`
       +`<td class="oiflast"><div class="c2 c2r"><span>${h.first!=null?h.first.toFixed(1):"—"}</span><span class="tsub">${h.last!=null?h.last.toFixed(1):"—"}</span></div></td>`
       +`<td class="${drCls}">${drTxt}</td><td class="ospk">${oddsSpark(h.series)}</td>`
       +`<td class="${posCls}">${posTxt}</td></tr>`;
@@ -1440,10 +1440,10 @@ function renderOdds(){
     ? `${ODDS_BET_LABELS[S.bet]}＝その馬が絡む全買い目の<b>合成オッズ</b>（1/Σ(1/各組合せ)）の推移`
     : `${ODDS_BET_LABELS[S.bet]}オッズの推移`;
   host.innerHTML=`<div class="osel"><div class="orow" id="odays">${dayBtns}</div><div class="orow" id="oraces">${raceBtns}</div><div class="orow obetrow">${betBtns}</div></div>`
-    +`<div class="ometa">${day.date} ${race.no}R ${race.class||""}${race.post?" ・ 発走"+race.post:""}<br><span class="muted">${desc}（<b style="color:#2ea043">緑=短縮(資金流入)</b> / <b style="color:#d1495b">赤=上昇</b> / ⚠=低オッズなのに着外）・終オッズ順</span></div>`
+    +`<div class="ometa">${day.date} ${race.no}R ${race.class||""}${race.post?" ・ 発走"+race.post:""}<br><span class="muted">${desc}（<b style="color:#d1495b">赤=短縮(資金流入・売れる)</b> / <b style="color:#2ea043">緑=上昇(売れない)</b> / ⚠=低オッズなのに着外）・終オッズ順</span></div>`
     +`<div class="ipushrow"><button class="obtn" id="insiderPushBtn">🚨 インサイダー警報</button><span class="ipushnote">怪しさスコアが急上昇した際にスマホへ通知（要バックエンド接続・PC稼働中のみ届きます）</span></div>`
     +`<div class="otblwrap"><table class="otbl"><thead><tr><th>馬番</th><th class="l">馬名</th><th>人気</th><th>怪しさ</th><th>${oddsHead}/${oddsHead2}</th><th>変動</th><th>推移</th><th>着</th></tr></thead><tbody>${rows}</tbody></table></div>`
-    +`<div class="osusnote">怪しさ列は八百長（インサイダー投票）検知の実験的スコアです（赤=売れる方向/仕掛け候補、青=売れない方向/引き候補）。検証サンプルがまだ少ないため参考値としてご覧ください。</div>`
+    +`<div class="osusnote">怪しさ列は八百長（インサイダー投票）検知の実験的スコアです（赤=売れる方向/仕掛け候補、緑=売れない方向/引き候補）。検証サンプルがまだ少ないため参考値としてご覧ください。</div>`
     +`<div class="ochint">▼ 馬をタップすると全券種のオッズ推移を1枚で比較</div>`
     +`<div id="ochartwrap">${S.horse!=null?renderOddsChart(race,S.horse):""}</div>`;
   host.querySelectorAll("[data-day]").forEach(b=>b.onclick=()=>{S.day=+b.dataset.day;S.race=0;renderOdds();});
