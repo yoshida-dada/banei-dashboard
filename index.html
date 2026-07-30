@@ -346,8 +346,9 @@ table.ht .numcell{display:inline-flex;align-items:center;gap:4px}
 .otbl .ospk{padding:2px 4px}
 .ospark{display:block;margin:0 auto}
 .oanom{color:#d1495b}
-.otbl .osus-hi{color:#d1495b;font-weight:800}
-.otbl .osus-mid{color:#e3b341;font-weight:800}
+/* 符号付き怪しさスコア（2026-07-30）: 負=売れる方向(資金流入)=赤、正=売れない方向(資金流出)=青 */
+.otbl .osus-sell{color:#d1495b;font-weight:800}
+.otbl .osus-notsell{color:#2a78d6;font-weight:800}
 .otbl .osus-lo{color:var(--muted)}
 .osusnote{font-size:.7rem;color:var(--muted);margin:4px 0 8px;line-height:1.4}
 /* 八百長怪しさスコア内訳（オッズ履歴タブ・馬別チャート下、ラベル登録UIの直前） */
@@ -1207,24 +1208,35 @@ function suspicionFor(raceId,num){
   const r=S[raceId]; if(!r) return null;
   return r[String(num)]||null;
 }
-function suspicionCls(score){
-  if(score==null) return "";
-  return score>=7?"osus-hi":(score>=4?"osus-mid":"osus-lo");
+// 2026-07-30: 符号付き怪しさスコア。負=売れる方向(オッズ下落=資金流入)=赤、正=売れない方向
+// (オッズ上昇=資金流出/切り捨て)=青。大きさが同じでも方向で色を変える（ユーザー指定の配色）。
+function suspicionCls(signedScore){
+  if(signedScore==null) return "osus-lo";
+  if(signedScore<-0.05) return "osus-sell";
+  if(signedScore>0.05) return "osus-notsell";
+  return "osus-lo";
 }
 // HorseSuspicionの各フィールドから日本語の説明文を動的に組み立てる（nullのフィールドは省く）
 function suspicionText(s){
   if(!s) return "";
-  const parts=[`怪しさスコア ${s.composite_score.toFixed(1)}`];
-  if(s.max_velocity!=null){
+  const dirLabel = s.direction==="sell" ? "売れる方向（資金流入・仕掛け候補）"
+                 : s.direction==="not_sell" ? "売れない方向（資金流出・引き候補）" : "方向なし";
+  const parts=[`符号付き怪しさスコア ${s.signed_score>0?"+":""}${s.signed_score.toFixed(1)}（${dirLabel}／大きさ${s.composite_score.toFixed(1)}）`];
+  if(s.direction==="sell" && s.max_velocity!=null){
     const bn=ODDS_BET_LABELS[s.max_velocity_bet_type]||s.max_velocity_bet_type||"";
     const mn=s.minutes_to_post_at_peak!=null?s.minutes_to_post_at_peak.toFixed(1):"?";
-    parts.push(`${bn}オッズが締切${mn}分前に+${s.max_velocity.toFixed(2)}%pt/分で急上昇（レース内最大）`);
+    parts.push(`${bn}オッズが締切${mn}分前に+${s.max_velocity.toFixed(2)}%pt/分で急落（売れる方向で最大）`);
+    if(s.faller_partner) parts.push(`同時刻に切り捨てられた相方候補: ${s.faller_partner[0]}番(${s.faller_partner[1]}回一致)`);
+  } else if(s.direction==="not_sell" && s.min_velocity!=null){
+    const bn=ODDS_BET_LABELS[s.min_velocity_bet_type]||s.min_velocity_bet_type||"";
+    const mn=s.minutes_to_post_at_min!=null?s.minutes_to_post_at_min.toFixed(1):"?";
+    parts.push(`${bn}オッズが締切${mn}分前に${s.min_velocity.toFixed(2)}%pt/分で急騰（売れない方向で最大＝切り捨てられた可能性）`);
+    if(s.riser_partner) parts.push(`同時刻に資金が向かった相方候補: ${s.riser_partner[0]}番(${s.riser_partner[1]}回一致)`);
   }
-  if(s.faller_partner) parts.push(`同時刻の相方候補: ${s.faller_partner[0]}番(${s.faller_partner[1]}回一致)`);
-  if(s.cross_bet_type_corroboration) parts.push(`${s.cross_bet_type_corroboration}券種で連動した上昇を確認`);
+  if(s.cross_bet_type_corroboration) parts.push(`${s.cross_bet_type_corroboration}券種で連動した動きを確認`);
   if(s.total_drift_pct!=null){
     const sign=s.total_drift_pct>0?"+":"";
-    parts.push(`単勝の暗示確率は始値→終値で${sign}${s.total_drift_pct.toFixed(2)}%pt変化`);
+    parts.push(`（参考）単勝の暗示確率は始値→終値で${sign}${s.total_drift_pct.toFixed(2)}%pt変化`);
   }
   if(s.watchlist_owner_score!=null) parts.push(`馬主watchlist ${s.watchlist_owner_score.toFixed(1)}（過去実績で高頻度）`);
   if(s.watchlist_trainer_score!=null) parts.push(`厩舎watchlist ${s.watchlist_trainer_score.toFixed(1)}（過去実績で高頻度）`);
@@ -1402,13 +1414,13 @@ function renderOdds(){
     const anom=(h.last!=null&&h.last<=4&&h.pos!=null&&h.pos>3)?' <span class="oanom" title="低オッズ(人気)なのに着外">⚠</span>':'';
     const posTxt=h.pos!=null?(h.pos+"着"):"—", posCls=h.pos===1?"opos1":(h.pos&&h.pos<=3?"opos3":"");
     const selCls=h.num===S.horse?" osel-row":"";
-    const susp=suspicionFor(race.race_id,h.num), susScore=susp?susp.composite_score:null;
-    const susCls=suspicionCls(susScore), susTxt=susScore!=null?susScore.toFixed(1):"—";
+    const susp=suspicionFor(race.race_id,h.num), susScore=susp?susp.signed_score:null;
+    const susCls=suspicionCls(susScore), susTxt=susScore!=null?(susScore>0?"+":"")+susScore.toFixed(1):"—";
     return `<tr class="orowc${selCls}" data-num="${h.num}"><td class="onum">${h.num}</td><td class="l">${h.name}${anom}</td>`
       +`<td>${h.pop!=null?h.pop:"—"}</td><td>${h.first!=null?h.first.toFixed(1):"—"}</td>`
       +`<td class="olast">${h.last!=null?h.last.toFixed(1):"—"}</td>`
       +`<td class="${drCls}">${drTxt}</td><td class="ospk">${oddsSpark(h.series)}</td>`
-      +`<td class="${posCls}">${posTxt}</td><td class="${susCls}" title="八百長検知の怪しさスコア(参考値)">${susTxt}</td></tr>`;
+      +`<td class="${posCls}">${posTxt}</td><td class="${susCls}" title="八百長検知の符号付き怪しさスコア(参考値)。負=売れる方向(赤)、正=売れない方向(青)">${susTxt}</td></tr>`;
   }).join("");
   const oddsHead=isCombo?"合成初":"初", oddsHead2=isCombo?"合成終":"終";
   const desc=isCombo
@@ -1418,7 +1430,7 @@ function renderOdds(){
     +`<div class="ometa">${day.date} ${race.no}R ${race.class||""}${race.post?" ・ 発走"+race.post:""}<br><span class="muted">${desc}（<b style="color:#2ea043">緑=短縮(資金流入)</b> / <b style="color:#d1495b">赤=上昇</b> / ⚠=低オッズなのに着外）・終オッズ順</span></div>`
     +`<div class="ipushrow"><button class="obtn" id="insiderPushBtn">🚨 インサイダー警報</button><span class="ipushnote">怪しさスコアが急上昇した際にスマホへ通知（要バックエンド接続・PC稼働中のみ届きます）</span></div>`
     +`<div class="otblwrap"><table class="otbl"><thead><tr><th>馬番</th><th class="l">馬名</th><th>人気</th><th>${oddsHead}</th><th>${oddsHead2}</th><th>変動</th><th>推移</th><th>着</th><th>怪しさ</th></tr></thead><tbody>${rows}</tbody></table></div>`
-    +`<div class="osusnote">怪しさ列は八百長（インサイダー投票）検知の実験的スコアです。検証サンプルがまだ少ないため参考値としてご覧ください。</div>`
+    +`<div class="osusnote">怪しさ列は八百長（インサイダー投票）検知の実験的スコアです（赤=売れる方向/仕掛け候補、青=売れない方向/引き候補）。検証サンプルがまだ少ないため参考値としてご覧ください。</div>`
     +`<div class="ochint">▼ 馬をタップすると全券種のオッズ推移を1枚で比較</div>`
     +`<div id="ochartwrap">${S.horse!=null?renderOddsChart(race,S.horse):""}</div>`;
   host.querySelectorAll("[data-day]").forEach(b=>b.onclick=()=>{S.day=+b.dataset.day;S.race=0;renderOdds();});
