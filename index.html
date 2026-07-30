@@ -358,6 +358,14 @@ table.ht .numcell{display:inline-flex;align-items:center;gap:4px}
 /* 初/終オッズの2段表示（表示幅削減、2026-07-30） */
 .otbl .oiflast .c2{display:flex;flex-direction:column;align-items:flex-end;line-height:1.2}
 .otbl .oiflast .tsub{font-size:.68rem;color:var(--muted);font-weight:700}
+/* レース予測タブ上部の八百長検知アラート（2026-07-30） */
+.suspicion-alert{border:1px solid var(--border);border-radius:10px;padding:10px 12px;margin-bottom:10px}
+.sa-head{font-size:.8rem;font-weight:800;margin-bottom:6px;color:var(--ink)}
+.sa-item{font-size:.8rem;padding:4px 0;border-top:1px solid var(--border)}
+.sa-item:first-of-type{border-top:none}
+.sa-item.sa-sell{color:#d1495b}
+.sa-item.sa-notsell{color:#2ea043}
+.sa-note{font-size:.7rem;color:var(--muted);margin-top:6px}
 .osusnote{font-size:.7rem;color:var(--muted);margin:4px 0 8px;line-height:1.4}
 /* 八百長怪しさスコア内訳（オッズ履歴タブ・馬別チャート下、ラベル登録UIの直前） */
 .osusbox{border:1px solid var(--border);border-radius:8px;padding:9px 8px;margin-top:8px;background:var(--surface)}
@@ -442,6 +450,7 @@ table.ht .numcell{display:inline-flex;align-items:center;gap:4px}
 </div>
 
 <div class="wrap" id="mainwrap">
+  <div id="suspicionAlert"></div>
   <div id="meta"></div>
   <div id="payouts"></div>
   <div class="secthead">
@@ -630,6 +639,7 @@ function render(){
     +preBadge+updChip+`</div>`
     +asHtml
     +`<div class="result">`+resultRow+`</div></div>`;
+  renderSuspicionAlert(r);
   renderPayouts(r);
 
   // horses
@@ -646,6 +656,7 @@ function render(){
   if(view!=="bets") stopLive();
   renderAptitude(r);
 }
+window.__rerenderRace = render;  // loadSuspicion()等、boot()外からの再描画トリガー用
 
 // ---- 買い目ビュー（バックエンド未設定=静的 / 設定済=WSライブ） ----
 function backendCfg(){
@@ -1210,7 +1221,34 @@ function loadSuspicion(){
   fetch("./suspicion_scores.json?cb="+Date.now()).then(r=>r.json()).then(d=>{
     window.__ODDS.suspicion=(d&&d.races)||{};
     if(window.__ODDS.data) renderOdds();
+    if(window.__rerenderRace) window.__rerenderRace();  // レース予測タブのアラート欄も更新
   }).catch(()=>{ window.__ODDS.suspicion={}; });
+}
+// レース予測タブの race レコード(date="YYYY-MM-DD", race_no)から、オッズ系JSONのキーである
+// keiba.go.jp形式race_id(YYYYMMDD+babaCode(03)+RR)を再構成する（poll_odds_raceday.py等と同じ形式）。
+function raceIdFor(r){
+  const d=(r.date||"").replace(/-/g,"");
+  const rno=String(r.race_no).padStart(2,"0");
+  return d+"03"+rno;
+}
+// 怪しさスコアがしきい値(SUSPICION_ROW_THRESHOLD)を超える馬を、レース予測タブの上部に表示する。
+// オッズ履歴タブを開かなくても、レース予測画面だけで異常に気づけるようにする（2026-07-30）。
+function renderSuspicionAlert(r){
+  const box=document.getElementById("suspicionAlert"); if(!box) return;
+  if(!r || !Array.isArray(r.horses) || !window.__ODDS || !window.__ODDS.suspicion){ box.innerHTML=""; return; }
+  const raceId=raceIdFor(r);
+  const flagged=r.horses.map(h=>({h, s:suspicionFor(raceId,h.num)}))
+    .filter(x=>x.s && x.s.signed_score!=null && Math.abs(x.s.signed_score)>=SUSPICION_ROW_THRESHOLD)
+    .sort((a,b)=>Math.abs(b.s.signed_score)-Math.abs(a.s.signed_score));
+  if(!flagged.length){ box.innerHTML=""; return; }
+  const items=flagged.map(({h,s})=>{
+    const cls=s.signed_score<0?"sa-sell":"sa-notsell";
+    const dirTxt=s.signed_score<0?"売れる方向・仕掛け候補":"売れない方向・引き候補";
+    return `<div class="sa-item ${cls}"><b>${h.num}番 ${h.name||""}</b> `
+      +`怪しさ ${s.signed_score>0?"+":""}${s.signed_score.toFixed(1)}（${dirTxt}）</div>`;
+  }).join("");
+  box.innerHTML=`<div class="suspicion-alert"><div class="sa-head">⚠ 八百長検知アラート（怪しさスコアがしきい値${SUSPICION_ROW_THRESHOLD}超え）</div>${items}`
+    +`<div class="sa-note">詳細は「オッズ履歴」タブでご確認ください。検証サンプルがまだ少ないため参考値です。</div></div>`;
 }
 function suspicionFor(raceId,num){
   const S=window.__ODDS.suspicion; if(!S) return null;
@@ -1522,7 +1560,7 @@ let rz; window.addEventListener("resize",()=>{clearTimeout(rz);rz=setTimeout(()=
 // データ読込: 埋め込み(アーティファクト) or ローカルの data.json(ローカルサーバで自動更新)
 (function(){
   // 通知スケジューラ等から参照できるよう、読み込んだDBをグローバルに退避してから boot する
-  const _boot = DB => { window.__BANEI_DB = DB; boot(DB); if(window.__scheduleNotifs) window.__scheduleNotifs(); };
+  const _boot = DB => { window.__BANEI_DB = DB; boot(DB); if(window.__scheduleNotifs) window.__scheduleNotifs(); loadSuspicion(); };
   const raw = document.getElementById("data").textContent;
   if(raw && raw.indexOf("__DATA__")===-1){ try{ _boot(JSON.parse(raw)); return; }catch(e){} }
   fetch("./data.json?t="+Date.now()).then(r=>r.json()).then(_boot).catch(e=>{
