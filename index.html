@@ -374,6 +374,10 @@ table.ht .numcell{display:inline-flex;align-items:center;gap:4px}
 .olabelhead{font-size:.74rem;font-weight:700;color:var(--ink);margin-bottom:6px}
 .olabelrow{display:flex;flex-wrap:wrap;gap:6px}
 .olabelnote{font-size:.72rem;color:var(--muted)}
+.olabelmemorow{display:flex;gap:6px;margin-top:8px;align-items:flex-start}
+.olabelmemorow textarea{flex:1;min-height:44px;resize:vertical;padding:6px 8px;border:1px solid var(--border);border-radius:8px;background:var(--surface);color:var(--ink);font-family:inherit;font-size:.76rem}
+.olabelmemorow textarea:disabled{opacity:.6}
+.olabelmemosave{white-space:nowrap}
 .lbtn{background:var(--surface);border:1px solid var(--border);color:var(--muted);font-family:inherit;font-size:.72rem;font-weight:700;padding:5px 10px;border-radius:14px;cursor:pointer}
 .lbtn:disabled{opacity:.5;cursor:default}
 .lbtn.ls1.on{background:#d1495b;color:#fff;border-color:#d1495b}
@@ -1278,19 +1282,30 @@ function oddsLabelBoxHtml(race,num){
   const busy=S.labelBusy===num;
   const btns=ODDS_LABEL_DEFS.map(dfn=>`<button class="lbtn ${dfn.cls}${curType===dfn.type?' on':''}" data-ltype="${dfn.type}"${busy?' disabled':''}>${dfn.type}</button>`).join("")
     +`<button class="lbtn lbtn-clear${!curType?' on':''}" data-ltype=""${busy?' disabled':''}>クリア</button>`;
-  return `<div class="olabelhead">八百長ラベル登録${busy?'（送信中…）':''}</div><div class="olabelrow">${btns}</div>`;
+  const memoVal=((cur&&cur.note)||"").replace(/</g,"&lt;");
+  return `<div class="olabelhead">八百長ラベル登録${busy?'（送信中…）':''}</div><div class="olabelrow">${btns}</div>`
+    +`<div class="olabelmemorow"><textarea id="olabelmemo" placeholder="メモ（任意。仕掛け・引きの相方馬や根拠など）" ${busy?'disabled':''}>${memoVal}</textarea>`
+    +`<button class="lbtn olabelmemosave"${busy||!curType?' disabled':''} title="${curType?'':'先にラベルを選択してください'}">💾 メモを保存</button></div>`;
 }
 function wireOddsLabelBox(race,num){
   const box=document.getElementById("olabelbox"); if(!box||num==null) return;
-  box.querySelectorAll(".lbtn").forEach(b=>{
+  const memoEl=()=>{ const el=document.getElementById("olabelmemo"); return el?el.value:""; };
+  box.querySelectorAll(".lbtn:not(.olabelmemosave)").forEach(b=>{
     b.onclick=()=>{
       const S=window.__ODDS;
       const cur=(S.labels&&S.labels[num])?S.labels[num].label_type:null;
       let ltype=b.dataset.ltype;
       if(ltype && ltype===cur) ltype=""; // 選択中ボタンの再クリックでクリア
-      postOddsLabel(race.race_id,num,ltype);
+      postOddsLabel(race.race_id,num,ltype,memoEl());
     };
   });
+  const saveBtn=box.querySelector(".olabelmemosave");
+  if(saveBtn) saveBtn.onclick=()=>{
+    const S=window.__ODDS;
+    const cur=(S.labels&&S.labels[num])?S.labels[num].label_type:null;
+    if(!cur) return;
+    postOddsLabel(race.race_id,num,cur,memoEl());
+  };
 }
 function refreshOddsLabelBox(){
   const box=document.getElementById("olabelbox"); if(!box) return;
@@ -1300,16 +1315,16 @@ function refreshOddsLabelBox(){
   box.innerHTML=oddsLabelBoxHtml(race,S.horse);
   wireOddsLabelBox(race,S.horse);
 }
-function postOddsLabel(raceId,num,ltype){
+function postOddsLabel(raceId,num,ltype,note){
   const cfg=backendCfg(); const S=window.__ODDS;
   S.labelBusy=num; refreshOddsLabelBox();
   fetch(cfg.url+"/label?token="+encodeURIComponent(cfg.token),{method:"POST",headers:{"Content-Type":"application/json"},
-    body:JSON.stringify({race_id:raceId,horse_number:num,label_type:ltype,note:""})})
+    body:JSON.stringify({race_id:raceId,horse_number:num,label_type:ltype,note:(ltype?(note||""):"")})})
     .then(res=>res.json()).then(j=>{
       S.labelBusy=null;
       if(!j||j.ok!==true){ alert("ラベル登録に失敗しました:\n"+JSON.stringify(j)); refreshOddsLabelBox(); return; }
       if(!S.labels) S.labels={};
-      if(ltype) S.labels[num]=j.label||{race_id:raceId,horse_number:num,label_type:ltype};
+      if(ltype) S.labels[num]=j.label||{race_id:raceId,horse_number:num,label_type:ltype,note:note||""};
       else delete S.labels[num];
       refreshOddsLabelBox();
     })
