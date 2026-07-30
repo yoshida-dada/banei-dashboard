@@ -350,6 +350,14 @@ table.ht .numcell{display:inline-flex;align-items:center;gap:4px}
 .otbl .osus-sell{color:#d1495b;font-weight:800}
 .otbl .osus-notsell{color:#2a78d6;font-weight:800}
 .otbl .osus-lo{color:var(--muted)}
+/* しきい値超え行の背景強調（2026-07-30） */
+.otbl tbody tr.orow-sell{background:color-mix(in srgb, #d1495b 12%, var(--surface))}
+.otbl tbody tr.orow-notsell{background:color-mix(in srgb, #2a78d6 12%, var(--surface))}
+.otbl tbody tr.orow-sell:hover,.otbl tbody tr.orow-notsell:hover{filter:brightness(0.96)}
+.otbl tbody tr.orow-sell.osel-row,.otbl tbody tr.orow-notsell.osel-row{box-shadow:inset 3px 0 0 var(--accent)}
+/* 初/終オッズの2段表示（表示幅削減、2026-07-30） */
+.otbl .oiflast .c2{display:flex;flex-direction:column;align-items:flex-end;line-height:1.2}
+.otbl .oiflast .tsub{font-size:.68rem;color:var(--muted);font-weight:700}
 .osusnote{font-size:.7rem;color:var(--muted);margin:4px 0 8px;line-height:1.4}
 /* 八百長怪しさスコア内訳（オッズ履歴タブ・馬別チャート下、ラベル登録UIの直前） */
 .osusbox{border:1px solid var(--border);border-radius:8px;padding:9px 8px;margin-top:8px;background:var(--surface)}
@@ -1186,6 +1194,7 @@ function loadTracking(){
 window.__ODDS={data:null,day:0,race:0,bet:"win",horse:null,labels:null,labelsRaceId:null,labelsFetching:null,labelBusy:null,suspicion:null};
 var ODDS_BET_LABELS={win:"単勝",place:"複勝",exacta:"馬単",quinella:"馬複",trifecta:"三連単",trio:"三連複"};
 var ODDS_BET_ORDER=["win","place","exacta","quinella","trifecta","trio"];
+var SUSPICION_ROW_THRESHOLD=7.0;  // |signed_score|がこれ以上の馬は行背景を強調表示（2026-07-30）
 function loadOdds(){
   window.__ODDS_LOADED=true;
   const host=document.getElementById("odds");
@@ -1416,11 +1425,15 @@ function renderOdds(){
     const selCls=h.num===S.horse?" osel-row":"";
     const susp=suspicionFor(race.race_id,h.num), susScore=susp?susp.signed_score:null;
     const susCls=suspicionCls(susScore), susTxt=susScore!=null?(susScore>0?"+":"")+susScore.toFixed(1):"—";
-    return `<tr class="orowc${selCls}" data-num="${h.num}"><td class="onum">${h.num}</td><td class="l">${h.name}${anom}</td>`
-      +`<td>${h.pop!=null?h.pop:"—"}</td><td>${h.first!=null?h.first.toFixed(1):"—"}</td>`
-      +`<td class="olast">${h.last!=null?h.last.toFixed(1):"—"}</td>`
+    // しきい値超えの馬は行全体の背景色を変える（方向で色分け、|score|>=SUSPICION_ROW_THRESHOLD）
+    const rowFlagCls=susScore!=null&&Math.abs(susScore)>=SUSPICION_ROW_THRESHOLD
+      ? (susScore<0?" orow-sell":" orow-notsell") : "";
+    return `<tr class="orowc${selCls}${rowFlagCls}" data-num="${h.num}"><td class="onum">${h.num}</td><td class="l">${h.name}${anom}</td>`
+      +`<td>${h.pop!=null?h.pop:"—"}</td>`
+      +`<td class="${susCls}" title="八百長検知の符号付き怪しさスコア(参考値)。負=売れる方向(赤)、正=売れない方向(青)">${susTxt}</td>`
+      +`<td class="oiflast"><div class="c2 c2r"><span>${h.first!=null?h.first.toFixed(1):"—"}</span><span class="tsub">${h.last!=null?h.last.toFixed(1):"—"}</span></div></td>`
       +`<td class="${drCls}">${drTxt}</td><td class="ospk">${oddsSpark(h.series)}</td>`
-      +`<td class="${posCls}">${posTxt}</td><td class="${susCls}" title="八百長検知の符号付き怪しさスコア(参考値)。負=売れる方向(赤)、正=売れない方向(青)">${susTxt}</td></tr>`;
+      +`<td class="${posCls}">${posTxt}</td></tr>`;
   }).join("");
   const oddsHead=isCombo?"合成初":"初", oddsHead2=isCombo?"合成終":"終";
   const desc=isCombo
@@ -1429,7 +1442,7 @@ function renderOdds(){
   host.innerHTML=`<div class="osel"><div class="orow" id="odays">${dayBtns}</div><div class="orow" id="oraces">${raceBtns}</div><div class="orow obetrow">${betBtns}</div></div>`
     +`<div class="ometa">${day.date} ${race.no}R ${race.class||""}${race.post?" ・ 発走"+race.post:""}<br><span class="muted">${desc}（<b style="color:#2ea043">緑=短縮(資金流入)</b> / <b style="color:#d1495b">赤=上昇</b> / ⚠=低オッズなのに着外）・終オッズ順</span></div>`
     +`<div class="ipushrow"><button class="obtn" id="insiderPushBtn">🚨 インサイダー警報</button><span class="ipushnote">怪しさスコアが急上昇した際にスマホへ通知（要バックエンド接続・PC稼働中のみ届きます）</span></div>`
-    +`<div class="otblwrap"><table class="otbl"><thead><tr><th>馬番</th><th class="l">馬名</th><th>人気</th><th>${oddsHead}</th><th>${oddsHead2}</th><th>変動</th><th>推移</th><th>着</th><th>怪しさ</th></tr></thead><tbody>${rows}</tbody></table></div>`
+    +`<div class="otblwrap"><table class="otbl"><thead><tr><th>馬番</th><th class="l">馬名</th><th>人気</th><th>怪しさ</th><th>${oddsHead}/${oddsHead2}</th><th>変動</th><th>推移</th><th>着</th></tr></thead><tbody>${rows}</tbody></table></div>`
     +`<div class="osusnote">怪しさ列は八百長（インサイダー投票）検知の実験的スコアです（赤=売れる方向/仕掛け候補、青=売れない方向/引き候補）。検証サンプルがまだ少ないため参考値としてご覧ください。</div>`
     +`<div class="ochint">▼ 馬をタップすると全券種のオッズ推移を1枚で比較</div>`
     +`<div id="ochartwrap">${S.horse!=null?renderOddsChart(race,S.horse):""}</div>`;
