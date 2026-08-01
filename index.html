@@ -361,10 +361,15 @@ table.ht .numcell{display:inline-flex;align-items:center;gap:4px}
 /* レース予測タブ上部の八百長検知アラート（2026-07-30） */
 .suspicion-alert{border:1px solid var(--border);border-radius:10px;padding:10px 12px;margin-bottom:10px}
 .sa-head{font-size:.8rem;font-weight:800;margin-bottom:6px;color:var(--ink)}
-.sa-item{font-size:.8rem;padding:4px 0;border-top:1px solid var(--border)}
+.sa-item{font-size:.8rem;padding:6px 0;border-top:1px solid var(--border)}
 .sa-item:first-of-type{border-top:none}
-.sa-item.sa-sell{color:#d1495b}
-.sa-item.sa-notsell{color:#2ea043}
+.sa-item.sa-sell .sa-row{color:#d1495b}
+.sa-item.sa-notsell .sa-row{color:#2ea043}
+.sa-brief{font-size:.72rem;color:var(--text-secondary,var(--muted));margin:3px 0 4px;line-height:1.4}
+.sa-toggle{background:none;border:1px solid var(--border);color:var(--muted);font-size:.68rem;
+  border-radius:6px;padding:2px 8px;cursor:pointer;font-family:inherit}
+.sa-detail{margin-top:6px;padding:7px 9px;border-radius:8px;background:var(--surface2,var(--surface));font-size:.72rem}
+.sa-detail-line{color:var(--ink);line-height:1.6;padding:1px 0}
 .sa-note{font-size:.7rem;color:var(--muted);margin-top:6px}
 .osusnote{font-size:.7rem;color:var(--muted);margin:4px 0 8px;line-height:1.4}
 /* 八百長怪しさスコア内訳（オッズ履歴タブ・馬別チャート下、ラベル登録UIの直前） */
@@ -1244,14 +1249,27 @@ function renderSuspicionAlert(r){
     .filter(x=>x.s && x.s.signed_score!=null && Math.abs(x.s.signed_score)>=SUSPICION_ROW_THRESHOLD)
     .sort((a,b)=>Math.abs(b.s.signed_score)-Math.abs(a.s.signed_score));
   if(!flagged.length){ box.innerHTML=""; return; }
-  const items=flagged.map(({h,s})=>{
+  const items=flagged.map(({h,s},i)=>{
     const cls=s.signed_score<0?"sa-sell":"sa-notsell";
     const dirTxt=s.signed_score<0?"売れる方向・仕掛け候補":"売れない方向・引き候補";
-    return `<div class="sa-item ${cls}"><b>${h.num}番 ${h.name||""}</b> `
-      +`怪しさ ${s.signed_score>0?"+":""}${s.signed_score.toFixed(1)}（${dirTxt}）</div>`;
+    const brief=suspicionBrief(s);
+    return `<div class="sa-item ${cls}">`
+      +`<div class="sa-row"><b>${h.num}番 ${h.name||""}</b> 怪しさ ${s.signed_score>0?"+":""}${s.signed_score.toFixed(1)}（${dirTxt}）</div>`
+      +(brief?`<div class="sa-brief">根拠: ${brief}</div>`:"")
+      +`<button class="sa-toggle" data-i="${i}">詳細 ▾</button>`
+      +`<div class="sa-detail" id="sa-detail-${i}" style="display:none">${suspicionDetailHtml(s)}</div>`
+      +`</div>`;
   }).join("");
   box.innerHTML=`<div class="suspicion-alert"><div class="sa-head">⚠ 八百長検知アラート（怪しさスコアがしきい値${SUSPICION_ROW_THRESHOLD}超え）</div>${items}`
-    +`<div class="sa-note">詳細は「オッズ履歴」タブでご確認ください。検証サンプルがまだ少ないため参考値です。</div></div>`;
+    +`<div class="sa-note">検証サンプルがまだ少ないため参考値です。券種別の全推移は「オッズ履歴」タブでも確認できます。</div></div>`;
+  box.querySelectorAll(".sa-toggle").forEach(btn=>{
+    btn.onclick=()=>{
+      const el=document.getElementById("sa-detail-"+btn.dataset.i);
+      const showing=el.style.display!=="none";
+      el.style.display=showing?"none":"block";
+      btn.textContent=showing?"詳細 ▾":"詳細 ▴";
+    };
+  });
 }
 function suspicionFor(raceId,num){
   const S=window.__ODDS.suspicion; if(!S) return null;
@@ -1266,9 +1284,10 @@ function suspicionCls(signedScore){
   if(signedScore>0.05) return "osus-notsell";
   return "osus-lo";
 }
-// HorseSuspicionの各フィールドから日本語の説明文を動的に組み立てる（nullのフィールドは省く）
-function suspicionText(s){
-  if(!s) return "";
+// HorseSuspicionの各フィールドから日本語の説明文の断片配列を組み立てる（nullのフィールドは省く）。
+// suspicionText(オッズ履歴タブの内訳)とsuspicionDetailHtml(レース予測タブのアラート展開部)が共用する。
+function _suspicionParts(s){
+  if(!s) return [];
   const dirLabel = s.direction==="sell" ? "売れる方向（資金流入・仕掛け候補）"
                  : s.direction==="not_sell" ? "売れない方向（資金流出・引き候補）" : "方向なし";
   const parts=[`符号付き怪しさスコア ${s.signed_score>0?"+":""}${s.signed_score.toFixed(1)}（${dirLabel}／大きさ${s.composite_score.toFixed(1)}）`];
@@ -1291,7 +1310,32 @@ function suspicionText(s){
   if(s.watchlist_owner_score!=null) parts.push(`馬主watchlist ${s.watchlist_owner_score.toFixed(1)}（過去実績で高頻度）`);
   if(s.watchlist_trainer_score!=null) parts.push(`厩舎watchlist ${s.watchlist_trainer_score.toFixed(1)}（過去実績で高頻度）`);
   if(s.watchlist_jockey_score!=null) parts.push(`騎手watchlist ${s.watchlist_jockey_score.toFixed(1)}（過去実績で高頻度）`);
-  return parts.join("／");
+  return parts;
+}
+function suspicionText(s){ return _suspicionParts(s).join("／"); }
+// レース予測タブのアラート展開部用：各断片を1行ずつのdivに（suspicionTextの改行版）
+function suspicionDetailHtml(s){
+  return _suspicionParts(s).map(p=>`<div class="sa-detail-line">${p}</div>`).join("");
+}
+// レース予測タブのアラートに常時表示する1行要約：主信号となった券種・タイミング・速度・相方馬のみ
+// （watchlistやcross-corroboration等の残りはsuspicionDetailHtml側でタップ展開して見せる）
+function suspicionBrief(s){
+  if(!s) return "";
+  if(s.direction==="sell" && s.max_velocity!=null){
+    const bn=ODDS_BET_LABELS[s.max_velocity_bet_type]||s.max_velocity_bet_type||"";
+    const mn=s.minutes_to_post_at_peak!=null?s.minutes_to_post_at_peak.toFixed(1):"?";
+    let t=`${bn}が締切${mn}分前に+${s.max_velocity.toFixed(2)}%pt/分で急落`;
+    if(s.faller_partner) t+=`（相方候補${s.faller_partner[0]}番・${s.faller_partner[1]}回一致）`;
+    return t;
+  }
+  if(s.direction==="not_sell" && s.min_velocity!=null){
+    const bn=ODDS_BET_LABELS[s.min_velocity_bet_type]||s.min_velocity_bet_type||"";
+    const mn=s.minutes_to_post_at_min!=null?s.minutes_to_post_at_min.toFixed(1):"?";
+    let t=`${bn}が締切${mn}分前に${s.min_velocity.toFixed(2)}%pt/分で急騰`;
+    if(s.riser_partner) t+=`（相方候補${s.riser_partner[0]}番・${s.riser_partner[1]}回一致）`;
+    return t;
+  }
+  return "";
 }
 function oddsSpark(series,w=96,h=24){
   const vals=series.map(p=>p[1]).filter(v=>v!=null);
