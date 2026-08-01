@@ -370,6 +370,13 @@ table.ht .numcell{display:inline-flex;align-items:center;gap:4px}
   border-radius:6px;padding:2px 8px;cursor:pointer;font-family:inherit}
 .sa-detail{margin-top:6px;padding:7px 9px;border-radius:8px;background:var(--surface2,var(--surface));font-size:.72rem}
 .sa-detail-line{color:var(--ink);line-height:1.6;padding:1px 0}
+.sa-bs-title{font-size:.7rem;font-weight:700;color:var(--muted);margin:8px 0 4px}
+.sa-bs-tbl{width:100%;border-collapse:collapse;font-size:.72rem}
+.sa-bs-tbl th{color:var(--muted);font-weight:600;text-align:right;padding:2px 4px}
+.sa-bs-tbl th.l,.sa-bs-tbl td.l{text-align:left}
+.sa-bs-tbl td{text-align:right;padding:2px 4px;color:var(--ink);border-top:1px solid var(--border)}
+.sa-bs-tbl td.sa-bs-sell{color:#d1495b;font-weight:700}
+.sa-bs-tbl td.sa-bs-notsell{color:#2ea043;font-weight:700}
 .sa-note{font-size:.7rem;color:var(--muted);margin-top:6px}
 .osusnote{font-size:.7rem;color:var(--muted);margin:4px 0 8px;line-height:1.4}
 /* 八百長怪しさスコア内訳（オッズ履歴タブ・馬別チャート下、ラベル登録UIの直前） */
@@ -1313,9 +1320,26 @@ function _suspicionParts(s){
   return parts;
 }
 function suspicionText(s){ return _suspicionParts(s).join("／"); }
-// レース予測タブのアラート展開部用：各断片を1行ずつのdivに（suspicionTextの改行版）
+// 全5券種（単勝＋連系4種）の初→終オッズを表形式で端的に示す（2026-08-01、レース予測アラートの詳細用）。
+// bet_summaryはデータがある券種のみキーを持つ（省略時は行ごと出さない）。
+function betSummaryTableHtml(betSummary){
+  if(!betSummary) return "";
+  const rows=ODDS_BET_ORDER.filter(bt=>betSummary[bt]).map(bt=>{
+    const b=betSummary[bt];
+    const cls=b.drift<-0.05?"sa-bs-sell":(b.drift>0.05?"sa-bs-notsell":"");
+    const sign=b.drift>0?"+":"";
+    return `<tr><td class="l">${ODDS_BET_LABELS[bt]||bt}</td><td class="num">${b.first.toFixed(1)}</td>`
+      +`<td class="num">${b.last.toFixed(1)}</td><td class="num ${cls}">${sign}${b.drift.toFixed(1)}</td></tr>`;
+  }).join("");
+  if(!rows) return "";
+  return `<div class="sa-bs-title">全券種オッズ推移（初→終）</div>`
+    +`<table class="sa-bs-tbl"><thead><tr><th class="l">券種</th><th>初</th><th>終</th><th>変動</th></tr></thead>`
+    +`<tbody>${rows}</tbody></table>`;
+}
+// レース予測タブのアラート展開部用：各断片を1行ずつのdivに（suspicionTextの改行版）＋全券種推移の表
 function suspicionDetailHtml(s){
-  return _suspicionParts(s).map(p=>`<div class="sa-detail-line">${p}</div>`).join("");
+  return _suspicionParts(s).map(p=>`<div class="sa-detail-line">${p}</div>`).join("")
+    + betSummaryTableHtml(s ? s.bet_summary : null);
 }
 // レース予測タブのアラートに常時表示する1行要約：主信号となった券種・タイミング・速度・相方馬のみ
 // （watchlistやcross-corroboration等の残りはsuspicionDetailHtml側でタップ展開して見せる）
