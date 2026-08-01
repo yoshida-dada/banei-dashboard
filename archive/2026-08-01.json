@@ -1,6 +1,6 @@
 {
  "date": "2026-08-01",
- "archived_at": "2026-08-01 18:39",
+ "archived_at": "2026-08-01 18:45",
  "races": [
   {
    "date": "2026-08-01",
@@ -9429,7 +9429,11 @@
      "payout": 8430,
      "popularity": 31
     }
-   ]
+   ],
+   "track_offset": -9.9,
+   "track_z": -0.43,
+   "track_label": "標準",
+   "track_n": 6
   },
   {
    "date": "2026-08-01",
@@ -14671,15 +14675,15 @@
    "predicted_top": 7,
    "market_fav": 7,
    "winner": null,
-   "update_stage": "moist",
-   "updated_at": "2026-08-01 18:35",
+   "update_stage": "evscan",
+   "updated_at": "2026-08-01 18:45",
    "horses": [
     {
      "num": 7,
      "name": "キョウエイジェット",
      "win_prob": 0.1908,
      "rank": 1,
-     "odds": 1.3,
+     "odds": 1.6,
      "position": null,
      "result_time": null,
      "jockey": "菊池一",
@@ -14867,9 +14871,9 @@
       }
      ],
      "place3_time_avg": 109.7,
-     "p_market": 0.5906,
-     "win_prob_blend": 0.4466,
-     "ev": 0.58,
+     "p_market": 0.4921,
+     "win_prob_blend": 0.383,
+     "ev": 0.61,
      "ev_buy": false,
      "ev_streak": 0
     },
@@ -14878,13 +14882,13 @@
      "name": "イチマツ",
      "win_prob": 0.1516,
      "rank": 2,
-     "odds": 18.6,
+     "odds": 12.4,
      "position": null,
      "result_time": null,
      "jockey": "臼杵龍",
      "gate": 8,
      "sled_kg": 600.0,
-     "popularity": 5,
+     "popularity": 4,
      "age": 4,
      "sex": "牡",
      "trainer": "大河和（ばんえい）",
@@ -15234,24 +15238,24 @@
       }
      ],
      "place3_time_avg": 124.6,
-     "p_market": 0.0413,
-     "win_prob_blend": 0.0731,
-     "ev": 1.36,
+     "p_market": 0.0635,
+     "win_prob_blend": 0.0934,
+     "ev": 1.16,
      "ev_buy": true,
-     "ev_streak": 1
+     "ev_streak": 2
     },
     {
      "num": 10,
      "name": "ドラゴンブライアン",
      "win_prob": 0.1292,
      "rank": 3,
-     "odds": 16.0,
+     "odds": 13.4,
      "position": null,
      "result_time": null,
      "jockey": "渡来心",
      "gate": 8,
      "sled_kg": 610.0,
-     "popularity": 4,
+     "popularity": 5,
      "age": 4,
      "sex": "牡",
      "trainer": "松井浩（ばんえい）",
@@ -15565,24 +15569,24 @@
       }
      ],
      "place3_time_avg": 122.1,
-     "p_market": 0.048,
-     "win_prob_blend": 0.0762,
-     "ev": 1.22,
+     "p_market": 0.0588,
+     "win_prob_blend": 0.0839,
+     "ev": 1.12,
      "ev_buy": true,
-     "ev_streak": 1
+     "ev_streak": 2
     },
     {
      "num": 3,
      "name": "ツガルノセンショウ",
      "win_prob": 0.1266,
      "rank": 4,
-     "odds": 26.8,
+     "odds": 23.6,
      "position": null,
      "result_time": null,
      "jockey": "吉田理",
      "gate": 3,
      "sled_kg": 610.0,
-     "popularity": 7,
+     "popularity": 8,
      "age": 4,
      "sex": "牡",
      "trainer": "長部幸（ばんえい）",
@@ -15944,18 +15948,18 @@
       }
      ],
      "place3_time_avg": 118.2,
-     "p_market": 0.0286,
-     "win_prob_blend": 0.0541,
-     "ev": 1.45,
+     "p_market": 0.0334,
+     "win_prob_blend": 0.0577,
+     "ev": 1.36,
      "ev_buy": true,
-     "ev_streak": 1
+     "ev_streak": 2
     },
     {
      "num": 5,
      "name": "サカノテッペン",
      "win_prob": 0.1157,
      "rank": 5,
-     "odds": 6.6,
+     "odds": 5.6,
      "position": null,
      "result_time": null,
      "jockey": "船山蔵",
@@ -16539,9 +16543,9 @@
       }
      ],
      "place3_time_avg": 116.0,
-     "p_market": 0.1163,
-     "win_prob_blend": 0.1304,
-     "ev": 0.86,
+     "p_market": 0.1406,
+     "win_prob_blend": 0.1424,
+     "ev": 0.8,
      "ev_buy": false,
      "ev_streak": 0
     },
@@ -16550,7 +16554,7 @@
      "name": "フジエース",
      "win_prob": 0.1016,
      "rank": 6,
-     "odds": 25.9,
+     "odds": 22.0,
      "position": null,
      "result_time": null,
      "jockey": "中村太",
@@ -16870,18 +16874,18 @@
       }
      ],
      "place3_time_avg": 120.9,
-     "p_market": 0.0296,
-     "win_prob_blend": 0.0512,
-     "ev": 1.33,
+     "p_market": 0.0358,
+     "win_prob_blend": 0.0559,
+     "ev": 1.23,
      "ev_buy": true,
-     "ev_streak": 1
+     "ev_streak": 2
     },
     {
      "num": 8,
      "name": "ホクショウサクラ",
      "win_prob": 0.0586,
      "rank": 7,
-     "odds": 8.9,
+     "odds": 7.6,
      "position": null,
      "result_time": null,
      "jockey": "阿部優",
@@ -17243,9 +17247,9 @@
       }
      ],
      "place3_time_avg": 114.9,
-     "p_market": 0.0863,
-     "win_prob_blend": 0.0846,
-     "ev": 0.75,
+     "p_market": 0.1036,
+     "win_prob_blend": 0.092,
+     "ev": 0.7,
      "ev_buy": false,
      "ev_streak": 0
     },
@@ -17254,7 +17258,7 @@
      "name": "リックンフィーバー",
      "win_prob": 0.0505,
      "rank": 8,
-     "odds": 57.4,
+     "odds": 53.9,
      "position": null,
      "result_time": null,
      "jockey": "中原蓮",
@@ -17838,18 +17842,18 @@
       }
      ],
      "place3_time_avg": 119.5,
-     "p_market": 0.0134,
-     "win_prob_blend": 0.0239,
-     "ev": 1.37,
+     "p_market": 0.0146,
+     "win_prob_blend": 0.0245,
+     "ev": 1.32,
      "ev_buy": true,
-     "ev_streak": 1
+     "ev_streak": 2
     },
     {
      "num": 4,
      "name": "カツブライト",
      "win_prob": 0.0475,
      "rank": 9,
-     "odds": 42.3,
+     "odds": 33.4,
      "position": null,
      "result_time": null,
      "jockey": "赤塚健",
@@ -18055,24 +18059,24 @@
       }
      ],
      "place3_time_avg": 113.4,
-     "p_market": 0.0182,
-     "win_prob_blend": 0.0285,
-     "ev": 1.21,
+     "p_market": 0.0236,
+     "win_prob_blend": 0.0327,
+     "ev": 1.09,
      "ev_buy": true,
-     "ev_streak": 1
+     "ev_streak": 2
     },
     {
      "num": 2,
      "name": "ホクセイビックボス",
      "win_prob": 0.028,
      "rank": 10,
-     "odds": 27.7,
+     "odds": 23.1,
      "position": null,
      "result_time": null,
      "jockey": "島津新",
      "gate": 2,
      "sled_kg": 630.0,
-     "popularity": 8,
+     "popularity": 7,
      "age": 6,
      "sex": "牡",
      "trainer": "岩本利（ばんえい）",
@@ -18614,17 +18618,13 @@
       }
      ],
      "place3_time_avg": 124.4,
-     "p_market": 0.0277,
-     "win_prob_blend": 0.0312,
-     "ev": 0.87,
+     "p_market": 0.0341,
+     "win_prob_blend": 0.0345,
+     "ev": 0.8,
      "ev_buy": false,
      "ev_streak": 0
     }
-   ],
-   "track_offset": -12.4,
-   "track_z": -0.94,
-   "track_label": "軽",
-   "track_n": 7
+   ]
   },
   {
    "date": "2026-08-01",
