@@ -657,6 +657,9 @@ function render(){
   renderAptitude(r);
 }
 window.__rerenderRace = render;  // loadSuspicion()等、boot()外からの再描画トリガー用
+loadSuspicion();  // 初回ページ読込時からsuspicion_scores.jsonを取得（オッズ履歴タブを開く前でも警告が出るように）
+                  // ※loadSuspicionはboot()内のローカル関数のため、ここ(boot内)で呼ぶ必要がある
+                  //  （boot()外の_bootから直接呼ぶとReferenceErrorになる。2026-07-31修正）
 
 // ---- 買い目ビュー（バックエンド未設定=静的 / 設定済=WSライブ） ----
 function backendCfg(){
@@ -1560,7 +1563,7 @@ let rz; window.addEventListener("resize",()=>{clearTimeout(rz);rz=setTimeout(()=
 // データ読込: 埋め込み(アーティファクト) or ローカルの data.json(ローカルサーバで自動更新)
 (function(){
   // 通知スケジューラ等から参照できるよう、読み込んだDBをグローバルに退避してから boot する
-  const _boot = DB => { window.__BANEI_DB = DB; boot(DB); if(window.__scheduleNotifs) window.__scheduleNotifs(); loadSuspicion(); };
+  const _boot = DB => { window.__BANEI_DB = DB; boot(DB); if(window.__scheduleNotifs) window.__scheduleNotifs(); };
   const raw = document.getElementById("data").textContent;
   if(raw && raw.indexOf("__DATA__")===-1){ try{ _boot(JSON.parse(raw)); return; }catch(e){} }
   fetch("./data.json?t="+Date.now()).then(r=>r.json()).then(_boot).catch(e=>{
