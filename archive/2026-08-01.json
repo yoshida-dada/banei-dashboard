@@ -28565,7 +28565,11 @@
      "payout": 2030,
      "popularity": 8
     }
-   ]
+   ],
+   "track_offset": -14.0,
+   "track_z": -1.26,
+   "track_label": "軽",
+   "track_n": 10
   },
   {
    "date": "2026-08-01",
@@ -28580,14 +28584,14 @@
    "market_fav": 1,
    "winner": null,
    "update_stage": "evscan",
-   "updated_at": "2026-08-01 20:34",
+   "updated_at": "2026-08-01 20:36",
    "horses": [
     {
      "num": 6,
      "name": "ユウマダイマジン",
      "win_prob": 0.1957,
      "rank": 1,
-     "odds": 3.8,
+     "odds": 3.7,
      "position": null,
      "result_time": null,
      "jockey": "西将太",
@@ -29051,8 +29055,8 @@
       }
      ],
      "place3_time_avg": 112.7,
-     "p_market": 0.2078,
-     "win_prob_blend": 0.2188,
+     "p_market": 0.2137,
+     "win_prob_blend": 0.2233,
      "ev": 0.83,
      "ev_buy": false,
      "ev_streak": 0
@@ -29652,9 +29656,9 @@
       }
      ],
      "place3_time_avg": 110.2,
-     "p_market": 0.2723,
-     "win_prob_blend": 0.2221,
-     "ev": 0.64,
+     "p_market": 0.2727,
+     "win_prob_blend": 0.2227,
+     "ev": 0.65,
      "ev_buy": false,
      "ev_streak": 0
     },
@@ -29663,7 +29667,7 @@
      "name": "タイトルボス",
      "win_prob": 0.1199,
      "rank": 3,
-     "odds": 31.9,
+     "odds": 34.3,
      "position": null,
      "result_time": null,
      "jockey": "阿部優",
@@ -30115,9 +30119,9 @@
       }
      ],
      "place3_time_avg": 109.5,
-     "p_market": 0.0248,
-     "win_prob_blend": 0.0462,
-     "ev": 1.48,
+     "p_market": 0.0231,
+     "win_prob_blend": 0.0442,
+     "ev": 1.52,
      "ev_buy": true,
      "ev_streak": 3
     },
@@ -30126,7 +30130,7 @@
      "name": "トカチヒロ",
      "win_prob": 0.1129,
      "rank": 4,
-     "odds": 18.5,
+     "odds": 19.1,
      "position": null,
      "result_time": null,
      "jockey": "中村太",
@@ -30608,9 +30612,9 @@
       }
      ],
      "place3_time_avg": 111.9,
-     "p_market": 0.0427,
-     "win_prob_blend": 0.0645,
-     "ev": 1.19,
+     "p_market": 0.0414,
+     "win_prob_blend": 0.0634,
+     "ev": 1.21,
      "ev_buy": true,
      "ev_streak": 3
     },
@@ -31095,8 +31099,8 @@
       }
      ],
      "place3_time_avg": 112.9,
-     "p_market": 0.1755,
-     "win_prob_blend": 0.1589,
+     "p_market": 0.1757,
+     "win_prob_blend": 0.1594,
      "ev": 0.72,
      "ev_buy": false,
      "ev_streak": 0
@@ -31106,13 +31110,13 @@
      "name": "イワキブラボー",
      "win_prob": 0.0934,
      "rank": 6,
-     "odds": 27.3,
+     "odds": 26.8,
      "position": null,
      "result_time": null,
      "jockey": "菊池一",
      "gate": 7,
      "sled_kg": 640.0,
-     "popularity": 8,
+     "popularity": 7,
      "age": 5,
      "sex": "牡",
      "trainer": "槻舘重（ばんえい）",
@@ -31636,8 +31640,8 @@
       }
      ],
      "place3_time_avg": 107.9,
-     "p_market": 0.0289,
-     "win_prob_blend": 0.0469,
+     "p_market": 0.0295,
+     "win_prob_blend": 0.0476,
      "ev": 1.28,
      "ev_buy": true,
      "ev_streak": 3
@@ -31647,13 +31651,13 @@
      "name": "ビックボス",
      "win_prob": 0.0888,
      "rank": 7,
-     "odds": 27.2,
+     "odds": 29.2,
      "position": null,
      "result_time": null,
      "jockey": "阿部武",
      "gate": 2,
      "sled_kg": 640.0,
-     "popularity": 7,
+     "popularity": 8,
      "age": 6,
      "sex": "牡",
      "trainer": "坂本東（ばんえい）",
@@ -32177,9 +32181,9 @@
       }
      ],
      "place3_time_avg": 117.5,
-     "p_market": 0.029,
-     "win_prob_blend": 0.0462,
-     "ev": 1.26,
+     "p_market": 0.0271,
+     "win_prob_blend": 0.0442,
+     "ev": 1.29,
      "ev_buy": true,
      "ev_streak": 3
     },
@@ -32188,7 +32192,7 @@
      "name": "フクノエル",
      "win_prob": 0.0607,
      "rank": 8,
-     "odds": 47.9,
+     "odds": 49.2,
      "position": null,
      "result_time": null,
      "jockey": "船山蔵",
@@ -32754,9 +32758,9 @@
       }
      ],
      "place3_time_avg": 113.8,
-     "p_market": 0.0165,
-     "win_prob_blend": 0.028,
-     "ev": 1.34,
+     "p_market": 0.0161,
+     "win_prob_blend": 0.0276,
+     "ev": 1.36,
      "ev_buy": true,
      "ev_streak": 3
     },
@@ -32765,7 +32769,7 @@
      "name": "スーパーチヨコ",
      "win_prob": 0.0502,
      "rank": 9,
-     "odds": 8.5,
+     "odds": 9.0,
      "position": null,
      "result_time": null,
      "jockey": "鈴木恵",
@@ -33169,9 +33173,9 @@
       }
      ],
      "place3_time_avg": 106.0,
-     "p_market": 0.0929,
-     "win_prob_blend": 0.0805,
-     "ev": 0.68,
+     "p_market": 0.0879,
+     "win_prob_blend": 0.0778,
+     "ev": 0.7,
      "ev_buy": false,
      "ev_streak": 0
     },
@@ -33180,7 +33184,7 @@
      "name": "シンエイファイト",
      "win_prob": 0.0473,
      "rank": 10,
-     "odds": 7.2,
+     "odds": 7.0,
      "position": null,
      "result_time": null,
      "jockey": "赤塚健",
@@ -33728,17 +33732,13 @@
       }
      ],
      "place3_time_avg": 116.7,
-     "p_market": 0.1097,
-     "win_prob_blend": 0.0879,
+     "p_market": 0.113,
+     "win_prob_blend": 0.0898,
      "ev": 0.63,
      "ev_buy": false,
      "ev_streak": 0
     }
-   ],
-   "track_offset": -13.7,
-   "track_z": -1.21,
-   "track_label": "軽",
-   "track_n": 11
+   ]
   }
  ]
 }
