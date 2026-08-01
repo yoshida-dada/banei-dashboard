@@ -1,6 +1,6 @@
 {
  "date": "2026-08-01",
- "archived_at": "2026-08-01 14:31",
+ "archived_at": "2026-08-01 14:33",
  "races": [
   {
    "date": "2026-08-01",
@@ -14,8 +14,8 @@
    "predicted_top": 4,
    "market_fav": 4,
    "winner": null,
-   "update_stage": "evscan",
-   "updated_at": "2026-08-01 14:31",
+   "update_stage": "odds",
+   "updated_at": "2026-08-01 14:33",
    "horses": [
     {
      "num": 4,
@@ -192,9 +192,9 @@
       }
      ],
      "place3_time_avg": 129.0,
-     "p_market": 0.3743,
-     "win_prob_blend": 0.3352,
-     "ev": 0.7,
+     "p_market": 0.3769,
+     "win_prob_blend": 0.3386,
+     "ev": 0.71,
      "ev_buy": false,
      "ev_streak": 0
     },
@@ -203,7 +203,7 @@
      "name": "キンスピード",
      "win_prob": 0.1552,
      "rank": 2,
-     "odds": 8.1,
+     "odds": 7.5,
      "position": null,
      "result_time": null,
      "jockey": "松本秀",
@@ -332,24 +332,24 @@
       }
      ],
      "place3_time_avg": 138.2,
-     "p_market": 0.0971,
-     "win_prob_blend": 0.1264,
-     "ev": 1.02,
+     "p_market": 0.1055,
+     "win_prob_blend": 0.1342,
+     "ev": 1.01,
      "ev_buy": true,
-     "ev_streak": 1
+     "ev_streak": 2
     },
     {
      "num": 2,
      "name": "ハゴロモコスモス",
      "win_prob": 0.1245,
      "rank": 3,
-     "odds": 14.5,
+     "odds": 17.4,
      "position": null,
      "result_time": null,
      "jockey": "西将太",
      "gate": 2,
      "sled_kg": 600.0,
-     "popularity": 6,
+     "popularity": 7,
      "age": 3,
      "sex": "牡",
      "trainer": "大友人（ばんえい）",
@@ -543,9 +543,9 @@
       }
      ],
      "place3_time_avg": 141.7,
-     "p_market": 0.0542,
-     "win_prob_blend": 0.0801,
-     "ev": 1.16,
+     "p_market": 0.0455,
+     "win_prob_blend": 0.0719,
+     "ev": 1.25,
      "ev_buy": true,
      "ev_streak": 3
     },
@@ -771,13 +771,13 @@
      "name": "イワキミハル",
      "win_prob": 0.097,
      "rank": 5,
-     "odds": 16.3,
+     "odds": 17.2,
      "position": null,
      "result_time": null,
      "jockey": "中村太",
      "gate": 8,
      "sled_kg": 580.0,
-     "popularity": 7,
+     "popularity": 6,
      "age": 3,
      "sex": "牝",
      "trainer": "小林長（ばんえい）",
@@ -983,9 +983,9 @@
       }
      ],
      "place3_time_avg": 134.5,
-     "p_market": 0.0482,
-     "win_prob_blend": 0.0681,
-     "ev": 1.11,
+     "p_market": 0.046,
+     "win_prob_blend": 0.0664,
+     "ev": 1.14,
      "ev_buy": true,
      "ev_streak": 3
     },
@@ -994,7 +994,7 @@
      "name": "マオ",
      "win_prob": 0.0904,
      "rank": 6,
-     "odds": 3.1,
+     "odds": 3.0,
      "position": null,
      "result_time": null,
      "jockey": "今井千",
@@ -1194,9 +1194,9 @@
       }
      ],
      "place3_time_avg": 131.5,
-     "p_market": 0.2536,
-     "win_prob_blend": 0.1953,
-     "ev": 0.61,
+     "p_market": 0.2638,
+     "win_prob_blend": 0.2015,
+     "ev": 0.6,
      "ev_buy": false,
      "ev_streak": 0
     },
@@ -1205,7 +1205,7 @@
      "name": "トラボタン",
      "win_prob": 0.0869,
      "rank": 7,
-     "odds": 30.3,
+     "odds": 34.6,
      "position": null,
      "result_time": null,
      "jockey": "長澤幸",
@@ -1411,9 +1411,9 @@
       }
      ],
      "place3_time_avg": 134.1,
-     "p_market": 0.0259,
-     "win_prob_blend": 0.0438,
-     "ev": 1.33,
+     "p_market": 0.0229,
+     "win_prob_blend": 0.0406,
+     "ev": 1.4,
      "ev_buy": true,
      "ev_streak": 3
     },
@@ -1422,13 +1422,13 @@
      "name": "ブラックシンバ",
      "win_prob": 0.0778,
      "rank": 8,
-     "odds": 10.2,
+     "odds": 11.4,
      "position": null,
      "result_time": null,
      "jockey": "船山蔵",
      "gate": 1,
      "sled_kg": 600.0,
-     "popularity": 4,
+     "popularity": 5,
      "age": 3,
      "sex": "牡",
      "trainer": "鈴木邦（ばんえい）",
@@ -1628,9 +1628,9 @@
       }
      ],
      "place3_time_avg": 138.6,
-     "p_market": 0.0771,
-     "win_prob_blend": 0.0854,
-     "ev": 0.87,
+     "p_market": 0.0694,
+     "win_prob_blend": 0.0803,
+     "ev": 0.92,
      "ev_buy": false,
      "ev_streak": 0
     },
@@ -1645,7 +1645,7 @@
      "jockey": "菊池一",
      "gate": 7,
      "sled_kg": 580.0,
-     "popularity": 5,
+     "popularity": 4,
      "age": 3,
      "sex": "牝",
      "trainer": "小林長（ばんえい）",
@@ -1815,13 +1815,14 @@
       }
      ],
      "place3_time_avg": 124.1,
-     "p_market": 0.0696,
-     "win_prob_blend": 0.0657,
-     "ev": 0.74,
+     "p_market": 0.07,
+     "win_prob_blend": 0.0664,
+     "ev": 0.75,
      "ev_buy": false,
      "ev_streak": 0
     }
-   ]
+   ],
+   "bets": []
   },
   {
    "date": "2026-08-01",
