@@ -377,6 +377,14 @@ table.ht .numcell{display:inline-flex;align-items:center;gap:4px}
 .sa-bs-tbl td{text-align:right;padding:2px 4px;color:var(--ink);border-top:1px solid var(--border)}
 .sa-bs-tbl td.sa-bs-sell{color:#d1495b;font-weight:700}
 .sa-bs-tbl td.sa-bs-notsell{color:#2ea043;font-weight:700}
+.sa-detail-brief{font-weight:700;margin-bottom:4px}
+.sa-calc-title{font-size:.7rem;font-weight:700;color:var(--muted);margin:8px 0 4px}
+.sa-calc-line{color:var(--ink);font-size:.7rem;line-height:1.6;padding:1px 0}
+.sa-calc-line.muted{color:var(--muted)}
+.sa-chart{margin-top:8px}
+.sa-chart-title{font-size:.7rem;font-weight:700;color:var(--ink);margin-bottom:4px;line-height:1.4}
+.sa-chart svg{display:block;width:100%;height:auto}
+.sa-chart-loading,.sa-chart-empty{font-size:.7rem}
 .sa-note{font-size:.7rem;color:var(--muted);margin-top:6px}
 .osusnote{font-size:.7rem;color:var(--muted);margin:4px 0 8px;line-height:1.4}
 /* 八百長怪しさスコア内訳（オッズ履歴タブ・馬別チャート下、ラベル登録UIの直前） */
@@ -1259,12 +1267,10 @@ function renderSuspicionAlert(r){
   const items=flagged.map(({h,s},i)=>{
     const cls=s.signed_score<0?"sa-sell":"sa-notsell";
     const dirTxt=s.signed_score<0?"売れる方向・仕掛け候補":"売れない方向・引き候補";
-    const brief=suspicionBrief(s);
     return `<div class="sa-item ${cls}">`
       +`<div class="sa-row"><b>${h.num}番 ${h.name||""}</b> 怪しさ ${s.signed_score>0?"+":""}${s.signed_score.toFixed(1)}（${dirTxt}）</div>`
-      +(brief?`<div class="sa-brief">根拠: ${brief}</div>`:"")
-      +`<button class="sa-toggle" data-i="${i}">詳細 ▾</button>`
-      +`<div class="sa-detail" id="sa-detail-${i}" style="display:none">${suspicionDetailHtml(s)}</div>`
+      +`<button class="sa-toggle" data-i="${i}" data-race-id="${raceId}" data-num="${h.num}">詳細 ▾</button>`
+      +`<div class="sa-detail" id="sa-detail-${i}" style="display:none">${suspicionDetailHtml(s)}<div class="sa-chart" id="sa-chart-${i}"></div></div>`
       +`</div>`;
   }).join("");
   box.innerHTML=`<div class="suspicion-alert"><div class="sa-head">⚠ 八百長検知アラート（怪しさスコアがしきい値${SUSPICION_ROW_THRESHOLD}超え）</div>${items}`
@@ -1275,8 +1281,29 @@ function renderSuspicionAlert(r){
       const showing=el.style.display!=="none";
       el.style.display=showing?"none":"block";
       btn.textContent=showing?"詳細 ▾":"詳細 ▴";
+      if(!showing) loadAlertChart(btn.dataset.raceId, +btn.dataset.num, btn.dataset.i);
     };
   });
+}
+// レース予測タブでは通常オッズ履歴(odds_history.json)を未読込のため、「詳細」を初めて開いた
+// タイミングで遅延読込し、全券種の道中推移グラフを差し込む（2026-08-01）。
+function findOddsRace(raceId){
+  const d=window.__ODDS.data; if(!d||!d.days) return null;
+  for(const day of d.days){ const race=(day.races||[]).find(x=>x.race_id===raceId); if(race) return race; }
+  return null;
+}
+function loadAlertChart(raceId,num,i){
+  const holder=document.getElementById("sa-chart-"+i); if(!holder) return;
+  if(holder.dataset.loaded==="1") return;
+  holder.innerHTML='<div class="meta sa-chart-loading">推移グラフを読込中…</div>';
+  const render=()=>{
+    const race=findOddsRace(raceId);
+    holder.innerHTML=race?allBetsLineChartHtml(race,num):'<div class="meta">この日のオッズ時系列データがまだありません。</div>';
+    holder.dataset.loaded="1";
+  };
+  if(window.__ODDS.data){ render(); return; }
+  fetch("./odds_history.json?t="+Date.now()).then(r=>r.json()).then(d=>{ window.__ODDS.data=d; render(); })
+    .catch(()=>{ holder.innerHTML='<div class="meta">オッズ時系列の読込に失敗しました。</div>'; });
 }
 function suspicionFor(raceId,num){
   const S=window.__ODDS.suspicion; if(!S) return null;
@@ -1336,10 +1363,28 @@ function betSummaryTableHtml(betSummary){
     +`<table class="sa-bs-tbl"><thead><tr><th class="l">券種</th><th>初</th><th>終</th><th>変動</th></tr></thead>`
     +`<tbody>${rows}</tbody></table>`;
 }
-// レース予測タブのアラート展開部用：各断片を1行ずつのdivに（suspicionTextの改行版）＋全券種推移の表
+// レース予測タブのアラート展開部用：根拠1行要約＋各断片を1行ずつのdiv＋全券種推移の表＋算出過程（備考）
+// （根拠の要約は2026-08-01以前は常時表示だったが、ユーザー要望で詳細側に移動）
 function suspicionDetailHtml(s){
-  return _suspicionParts(s).map(p=>`<div class="sa-detail-line">${p}</div>`).join("")
-    + betSummaryTableHtml(s ? s.bet_summary : null);
+  const brief=suspicionBrief(s);
+  return (brief?`<div class="sa-detail-line sa-detail-brief">根拠: ${brief}</div>`:"")
+    + _suspicionParts(s).map(p=>`<div class="sa-detail-line">${p}</div>`).join("")
+    + betSummaryTableHtml(s ? s.bet_summary : null)
+    + suspicionCalcNoteHtml(s);
+}
+// 怪しさスコアの算出過程を備考として端的に示す（2026-08-01）。norm_*はrace_suspicion_report側で
+// 既にレース内0〜1正規化済みの値（watchlistのみレース内正規化せず絶対値÷10）。重みは学習済みではなく
+// 透明な固定ルール（velocity0.45/pair0.25/watchlist0.30、[[project_banei_insider_labels]]参照）。
+var SUSPICION_WEIGHTS={velocity:0.45,pair:0.25,watchlist:0.30};
+function suspicionCalcNoteHtml(s){
+  if(!s || s.norm_velocity==null || s.norm_pair==null || s.norm_watchlist==null) return "";
+  const w=SUSPICION_WEIGHTS;
+  const nv=s.norm_velocity.toFixed(2), np=s.norm_pair.toFixed(2), nw=s.norm_watchlist.toFixed(2);
+  const dirLabel=s.direction==="sell"?"売れる方向なのでマイナス":"売れない方向なのでプラス";
+  return `<div class="sa-calc-title">備考：スコアの算出過程</div>`
+    +`<div class="sa-calc-line">大きさ = 10 ×（velocity正規化${nv}×${w.velocity} + ペア署名正規化${np}×${w.pair} + watchlist正規化${nw}×${w.watchlist}）= ${s.composite_score.toFixed(1)}</div>`
+    +`<div class="sa-calc-line">符号付きスコア = 大きさ × 優勢方向（${dirLabel}）= ${s.signed_score>0?"+":""}${s.signed_score.toFixed(1)}</div>`
+    +`<div class="sa-calc-line muted">※重みは統計的学習ではなく透明な固定ルール（学習にはサンプル不足のため）</div>`;
 }
 // レース予測タブのアラートに常時表示する1行要約：主信号となった券種・タイミング・速度・相方馬のみ
 // （watchlistやcross-corroboration等の残りはsuspicionDetailHtml側でタップ展開して見せる）
@@ -1459,6 +1504,44 @@ function postOddsLabel(raceId,num,ltype,note){
       refreshOddsLabelBox();
     })
     .catch(e=>{ S.labelBusy=null; alert("送信エラー: "+e+"\nバックエンド(PC)とトンネルが起動しているか確認してください。"); refreshOddsLabelBox(); });
+}
+// レース予測タブのアラート詳細用：全券種の道中推移を1枚の折れ線グラフで（2026-08-01）。
+// renderOddsChart()のSVG生成ロジックを流用するが、id="olabelbox"のラベル登録欄は含めない
+// （複数の馬のグラフを同時に展開してもDOM ID衝突しないように、意図的に切り出した別関数）。
+function allBetsLineChartHtml(race,num){
+  const bets=race.bets||{};
+  const set=[];
+  ODDS_BET_ORDER.forEach(bt=>{
+    const rows=bets[bt]; if(!rows) return;
+    const row=rows.find(r=>r.num===num);
+    if(row&&row.series&&row.series.length>=2) set.push({bt,name:ODDS_BET_LABELS[bt]||bt,series:row.series});
+  });
+  if(!set.length) return '<div class="meta sa-chart-empty">この馬のオッズ時系列がありません。</div>';
+  const allT=[];
+  set.forEach(s=>s.series.forEach(p=>{const m=oddsTMin(p[0]); if(m!=null)allT.push(m);}));
+  const t0=Math.min(...allT),t1=Math.max(...allT),tr=(t1-t0)||1;
+  const ratios=[]; set.forEach(s=>{const o0=s.series[0][1]||1; s.norm=s.series.map(p=>[oddsTMin(p[0]),p[1]/o0]); s.norm.forEach(q=>{if(q[0]!=null)ratios.push(q[1]);});});
+  const rmin=Math.min(...ratios),rmax=Math.max(...ratios),rr=(rmax-rmin)||1;
+  const W=340,H=160,padL=30,padR=8,padT=10,padB=20,iw=W-padL-padR,ih=H-padT-padB;
+  const X=m=>padL+((m-t0)/tr)*iw, Y=r=>padT+(1-(r-rmin)/rr)*ih;
+  let vlines="",xlabels="",idx=0;
+  for(let m=Math.ceil(t0/ODDS_GRID_MIN)*ODDS_GRID_MIN; m<=t1+0.001; m+=ODDS_GRID_MIN,idx++){
+    const x=X(m).toFixed(1), major=(idx%3===0);
+    vlines+=`<line x1="${x}" y1="${padT}" x2="${x}" y2="${padT+ih}" stroke="var(--border)" stroke-width="${major?0.8:0.5}" opacity="${major?0.75:0.35}"/>`;
+    if(major) xlabels+=`<text x="${x}" y="${H-4}" text-anchor="middle" class="oaxis">${oddsTLbl(m)}</text>`;
+  }
+  const base=`<line x1="${padL}" y1="${Y(1).toFixed(1)}" x2="${W-padR}" y2="${Y(1).toFixed(1)}" stroke="var(--muted)" stroke-dasharray="3 3" opacity="0.6"/>`;
+  const lines=set.map(s=>{
+    const pts=s.norm.filter(q=>q[0]!=null).map(q=>X(q[0]).toFixed(1)+","+Y(q[1]).toFixed(1)).join(" ");
+    return `<polyline points="${pts}" fill="none" stroke="${ODDS_BET_COLORS[s.bt]}" stroke-width="1.6" stroke-linejoin="round"/>`;
+  }).join("");
+  const yl=`<text x="2" y="${(Y(rmax)+7).toFixed(1)}" class="oaxis">${rmax.toFixed(2)}x</text>`
+    +`<text x="2" y="${(Y(1)+3).toFixed(1)}" class="oaxis">1.0x</text>`
+    +`<text x="2" y="${Y(rmin).toFixed(1)}" class="oaxis">${rmin.toFixed(2)}x</text>`;
+  const legend=set.map(s=>`<span class="olg"><i style="background:${ODDS_BET_COLORS[s.bt]}"></i>${s.name}</span>`).join("");
+  return `<div class="sa-chart-title">全券種オッズ推移（道中の時系列・初回=1.0基準の比率／縦線=2分周期）</div>`
+    +`<svg width="100%" viewBox="0 0 ${W} ${H}" preserveAspectRatio="xMidYMid meet">${vlines}${base}${lines}${yl}${xlabels}</svg>`
+    +`<div class="olgd">${legend}</div>`;
 }
 function renderOddsChart(race,num){
   const bets=race.bets||{};
