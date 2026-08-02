@@ -539,7 +539,6 @@ function sledSub(h){
 document.getElementById("gen").textContent = "予測生成 "+DB.generated;
 
 const dates = [...new Set(RACES.map(r=>r.date))].sort();
-let curDate = dates[0], curRno = 1, view = "table", sortMode = "rank", dim = "time";
 const target = { time: 115, moist: 1.7 };
 const STAGE = { pre:"事前予測", moist:"水分反映", evscan:"オッズEV", odds:"買い目確定", result:"結果確定", cancelled:"中止" };
 let liveWS=null, cdTimer=null, liveState=null;
@@ -548,6 +547,21 @@ let liveWS=null, cdTimer=null, liveState=null;
 document.getElementById("dates").innerHTML = dates.map(d=>
   `<div class="dpill" data-d="${d}">${d.slice(5).replace('-','/')}</div>`).join("");
 function racesFor(d){ return RACES.filter(r=>r.date===d).sort((a,b)=>a.race_no-b.race_no); }
+// 未確定(中止でなく winner がまだ無い)の最初のレース＝次の発走予定を初期選択にする（2026-08-02）。
+// 全レース確定済みならその日の最終レースに留まる（全部終わった日に1Rへ戻されるのを避ける）。
+function nextRaceNoFor(d){
+  const rs = racesFor(d); if(!rs.length) return 1;
+  const next = rs.find(r=>!r.cancelled && r.winner==null);
+  return (next || rs[rs.length-1]).race_no;
+}
+// dates[0]は「data.jsonに残っている最古の日」であり、それが既に全レース確定済み(前日分がまだ
+// 保持されている等)だと1R固定と同じ問題が日付側で再発するため、未確定レースが残っている最初の日を選ぶ。
+// 全日程が確定済み(開催が全部終わっている)なら最後の日に留まる。
+function nextDateFor(){
+  for(const d of dates){ if(racesFor(d).some(r=>!r.cancelled && r.winner==null)) return d; }
+  return dates[dates.length-1];
+}
+let curDate = nextDateFor(), curRno = nextRaceNoFor(curDate), view = "table", sortMode = "rank", dim = "time";
 
 function renderRacePills(){
   document.getElementById("races").innerHTML = racesFor(curDate).map(r=>{
@@ -567,7 +581,7 @@ function sync(){
   render();
 }
 document.querySelectorAll("#dates .dpill").forEach(p=>p.addEventListener("click",()=>{
-  curDate=p.dataset.d; curRno=racesFor(curDate)[0].race_no; renderRacePills(); sync();
+  curDate=p.dataset.d; curRno=nextRaceNoFor(curDate); renderRacePills(); sync();
 }));
 
 // レース短評（勝率分布から軸の堅さ・混戦度を判定。Eloの裏付けも併記）
