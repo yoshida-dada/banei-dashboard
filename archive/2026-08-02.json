@@ -1,6 +1,6 @@
 {
  "date": "2026-08-02",
- "archived_at": "2026-08-02 15:48",
+ "archived_at": "2026-08-02 15:49",
  "races": [
   {
    "date": "2026-08-02",
@@ -2329,7 +2329,7 @@
    "market_fav": 8,
    "winner": 8,
    "update_stage": "result",
-   "updated_at": "2026-08-02 15:41",
+   "updated_at": "2026-08-02 15:49",
    "horses": [
     {
      "num": 4,
@@ -3948,7 +3948,11 @@
      "prob": 0.0699,
      "stake": 1400
     }
-   ]
+   ],
+   "track_offset": -12.4,
+   "track_z": -0.85,
+   "track_label": "軽",
+   "track_n": 2
   },
   {
    "date": "2026-08-02",
