@@ -1,6 +1,6 @@
 {
  "date": "2026-08-03",
- "archived_at": "2026-08-03 16:06",
+ "archived_at": "2026-08-03 16:08",
  "races": [
   {
    "date": "2026-08-03",
@@ -3337,8 +3337,8 @@
    "predicted_top": 6,
    "market_fav": 6,
    "winner": null,
-   "update_stage": "evscan",
-   "updated_at": "2026-08-03 16:06",
+   "update_stage": "odds",
+   "updated_at": "2026-08-03 16:08",
    "horses": [
     {
      "num": 6,
@@ -4057,6 +4057,26 @@
      "ev": 0.79,
      "ev_buy": false,
      "ev_streak": 0
+    }
+   ],
+   "bets": [
+    {
+     "bet_type": "wide",
+     "bet_type_jp": "ワイド",
+     "combo": "2-10",
+     "odds": 16.5,
+     "ev": 1.53,
+     "prob": 0.1158,
+     "stake": 2100
+    },
+    {
+     "bet_type": "win",
+     "bet_type_jp": "単勝",
+     "combo": "2",
+     "odds": 21.4,
+     "ev": 1.26,
+     "prob": 0.0734,
+     "stake": 900
     }
    ]
   },
