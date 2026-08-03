@@ -69652,8 +69652,8 @@
    "predicted_top": 7,
    "market_fav": 7,
    "winner": null,
-   "update_stage": "evscan",
-   "updated_at": "2026-08-03 14:26",
+   "update_stage": "odds",
+   "updated_at": "2026-08-03 14:28",
    "horses": [
     {
      "num": 7,
@@ -69824,8 +69824,8 @@
       }
      ],
      "place3_time_avg": 133.0,
-     "p_market": 0.4889,
-     "win_prob_blend": 0.429,
+     "p_market": 0.4883,
+     "win_prob_blend": 0.4286,
      "ev": 0.69,
      "ev_buy": false,
      "ev_streak": 0
@@ -69969,11 +69969,11 @@
       }
      ],
      "place3_time_avg": 118.2,
-     "p_market": 0.0806,
-     "win_prob_blend": 0.1105,
+     "p_market": 0.0805,
+     "win_prob_blend": 0.1103,
      "ev": 1.07,
      "ev_buy": true,
-     "ev_streak": 1
+     "ev_streak": 2
     },
     {
      "num": 3,
@@ -70120,8 +70120,8 @@
       }
      ],
      "place3_time_avg": 115.4,
-     "p_market": 0.2371,
-     "win_prob_blend": 0.212,
+     "p_market": 0.2368,
+     "win_prob_blend": 0.2118,
      "ev": 0.7,
      "ev_buy": false,
      "ev_streak": 0
@@ -70349,7 +70349,7 @@
      "name": "プライムチョウター",
      "win_prob": 0.0786,
      "rank": 5,
-     "odds": 46.5,
+     "odds": 46.6,
      "position": null,
      "result_time": null,
      "jockey": "臼杵龍",
@@ -70556,7 +70556,7 @@
      ],
      "place3_time_avg": 134.8,
      "p_market": 0.0168,
-     "win_prob_blend": 0.0307,
+     "win_prob_blend": 0.0306,
      "ev": 1.43,
      "ev_buy": true,
      "ev_streak": 3
@@ -70566,7 +70566,7 @@
      "name": "サクラキンショウ",
      "win_prob": 0.0726,
      "rank": 6,
-     "odds": 20.8,
+     "odds": 20.1,
      "position": null,
      "result_time": null,
      "jockey": "赤塚健",
@@ -70766,18 +70766,18 @@
       }
      ],
      "place3_time_avg": 126.8,
-     "p_market": 0.0376,
-     "win_prob_blend": 0.0503,
-     "ev": 1.05,
+     "p_market": 0.0389,
+     "win_prob_blend": 0.0514,
+     "ev": 1.03,
      "ev_buy": true,
-     "ev_streak": 1
+     "ev_streak": 2
     },
     {
      "num": 2,
      "name": "サカノシップー",
      "win_prob": 0.0637,
      "rank": 7,
-     "odds": 64.4,
+     "odds": 64.5,
      "position": null,
      "result_time": null,
      "jockey": "中山直",
@@ -70960,8 +70960,8 @@
      ],
      "place3_time_avg": 163.0,
      "p_market": 0.0121,
-     "win_prob_blend": 0.0231,
-     "ev": 1.49,
+     "win_prob_blend": 0.023,
+     "ev": 1.48,
      "ev_buy": true,
      "ev_streak": 3
     },
@@ -71159,8 +71159,8 @@
       }
      ],
      "place3_time_avg": 162.3,
-     "p_market": 0.0815,
-     "win_prob_blend": 0.0728,
+     "p_market": 0.0814,
+     "win_prob_blend": 0.0727,
      "ev": 0.7,
      "ev_buy": false,
      "ev_streak": 0
@@ -71170,7 +71170,7 @@
      "name": "トウヤノハッピー",
      "win_prob": 0.0368,
      "rank": 9,
-     "odds": 58.0,
+     "odds": 58.1,
      "position": null,
      "result_time": null,
      "jockey": "村上章",
@@ -71352,13 +71352,14 @@
       }
      ],
      "place3_time_avg": 142.2,
-     "p_market": 0.0135,
-     "win_prob_blend": 0.0204,
+     "p_market": 0.0134,
+     "win_prob_blend": 0.0203,
      "ev": 1.18,
      "ev_buy": true,
-     "ev_streak": 1
+     "ev_streak": 2
     }
-   ]
+   ],
+   "bets": []
   },
   {
    "date": "2026-08-03",
