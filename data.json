@@ -14,14 +14,14 @@
    "market_fav": 3,
    "winner": null,
    "update_stage": "evscan",
-   "updated_at": "2026-08-08 14:35",
+   "updated_at": "2026-08-08 14:37",
    "horses": [
     {
      "num": 3,
      "name": "クリスタルクロリス",
      "win_prob": 0.4298,
      "rank": 1,
-     "odds": 3.0,
+     "odds": 2.8,
      "position": null,
      "result_time": null,
      "jockey": "長澤幸",
@@ -137,9 +137,9 @@
       }
      ],
      "place3_time_avg": 128.2,
-     "p_market": 0.2635,
-     "win_prob_blend": 0.3288,
-     "ev": 0.99,
+     "p_market": 0.2828,
+     "win_prob_blend": 0.3434,
+     "ev": 0.96,
      "ev_buy": false,
      "ev_streak": 0
     },
@@ -148,7 +148,7 @@
      "name": "ツガルアマゾン",
      "win_prob": 0.1747,
      "rank": 2,
-     "odds": 4.9,
+     "odds": 5.3,
      "position": null,
      "result_time": null,
      "jockey": "今井千",
@@ -324,9 +324,9 @@
       }
      ],
      "place3_time_avg": 120.7,
-     "p_market": 0.1613,
-     "win_prob_blend": 0.1744,
-     "ev": 0.85,
+     "p_market": 0.1494,
+     "win_prob_blend": 0.1655,
+     "ev": 0.88,
      "ev_buy": false,
      "ev_streak": 0
     },
@@ -335,7 +335,7 @@
      "name": "ジェイノウンカイ",
      "win_prob": 0.1171,
      "rank": 3,
-     "odds": 8.7,
+     "odds": 8.9,
      "position": null,
      "result_time": null,
      "jockey": "西将太",
@@ -541,8 +541,8 @@
       }
      ],
      "place3_time_avg": 139.2,
-     "p_market": 0.0909,
-     "win_prob_blend": 0.1044,
+     "p_market": 0.089,
+     "win_prob_blend": 0.1027,
      "ev": 0.91,
      "ev_buy": false,
      "ev_streak": 0
@@ -752,8 +752,8 @@
       }
      ],
      "place3_time_avg": 124.7,
-     "p_market": 0.1928,
-     "win_prob_blend": 0.147,
+     "p_market": 0.1931,
+     "win_prob_blend": 0.1468,
      "ev": 0.6,
      "ev_buy": false,
      "ev_streak": 0
@@ -763,7 +763,7 @@
      "name": "ジェイレディ",
      "win_prob": 0.0559,
      "rank": 5,
-     "odds": 9.8,
+     "odds": 10.1,
      "position": null,
      "result_time": null,
      "jockey": "阿部優",
@@ -975,9 +975,9 @@
       }
      ],
      "place3_time_avg": 108.9,
-     "p_market": 0.0807,
-     "win_prob_blend": 0.0746,
-     "ev": 0.73,
+     "p_market": 0.0784,
+     "win_prob_blend": 0.073,
+     "ev": 0.74,
      "ev_buy": false,
      "ev_streak": 0
     },
@@ -1197,7 +1197,7 @@
      "name": "ハゴロモリュウセイ",
      "win_prob": 0.0402,
      "rank": 7,
-     "odds": 9.8,
+     "odds": 10.5,
      "position": null,
      "result_time": null,
      "jockey": "大友一",
@@ -1391,9 +1391,9 @@
       }
      ],
      "place3_time_avg": 147.9,
-     "p_market": 0.0807,
-     "win_prob_blend": 0.0665,
-     "ev": 0.65,
+     "p_market": 0.0754,
+     "win_prob_blend": 0.0635,
+     "ev": 0.67,
      "ev_buy": false,
      "ev_streak": 0
     },
@@ -1402,7 +1402,7 @@
      "name": "クリスタルアイドル",
      "win_prob": 0.0378,
      "rank": 8,
-     "odds": 9.2,
+     "odds": 9.3,
      "position": null,
      "result_time": null,
      "jockey": "中原蓮",
@@ -1602,8 +1602,8 @@
       }
      ],
      "place3_time_avg": 137.2,
-     "p_market": 0.0859,
-     "win_prob_blend": 0.0678,
+     "p_market": 0.0851,
+     "win_prob_blend": 0.0672,
      "ev": 0.62,
      "ev_buy": false,
      "ev_streak": 0
@@ -1613,7 +1613,7 @@
      "name": "ジュエリービーチ",
      "win_prob": 0.0223,
      "rank": 9,
-     "odds": 17.9,
+     "odds": 16.9,
      "position": null,
      "result_time": null,
      "jockey": "菊池一",
@@ -1825,9 +1825,9 @@
       }
      ],
      "place3_time_avg": 134.0,
-     "p_market": 0.0442,
-     "win_prob_blend": 0.0366,
-     "ev": 0.65,
+     "p_market": 0.0468,
+     "win_prob_blend": 0.0379,
+     "ev": 0.64,
      "ev_buy": false,
      "ev_streak": 0
     }
