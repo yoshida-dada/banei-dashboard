@@ -3467,8 +3467,8 @@
    "predicted_top": 6,
    "market_fav": 4,
    "winner": null,
-   "update_stage": "evscan",
-   "updated_at": "2026-08-08 16:26",
+   "update_stage": "odds",
+   "updated_at": "2026-08-08 16:28",
    "horses": [
     {
      "num": 6,
@@ -4261,6 +4261,26 @@
      "ev": 0.76,
      "ev_buy": false,
      "ev_streak": 0
+    }
+   ],
+   "bets": [
+    {
+     "bet_type": "wide",
+     "bet_type_jp": "ワイド",
+     "combo": "7-10",
+     "odds": 34.0,
+     "ev": 1.41,
+     "prob": 0.0518,
+     "stake": 1600
+    },
+    {
+     "bet_type": "win",
+     "bet_type_jp": "単勝",
+     "combo": "6",
+     "odds": 28.4,
+     "ev": 1.27,
+     "prob": 0.0558,
+     "stake": 1400
     }
    ],
    "track_offset": 1.1,
