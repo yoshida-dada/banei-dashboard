@@ -500,6 +500,7 @@ table.ht .numcell{display:inline-flex;align-items:center;gap:4px}
       <button data-v="bets" aria-pressed="false">買い目</button>
     </div>
     <button class="setbtn" id="colsToggle">⚙ 列</button>
+    <button class="setbtn" id="copyPredBtn" type="button" title="ディスコード等に貼れる形式でコピー">📋 コピー</button>
   </div>
   <div id="colsPanel" class="colspanel" style="display:none"></div>
   <div id="horses"></div>
@@ -1107,6 +1108,43 @@ document.querySelectorAll("#dimseg button").forEach(b=>b.addEventListener("click
 const _ctg=document.getElementById("colsToggle");
 if(_ctg) _ctg.addEventListener("click",()=>{ const p=document.getElementById("colsPanel");
   const show=p.style.display==="none"; p.style.display=show?"block":"none"; if(show) renderColsPanel(); });
+
+// 予測内容をディスコード等に貼れる形式でコピー（2026-08-09）。```で囲んだコードブロックにすることで
+// 等幅フォント表示になり、太字等のMarkdown記法は使わない（コードブロック内では記号がそのまま
+// 表示されて崩れるため）。ユーザー選定の「順位番号方式」。
+function buildCopyText(r){
+  const hs=[...r.horses].filter(h=>h.rank!=null).sort((a,b)=>a.rank-b.rank);
+  const head=`帯広ばんえい ${(r.date||"").slice(5).replace('-','/')} ${r.race_no}R ${r.race_name||""}(${r.class||"—"})`;
+  const meta=`発走${r.post_time||"—"} 馬場水分${r.moisture!=null?r.moisture+"%":"—"}`;
+  const lines=hs.map(h=>{
+    const wp=h.win_prob!=null?Math.round(h.win_prob*100)+"%":"—";
+    const odds=h.odds!=null?h.odds.toFixed(1)+"倍":"—";
+    const pop=h.popularity!=null?h.popularity+"人気":"—";
+    return `${h.rank}位 ${h.num}番${h.name||""} (${pop} 単勝${odds}) 勝率${wp}`;
+  }).join("\n");
+  return "```\n"+head+"\n"+meta+"\n\n"+lines+"\n```";
+}
+function _fallbackCopy(text){
+  const ta=document.createElement("textarea");
+  ta.value=text; ta.style.position="fixed"; ta.style.opacity="0";
+  document.body.appendChild(ta); ta.focus(); ta.select();
+  try{ document.execCommand("copy"); }catch(e){}
+  document.body.removeChild(ta);
+}
+const _cpb=document.getElementById("copyPredBtn");
+if(_cpb) _cpb.addEventListener("click",()=>{
+  const r=get(); if(!r || !Array.isArray(r.horses) || !r.horses.length) return;
+  const text=buildCopyText(r);
+  const orig=_cpb.textContent;
+  const done=(ok)=>{ _cpb.textContent=ok?"✅ コピー済み":"⚠ コピー失敗"; setTimeout(()=>{ _cpb.textContent=orig; },1800); };
+  if(navigator.clipboard && navigator.clipboard.writeText){
+    navigator.clipboard.writeText(text).then(()=>done(true)).catch(()=>{
+      try{ _fallbackCopy(text); done(true); }catch(e){ done(false); }
+    });
+  } else {
+    try{ _fallbackCopy(text); done(true); }catch(e){ done(false); }
+  }
+});
 
 // data.json手動更新ボタン（レース予測タブ、2026-08-02）。当日中はrace_day_runnerが自動でpushしているが、
 // 反映を待たず今すぐ最新を引っ張りたい時用。boot()を再実行せず RACES/dates 配列を直接差し替えることで
