@@ -1,6 +1,6 @@
 {
  "date": "2026-08-10",
- "archived_at": "2026-08-10 19:51",
+ "archived_at": "2026-08-10 19:53",
  "races": [
   {
    "date": "2026-08-10",
@@ -24996,8 +24996,8 @@
    "predicted_top": 7,
    "market_fav": 2,
    "winner": null,
-   "update_stage": "evscan",
-   "updated_at": "2026-08-10 19:51",
+   "update_stage": "odds",
+   "updated_at": "2026-08-10 19:53",
    "horses": [
     {
      "num": 7,
@@ -25522,8 +25522,8 @@
       }
      ],
      "place3_time_avg": 111.1,
-     "p_market": 0.1723,
-     "win_prob_blend": 0.1891,
+     "p_market": 0.1719,
+     "win_prob_blend": 0.1888,
      "ev": 0.87,
      "ev_buy": false,
      "ev_streak": 0
@@ -25985,8 +25985,8 @@
       }
      ],
      "place3_time_avg": 111.1,
-     "p_market": 0.08,
-     "win_prob_blend": 0.1071,
+     "p_market": 0.0799,
+     "win_prob_blend": 0.107,
      "ev": 1.06,
      "ev_buy": true,
      "ev_streak": 3
@@ -25996,7 +25996,7 @@
      "name": "ホクセイウンカイ",
      "win_prob": 0.1226,
      "rank": 3,
-     "odds": 8.7,
+     "odds": 8.6,
      "position": null,
      "result_time": null,
      "jockey": "鈴木恵",
@@ -26562,9 +26562,9 @@
       }
      ],
      "place3_time_avg": 110.7,
-     "p_market": 0.0911,
-     "win_prob_blend": 0.1056,
-     "ev": 0.92,
+     "p_market": 0.0919,
+     "win_prob_blend": 0.1063,
+     "ev": 0.91,
      "ev_buy": false,
      "ev_streak": 0
     },
@@ -27073,11 +27073,11 @@
       }
      ],
      "place3_time_avg": 111.6,
-     "p_market": 0.0634,
-     "win_prob_blend": 0.0812,
+     "p_market": 0.0633,
+     "win_prob_blend": 0.081,
      "ev": 1.01,
      "ev_buy": true,
-     "ev_streak": 1
+     "ev_streak": 2
     },
     {
      "num": 2,
@@ -27668,8 +27668,8 @@
       }
      ],
      "place3_time_avg": 106.5,
-     "p_market": 0.283,
-     "win_prob_blend": 0.2087,
+     "p_market": 0.2824,
+     "win_prob_blend": 0.2084,
      "ev": 0.58,
      "ev_buy": false,
      "ev_streak": 0
@@ -28245,8 +28245,8 @@
       }
      ],
      "place3_time_avg": 111.1,
-     "p_market": 0.0677,
-     "win_prob_blend": 0.0804,
+     "p_market": 0.0676,
+     "win_prob_blend": 0.0803,
      "ev": 0.94,
      "ev_buy": false,
      "ev_streak": 0
@@ -28852,8 +28852,8 @@
       }
      ],
      "place3_time_avg": 111.8,
-     "p_market": 0.1415,
-     "win_prob_blend": 0.1185,
+     "p_market": 0.1412,
+     "win_prob_blend": 0.1183,
      "ev": 0.66,
      "ev_buy": false,
      "ev_streak": 0
@@ -28863,7 +28863,7 @@
      "name": "エムタカラ",
      "win_prob": 0.0469,
      "rank": 8,
-     "odds": 49.2,
+     "odds": 48.4,
      "position": null,
      "result_time": null,
      "jockey": "長澤幸",
@@ -29387,8 +29387,8 @@
       }
      ],
      "place3_time_avg": 109.7,
-     "p_market": 0.0161,
-     "win_prob_blend": 0.0245,
+     "p_market": 0.0163,
+     "win_prob_blend": 0.0247,
      "ev": 1.2,
      "ev_buy": true,
      "ev_streak": 3
@@ -29398,7 +29398,7 @@
      "name": "ブラックサファイア",
      "win_prob": 0.0404,
      "rank": 9,
-     "odds": 32.5,
+     "odds": 32.1,
      "position": null,
      "result_time": null,
      "jockey": "島津新",
@@ -29874,9 +29874,9 @@
       }
      ],
      "place3_time_avg": 90.5,
-     "p_market": 0.0244,
-     "win_prob_blend": 0.0304,
-     "ev": 0.99,
+     "p_market": 0.0246,
+     "win_prob_blend": 0.0306,
+     "ev": 0.98,
      "ev_buy": false,
      "ev_streak": 0
     },
@@ -29885,7 +29885,7 @@
      "name": "ヤマトタイコー",
      "win_prob": 0.0396,
      "rank": 10,
-     "odds": 13.1,
+     "odds": 13.0,
      "position": null,
      "result_time": null,
      "jockey": "渡来心",
@@ -30469,13 +30469,14 @@
       }
      ],
      "place3_time_avg": 112.5,
-     "p_market": 0.0605,
-     "win_prob_blend": 0.0545,
+     "p_market": 0.0608,
+     "win_prob_blend": 0.0547,
      "ev": 0.71,
      "ev_buy": false,
      "ev_streak": 0
     }
-   ]
+   ],
+   "bets": []
   },
   {
    "date": "2026-08-10",
