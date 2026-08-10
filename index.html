@@ -147,7 +147,8 @@ table.ht tr.win .tnum{background:var(--good)}
 table.ht td.l{vertical-align:middle}
 table.ht .c2{display:flex;flex-direction:column;line-height:1.18}
 table.ht .c2r{align-items:flex-end}
-table.ht .tname{font-weight:700;max-width:112px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+table.ht .tname{font-weight:700;max-width:112px;display:flex;align-items:center;gap:2px}
+table.ht .tname .tname-txt{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;min-width:0}
 table.ht .tjk{color:var(--ink);font-weight:600;max-width:88px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 table.ht .tsub{font-size:.63rem;color:var(--muted);max-width:150px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-weight:400}
 table.ht .tsub.num{font-variant-numeric:tabular-nums}
@@ -174,7 +175,9 @@ table.ht .roi{color:color-mix(in srgb,var(--ev-hue) 78%,var(--ink));font-weight:
 .horse.winner .rk{background:var(--good);color:#fff;border-color:var(--good)}
 .hnum{flex:none;width:26px;height:26px;border-radius:7px;background:var(--ink);color:var(--bg);
   font-weight:800;font-size:.86rem;display:flex;align-items:center;justify-content:center}
-.hname{font-weight:700;font-size:.94rem;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.hname{font-weight:700;font-size:.94rem;min-width:0;display:flex;align-items:center;gap:2px}
+.hname .hname-txt{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0}
+.iflag{flex:none;font-size:.85em;cursor:help}
 .hnamewrap{flex:1;min-width:0}
 .hsub{font-size:.72rem;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin-top:1px}
 .hjk{font-size:.72rem;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin-top:1px}
@@ -628,6 +631,10 @@ function raceAssessment(r){
 const medal = p => (p>=1 && p<=3)
   ? `<span class="medal m${p}" title="${p}着">${p}</span>`
   : `<span class="medal medal-ph"></span>`;
+// 過去5走以内に八百長ラベル（種別問わず）が登録されている馬への注意アイコン（2026-08-10）。
+// build_dashboard_data.pyがh.insider_flagとして事前計算（get_past_races限定=リーク無し）。
+const insiderFlagIcon = h => h.insider_flag
+  ? '<span class="iflag" title="過去5走以内に八百長ラベル登録あり（オッズ履歴／八百長ラベルタブで詳細確認）">🚨</span>' : '';
 // 払戻金セクション（結果確定後・全券種）
 function renderPayouts(r){
   const el=document.getElementById("payouts"); if(!el) return;
@@ -849,7 +856,7 @@ const COLS = [
   {key:"num", label:"馬番", always:true, th:'<th class="l">馬</th>',
    td:h=>`<td class="l"><span class="numcell">${medal(h.position)}<span class="tnum" style="${capStyle(h.gate)}">${h.num}</span></span></td>`},
   {key:"name", label:"馬名・馬齢・厩舎", always:true, th:'<th class="l">馬名 / 馬齢・厩舎</th>',
-   td:h=>`<td class="l"><div class="c2"><span class="tname">${h.name||''}</span><span class="tsub">${(h.sex||'')+(h.age!=null?h.age:'')}${h.trainer?'・'+cleanInst(h.trainer):''}</span></div></td>`},
+   td:h=>`<td class="l"><div class="c2"><span class="tname"><span class="tname-txt">${h.name||''}</span>${insiderFlagIcon(h)}</span><span class="tsub">${(h.sex||'')+(h.age!=null?h.age:'')}${h.trainer?'・'+cleanInst(h.trainer):''}</span></div></td>`},
   {key:"jockey", label:"騎手・成績", th:'<th class="l">騎手 / 成績</th>',
    td:h=>`<td class="l"><div class="c2"><span class="tjk">${h.jockey||'—'}</span><span class="tsub num">${recFmt(h.jockey_record)}</span></div></td>`},
   {key:"sled", label:"斤量", th:'<th>斤量</th>',
@@ -941,7 +948,7 @@ function cardView(hs, maxW, hasResult){
       : `<div class="aptline">連対履歴なし（適性データ不足）</div>`;
     return `<div class="horse ${isWin?'winner':''} ${scratched?'scratched':''} ${evCls(h)}">`
       +`<div class="hh">${medal(h.position)}<span class="rk">${h.rank}</span><span class="hnum num" style="${capStyle(h.gate)}">${h.num}</span>`
-      +`<span class="hnamewrap"><span class="hname">${h.name||''}</span>`
+      +`<span class="hnamewrap"><span class="hname"><span class="hname-txt">${h.name||''}</span>${insiderFlagIcon(h)}</span>`
       +`<span class="hsub">${(h.sex||'')+(h.age!=null?h.age:'')}${h.trainer?' ・ '+cleanInst(h.trainer):''}</span>`
       +`<span class="hjk">${h.jockey||'騎手不明'} <span class="jrec">${recFmt(h.jockey_record)}</span></span></span>`
       +`<span class="finish ${h.position!=null&&h.position<=3?'top':''}">${finish}</span></div>`
