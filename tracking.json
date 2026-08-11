@@ -1,55 +1,55 @@
 {
- "generated": "2026-08-02T06:03:52",
+ "generated": "2026-08-12T06:04:09",
  "period": {
   "from": "2026-07-11",
-  "to": "2026-08-03",
-  "race_days": 12
+  "to": "2026-08-10",
+  "race_days": 15
  },
- "races_total": 144,
- "races_settled": 115,
+ "races_total": 180,
+ "races_settled": 175,
  "hit": {
-  "top1_hits": 33,
-  "top1_n": 115,
-  "top1_rate": 0.287,
-  "fav_hits": 42,
-  "fav_n": 115,
-  "fav_rate": 0.365
+  "top1_hits": 51,
+  "top1_n": 175,
+  "top1_rate": 0.291,
+  "fav_hits": 63,
+  "fav_n": 175,
+  "fav_rate": 0.36
  },
  "calibration": [
   {
    "bucket": "0-10%",
    "lo": 0,
-   "pred": 5.6,
-   "actual": 5.2,
-   "n": 649
+   "pred": 5.7,
+   "actual": 4.9,
+   "n": 992
   },
   {
    "bucket": "10-20%",
    "lo": 10,
-   "pred": 13.9,
-   "actual": 14.7,
-   "n": 360
+   "pred": 14.0,
+   "actual": 14.5,
+   "n": 545
   },
   {
    "bucket": "20-30%",
    "lo": 20,
    "pred": 23.7,
-   "actual": 25.3,
-   "n": 87
+   "actual": 29.0,
+   "n": 131
   },
   {
    "bucket": "30-40%",
    "lo": 30,
-   "pred": 34.1,
-   "actual": 40.0,
-   "n": 15
+   "pred": 33.8,
+   "actual": 47.4,
+   "n": 19
   },
   {
    "bucket": "40-50%",
    "lo": 40,
-   "pred": 44.8,
-   "actual": 50.0,
-   "n": 2
+   "pred": 44.2,
+   "actual": 33.3,
+   "n": 3
   },
   {
    "bucket": "50-60%",
@@ -498,8 +498,8 @@
   }
  ],
  "baselines": {
-  "pred_win_roi": 0.824,
-  "fav_win_roi": 0.886,
-  "all_win_roi": 0.655
+  "pred_win_roi": 0.844,
+  "fav_win_roi": 0.878,
+  "all_win_roi": 0.689
  }
 }
