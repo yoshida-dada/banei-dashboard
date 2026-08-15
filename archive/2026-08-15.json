@@ -1,6 +1,6 @@
 {
  "date": "2026-08-15",
- "archived_at": "2026-08-15 20:01",
+ "archived_at": "2026-08-15 20:03",
  "races": [
   {
    "date": "2026-08-15",
@@ -28242,15 +28242,15 @@
    "predicted_top": 5,
    "market_fav": 5,
    "winner": null,
-   "update_stage": "evscan",
-   "updated_at": "2026-08-15 20:01",
+   "update_stage": "odds",
+   "updated_at": "2026-08-15 20:03",
    "horses": [
     {
      "num": 5,
      "name": "ブラックウンカイ",
      "win_prob": 0.3636,
      "rank": 1,
-     "odds": 1.7,
+     "odds": 1.9,
      "position": null,
      "result_time": null,
      "jockey": "鈴木恵",
@@ -28530,9 +28530,9 @@
       }
      ],
      "place3_time_avg": 104.7,
-     "p_market": 0.464,
-     "win_prob_blend": 0.4386,
-     "ev": 0.75,
+     "p_market": 0.4152,
+     "win_prob_blend": 0.4079,
+     "ev": 0.77,
      "ev_buy": false,
      "ev_streak": 0
     },
@@ -28541,7 +28541,7 @@
      "name": "ホクセイテンリュウ",
      "win_prob": 0.225,
      "rank": 2,
-     "odds": 3.5,
+     "odds": 3.0,
      "position": null,
      "result_time": null,
      "jockey": "今井千",
@@ -28899,9 +28899,9 @@
       }
      ],
      "place3_time_avg": 99.5,
-     "p_market": 0.2254,
-     "win_prob_blend": 0.2319,
-     "ev": 0.81,
+     "p_market": 0.263,
+     "win_prob_blend": 0.2562,
+     "ev": 0.77,
      "ev_buy": false,
      "ev_streak": 0
     },
@@ -28910,7 +28910,7 @@
      "name": "レイリーキング",
      "win_prob": 0.0981,
      "rank": 3,
-     "odds": 13.6,
+     "odds": 14.3,
      "position": null,
      "result_time": null,
      "jockey": "中村太",
@@ -29364,9 +29364,9 @@
       }
      ],
      "place3_time_avg": 113.7,
-     "p_market": 0.058,
-     "win_prob_blend": 0.0718,
-     "ev": 0.98,
+     "p_market": 0.0552,
+     "win_prob_blend": 0.0694,
+     "ev": 0.99,
      "ev_buy": false,
      "ev_streak": 0
     },
@@ -29375,7 +29375,7 @@
      "name": "マサタカラ",
      "win_prob": 0.0906,
      "rank": 4,
-     "odds": 5.8,
+     "odds": 5.4,
      "position": null,
      "result_time": null,
      "jockey": "金田利",
@@ -29931,9 +29931,9 @@
       }
      ],
      "place3_time_avg": 112.5,
-     "p_market": 0.136,
-     "win_prob_blend": 0.1215,
-     "ev": 0.7,
+     "p_market": 0.1461,
+     "win_prob_blend": 0.1272,
+     "ev": 0.69,
      "ev_buy": false,
      "ev_streak": 0
     },
@@ -29942,7 +29942,7 @@
      "name": "ツガルフジ",
      "win_prob": 0.0836,
      "rank": 5,
-     "odds": 17.9,
+     "odds": 15.7,
      "position": null,
      "result_time": null,
      "jockey": "渡来心",
@@ -30534,11 +30534,11 @@
       }
      ],
      "place3_time_avg": 105.6,
-     "p_market": 0.0441,
-     "win_prob_blend": 0.0568,
-     "ev": 1.02,
-     "ev_buy": true,
-     "ev_streak": 1
+     "p_market": 0.0503,
+     "win_prob_blend": 0.0618,
+     "ev": 0.97,
+     "ev_buy": false,
+     "ev_streak": 0
     },
     {
      "num": 3,
@@ -31137,7 +31137,7 @@
      "name": "オオネガイキンヒメ",
      "win_prob": 0.0432,
      "rank": 7,
-     "odds": 21.9,
+     "odds": 21.4,
      "position": null,
      "result_time": null,
      "jockey": "赤塚健",
@@ -31651,9 +31651,9 @@
       }
      ],
      "place3_time_avg": 107.4,
-     "p_market": 0.036,
-     "win_prob_blend": 0.0395,
-     "ev": 0.87,
+     "p_market": 0.0369,
+     "win_prob_blend": 0.0401,
+     "ev": 0.86,
      "ev_buy": false,
      "ev_streak": 0
     },
@@ -31662,7 +31662,7 @@
      "name": "サカノテンリュウ",
      "win_prob": 0.0295,
      "rank": 8,
-     "odds": 63.4,
+     "odds": 72.4,
      "position": null,
      "result_time": null,
      "jockey": "船山蔵",
@@ -32267,18 +32267,18 @@
       }
      ],
      "place3_time_avg": 111.3,
-     "p_market": 0.0124,
-     "win_prob_blend": 0.0173,
-     "ev": 1.1,
+     "p_market": 0.0109,
+     "win_prob_blend": 0.0159,
+     "ev": 1.15,
      "ev_buy": true,
-     "ev_streak": 2
+     "ev_streak": 3
     },
     {
      "num": 4,
      "name": "ウチュウジン",
      "win_prob": 0.0183,
      "rank": 9,
-     "odds": 32.6,
+     "odds": 35.1,
      "position": null,
      "result_time": null,
      "jockey": "長澤幸",
@@ -32853,13 +32853,14 @@
       }
      ],
      "place3_time_avg": 112.8,
-     "p_market": 0.0242,
-     "win_prob_blend": 0.0226,
-     "ev": 0.74,
+     "p_market": 0.0225,
+     "win_prob_blend": 0.0215,
+     "ev": 0.76,
      "ev_buy": false,
      "ev_streak": 0
     }
-   ]
+   ],
+   "bets": []
   },
   {
    "date": "2026-08-15",
