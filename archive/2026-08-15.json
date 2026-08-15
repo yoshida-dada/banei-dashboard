@@ -1,6 +1,6 @@
 {
  "date": "2026-08-15",
- "archived_at": "2026-08-15 16:53",
+ "archived_at": "2026-08-15 16:54",
  "races": [
   {
    "date": "2026-08-15",
@@ -3930,7 +3930,7 @@
    "market_fav": 1,
    "winner": 2,
    "update_stage": "result",
-   "updated_at": "2026-08-15 16:46",
+   "updated_at": "2026-08-15 16:54",
    "horses": [
     {
      "num": 1,
@@ -4776,11 +4776,7 @@
      "payout": 24300,
      "popularity": 89
     }
-   ],
-   "track_offset": -0.1,
-   "track_z": 1.39,
-   "track_label": "重",
-   "track_n": 3
+   ]
   },
   {
    "date": "2026-08-15",
@@ -5645,7 +5641,11 @@
      "ev_streak": 0
     }
    ],
-   "bets": []
+   "bets": [],
+   "track_offset": 1.3,
+   "track_z": 1.62,
+   "track_label": "重",
+   "track_n": 4
   },
   {
    "date": "2026-08-15",
