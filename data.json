@@ -58612,15 +58612,15 @@
    "predicted_top": 2,
    "market_fav": 2,
    "winner": null,
-   "update_stage": "evscan",
-   "updated_at": "2026-08-16 19:16",
+   "update_stage": "odds",
+   "updated_at": "2026-08-16 19:18",
    "horses": [
     {
      "num": 2,
      "name": "シンエイアロイ",
      "win_prob": 0.1855,
      "rank": 1,
-     "odds": 2.3,
+     "odds": 2.4,
      "position": null,
      "result_time": null,
      "jockey": "赤塚健",
@@ -59182,9 +59182,9 @@
       }
      ],
      "place3_time_avg": 108.3,
-     "p_market": 0.343,
-     "win_prob_blend": 0.2842,
-     "ev": 0.65,
+     "p_market": 0.3313,
+     "win_prob_blend": 0.2771,
+     "ev": 0.67,
      "ev_buy": false,
      "ev_streak": 0
     },
@@ -59193,7 +59193,7 @@
      "name": "ローランド",
      "win_prob": 0.1747,
      "rank": 2,
-     "odds": 8.3,
+     "odds": 7.7,
      "position": null,
      "result_time": null,
      "jockey": "鈴木恵",
@@ -59731,11 +59731,11 @@
       }
      ],
      "place3_time_avg": 111.2,
-     "p_market": 0.0951,
-     "win_prob_blend": 0.1209,
-     "ev": 1.0,
-     "ev_buy": true,
-     "ev_streak": 1
+     "p_market": 0.1032,
+     "win_prob_blend": 0.1272,
+     "ev": 0.98,
+     "ev_buy": false,
+     "ev_streak": 0
     },
     {
      "num": 3,
@@ -60142,8 +60142,8 @@
       }
      ],
      "place3_time_avg": 115.0,
-     "p_market": 0.1461,
-     "win_prob_blend": 0.1439,
+     "p_market": 0.1472,
+     "win_prob_blend": 0.1442,
      "ev": 0.78,
      "ev_buy": false,
      "ev_streak": 0
@@ -60153,7 +60153,7 @@
      "name": "ネオキングダム",
      "win_prob": 0.1125,
      "rank": 4,
-     "odds": 5.8,
+     "odds": 5.7,
      "position": null,
      "result_time": null,
      "jockey": "阿部優",
@@ -60631,8 +60631,8 @@
       }
      ],
      "place3_time_avg": 110.7,
-     "p_market": 0.136,
-     "win_prob_blend": 0.1308,
+     "p_market": 0.1395,
+     "win_prob_blend": 0.1326,
      "ev": 0.76,
      "ev_buy": false,
      "ev_streak": 0
@@ -61246,8 +61246,8 @@
       }
      ],
      "place3_time_avg": 110.4,
-     "p_market": 0.0887,
-     "win_prob_blend": 0.0987,
+     "p_market": 0.0893,
+     "win_prob_blend": 0.0989,
      "ev": 0.88,
      "ev_buy": false,
      "ev_streak": 0
@@ -61257,7 +61257,7 @@
      "name": "リュウセイウンカイ",
      "win_prob": 0.093,
      "rank": 6,
-     "odds": 12.8,
+     "odds": 13.0,
      "position": null,
      "result_time": null,
      "jockey": "西謙一",
@@ -61723,8 +61723,8 @@
       }
      ],
      "place3_time_avg": 108.3,
-     "p_market": 0.0616,
-     "win_prob_blend": 0.0731,
+     "p_market": 0.0612,
+     "win_prob_blend": 0.0726,
      "ev": 0.94,
      "ev_buy": false,
      "ev_streak": 0
@@ -61734,7 +61734,7 @@
      "name": "ミチシオ",
      "win_prob": 0.0817,
      "rank": 7,
-     "odds": 22.6,
+     "odds": 23.0,
      "position": null,
      "result_time": null,
      "jockey": "中村太",
@@ -62152,9 +62152,9 @@
       }
      ],
      "place3_time_avg": 104.7,
-     "p_market": 0.0349,
-     "win_prob_blend": 0.0483,
-     "ev": 1.09,
+     "p_market": 0.0346,
+     "win_prob_blend": 0.0479,
+     "ev": 1.1,
      "ev_buy": true,
      "ev_streak": 3
     },
@@ -62163,7 +62163,7 @@
      "name": "ライジンサン",
      "win_prob": 0.0471,
      "rank": 8,
-     "odds": 13.9,
+     "odds": 14.3,
      "position": null,
      "result_time": null,
      "jockey": "西将太",
@@ -62479,9 +62479,9 @@
       }
      ],
      "place3_time_avg": 107.6,
-     "p_market": 0.0568,
-     "win_prob_blend": 0.0546,
-     "ev": 0.76,
+     "p_market": 0.0556,
+     "win_prob_blend": 0.0538,
+     "ev": 0.77,
      "ev_buy": false,
      "ev_streak": 0
     },
@@ -62490,7 +62490,7 @@
      "name": "ウルトラコタロウ",
      "win_prob": 0.0471,
      "rank": 9,
-     "odds": 43.8,
+     "odds": 42.9,
      "position": null,
      "result_time": null,
      "jockey": "菊池一",
@@ -63016,18 +63016,18 @@
       }
      ],
      "place3_time_avg": 110.7,
-     "p_market": 0.018,
-     "win_prob_blend": 0.0259,
+     "p_market": 0.0185,
+     "win_prob_blend": 0.0263,
      "ev": 1.13,
      "ev_buy": true,
-     "ev_streak": 2
+     "ev_streak": 3
     },
     {
      "num": 10,
      "name": "スーパーチヨコ",
      "win_prob": 0.0177,
      "rank": 10,
-     "odds": 39.9,
+     "odds": 40.5,
      "position": null,
      "result_time": null,
      "jockey": "村上章",
@@ -63439,13 +63439,14 @@
       }
      ],
      "place3_time_avg": 106.0,
-     "p_market": 0.0198,
-     "win_prob_blend": 0.0195,
-     "ev": 0.78,
+     "p_market": 0.0196,
+     "win_prob_blend": 0.0194,
+     "ev": 0.79,
      "ev_buy": false,
      "ev_streak": 0
     }
    ],
+   "bets": [],
    "track_offset": 3.7,
    "track_z": 1.91,
    "track_label": "重",
