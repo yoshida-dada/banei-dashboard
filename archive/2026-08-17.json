@@ -12516,7 +12516,11 @@
      "payout": 4930,
      "popularity": 5
     }
-   ]
+   ],
+   "track_offset": -1.9,
+   "track_z": 0.81,
+   "track_label": "重",
+   "track_n": 6
   },
   {
    "date": "2026-08-17",
@@ -12531,14 +12535,14 @@
    "market_fav": 8,
    "winner": null,
    "update_stage": "evscan",
-   "updated_at": "2026-08-17 17:50",
+   "updated_at": "2026-08-17 18:00",
    "horses": [
     {
      "num": 8,
      "name": "アオニシキ",
      "win_prob": 0.2852,
      "rank": 1,
-     "odds": 1.4,
+     "odds": 2.5,
      "position": null,
      "result_time": null,
      "jockey": "菊池一",
@@ -12596,9 +12600,9 @@
       }
      ],
      "place3_time_avg": 106.9,
-     "p_market": 0.5583,
-     "win_prob_blend": 0.4608,
-     "ev": 0.65,
+     "p_market": 0.3162,
+     "win_prob_blend": 0.3097,
+     "ev": 0.77,
      "ev_buy": false,
      "ev_streak": 0
     },
@@ -12607,7 +12611,7 @@
      "name": "マオノエトワール",
      "win_prob": 0.1893,
      "rank": 2,
-     "odds": 5.6,
+     "odds": 3.2,
      "position": null,
      "result_time": null,
      "jockey": "鈴木恵",
@@ -12683,9 +12687,9 @@
       }
      ],
      "place3_time_avg": 100.3,
-     "p_market": 0.1396,
-     "win_prob_blend": 0.1621,
-     "ev": 0.91,
+     "p_market": 0.247,
+     "win_prob_blend": 0.2285,
+     "ev": 0.73,
      "ev_buy": false,
      "ev_streak": 0
     },
@@ -12694,7 +12698,7 @@
      "name": "ゼウススピード",
      "win_prob": 0.1565,
      "rank": 3,
-     "odds": 8.4,
+     "odds": 3.9,
      "position": null,
      "result_time": null,
      "jockey": "赤塚健",
@@ -12764,9 +12768,9 @@
       }
      ],
      "place3_time_avg": 120.1,
-     "p_market": 0.0931,
-     "win_prob_blend": 0.1165,
-     "ev": 0.98,
+     "p_market": 0.2027,
+     "win_prob_blend": 0.188,
+     "ev": 0.73,
      "ev_buy": false,
      "ev_streak": 0
     },
@@ -12775,13 +12779,13 @@
      "name": "ワールドジパング",
      "win_prob": 0.1347,
      "rank": 4,
-     "odds": 14.9,
+     "odds": 11.9,
      "position": null,
      "result_time": null,
      "jockey": "臼杵龍",
      "gate": 6,
      "sled_kg": 510.0,
-     "popularity": 5,
+     "popularity": 4,
      "age": 2,
      "sex": "牡",
      "trainer": "小林長（ばんえい）",
@@ -12839,18 +12843,18 @@
       }
      ],
      "place3_time_avg": 100.9,
-     "p_market": 0.0525,
-     "win_prob_blend": 0.0762,
-     "ev": 1.14,
+     "p_market": 0.0664,
+     "win_prob_blend": 0.0864,
+     "ev": 1.03,
      "ev_buy": true,
-     "ev_streak": 1
+     "ev_streak": 2
     },
     {
      "num": 2,
      "name": "カイウンセンショウ",
      "win_prob": 0.0912,
      "rank": 5,
-     "odds": 17.8,
+     "odds": 21.7,
      "position": null,
      "result_time": null,
      "jockey": "中村太",
@@ -12908,24 +12912,24 @@
       }
      ],
      "place3_time_avg": 107.7,
-     "p_market": 0.0439,
-     "win_prob_blend": 0.0592,
-     "ev": 1.05,
+     "p_market": 0.0364,
+     "win_prob_blend": 0.051,
+     "ev": 1.11,
      "ev_buy": true,
-     "ev_streak": 1
+     "ev_streak": 2
     },
     {
      "num": 1,
      "name": "モンスターオウキ",
      "win_prob": 0.0435,
      "rank": 6,
-     "odds": 13.6,
+     "odds": 15.1,
      "position": null,
      "result_time": null,
      "jockey": "金田利",
      "gate": 1,
      "sled_kg": 520.0,
-     "popularity": 4,
+     "popularity": 5,
      "age": 2,
      "sex": "牡",
      "trainer": "金田勇（ばんえい）",
@@ -12989,9 +12993,9 @@
       }
      ],
      "place3_time_avg": 126.8,
-     "p_market": 0.0575,
-     "win_prob_blend": 0.0544,
-     "ev": 0.74,
+     "p_market": 0.0523,
+     "win_prob_blend": 0.0498,
+     "ev": 0.75,
      "ev_buy": false,
      "ev_streak": 0
     },
@@ -13000,13 +13004,13 @@
      "name": "ゴールドタカラ",
      "win_prob": 0.0356,
      "rank": 7,
-     "odds": 46.4,
+     "odds": 37.0,
      "position": null,
      "result_time": null,
      "jockey": "島津新",
      "gate": 7,
      "sled_kg": 520.0,
-     "popularity": 8,
+     "popularity": 9,
      "age": 2,
      "sex": "牡",
      "trainer": "久田守（ばんえい）",
@@ -13064,18 +13068,18 @@
       }
      ],
      "place3_time_avg": 126.5,
-     "p_market": 0.0168,
-     "win_prob_blend": 0.0229,
-     "ev": 1.06,
-     "ev_buy": true,
-     "ev_streak": 1
+     "p_market": 0.0214,
+     "win_prob_blend": 0.0259,
+     "ev": 0.96,
+     "ev_buy": false,
+     "ev_streak": 0
     },
     {
      "num": 5,
      "name": "ハゴロモゴールド",
      "win_prob": 0.0339,
      "rank": 8,
-     "odds": 36.3,
+     "odds": 23.9,
      "position": null,
      "result_time": null,
      "jockey": "西将太",
@@ -13152,9 +13156,9 @@
       }
      ],
      "place3_time_avg": 121.0,
-     "p_market": 0.0215,
-     "win_prob_blend": 0.0264,
-     "ev": 0.96,
+     "p_market": 0.0331,
+     "win_prob_blend": 0.0339,
+     "ev": 0.81,
      "ev_buy": false,
      "ev_streak": 0
     },
@@ -13163,7 +13167,7 @@
      "name": "クリスタルソウル",
      "win_prob": 0.0301,
      "rank": 9,
-     "odds": 46.4,
+     "odds": 32.2,
      "position": null,
      "result_time": null,
      "jockey": "西謙一",
@@ -13227,17 +13231,13 @@
       }
      ],
      "place3_time_avg": 130.3,
-     "p_market": 0.0168,
-     "win_prob_blend": 0.0215,
-     "ev": 1.0,
+     "p_market": 0.0245,
+     "win_prob_blend": 0.0268,
+     "ev": 0.86,
      "ev_buy": false,
      "ev_streak": 0
     }
-   ],
-   "track_offset": -1.9,
-   "track_z": 0.81,
-   "track_label": "重",
-   "track_n": 6
+   ]
   },
   {
    "date": "2026-08-17",
@@ -17376,10 +17376,10 @@
      "ev_buy": false
     }
    ],
-   "track_offset": -1.9,
-   "track_z": 0.81,
+   "track_offset": -2.4,
+   "track_z": 0.73,
    "track_label": "重",
-   "track_n": 6
+   "track_n": 7
   },
   {
    "date": "2026-08-17",
@@ -21359,10 +21359,10 @@
      "ev_buy": false
     }
    ],
-   "track_offset": -1.9,
-   "track_z": 0.81,
+   "track_offset": -2.4,
+   "track_z": 0.73,
    "track_label": "重",
-   "track_n": 6
+   "track_n": 7
   },
   {
    "date": "2026-08-17",
@@ -27016,10 +27016,10 @@
      "ev_buy": false
     }
    ],
-   "track_offset": -1.9,
-   "track_z": 0.81,
+   "track_offset": -2.4,
+   "track_z": 0.73,
    "track_label": "重",
-   "track_n": 6
+   "track_n": 7
   },
   {
    "date": "2026-08-17",
@@ -30148,10 +30148,10 @@
      "ev_buy": false
     }
    ],
-   "track_offset": -1.9,
-   "track_z": 0.81,
+   "track_offset": -2.4,
+   "track_z": 0.73,
    "track_label": "重",
-   "track_n": 6
+   "track_n": 7
   }
  ]
 }
