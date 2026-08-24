@@ -1,6 +1,6 @@
 {
  "date": "2026-08-24",
- "archived_at": "2026-08-24 19:31",
+ "archived_at": "2026-08-24 19:33",
  "races": [
   {
    "date": "2026-08-24",
@@ -19058,8 +19058,8 @@
    "predicted_top": 3,
    "market_fav": 9,
    "winner": null,
-   "update_stage": "evscan",
-   "updated_at": "2026-08-24 19:31",
+   "update_stage": "odds",
+   "updated_at": "2026-08-24 19:33",
    "horses": [
     {
      "num": 3,
@@ -19628,8 +19628,8 @@
       }
      ],
      "place3_time_avg": 110.0,
-     "p_market": 0.1182,
-     "win_prob_blend": 0.1419,
+     "p_market": 0.118,
+     "win_prob_blend": 0.1418,
      "ev": 0.95,
      "ev_buy": false,
      "ev_streak": 0
@@ -20135,8 +20135,8 @@
       }
      ],
      "place3_time_avg": 119.1,
-     "p_market": 0.2475,
-     "win_prob_blend": 0.2286,
+     "p_market": 0.2472,
+     "win_prob_blend": 0.2284,
      "ev": 0.73,
      "ev_buy": false,
      "ev_streak": 0
@@ -20146,7 +20146,7 @@
      "name": "シンエイハリアー",
      "win_prob": 0.1779,
      "rank": 3,
-     "odds": 5.3,
+     "odds": 5.1,
      "position": null,
      "result_time": null,
      "jockey": "吉田理",
@@ -20750,9 +20750,9 @@
       }
      ],
      "place3_time_avg": 116.7,
-     "p_market": 0.1494,
-     "win_prob_blend": 0.1618,
-     "ev": 0.86,
+     "p_market": 0.1551,
+     "win_prob_blend": 0.1658,
+     "ev": 0.85,
      "ev_buy": false,
      "ev_streak": 0
     },
@@ -20761,7 +20761,7 @@
      "name": "トマランサカミカゼ",
      "win_prob": 0.1101,
      "rank": 4,
-     "odds": 9.2,
+     "odds": 9.3,
      "position": null,
      "result_time": null,
      "jockey": "今井千",
@@ -21335,8 +21335,8 @@
       }
      ],
      "place3_time_avg": 119.7,
-     "p_market": 0.0861,
-     "win_prob_blend": 0.0956,
+     "p_market": 0.085,
+     "win_prob_blend": 0.0948,
      "ev": 0.88,
      "ev_buy": false,
      "ev_streak": 0
@@ -21902,8 +21902,8 @@
       }
      ],
      "place3_time_avg": 124.9,
-     "p_market": 0.1842,
-     "win_prob_blend": 0.1416,
+     "p_market": 0.1839,
+     "win_prob_blend": 0.1415,
      "ev": 0.61,
      "ev_buy": false,
      "ev_streak": 0
@@ -21913,7 +21913,7 @@
      "name": "マサムネ",
      "win_prob": 0.0791,
      "rank": 6,
-     "odds": 10.4,
+     "odds": 10.6,
      "position": null,
      "result_time": null,
      "jockey": "西謙一",
@@ -22433,8 +22433,8 @@
       }
      ],
      "place3_time_avg": 124.4,
-     "p_market": 0.0762,
-     "win_prob_blend": 0.0786,
+     "p_market": 0.0746,
+     "win_prob_blend": 0.0776,
      "ev": 0.82,
      "ev_buy": false,
      "ev_streak": 0
@@ -22444,7 +22444,7 @@
      "name": "サクラダイヤモンド",
      "win_prob": 0.0731,
      "rank": 7,
-     "odds": 18.9,
+     "odds": 19.2,
      "position": null,
      "result_time": null,
      "jockey": "金田利",
@@ -23036,8 +23036,8 @@
       }
      ],
      "place3_time_avg": 120.0,
-     "p_market": 0.0419,
-     "win_prob_blend": 0.0519,
+     "p_market": 0.0412,
+     "win_prob_blend": 0.0513,
      "ev": 0.98,
      "ev_buy": false,
      "ev_streak": 0
@@ -23047,7 +23047,7 @@
      "name": "ミンナノユメヲノセ",
      "win_prob": 0.061,
      "rank": 8,
-     "odds": 12.5,
+     "odds": 12.7,
      "position": null,
      "result_time": null,
      "jockey": "大友一",
@@ -23567,8 +23567,8 @@
       }
      ],
      "place3_time_avg": 122.4,
-     "p_market": 0.0634,
-     "win_prob_blend": 0.0637,
+     "p_market": 0.0623,
+     "win_prob_blend": 0.063,
      "ev": 0.8,
      "ev_buy": false,
      "ev_streak": 0
@@ -23578,7 +23578,7 @@
      "name": "テンカタイヘイ",
      "win_prob": 0.0405,
      "rank": 9,
-     "odds": 23.9,
+     "odds": 24.2,
      "position": null,
      "result_time": null,
      "jockey": "長澤幸",
@@ -24158,11 +24158,22 @@
       }
      ],
      "place3_time_avg": 117.2,
-     "p_market": 0.0331,
-     "win_prob_blend": 0.0362,
+     "p_market": 0.0327,
+     "win_prob_blend": 0.0359,
      "ev": 0.87,
      "ev_buy": false,
      "ev_streak": 0
+    }
+   ],
+   "bets": [
+    {
+     "bet_type": "wide",
+     "bet_type_jp": "ワイド",
+     "combo": "5-7",
+     "odds": 21.1,
+     "ev": 1.38,
+     "prob": 0.0817,
+     "stake": 3000
     }
    ]
   },
