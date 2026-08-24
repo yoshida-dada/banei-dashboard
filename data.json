@@ -50193,21 +50193,21 @@
    "moisture": 0.6,
    "field_size": 10,
    "post_time": "19:00",
-   "win_time": null,
+   "win_time": "1:36.1",
    "predicted_top": 3,
    "market_fav": 3,
-   "winner": null,
-   "update_stage": "odds",
-   "updated_at": "2026-08-24 18:58",
+   "winner": 3,
+   "update_stage": "result",
+   "updated_at": "2026-08-24 19:20",
    "horses": [
     {
      "num": 3,
      "name": "サクラジェームス",
      "win_prob": 0.1927,
      "rank": 1,
-     "odds": 2.1,
-     "position": null,
-     "result_time": null,
+     "odds": 1.8,
+     "position": 1,
+     "result_time": "1:36.1",
      "jockey": "今井千",
      "gate": 3,
      "sled_kg": 600.0,
@@ -50533,9 +50533,9 @@
       }
      ],
      "place3_time_avg": 117.7,
-     "p_market": 0.3747,
-     "win_prob_blend": 0.3086,
-     "ev": 0.65,
+     "p_market": 0.4335,
+     "win_prob_blend": 0.3457,
+     "ev": 0.62,
      "ev_buy": false,
      "ev_streak": 0
     },
@@ -50544,13 +50544,13 @@
      "name": "イチマツ",
      "win_prob": 0.1658,
      "rank": 2,
-     "odds": 5.3,
-     "position": null,
-     "result_time": null,
+     "odds": 7.4,
+     "position": 8,
+     "result_time": "1:56.0",
      "jockey": "臼杵龍",
      "gate": 8,
      "sled_kg": 600.0,
-     "popularity": 2,
+     "popularity": 3,
      "age": 4,
      "sex": "牡",
      "trainer": "大河和（ばんえい）",
@@ -50908,9 +50908,9 @@
       }
      ],
      "place3_time_avg": 124.6,
-     "p_market": 0.1485,
-     "win_prob_blend": 0.1604,
-     "ev": 0.85,
+     "p_market": 0.1055,
+     "win_prob_blend": 0.1308,
+     "ev": 0.97,
      "ev_buy": false,
      "ev_streak": 0
     },
@@ -50919,13 +50919,13 @@
      "name": "カワノラクシュミー",
      "win_prob": 0.1442,
      "rank": 3,
-     "odds": 7.0,
-     "position": null,
-     "result_time": null,
+     "odds": 6.6,
+     "position": 5,
+     "result_time": "1:44.6",
      "jockey": "渡来心",
      "gate": 7,
      "sled_kg": 590.0,
-     "popularity": 4,
+     "popularity": 2,
      "age": 3,
      "sex": "牝",
      "trainer": "金山明（ばんえい）",
@@ -51115,8 +51115,8 @@
       }
      ],
      "place3_time_avg": 109.1,
-     "p_market": 0.1124,
-     "win_prob_blend": 0.1275,
+     "p_market": 0.1182,
+     "win_prob_blend": 0.1342,
      "ev": 0.89,
      "ev_buy": false,
      "ev_streak": 0
@@ -51126,13 +51126,13 @@
      "name": "フクノハレルヤ",
      "win_prob": 0.1157,
      "rank": 4,
-     "odds": 9.5,
-     "position": null,
-     "result_time": null,
+     "odds": 15.5,
+     "position": 4,
+     "result_time": "1:43.5",
      "jockey": "村上章",
      "gate": 5,
      "sled_kg": 590.0,
-     "popularity": 5,
+     "popularity": 7,
      "age": 4,
      "sex": "牝",
      "trainer": "服部義（ばんえい）",
@@ -51431,10 +51431,10 @@
       }
      ],
      "place3_time_avg": 116.9,
-     "p_market": 0.0828,
-     "win_prob_blend": 0.0968,
-     "ev": 0.92,
-     "ev_buy": false,
+     "p_market": 0.0503,
+     "win_prob_blend": 0.0713,
+     "ev": 1.11,
+     "ev_buy": true,
      "ev_streak": 0
     },
     {
@@ -51442,13 +51442,13 @@
      "name": "キョウエイハンター",
      "win_prob": 0.0823,
      "rank": 5,
-     "odds": 12.4,
-     "position": null,
-     "result_time": null,
+     "odds": 26.2,
+     "position": 3,
+     "result_time": "1:41.2",
      "jockey": "菅原響",
      "gate": 1,
      "sled_kg": 610.0,
-     "popularity": 6,
+     "popularity": 8,
      "age": 7,
      "sex": "牡",
      "trainer": "村上慎（ばんえい）",
@@ -52028,10 +52028,10 @@
       }
      ],
      "place3_time_avg": 120.6,
-     "p_market": 0.0635,
-     "win_prob_blend": 0.0723,
-     "ev": 0.9,
-     "ev_buy": false,
+     "p_market": 0.0298,
+     "win_prob_blend": 0.045,
+     "ev": 1.18,
+     "ev_buy": true,
      "ev_streak": 0
     },
     {
@@ -52039,13 +52039,13 @@
      "name": "ジェイノミキ",
      "win_prob": 0.0775,
      "rank": 6,
-     "odds": 19.3,
-     "position": null,
-     "result_time": null,
+     "odds": 12.2,
+     "position": 7,
+     "result_time": "1:53.3",
      "jockey": "赤塚健",
      "gate": 4,
      "sled_kg": 590.0,
-     "popularity": 7,
+     "popularity": 6,
      "age": 4,
      "sex": "牝",
      "trainer": "松田道（ばんえい）",
@@ -52391,10 +52391,10 @@
       }
      ],
      "place3_time_avg": 122.9,
-     "p_market": 0.0408,
-     "win_prob_blend": 0.0531,
-     "ev": 1.02,
-     "ev_buy": true,
+     "p_market": 0.064,
+     "win_prob_blend": 0.0724,
+     "ev": 0.88,
+     "ev_buy": false,
      "ev_streak": 1
     },
     {
@@ -52402,13 +52402,13 @@
      "name": "マツサンブラック",
      "win_prob": 0.0654,
      "rank": 7,
-     "odds": 6.2,
-     "position": null,
-     "result_time": null,
+     "odds": 7.5,
+     "position": 2,
+     "result_time": "1:39.2",
      "jockey": "鈴木恵",
      "gate": 8,
      "sled_kg": 590.0,
-     "popularity": 3,
+     "popularity": 4,
      "age": 4,
      "sex": "牝",
      "trainer": "槻舘重（ばんえい）",
@@ -52761,9 +52761,9 @@
       }
      ],
      "place3_time_avg": 115.2,
-     "p_market": 0.1269,
-     "win_prob_blend": 0.1046,
-     "ev": 0.65,
+     "p_market": 0.104,
+     "win_prob_blend": 0.0937,
+     "ev": 0.7,
      "ev_buy": false,
      "ev_streak": 0
     },
@@ -52772,9 +52772,9 @@
      "name": "ホクセイボーイ",
      "win_prob": 0.061,
      "rank": 8,
-     "odds": 64.8,
-     "position": null,
-     "result_time": null,
+     "odds": 85.5,
+     "position": 10,
+     "result_time": "2:02.9",
      "jockey": "島津新",
      "gate": 6,
      "sled_kg": 610.0,
@@ -53124,9 +53124,9 @@
       }
      ],
      "place3_time_avg": 125.4,
-     "p_market": 0.0121,
-     "win_prob_blend": 0.0222,
-     "ev": 1.44,
+     "p_market": 0.0091,
+     "win_prob_blend": 0.0188,
+     "ev": 1.61,
      "ev_buy": true,
      "ev_streak": 3
     },
@@ -53135,13 +53135,13 @@
      "name": "ツルイコトカゼ",
      "win_prob": 0.0598,
      "rank": 9,
-     "odds": 28.7,
-     "position": null,
-     "result_time": null,
+     "odds": 9.8,
+     "position": 9,
+     "result_time": "1:57.1",
      "jockey": "長澤幸",
      "gate": 7,
      "sled_kg": 610.0,
-     "popularity": 8,
+     "popularity": 5,
      "age": 4,
      "sex": "牡",
      "trainer": "大河和（ばんえい）",
@@ -53505,10 +53505,10 @@
       }
      ],
      "place3_time_avg": 122.3,
-     "p_market": 0.0274,
-     "win_prob_blend": 0.0374,
-     "ev": 1.07,
-     "ev_buy": true,
+     "p_market": 0.0796,
+     "win_prob_blend": 0.0763,
+     "ev": 0.75,
+     "ev_buy": false,
      "ev_streak": 3
     },
     {
@@ -53516,9 +53516,9 @@
      "name": "ミストレンタ",
      "win_prob": 0.0355,
      "rank": 10,
-     "odds": 72.7,
-     "position": null,
-     "result_time": null,
+     "odds": 133.0,
+     "position": 6,
+     "result_time": "1:45.7",
      "jockey": "菊池一",
      "gate": 2,
      "sled_kg": 590.0,
@@ -53880,22 +53880,90 @@
       }
      ],
      "place3_time_avg": 128.2,
-     "p_market": 0.0108,
-     "win_prob_blend": 0.0171,
-     "ev": 1.24,
+     "p_market": 0.0059,
+     "win_prob_blend": 0.0117,
+     "ev": 1.55,
      "ev_buy": true,
      "ev_streak": 3
     }
    ],
-   "bets": [
+   "payouts": [
+    {
+     "bet_type": "win",
+     "bet_type_jp": "単勝",
+     "combo": "3",
+     "payout": 180,
+     "popularity": 1
+    },
+    {
+     "bet_type": "place",
+     "bet_type_jp": "複勝",
+     "combo": "3",
+     "payout": 140,
+     "popularity": 1
+    },
+    {
+     "bet_type": "place",
+     "bet_type_jp": "複勝",
+     "combo": "10",
+     "payout": 320,
+     "popularity": 7
+    },
+    {
+     "bet_type": "place",
+     "bet_type_jp": "複勝",
+     "combo": "1",
+     "payout": 370,
+     "popularity": 8
+    },
     {
      "bet_type": "wide",
      "bet_type_jp": "ワイド",
-     "combo": "7-8",
-     "odds": 20.1,
-     "ev": 1.31,
-     "prob": 0.0817,
-     "stake": 3000
+     "combo": "3-10",
+     "payout": 440,
+     "popularity": 5
+    },
+    {
+     "bet_type": "wide",
+     "bet_type_jp": "ワイド",
+     "combo": "1-3",
+     "payout": 800,
+     "popularity": 10
+    },
+    {
+     "bet_type": "wide",
+     "bet_type_jp": "ワイド",
+     "combo": "1-10",
+     "payout": 1530,
+     "popularity": 22
+    },
+    {
+     "bet_type": "quinella",
+     "bet_type_jp": "馬連",
+     "combo": "3-10",
+     "payout": 880,
+     "popularity": 3
+    },
+    {
+     "bet_type": "exacta",
+     "bet_type_jp": "馬単",
+     "combo": "3→10",
+     "payout": 1500,
+     "popularity": 3
+    },
+    {
+     "bet_type": "trio",
+     "bet_type_jp": "三連複",
+     "combo": "1-3-10",
+     "payout": 3820,
+     "popularity": 18
+    },
+    {
+     "bet_type": "trifecta",
+     "bet_type_jp": "三連単",
+     "combo": "3→10→1",
+     "payout": 12760,
+     "popularity": 37
     }
    ],
    "track_offset": -14.5,
@@ -59022,10 +59090,10 @@
      "ev_streak": 1
     }
    ],
-   "track_offset": -14.5,
-   "track_z": -1.24,
+   "track_offset": -16.8,
+   "track_z": -1.63,
    "track_label": "軽",
-   "track_n": 8
+   "track_n": 9
   },
   {
    "date": "2026-08-24",
@@ -64769,10 +64837,10 @@
      "ev_buy": false
     }
    ],
-   "track_offset": -14.5,
-   "track_z": -1.24,
+   "track_offset": -16.8,
+   "track_z": -1.63,
    "track_label": "軽",
-   "track_n": 8
+   "track_n": 9
   },
   {
    "date": "2026-08-24",
@@ -70439,10 +70507,10 @@
      "ev_buy": false
     }
    ],
-   "track_offset": -14.5,
-   "track_z": -1.24,
+   "track_offset": -16.8,
+   "track_z": -1.63,
    "track_label": "軽",
-   "track_n": 8
+   "track_n": 9
   }
  ]
 }
