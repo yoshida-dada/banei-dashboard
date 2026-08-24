@@ -1,6 +1,6 @@
 {
  "date": "2026-08-24",
- "archived_at": "2026-08-24 15:21",
+ "archived_at": "2026-08-24 15:23",
  "races": [
   {
    "date": "2026-08-24",
@@ -2689,8 +2689,8 @@
    "predicted_top": 9,
    "market_fav": 2,
    "winner": null,
-   "update_stage": "evscan",
-   "updated_at": "2026-08-24 15:21",
+   "update_stage": "odds",
+   "updated_at": "2026-08-24 15:23",
    "horses": [
     {
      "num": 9,
@@ -2731,18 +2731,18 @@
      "ren_moist_avg": null,
      "past": [],
      "place3_time_avg": null,
-     "p_market": 0.1533,
-     "win_prob_blend": 0.196,
+     "p_market": 0.1513,
+     "win_prob_blend": 0.1955,
      "ev": 1.02,
      "ev_buy": true,
-     "ev_streak": 2
+     "ev_streak": 3
     },
     {
      "num": 1,
      "name": "ヨシノブチコ",
      "win_prob": 0.2084,
      "rank": 2,
-     "odds": 6.1,
+     "odds": 7.3,
      "position": null,
      "result_time": null,
      "jockey": "今井千",
@@ -2776,18 +2776,18 @@
      "ren_moist_avg": null,
      "past": [],
      "place3_time_avg": null,
-     "p_market": 0.1307,
-     "win_prob_blend": 0.1642,
-     "ev": 1.0,
+     "p_market": 0.1078,
+     "win_prob_blend": 0.1457,
+     "ev": 1.06,
      "ev_buy": true,
-     "ev_streak": 1
+     "ev_streak": 2
     },
     {
      "num": 2,
      "name": "オヤキ",
      "win_prob": 0.2064,
      "rank": 3,
-     "odds": 2.7,
+     "odds": 2.2,
      "position": null,
      "result_time": null,
      "jockey": "渡来心",
@@ -2821,9 +2821,9 @@
      "ren_moist_avg": null,
      "past": [],
      "place3_time_avg": null,
-     "p_market": 0.2952,
-     "win_prob_blend": 0.278,
-     "ev": 0.75,
+     "p_market": 0.3576,
+     "win_prob_blend": 0.3166,
+     "ev": 0.7,
      "ev_buy": false,
      "ev_streak": 0
     },
@@ -2832,13 +2832,13 @@
      "name": "ワイルドユリア",
      "win_prob": 0.1943,
      "rank": 4,
-     "odds": 12.9,
+     "odds": 13.9,
      "position": null,
      "result_time": null,
      "jockey": "中村太",
      "gate": 6,
      "sled_kg": 480.0,
-     "popularity": 7,
+     "popularity": 8,
      "age": 2,
      "sex": "牝",
      "trainer": "今井茂（ばんえい）",
@@ -2866,9 +2866,9 @@
      "ren_moist_avg": null,
      "past": [],
      "place3_time_avg": null,
-     "p_market": 0.0618,
-     "win_prob_blend": 0.0985,
-     "ev": 1.27,
+     "p_market": 0.0566,
+     "win_prob_blend": 0.0935,
+     "ev": 1.3,
      "ev_buy": true,
      "ev_streak": 3
     },
@@ -2877,7 +2877,7 @@
      "name": "プリンセスルナ",
      "win_prob": 0.0546,
      "rank": 5,
-     "odds": 8.9,
+     "odds": 9.2,
      "position": null,
      "result_time": null,
      "jockey": "西将太",
@@ -2918,8 +2918,8 @@
       }
      ],
      "place3_time_avg": null,
-     "p_market": 0.0895,
-     "win_prob_blend": 0.0804,
+     "p_market": 0.0855,
+     "win_prob_blend": 0.0784,
      "ev": 0.72,
      "ev_buy": false,
      "ev_streak": 0
@@ -2929,7 +2929,7 @@
      "name": "トウヤノマピュース",
      "win_prob": 0.0266,
      "rank": 6,
-     "odds": 20.3,
+     "odds": 25.8,
      "position": null,
      "result_time": null,
      "jockey": "菊池一",
@@ -2970,9 +2970,9 @@
       }
      ],
      "place3_time_avg": null,
-     "p_market": 0.0393,
-     "win_prob_blend": 0.0366,
-     "ev": 0.74,
+     "p_market": 0.0305,
+     "win_prob_blend": 0.0312,
+     "ev": 0.8,
      "ev_buy": false,
      "ev_streak": 0
     },
@@ -2981,7 +2981,7 @@
      "name": "ヒノクニファラオ",
      "win_prob": 0.0213,
      "rank": 7,
-     "odds": 7.9,
+     "odds": 9.1,
      "position": null,
      "result_time": null,
      "jockey": "西謙一",
@@ -3028,9 +3028,9 @@
       }
      ],
      "place3_time_avg": null,
-     "p_market": 0.1009,
-     "win_prob_blend": 0.0625,
-     "ev": 0.49,
+     "p_market": 0.0864,
+     "win_prob_blend": 0.0568,
+     "ev": 0.52,
      "ev_buy": false,
      "ev_streak": 0
     },
@@ -3039,7 +3039,7 @@
      "name": "オオゾラタイショウ",
      "win_prob": 0.0171,
      "rank": 8,
-     "odds": 11.7,
+     "odds": 11.9,
      "position": null,
      "result_time": null,
      "jockey": "赤塚健",
@@ -3091,9 +3091,9 @@
       }
      ],
      "place3_time_avg": null,
-     "p_market": 0.0681,
-     "win_prob_blend": 0.0448,
-     "ev": 0.52,
+     "p_market": 0.0661,
+     "win_prob_blend": 0.0442,
+     "ev": 0.53,
      "ev_buy": false,
      "ev_streak": 0
     },
@@ -3102,13 +3102,13 @@
      "name": "レーヌブルー",
      "win_prob": 0.0141,
      "rank": 9,
-     "odds": 13.0,
+     "odds": 13.5,
      "position": null,
      "result_time": null,
      "jockey": "大友一",
      "gate": 3,
      "sled_kg": 480.0,
-     "popularity": 8,
+     "popularity": 7,
      "age": 2,
      "sex": "牝",
      "trainer": "大友人（ばんえい）",
@@ -3160,11 +3160,31 @@
       }
      ],
      "place3_time_avg": null,
-     "p_market": 0.0613,
-     "win_prob_blend": 0.0391,
+     "p_market": 0.0583,
+     "win_prob_blend": 0.0381,
      "ev": 0.51,
      "ev_buy": false,
      "ev_streak": 0
+    }
+   ],
+   "bets": [
+    {
+     "bet_type": "wide",
+     "bet_type_jp": "ワイド",
+     "combo": "2-5",
+     "odds": 31.5,
+     "ev": 2.18,
+     "prob": 0.0864,
+     "stake": 2100
+    },
+    {
+     "bet_type": "wide",
+     "bet_type_jp": "ワイド",
+     "combo": "5-9",
+     "odds": 23.7,
+     "ev": 1.26,
+     "prob": 0.0666,
+     "stake": 900
     }
    ]
   },
