@@ -4030,7 +4030,11 @@
      "payout": 21800,
      "popularity": 69
     }
-   ]
+   ],
+   "track_offset": -20.7,
+   "track_z": -2.05,
+   "track_label": "軽",
+   "track_n": 2
   },
   {
    "date": "2026-08-29",
@@ -4045,7 +4049,7 @@
    "market_fav": 5,
    "winner": null,
    "update_stage": "evscan",
-   "updated_at": "2026-08-29 16:14",
+   "updated_at": "2026-08-29 16:16",
    "horses": [
     {
      "num": 5,
@@ -4098,9 +4102,9 @@
       }
      ],
      "place3_time_avg": 122.4,
-     "p_market": 0.3763,
-     "win_prob_blend": 0.4357,
-     "ev": 0.92,
+     "p_market": 0.3758,
+     "win_prob_blend": 0.4348,
+     "ev": 0.91,
      "ev_buy": false,
      "ev_streak": 0
     },
@@ -4109,7 +4113,7 @@
      "name": "レガシーブラック",
      "win_prob": 0.1481,
      "rank": 2,
-     "odds": 11.6,
+     "odds": 10.8,
      "position": null,
      "result_time": null,
      "jockey": "鈴木恵",
@@ -4203,9 +4207,9 @@
       }
      ],
      "place3_time_avg": 125.3,
-     "p_market": 0.0681,
-     "win_prob_blend": 0.093,
-     "ev": 1.08,
+     "p_market": 0.0731,
+     "win_prob_blend": 0.0972,
+     "ev": 1.05,
      "ev_buy": true,
      "ev_streak": 3
     },
@@ -4302,8 +4306,8 @@
       }
      ],
      "place3_time_avg": 122.1,
-     "p_market": 0.2079,
-     "win_prob_blend": 0.1493,
+     "p_market": 0.2077,
+     "win_prob_blend": 0.1489,
      "ev": 0.57,
      "ev_buy": false,
      "ev_streak": 0
@@ -4389,8 +4393,8 @@
       }
      ],
      "place3_time_avg": 124.0,
-     "p_market": 0.1295,
-     "win_prob_blend": 0.1048,
+     "p_market": 0.1294,
+     "win_prob_blend": 0.1046,
      "ev": 0.64,
      "ev_buy": false,
      "ev_streak": 0
@@ -4453,7 +4457,7 @@
      ],
      "place3_time_avg": 137.1,
      "p_market": 0.0391,
-     "win_prob_blend": 0.0465,
+     "win_prob_blend": 0.0464,
      "ev": 0.94,
      "ev_buy": false,
      "ev_streak": 0
@@ -4463,7 +4467,7 @@
      "name": "ホクセイゼット",
      "win_prob": 0.0388,
      "rank": 6,
-     "odds": 34.1,
+     "odds": 32.9,
      "position": null,
      "result_time": null,
      "jockey": "西将太",
@@ -4539,9 +4543,9 @@
       }
      ],
      "place3_time_avg": 133.0,
-     "p_market": 0.0232,
-     "win_prob_blend": 0.0289,
-     "ev": 0.98,
+     "p_market": 0.024,
+     "win_prob_blend": 0.0295,
+     "ev": 0.97,
      "ev_buy": false,
      "ev_streak": 0
     },
@@ -4550,7 +4554,7 @@
      "name": "スピードシンデレラ",
      "win_prob": 0.0373,
      "rank": 7,
-     "odds": 12.8,
+     "odds": 13.2,
      "position": null,
      "result_time": null,
      "jockey": "臼杵龍",
@@ -4633,8 +4637,8 @@
       }
      ],
      "place3_time_avg": 140.5,
-     "p_market": 0.0617,
-     "win_prob_blend": 0.0538,
+     "p_market": 0.0598,
+     "win_prob_blend": 0.0526,
      "ev": 0.69,
      "ev_buy": false,
      "ev_streak": 0
@@ -4644,7 +4648,7 @@
      "name": "ダリア",
      "win_prob": 0.0314,
      "rank": 8,
-     "odds": 16.0,
+     "odds": 16.3,
      "position": null,
      "result_time": null,
      "jockey": "島津新",
@@ -4714,8 +4718,8 @@
       }
      ],
      "place3_time_avg": 137.7,
-     "p_market": 0.0494,
-     "win_prob_blend": 0.0438,
+     "p_market": 0.0484,
+     "win_prob_blend": 0.0432,
      "ev": 0.7,
      "ev_buy": false,
      "ev_streak": 0
@@ -4725,7 +4729,7 @@
      "name": "キタサカエリュウ",
      "win_prob": 0.0217,
      "rank": 9,
-     "odds": 24.8,
+     "odds": 26.0,
      "position": null,
      "result_time": null,
      "jockey": "中村太",
@@ -4783,9 +4787,9 @@
       }
      ],
      "place3_time_avg": 155.1,
-     "p_market": 0.0319,
-     "win_prob_blend": 0.029,
-     "ev": 0.72,
+     "p_market": 0.0304,
+     "win_prob_blend": 0.028,
+     "ev": 0.73,
      "ev_buy": false,
      "ev_streak": 0
     },
@@ -4794,7 +4798,7 @@
      "name": "ホクセイタロウ",
      "win_prob": 0.0185,
      "rank": 10,
-     "odds": 61.3,
+     "odds": 63.6,
      "position": null,
      "result_time": null,
      "jockey": "大友一",
@@ -4859,17 +4863,13 @@
       }
      ],
      "place3_time_avg": 137.3,
-     "p_market": 0.0129,
-     "win_prob_blend": 0.0152,
-     "ev": 0.93,
+     "p_market": 0.0124,
+     "win_prob_blend": 0.0148,
+     "ev": 0.94,
      "ev_buy": false,
      "ev_streak": 0
     }
-   ],
-   "track_offset": -14.1,
-   "track_z": -0.99,
-   "track_label": "軽",
-   "track_n": 3
+   ]
   },
   {
    "date": "2026-08-29",
