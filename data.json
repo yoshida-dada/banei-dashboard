@@ -13,8 +13,8 @@
    "predicted_top": 7,
    "market_fav": 7,
    "winner": null,
-   "update_stage": "evscan",
-   "updated_at": "2026-08-29 14:41",
+   "update_stage": "odds",
+   "updated_at": "2026-08-29 14:43",
    "horses": [
     {
      "num": 7,
@@ -842,7 +842,7 @@
      "win_prob_blend": 0.0557,
      "ev": 1.06,
      "ev_buy": true,
-     "ev_streak": 2
+     "ev_streak": 3
     },
     {
      "num": 6,
@@ -1293,7 +1293,7 @@
      "name": "イワキゴールドマン",
      "win_prob": 0.0392,
      "rank": 7,
-     "odds": 40.8,
+     "odds": 40.7,
      "position": null,
      "result_time": null,
      "jockey": "菅原響",
@@ -1502,7 +1502,7 @@
      ],
      "place3_time_avg": 144.9,
      "p_market": 0.0195,
-     "win_prob_blend": 0.0252,
+     "win_prob_blend": 0.0253,
      "ev": 1.03,
      "ev_buy": true,
      "ev_streak": 3
@@ -1833,7 +1833,7 @@
      "name": "タカラムサシ",
      "win_prob": 0.0209,
      "rank": 9,
-     "odds": 32.2,
+     "odds": 32.3,
      "position": null,
      "result_time": null,
      "jockey": "中原蓮",
@@ -2011,11 +2011,22 @@
       }
      ],
      "place3_time_avg": 140.7,
-     "p_market": 0.0247,
+     "p_market": 0.0246,
      "win_prob_blend": 0.0236,
      "ev": 0.76,
      "ev_buy": false,
      "ev_streak": 0
+    }
+   ],
+   "bets": [
+    {
+     "bet_type": "wide",
+     "bet_type_jp": "ワイド",
+     "combo": "3-9",
+     "odds": 40.0,
+     "ev": 1.28,
+     "prob": 0.0401,
+     "stake": 3000
     }
    ]
   },
