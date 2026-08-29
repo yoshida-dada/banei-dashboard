@@ -2111,14 +2111,14 @@
    "market_fav": 10,
    "winner": null,
    "update_stage": "evscan",
-   "updated_at": "2026-08-29 15:07",
+   "updated_at": "2026-08-29 15:09",
    "horses": [
     {
      "num": 10,
      "name": "ジェイマット",
      "win_prob": 0.2494,
      "rank": 1,
-     "odds": 3.5,
+     "odds": 3.4,
      "position": null,
      "result_time": null,
      "jockey": "中村太",
@@ -2176,9 +2176,9 @@
       }
      ],
      "place3_time_avg": 145.4,
-     "p_market": 0.2271,
-     "win_prob_blend": 0.2374,
-     "ev": 0.83,
+     "p_market": 0.2323,
+     "win_prob_blend": 0.241,
+     "ev": 0.82,
      "ev_buy": false,
      "ev_streak": 0
     },
@@ -2245,9 +2245,9 @@
       }
      ],
      "place3_time_avg": 112.7,
-     "p_market": 0.1445,
-     "win_prob_blend": 0.1555,
-     "ev": 0.86,
+     "p_market": 0.1436,
+     "win_prob_blend": 0.1549,
+     "ev": 0.85,
      "ev_buy": false,
      "ev_streak": 0
     },
@@ -2332,8 +2332,8 @@
       }
      ],
      "place3_time_avg": 126.8,
-     "p_market": 0.1806,
-     "win_prob_blend": 0.1773,
+     "p_market": 0.1795,
+     "win_prob_blend": 0.1765,
      "ev": 0.78,
      "ev_buy": false,
      "ev_streak": 0
@@ -2343,7 +2343,7 @@
      "name": "ヒロインクロエ",
      "win_prob": 0.0984,
      "rank": 4,
-     "odds": 12.2,
+     "odds": 12.3,
      "position": null,
      "result_time": null,
      "jockey": "赤塚健",
@@ -2407,8 +2407,8 @@
       }
      ],
      "place3_time_avg": 151.4,
-     "p_market": 0.0651,
-     "win_prob_blend": 0.0762,
+     "p_market": 0.0642,
+     "win_prob_blend": 0.0754,
      "ev": 0.93,
      "ev_buy": false,
      "ev_streak": 0
@@ -2482,8 +2482,8 @@
       }
      ],
      "place3_time_avg": 131.1,
-     "p_market": 0.1089,
-     "win_prob_blend": 0.1045,
+     "p_market": 0.1082,
+     "win_prob_blend": 0.1041,
      "ev": 0.76,
      "ev_buy": false,
      "ev_streak": 0
@@ -2575,9 +2575,9 @@
       }
      ],
      "place3_time_avg": 130.9,
-     "p_market": 0.0914,
-     "win_prob_blend": 0.0845,
-     "ev": 0.74,
+     "p_market": 0.0908,
+     "win_prob_blend": 0.0842,
+     "ev": 0.73,
      "ev_buy": false,
      "ev_streak": 0
     },
@@ -2681,9 +2681,9 @@
       }
      ],
      "place3_time_avg": 120.8,
-     "p_market": 0.0903,
-     "win_prob_blend": 0.07,
-     "ev": 0.62,
+     "p_market": 0.0898,
+     "win_prob_blend": 0.0697,
+     "ev": 0.61,
      "ev_buy": false,
      "ev_streak": 0
     },
@@ -2692,7 +2692,7 @@
      "name": "コトブキエルダー",
      "win_prob": 0.0381,
      "rank": 8,
-     "odds": 43.0,
+     "odds": 43.4,
      "position": null,
      "result_time": null,
      "jockey": "西将太",
@@ -2762,11 +2762,11 @@
       }
      ],
      "place3_time_avg": 153.3,
-     "p_market": 0.0185,
-     "win_prob_blend": 0.0241,
+     "p_market": 0.0182,
+     "win_prob_blend": 0.0238,
      "ev": 1.04,
      "ev_buy": true,
-     "ev_streak": 2
+     "ev_streak": 3
     },
     {
      "num": 8,
@@ -2861,8 +2861,8 @@
       }
      ],
      "place3_time_avg": null,
-     "p_market": 0.0568,
-     "win_prob_blend": 0.0485,
+     "p_market": 0.0564,
+     "win_prob_blend": 0.0484,
      "ev": 0.68,
      "ev_buy": false,
      "ev_streak": 0
@@ -2872,7 +2872,7 @@
      "name": "プリンセスローミー",
      "win_prob": 0.0348,
      "rank": 10,
-     "odds": 47.1,
+     "odds": 46.7,
      "position": null,
      "result_time": null,
      "jockey": "中山直",
@@ -2950,7 +2950,7 @@
      "place3_time_avg": 140.0,
      "p_market": 0.0169,
      "win_prob_blend": 0.022,
-     "ev": 1.04,
+     "ev": 1.03,
      "ev_buy": true,
      "ev_streak": 3
     }
