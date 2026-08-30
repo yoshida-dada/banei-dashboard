@@ -39181,8 +39181,8 @@
    "predicted_top": 1,
    "market_fav": 1,
    "winner": null,
-   "update_stage": "evscan",
-   "updated_at": "2026-08-30 16:46",
+   "update_stage": "odds",
+   "updated_at": "2026-08-30 16:48",
    "horses": [
     {
      "num": 1,
@@ -39421,8 +39421,8 @@
       }
      ],
      "place3_time_avg": 128.4,
-     "p_market": 0.3047,
-     "win_prob_blend": 0.3038,
+     "p_market": 0.305,
+     "win_prob_blend": 0.3039,
      "ev": 0.79,
      "ev_buy": false,
      "ev_streak": 0
@@ -39586,7 +39586,7 @@
       }
      ],
      "place3_time_avg": 125.6,
-     "p_market": 0.233,
+     "p_market": 0.2332,
      "win_prob_blend": 0.2306,
      "ev": 0.78,
      "ev_buy": false,
@@ -39793,18 +39793,18 @@
       }
      ],
      "place3_time_avg": 120.7,
-     "p_market": 0.0535,
-     "win_prob_blend": 0.0686,
+     "p_market": 0.0536,
+     "win_prob_blend": 0.0687,
      "ev": 1.02,
      "ev_buy": true,
-     "ev_streak": 1
+     "ev_streak": 2
     },
     {
      "num": 6,
      "name": "キンノキセキ",
      "win_prob": 0.0919,
      "rank": 4,
-     "odds": 15.2,
+     "odds": 14.9,
      "position": null,
      "result_time": null,
      "jockey": "島津新",
@@ -39988,8 +39988,8 @@
       }
      ],
      "place3_time_avg": 120.6,
-     "p_market": 0.0521,
-     "win_prob_blend": 0.0654,
+     "p_market": 0.0532,
+     "win_prob_blend": 0.0662,
      "ev": 0.99,
      "ev_buy": false,
      "ev_streak": 0
@@ -39999,7 +39999,7 @@
      "name": "ヤマトリキ",
      "win_prob": 0.0919,
      "rank": 5,
-     "odds": 14.6,
+     "odds": 14.7,
      "position": null,
      "result_time": null,
      "jockey": "金田利",
@@ -40207,8 +40207,8 @@
       }
      ],
      "place3_time_avg": 127.9,
-     "p_market": 0.0543,
-     "win_prob_blend": 0.0671,
+     "p_market": 0.0539,
+     "win_prob_blend": 0.0668,
      "ev": 0.98,
      "ev_buy": false,
      "ev_streak": 0
@@ -40426,7 +40426,7 @@
       }
      ],
      "place3_time_avg": 127.3,
-     "p_market": 0.0574,
+     "p_market": 0.0575,
      "win_prob_blend": 0.0675,
      "ev": 0.93,
      "ev_buy": false,
@@ -40649,14 +40649,14 @@
      "win_prob_blend": 0.0353,
      "ev": 1.07,
      "ev_buy": true,
-     "ev_streak": 1
+     "ev_streak": 2
     },
     {
      "num": 3,
      "name": "トウマオー",
      "win_prob": 0.0557,
      "rank": 8,
-     "odds": 7.0,
+     "odds": 7.1,
      "position": null,
      "result_time": null,
      "jockey": "長澤幸",
@@ -40888,8 +40888,8 @@
       }
      ],
      "place3_time_avg": 131.0,
-     "p_market": 0.1132,
-     "win_prob_blend": 0.0908,
+     "p_market": 0.1117,
+     "win_prob_blend": 0.09,
      "ev": 0.64,
      "ev_buy": false,
      "ev_streak": 0
@@ -41065,13 +41065,14 @@
       }
      ],
      "place3_time_avg": 117.4,
-     "p_market": 0.1056,
+     "p_market": 0.1057,
      "win_prob_blend": 0.0709,
      "ev": 0.53,
      "ev_buy": false,
      "ev_streak": 0
     }
    ],
+   "bets": [],
    "track_offset": 0.7,
    "track_z": 1.39,
    "track_label": "重",
