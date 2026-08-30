@@ -1,6 +1,6 @@
 {
  "date": "2026-08-30",
- "archived_at": "2026-08-30 21:28",
+ "archived_at": "2026-08-30 22:01",
  "races": [
   {
    "date": "2026-08-30",
@@ -34805,7 +34805,11 @@
      "payout": 24510,
      "popularity": 89
     }
-   ]
+   ],
+   "track_offset": -6.4,
+   "track_z": 0.25,
+   "track_label": "標準",
+   "track_n": 11
   }
  ]
 }
