@@ -1,6 +1,6 @@
 {
  "date": "2026-08-31",
- "archived_at": "2026-08-31 16:25",
+ "archived_at": "2026-08-31 16:30",
  "races": [
   {
    "date": "2026-08-31",
@@ -3801,12 +3801,12 @@
    "moisture": 1.4,
    "field_size": 10,
    "post_time": "16:10",
-   "win_time": null,
+   "win_time": "2:01.2",
    "predicted_top": 3,
    "market_fav": 4,
-   "winner": null,
-   "update_stage": "pre",
-   "updated_at": "2026-08-31 16:11",
+   "winner": 7,
+   "update_stage": "result",
+   "updated_at": "2026-08-31 16:30",
    "horses": [
     {
      "num": 3,
@@ -3814,8 +3814,8 @@
      "win_prob": 0.2019,
      "rank": 1,
      "odds": 17.9,
-     "position": null,
-     "result_time": null,
+     "position": 3,
+     "result_time": "2:14.2",
      "jockey": "菊池一",
      "gate": 3,
      "sled_kg": 510.0,
@@ -3823,7 +3823,6 @@
      "age": 2,
      "sex": "牡",
      "trainer": "村上慎（ばんえい）",
-     "owner": "渡辺善弘",
      "elo": 1531,
      "f_obstacle": 5.7,
      "f_finish": 5.3,
@@ -3899,7 +3898,8 @@
      "p_market": 0.0444,
      "win_prob_blend": 0.0802,
      "ev": 1.44,
-     "ev_buy": true
+     "ev_buy": true,
+     "ev_streak": 0
     },
     {
      "num": 5,
@@ -3907,8 +3907,8 @@
      "win_prob": 0.1827,
      "rank": 2,
      "odds": 3.5,
-     "position": null,
-     "result_time": null,
+     "position": 6,
+     "result_time": "2:29.3",
      "jockey": "吉田理",
      "gate": 5,
      "sled_kg": 480.0,
@@ -3916,7 +3916,6 @@
      "age": 2,
      "sex": "牝",
      "trainer": "久田守（ばんえい）",
-     "owner": "尾ヶ瀬浩二",
      "elo": 1507,
      "f_obstacle": 5.3,
      "f_finish": 6.8,
@@ -3998,7 +3997,8 @@
      "p_market": 0.2268,
      "win_prob_blend": 0.2238,
      "ev": 0.78,
-     "ev_buy": false
+     "ev_buy": false,
+     "ev_streak": 0
     },
     {
      "num": 4,
@@ -4006,8 +4006,8 @@
      "win_prob": 0.1541,
      "rank": 3,
      "odds": 2.4,
-     "position": null,
-     "result_time": null,
+     "position": 10,
+     "result_time": "2:39.3",
      "jockey": "今井千",
      "gate": 4,
      "sled_kg": 480.0,
@@ -4015,7 +4015,6 @@
      "age": 2,
      "sex": "牝",
      "trainer": "今井茂（ばんえい）",
-     "owner": "日野未来",
      "elo": 1460,
      "f_obstacle": 7.0,
      "f_finish": 5.9,
@@ -4067,7 +4066,8 @@
      "p_market": 0.3308,
      "win_prob_blend": 0.2695,
      "ev": 0.65,
-     "ev_buy": false
+     "ev_buy": false,
+     "ev_streak": 0
     },
     {
      "num": 6,
@@ -4075,8 +4075,8 @@
      "win_prob": 0.1353,
      "rank": 4,
      "odds": 10.4,
-     "position": null,
-     "result_time": null,
+     "position": 8,
+     "result_time": "2:33.2",
      "jockey": "中原蓮",
      "gate": 6,
      "sled_kg": 490.0,
@@ -4084,7 +4084,6 @@
      "age": 2,
      "sex": "牝",
      "trainer": "今井茂（ばんえい）",
-     "owner": "村上昭一",
      "elo": 1508,
      "f_obstacle": 6.0,
      "f_finish": 5.9,
@@ -4125,7 +4124,8 @@
      "p_market": 0.0763,
      "win_prob_blend": 0.0993,
      "ev": 1.03,
-     "ev_buy": true
+     "ev_buy": true,
+     "ev_streak": 0
     },
     {
      "num": 7,
@@ -4133,8 +4133,8 @@
      "win_prob": 0.0907,
      "rank": 5,
      "odds": 5.3,
-     "position": null,
-     "result_time": null,
+     "position": 1,
+     "result_time": "2:01.2",
      "jockey": "長澤幸",
      "gate": 7,
      "sled_kg": 500.0,
@@ -4142,7 +4142,6 @@
      "age": 2,
      "sex": "セン",
      "trainer": "大河和（ばんえい）",
-     "owner": "大河原昭雄",
      "elo": 1424,
      "f_obstacle": 6.3,
      "f_finish": 5.2,
@@ -4200,7 +4199,8 @@
      "p_market": 0.1498,
      "win_prob_blend": 0.1338,
      "ev": 0.71,
-     "ev_buy": false
+     "ev_buy": false,
+     "ev_streak": 0
     },
     {
      "num": 10,
@@ -4208,8 +4208,8 @@
      "win_prob": 0.075,
      "rank": 6,
      "odds": 7.3,
-     "position": null,
-     "result_time": null,
+     "position": 2,
+     "result_time": "2:09.8",
      "jockey": "金田利",
      "gate": 8,
      "sled_kg": 500.0,
@@ -4217,7 +4217,6 @@
      "age": 2,
      "sex": "セン",
      "trainer": "鈴木邦（ばんえい）",
-     "owner": "田中秀直",
      "elo": 1416,
      "f_obstacle": 6.0,
      "f_finish": 4.1,
@@ -4282,7 +4281,8 @@
      "p_market": 0.1087,
      "win_prob_blend": 0.1016,
      "ev": 0.74,
-     "ev_buy": false
+     "ev_buy": false,
+     "ev_streak": 0
     },
     {
      "num": 9,
@@ -4290,8 +4290,8 @@
      "win_prob": 0.0556,
      "rank": 7,
      "odds": 29.8,
-     "position": null,
-     "result_time": null,
+     "position": 7,
+     "result_time": "2:30.9",
      "jockey": "中村太",
      "gate": 8,
      "sled_kg": 510.0,
@@ -4299,7 +4299,6 @@
      "age": 2,
      "sex": "牡",
      "trainer": "谷あゆ（ばんえい）",
-     "owner": "川口晋司",
      "elo": 1469,
      "f_obstacle": 5.0,
      "f_finish": 4.1,
@@ -4357,7 +4356,8 @@
      "p_market": 0.0266,
      "win_prob_blend": 0.0367,
      "ev": 1.09,
-     "ev_buy": true
+     "ev_buy": true,
+     "ev_streak": 0
     },
     {
      "num": 8,
@@ -4365,8 +4365,8 @@
      "win_prob": 0.0498,
      "rank": 8,
      "odds": 48.0,
-     "position": null,
-     "result_time": null,
+     "position": 5,
+     "result_time": "2:26.7",
      "jockey": "島津新",
      "gate": 7,
      "sled_kg": 510.0,
@@ -4374,7 +4374,6 @@
      "age": 2,
      "sex": "牡",
      "trainer": "林　豊（ばんえい）",
-     "owner": "島津信",
      "elo": 1424,
      "f_obstacle": 3.7,
      "f_finish": 4.8,
@@ -4456,7 +4455,8 @@
      "p_market": 0.0165,
      "win_prob_blend": 0.0259,
      "ev": 1.24,
-     "ev_buy": true
+     "ev_buy": true,
+     "ev_streak": 0
     },
     {
      "num": 2,
@@ -4464,8 +4464,8 @@
      "win_prob": 0.0361,
      "rank": 9,
      "odds": 107.6,
-     "position": null,
-     "result_time": null,
+     "position": 9,
+     "result_time": "2:37.0",
      "jockey": "赤塚健",
      "gate": 2,
      "sled_kg": 490.0,
@@ -4473,7 +4473,6 @@
      "age": 2,
      "sex": "牝",
      "trainer": "村上慎（ばんえい）",
-     "owner": "下内美繪子",
      "elo": 1416,
      "f_obstacle": 2.7,
      "f_finish": 6.0,
@@ -4537,7 +4536,8 @@
      "p_market": 0.0074,
      "win_prob_blend": 0.0137,
      "ev": 1.47,
-     "ev_buy": true
+     "ev_buy": true,
+     "ev_streak": 0
     },
     {
      "num": 1,
@@ -4545,8 +4545,8 @@
      "win_prob": 0.0189,
      "rank": 10,
      "odds": 62.9,
-     "position": null,
-     "result_time": null,
+     "position": 4,
+     "result_time": "2:20.8",
      "jockey": "阿部優",
      "gate": 1,
      "sled_kg": 510.0,
@@ -4554,7 +4554,6 @@
      "age": 2,
      "sex": "牡",
      "trainer": "松井浩（ばんえい）",
-     "owner": "（株）北西ファーム",
      "elo": 1363,
      "f_obstacle": 3.5,
      "f_finish": 3.2,
@@ -4624,13 +4623,89 @@
      "p_market": 0.0126,
      "win_prob_blend": 0.0155,
      "ev": 0.97,
-     "ev_buy": false
+     "ev_buy": false,
+     "ev_streak": 0
     }
    ],
-   "track_offset": 7.7,
-   "track_z": 2.53,
-   "track_label": "重",
-   "track_n": 3
+   "payouts": [
+    {
+     "bet_type": "win",
+     "bet_type_jp": "単勝",
+     "combo": "7",
+     "payout": 530,
+     "popularity": 3
+    },
+    {
+     "bet_type": "place",
+     "bet_type_jp": "複勝",
+     "combo": "7",
+     "payout": 170,
+     "popularity": 2
+    },
+    {
+     "bet_type": "place",
+     "bet_type_jp": "複勝",
+     "combo": "10",
+     "payout": 170,
+     "popularity": 3
+    },
+    {
+     "bet_type": "place",
+     "bet_type_jp": "複勝",
+     "combo": "3",
+     "payout": 300,
+     "popularity": 6
+    },
+    {
+     "bet_type": "wide",
+     "bet_type_jp": "ワイド",
+     "combo": "7-10",
+     "payout": 690,
+     "popularity": 10
+    },
+    {
+     "bet_type": "wide",
+     "bet_type_jp": "ワイド",
+     "combo": "3-7",
+     "payout": 740,
+     "popularity": 11
+    },
+    {
+     "bet_type": "wide",
+     "bet_type_jp": "ワイド",
+     "combo": "3-10",
+     "payout": 860,
+     "popularity": 13
+    },
+    {
+     "bet_type": "quinella",
+     "bet_type_jp": "馬連",
+     "combo": "7-10",
+     "payout": 1690,
+     "popularity": 6
+    },
+    {
+     "bet_type": "exacta",
+     "bet_type_jp": "馬単",
+     "combo": "7→10",
+     "payout": 3680,
+     "popularity": 14
+    },
+    {
+     "bet_type": "trio",
+     "bet_type_jp": "三連複",
+     "combo": "3-7-10",
+     "payout": 4930,
+     "popularity": 18
+    },
+    {
+     "bet_type": "trifecta",
+     "bet_type_jp": "三連単",
+     "combo": "7→10→3",
+     "payout": 25290,
+     "popularity": 88
+    }
+   ]
   },
   {
    "date": "2026-08-31",
@@ -6855,7 +6930,11 @@
      "ev_buy": false,
      "ev_streak": 0
     }
-   ]
+   ],
+   "track_offset": 7.7,
+   "track_z": 2.53,
+   "track_label": "重",
+   "track_n": 3
   },
   {
    "date": "2026-08-31",
