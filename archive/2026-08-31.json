@@ -1,6 +1,6 @@
 {
  "date": "2026-08-31",
- "archived_at": "2026-08-31 15:40",
+ "archived_at": "2026-08-31 15:48",
  "races": [
   {
    "date": "2026-08-31",
@@ -2091,7 +2091,7 @@
    "market_fav": 3,
    "winner": 3,
    "update_stage": "result",
-   "updated_at": "2026-08-31 15:34",
+   "updated_at": "2026-08-31 15:48",
    "horses": [
     {
      "num": 3,
@@ -4558,7 +4558,11 @@
      "ev_buy": false,
      "ev_streak": 0
     }
-   ]
+   ],
+   "track_offset": 11.1,
+   "track_z": 3.08,
+   "track_label": "重",
+   "track_n": 2
   },
   {
    "date": "2026-08-31",
