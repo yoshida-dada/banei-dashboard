@@ -151,6 +151,7 @@ table.ht .tname{font-weight:700;max-width:112px;display:flex;align-items:center;
 table.ht .tname .tname-txt{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;min-width:0}
 table.ht .tjk{color:var(--ink);font-weight:600;max-width:88px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 table.ht .tsub{font-size:.63rem;color:var(--muted);max-width:150px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-weight:400}
+table.ht .tsub.towner{opacity:.72}
 table.ht .tsub.num{font-variant-numeric:tabular-nums}
 table.ht .abil{color:var(--accent);font-weight:800}
 table.ht .win-c{font-weight:800}
@@ -191,6 +192,7 @@ table.ht .roi{color:color-mix(in srgb,var(--ev-hue) 78%,var(--ink));font-weight:
 .hnamewrap{flex:1;min-width:0}
 .hsub{font-size:.72rem;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin-top:1px}
 .hjk{font-size:.72rem;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin-top:1px}
+.hsub.howner{display:block;opacity:.72}
 .hjk::before{content:"騎 ";opacity:.6}
 .hjk .jrec{color:var(--ink);font-weight:600}
 .finish{flex:none;font-size:.66rem;color:var(--muted);border:1px solid var(--border);border-radius:6px;padding:2px 6px;text-align:center;line-height:1.25}
@@ -884,8 +886,8 @@ function featBar(label,v){ const w=Math.max(0,Math.min(100,(v||0)*10));
 const COLS = [
   {key:"num", label:"馬番", always:true, th:'<th class="l">馬</th>',
    td:h=>`<td class="l"><span class="numcell">${medal(h.position)}<span class="tnum" style="${capStyle(h.gate)}">${h.num}</span></span></td>`},
-  {key:"name", label:"馬名・馬齢・厩舎", always:true, th:'<th class="l">馬名 / 馬齢・厩舎</th>',
-   td:h=>`<td class="l"><div class="c2"><span class="tname${h.insider_flag?' clickable':''}" data-num="${h.num}"><span class="tname-txt">${h.name||''}</span>${insiderFlagIcon(h)}</span><span class="tsub">${(h.sex||'')+(h.age!=null?h.age:'')}${h.trainer?'・'+cleanInst(h.trainer):''}</span></div></td>`},
+  {key:"name", label:"馬名・馬齢・厩舎・馬主", always:true, th:'<th class="l">馬名 / 馬齢・厩舎・馬主</th>',
+   td:h=>`<td class="l"><div class="c2"><span class="tname${h.insider_flag?' clickable':''}" data-num="${h.num}"><span class="tname-txt">${h.name||''}</span>${insiderFlagIcon(h)}</span><span class="tsub">${(h.sex||'')+(h.age!=null?h.age:'')}${h.trainer?'・'+cleanInst(h.trainer):''}</span>${h.owner&&h.owner!=='不明'?`<span class="tsub towner">${h.owner}</span>`:''}</div></td>`},
   {key:"jockey", label:"騎手・成績", th:'<th class="l">騎手 / 成績</th>',
    td:h=>`<td class="l"><div class="c2"><span class="tjk">${h.jockey||'—'}</span><span class="tsub num">${recFmt(h.jockey_record)}</span></div></td>`},
   {key:"sled", label:"斤量", th:'<th>斤量</th>',
@@ -979,6 +981,7 @@ function cardView(hs, maxW, hasResult){
       +`<div class="hh">${medal(h.position)}<span class="rk">${h.rank}</span><span class="hnum num" style="${capStyle(h.gate)}">${h.num}</span>`
       +`<span class="hnamewrap"><span class="hname${h.insider_flag?' clickable':''}" data-num="${h.num}"><span class="hname-txt">${h.name||''}</span>${insiderFlagIcon(h)}</span>`
       +`<span class="hsub">${(h.sex||'')+(h.age!=null?h.age:'')}${h.trainer?' ・ '+cleanInst(h.trainer):''}</span>`
+      +(h.owner&&h.owner!=='不明'?`<span class="hsub howner">${h.owner}</span>`:'')
       +`<span class="hjk">${h.jockey||'騎手不明'} <span class="jrec">${recFmt(h.jockey_record)}</span></span></span>`
       +`<span class="finish ${h.position!=null&&h.position<=3?'top':''}">${finish}</span></div>`
       +`<div class="mgrid">`
