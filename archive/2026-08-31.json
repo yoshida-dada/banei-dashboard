@@ -1,6 +1,6 @@
 {
  "date": "2026-08-31",
- "archived_at": "2026-08-31 15:31",
+ "archived_at": "2026-08-31 15:33",
  "races": [
   {
    "date": "2026-08-31",
@@ -2822,8 +2822,8 @@
    "predicted_top": 6,
    "market_fav": 3,
    "winner": null,
-   "update_stage": "evscan",
-   "updated_at": "2026-08-31 15:31",
+   "update_stage": "odds",
+   "updated_at": "2026-08-31 15:33",
    "horses": [
     {
      "num": 6,
@@ -2900,11 +2900,11 @@
       }
      ],
      "place3_time_avg": 163.5,
-     "p_market": 0.1685,
-     "win_prob_blend": 0.2137,
+     "p_market": 0.1684,
+     "win_prob_blend": 0.2136,
      "ev": 1.0,
      "ev_buy": true,
-     "ev_streak": 1
+     "ev_streak": 2
     },
     {
      "num": 5,
@@ -2994,10 +2994,10 @@
      ],
      "place3_time_avg": 124.2,
      "p_market": 0.0707,
-     "win_prob_blend": 0.0906,
+     "win_prob_blend": 0.0905,
      "ev": 1.01,
      "ev_buy": true,
-     "ev_streak": 1
+     "ev_streak": 2
     },
     {
      "num": 3,
@@ -3063,8 +3063,8 @@
       }
      ],
      "place3_time_avg": 143.6,
-     "p_market": 0.264,
-     "win_prob_blend": 0.2088,
+     "p_market": 0.2639,
+     "win_prob_blend": 0.2087,
      "ev": 0.63,
      "ev_buy": false,
      "ev_streak": 0
@@ -3231,8 +3231,8 @@
       }
      ],
      "place3_time_avg": 130.1,
-     "p_market": 0.2084,
-     "win_prob_blend": 0.1601,
+     "p_market": 0.2083,
+     "win_prob_blend": 0.16,
      "ev": 0.61,
      "ev_buy": false,
      "ev_streak": 0
@@ -3242,7 +3242,7 @@
      "name": "ダイキチ",
      "win_prob": 0.0718,
      "rank": 6,
-     "odds": 23.5,
+     "odds": 23.1,
      "position": null,
      "result_time": null,
      "jockey": "渡来心",
@@ -3330,11 +3330,11 @@
       }
      ],
      "place3_time_avg": 143.4,
-     "p_market": 0.0337,
-     "win_prob_blend": 0.046,
-     "ev": 1.08,
+     "p_market": 0.0343,
+     "win_prob_blend": 0.0465,
+     "ev": 1.07,
      "ev_buy": true,
-     "ev_streak": 1
+     "ev_streak": 2
     },
     {
      "num": 9,
@@ -3429,7 +3429,7 @@
       }
      ],
      "place3_time_avg": 159.4,
-     "p_market": 0.0424,
+     "p_market": 0.0423,
      "win_prob_blend": 0.0508,
      "ev": 0.95,
      "ev_buy": false,
@@ -3604,7 +3604,7 @@
      ],
      "place3_time_avg": 137.1,
      "p_market": 0.0379,
-     "win_prob_blend": 0.0452,
+     "win_prob_blend": 0.0451,
      "ev": 0.94,
      "ev_buy": false,
      "ev_streak": 0
@@ -3614,7 +3614,7 @@
      "name": "キングフォルテ",
      "win_prob": 0.0175,
      "rank": 10,
-     "odds": 37.8,
+     "odds": 37.9,
      "position": null,
      "result_time": null,
      "jockey": "赤塚健",
@@ -3702,11 +3702,22 @@
       }
      ],
      "place3_time_avg": 124.0,
-     "p_market": 0.021,
+     "p_market": 0.0209,
      "win_prob_blend": 0.0206,
      "ev": 0.78,
      "ev_buy": false,
      "ev_streak": 0
+    }
+   ],
+   "bets": [
+    {
+     "bet_type": "wide",
+     "bet_type_jp": "ワイド",
+     "combo": "3-10",
+     "odds": 39.0,
+     "ev": 1.28,
+     "prob": 0.0411,
+     "stake": 3000
     }
    ]
   },
