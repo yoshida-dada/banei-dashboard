@@ -71924,7 +71924,7 @@
    "market_fav": 3,
    "winner": 4,
    "update_stage": "result",
-   "updated_at": "2026-08-31 16:11",
+   "updated_at": "2026-08-31 16:23",
    "horses": [
     {
      "num": 6,
@@ -71941,7 +71941,6 @@
      "age": 2,
      "sex": "牡",
      "trainer": "藤野俊（ばんえい）",
-     "owner": "小森唯永",
      "elo": 1536,
      "f_obstacle": 5.9,
      "f_finish": 5.2,
@@ -72005,7 +72004,8 @@
      "p_market": 0.1756,
      "win_prob_blend": 0.2194,
      "ev": 0.99,
-     "ev_buy": false
+     "ev_buy": false,
+     "ev_streak": 0
     },
     {
      "num": 5,
@@ -72022,7 +72022,6 @@
      "age": 2,
      "sex": "牡",
      "trainer": "大橋和（ばんえい）",
-     "owner": "村上廣昭",
      "elo": 1487,
      "f_obstacle": 5.1,
      "f_finish": 6.3,
@@ -72098,7 +72097,8 @@
      "p_market": 0.0919,
      "win_prob_blend": 0.1073,
      "ev": 0.92,
-     "ev_buy": false
+     "ev_buy": false,
+     "ev_streak": 0
     },
     {
      "num": 3,
@@ -72115,7 +72115,6 @@
      "age": 2,
      "sex": "牝",
      "trainer": "谷あゆ（ばんえい）",
-     "owner": "石久保斉",
      "elo": 1465,
      "f_obstacle": 3.9,
      "f_finish": 5.6,
@@ -72168,7 +72167,8 @@
      "p_market": 0.2394,
      "win_prob_blend": 0.1958,
      "ev": 0.65,
-     "ev_buy": false
+     "ev_buy": false,
+     "ev_streak": 0
     },
     {
      "num": 1,
@@ -72185,7 +72185,6 @@
      "age": 2,
      "sex": "牡",
      "trainer": "中島敏（ばんえい）",
-     "owner": "山田邦博",
      "elo": 1448,
      "f_obstacle": 5.0,
      "f_finish": 6.5,
@@ -72267,7 +72266,8 @@
      "p_market": 0.1082,
      "win_prob_blend": 0.1161,
      "ev": 0.85,
-     "ev_buy": false
+     "ev_buy": false,
+     "ev_streak": 0
     },
     {
      "num": 4,
@@ -72284,7 +72284,6 @@
      "age": 2,
      "sex": "牝",
      "trainer": "大河和（ばんえい）",
-     "owner": "大河原昭雄",
      "elo": 1466,
      "f_obstacle": 6.1,
      "f_finish": 3.5,
@@ -72336,7 +72335,8 @@
      "p_market": 0.2394,
      "win_prob_blend": 0.1751,
      "ev": 0.58,
-     "ev_buy": false
+     "ev_buy": false,
+     "ev_streak": 0
     },
     {
      "num": 2,
@@ -72353,7 +72353,6 @@
      "age": 2,
      "sex": "牡",
      "trainer": "久田守（ばんえい）",
-     "owner": "永井和弘",
      "elo": 1401,
      "f_obstacle": 5.0,
      "f_finish": 6.1,
@@ -72435,7 +72434,8 @@
      "p_market": 0.0425,
      "win_prob_blend": 0.0534,
      "ev": 0.99,
-     "ev_buy": false
+     "ev_buy": false,
+     "ev_streak": 0
     },
     {
      "num": 9,
@@ -72452,7 +72452,6 @@
      "age": 2,
      "sex": "牡",
      "trainer": "中島敏（ばんえい）",
-     "owner": "杉岡正美",
      "elo": 1417,
      "f_obstacle": 4.7,
      "f_finish": 5.0,
@@ -72534,7 +72533,8 @@
      "p_market": 0.031,
      "win_prob_blend": 0.0414,
      "ev": 1.06,
-     "ev_buy": true
+     "ev_buy": true,
+     "ev_streak": 0
     },
     {
      "num": 10,
@@ -72551,7 +72551,6 @@
      "age": 2,
      "sex": "牡",
      "trainer": "岩本利（ばんえい）",
-     "owner": "川口晋司",
      "elo": 1397,
      "f_obstacle": 5.5,
      "f_finish": 3.2,
@@ -72633,7 +72632,8 @@
      "p_market": 0.023,
      "win_prob_blend": 0.033,
      "ev": 1.13,
-     "ev_buy": true
+     "ev_buy": true,
+     "ev_streak": 0
     },
     {
      "num": 7,
@@ -72650,7 +72650,6 @@
      "age": 2,
      "sex": "牝",
      "trainer": "小林長（ばんえい）",
-     "owner": "南信良",
      "elo": 1447,
      "f_obstacle": 4.6,
      "f_finish": 2.7,
@@ -72708,7 +72707,8 @@
      "p_market": 0.0335,
      "win_prob_blend": 0.0416,
      "ev": 0.98,
-     "ev_buy": false
+     "ev_buy": false,
+     "ev_streak": 0
     },
     {
      "num": 8,
@@ -72725,7 +72725,6 @@
      "age": 2,
      "sex": "牡",
      "trainer": "久田守（ばんえい）",
-     "owner": "尾ヶ瀬浩二",
      "elo": 1322,
      "f_obstacle": 1.9,
      "f_finish": 5.7,
@@ -72807,7 +72806,8 @@
      "p_market": 0.0154,
      "win_prob_blend": 0.0169,
      "ev": 0.86,
-     "ev_buy": false
+     "ev_buy": false,
+     "ev_streak": 0
     }
    ],
    "payouts": [
