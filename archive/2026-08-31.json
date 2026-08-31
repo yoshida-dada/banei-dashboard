@@ -1,6 +1,6 @@
 {
  "date": "2026-08-31",
- "archived_at": "2026-08-31 18:56",
+ "archived_at": "2026-08-31 18:58",
  "races": [
   {
    "date": "2026-08-31",
@@ -13709,8 +13709,8 @@
    "predicted_top": 10,
    "market_fav": 10,
    "winner": null,
-   "update_stage": "evscan",
-   "updated_at": "2026-08-31 18:56",
+   "update_stage": "odds",
+   "updated_at": "2026-08-31 18:58",
    "horses": [
     {
      "num": 10,
@@ -17099,7 +17099,7 @@
      "win_prob_blend": 0.0499,
      "ev": 1.02,
      "ev_buy": true,
-     "ev_streak": 1
+     "ev_streak": 2
     },
     {
      "num": 4,
@@ -18764,9 +18764,10 @@
      "win_prob_blend": 0.0185,
      "ev": 1.15,
      "ev_buy": true,
-     "ev_streak": 1
+     "ev_streak": 2
     }
-   ]
+   ],
+   "bets": []
   },
   {
    "date": "2026-08-31",
