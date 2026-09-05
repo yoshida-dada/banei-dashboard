@@ -15661,8 +15661,8 @@
    "predicted_top": 7,
    "market_fav": 8,
    "winner": null,
-   "update_stage": "evscan",
-   "updated_at": "2026-09-05 18:21",
+   "update_stage": "odds",
+   "updated_at": "2026-09-05 18:23",
    "horses": [
     {
      "num": 7,
@@ -15746,9 +15746,9 @@
       }
      ],
      "place3_time_avg": 130.1,
-     "p_market": 0.1626,
-     "win_prob_blend": 0.1768,
-     "ev": 0.87,
+     "p_market": 0.1616,
+     "win_prob_blend": 0.176,
+     "ev": 0.86,
      "ev_buy": false,
      "ev_streak": 0
     },
@@ -15846,8 +15846,8 @@
       }
      ],
      "place3_time_avg": 132.5,
-     "p_market": 0.1732,
-     "win_prob_blend": 0.1748,
+     "p_market": 0.1721,
+     "win_prob_blend": 0.174,
      "ev": 0.8,
      "ev_buy": false,
      "ev_streak": 0
@@ -15857,7 +15857,7 @@
      "name": "キタデテンセイ",
      "win_prob": 0.145,
      "rank": 3,
-     "odds": 10.1,
+     "odds": 10.0,
      "position": null,
      "result_time": null,
      "jockey": "中村太",
@@ -15928,9 +15928,9 @@
       }
      ],
      "place3_time_avg": 124.0,
-     "p_market": 0.0789,
-     "win_prob_blend": 0.1019,
-     "ev": 1.03,
+     "p_market": 0.0792,
+     "win_prob_blend": 0.1022,
+     "ev": 1.02,
      "ev_buy": true,
      "ev_streak": 3
     },
@@ -15939,7 +15939,7 @@
      "name": "ボス",
      "win_prob": 0.1407,
      "rank": 4,
-     "odds": 12.9,
+     "odds": 12.7,
      "position": null,
      "result_time": null,
      "jockey": "菊池一",
@@ -16023,9 +16023,9 @@
       }
      ],
      "place3_time_avg": 124.2,
-     "p_market": 0.0618,
-     "win_prob_blend": 0.086,
-     "ev": 1.11,
+     "p_market": 0.0623,
+     "win_prob_blend": 0.0865,
+     "ev": 1.1,
      "ev_buy": true,
      "ev_streak": 3
     },
@@ -16034,7 +16034,7 @@
      "name": "シンバクシンオー",
      "win_prob": 0.0924,
      "rank": 5,
-     "odds": 14.7,
+     "odds": 14.9,
      "position": null,
      "result_time": null,
      "jockey": "長澤幸",
@@ -16099,18 +16099,18 @@
       }
      ],
      "place3_time_avg": 107.2,
-     "p_market": 0.0542,
-     "win_prob_blend": 0.0682,
+     "p_market": 0.0531,
+     "win_prob_blend": 0.0673,
      "ev": 1.0,
      "ev_buy": true,
-     "ev_streak": 1
+     "ev_streak": 2
     },
     {
      "num": 2,
      "name": "コハクヒメ",
      "win_prob": 0.0749,
      "rank": 6,
-     "odds": 10.9,
+     "odds": 10.7,
      "position": null,
      "result_time": null,
      "jockey": "西将太",
@@ -16181,9 +16181,9 @@
       }
      ],
      "place3_time_avg": 132.5,
-     "p_market": 0.0731,
-     "win_prob_blend": 0.077,
-     "ev": 0.84,
+     "p_market": 0.074,
+     "win_prob_blend": 0.0776,
+     "ev": 0.83,
      "ev_buy": false,
      "ev_streak": 0
     },
@@ -16269,8 +16269,8 @@
       }
      ],
      "place3_time_avg": 130.0,
-     "p_market": 0.2343,
-     "win_prob_blend": 0.163,
+     "p_market": 0.2329,
+     "win_prob_blend": 0.1623,
      "ev": 0.55,
      "ev_buy": false,
      "ev_streak": 0
@@ -16280,7 +16280,7 @@
      "name": "ジェイノダイジン",
      "win_prob": 0.0727,
      "rank": 8,
-     "odds": 18.1,
+     "odds": 17.6,
      "position": null,
      "result_time": null,
      "jockey": "阿部優",
@@ -16369,9 +16369,9 @@
       }
      ],
      "place3_time_avg": 135.1,
-     "p_market": 0.044,
-     "win_prob_blend": 0.0548,
-     "ev": 0.99,
+     "p_market": 0.045,
+     "win_prob_blend": 0.0556,
+     "ev": 0.98,
      "ev_buy": false,
      "ev_streak": 0
     },
@@ -16380,7 +16380,7 @@
      "name": "ツガルユリ",
      "win_prob": 0.0497,
      "rank": 9,
-     "odds": 9.4,
+     "odds": 9.1,
      "position": null,
      "result_time": null,
      "jockey": "中原蓮",
@@ -16457,9 +16457,9 @@
       }
      ],
      "place3_time_avg": 127.2,
-     "p_market": 0.0847,
-     "win_prob_blend": 0.0734,
-     "ev": 0.69,
+     "p_market": 0.087,
+     "win_prob_blend": 0.0747,
+     "ev": 0.68,
      "ev_buy": false,
      "ev_streak": 0
     },
@@ -16468,7 +16468,7 @@
      "name": "セリュヴァニア",
      "win_prob": 0.0115,
      "rank": 10,
-     "odds": 23.9,
+     "odds": 24.1,
      "position": null,
      "result_time": null,
      "jockey": "大友一",
@@ -16545,13 +16545,14 @@
       }
      ],
      "place3_time_avg": 131.3,
-     "p_market": 0.0333,
-     "win_prob_blend": 0.024,
+     "p_market": 0.0329,
+     "win_prob_blend": 0.0238,
      "ev": 0.57,
      "ev_buy": false,
      "ev_streak": 0
     }
    ],
+   "bets": [],
    "track_offset": -16.4,
    "track_z": -1.38,
    "track_label": "軽",
