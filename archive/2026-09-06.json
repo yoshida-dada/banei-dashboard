@@ -1,6 +1,6 @@
 {
  "date": "2026-09-06",
- "archived_at": "2026-09-06 16:14",
+ "archived_at": "2026-09-06 16:15",
  "races": [
   {
    "date": "2026-09-06",
@@ -4205,7 +4205,11 @@
      "payout": 40950,
      "popularity": 161
     }
-   ]
+   ],
+   "track_offset": -3.9,
+   "track_z": 0.68,
+   "track_label": "標準",
+   "track_n": 2
   },
   {
    "date": "2026-09-06",
@@ -5080,22 +5084,22 @@
    "race_no": 5,
    "race_name": "ろみー３周年おめでとうＣ１－２",
    "class": "C1",
-   "moisture": null,
+   "moisture": 1.8,
    "field_size": 10,
    "post_time": "16:45",
    "win_time": null,
    "predicted_top": 6,
    "market_fav": 6,
    "winner": null,
-   "update_stage": "pre",
-   "updated_at": "2026-09-06 12:30",
+   "update_stage": "moist",
+   "updated_at": "2026-09-06 16:15",
    "horses": [
     {
      "num": 6,
      "name": "イワキマッシグラ",
-     "win_prob": 0.2469,
+     "win_prob": 0.2546,
      "rank": 1,
-     "odds": 4.0,
+     "odds": 1.5,
      "position": null,
      "result_time": null,
      "jockey": "菊池一",
@@ -5115,8 +5119,8 @@
      "prize_year": 525,
      "horse_class": "C1",
      "year_form": 5.5,
-     "place2": 0.4568,
-     "place3": 0.6288,
+     "place2": 0.4676,
+     "place3": 0.6397,
      "ability": 61.0,
      "insider_flag": false,
      "insider_label_details": [],
@@ -5268,23 +5272,24 @@
       }
      ],
      "place3_time_avg": 113.6,
-     "p_market": 0.2,
-     "win_prob_blend": 0.2507,
-     "ev": 1.0,
-     "ev_buy": true
+     "p_market": 0.5156,
+     "win_prob_blend": 0.4365,
+     "ev": 0.65,
+     "ev_buy": false,
+     "ev_streak": 0
     },
     {
      "num": 1,
      "name": "サクセスオーショウ",
-     "win_prob": 0.1903,
+     "win_prob": 0.1759,
      "rank": 2,
-     "odds": 4.0,
+     "odds": 17.3,
      "position": null,
      "result_time": null,
      "jockey": "金田利",
      "gate": 1,
      "sled_kg": 620.0,
-     "popularity": 1,
+     "popularity": 6,
      "age": 3,
      "sex": "牡",
      "trainer": "平田義（ばんえい）",
@@ -5298,8 +5303,8 @@
      "prize_year": 555,
      "horse_class": "C2",
      "year_form": 5.9,
-     "place2": 0.3697,
-     "place3": 0.5327,
+     "place2": 0.3456,
+     "place3": 0.5037,
      "ability": 64.4,
      "insider_flag": false,
      "insider_label_details": [],
@@ -5481,23 +5486,24 @@
       }
      ],
      "place3_time_avg": 121.1,
-     "p_market": 0.2,
-     "win_prob_blend": 0.2288,
-     "ev": 0.92,
-     "ev_buy": false
+     "p_market": 0.0447,
+     "win_prob_blend": 0.0783,
+     "ev": 1.35,
+     "ev_buy": true,
+     "ev_streak": 1
     },
     {
      "num": 5,
      "name": "リキ",
-     "win_prob": 0.1202,
+     "win_prob": 0.1277,
      "rank": 3,
-     "odds": 0.0,
+     "odds": 29.3,
      "position": null,
      "result_time": null,
      "jockey": "西将太",
      "gate": 5,
      "sled_kg": 620.0,
-     "popularity": 6,
+     "popularity": 8,
      "age": 3,
      "sex": "牡",
      "trainer": "村上慎（ばんえい）",
@@ -5511,8 +5517,8 @@
      "prize_year": 388,
      "horse_class": "C1",
      "year_form": 2.8,
-     "place2": 0.2454,
-     "place3": 0.3744,
+     "place2": 0.2594,
+     "place3": 0.3934,
      "ability": 60.8,
      "insider_flag": false,
      "insider_label_details": [],
@@ -5713,224 +5719,24 @@
       }
      ],
      "place3_time_avg": 120.7,
-     "p_market": null,
-     "win_prob_blend": null,
-     "ev": null,
-     "ev_buy": false
-    },
-    {
-     "num": 2,
-     "name": "ホクセイアサノヤマ",
-     "win_prob": 0.1098,
-     "rank": 4,
-     "odds": 4.0,
-     "position": null,
-     "result_time": null,
-     "jockey": "鈴木恵",
-     "gate": 2,
-     "sled_kg": 620.0,
-     "popularity": 1,
-     "age": 3,
-     "sex": "牡",
-     "trainer": "今井茂（ばんえい）",
-     "owner": "（有）竹内産業",
-     "elo": 1713,
-     "f_obstacle": 8.3,
-     "f_finish": 6.3,
-     "f_weight": 2.2,
-     "f_kuzure": 6.1,
-     "prize_program": 2061,
-     "prize_year": 462,
-     "horse_class": "C2",
-     "year_form": 4.3,
-     "place2": 0.2256,
-     "place3": 0.347,
-     "ability": 62.5,
-     "insider_flag": false,
-     "insider_label_details": [],
-     "sled_prev": 610.0,
-     "sled_diff": 10,
-     "jockey_record": [
-      4,
-      4,
-      1,
-      9
-     ],
-     "ren_n": 9,
-     "ren_time_avg": 113.3,
-     "ren_time_min": 83.6,
-     "ren_time_max": 157.4,
-     "ren_moist_avg": 2.1,
-     "past": [
-      {
-       "m": 0.9,
-       "p": 8,
-       "t": 124.1,
-       "wt": 106.1
-      },
-      {
-       "m": 2.4,
-       "p": 1,
-       "t": 108.5,
-       "wt": 108.5
-      },
-      {
-       "m": 1.5,
-       "p": 4,
-       "t": 132.1,
-       "wt": 118.2
-      },
-      {
-       "m": 3.2,
-       "p": 5,
-       "t": 105.5,
-       "wt": 97.9
-      },
-      {
-       "m": 0.9,
-       "p": 8,
-       "t": 154.2,
-       "wt": 131.6
-      },
-      {
-       "m": 1.6,
-       "p": 8,
-       "t": 144.0,
-       "wt": 121.0
-      },
-      {
-       "m": 0.7,
-       "p": 1,
-       "t": 127.5,
-       "wt": 127.5
-      },
-      {
-       "m": 1.6,
-       "p": 2,
-       "t": 130.3,
-       "wt": 127.5
-      },
-      {
-       "m": 0.8,
-       "p": 4,
-       "t": 145.2,
-       "wt": 136.1
-      },
-      {
-       "m": 1.9,
-       "p": 5,
-       "t": 107.8,
-       "wt": 101.3
-      },
-      {
-       "m": 2.8,
-       "p": 3,
-       "t": 116.5,
-       "wt": 112.8
-      },
-      {
-       "m": 1.8,
-       "p": 10,
-       "t": 128.4,
-       "wt": 103.2
-      },
-      {
-       "m": 2.1,
-       "p": 1,
-       "t": 102.1,
-       "wt": 102.1
-      },
-      {
-       "m": 2.4,
-       "p": 6,
-       "t": 118.0,
-       "wt": 109.4
-      },
-      {
-       "m": 3.1,
-       "p": 2,
-       "t": 101.4,
-       "wt": 100.4
-      },
-      {
-       "m": 3.3,
-       "p": 2,
-       "t": 113.5,
-       "wt": 105.3
-      },
-      {
-       "m": 2.5,
-       "p": 7,
-       "t": 122.5,
-       "wt": 109.4
-      },
-      {
-       "m": 1.0,
-       "p": 3,
-       "t": 95.8,
-       "wt": 93.7
-      },
-      {
-       "m": 2.0,
-       "p": 2,
-       "t": 83.6,
-       "wt": 82.5
-      },
-      {
-       "m": 1.0,
-       "p": 3,
-       "t": 132.5,
-       "wt": 115.2
-      },
-      {
-       "m": 1.8,
-       "p": 4,
-       "t": 99.3,
-       "wt": 87.1
-      },
-      {
-       "m": 2.0,
-       "p": 2,
-       "t": 95.5,
-       "wt": 93.7
-      },
-      {
-       "m": 1.5,
-       "p": 7,
-       "t": 140.6,
-       "wt": 116.9
-      },
-      {
-       "m": 2.2,
-       "p": 3,
-       "t": 145.3,
-       "wt": 129.2
-      },
-      {
-       "m": 1.7,
-       "p": 1,
-       "t": 157.4,
-       "wt": 157.4
-      }
-     ],
-     "place3_time_avg": 116.1,
-     "p_market": 0.2,
-     "win_prob_blend": 0.1888,
-     "ev": 0.76,
-     "ev_buy": false
+     "p_market": 0.0264,
+     "win_prob_blend": 0.0497,
+     "ev": 1.46,
+     "ev_buy": true,
+     "ev_streak": 1
     },
     {
      "num": 10,
      "name": "ツガルミサキ",
-     "win_prob": 0.0964,
-     "rank": 5,
-     "odds": 4.0,
+     "win_prob": 0.1015,
+     "rank": 4,
+     "odds": 8.8,
      "position": null,
      "result_time": null,
      "jockey": "今井千",
      "gate": 8,
      "sled_kg": 610.0,
-     "popularity": 1,
+     "popularity": 3,
      "age": 3,
      "sex": "牡",
      "trainer": "長部幸（ばんえい）",
@@ -5944,8 +5750,8 @@
      "prize_year": 822,
      "horse_class": "C1",
      "year_form": 9.4,
-     "place2": 0.1997,
-     "place3": 0.3101,
+     "place2": 0.2096,
+     "place3": 0.3242,
      "ability": 63.0,
      "insider_flag": false,
      "insider_label_details": [],
@@ -6139,23 +5945,226 @@
       }
      ],
      "place3_time_avg": 117.9,
-     "p_market": 0.2,
-     "win_prob_blend": 0.1803,
-     "ev": 0.72,
-     "ev_buy": false
+     "p_market": 0.0879,
+     "win_prob_blend": 0.1002,
+     "ev": 0.88,
+     "ev_buy": false,
+     "ev_streak": 0
+    },
+    {
+     "num": 2,
+     "name": "ホクセイアサノヤマ",
+     "win_prob": 0.1005,
+     "rank": 5,
+     "odds": 29.3,
+     "position": null,
+     "result_time": null,
+     "jockey": "鈴木恵",
+     "gate": 2,
+     "sled_kg": 620.0,
+     "popularity": 8,
+     "age": 3,
+     "sex": "牡",
+     "trainer": "今井茂（ばんえい）",
+     "owner": "（有）竹内産業",
+     "elo": 1713,
+     "f_obstacle": 8.3,
+     "f_finish": 6.3,
+     "f_weight": 2.2,
+     "f_kuzure": 6.1,
+     "prize_program": 2061,
+     "prize_year": 462,
+     "horse_class": "C2",
+     "year_form": 4.3,
+     "place2": 0.2077,
+     "place3": 0.3214,
+     "ability": 62.5,
+     "insider_flag": false,
+     "insider_label_details": [],
+     "sled_prev": 610.0,
+     "sled_diff": 10,
+     "jockey_record": [
+      4,
+      4,
+      1,
+      9
+     ],
+     "ren_n": 9,
+     "ren_time_avg": 113.3,
+     "ren_time_min": 83.6,
+     "ren_time_max": 157.4,
+     "ren_moist_avg": 2.1,
+     "past": [
+      {
+       "m": 0.9,
+       "p": 8,
+       "t": 124.1,
+       "wt": 106.1
+      },
+      {
+       "m": 2.4,
+       "p": 1,
+       "t": 108.5,
+       "wt": 108.5
+      },
+      {
+       "m": 1.5,
+       "p": 4,
+       "t": 132.1,
+       "wt": 118.2
+      },
+      {
+       "m": 3.2,
+       "p": 5,
+       "t": 105.5,
+       "wt": 97.9
+      },
+      {
+       "m": 0.9,
+       "p": 8,
+       "t": 154.2,
+       "wt": 131.6
+      },
+      {
+       "m": 1.6,
+       "p": 8,
+       "t": 144.0,
+       "wt": 121.0
+      },
+      {
+       "m": 0.7,
+       "p": 1,
+       "t": 127.5,
+       "wt": 127.5
+      },
+      {
+       "m": 1.6,
+       "p": 2,
+       "t": 130.3,
+       "wt": 127.5
+      },
+      {
+       "m": 0.8,
+       "p": 4,
+       "t": 145.2,
+       "wt": 136.1
+      },
+      {
+       "m": 1.9,
+       "p": 5,
+       "t": 107.8,
+       "wt": 101.3
+      },
+      {
+       "m": 2.8,
+       "p": 3,
+       "t": 116.5,
+       "wt": 112.8
+      },
+      {
+       "m": 1.8,
+       "p": 10,
+       "t": 128.4,
+       "wt": 103.2
+      },
+      {
+       "m": 2.1,
+       "p": 1,
+       "t": 102.1,
+       "wt": 102.1
+      },
+      {
+       "m": 2.4,
+       "p": 6,
+       "t": 118.0,
+       "wt": 109.4
+      },
+      {
+       "m": 3.1,
+       "p": 2,
+       "t": 101.4,
+       "wt": 100.4
+      },
+      {
+       "m": 3.3,
+       "p": 2,
+       "t": 113.5,
+       "wt": 105.3
+      },
+      {
+       "m": 2.5,
+       "p": 7,
+       "t": 122.5,
+       "wt": 109.4
+      },
+      {
+       "m": 1.0,
+       "p": 3,
+       "t": 95.8,
+       "wt": 93.7
+      },
+      {
+       "m": 2.0,
+       "p": 2,
+       "t": 83.6,
+       "wt": 82.5
+      },
+      {
+       "m": 1.0,
+       "p": 3,
+       "t": 132.5,
+       "wt": 115.2
+      },
+      {
+       "m": 1.8,
+       "p": 4,
+       "t": 99.3,
+       "wt": 87.1
+      },
+      {
+       "m": 2.0,
+       "p": 2,
+       "t": 95.5,
+       "wt": 93.7
+      },
+      {
+       "m": 1.5,
+       "p": 7,
+       "t": 140.6,
+       "wt": 116.9
+      },
+      {
+       "m": 2.2,
+       "p": 3,
+       "t": 145.3,
+       "wt": 129.2
+      },
+      {
+       "m": 1.7,
+       "p": 1,
+       "t": 157.4,
+       "wt": 157.4
+      }
+     ],
+     "place3_time_avg": 116.1,
+     "p_market": 0.0264,
+     "win_prob_blend": 0.0457,
+     "ev": 1.34,
+     "ev_buy": true,
+     "ev_streak": 1
     },
     {
      "num": 9,
      "name": "リアスコトブキ",
-     "win_prob": 0.0585,
+     "win_prob": 0.0622,
      "rank": 6,
-     "odds": 4.0,
+     "odds": 29.3,
      "position": null,
      "result_time": null,
      "jockey": "阿部武",
      "gate": 8,
      "sled_kg": 610.0,
-     "popularity": 1,
+     "popularity": 8,
      "age": 3,
      "sex": "セン",
      "trainer": "坂本東（ばんえい）",
@@ -6169,8 +6178,8 @@
      "prize_year": 447,
      "horse_class": "C1",
      "year_form": 4.1,
-     "place2": 0.1238,
-     "place3": 0.1973,
+     "place2": 0.1313,
+     "place3": 0.2088,
      "ability": 60.2,
      "insider_flag": false,
      "insider_label_details": [],
@@ -6364,23 +6373,24 @@
       }
      ],
      "place3_time_avg": 111.5,
-     "p_market": 0.2,
-     "win_prob_blend": 0.1514,
-     "ev": 0.61,
-     "ev_buy": false
+     "p_market": 0.0264,
+     "win_prob_blend": 0.0386,
+     "ev": 1.13,
+     "ev_buy": true,
+     "ev_streak": 1
     },
     {
      "num": 4,
      "name": "ブレイブハート",
-     "win_prob": 0.0474,
+     "win_prob": 0.0504,
      "rank": 7,
-     "odds": 0.0,
+     "odds": 7.3,
      "position": null,
      "result_time": null,
      "jockey": "西謙一",
      "gate": 4,
      "sled_kg": 620.0,
-     "popularity": 6,
+     "popularity": 2,
      "age": 3,
      "sex": "牡",
      "trainer": "槻舘重（ばんえい）",
@@ -6394,8 +6404,8 @@
      "prize_year": 507,
      "horse_class": "C2",
      "year_form": 5.2,
-     "place2": 0.1009,
-     "place3": 0.1619,
+     "place2": 0.1071,
+     "place3": 0.1715,
      "ability": 61.0,
      "insider_flag": false,
      "insider_label_details": [],
@@ -6589,23 +6599,24 @@
       }
      ],
      "place3_time_avg": 119.4,
-     "p_market": null,
-     "win_prob_blend": null,
-     "ev": null,
-     "ev_buy": false
+     "p_market": 0.1059,
+     "win_prob_blend": 0.0885,
+     "ev": 0.65,
+     "ev_buy": false,
+     "ev_streak": 0
     },
     {
      "num": 3,
      "name": "ヤマツネライン",
-     "win_prob": 0.0451,
+     "win_prob": 0.0489,
      "rank": 8,
-     "odds": 0.0,
+     "odds": 10.2,
      "position": null,
      "result_time": null,
      "jockey": "赤塚健",
      "gate": 3,
      "sled_kg": 600.0,
-     "popularity": 6,
+     "popularity": 4,
      "age": 3,
      "sex": "牝",
      "trainer": "村上慎（ばんえい）",
@@ -6619,8 +6630,8 @@
      "prize_year": 447,
      "horse_class": "C2",
      "year_form": 4.1,
-     "place2": 0.0961,
-     "place3": 0.1545,
+     "place2": 0.104,
+     "place3": 0.1667,
      "ability": 59.4,
      "insider_flag": false,
      "insider_label_details": [],
@@ -6820,23 +6831,24 @@
       }
      ],
      "place3_time_avg": 122.2,
-     "p_market": null,
-     "win_prob_blend": null,
-     "ev": null,
-     "ev_buy": false
+     "p_market": 0.0758,
+     "win_prob_blend": 0.0705,
+     "ev": 0.72,
+     "ev_buy": false,
+     "ev_streak": 0
     },
     {
      "num": 7,
      "name": "ホクセイタケコ",
-     "win_prob": 0.0442,
+     "win_prob": 0.04,
      "rank": 9,
-     "odds": 0.0,
+     "odds": 12.3,
      "position": null,
      "result_time": null,
      "jockey": "中原蓮",
      "gate": 7,
      "sled_kg": 600.0,
-     "popularity": 6,
+     "popularity": 5,
      "age": 3,
      "sex": "牝",
      "trainer": "藤本匠（ばんえい）",
@@ -6850,8 +6862,8 @@
      "prize_year": 351,
      "horse_class": "C2",
      "year_form": 1.9,
-     "place2": 0.0942,
-     "place3": 0.1515,
+     "place2": 0.0855,
+     "place3": 0.1377,
      "ability": 66.3,
      "insider_flag": false,
      "insider_label_details": [],
@@ -7034,23 +7046,24 @@
       }
      ],
      "place3_time_avg": 116.0,
-     "p_market": null,
-     "win_prob_blend": null,
-     "ev": null,
-     "ev_buy": false
+     "p_market": 0.0629,
+     "win_prob_blend": 0.0582,
+     "ev": 0.72,
+     "ev_buy": false,
+     "ev_streak": 0
     },
     {
      "num": 8,
      "name": "ワフラーム",
-     "win_prob": 0.0412,
+     "win_prob": 0.0385,
      "rank": 10,
-     "odds": 0.0,
+     "odds": 27.6,
      "position": null,
      "result_time": null,
      "jockey": "長澤幸",
      "gate": 7,
      "sled_kg": 600.0,
-     "popularity": 6,
+     "popularity": 7,
      "age": 3,
      "sex": "牝",
      "trainer": "服部義（ばんえい）",
@@ -7064,8 +7077,8 @@
      "prize_year": 618,
      "horse_class": "C2",
      "year_form": 6.9,
-     "place2": 0.088,
-     "place3": 0.1417,
+     "place2": 0.0823,
+     "place3": 0.1328,
      "ability": 63.0,
      "insider_flag": true,
      "insider_label_details": [
@@ -7278,16 +7291,13 @@
       }
      ],
      "place3_time_avg": 127.7,
-     "p_market": null,
-     "win_prob_blend": null,
-     "ev": null,
-     "ev_buy": false
+     "p_market": 0.028,
+     "win_prob_blend": 0.0339,
+     "ev": 0.94,
+     "ev_buy": false,
+     "ev_streak": 0
     }
-   ],
-   "track_offset": -4.9,
-   "track_z": 0.52,
-   "track_label": "標準",
-   "track_n": 3
+   ]
   },
   {
    "date": "2026-09-06",
