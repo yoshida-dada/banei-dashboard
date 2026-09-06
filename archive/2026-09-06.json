@@ -1,6 +1,6 @@
 {
  "date": "2026-09-06",
- "archived_at": "2026-09-06 15:32",
+ "archived_at": "2026-09-06 15:34",
  "races": [
   {
    "date": "2026-09-06",
@@ -3314,14 +3314,14 @@
    "market_fav": 7,
    "winner": null,
    "update_stage": "evscan",
-   "updated_at": "2026-09-06 15:32",
+   "updated_at": "2026-09-06 15:34",
    "horses": [
     {
      "num": 10,
      "name": "キョウドノホシ",
      "win_prob": 0.3125,
      "rank": 1,
-     "odds": 3.7,
+     "odds": 3.8,
      "position": null,
      "result_time": null,
      "jockey": "鈴木恵",
@@ -3398,9 +3398,9 @@
       }
      ],
      "place3_time_avg": 109.0,
-     "p_market": 0.2138,
-     "win_prob_blend": 0.2646,
-     "ev": 0.98,
+     "p_market": 0.2084,
+     "win_prob_blend": 0.2603,
+     "ev": 0.99,
      "ev_buy": false,
      "ev_streak": 0
     },
@@ -3486,11 +3486,11 @@
       }
      ],
      "place3_time_avg": 134.1,
-     "p_market": 0.0931,
-     "win_prob_blend": 0.1358,
-     "ev": 1.15,
+     "p_market": 0.0932,
+     "win_prob_blend": 0.136,
+     "ev": 1.16,
      "ev_buy": true,
-     "ev_streak": 1
+     "ev_streak": 2
     },
     {
      "num": 5,
@@ -3550,8 +3550,8 @@
       }
      ],
      "place3_time_avg": 139.9,
-     "p_market": 0.1069,
-     "win_prob_blend": 0.1261,
+     "p_market": 0.107,
+     "win_prob_blend": 0.1263,
      "ev": 0.93,
      "ev_buy": false,
      "ev_streak": 0
@@ -3561,7 +3561,7 @@
      "name": "キタノキボウ",
      "win_prob": 0.1233,
      "rank": 4,
-     "odds": 7.5,
+     "odds": 7.6,
      "position": null,
      "result_time": null,
      "jockey": "渡来心",
@@ -3609,8 +3609,8 @@
       }
      ],
      "place3_time_avg": 144.6,
-     "p_market": 0.1055,
-     "win_prob_blend": 0.1207,
+     "p_market": 0.1042,
+     "win_prob_blend": 0.1198,
      "ev": 0.91,
      "ev_buy": false,
      "ev_streak": 0
@@ -3620,7 +3620,7 @@
      "name": "パリスウンカイ",
      "win_prob": 0.0663,
      "rank": 5,
-     "odds": 15.5,
+     "odds": 14.3,
      "position": null,
      "result_time": null,
      "jockey": "中村太",
@@ -3685,9 +3685,9 @@
       }
      ],
      "place3_time_avg": 132.7,
-     "p_market": 0.051,
-     "win_prob_blend": 0.0606,
-     "ev": 0.94,
+     "p_market": 0.0554,
+     "win_prob_blend": 0.0639,
+     "ev": 0.91,
      "ev_buy": false,
      "ev_streak": 0
     },
@@ -3696,7 +3696,7 @@
      "name": "ガッツデー",
      "win_prob": 0.0364,
      "rank": 6,
-     "odds": 16.6,
+     "odds": 16.1,
      "position": null,
      "result_time": null,
      "jockey": "赤塚健",
@@ -3773,9 +3773,9 @@
       }
      ],
      "place3_time_avg": 106.1,
-     "p_market": 0.0477,
-     "win_prob_blend": 0.047,
-     "ev": 0.78,
+     "p_market": 0.0492,
+     "win_prob_blend": 0.048,
+     "ev": 0.77,
      "ev_buy": false,
      "ev_streak": 0
     },
@@ -3867,8 +3867,8 @@
       }
      ],
      "place3_time_avg": 116.9,
-     "p_market": 0.2552,
-     "win_prob_blend": 0.1313,
+     "p_market": 0.2555,
+     "win_prob_blend": 0.1315,
      "ev": 0.41,
      "ev_buy": false,
      "ev_streak": 0
@@ -3878,7 +3878,7 @@
      "name": "ヌサマイサンセット",
      "win_prob": 0.0298,
      "rank": 8,
-     "odds": 24.0,
+     "odds": 23.4,
      "position": null,
      "result_time": null,
      "jockey": "菊池一",
@@ -3949,9 +3949,9 @@
       }
      ],
      "place3_time_avg": 132.7,
-     "p_market": 0.033,
-     "win_prob_blend": 0.0345,
-     "ev": 0.83,
+     "p_market": 0.0338,
+     "win_prob_blend": 0.0351,
+     "ev": 0.82,
      "ev_buy": false,
      "ev_streak": 0
     },
@@ -3960,7 +3960,7 @@
      "name": "イワキフィニティー",
      "win_prob": 0.0272,
      "rank": 9,
-     "odds": 12.3,
+     "odds": 12.4,
      "position": null,
      "result_time": null,
      "jockey": "今井千",
@@ -4032,9 +4032,9 @@
       }
      ],
      "place3_time_avg": 123.8,
-     "p_market": 0.0643,
-     "win_prob_blend": 0.0516,
-     "ev": 0.63,
+     "p_market": 0.0639,
+     "win_prob_blend": 0.0514,
+     "ev": 0.64,
      "ev_buy": false,
      "ev_streak": 0
     },
@@ -4121,7 +4121,7 @@
      ],
      "place3_time_avg": 123.7,
      "p_market": 0.0294,
-     "win_prob_blend": 0.0277,
+     "win_prob_blend": 0.0278,
      "ev": 0.75,
      "ev_buy": false,
      "ev_streak": 0
