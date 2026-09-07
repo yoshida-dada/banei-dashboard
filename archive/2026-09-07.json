@@ -1,6 +1,6 @@
 {
  "date": "2026-09-07",
- "archived_at": "2026-09-07 17:06",
+ "archived_at": "2026-09-07 17:08",
  "races": [
   {
    "date": "2026-09-07",
@@ -5466,8 +5466,8 @@
    "predicted_top": 9,
    "market_fav": 9,
    "winner": null,
-   "update_stage": "evscan",
-   "updated_at": "2026-09-07 17:06",
+   "update_stage": "odds",
+   "updated_at": "2026-09-07 17:08",
    "horses": [
     {
      "num": 9,
@@ -7483,7 +7483,18 @@
      "win_prob_blend": 0.0312,
      "ev": 1.01,
      "ev_buy": true,
-     "ev_streak": 2
+     "ev_streak": 3
+    }
+   ],
+   "bets": [
+    {
+     "bet_type": "win",
+     "bet_type_jp": "単勝",
+     "combo": "7",
+     "odds": 45.8,
+     "ev": 1.51,
+     "prob": 0.0412,
+     "stake": 3000
     }
    ]
   },
