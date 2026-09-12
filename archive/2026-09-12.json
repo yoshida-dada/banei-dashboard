@@ -4234,7 +4234,11 @@
      "payout": 134870,
      "popularity": 434
     }
-   ]
+   ],
+   "track_offset": -3.9,
+   "track_z": 0.86,
+   "track_label": "重",
+   "track_n": 2
   },
   {
    "date": "2026-09-12",
@@ -4249,14 +4253,14 @@
    "market_fav": 1,
    "winner": null,
    "update_stage": "evscan",
-   "updated_at": "2026-09-12 16:14",
+   "updated_at": "2026-09-12 16:16",
    "horses": [
     {
      "num": 4,
      "name": "サカノブラック",
      "win_prob": 0.294,
      "rank": 1,
-     "odds": 3.6,
+     "odds": 3.8,
      "position": null,
      "result_time": null,
      "jockey": "西将太",
@@ -4339,9 +4343,9 @@
       }
      ],
      "place3_time_avg": 126.2,
-     "p_market": 0.2193,
-     "win_prob_blend": 0.263,
-     "ev": 0.95,
+     "p_market": 0.2069,
+     "win_prob_blend": 0.2538,
+     "ev": 0.96,
      "ev_buy": false,
      "ev_streak": 0
     },
@@ -4433,7 +4437,7 @@
       }
      ],
      "place3_time_avg": 104.8,
-     "p_market": 0.3158,
+     "p_market": 0.3145,
      "win_prob_blend": 0.2778,
      "ev": 0.69,
      "ev_buy": false,
@@ -4503,7 +4507,7 @@
       }
      ],
      "place3_time_avg": 128.2,
-     "p_market": 0.1462,
+     "p_market": 0.1456,
      "win_prob_blend": 0.1598,
      "ev": 0.86,
      "ev_buy": false,
@@ -4514,7 +4518,7 @@
      "name": "ヒノクニゴールド",
      "win_prob": 0.1207,
      "rank": 4,
-     "odds": 29.9,
+     "odds": 28.3,
      "position": null,
      "result_time": null,
      "jockey": "林康文",
@@ -4574,9 +4578,9 @@
       }
      ],
      "place3_time_avg": 139.5,
-     "p_market": 0.0264,
-     "win_prob_blend": 0.0486,
-     "ev": 1.45,
+     "p_market": 0.0278,
+     "win_prob_blend": 0.0504,
+     "ev": 1.43,
      "ev_buy": true,
      "ev_streak": 3
     },
@@ -4679,7 +4683,7 @@
      "name": "シンエイライデン",
      "win_prob": 0.0427,
      "rank": 6,
-     "odds": 13.9,
+     "odds": 14.4,
      "position": null,
      "result_time": null,
      "jockey": "赤塚健",
@@ -4756,9 +4760,9 @@
       }
      ],
      "place3_time_avg": 137.2,
-     "p_market": 0.0568,
-     "win_prob_blend": 0.0556,
-     "ev": 0.77,
+     "p_market": 0.0546,
+     "win_prob_blend": 0.0543,
+     "ev": 0.78,
      "ev_buy": false,
      "ev_streak": 0
     },
@@ -4767,7 +4771,7 @@
      "name": "クリスタルカイオー",
      "win_prob": 0.0356,
      "rank": 7,
-     "odds": 10.0,
+     "odds": 9.9,
      "position": null,
      "result_time": null,
      "jockey": "鈴木恵",
@@ -4856,9 +4860,9 @@
       }
      ],
      "place3_time_avg": 135.1,
-     "p_market": 0.0789,
-     "win_prob_blend": 0.0646,
-     "ev": 0.65,
+     "p_market": 0.0794,
+     "win_prob_blend": 0.0651,
+     "ev": 0.64,
      "ev_buy": false,
      "ev_streak": 0
     },
@@ -4867,13 +4871,13 @@
      "name": "フジゴーリキ",
      "win_prob": 0.031,
      "rank": 8,
-     "odds": 12.8,
+     "odds": 13.4,
      "position": null,
      "result_time": null,
      "jockey": "中原蓮",
      "gate": 8,
      "sled_kg": 510.0,
-     "popularity": 5,
+     "popularity": 6,
      "age": 2,
      "sex": "牡",
      "trainer": "西弘美（ばんえい）",
@@ -4962,9 +4966,9 @@
       }
      ],
      "place3_time_avg": 130.6,
-     "p_market": 0.0617,
-     "win_prob_blend": 0.0525,
-     "ev": 0.67,
+     "p_market": 0.0587,
+     "win_prob_blend": 0.0509,
+     "ev": 0.68,
      "ev_buy": false,
      "ev_streak": 0
     },
@@ -4973,7 +4977,7 @@
      "name": "キラキラトレイン",
      "win_prob": 0.023,
      "rank": 9,
-     "odds": 22.8,
+     "odds": 16.4,
      "position": null,
      "result_time": null,
      "jockey": "長澤幸",
@@ -5056,9 +5060,9 @@
       }
      ],
      "place3_time_avg": 122.8,
-     "p_market": 0.0346,
-     "win_prob_blend": 0.0325,
-     "ev": 0.74,
+     "p_market": 0.0479,
+     "win_prob_blend": 0.0402,
+     "ev": 0.66,
      "ev_buy": false,
      "ev_streak": 0
     },
@@ -5067,13 +5071,13 @@
      "name": "ヒメトラハピネス",
      "win_prob": 0.0216,
      "rank": 10,
-     "odds": 13.1,
+     "odds": 12.2,
      "position": null,
      "result_time": null,
      "jockey": "大友一",
      "gate": 5,
      "sled_kg": 490.0,
-     "popularity": 6,
+     "popularity": 5,
      "age": 2,
      "sex": "牝",
      "trainer": "大友人（ばんえい）",
@@ -5156,17 +5160,13 @@
       }
      ],
      "place3_time_avg": 131.7,
-     "p_market": 0.0603,
-     "win_prob_blend": 0.0455,
-     "ev": 0.6,
+     "p_market": 0.0645,
+     "win_prob_blend": 0.0477,
+     "ev": 0.58,
      "ev_buy": false,
      "ev_streak": 0
     }
-   ],
-   "track_offset": 0.4,
-   "track_z": 1.59,
-   "track_label": "重",
-   "track_n": 3
+   ]
   },
   {
    "date": "2026-09-12",
