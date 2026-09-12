@@ -1,6 +1,6 @@
 {
  "date": "2026-09-12",
- "archived_at": "2026-09-12 15:41",
+ "archived_at": "2026-09-12 15:42",
  "races": [
   {
    "date": "2026-09-12",
@@ -3222,7 +3222,7 @@
    "market_fav": 4,
    "winner": null,
    "update_stage": "evscan",
-   "updated_at": "2026-09-12 15:40",
+   "updated_at": "2026-09-12 15:42",
    "horses": [
     {
      "num": 2,
@@ -3416,7 +3416,7 @@
      "win_prob_blend": 0.1224,
      "ev": 1.02,
      "ev_buy": true,
-     "ev_streak": 1
+     "ev_streak": 2
     },
     {
      "num": 7,
@@ -3694,7 +3694,7 @@
      "win_prob_blend": 0.0589,
      "ev": 1.21,
      "ev_buy": true,
-     "ev_streak": 2
+     "ev_streak": 3
     },
     {
      "num": 1,
@@ -4155,11 +4155,7 @@
      "ev_buy": false,
      "ev_streak": 0
     }
-   ],
-   "track_offset": -3.9,
-   "track_z": 0.86,
-   "track_label": "重",
-   "track_n": 2
+   ]
   },
   {
    "date": "2026-09-12",
