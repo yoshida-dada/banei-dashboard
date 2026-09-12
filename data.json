@@ -14,14 +14,14 @@
    "market_fav": 3,
    "winner": null,
    "update_stage": "evscan",
-   "updated_at": "2026-09-12 14:35",
+   "updated_at": "2026-09-12 14:37",
    "horses": [
     {
      "num": 1,
      "name": "マキシゴールド",
      "win_prob": 0.2277,
      "rank": 1,
-     "odds": 12.2,
+     "odds": 12.8,
      "position": null,
      "result_time": null,
      "jockey": "臼杵龍",
@@ -236,9 +236,9 @@
       }
      ],
      "place3_time_avg": 129.7,
-     "p_market": 0.065,
-     "win_prob_blend": 0.105,
-     "ev": 1.28,
+     "p_market": 0.0619,
+     "win_prob_blend": 0.102,
+     "ev": 1.31,
      "ev_buy": true,
      "ev_streak": 3
     },
@@ -432,8 +432,8 @@
       }
      ],
      "place3_time_avg": 133.7,
-     "p_market": 0.2733,
-     "win_prob_blend": 0.2381,
+     "p_market": 0.2731,
+     "win_prob_blend": 0.2385,
      "ev": 0.69,
      "ev_buy": false,
      "ev_streak": 0
@@ -443,7 +443,7 @@
      "name": "チェルシーヴォラ",
      "win_prob": 0.1452,
      "rank": 3,
-     "odds": 3.6,
+     "odds": 3.4,
      "position": null,
      "result_time": null,
      "jockey": "阿部優",
@@ -676,9 +676,9 @@
       }
      ],
      "place3_time_avg": 129.9,
-     "p_market": 0.2202,
-     "win_prob_blend": 0.1983,
-     "ev": 0.71,
+     "p_market": 0.233,
+     "win_prob_blend": 0.2062,
+     "ev": 0.7,
      "ev_buy": false,
      "ev_streak": 0
     },
@@ -687,7 +687,7 @@
      "name": "クリスタルクロリス",
      "win_prob": 0.1086,
      "rank": 4,
-     "odds": 11.0,
+     "odds": 11.1,
      "position": null,
      "result_time": null,
      "jockey": "菊池一",
@@ -819,9 +819,9 @@
       }
      ],
      "place3_time_avg": 128.8,
-     "p_market": 0.0721,
-     "win_prob_blend": 0.0867,
-     "ev": 0.95,
+     "p_market": 0.0714,
+     "win_prob_blend": 0.0863,
+     "ev": 0.96,
      "ev_buy": false,
      "ev_streak": 0
     },
@@ -1034,7 +1034,7 @@
      ],
      "place3_time_avg": 120.7,
      "p_market": 0.0472,
-     "win_prob_blend": 0.064,
+     "win_prob_blend": 0.0641,
      "ev": 1.08,
      "ev_buy": true,
      "ev_streak": 3
@@ -1248,7 +1248,7 @@
      ],
      "place3_time_avg": 121.9,
      "p_market": 0.1278,
-     "win_prob_blend": 0.1145,
+     "win_prob_blend": 0.1147,
      "ev": 0.71,
      "ev_buy": false,
      "ev_streak": 0
@@ -1258,7 +1258,7 @@
      "name": "トウマオー",
      "win_prob": 0.07,
      "rank": 7,
-     "odds": 9.0,
+     "odds": 9.4,
      "position": null,
      "result_time": null,
      "jockey": "長澤幸",
@@ -1504,9 +1504,9 @@
       }
      ],
      "place3_time_avg": 131.0,
-     "p_market": 0.0881,
-     "win_prob_blend": 0.0847,
-     "ev": 0.76,
+     "p_market": 0.0843,
+     "win_prob_blend": 0.0825,
+     "ev": 0.78,
      "ev_buy": false,
      "ev_streak": 0
     },
@@ -1515,7 +1515,7 @@
      "name": "ツガルキンフジ",
      "win_prob": 0.0351,
      "rank": 8,
-     "odds": 24.8,
+     "odds": 25.0,
      "position": null,
      "result_time": null,
      "jockey": "中村太",
@@ -1707,9 +1707,9 @@
       }
      ],
      "place3_time_avg": 122.4,
-     "p_market": 0.032,
-     "win_prob_blend": 0.0344,
-     "ev": 0.85,
+     "p_market": 0.0317,
+     "win_prob_blend": 0.0343,
+     "ev": 0.86,
      "ev_buy": false,
      "ev_streak": 0
     },
@@ -1718,7 +1718,7 @@
      "name": "ツカサコタロウ",
      "win_prob": 0.0344,
      "rank": 9,
-     "odds": 25.1,
+     "odds": 26.8,
      "position": null,
      "result_time": null,
      "jockey": "中原蓮",
@@ -1945,9 +1945,9 @@
       }
      ],
      "place3_time_avg": 131.3,
-     "p_market": 0.0316,
-     "win_prob_blend": 0.0339,
-     "ev": 0.85,
+     "p_market": 0.0296,
+     "win_prob_blend": 0.0326,
+     "ev": 0.87,
      "ev_buy": false,
      "ev_streak": 0
     },
@@ -1956,7 +1956,7 @@
      "name": "クリスタルアイドル",
      "win_prob": 0.0321,
      "rank": 10,
-     "odds": 18.5,
+     "odds": 19.7,
      "position": null,
      "result_time": null,
      "jockey": "西将太",
@@ -2177,9 +2177,9 @@
       }
      ],
      "place3_time_avg": 137.1,
-     "p_market": 0.0428,
-     "win_prob_blend": 0.0404,
-     "ev": 0.75,
+     "p_market": 0.0402,
+     "win_prob_blend": 0.0388,
+     "ev": 0.76,
      "ev_buy": false,
      "ev_streak": 0
     }
