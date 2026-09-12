@@ -1,6 +1,6 @@
 {
  "date": "2026-09-12",
- "archived_at": "2026-09-12 15:11",
+ "archived_at": "2026-09-12 15:13",
  "races": [
   {
    "date": "2026-09-12",
@@ -2277,8 +2277,8 @@
    "predicted_top": 3,
    "market_fav": 3,
    "winner": null,
-   "update_stage": "evscan",
-   "updated_at": "2026-09-12 15:11",
+   "update_stage": "odds",
+   "updated_at": "2026-09-12 15:13",
    "horses": [
     {
      "num": 3,
@@ -3128,7 +3128,8 @@
      "ev_buy": false,
      "ev_streak": 0
     }
-   ]
+   ],
+   "bets": []
   },
   {
    "date": "2026-09-12",
