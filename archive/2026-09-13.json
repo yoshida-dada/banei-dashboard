@@ -1,6 +1,6 @@
 {
  "date": "2026-09-13",
- "archived_at": "2026-09-13 18:46",
+ "archived_at": "2026-09-13 18:47",
  "races": [
   {
    "date": "2026-09-13",
@@ -19138,7 +19138,11 @@
      "payout": 970,
      "popularity": 1
     }
-   ]
+   ],
+   "track_offset": -8.2,
+   "track_z": -0.01,
+   "track_label": "標準",
+   "track_n": 7
   },
   {
    "date": "2026-09-13",
@@ -19153,7 +19157,7 @@
    "market_fav": 3,
    "winner": null,
    "update_stage": "evscan",
-   "updated_at": "2026-09-13 18:45",
+   "updated_at": "2026-09-13 18:47",
    "horses": [
     {
      "num": 3,
@@ -19651,8 +19655,8 @@
       }
      ],
      "place3_time_avg": 113.8,
-     "p_market": 0.6117,
-     "win_prob_blend": 0.5374,
+     "p_market": 0.6119,
+     "win_prob_blend": 0.5376,
      "ev": 0.7,
      "ev_buy": false,
      "ev_streak": 0
@@ -20148,10 +20152,10 @@
      ],
      "place3_time_avg": 111.4,
      "p_market": 0.0552,
-     "win_prob_blend": 0.0755,
+     "win_prob_blend": 0.0756,
      "ev": 1.09,
      "ev_buy": true,
-     "ev_streak": 1
+     "ev_streak": 2
     },
     {
      "num": 9,
@@ -21265,7 +21269,7 @@
       }
      ],
      "place3_time_avg": 107.5,
-     "p_market": 0.0935,
+     "p_market": 0.0936,
      "win_prob_blend": 0.1003,
      "ev": 0.85,
      "ev_buy": false,
@@ -21276,7 +21280,7 @@
      "name": "タイタス",
      "win_prob": 0.0935,
      "rank": 5,
-     "odds": 21.3,
+     "odds": 21.4,
      "position": null,
      "result_time": null,
      "jockey": "渡来心",
@@ -21839,11 +21843,11 @@
       }
      ],
      "place3_time_avg": 110.8,
-     "p_market": 0.0373,
-     "win_prob_blend": 0.0546,
-     "ev": 1.16,
+     "p_market": 0.0372,
+     "win_prob_blend": 0.0545,
+     "ev": 1.17,
      "ev_buy": true,
-     "ev_streak": 2
+     "ev_streak": 3
     },
     {
      "num": 7,
@@ -22467,7 +22471,7 @@
      "name": "タンジロウ",
      "win_prob": 0.0573,
      "rank": 7,
-     "odds": 27.7,
+     "odds": 27.8,
      "position": null,
      "result_time": null,
      "jockey": "長澤幸",
@@ -23091,11 +23095,11 @@
       }
      ],
      "place3_time_avg": 112.5,
-     "p_market": 0.0287,
-     "win_prob_blend": 0.0388,
-     "ev": 1.07,
+     "p_market": 0.0286,
+     "win_prob_blend": 0.0387,
+     "ev": 1.08,
      "ev_buy": true,
-     "ev_streak": 1
+     "ev_streak": 2
     },
     {
      "num": 5,
@@ -23538,7 +23542,7 @@
      "name": "サダノブラボー",
      "win_prob": 0.0284,
      "rank": 9,
-     "odds": 61.7,
+     "odds": 62.0,
      "position": null,
      "result_time": null,
      "jockey": "松本秀",
@@ -24113,18 +24117,18 @@
       }
      ],
      "place3_time_avg": 114.9,
-     "p_market": 0.0129,
+     "p_market": 0.0128,
      "win_prob_blend": 0.018,
      "ev": 1.11,
      "ev_buy": true,
-     "ev_streak": 1
+     "ev_streak": 2
     },
     {
      "num": 1,
      "name": "ミヤビウルフ",
      "win_prob": 0.0255,
      "rank": 10,
-     "odds": 73.0,
+     "odds": 73.3,
      "position": null,
      "result_time": null,
      "jockey": "中村太",
@@ -24634,16 +24638,12 @@
      ],
      "place3_time_avg": 113.6,
      "p_market": 0.0109,
-     "win_prob_blend": 0.0156,
+     "win_prob_blend": 0.0155,
      "ev": 1.14,
      "ev_buy": true,
-     "ev_streak": 1
+     "ev_streak": 2
     }
-   ],
-   "track_offset": -8.1,
-   "track_z": 0.01,
-   "track_label": "標準",
-   "track_n": 8
+   ]
   },
   {
    "date": "2026-09-13",
