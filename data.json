@@ -75974,8 +75974,8 @@
    "predicted_top": 2,
    "market_fav": 2,
    "winner": null,
-   "update_stage": "evscan",
-   "updated_at": "2026-09-14 17:06",
+   "update_stage": "odds",
+   "updated_at": "2026-09-14 17:08",
    "horses": [
     {
      "num": 2,
@@ -77869,7 +77869,7 @@
      "win_prob_blend": 0.033,
      "ev": 1.01,
      "ev_buy": true,
-     "ev_streak": 1
+     "ev_streak": 2
     },
     {
      "num": 1,
@@ -78913,9 +78913,10 @@
      "win_prob_blend": 0.0184,
      "ev": 1.06,
      "ev_buy": true,
-     "ev_streak": 1
+     "ev_streak": 2
     }
    ],
+   "bets": [],
    "track_offset": -21.2,
    "track_z": -2.53,
    "track_label": "軽",
