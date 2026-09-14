@@ -1,6 +1,6 @@
 {
  "date": "2026-09-14",
- "archived_at": "2026-09-14 20:26",
+ "archived_at": "2026-09-14 20:28",
  "races": [
   {
    "date": "2026-09-14",
@@ -29786,8 +29786,8 @@
    "predicted_top": 2,
    "market_fav": 9,
    "winner": null,
-   "update_stage": "evscan",
-   "updated_at": "2026-09-14 20:26",
+   "update_stage": "odds",
+   "updated_at": "2026-09-14 20:28",
    "horses": [
     {
      "num": 2,
@@ -32549,7 +32549,7 @@
      "win_prob_blend": 0.0631,
      "ev": 1.05,
      "ev_buy": true,
-     "ev_streak": 2
+     "ev_streak": 3
     },
     {
      "num": 7,
@@ -35381,6 +35381,17 @@
      "ev": 1.16,
      "ev_buy": true,
      "ev_streak": 3
+    }
+   ],
+   "bets": [
+    {
+     "bet_type": "wide",
+     "bet_type_jp": "ワイド",
+     "combo": "1-9",
+     "odds": 27.7,
+     "ev": 1.38,
+     "prob": 0.0623,
+     "stake": 3000
     }
    ]
   }
