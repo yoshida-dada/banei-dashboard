@@ -1,6 +1,6 @@
 {
  "date": "2026-09-14",
- "archived_at": "2026-09-14 16:06",
+ "archived_at": "2026-09-14 16:08",
  "races": [
   {
    "date": "2026-09-14",
@@ -4128,8 +4128,8 @@
    "predicted_top": 4,
    "market_fav": 4,
    "winner": null,
-   "update_stage": "evscan",
-   "updated_at": "2026-09-14 16:06",
+   "update_stage": "odds",
+   "updated_at": "2026-09-14 16:08",
    "horses": [
     {
      "num": 4,
@@ -4231,9 +4231,9 @@
       }
      ],
      "place3_time_avg": 122.3,
-     "p_market": 0.2721,
-     "win_prob_blend": 0.2768,
-     "ev": 0.8,
+     "p_market": 0.2736,
+     "win_prob_blend": 0.2776,
+     "ev": 0.81,
      "ev_buy": false,
      "ev_streak": 0
     },
@@ -4242,7 +4242,7 @@
      "name": "トップラン",
      "win_prob": 0.1909,
      "rank": 2,
-     "odds": 18.1,
+     "odds": 18.0,
      "position": null,
      "result_time": null,
      "jockey": "村上章",
@@ -4313,8 +4313,8 @@
       }
      ],
      "place3_time_avg": 130.4,
-     "p_market": 0.0436,
-     "win_prob_blend": 0.0774,
+     "p_market": 0.0441,
+     "win_prob_blend": 0.0779,
      "ev": 1.4,
      "ev_buy": true,
      "ev_streak": 3
@@ -4324,7 +4324,7 @@
      "name": "ジュエリー",
      "win_prob": 0.123,
      "rank": 3,
-     "odds": 34.8,
+     "odds": 34.9,
      "position": null,
      "result_time": null,
      "jockey": "大友一",
@@ -4386,7 +4386,7 @@
      "place3_time_avg": 132.8,
      "p_market": 0.0227,
      "win_prob_blend": 0.0434,
-     "ev": 1.51,
+     "ev": 1.52,
      "ev_buy": true,
      "ev_streak": 3
     },
@@ -4395,7 +4395,7 @@
      "name": "ヌサマイサンセット",
      "win_prob": 0.1091,
      "rank": 4,
-     "odds": 3.7,
+     "odds": 3.8,
      "position": null,
      "result_time": null,
      "jockey": "菊池一",
@@ -4472,9 +4472,9 @@
       }
      ],
      "place3_time_avg": 121.9,
-     "p_market": 0.2133,
-     "win_prob_blend": 0.1786,
-     "ev": 0.66,
+     "p_market": 0.2088,
+     "win_prob_blend": 0.176,
+     "ev": 0.67,
      "ev_buy": false,
      "ev_streak": 0
     },
@@ -4578,8 +4578,8 @@
       }
      ],
      "place3_time_avg": 118.1,
-     "p_market": 0.0951,
-     "win_prob_blend": 0.0985,
+     "p_market": 0.0956,
+     "win_prob_blend": 0.0988,
      "ev": 0.82,
      "ev_buy": false,
      "ev_streak": 0
@@ -4678,8 +4678,8 @@
       }
      ],
      "place3_time_avg": 137.3,
-     "p_market": 0.0887,
-     "win_prob_blend": 0.0868,
+     "p_market": 0.0892,
+     "win_prob_blend": 0.0871,
      "ev": 0.77,
      "ev_buy": false,
      "ev_streak": 0
@@ -4779,9 +4779,9 @@
       }
      ],
      "place3_time_avg": 119.1,
-     "p_market": 0.1253,
-     "win_prob_blend": 0.1006,
-     "ev": 0.63,
+     "p_market": 0.126,
+     "win_prob_blend": 0.1009,
+     "ev": 0.64,
      "ev_buy": false,
      "ev_streak": 0
     },
@@ -4790,7 +4790,7 @@
      "name": "キョウエイギンガ",
      "win_prob": 0.051,
      "rank": 8,
-     "odds": 16.7,
+     "odds": 16.5,
      "position": null,
      "result_time": null,
      "jockey": "臼杵龍",
@@ -4891,8 +4891,8 @@
       }
      ],
      "place3_time_avg": 120.5,
-     "p_market": 0.0473,
-     "win_prob_blend": 0.0514,
+     "p_market": 0.0481,
+     "win_prob_blend": 0.0519,
      "ev": 0.86,
      "ev_buy": false,
      "ev_streak": 0
@@ -4902,7 +4902,7 @@
      "name": "スーパータケル",
      "win_prob": 0.0443,
      "rank": 9,
-     "odds": 11.5,
+     "odds": 11.6,
      "position": null,
      "result_time": null,
      "jockey": "中村太",
@@ -4991,8 +4991,8 @@
       }
      ],
      "place3_time_avg": 129.6,
-     "p_market": 0.0686,
-     "win_prob_blend": 0.0623,
+     "p_market": 0.0684,
+     "win_prob_blend": 0.0622,
      "ev": 0.72,
      "ev_buy": false,
      "ev_streak": 0
@@ -5079,11 +5079,31 @@
       }
      ],
      "place3_time_avg": 123.9,
-     "p_market": 0.0233,
-     "win_prob_blend": 0.0241,
+     "p_market": 0.0235,
+     "win_prob_blend": 0.0242,
      "ev": 0.82,
      "ev_buy": false,
      "ev_streak": 0
+    }
+   ],
+   "bets": [
+    {
+     "bet_type": "wide",
+     "bet_type_jp": "ワイド",
+     "combo": "3-4",
+     "odds": 20.7,
+     "ev": 1.68,
+     "prob": 0.1017,
+     "stake": 2400
+    },
+    {
+     "bet_type": "win",
+     "bet_type_jp": "単勝",
+     "combo": "1",
+     "odds": 48.1,
+     "ev": 1.36,
+     "prob": 0.0355,
+     "stake": 600
     }
    ]
   },
