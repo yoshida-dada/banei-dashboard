@@ -1,6 +1,6 @@
 {
  "date": "2026-09-19",
- "archived_at": "2026-09-19 19:26",
+ "archived_at": "2026-09-19 19:28",
  "races": [
   {
    "date": "2026-09-19",
@@ -19116,15 +19116,15 @@
    "predicted_top": 10,
    "market_fav": 10,
    "winner": null,
-   "update_stage": "evscan",
-   "updated_at": "2026-09-19 19:26",
+   "update_stage": "odds",
+   "updated_at": "2026-09-19 19:28",
    "horses": [
     {
      "num": 10,
      "name": "ジェイエクスプレス",
      "win_prob": 0.3497,
      "rank": 1,
-     "odds": 1.8,
+     "odds": 1.9,
      "position": null,
      "result_time": null,
      "jockey": "金田利",
@@ -19507,9 +19507,9 @@
       }
      ],
      "place3_time_avg": 112.4,
-     "p_market": 0.4345,
-     "win_prob_blend": 0.4159,
-     "ev": 0.75,
+     "p_market": 0.4165,
+     "win_prob_blend": 0.4045,
+     "ev": 0.77,
      "ev_buy": false,
      "ev_streak": 0
     },
@@ -19518,7 +19518,7 @@
      "name": "フジノボーイ",
      "win_prob": 0.1394,
      "rank": 2,
-     "odds": 7.1,
+     "odds": 6.9,
      "position": null,
      "result_time": null,
      "jockey": "鈴木恵",
@@ -20129,9 +20129,9 @@
       }
      ],
      "place3_time_avg": 110.5,
-     "p_market": 0.1101,
-     "win_prob_blend": 0.1235,
-     "ev": 0.88,
+     "p_market": 0.1147,
+     "win_prob_blend": 0.1268,
+     "ev": 0.87,
      "ev_buy": false,
      "ev_streak": 0
     },
@@ -20140,7 +20140,7 @@
      "name": "ビッグシラヌイ",
      "win_prob": 0.1212,
      "rank": 3,
-     "odds": 7.2,
+     "odds": 7.1,
      "position": null,
      "result_time": null,
      "jockey": "島津新",
@@ -20487,8 +20487,8 @@
       }
      ],
      "place3_time_avg": 112.1,
-     "p_market": 0.1086,
-     "win_prob_blend": 0.1166,
+     "p_market": 0.1115,
+     "win_prob_blend": 0.1185,
      "ev": 0.84,
      "ev_buy": false,
      "ev_streak": 0
@@ -20498,7 +20498,7 @@
      "name": "ハナミズキ",
      "win_prob": 0.0788,
      "rank": 4,
-     "odds": 4.1,
+     "odds": 4.0,
      "position": null,
      "result_time": null,
      "jockey": "今井千",
@@ -21019,8 +21019,8 @@
       }
      ],
      "place3_time_avg": 119.5,
-     "p_market": 0.1907,
-     "win_prob_blend": 0.1446,
+     "p_market": 0.1979,
+     "win_prob_blend": 0.148,
      "ev": 0.59,
      "ev_buy": false,
      "ev_streak": 0
@@ -21030,7 +21030,7 @@
      "name": "ホクセイマジェスタ",
      "win_prob": 0.072,
      "rank": 5,
-     "odds": 50.3,
+     "odds": 51.3,
      "position": null,
      "result_time": null,
      "jockey": "中村太",
@@ -21569,9 +21569,9 @@
       }
      ],
      "place3_time_avg": 121.6,
-     "p_market": 0.0155,
-     "win_prob_blend": 0.0275,
-     "ev": 1.38,
+     "p_market": 0.0154,
+     "win_prob_blend": 0.0273,
+     "ev": 1.4,
      "ev_buy": true,
      "ev_streak": 3
     },
@@ -21580,7 +21580,7 @@
      "name": "キタノユウシン",
      "win_prob": 0.0639,
      "rank": 6,
-     "odds": 19.5,
+     "odds": 19.3,
      "position": null,
      "result_time": null,
      "jockey": "阿部武",
@@ -22156,8 +22156,8 @@
       }
      ],
      "place3_time_avg": 115.9,
-     "p_market": 0.0401,
-     "win_prob_blend": 0.0488,
+     "p_market": 0.041,
+     "win_prob_blend": 0.0494,
      "ev": 0.95,
      "ev_buy": false,
      "ev_streak": 0
@@ -22167,7 +22167,7 @@
      "name": "プラチナガール",
      "win_prob": 0.0498,
      "rank": 7,
-     "odds": 28.6,
+     "odds": 29.1,
      "position": null,
      "result_time": null,
      "jockey": "林康文",
@@ -22688,18 +22688,18 @@
       }
      ],
      "place3_time_avg": 120.6,
-     "p_market": 0.0273,
-     "win_prob_blend": 0.0348,
-     "ev": 1.0,
-     "ev_buy": false,
-     "ev_streak": 0
+     "p_market": 0.0272,
+     "win_prob_blend": 0.0347,
+     "ev": 1.01,
+     "ev_buy": true,
+     "ev_streak": 1
     },
     {
      "num": 7,
      "name": "フクノエル",
      "win_prob": 0.0441,
      "rank": 8,
-     "odds": 64.2,
+     "odds": 65.0,
      "position": null,
      "result_time": null,
      "jockey": "船山蔵",
@@ -23288,7 +23288,7 @@
      "place3_time_avg": 113.8,
      "p_market": 0.0122,
      "win_prob_blend": 0.0197,
-     "ev": 1.27,
+     "ev": 1.28,
      "ev_buy": true,
      "ev_streak": 3
     },
@@ -23297,7 +23297,7 @@
      "name": "ホクセイサクラオー",
      "win_prob": 0.042,
      "rank": 9,
-     "odds": 35.9,
+     "odds": 32.1,
      "position": null,
      "result_time": null,
      "jockey": "渡来心",
@@ -23824,18 +23824,18 @@
       }
      ],
      "place3_time_avg": 118.7,
-     "p_market": 0.0218,
-     "win_prob_blend": 0.0283,
-     "ev": 1.02,
-     "ev_buy": true,
-     "ev_streak": 1
+     "p_market": 0.0247,
+     "win_prob_blend": 0.0307,
+     "ev": 0.98,
+     "ev_buy": false,
+     "ev_streak": 0
     },
     {
      "num": 8,
      "name": "ディーホワイト",
      "win_prob": 0.0391,
      "rank": 10,
-     "odds": 20.0,
+     "odds": 20.3,
      "position": null,
      "result_time": null,
      "jockey": "中原蓮",
@@ -24386,13 +24386,14 @@
       }
      ],
      "place3_time_avg": 110.2,
-     "p_market": 0.0391,
-     "win_prob_blend": 0.0404,
-     "ev": 0.81,
+     "p_market": 0.039,
+     "win_prob_blend": 0.0403,
+     "ev": 0.82,
      "ev_buy": false,
      "ev_streak": 0
     }
-   ]
+   ],
+   "bets": []
   },
   {
    "date": "2026-09-19",
