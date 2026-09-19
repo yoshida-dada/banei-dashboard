@@ -19098,7 +19098,11 @@
      "payout": 11400,
      "popularity": 27
     }
-   ]
+   ],
+   "track_offset": -14.1,
+   "track_z": -1.06,
+   "track_label": "軽",
+   "track_n": 8
   },
   {
    "date": "2026-09-19",
@@ -19113,14 +19117,14 @@
    "market_fav": 10,
    "winner": null,
    "update_stage": "evscan",
-   "updated_at": "2026-09-19 19:10",
+   "updated_at": "2026-09-19 19:20",
    "horses": [
     {
      "num": 10,
      "name": "ジェイエクスプレス",
      "win_prob": 0.3497,
      "rank": 1,
-     "odds": 1.5,
+     "odds": 1.6,
      "position": null,
      "result_time": null,
      "jockey": "金田利",
@@ -19503,9 +19507,9 @@
       }
      ],
      "place3_time_avg": 112.4,
-     "p_market": 0.5213,
-     "win_prob_blend": 0.4704,
-     "ev": 0.71,
+     "p_market": 0.4893,
+     "win_prob_blend": 0.4482,
+     "ev": 0.72,
      "ev_buy": false,
      "ev_streak": 0
     },
@@ -19514,13 +19518,13 @@
      "name": "フジノボーイ",
      "win_prob": 0.1394,
      "rank": 2,
-     "odds": 7.2,
+     "odds": 9.3,
      "position": null,
      "result_time": null,
      "jockey": "鈴木恵",
      "gate": 8,
      "sled_kg": 650.0,
-     "popularity": 3,
+     "popularity": 4,
      "age": 8,
      "sex": "牡",
      "trainer": "槻舘重（ばんえい）",
@@ -20125,9 +20129,9 @@
       }
      ],
      "place3_time_avg": 110.5,
-     "p_market": 0.1086,
-     "win_prob_blend": 0.123,
-     "ev": 0.89,
+     "p_market": 0.0842,
+     "win_prob_blend": 0.1035,
+     "ev": 0.96,
      "ev_buy": false,
      "ev_streak": 0
     },
@@ -20136,13 +20140,13 @@
      "name": "ビッグシラヌイ",
      "win_prob": 0.1212,
      "rank": 3,
-     "odds": 13.1,
+     "odds": 7.9,
      "position": null,
      "result_time": null,
      "jockey": "島津新",
      "gate": 1,
      "sled_kg": 650.0,
-     "popularity": 4,
+     "popularity": 3,
      "age": 5,
      "sex": "牡",
      "trainer": "林　豊（ばんえい）",
@@ -20483,18 +20487,18 @@
       }
      ],
      "place3_time_avg": 112.1,
-     "p_market": 0.0597,
-     "win_prob_blend": 0.0794,
-     "ev": 1.04,
-     "ev_buy": true,
-     "ev_streak": 2
+     "p_market": 0.0991,
+     "win_prob_blend": 0.1096,
+     "ev": 0.87,
+     "ev_buy": false,
+     "ev_streak": 0
     },
     {
      "num": 5,
      "name": "ハナミズキ",
      "win_prob": 0.0788,
      "rank": 4,
-     "odds": 5.1,
+     "odds": 4.9,
      "position": null,
      "result_time": null,
      "jockey": "今井千",
@@ -21015,9 +21019,9 @@
       }
      ],
      "place3_time_avg": 119.5,
-     "p_market": 0.1533,
-     "win_prob_blend": 0.126,
-     "ev": 0.64,
+     "p_market": 0.1598,
+     "win_prob_blend": 0.1285,
+     "ev": 0.63,
      "ev_buy": false,
      "ev_streak": 0
     },
@@ -21026,7 +21030,7 @@
      "name": "ホクセイマジェスタ",
      "win_prob": 0.072,
      "rank": 5,
-     "odds": 47.2,
+     "odds": 45.1,
      "position": null,
      "result_time": null,
      "jockey": "中村太",
@@ -21565,24 +21569,24 @@
       }
      ],
      "place3_time_avg": 121.6,
-     "p_market": 0.0166,
-     "win_prob_blend": 0.0287,
-     "ev": 1.36,
+     "p_market": 0.0174,
+     "win_prob_blend": 0.0294,
+     "ev": 1.33,
      "ev_buy": true,
-     "ev_streak": 2
+     "ev_streak": 3
     },
     {
      "num": 4,
      "name": "キタノユウシン",
      "win_prob": 0.0639,
      "rank": 6,
-     "odds": 23.6,
+     "odds": 19.4,
      "position": null,
      "result_time": null,
      "jockey": "阿部武",
      "gate": 4,
      "sled_kg": 650.0,
-     "popularity": 6,
+     "popularity": 5,
      "age": 8,
      "sex": "牡",
      "trainer": "林　豊（ばんえい）",
@@ -22152,24 +22156,24 @@
       }
      ],
      "place3_time_avg": 115.9,
-     "p_market": 0.0331,
-     "win_prob_blend": 0.0433,
-     "ev": 1.02,
-     "ev_buy": true,
-     "ev_streak": 1
+     "p_market": 0.0404,
+     "win_prob_blend": 0.0488,
+     "ev": 0.95,
+     "ev_buy": false,
+     "ev_streak": 0
     },
     {
      "num": 3,
      "name": "プラチナガール",
      "win_prob": 0.0498,
      "rank": 7,
-     "odds": 35.6,
+     "odds": 26.9,
      "position": null,
      "result_time": null,
      "jockey": "林康文",
      "gate": 3,
      "sled_kg": 630.0,
-     "popularity": 8,
+     "popularity": 7,
      "age": 5,
      "sex": "牝",
      "trainer": "小林長（ばんえい）",
@@ -22684,24 +22688,24 @@
       }
      ],
      "place3_time_avg": 120.6,
-     "p_market": 0.022,
-     "win_prob_blend": 0.0304,
-     "ev": 1.08,
-     "ev_buy": true,
-     "ev_streak": 2
+     "p_market": 0.0291,
+     "win_prob_blend": 0.0362,
+     "ev": 0.97,
+     "ev_buy": false,
+     "ev_streak": 0
     },
     {
      "num": 7,
      "name": "フクノエル",
      "win_prob": 0.0441,
      "rank": 8,
-     "odds": 34.9,
+     "odds": 43.9,
      "position": null,
      "result_time": null,
      "jockey": "船山蔵",
      "gate": 7,
      "sled_kg": 650.0,
-     "popularity": 7,
+     "popularity": 9,
      "age": 6,
      "sex": "牡",
      "trainer": "大河和（ばんえい）",
@@ -23282,24 +23286,24 @@
       }
      ],
      "place3_time_avg": 113.8,
-     "p_market": 0.0224,
-     "win_prob_blend": 0.0295,
-     "ev": 1.03,
+     "p_market": 0.0178,
+     "win_prob_blend": 0.0252,
+     "ev": 1.11,
      "ev_buy": true,
-     "ev_streak": 2
+     "ev_streak": 3
     },
     {
      "num": 2,
      "name": "ホクセイサクラオー",
      "win_prob": 0.042,
      "rank": 9,
-     "odds": 44.8,
+     "odds": 29.0,
      "position": null,
      "result_time": null,
      "jockey": "渡来心",
      "gate": 2,
      "sled_kg": 650.0,
-     "popularity": 9,
+     "popularity": 8,
      "age": 5,
      "sex": "牡",
      "trainer": "今井茂（ばんえい）",
@@ -23820,24 +23824,24 @@
       }
      ],
      "place3_time_avg": 118.7,
-     "p_market": 0.0175,
-     "win_prob_blend": 0.0246,
-     "ev": 1.1,
-     "ev_buy": true,
-     "ev_streak": 2
+     "p_market": 0.027,
+     "win_prob_blend": 0.0325,
+     "ev": 0.94,
+     "ev_buy": false,
+     "ev_streak": 0
     },
     {
      "num": 8,
      "name": "ディーホワイト",
      "win_prob": 0.0391,
      "rank": 10,
-     "odds": 17.2,
+     "odds": 21.8,
      "position": null,
      "result_time": null,
      "jockey": "中原蓮",
      "gate": 7,
      "sled_kg": 650.0,
-     "popularity": 5,
+     "popularity": 6,
      "age": 5,
      "sex": "牡",
      "trainer": "槻舘重（ばんえい）",
@@ -24382,17 +24386,13 @@
       }
      ],
      "place3_time_avg": 110.2,
-     "p_market": 0.0455,
-     "win_prob_blend": 0.0448,
-     "ev": 0.77,
+     "p_market": 0.0359,
+     "win_prob_blend": 0.0381,
+     "ev": 0.83,
      "ev_buy": false,
      "ev_streak": 0
     }
-   ],
-   "track_offset": -14.1,
-   "track_z": -1.06,
-   "track_label": "軽",
-   "track_n": 8
+   ]
   },
   {
    "date": "2026-09-19",
@@ -29852,10 +29852,10 @@
      "ev_buy": false
     }
    ],
-   "track_offset": -14.1,
-   "track_z": -1.06,
+   "track_offset": -14.8,
+   "track_z": -1.18,
    "track_label": "軽",
-   "track_n": 8
+   "track_n": 9
   },
   {
    "date": "2026-09-19",
@@ -34224,10 +34224,10 @@
      "ev_buy": false
     }
    ],
-   "track_offset": -14.1,
-   "track_z": -1.06,
+   "track_offset": -14.8,
+   "track_z": -1.18,
    "track_label": "軽",
-   "track_n": 8
+   "track_n": 9
   }
  ]
 }
