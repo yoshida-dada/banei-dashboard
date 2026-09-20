@@ -467,12 +467,52 @@ table.ht .numcell{display:inline-flex;align-items:center;gap:4px}
 .lbadge.ls3{background:#d9822b}
 .lbadge.ls4{background:#2ea043}
 .lbadge.ls5{background:#a371f7}
+/* データ分析タブ（近走の推移） */
+.ahead{display:flex;align-items:baseline;gap:8px;flex-wrap:wrap;margin:4px 2px 0}
+.ahead .at1{font-size:1.02rem;font-weight:800}
+.ahead .at2{font-size:.72rem;color:var(--muted)}
+.arow{display:flex;gap:6px;flex-wrap:wrap;margin:10px 2px}
+.abtn{min-width:36px;height:34px;border-radius:8px;font-weight:800;font-size:.86rem;font-family:inherit;cursor:pointer;padding:0 8px}
+.abtn.on{box-shadow:0 0 0 3px var(--accent)}
+.aname{font-size:.9rem;font-weight:800;margin:2px 2px 8px}
+.aname small{font-weight:500;color:var(--muted);margin-left:6px}
+.acard{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:8px 6px 4px;box-shadow:var(--shadow)}
+.asvg{width:100%;height:auto;display:block;-webkit-tap-highlight-color:transparent}
+.asvg text{fill:var(--muted);font-size:9.5px;font-family:inherit}
+.asvg .apt{fill:var(--ink);font-weight:800;font-size:11px}
+.asvg .apt,.asvg .alab{paint-order:stroke;stroke:var(--surface);stroke-width:3px;stroke-linejoin:round}
+.asvg .agrid{stroke:var(--border);stroke-width:1}
+.asvg .aguide{stroke:var(--accent);stroke-width:1;stroke-dasharray:3 3}
+.asvg .ahit{fill:transparent;cursor:pointer}
+.adet{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:10px 12px;margin-top:10px;box-shadow:var(--shadow)}
+.adet .adh{font-weight:800;font-size:.9rem;margin-bottom:6px}
+.adet dl{display:grid;grid-template-columns:auto 1fr;gap:4px 14px;margin:0;font-size:.82rem}
+.adet dt{color:var(--muted)}
+.adet dd{margin:0;font-weight:700}
+.csec{margin-top:26px}
+.ccard{background:var(--surface);border:1px solid var(--border);border-radius:14px;box-shadow:var(--shadow);overflow:hidden}
+.crow{padding:10px 12px;border-top:1px solid var(--border2)}
+.crow:first-child{border-top:0}
+.chead{display:flex;align-items:center;gap:8px;margin-bottom:7px}
+.chead .cn{min-width:24px;height:24px;line-height:22px;text-align:center;border-radius:5px;font-weight:800;font-size:.8rem}
+.chead .cnm{font-weight:800;font-size:.92rem}
+.cbody{display:grid;grid-template-columns:1fr 1fr;gap:6px 12px;font-size:.78rem;color:var(--muted)}
+.cbody b{color:var(--ink);font-size:.95rem}
+.cbody .cz{grid-row:span 2}
+.cz .cztt{margin-bottom:3px}
+.czr{display:grid;grid-template-columns:16px 1fr 34px 22px;align-items:center;gap:5px;margin:2px 0}
+.czr .bar{height:6px;border-radius:3px;background:var(--border2);overflow:hidden}
+.czr .bar i{display:block;height:100%;background:color-mix(in srgb,var(--muted) 65%,var(--surface))}
+.czr.cur{color:var(--ink);font-weight:800}
+.czr.cur .bar i{background:var(--ink)}
+.czr .cn2{font-size:.66rem;font-weight:500;color:var(--muted)}
 </style>
 
 <header>
   <div class="brand"><span class="dot"></span>ばんえい予測レビュー<small id="gen"></small><button class="notify-btn" id="notifyBtn" type="button" title="発走10分前にスマホへ通知" aria-pressed="false">🔔 通知</button></div>
   <div class="toptabs" id="toptabs">
     <button data-t="race" aria-pressed="true">レース予測</button>
+    <button data-t="analysis" aria-pressed="false">データ分析</button>
     <button data-t="track" aria-pressed="false">成績</button>
     <button data-t="odds" aria-pressed="false">オッズ履歴</button>
     <button data-t="labels" aria-pressed="false">八百長ラベル</button>
@@ -533,6 +573,7 @@ table.ht .numcell{display:inline-flex;align-items:center;gap:4px}
   <div class="foot" id="foot"></div>
 </div>
 
+<div class="wrap" id="analysis" style="display:none"></div>
 <div class="wrap" id="track" style="display:none"></div>
 <div class="wrap" id="odds" style="display:none"></div>
 <div class="wrap" id="labels" style="display:none"></div>
@@ -749,6 +790,7 @@ function render(){
 
   if(view!=="bets") stopLive();
   renderAptitude(r);
+  if(window.__curTop==="analysis") renderAnalysis();
 }
 window.__rerenderRace = render;  // loadSuspicion()等、boot()外からの再描画トリガー用
 loadSuspicion();  // 初回ページ読込時からsuspicion_scores.jsonを取得（オッズ履歴タブを開く前でも警告が出るように）
@@ -1369,8 +1411,11 @@ function loadLogic(){
 }
 function switchTop(t){
   const isRace=t==="race";
-  document.querySelector(".nav").style.display=isRace?"":"none";
+  window.__curTop=t;  // render()から参照（boot内のlet宣言はTDZになり得るためwindowに持つ）
+  document.querySelector(".nav").style.display=(isRace||t==="analysis")?"":"none";
   document.getElementById("mainwrap").style.display=isRace?"":"none";
+  document.getElementById("analysis").style.display=t==="analysis"?"block":"none";
+  if(t==="analysis") renderAnalysis();
   document.getElementById("track").style.display=t==="track"?"block":"none";
   document.getElementById("odds").style.display=t==="odds"?"block":"none";
   document.getElementById("labels").style.display=t==="labels"?"block":"none";
@@ -1905,6 +1950,116 @@ function renderInsiderLabels(){
   host.querySelectorAll("[data-f]").forEach(b=>b.onclick=()=>{ S.filter=b.dataset.f; renderInsiderLabels(); });
   const inp=document.getElementById("lsearch");
   if(inp){ inp.oninput=()=>{ S.q=inp.value; renderInsiderLabels(); }; inp.focus(); inp.setSelectionRange(inp.value.length,inp.value.length); }
+}
+// ===== データ分析タブ: 近走の推移（data.json の horses[].trend。build_dashboard_data._trend_rows）=====
+// 1着との差／前半／後半／馬体重の4段折れ線。点（の列）をタップすると詳細カードを出す。
+window.__ANA={key:null,num:null,pt:null};
+const ANA_PANELS=[
+  {k:"g", title:"1着との差(秒)　上ほど小さい", color:"var(--accent)", top0:true, fmt:v=>(Math.abs(v)<0.05?"0.0":v.toFixed(1)), val:t=>t.g==null?null:-t.g},
+  // 前半/後半は上下反転（上ほど速い＝1着との差の「上ほど良い」と向きを揃える）
+  {k:"fh",title:"前半タイム(秒)　上ほど速い", color:"var(--edge)", inv:true, fmt:v=>v.toFixed(1), val:t=>t.fh},
+  {k:"lh",title:"後半タイム(秒)　上ほど速い", color:"#a371f7", inv:true, fmt:v=>v.toFixed(1), val:t=>t.lh},
+  // タイムとの関係を1枚で読めるよう、水分は各点に数値ラベルを付ける
+  {k:"m", title:"馬場水分(%)　高いほど速い傾向", color:"var(--wet)", labels:true, fmt:v=>v.toFixed(1), val:t=>t.m},
+  // ソリ重量もタイムを大きく左右するため、水分と同様に各点へ数値ラベルを付ける
+  {k:"sl",title:"ソリ重量(kg)　重いほど遅い傾向", color:"#d1495b", labels:true, fmt:v=>String(Math.round(v)), val:t=>t.sl},
+  {k:"bw",title:"馬体重(kg)",     color:"var(--dry)",   fmt:v=>String(Math.round(v)), val:t=>t.bw}
+];
+function anaChartSvg(trend,sel){
+  const W=360, padL=52, padR=14, PH=110, plotT=24, plotH=66, n=trend.length;
+  const X=i=>padL+(n===1?(W-padL-padR)/2:i*(W-padL-padR)/(n-1));
+  const mdLab=d=>+d.slice(5,7)+"/"+ +d.slice(8,10);
+  let s=`<svg class="asvg" viewBox="0 0 ${W} ${PH*ANA_PANELS.length+24}" role="img" aria-label="近走の推移グラフ">`;
+  ANA_PANELS.forEach((P,k)=>{
+    const y0=k*PH, vals=trend.map(P.val), have=vals.filter(v=>v!=null);
+    s+=`<text class="apt" x="4" y="${y0+13}" style="fill:${P.color}">${P.title}</text>`;
+    if(!have.length){
+      s+=`<text x="${(W+padL-padR)/2}" y="${y0+plotT+plotH/2+3}" text-anchor="middle">記録なし</text>`; return;
+    }
+    let lo=Math.min(...have), hi=Math.max(...have);
+    if(P.top0){ hi=0; if(lo>=0) lo=-1; }                 // 0(=1着)を常に上端に揃える（全走1着でも軸が潰れないように）
+    const span=(hi-lo)||1, pad=P.top0?0:span*0.12;
+    lo-=pad; hi+=pad;
+    const Y=P.inv?(v=>y0+plotT+(v-lo)/(hi-lo)*plotH):(v=>y0+plotT+plotH-(v-lo)/(hi-lo)*plotH);
+    const ticks=P.top0?[hi,(hi+lo)/2,lo]:[hi-pad,(hi+lo)/2,lo+pad];
+    ticks.forEach(t=>{ const y=Y(t);
+      s+=`<line class="agrid" x1="${padL}" x2="${W-padR}" y1="${y}" y2="${y}"/>`
+        +`<text x="${padL-14}" y="${y+3}" text-anchor="end">${P.fmt(t)}</text>`; });
+    let d="", pen=false;                                  // 記録のない走は線を切る
+    vals.forEach((v,i)=>{ if(v==null){ pen=false; return; } d+=(pen?"L":"M")+X(i).toFixed(1)+" "+Y(v).toFixed(1)+" "; pen=true; });
+    s+=`<path d="${d}" fill="none" stroke="${P.color}" stroke-width="1.6" stroke-linejoin="round"/>`;
+    vals.forEach((v,i)=>{ if(v==null) return;
+      const win=P.top0&&trend[i].p===1, last=i===n-1, on=i===sel;
+      s+=`<circle cx="${X(i).toFixed(1)}" cy="${Y(v).toFixed(1)}" r="${on?5:3.4}" fill="${win?'#e3b341':(last?'var(--accent)':'var(--surface)')}" stroke="${on?'var(--ink)':P.color}" stroke-width="${on?2:1.5}"/>`
+        +(P.labels?`<text x="${X(i).toFixed(1)}" y="${(Y(v)-7).toFixed(1)}" text-anchor="middle" class="alab" style="fill:${P.color};font-weight:700">${P.fmt(v)}</text>`:""); });
+  });
+  const yb=PH*ANA_PANELS.length+14;
+  trend.forEach((t,i)=>{ if(n>7 && i%2!==(n-1)%2) return;
+    s+=`<text x="${X(i).toFixed(1)}" y="${yb}" text-anchor="middle">${mdLab(t.d)}</text>`; });
+  if(sel!=null&&trend[sel]) s+=`<line class="aguide" x1="${X(sel).toFixed(1)}" x2="${X(sel).toFixed(1)}" y1="6" y2="${PH*ANA_PANELS.length}"/>`;
+  const cw=n===1?W:(W-padL-padR)/(n-1);
+  trend.forEach((t,i)=>{ s+=`<rect class="ahit" data-i="${i}" x="${(X(i)-cw/2).toFixed(1)}" y="0" width="${cw.toFixed(1)}" height="${PH*ANA_PANELS.length}"/>`; });
+  return s+`</svg>`;
+}
+function anaDetailHtml(t){
+  const f=(v,u)=>v==null?"—":v+u;
+  const gap=t.g==null?"—":(t.p===1?"1着":t.g.toFixed(1)+"秒");
+  return `<div class="adet"><div class="adh">${t.d.replace(/-/g,"/")}　${t.c||""}</div><dl>`
+    +`<dt>着順</dt><dd>${t.p}着${t.n?"（"+t.n+"頭）":""}</dd>`
+    +`<dt>1着との差</dt><dd>${gap}</dd>`
+    +`<dt>前半タイム</dt><dd>${f(t.fh!=null?t.fh.toFixed(1):null,"秒")}</dd>`
+    +`<dt>後半タイム</dt><dd>${f(t.lh!=null?t.lh.toFixed(1):null,"秒")}</dd>`
+    +`<dt>馬体重</dt><dd>${f(t.bw,"kg")}</dd>`
+    +`<dt>ソリ重量</dt><dd>${f(t.sl,"kg")}</dd>`
+    +`<dt>馬場水分</dt><dd>${f(t.m,"%")}</dd></dl></div>`;
+}
+function condHtml(hs){
+  const rec=(t,zeroLabel)=>{
+    if(!t) return "—";
+    if(!t[0]) return `<b>${zeroLabel||"初"}</b>`;
+    return `<b>${t[0]}戦${t[1]}勝</b> 3着内 ${t[2]}`;
+  };
+  const zoneOf=g=>g==null?null:(g<=3?"in":(g<=6?"mid":"out"));
+  const ZN=[["in","内"],["mid","中"],["out","外"]];
+  const rows=hs.map(h=>{
+    const c=h.cond; if(!c) return "";
+    const cz=zoneOf(h.gate);
+    const zr=ZN.map(([k,lab])=>{
+      const z=(c.z&&c.z[k])||{n:0,top3:0}, pctv=z.n?Math.round(z.top3/z.n*100):null;
+      return `<div class="czr${cz===k?' cur':''}"><span>${lab}</span><span class="bar"><i style="width:${pctv==null?0:Math.min(100,pctv/60*100)}%"></i></span>`
+        +`<span>${pctv==null?"—":pctv+"%"}</span><span class="cn2">${z.n}</span></div>`;
+    }).join("");
+    return `<div class="crow"><div class="chead"><span class="cn" style="${capStyle(h.gate)}">${h.num}</span><span class="cnm">${h.name}</span></div>`
+      +`<div class="cbody"><div>この枠 今回と同じ枠<br>${rec(c.g)}</div>`
+      +`<div class="cz"><div class="cztt">枠の内外 3着内率</div>${zr}</div>`
+      +`<div>この騎手 今回の騎手で<br>${rec(c.j)}</div>`
+      +`<div style="grid-column:1 / -1">このコース 200m　${rec(c.c,"初")}</div></div></div>`;
+  }).join("");
+  return `<div class="ahead csec"><span class="at1">条件別</span><span class="at2">枠・騎手・コース</span></div>`
+    +`<div class="ccard" style="margin-top:8px">${rows}</div>`
+    +`<div class="apthint">DBに記録のある走（2023/1〜）だけの通算です。取消・除外・中止で着順の付かなかった走は数えていません。`
+    +`枠の内外は内(1〜3枠)・中(4〜6枠)・外(7〜8枠)ごとの3着内率で、今回の枠にあたる行を濃くしています（右の小さな数字が走った数）。`
+    +`「この騎手」は減量マークを除いた名前で突き合わせています。1走も無い項目は「初」です。</div>`;
+}
+function renderAnalysis(){
+  const host=document.getElementById("analysis"), S=window.__ANA, r=get();
+  if(!r||!r.horses||!r.horses.length){ host.innerHTML='<div class="meta">レースデータがありません。</div>'; return; }
+  const hs=[...r.horses].sort((a,b)=>a.num-b.num), key=r.date+"#"+r.race_no;
+  if(S.key!==key){ S.key=key; S.num=hs[0].num; S.pt=null; }
+  const h=hs.find(x=>x.num===S.num)||hs[0];
+  const trend=h.trend||[];
+  if(S.pt==null||S.pt>=trend.length) S.pt=trend.length-1;   // 既定は直近走を選択
+  const btns=hs.map(x=>`<button class="abtn${x.num===h.num?' on':''}" data-n="${x.num}" style="${capStyle(x.gate)}">${x.num}</button>`).join("");
+  const body=trend.length
+    ? `<div class="acard">${anaChartSvg(trend,S.pt)}</div>`+anaDetailHtml(trend[S.pt])
+      +`<div class="apthint">前半＝総合−上り（第1・第2障害を含む）、後半＝上り（終いの平坦区間）。<b>どのグラフも上ほど良い</b>向きに揃えています（1着との差は0=1着が上端・金の点、前半/後半は速いほど上）。`
+      +`生タイムは馬場水分・ソリ重量で大きく変わるため、両方を各点に数値付きで並べています（点をタップすると詳細カードにも出ます）。</div>`
+    : `<div class="meta">${h.trend===undefined?"近走の推移データを準備中です（次回の自動更新で反映されます）。":"この馬の過去走データがありません（初出走）。"}</div>`;
+  host.innerHTML=`<div class="ahead"><span class="at1">近走の推移</span><span class="at2">${r.date.slice(5).replace('-','/')} ${r.race_no}R ${r.race_name||""} ・番号を押すと馬を切り替え</span></div>`
+    +`<div class="arow">${btns}</div>`
+    +`<div class="aname">${h.num} ${h.name}<small>近${trend.length}走</small></div>`+body+condHtml(hs);
+  host.querySelectorAll(".abtn").forEach(b=>b.onclick=()=>{ S.num=+b.dataset.n; S.pt=null; renderAnalysis(); });
+  host.querySelectorAll(".ahit").forEach(e=>e.onclick=()=>{ S.pt=+e.dataset.i; renderAnalysis(); });
 }
 document.querySelectorAll("#toptabs button").forEach(b=>b.addEventListener("click",()=>switchTop(b.dataset.t)));
 
