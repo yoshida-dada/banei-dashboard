@@ -2240,27 +2240,41 @@ function refreshInsiderPushBtn(sub){
   btn.textContent = sub ? "🚨 警報ON" : "🚨 インサイダー警報";
   btn.setAttribute("aria-pressed", sub?"true":"false");
 }
+function withTimeout(promise, ms, msg){
+  return Promise.race([
+    promise,
+    new Promise((_,rej)=>setTimeout(()=>rej(new Error(msg)), ms))
+  ]);
+}
 async function toggleInsiderPush(){
   const cfg=backendCfg();
   if(!cfg.url){ alert("先に「レース予測」タブ内の投票設定でバックエンドURL・トークンを設定してください。"); return; }
-  const existing = await insiderPushSubscription();
-  if(existing){
-    try{
-      await fetch(cfg.url+"/push-subscribe?token="+encodeURIComponent(cfg.token),
-        {method:"DELETE",headers:{"Content-Type":"application/json"},
-         body:JSON.stringify({endpoint:existing.endpoint})});
-      await existing.unsubscribe();
-    }catch(e){ alert("解除に失敗しました: "+e); }
-    refreshInsiderPushBtn(await insiderPushSubscription());
-    return;
-  }
   try{
+    if(!("serviceWorker" in navigator) || !("PushManager" in window)){
+      alert("この端末/ブラウザはWeb Pushに対応していません。iPhoneはホーム画面に追加したアイコンから開く必要があります（iOS16.4以降）。");
+      return;
+    }
+    const reg0 = await navigator.serviceWorker.getRegistration();
+    if(!reg0){ alert("サービスワーカーが未登録です。このページを一度閉じて開き直してから、もう一度お試しください。"); return; }
+    const existing = await withTimeout(reg0.pushManager.getSubscription(), 15000,
+      "購読状態の確認がタイムアウトしました（15秒）。ページを再読み込みしてから、もう一度お試しください。");
+    if(existing){
+      try{
+        await fetch(cfg.url+"/push-subscribe?token="+encodeURIComponent(cfg.token),
+          {method:"DELETE",headers:{"Content-Type":"application/json"},
+           body:JSON.stringify({endpoint:existing.endpoint})});
+        await existing.unsubscribe();
+      }catch(e){ alert("解除に失敗しました: "+e); }
+      refreshInsiderPushBtn(await insiderPushSubscription());
+      return;
+    }
     const perm = await Notification.requestPermission();
-    if(perm!=="granted"){ alert("通知が許可されませんでした。"); return; }
+    if(perm!=="granted"){ alert("通知が許可されませんでした。端末の設定でこのアプリの通知を許可してください。"); return; }
     const r = await fetch(cfg.url+"/push-vapid-key?token="+encodeURIComponent(cfg.token));
     const j = await r.json();
     if(!j.public_key){ alert("VAPID鍵の取得に失敗しました。PC側でgenerate_vapid_keys.pyの実行を確認してください。"); return; }
-    const reg = await navigator.serviceWorker.ready;
+    const reg = await withTimeout(navigator.serviceWorker.ready, 15000,
+      "サービスワーカーの準備がタイムアウトしました（15秒）。ページを再読み込みしてから、もう一度お試しください。");
     const sub = await reg.pushManager.subscribe({userVisibleOnly:true, applicationServerKey:b64ToUint8Array(j.public_key)});
     const raw = sub.toJSON();
     await fetch(cfg.url+"/push-subscribe?token="+encodeURIComponent(cfg.token),
