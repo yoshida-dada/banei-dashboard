@@ -520,6 +520,7 @@ table.ht .numcell{display:inline-flex;align-items:center;gap:4px}
   <div class="brand"><span class="dot"></span>ばんえい予測レビュー<small id="gen"></small><button class="notify-btn" id="notifyBtn" type="button" title="発走10分前にスマホへ通知" aria-pressed="false">🔔 通知</button></div>
   <div class="toptabs" id="toptabs">
     <button data-t="race" aria-pressed="true">レース予測</button>
+    <button data-t="result" aria-pressed="false">レース結果</button>
     <button data-t="analysis" aria-pressed="false">データ分析</button>
     <button data-t="track" aria-pressed="false">成績</button>
     <button data-t="odds" aria-pressed="false">オッズ履歴</button>
@@ -550,7 +551,6 @@ table.ht .numcell{display:inline-flex;align-items:center;gap:4px}
 <div class="wrap" id="mainwrap">
   <div id="suspicionAlert"></div>
   <div id="meta"></div>
-  <div id="payouts"></div>
   <div class="secthead">
     <span class="sect">出走馬 予測</span>
     <div class="vtoggle" id="stoggle">
@@ -581,6 +581,11 @@ table.ht .numcell{display:inline-flex;align-items:center;gap:4px}
   <div class="foot" id="foot"></div>
 </div>
 
+<div class="wrap" id="resultTab" style="display:none">
+  <div id="resultMeta"></div>
+  <div id="resultCards"></div>
+  <div id="payouts"></div>
+</div>
 <div class="wrap" id="analysis" style="display:none"></div>
 <div class="wrap" id="track" style="display:none"></div>
 <div class="wrap" id="odds" style="display:none"></div>
@@ -715,6 +720,16 @@ function showInsiderLabelModal(h){
   modal.style.display="flex";
 }
 function hideInsiderLabelModal(){ const m=document.getElementById("iflagModal"); if(m) m.style.display="none"; }
+// レース結果タブ（結果カード＋払戻金。2026-09-23、レース予測タブから分離）
+function renderResultTab(r, hasResult, resultRow){
+  const el=document.getElementById("resultMeta"); if(!el) return;
+  const statusChip = r.cancelled ? `<span class="chip cancel">🌧 中止（悪天候）</span>`
+    : (hasResult ? `<span class="chip">決着 <b>${r.win_time||'—'}</b></span>` : `<span class="chip pre">発走前・未確定</span>`);
+  el.innerHTML =
+    `<div class="meta"><div class="top"><span class="rname">${r.race_no}R ${r.race_name||''}</span></div>`
+    +`<div class="chips"><span class="chip">クラス <b>${r.class||'—'}</b></span>${statusChip}</div></div>`;
+  document.getElementById("resultCards").innerHTML = `<div class="result">${resultRow}</div>`;
+}
 // 払戻金セクション（結果確定後・全券種）
 function renderPayouts(r){
   const el=document.getElementById("payouts"); if(!el) return;
@@ -780,9 +795,9 @@ function render(){
     +(r.post_time?`<span class="chip">発走 <b>${r.post_time}</b></span>`:'')
     +(hasResult?`<span class="chip">決着 <b>${r.win_time||'—'}</b></span>`:'')
     +preBadge+updChip+`</div>`
-    +asHtml
-    +`<div class="result">`+resultRow+`</div></div>`;
+    +asHtml+`</div>`;
   renderSuspicionAlert(r);
+  renderResultTab(r, hasResult, resultRow);
   renderPayouts(r);
 
   // horses
@@ -1420,8 +1435,9 @@ function loadLogic(){
 function switchTop(t){
   const isRace=t==="race";
   window.__curTop=t;  // render()から参照（boot内のlet宣言はTDZになり得るためwindowに持つ）
-  document.querySelector(".nav").style.display=(isRace||t==="analysis")?"":"none";
+  document.querySelector(".nav").style.display=(isRace||t==="result"||t==="analysis")?"":"none";
   document.getElementById("mainwrap").style.display=isRace?"":"none";
+  document.getElementById("resultTab").style.display=t==="result"?"block":"none";
   document.getElementById("analysis").style.display=t==="analysis"?"block":"none";
   if(t==="analysis") renderAnalysis();
   document.getElementById("track").style.display=t==="track"?"block":"none";
