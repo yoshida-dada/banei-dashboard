@@ -1021,7 +1021,7 @@ const COLS = [
   {key:"num", label:"馬番", always:true, th:'<th class="l">馬</th>',
    td:h=>`<td class="l"><span class="numcell">${medal(h.position)}<span class="tnum" style="${capStyle(h.gate)}">${h.num}</span></span></td>`},
   {key:"name", label:"馬名・馬齢・厩舎・馬主", always:true, th:'<th class="l">馬名 / 馬齢・厩舎・馬主</th>',
-   td:h=>`<td class="l"><div class="c2"><span class="tname${h.insider_flag?' clickable':''}" data-num="${h.num}"><span class="tname-txt">${h.name||''}</span>${insiderFlagIcon(h)}</span><span class="tsub">${(h.sex||'')+(h.age!=null?h.age:'')}${h.trainer?'・'+cleanInst(h.trainer):''}</span>${h.owner&&h.owner!=='不明'?`<span class="tsub towner">${h.owner}</span>`:''}</div></td>`},
+   td:h=>`<td class="l"><div class="c2"><span class="tname clickable" data-num="${h.num}"><span class="tname-txt">${h.name||''}</span>${insiderFlagIcon(h)}</span><span class="tsub">${(h.sex||'')+(h.age!=null?h.age:'')}${h.trainer?'・'+cleanInst(h.trainer):''}</span>${h.owner&&h.owner!=='不明'?`<span class="tsub towner">${h.owner}</span>`:''}</div></td>`},
   {key:"jockey", label:"騎手・成績", th:'<th class="l">騎手 / 成績</th>',
    td:h=>`<td class="l"><div class="c2"><span class="tjk">${h.jockey||'—'}</span><span class="tsub num">${recFmt(h.jockey_record)}</span></div></td>`},
   {key:"sled", label:"斤量", th:'<th>斤量</th>',
@@ -1113,7 +1113,7 @@ function cardView(hs, maxW, hasResult){
       : `<div class="aptline">連対履歴なし（適性データ不足）</div>`;
     return `<div class="horse ${isWin?'winner':''} ${scratched?'scratched':''} ${evCls(h)}">`
       +`<div class="hh">${medal(h.position)}<span class="rk">${h.rank}</span><span class="hnum num" style="${capStyle(h.gate)}">${h.num}</span>`
-      +`<span class="hnamewrap"><span class="hname${h.insider_flag?' clickable':''}" data-num="${h.num}"><span class="hname-txt">${h.name||''}</span>${insiderFlagIcon(h)}</span>`
+      +`<span class="hnamewrap"><span class="hname clickable" data-num="${h.num}"><span class="hname-txt">${h.name||''}</span>${insiderFlagIcon(h)}</span>`
       +`<span class="hsub">${(h.sex||'')+(h.age!=null?h.age:'')}${h.trainer?' ・ '+cleanInst(h.trainer):''}</span>`
       +(h.owner&&h.owner!=='不明'?`<span class="hsub howner">${h.owner}</span>`:'')
       +`<span class="hjk">${h.jockey||'騎手不明'} <span class="jrec">${recFmt(h.jockey_record)}</span></span></span>`
@@ -1282,14 +1282,21 @@ const _ctg=document.getElementById("colsToggle");
 if(_ctg) _ctg.addEventListener("click",()=>{ const p=document.getElementById("colsPanel");
   const show=p.style.display==="none"; p.style.display=show?"block":"none"; if(show) renderColsPanel(); });
 
-// 🚨アイコン／馬名タップで八百長ラベル詳細を表示（2026-08-13）。#horsesはtable/cardどちらの
-// ビューでもrender()の度にinnerHTML差し替えされるため、要素個別ではなく#horses自体に
-// 委譲(delegation)で1回だけ登録する（再描画のたびに再登録する必要が無く安全）。
+// 🚨アイコンタップで八百長ラベル詳細、馬名タップで馬別成績を表示（2026-08-13、2026-09-24拡張）。
+// #horsesはtable/cardどちらのビューでもrender()の度にinnerHTML差し替えされるため、要素個別ではなく
+// #horses自体に委譲(delegation)で1回だけ登録する（再描画のたびに再登録する必要が無く安全）。
 document.getElementById("horses").addEventListener("click",e=>{
-  const t=e.target.closest(".iflag, .tname, .hname"); if(!t) return;
+  const icon=e.target.closest(".iflag");
+  if(icon){
+    const num=+icon.dataset.num; if(!num) return;
+    const r=get(); const h=r && r.horses.find(x=>x.num===num);
+    if(h && h.insider_flag) showInsiderLabelModal(h);
+    return;
+  }
+  const t=e.target.closest(".tname, .hname"); if(!t) return;
   const num=+t.dataset.num; if(!num) return;
   const r=get(); const h=r && r.horses.find(x=>x.num===num);
-  if(h && h.insider_flag) showInsiderLabelModal(h);
+  if(h && h.name) openHorseProfileStandalone(h.name);
 });
 const _ifc=document.getElementById("iflagClose");
 if(_ifc) _ifc.addEventListener("click", hideInsiderLabelModal);
@@ -1611,6 +1618,13 @@ function openHorseProfile(name){
   document.getElementById("histBody").innerHTML='<div class="tknote">読込中…</div>';
   loadHorseProfile(name, renderHorseProfile);
 }
+// レース予測タブ等、日別成績のドリルダウンを経由せず馬名から直接開く場合（2026-09-24）。
+// この場合は「戻る」の代わりに「閉じる」を出す（renderHorseProfileがhistState.raceで判定）。
+function openHorseProfileStandalone(name){
+  histState={date:null, race:null, horse:name};
+  document.getElementById("histModal").style.display="flex";
+  openHorseProfile(name);
+}
 function loadHorseProfile(name, cb){
   window.__HORSES = window.__HORSES || {};
   if(window.__HORSES[name]){ cb(); return; }
@@ -1664,8 +1678,10 @@ function renderHorseProfile(){
   const more = h.races.length>5
     ? `<button class="histback" type="button" id="hpMoreBtn">${hpShowAll?'表示を減らす':'もっと見る('+h.races.length+'走すべて)'}</button>`
     : "";
+  const backLabel = histState.race!=null
+    ? `← ${histState.date.slice(5).replace('-','/')} ${histState.race}Rへ` : "✕ 閉じる";
   body.innerHTML=
-    `<button class="histback" type="button" id="histBackBtn">← ${histState.date.slice(5).replace('-','/')} ${histState.race}Rへ</button>`
+    `<button class="histback" type="button" id="histBackBtn">${backLabel}</button>`
     +`<div class="rbmeta">${h.sex||''}${h.age??''}　調教師 ${h.trainer||'—'}　馬主 ${h.owner||'—'}`
     +`${h.sled_kg!=null?'　そり重量 '+h.sled_kg.toFixed(0):''}`
     +`${h.weight!=null?'　馬体重 '+h.weight+(h.weight_diff!=null?"("+(h.weight_diff>0?"+":"")+h.weight_diff+")":""):''}</div>`
@@ -1675,7 +1691,9 @@ function renderHorseProfile(){
     +`<tbody>${hpYearRows(h.stats)}</tbody></table></div>`
     +hpPedigreeHtml(h.pedigree)
     +`<div class="tksect">過去成績</div>${cards}${more}`;
-  document.getElementById("histBackBtn").onclick=()=>{ histState.horse=null; renderHistModal(); };
+  document.getElementById("histBackBtn").onclick=()=>{
+    if(histState.race!=null){ histState.horse=null; renderHistModal(); } else { closeHistModal(); }
+  };
   const mb=document.getElementById("hpMoreBtn");
   if(mb) mb.onclick=()=>{ hpShowAll=!hpShowAll; renderHorseProfile(); };
 }
