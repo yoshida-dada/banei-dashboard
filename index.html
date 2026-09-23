@@ -2254,7 +2254,8 @@ async function toggleInsiderPush(){
       alert("この端末/ブラウザはWeb Pushに対応していません。iPhoneはホーム画面に追加したアイコンから開く必要があります（iOS16.4以降）。");
       return;
     }
-    const reg0 = await navigator.serviceWorker.getRegistration();
+    const reg0 = await withTimeout(navigator.serviceWorker.getRegistration(), 8000,
+      "サービスワーカーの登録確認がタイムアウトしました（8秒）。iOSの場合、設定アプリ→Safari→詳細→Webサイトデータでこのサイトのデータを削除し、ホーム画面のアイコンを一度削除して追加し直してください。");
     if(!reg0){ alert("サービスワーカーが未登録です。このページを一度閉じて開き直してから、もう一度お試しください。"); return; }
     const existing = await withTimeout(reg0.pushManager.getSubscription(), 15000,
       "購読状態の確認がタイムアウトしました（15秒）。ページを再読み込みしてから、もう一度お試しください。");
