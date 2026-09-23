@@ -1,0 +1,86 @@
+{
+ "name": "ファンタジスタ",
+ "sex": "牡",
+ "age": 2,
+ "trainer": "今井茂",
+ "owner": "坂脇康彰",
+ "sled_kg": 500.0,
+ "weight": 756,
+ "weight_diff": 12,
+ "last_race_date": "2026-09-07",
+ "pedigree": null,
+ "stats": {
+  "total": {
+   "win": 0,
+   "place2": 0,
+   "place3": 0,
+   "other": 2,
+   "n": 2,
+   "win_rate": 0.0,
+   "quinella_rate": 0.0,
+   "show_rate": 0.0
+  },
+  "2026": {
+   "win": 0,
+   "place2": 0,
+   "place3": 0,
+   "other": 2,
+   "n": 2,
+   "win_rate": 0.0,
+   "quinella_rate": 0.0,
+   "show_rate": 0.0
+  }
+ },
+ "races": [
+  {
+   "date": "2026-09-07",
+   "race_no": 2,
+   "race_name": "倫大朗１歳おめでとう記念２歳Ｄ－８",
+   "class": "D",
+   "moisture": 1.5,
+   "field_size": 10,
+   "num": 9,
+   "jockey": "中村太",
+   "trainer": "今井茂",
+   "owner": "坂脇康彰",
+   "sled_kg": 500.0,
+   "weight": 756,
+   "weight_diff": 12,
+   "odds": 15.1,
+   "popularity": 6,
+   "position": 4,
+   "time": "2:24.5",
+   "margin_sec": 21.8,
+   "interval": "中2週",
+   "other": {
+    "label": "勝ち馬",
+    "name": "アリチャン"
+   }
+  },
+  {
+   "date": "2026-08-24",
+   "race_no": 2,
+   "race_name": "岩田康誠賞２歳Ｄ－８",
+   "class": "D",
+   "moisture": 0.6,
+   "field_size": 9,
+   "num": 5,
+   "jockey": "中村太",
+   "trainer": "今井茂",
+   "owner": "坂脇康彰",
+   "sled_kg": 500.0,
+   "weight": 744,
+   "weight_diff": null,
+   "odds": 2.4,
+   "popularity": 1,
+   "position": 7,
+   "time": "2:49.4",
+   "margin_sec": 32.1,
+   "interval": null,
+   "other": {
+    "label": "勝ち馬",
+    "name": "ホクセイタロウ"
+   }
+  }
+ ]
+}

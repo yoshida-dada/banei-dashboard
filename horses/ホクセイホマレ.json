@@ -1,0 +1,111 @@
+{
+ "name": "ホクセイホマレ",
+ "sex": "牝",
+ "age": 2,
+ "trainer": "今井茂",
+ "owner": "（株）北西ファーム",
+ "sled_kg": 480.0,
+ "weight": 795,
+ "weight_diff": 12,
+ "last_race_date": "2026-08-31",
+ "pedigree": null,
+ "stats": {
+  "total": {
+   "win": 0,
+   "place2": 0,
+   "place3": 0,
+   "other": 3,
+   "n": 3,
+   "win_rate": 0.0,
+   "quinella_rate": 0.0,
+   "show_rate": 0.0
+  },
+  "2026": {
+   "win": 0,
+   "place2": 0,
+   "place3": 0,
+   "other": 3,
+   "n": 3,
+   "win_rate": 0.0,
+   "quinella_rate": 0.0,
+   "show_rate": 0.0
+  }
+ },
+ "races": [
+  {
+   "date": "2026-08-31",
+   "race_no": 2,
+   "race_name": "佳乃子のばんえい再来場記念２歳Ｄ－７",
+   "class": "D",
+   "moisture": 1.4,
+   "field_size": 10,
+   "num": 6,
+   "jockey": "中村太",
+   "trainer": "今井茂",
+   "owner": "（株）北西ファーム",
+   "sled_kg": 480.0,
+   "weight": 795,
+   "weight_diff": 12,
+   "odds": 31.4,
+   "popularity": 6,
+   "position": 7,
+   "time": "3:01.9",
+   "margin_sec": 38.1,
+   "interval": "中2週",
+   "other": {
+    "label": "勝ち馬",
+    "name": "キンリュウ"
+   }
+  },
+  {
+   "date": "2026-08-17",
+   "race_no": 2,
+   "race_name": "直井辰矢三十路祝賀杯２歳Ｄ－６",
+   "class": "D",
+   "moisture": 1.4,
+   "field_size": 10,
+   "num": 2,
+   "jockey": "村上章",
+   "trainer": "今井茂",
+   "owner": "（株）北西ファーム",
+   "sled_kg": 480.0,
+   "weight": 783,
+   "weight_diff": 2,
+   "odds": 76.8,
+   "popularity": 10,
+   "position": 6,
+   "time": "3:00.4",
+   "margin_sec": 43.0,
+   "interval": "連闘",
+   "other": {
+    "label": "勝ち馬",
+    "name": "サクライブキ"
+   }
+  },
+  {
+   "date": "2026-08-10",
+   "race_no": 3,
+   "race_name": "ベーカリーＰａｎｇｏ！杯２歳Ｄ－７",
+   "class": "D",
+   "moisture": 1.6,
+   "field_size": 10,
+   "num": 10,
+   "jockey": "渡来心",
+   "trainer": "今井茂",
+   "owner": "（株）北西ファーム",
+   "sled_kg": 480.0,
+   "weight": 781,
+   "weight_diff": null,
+   "odds": 27.1,
+   "popularity": 9,
+   "position": 7,
+   "time": "3:08.4",
+   "margin_sec": 48.5,
+   "interval": null,
+   "other": {
+    "label": "勝ち馬",
+    "name": "ヒノクニスピード"
+   }
+  }
+ ]
+}

@@ -1,0 +1,61 @@
+{
+ "name": "フクマルペガサス",
+ "sex": "牡",
+ "age": 2,
+ "trainer": "大友人",
+ "owner": "加藤正法",
+ "sled_kg": 500.0,
+ "weight": 880,
+ "weight_diff": null,
+ "last_race_date": "2026-09-19",
+ "pedigree": null,
+ "stats": {
+  "total": {
+   "win": 1,
+   "place2": 0,
+   "place3": 0,
+   "other": 0,
+   "n": 1,
+   "win_rate": 1.0,
+   "quinella_rate": 1.0,
+   "show_rate": 1.0
+  },
+  "2026": {
+   "win": 1,
+   "place2": 0,
+   "place3": 0,
+   "other": 0,
+   "n": 1,
+   "win_rate": 1.0,
+   "quinella_rate": 1.0,
+   "show_rate": 1.0
+  }
+ },
+ "races": [
+  {
+   "date": "2026-09-19",
+   "race_no": 2,
+   "race_name": "文紀＆裕美結婚３周年記念杯２歳Ｄ－８",
+   "class": "D",
+   "moisture": 0.7,
+   "field_size": 9,
+   "num": 1,
+   "jockey": "大友一",
+   "trainer": "大友人",
+   "owner": "加藤正法",
+   "sled_kg": 500.0,
+   "weight": 880,
+   "weight_diff": null,
+   "odds": 4.4,
+   "popularity": 4,
+   "position": 1,
+   "time": "1:52.1",
+   "margin_sec": 0.0,
+   "interval": null,
+   "other": {
+    "label": "2着馬",
+    "name": "ビジョガクル"
+   }
+  }
+ ]
+}

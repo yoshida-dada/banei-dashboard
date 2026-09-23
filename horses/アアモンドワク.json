@@ -1,0 +1,86 @@
+{
+ "name": "アアモンドワク",
+ "sex": "牡",
+ "age": 2,
+ "trainer": "村上慎",
+ "owner": "下内美繪子",
+ "sled_kg": 490.0,
+ "weight": 815,
+ "weight_diff": 0,
+ "last_race_date": "2026-08-17",
+ "pedigree": null,
+ "stats": {
+  "total": {
+   "win": 0,
+   "place2": 0,
+   "place3": 0,
+   "other": 2,
+   "n": 2,
+   "win_rate": 0.0,
+   "quinella_rate": 0.0,
+   "show_rate": 0.0
+  },
+  "2026": {
+   "win": 0,
+   "place2": 0,
+   "place3": 0,
+   "other": 2,
+   "n": 2,
+   "win_rate": 0.0,
+   "quinella_rate": 0.0,
+   "show_rate": 0.0
+  }
+ },
+ "races": [
+  {
+   "date": "2026-08-17",
+   "race_no": 2,
+   "race_name": "直井辰矢三十路祝賀杯２歳Ｄ－６",
+   "class": "D",
+   "moisture": 1.4,
+   "field_size": 10,
+   "num": 10,
+   "jockey": "☆臼杵龍",
+   "trainer": "村上慎",
+   "owner": "下内美繪子",
+   "sled_kg": 490.0,
+   "weight": 815,
+   "weight_diff": 0,
+   "odds": 17.8,
+   "popularity": 7,
+   "position": 10,
+   "time": "3:47.4",
+   "margin_sec": 90.0,
+   "interval": "連闘",
+   "other": {
+    "label": "勝ち馬",
+    "name": "サクライブキ"
+   }
+  },
+  {
+   "date": "2026-08-10",
+   "race_no": 2,
+   "race_name": "午年☆☆ひよちゃん爆誕記念２歳Ｄ－８",
+   "class": "D",
+   "moisture": 1.6,
+   "field_size": 10,
+   "num": 7,
+   "jockey": "赤塚健",
+   "trainer": "村上慎",
+   "owner": "下内美繪子",
+   "sled_kg": 500.0,
+   "weight": 815,
+   "weight_diff": null,
+   "odds": 6.2,
+   "popularity": 3,
+   "position": 8,
+   "time": "3:05.8",
+   "margin_sec": 48.7,
+   "interval": null,
+   "other": {
+    "label": "勝ち馬",
+    "name": "ホクセイサチコ"
+   }
+  }
+ ]
+}

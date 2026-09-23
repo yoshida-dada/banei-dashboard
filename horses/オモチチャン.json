@@ -1,0 +1,193 @@
+{
+ "name": "オモチチャン",
+ "sex": "牝",
+ "age": 2,
+ "trainer": "中島敏",
+ "owner": "坂脇康彰",
+ "sled_kg": 480.0,
+ "weight": 829,
+ "weight_diff": 4,
+ "last_race_date": "2026-09-14",
+ "pedigree": {
+  "sire": "ヒノデタイガー",
+  "dam": null,
+  "sire_sire": "ツルマキシンザン",
+  "sire_dam": "夢",
+  "dam_sire": null,
+  "dam_dam": null
+ },
+ "stats": {
+  "total": {
+   "win": 0,
+   "place2": 0,
+   "place3": 1,
+   "other": 5,
+   "n": 6,
+   "win_rate": 0.0,
+   "quinella_rate": 0.0,
+   "show_rate": 0.167
+  },
+  "2026": {
+   "win": 0,
+   "place2": 0,
+   "place3": 1,
+   "other": 5,
+   "n": 6,
+   "win_rate": 0.0,
+   "quinella_rate": 0.0,
+   "show_rate": 0.167
+  }
+ },
+ "races": [
+  {
+   "date": "2026-09-14",
+   "race_no": 2,
+   "race_name": "さっぽろ卓ゲっと開催記念２歳Ｄ－７",
+   "class": "D",
+   "moisture": 0.9,
+   "field_size": 10,
+   "num": 1,
+   "jockey": "赤塚健",
+   "trainer": "中島敏",
+   "owner": "坂脇康彰",
+   "sled_kg": 480.0,
+   "weight": 829,
+   "weight_diff": 4,
+   "odds": 19.9,
+   "popularity": 7,
+   "position": 4,
+   "time": "2:25.0",
+   "margin_sec": 11.4,
+   "interval": "連闘",
+   "other": {
+    "label": "勝ち馬",
+    "name": "スーパーハクリュウ"
+   }
+  },
+  {
+   "date": "2026-09-07",
+   "race_no": 3,
+   "race_name": "はるさん初ばんえい競馬記念２歳Ｄ－５",
+   "class": "D",
+   "moisture": 1.5,
+   "field_size": 10,
+   "num": 8,
+   "jockey": "菊池一",
+   "trainer": "中島敏",
+   "owner": "坂脇康彰",
+   "sled_kg": 480.0,
+   "weight": 825,
+   "weight_diff": 7,
+   "odds": 19.1,
+   "popularity": 8,
+   "position": 8,
+   "time": "2:45.7",
+   "margin_sec": 38.2,
+   "interval": "中2週",
+   "other": {
+    "label": "勝ち馬",
+    "name": "キタノショウヘイ"
+   }
+  },
+  {
+   "date": "2026-08-22",
+   "race_no": 2,
+   "race_name": "ぜったい歩かないマン賞２歳Ｄ－４",
+   "class": "D",
+   "moisture": 1.1,
+   "field_size": 9,
+   "num": 7,
+   "jockey": "菊池一",
+   "trainer": "中島敏",
+   "owner": "坂脇康彰",
+   "sled_kg": 480.0,
+   "weight": 818,
+   "weight_diff": 19,
+   "odds": 13.6,
+   "popularity": 5,
+   "position": 6,
+   "time": "2:38.3",
+   "margin_sec": 28.0,
+   "interval": "中1週",
+   "other": {
+    "label": "勝ち馬",
+    "name": "トップラン"
+   }
+  },
+  {
+   "date": "2026-08-10",
+   "race_no": 3,
+   "race_name": "ベーカリーＰａｎｇｏ！杯２歳Ｄ－７",
+   "class": "D",
+   "moisture": 1.6,
+   "field_size": 10,
+   "num": 9,
+   "jockey": "赤塚健",
+   "trainer": "中島敏",
+   "owner": "坂脇康彰",
+   "sled_kg": 480.0,
+   "weight": 799,
+   "weight_diff": 1,
+   "odds": 60.3,
+   "popularity": 10,
+   "position": 3,
+   "time": "2:39.6",
+   "margin_sec": 19.7,
+   "interval": "中2週",
+   "other": {
+    "label": "勝ち馬",
+    "name": "ヒノクニスピード"
+   }
+  },
+  {
+   "date": "2026-07-27",
+   "race_no": 3,
+   "race_name": "やすよとあすか初ばんえい杯２歳Ｄ－７",
+   "class": "D",
+   "moisture": 1.2,
+   "field_size": 9,
+   "num": 3,
+   "jockey": "中村太",
+   "trainer": "中島敏",
+   "owner": "坂脇康彰",
+   "sled_kg": 480.0,
+   "weight": 798,
+   "weight_diff": 0,
+   "odds": 59.8,
+   "popularity": 8,
+   "position": 9,
+   "time": "4:05.3",
+   "margin_sec": 112.9,
+   "interval": "中2週",
+   "other": {
+    "label": "勝ち馬",
+    "name": "ポプコ"
+   }
+  },
+  {
+   "date": "2026-07-13",
+   "race_no": 4,
+   "race_name": "２歳Ｄ－６",
+   "class": "D",
+   "moisture": 2.7,
+   "field_size": 10,
+   "num": 6,
+   "jockey": "菊池一",
+   "trainer": "中島敏",
+   "owner": "坂脇康彰",
+   "sled_kg": 470.0,
+   "weight": 798,
+   "weight_diff": null,
+   "odds": 61.2,
+   "popularity": 9,
+   "position": 10,
+   "time": "2:56.1",
+   "margin_sec": 60.5,
+   "interval": null,
+   "other": {
+    "label": "勝ち馬",
+    "name": "ヤマトリュウ"
+   }
+  }
+ ]
+}

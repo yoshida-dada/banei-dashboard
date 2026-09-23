@@ -1,0 +1,193 @@
+{
+ "name": "アアモンドドレミ",
+ "sex": "牝",
+ "age": 2,
+ "trainer": "村上慎",
+ "owner": "下内美繪子",
+ "sled_kg": 490.0,
+ "weight": 742,
+ "weight_diff": 9,
+ "last_race_date": "2026-08-31",
+ "pedigree": {
+  "sire": "アサヒリュウセイ",
+  "dam": "サトミクイン",
+  "sire_sire": "ウンカイ",
+  "sire_dam": "チヨテル",
+  "dam_sire": "ダイユーザン",
+  "dam_dam": "ヨウテイクイン"
+ },
+ "stats": {
+  "total": {
+   "win": 1,
+   "place2": 0,
+   "place3": 0,
+   "other": 5,
+   "n": 6,
+   "win_rate": 0.167,
+   "quinella_rate": 0.167,
+   "show_rate": 0.167
+  },
+  "2026": {
+   "win": 1,
+   "place2": 0,
+   "place3": 0,
+   "other": 5,
+   "n": 6,
+   "win_rate": 0.167,
+   "quinella_rate": 0.167,
+   "show_rate": 0.167
+  }
+ },
+ "races": [
+  {
+   "date": "2026-08-31",
+   "race_no": 4,
+   "race_name": "てるＱばんえい初見参記念２歳Ｃ－５",
+   "class": "C",
+   "moisture": 1.4,
+   "field_size": 10,
+   "num": 2,
+   "jockey": "赤塚健",
+   "trainer": "村上慎",
+   "owner": "下内美繪子",
+   "sled_kg": 490.0,
+   "weight": 742,
+   "weight_diff": 9,
+   "odds": 107.6,
+   "popularity": 10,
+   "position": 9,
+   "time": "2:37.0",
+   "margin_sec": 35.8,
+   "interval": "中2週",
+   "other": {
+    "label": "勝ち馬",
+    "name": "モンスター"
+   }
+  },
+  {
+   "date": "2026-08-17",
+   "race_no": 4,
+   "race_name": "祝！工藤克昌院長お誕生日杯２歳Ｃ－２",
+   "class": "C2",
+   "moisture": 1.4,
+   "field_size": 10,
+   "num": 7,
+   "jockey": "赤塚健",
+   "trainer": "村上慎",
+   "owner": "下内美繪子",
+   "sled_kg": 480.0,
+   "weight": 733,
+   "weight_diff": -3,
+   "odds": 96.1,
+   "popularity": 10,
+   "position": 6,
+   "time": "2:23.5",
+   "margin_sec": 16.3,
+   "interval": "中2週",
+   "other": {
+    "label": "勝ち馬",
+    "name": "ロイヤルノチカラ"
+   }
+  },
+  {
+   "date": "2026-08-03",
+   "race_no": 4,
+   "race_name": "ツンさんおめでとシャーっ！２歳Ｃ－１",
+   "class": "C1",
+   "moisture": 1.4,
+   "field_size": 10,
+   "num": 5,
+   "jockey": "赤塚健",
+   "trainer": "村上慎",
+   "owner": "下内美繪子",
+   "sled_kg": 480.0,
+   "weight": 736,
+   "weight_diff": 15,
+   "odds": 63.1,
+   "popularity": 9,
+   "position": 10,
+   "time": "3:09.4",
+   "margin_sec": 59.5,
+   "interval": "中4週",
+   "other": {
+    "label": "勝ち馬",
+    "name": "ゴブリン"
+   }
+  },
+  {
+   "date": "2026-07-06",
+   "race_no": 2,
+   "race_name": "佐藤仁明日で３才だぞ記念２歳Ｄ－５",
+   "class": "D",
+   "moisture": 0.8,
+   "field_size": 9,
+   "num": 3,
+   "jockey": "☆今井千",
+   "trainer": "村上慎",
+   "owner": "下内美繪子",
+   "sled_kg": 460.0,
+   "weight": 721,
+   "weight_diff": 26,
+   "odds": 6.0,
+   "popularity": 5,
+   "position": 1,
+   "time": "2:30.4",
+   "margin_sec": 0.0,
+   "interval": "中2週",
+   "other": {
+    "label": "2着馬",
+    "name": "キュータロウ"
+   }
+  },
+  {
+   "date": "2026-06-22",
+   "race_no": 2,
+   "race_name": "順ちゃん誕生日２ヶ月遅れ２歳Ｄ－５",
+   "class": "D",
+   "moisture": 2.5,
+   "field_size": 9,
+   "num": 7,
+   "jockey": "赤塚健",
+   "trainer": "村上慎",
+   "owner": "下内美繪子",
+   "sled_kg": 470.0,
+   "weight": 695,
+   "weight_diff": -11,
+   "odds": 26.8,
+   "popularity": 8,
+   "position": 6,
+   "time": "2:31.6",
+   "margin_sec": 26.9,
+   "interval": "中1週",
+   "other": {
+    "label": "勝ち馬",
+    "name": "ロキノクラン"
+   }
+  },
+  {
+   "date": "2026-06-13",
+   "race_no": 2,
+   "race_name": "２歳新馬",
+   "class": "新馬",
+   "moisture": 1.1,
+   "field_size": 10,
+   "num": 3,
+   "jockey": "赤塚健",
+   "trainer": "村上慎",
+   "owner": "下内美繪子",
+   "sled_kg": 470.0,
+   "weight": 706,
+   "weight_diff": null,
+   "odds": 48.3,
+   "popularity": 10,
+   "position": 7,
+   "time": "3:16.8",
+   "margin_sec": 70.0,
+   "interval": null,
+   "other": {
+    "label": "勝ち馬",
+    "name": "ワールドジパング"
+   }
+  }
+ ]
+}

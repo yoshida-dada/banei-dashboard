@@ -1,0 +1,168 @@
+{
+ "name": "ホクセイマッシグラ",
+ "sex": "牡",
+ "age": 2,
+ "trainer": "長部幸",
+ "owner": "（株）北西ファーム",
+ "sled_kg": 490.0,
+ "weight": 783,
+ "weight_diff": 0,
+ "last_race_date": "2026-08-15",
+ "pedigree": {
+  "sire": "イッチョクセン",
+  "dam": "楓力姫",
+  "sire_sire": "ナリタビッグマン",
+  "sire_dam": "花姫",
+  "dam_sire": "サカノリキマル",
+  "dam_dam": "宝楓姫"
+ },
+ "stats": {
+  "total": {
+   "win": 0,
+   "place2": 0,
+   "place3": 0,
+   "other": 5,
+   "n": 5,
+   "win_rate": 0.0,
+   "quinella_rate": 0.0,
+   "show_rate": 0.0
+  },
+  "2026": {
+   "win": 0,
+   "place2": 0,
+   "place3": 0,
+   "other": 5,
+   "n": 5,
+   "win_rate": 0.0,
+   "quinella_rate": 0.0,
+   "show_rate": 0.0
+  }
+ },
+ "races": [
+  {
+   "date": "2026-08-15",
+   "race_no": 2,
+   "race_name": "春陽・侑和・尚城誕生日記念２歳Ｄ－５",
+   "class": "D",
+   "moisture": 2.1,
+   "field_size": 10,
+   "num": 2,
+   "jockey": "☆臼杵龍",
+   "trainer": "長部幸",
+   "owner": "（株）北西ファーム",
+   "sled_kg": 490.0,
+   "weight": 783,
+   "weight_diff": 0,
+   "odds": 7.6,
+   "popularity": 3,
+   "position": 5,
+   "time": "2:26.9",
+   "margin_sec": 14.2,
+   "interval": "中2週",
+   "other": {
+    "label": "勝ち馬",
+    "name": "パリスウンカイ"
+   }
+  },
+  {
+   "date": "2026-08-01",
+   "race_no": 2,
+   "race_name": "名倉家族来場記念リベンジ編２歳Ｄ－５",
+   "class": "D",
+   "moisture": 3.3,
+   "field_size": 10,
+   "num": 10,
+   "jockey": "☆臼杵龍",
+   "trainer": "長部幸",
+   "owner": "（株）北西ファーム",
+   "sled_kg": 490.0,
+   "weight": 783,
+   "weight_diff": 8,
+   "odds": 6.9,
+   "popularity": 3,
+   "position": 8,
+   "time": "2:04.7",
+   "margin_sec": 18.6,
+   "interval": "連闘",
+   "other": {
+    "label": "勝ち馬",
+    "name": "ガッツデー"
+   }
+  },
+  {
+   "date": "2026-07-25",
+   "race_no": 2,
+   "race_name": "２歳Ｄ－５",
+   "class": "D",
+   "moisture": 2.0,
+   "field_size": 10,
+   "num": 1,
+   "jockey": "☆臼杵龍",
+   "trainer": "長部幸",
+   "owner": "（株）北西ファーム",
+   "sled_kg": 490.0,
+   "weight": 775,
+   "weight_diff": 5,
+   "odds": 46.1,
+   "popularity": 10,
+   "position": 4,
+   "time": "2:16.8",
+   "margin_sec": 13.0,
+   "interval": "中1週",
+   "other": {
+    "label": "勝ち馬",
+    "name": "イワキフィニティー"
+   }
+  },
+  {
+   "date": "2026-07-13",
+   "race_no": 4,
+   "race_name": "２歳Ｄ－６",
+   "class": "D",
+   "moisture": 2.7,
+   "field_size": 10,
+   "num": 3,
+   "jockey": "☆臼杵龍",
+   "trainer": "長部幸",
+   "owner": "（株）北西ファーム",
+   "sled_kg": 480.0,
+   "weight": 770,
+   "weight_diff": 10,
+   "odds": 49.0,
+   "popularity": 8,
+   "position": 7,
+   "time": "2:44.2",
+   "margin_sec": 48.6,
+   "interval": "中2週",
+   "other": {
+    "label": "勝ち馬",
+    "name": "ヤマトリュウ"
+   }
+  },
+  {
+   "date": "2026-06-28",
+   "race_no": 3,
+   "race_name": "２歳新馬",
+   "class": "新馬",
+   "moisture": 3.3,
+   "field_size": 9,
+   "num": 4,
+   "jockey": "鈴木恵",
+   "trainer": "長部幸",
+   "owner": "（株）北西ファーム",
+   "sled_kg": 490.0,
+   "weight": 760,
+   "weight_diff": null,
+   "odds": 10.3,
+   "popularity": 5,
+   "position": 9,
+   "time": "2:53.6",
+   "margin_sec": 71.0,
+   "interval": null,
+   "other": {
+    "label": "勝ち馬",
+    "name": "ミラクルアナ"
+   }
+  }
+ ]
+}

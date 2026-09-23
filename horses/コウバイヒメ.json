@@ -1,0 +1,193 @@
+{
+ "name": "コウバイヒメ",
+ "sex": "牝",
+ "age": 2,
+ "trainer": "服部義",
+ "owner": "川上優",
+ "sled_kg": 480.0,
+ "weight": 791,
+ "weight_diff": 25,
+ "last_race_date": "2026-09-21",
+ "pedigree": {
+  "sire": "ダイナミックボーイ",
+  "dam": "仙美里",
+  "sire_sire": "ウンカイ",
+  "sire_dam": "テシカガクイン",
+  "dam_sire": "ウンカイ",
+  "dam_dam": "金姫"
+ },
+ "stats": {
+  "total": {
+   "win": 0,
+   "place2": 0,
+   "place3": 1,
+   "other": 5,
+   "n": 6,
+   "win_rate": 0.0,
+   "quinella_rate": 0.0,
+   "show_rate": 0.167
+  },
+  "2026": {
+   "win": 0,
+   "place2": 0,
+   "place3": 1,
+   "other": 5,
+   "n": 6,
+   "win_rate": 0.0,
+   "quinella_rate": 0.0,
+   "show_rate": 0.167
+  }
+ },
+ "races": [
+  {
+   "date": "2026-09-21",
+   "race_no": 2,
+   "race_name": "マリンお疲れ様でした！２歳Ｄ－５",
+   "class": "D",
+   "moisture": 2.5,
+   "field_size": 10,
+   "num": 4,
+   "jockey": "長澤幸",
+   "trainer": "服部義",
+   "owner": "川上優",
+   "sled_kg": 480.0,
+   "weight": 791,
+   "weight_diff": 25,
+   "odds": 14.9,
+   "popularity": 7,
+   "position": 6,
+   "time": "2:05.1",
+   "margin_sec": 18.4,
+   "interval": "中2週",
+   "other": {
+    "label": "勝ち馬",
+    "name": "メオトテンザン"
+   }
+  },
+  {
+   "date": "2026-09-06",
+   "race_no": 2,
+   "race_name": "第１回しんくん卒業記念２歳Ｄ－４",
+   "class": "D",
+   "moisture": 1.8,
+   "field_size": 10,
+   "num": 5,
+   "jockey": "長澤幸",
+   "trainer": "服部義",
+   "owner": "川上優",
+   "sled_kg": 480.0,
+   "weight": 766,
+   "weight_diff": 9,
+   "odds": 5.8,
+   "popularity": 4,
+   "position": 8,
+   "time": "2:38.4",
+   "margin_sec": 40.8,
+   "interval": "中3週",
+   "other": {
+    "label": "勝ち馬",
+    "name": "ココロノビジン"
+   }
+  },
+  {
+   "date": "2026-08-15",
+   "race_no": 2,
+   "race_name": "春陽・侑和・尚城誕生日記念２歳Ｄ－５",
+   "class": "D",
+   "moisture": 2.1,
+   "field_size": 10,
+   "num": 10,
+   "jockey": "長澤幸",
+   "trainer": "服部義",
+   "owner": "川上優",
+   "sled_kg": 480.0,
+   "weight": 757,
+   "weight_diff": -9,
+   "odds": 7.6,
+   "popularity": 4,
+   "position": 3,
+   "time": "2:23.5",
+   "margin_sec": 10.8,
+   "interval": "中2週",
+   "other": {
+    "label": "勝ち馬",
+    "name": "パリスウンカイ"
+   }
+  },
+  {
+   "date": "2026-08-01",
+   "race_no": 2,
+   "race_name": "名倉家族来場記念リベンジ編２歳Ｄ－５",
+   "class": "D",
+   "moisture": 3.3,
+   "field_size": 10,
+   "num": 7,
+   "jockey": "長澤幸",
+   "trainer": "服部義",
+   "owner": "川上優",
+   "sled_kg": 480.0,
+   "weight": 766,
+   "weight_diff": 6,
+   "odds": 19.3,
+   "popularity": 8,
+   "position": 6,
+   "time": "2:02.9",
+   "margin_sec": 16.8,
+   "interval": "連闘",
+   "other": {
+    "label": "勝ち馬",
+    "name": "ガッツデー"
+   }
+  },
+  {
+   "date": "2026-07-27",
+   "race_no": 2,
+   "race_name": "光廣・明子結婚４２周年記念２歳Ｄ－８",
+   "class": "D",
+   "moisture": 1.3,
+   "field_size": 8,
+   "num": 1,
+   "jockey": "長澤幸",
+   "trainer": "服部義",
+   "owner": "川上優",
+   "sled_kg": 480.0,
+   "weight": 760,
+   "weight_diff": 17,
+   "odds": 6.0,
+   "popularity": 4,
+   "position": 4,
+   "time": "2:52.5",
+   "margin_sec": 17.4,
+   "interval": "中2週",
+   "other": {
+    "label": "勝ち馬",
+    "name": "キタサカエリュウ"
+   }
+  },
+  {
+   "date": "2026-07-13",
+   "race_no": 2,
+   "race_name": "２歳Ｄ－８",
+   "class": "D",
+   "moisture": 2.7,
+   "field_size": 10,
+   "num": 8,
+   "jockey": "☆今井千",
+   "trainer": "服部義",
+   "owner": "川上優",
+   "sled_kg": 460.0,
+   "weight": 743,
+   "weight_diff": null,
+   "odds": 27.6,
+   "popularity": 7,
+   "position": 7,
+   "time": "2:25.3",
+   "margin_sec": 31.2,
+   "interval": null,
+   "other": {
+    "label": "勝ち馬",
+    "name": "ストロングダッシュ"
+   }
+  }
+ ]
+}

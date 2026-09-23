@@ -1,0 +1,193 @@
+{
+ "name": "アアモンドカイト",
+ "sex": "牡",
+ "age": 2,
+ "trainer": "村上慎",
+ "owner": "下内美繪子",
+ "sled_kg": 520.0,
+ "weight": 902,
+ "weight_diff": -5,
+ "last_race_date": "2026-08-30",
+ "pedigree": {
+  "sire": "ゴールドインパクト",
+  "dam": null,
+  "sire_sire": "ヒカルイットウセイ",
+  "sire_dam": "天竜姫",
+  "dam_sire": null,
+  "dam_dam": null
+ },
+ "stats": {
+  "total": {
+   "win": 1,
+   "place2": 1,
+   "place3": 1,
+   "other": 3,
+   "n": 6,
+   "win_rate": 0.167,
+   "quinella_rate": 0.333,
+   "show_rate": 0.5
+  },
+  "2026": {
+   "win": 1,
+   "place2": 1,
+   "place3": 1,
+   "other": 3,
+   "n": 6,
+   "win_rate": 0.167,
+   "quinella_rate": 0.333,
+   "show_rate": 0.5
+  }
+ },
+ "races": [
+  {
+   "date": "2026-08-30",
+   "race_no": 4,
+   "race_name": "ゆにふぃ３期生１周年記念杯２歳Ｂ－２",
+   "class": "B2",
+   "moisture": 1.6,
+   "field_size": 10,
+   "num": 4,
+   "jockey": "菊池一",
+   "trainer": "村上慎",
+   "owner": "下内美繪子",
+   "sled_kg": 520.0,
+   "weight": 902,
+   "weight_diff": -5,
+   "odds": 74.9,
+   "popularity": 10,
+   "position": 9,
+   "time": "2:31.6",
+   "margin_sec": 44.8,
+   "interval": "連闘",
+   "other": {
+    "label": "勝ち馬",
+    "name": "ファーストココロノ"
+   }
+  },
+  {
+   "date": "2026-08-24",
+   "race_no": 5,
+   "race_name": "河原田菜々賞２歳Ｂ－１",
+   "class": "B1",
+   "moisture": 0.6,
+   "field_size": 10,
+   "num": 4,
+   "jockey": "菊池一",
+   "trainer": "村上慎",
+   "owner": "下内美繪子",
+   "sled_kg": 510.0,
+   "weight": 907,
+   "weight_diff": 30,
+   "odds": 22.4,
+   "popularity": 8,
+   "position": 9,
+   "time": "2:19.5",
+   "margin_sec": 39.2,
+   "interval": "中5週",
+   "other": {
+    "label": "勝ち馬",
+    "name": "フェアリーマックス"
+   }
+  },
+  {
+   "date": "2026-07-20",
+   "race_no": 4,
+   "race_name": "株式会社ステージ様有難う２歳Ｂ－１",
+   "class": "B1",
+   "moisture": 2.8,
+   "field_size": 10,
+   "num": 1,
+   "jockey": "☆今井千",
+   "trainer": "村上慎",
+   "owner": "下内美繪子",
+   "sled_kg": 500.0,
+   "weight": 877,
+   "weight_diff": -1,
+   "odds": 9.3,
+   "popularity": 5,
+   "position": 2,
+   "time": "1:58.7",
+   "margin_sec": 7.2,
+   "interval": "中2週",
+   "other": {
+    "label": "勝ち馬",
+    "name": "ツガルユリ"
+   }
+  },
+  {
+   "date": "2026-07-05",
+   "race_no": 2,
+   "race_name": "ワークマンハウス帯広開業杯２歳Ｃ－６",
+   "class": "C",
+   "moisture": 0.8,
+   "field_size": 10,
+   "num": 9,
+   "jockey": "☆今井千",
+   "trainer": "村上慎",
+   "owner": "下内美繪子",
+   "sled_kg": 480.0,
+   "weight": 878,
+   "weight_diff": 18,
+   "odds": 4.8,
+   "popularity": 1,
+   "position": 1,
+   "time": "2:27.2",
+   "margin_sec": 0.0,
+   "interval": "中1週",
+   "other": {
+    "label": "2着馬",
+    "name": "マオノソレイユ"
+   }
+  },
+  {
+   "date": "2026-06-22",
+   "race_no": 3,
+   "race_name": "みほと楽しく仲良く家族旅行２歳Ｄ－４",
+   "class": "D",
+   "moisture": 2.5,
+   "field_size": 10,
+   "num": 6,
+   "jockey": "菊池一",
+   "trainer": "村上慎",
+   "owner": "下内美繪子",
+   "sled_kg": 490.0,
+   "weight": 860,
+   "weight_diff": 2,
+   "odds": 5.0,
+   "popularity": 3,
+   "position": 3,
+   "time": "2:12.3",
+   "margin_sec": 10.0,
+   "interval": "連闘",
+   "other": {
+    "label": "勝ち馬",
+    "name": "ホクセイアバレンボ"
+   }
+  },
+  {
+   "date": "2026-06-15",
+   "race_no": 2,
+   "race_name": "２歳新馬",
+   "class": "新馬",
+   "moisture": 0.8,
+   "field_size": 10,
+   "num": 8,
+   "jockey": "菊池一",
+   "trainer": "村上慎",
+   "owner": "下内美繪子",
+   "sled_kg": 490.0,
+   "weight": 858,
+   "weight_diff": null,
+   "odds": 18.1,
+   "popularity": 6,
+   "position": 7,
+   "time": "3:01.6",
+   "margin_sec": 50.7,
+   "interval": null,
+   "other": {
+    "label": "勝ち馬",
+    "name": "キングゴルシ"
+   }
+  }
+ ]
+}

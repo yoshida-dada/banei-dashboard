@@ -1,0 +1,61 @@
+{
+ "name": "アリチャン",
+ "sex": "牝",
+ "age": 2,
+ "trainer": "西弘美",
+ "owner": "角田優一",
+ "sled_kg": 480.0,
+ "weight": 906,
+ "weight_diff": null,
+ "last_race_date": "2026-09-07",
+ "pedigree": null,
+ "stats": {
+  "total": {
+   "win": 1,
+   "place2": 0,
+   "place3": 0,
+   "other": 0,
+   "n": 1,
+   "win_rate": 1.0,
+   "quinella_rate": 1.0,
+   "show_rate": 1.0
+  },
+  "2026": {
+   "win": 1,
+   "place2": 0,
+   "place3": 0,
+   "other": 0,
+   "n": 1,
+   "win_rate": 1.0,
+   "quinella_rate": 1.0,
+   "show_rate": 1.0
+  }
+ },
+ "races": [
+  {
+   "date": "2026-09-07",
+   "race_no": 2,
+   "race_name": "倫大朗１歳おめでとう記念２歳Ｄ－８",
+   "class": "D",
+   "moisture": 1.5,
+   "field_size": 10,
+   "num": 6,
+   "jockey": "西将太",
+   "trainer": "西弘美",
+   "owner": "角田優一",
+   "sled_kg": 480.0,
+   "weight": 906,
+   "weight_diff": null,
+   "odds": 3.4,
+   "popularity": 3,
+   "position": 1,
+   "time": "2:02.7",
+   "margin_sec": 0.0,
+   "interval": null,
+   "other": {
+    "label": "2着馬",
+    "name": "メオトテンザン"
+   }
+  }
+ ]
+}

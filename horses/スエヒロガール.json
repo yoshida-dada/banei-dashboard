@@ -1,0 +1,143 @@
+{
+ "name": "スエヒロガール",
+ "sex": "牝",
+ "age": 2,
+ "trainer": "小林長",
+ "owner": "加藤勇",
+ "sled_kg": 470.0,
+ "weight": 873,
+ "weight_diff": 4,
+ "last_race_date": "2026-07-11",
+ "pedigree": {
+  "sire": "コウシュハボブ",
+  "dam": "プリンセスモモ",
+  "sire_sire": "ナリタボブサップ",
+  "sire_dam": "メジロハナコ",
+  "dam_sire": "チカラスピード",
+  "dam_dam": "マルミダンサー"
+ },
+ "stats": {
+  "total": {
+   "win": 0,
+   "place2": 0,
+   "place3": 0,
+   "other": 4,
+   "n": 4,
+   "win_rate": 0.0,
+   "quinella_rate": 0.0,
+   "show_rate": 0.0
+  },
+  "2026": {
+   "win": 0,
+   "place2": 0,
+   "place3": 0,
+   "other": 4,
+   "n": 4,
+   "win_rate": 0.0,
+   "quinella_rate": 0.0,
+   "show_rate": 0.0
+  }
+ },
+ "races": [
+  {
+   "date": "2026-07-11",
+   "race_no": 2,
+   "race_name": "２歳Ｄ－３",
+   "class": "D",
+   "moisture": 3.0,
+   "field_size": 8,
+   "num": 4,
+   "jockey": "中村太",
+   "trainer": "小林長",
+   "owner": "加藤勇",
+   "sled_kg": 470.0,
+   "weight": 873,
+   "weight_diff": 4,
+   "odds": 28.3,
+   "popularity": 7,
+   "position": 8,
+   "time": "2:35.7",
+   "margin_sec": 38.7,
+   "interval": "中2週",
+   "other": {
+    "label": "勝ち馬",
+    "name": "キングレイ"
+   }
+  },
+  {
+   "date": "2026-06-22",
+   "race_no": 2,
+   "race_name": "順ちゃん誕生日２ヶ月遅れ２歳Ｄ－５",
+   "class": "D",
+   "moisture": 2.5,
+   "field_size": 9,
+   "num": 8,
+   "jockey": "中村太",
+   "trainer": "小林長",
+   "owner": "加藤勇",
+   "sled_kg": 470.0,
+   "weight": 869,
+   "weight_diff": 3,
+   "odds": 29.9,
+   "popularity": 9,
+   "position": 8,
+   "time": "2:46.7",
+   "margin_sec": 42.0,
+   "interval": "連闘",
+   "other": {
+    "label": "勝ち馬",
+    "name": "ロキノクラン"
+   }
+  },
+  {
+   "date": "2026-06-15",
+   "race_no": 4,
+   "race_name": "還暦！真由美ひめ最強伝説杯２歳Ｄ－５",
+   "class": "D",
+   "moisture": 0.7,
+   "field_size": 8,
+   "num": 8,
+   "jockey": "中村太",
+   "trainer": "小林長",
+   "owner": "加藤勇",
+   "sled_kg": 470.0,
+   "weight": 866,
+   "weight_diff": 15,
+   "odds": 50.1,
+   "popularity": 7,
+   "position": 7,
+   "time": "3:25.7",
+   "margin_sec": 82.0,
+   "interval": "中2週",
+   "other": {
+    "label": "勝ち馬",
+    "name": "キタサカエヒトミ"
+   }
+  },
+  {
+   "date": "2026-06-01",
+   "race_no": 3,
+   "race_name": "２歳新馬",
+   "class": "新馬",
+   "moisture": 0.7,
+   "field_size": 10,
+   "num": 3,
+   "jockey": "中村太",
+   "trainer": "小林長",
+   "owner": "加藤勇",
+   "sled_kg": 470.0,
+   "weight": 851,
+   "weight_diff": null,
+   "odds": 79.5,
+   "popularity": 9,
+   "position": 9,
+   "time": "3:23.2",
+   "margin_sec": 73.8,
+   "interval": null,
+   "other": {
+    "label": "勝ち馬",
+    "name": "ホクセイワッショイ"
+   }
+  }
+ ]
+}

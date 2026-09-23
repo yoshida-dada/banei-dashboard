@@ -1,0 +1,168 @@
+{
+ "name": "ヤマトリュウ",
+ "sex": "セン",
+ "age": 2,
+ "trainer": "谷あゆ",
+ "owner": "矢藤秀樹",
+ "sled_kg": 500.0,
+ "weight": 870,
+ "weight_diff": 18,
+ "last_race_date": "2026-09-21",
+ "pedigree": {
+  "sire": "ツガルスピード",
+  "dam": null,
+  "sire_sire": "カネサブラック",
+  "sire_dam": "アンビシャス",
+  "dam_sire": null,
+  "dam_dam": null
+ },
+ "stats": {
+  "total": {
+   "win": 2,
+   "place2": 1,
+   "place3": 1,
+   "other": 1,
+   "n": 5,
+   "win_rate": 0.4,
+   "quinella_rate": 0.6,
+   "show_rate": 0.8
+  },
+  "2026": {
+   "win": 2,
+   "place2": 1,
+   "place3": 1,
+   "other": 1,
+   "n": 5,
+   "win_rate": 0.4,
+   "quinella_rate": 0.6,
+   "show_rate": 0.8
+  }
+ },
+ "races": [
+  {
+   "date": "2026-09-21",
+   "race_no": 5,
+   "race_name": "ＫＰＣ１０周年お祝い記念２歳Ｂ－５",
+   "class": "B",
+   "moisture": 2.4,
+   "field_size": 10,
+   "num": 6,
+   "jockey": "☆今井千",
+   "trainer": "谷あゆ",
+   "owner": "矢藤秀樹",
+   "sled_kg": 500.0,
+   "weight": 870,
+   "weight_diff": 18,
+   "odds": 2.8,
+   "popularity": 1,
+   "position": 1,
+   "time": "1:36.6",
+   "margin_sec": 0.0,
+   "interval": "中5週",
+   "other": {
+    "label": "2着馬",
+    "name": "ロキノクラン"
+   }
+  },
+  {
+   "date": "2026-08-15",
+   "race_no": 4,
+   "race_name": "翔、智香　結婚記念２歳Ｂ－４",
+   "class": "B4",
+   "moisture": 2.1,
+   "field_size": 10,
+   "num": 4,
+   "jockey": "☆今井千",
+   "trainer": "谷あゆ",
+   "owner": "矢藤秀樹",
+   "sled_kg": 490.0,
+   "weight": 852,
+   "weight_diff": -4,
+   "odds": 7.0,
+   "popularity": 4,
+   "position": 2,
+   "time": "1:49.1",
+   "margin_sec": 1.7,
+   "interval": "連闘",
+   "other": {
+    "label": "勝ち馬",
+    "name": "ハオ"
+   }
+  },
+  {
+   "date": "2026-08-10",
+   "race_no": 5,
+   "race_name": "２歳Ｂ－３",
+   "class": "B3",
+   "moisture": 1.5,
+   "field_size": 10,
+   "num": 2,
+   "jockey": "☆今井千",
+   "trainer": "谷あゆ",
+   "owner": "矢藤秀樹",
+   "sled_kg": 490.0,
+   "weight": 856,
+   "weight_diff": 19,
+   "odds": 3.6,
+   "popularity": 2,
+   "position": 5,
+   "time": "2:25.2",
+   "margin_sec": 25.6,
+   "interval": "中3週",
+   "other": {
+    "label": "勝ち馬",
+    "name": "ジェイノダイジン"
+   }
+  },
+  {
+   "date": "2026-07-19",
+   "race_no": 4,
+   "race_name": "ショコさん８周年おめでとう２歳Ｂ－４",
+   "class": "B4",
+   "moisture": 3.7,
+   "field_size": 10,
+   "num": 5,
+   "jockey": "☆今井千",
+   "trainer": "谷あゆ",
+   "owner": "矢藤秀樹",
+   "sled_kg": 490.0,
+   "weight": 837,
+   "weight_diff": -3,
+   "odds": 6.8,
+   "popularity": 4,
+   "position": 3,
+   "time": "1:55.4",
+   "margin_sec": 17.1,
+   "interval": "連闘",
+   "other": {
+    "label": "勝ち馬",
+    "name": "ミレン"
+   }
+  },
+  {
+   "date": "2026-07-13",
+   "race_no": 4,
+   "race_name": "２歳Ｄ－６",
+   "class": "D",
+   "moisture": 2.7,
+   "field_size": 10,
+   "num": 8,
+   "jockey": "☆今井千",
+   "trainer": "谷あゆ",
+   "owner": "矢藤秀樹",
+   "sled_kg": 470.0,
+   "weight": 840,
+   "weight_diff": null,
+   "odds": 3.2,
+   "popularity": 2,
+   "position": 1,
+   "time": "1:55.6",
+   "margin_sec": 0.0,
+   "interval": null,
+   "other": {
+    "label": "2着馬",
+    "name": "シュガーベリー"
+   }
+  }
+ ]
+}

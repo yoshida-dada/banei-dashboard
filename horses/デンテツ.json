@@ -1,0 +1,168 @@
+{
+ "name": "デンテツ",
+ "sex": "牡",
+ "age": 2,
+ "trainer": "岩本利",
+ "owner": "川岸哲夫",
+ "sled_kg": 510.0,
+ "weight": 879,
+ "weight_diff": 8,
+ "last_race_date": "2026-08-29",
+ "pedigree": {
+  "sire": "マツカゼウンカイ",
+  "dam": "コウシュハルビー",
+  "sire_sire": "マツカゼキング",
+  "sire_dam": "華姫",
+  "dam_sire": "インフィニティー",
+  "dam_dam": "皐月"
+ },
+ "stats": {
+  "total": {
+   "win": 0,
+   "place2": 1,
+   "place3": 1,
+   "other": 3,
+   "n": 5,
+   "win_rate": 0.0,
+   "quinella_rate": 0.2,
+   "show_rate": 0.4
+  },
+  "2026": {
+   "win": 0,
+   "place2": 1,
+   "place3": 1,
+   "other": 3,
+   "n": 5,
+   "win_rate": 0.0,
+   "quinella_rate": 0.2,
+   "show_rate": 0.4
+  }
+ },
+ "races": [
+  {
+   "date": "2026-08-29",
+   "race_no": 3,
+   "race_name": "池谷茂和生誕５０周年記念２歳Ｃ－７",
+   "class": "C",
+   "moisture": 1.8,
+   "field_size": 10,
+   "num": 3,
+   "jockey": "金田利",
+   "trainer": "岩本利",
+   "owner": "川岸哲夫",
+   "sled_kg": 510.0,
+   "weight": 879,
+   "weight_diff": 8,
+   "odds": 7.4,
+   "popularity": 4,
+   "position": 7,
+   "time": "2:32.9",
+   "margin_sec": 42.9,
+   "interval": "中1週",
+   "other": {
+    "label": "勝ち馬",
+    "name": "シンザンミハル"
+   }
+  },
+  {
+   "date": "2026-08-17",
+   "race_no": 3,
+   "race_name": "７／１８おい、明彦走れよ杯２歳Ｄ－３",
+   "class": "D",
+   "moisture": 1.4,
+   "field_size": 10,
+   "num": 10,
+   "jockey": "金田利",
+   "trainer": "岩本利",
+   "owner": "川岸哲夫",
+   "sled_kg": 500.0,
+   "weight": 871,
+   "weight_diff": 12,
+   "odds": 6.2,
+   "popularity": 3,
+   "position": 2,
+   "time": "2:16.0",
+   "margin_sec": 1.7,
+   "interval": "中2週",
+   "other": {
+    "label": "勝ち馬",
+    "name": "ホクショウテレサ"
+   }
+  },
+  {
+   "date": "2026-08-03",
+   "race_no": 2,
+   "race_name": "２歳Ｄ－６",
+   "class": "D",
+   "moisture": 1.4,
+   "field_size": 10,
+   "num": 3,
+   "jockey": "島津新",
+   "trainer": "岩本利",
+   "owner": "川岸哲夫",
+   "sled_kg": 500.0,
+   "weight": 859,
+   "weight_diff": 4,
+   "odds": 6.7,
+   "popularity": 3,
+   "position": 3,
+   "time": "2:33.5",
+   "margin_sec": 8.9,
+   "interval": "連闘",
+   "other": {
+    "label": "勝ち馬",
+    "name": "キタノキボウ"
+   }
+  },
+  {
+   "date": "2026-07-27",
+   "race_no": 4,
+   "race_name": "２歳Ｄ－６",
+   "class": "D",
+   "moisture": 1.2,
+   "field_size": 8,
+   "num": 1,
+   "jockey": "金田利",
+   "trainer": "岩本利",
+   "owner": "川岸哲夫",
+   "sled_kg": 500.0,
+   "weight": 855,
+   "weight_diff": 4,
+   "odds": 3.2,
+   "popularity": 1,
+   "position": 5,
+   "time": "3:12.0",
+   "margin_sec": 54.3,
+   "interval": "中2週",
+   "other": {
+    "label": "勝ち馬",
+    "name": "ダリア"
+   }
+  },
+  {
+   "date": "2026-07-13",
+   "race_no": 2,
+   "race_name": "２歳Ｄ－８",
+   "class": "D",
+   "moisture": 2.7,
+   "field_size": 10,
+   "num": 4,
+   "jockey": "赤塚健",
+   "trainer": "岩本利",
+   "owner": "川岸哲夫",
+   "sled_kg": 490.0,
+   "weight": 851,
+   "weight_diff": null,
+   "odds": 30.4,
+   "popularity": 8,
+   "position": 6,
+   "time": "2:25.0",
+   "margin_sec": 30.9,
+   "interval": null,
+   "other": {
+    "label": "勝ち馬",
+    "name": "ストロングダッシュ"
+   }
+  }
+ ]
+}

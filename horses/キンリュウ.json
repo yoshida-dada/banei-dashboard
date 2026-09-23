@@ -1,0 +1,86 @@
+{
+ "name": "キンリュウ",
+ "sex": "牡",
+ "age": 2,
+ "trainer": "村上慎",
+ "owner": "大熊金八",
+ "sled_kg": 500.0,
+ "weight": 836,
+ "weight_diff": 4,
+ "last_race_date": "2026-08-31",
+ "pedigree": null,
+ "stats": {
+  "total": {
+   "win": 1,
+   "place2": 0,
+   "place3": 0,
+   "other": 1,
+   "n": 2,
+   "win_rate": 0.5,
+   "quinella_rate": 0.5,
+   "show_rate": 0.5
+  },
+  "2026": {
+   "win": 1,
+   "place2": 0,
+   "place3": 0,
+   "other": 1,
+   "n": 2,
+   "win_rate": 0.5,
+   "quinella_rate": 0.5,
+   "show_rate": 0.5
+  }
+ },
+ "races": [
+  {
+   "date": "2026-08-31",
+   "race_no": 2,
+   "race_name": "佳乃子のばんえい再来場記念２歳Ｄ－７",
+   "class": "D",
+   "moisture": 1.4,
+   "field_size": 10,
+   "num": 3,
+   "jockey": "赤塚健",
+   "trainer": "村上慎",
+   "owner": "大熊金八",
+   "sled_kg": 500.0,
+   "weight": 836,
+   "weight_diff": 4,
+   "odds": 1.5,
+   "popularity": 1,
+   "position": 1,
+   "time": "2:23.8",
+   "margin_sec": 0.0,
+   "interval": "連闘",
+   "other": {
+    "label": "2着馬",
+    "name": "コトブキチャイブ"
+   }
+  },
+  {
+   "date": "2026-08-24",
+   "race_no": 2,
+   "race_name": "岩田康誠賞２歳Ｄ－８",
+   "class": "D",
+   "moisture": 0.6,
+   "field_size": 9,
+   "num": 8,
+   "jockey": "赤塚健",
+   "trainer": "村上慎",
+   "owner": "大熊金八",
+   "sled_kg": 500.0,
+   "weight": 832,
+   "weight_diff": null,
+   "odds": 8.1,
+   "popularity": 5,
+   "position": 5,
+   "time": "2:24.6",
+   "margin_sec": 7.3,
+   "interval": null,
+   "other": {
+    "label": "勝ち馬",
+    "name": "ホクセイタロウ"
+   }
+  }
+ ]
+}

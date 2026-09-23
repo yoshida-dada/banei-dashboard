@@ -1,0 +1,143 @@
+{
+ "name": "ショウライトモモ",
+ "sex": "牝",
+ "age": 2,
+ "trainer": "今井茂",
+ "owner": "村上昭一",
+ "sled_kg": 480.0,
+ "weight": 934,
+ "weight_diff": 19,
+ "last_race_date": "2026-09-21",
+ "pedigree": {
+  "sire": "ホクショウユヅル",
+  "dam": "ユメチオ",
+  "sire_sire": "ウンカイ",
+  "sire_dam": "コスモカップ",
+  "dam_sire": "カネサテンリュウ",
+  "dam_dam": "桜"
+ },
+ "stats": {
+  "total": {
+   "win": 1,
+   "place2": 0,
+   "place3": 0,
+   "other": 3,
+   "n": 4,
+   "win_rate": 0.25,
+   "quinella_rate": 0.25,
+   "show_rate": 0.25
+  },
+  "2026": {
+   "win": 1,
+   "place2": 0,
+   "place3": 0,
+   "other": 3,
+   "n": 4,
+   "win_rate": 0.25,
+   "quinella_rate": 0.25,
+   "show_rate": 0.25
+  }
+ },
+ "races": [
+  {
+   "date": "2026-09-21",
+   "race_no": 4,
+   "race_name": "じいじ北海道へようこそ２歳Ｃ－７",
+   "class": "C",
+   "moisture": 2.5,
+   "field_size": 10,
+   "num": 6,
+   "jockey": "☆今井千",
+   "trainer": "今井茂",
+   "owner": "村上昭一",
+   "sled_kg": 480.0,
+   "weight": 934,
+   "weight_diff": 19,
+   "odds": 6.7,
+   "popularity": 4,
+   "position": 9,
+   "time": "2:56.4",
+   "margin_sec": 72.8,
+   "interval": "中3週",
+   "other": {
+    "label": "勝ち馬",
+    "name": "シャインクィーン"
+   }
+  },
+  {
+   "date": "2026-08-31",
+   "race_no": 4,
+   "race_name": "てるＱばんえい初見参記念２歳Ｃ－５",
+   "class": "C",
+   "moisture": 1.4,
+   "field_size": 10,
+   "num": 6,
+   "jockey": "中原蓮",
+   "trainer": "今井茂",
+   "owner": "村上昭一",
+   "sled_kg": 490.0,
+   "weight": 915,
+   "weight_diff": 37,
+   "odds": 10.4,
+   "popularity": 5,
+   "position": 8,
+   "time": "2:33.2",
+   "margin_sec": 32.0,
+   "interval": "中8週",
+   "other": {
+    "label": "勝ち馬",
+    "name": "モンスター"
+   }
+  },
+  {
+   "date": "2026-07-06",
+   "race_no": 3,
+   "race_name": "ロータス神奈川支部旅行記念２歳Ｄ－４",
+   "class": "D",
+   "moisture": 0.8,
+   "field_size": 10,
+   "num": 3,
+   "jockey": "☆今井千",
+   "trainer": "今井茂",
+   "owner": "村上昭一",
+   "sled_kg": 460.0,
+   "weight": 878,
+   "weight_diff": 5,
+   "odds": 3.1,
+   "popularity": 2,
+   "position": 1,
+   "time": "2:19.5",
+   "margin_sec": 0.0,
+   "interval": "連闘",
+   "other": {
+    "label": "2着馬",
+    "name": "ミナトシンザン"
+   }
+  },
+  {
+   "date": "2026-06-29",
+   "race_no": 3,
+   "race_name": "２歳新馬",
+   "class": "新馬",
+   "moisture": 3.3,
+   "field_size": 9,
+   "num": 5,
+   "jockey": "☆今井千",
+   "trainer": "今井茂",
+   "owner": "村上昭一",
+   "sled_kg": 460.0,
+   "weight": 873,
+   "weight_diff": null,
+   "odds": 5.8,
+   "popularity": 4,
+   "position": 7,
+   "time": "2:28.1",
+   "margin_sec": 35.5,
+   "interval": null,
+   "other": {
+    "label": "勝ち馬",
+    "name": "クリボー"
+   }
+  }
+ ]
+}

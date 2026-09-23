@@ -1,0 +1,193 @@
+{
+ "name": "シンバクシンオー",
+ "sex": "牡",
+ "age": 2,
+ "trainer": "服部義",
+ "owner": "高嶋聡",
+ "sled_kg": 520.0,
+ "weight": 994,
+ "weight_diff": -4,
+ "last_race_date": "2026-09-19",
+ "pedigree": {
+  "sire": "キタノイチタロウ",
+  "dam": "巴",
+  "sire_sire": "キタノイチオク",
+  "sire_dam": "アシノクィーン",
+  "dam_sire": "スーパーテンマ",
+  "dam_dam": "桜竜"
+ },
+ "stats": {
+  "total": {
+   "win": 1,
+   "place2": 0,
+   "place3": 0,
+   "other": 5,
+   "n": 6,
+   "win_rate": 0.167,
+   "quinella_rate": 0.167,
+   "show_rate": 0.167
+  },
+  "2026": {
+   "win": 1,
+   "place2": 0,
+   "place3": 0,
+   "other": 5,
+   "n": 6,
+   "win_rate": 0.167,
+   "quinella_rate": 0.167,
+   "show_rate": 0.167
+  }
+ },
+ "races": [
+  {
+   "date": "2026-09-19",
+   "race_no": 4,
+   "race_name": "天孫降臨天音杯２歳Ｂ－２",
+   "class": "B2",
+   "moisture": 0.7,
+   "field_size": 10,
+   "num": 2,
+   "jockey": "長澤幸",
+   "trainer": "服部義",
+   "owner": "高嶋聡",
+   "sled_kg": 520.0,
+   "weight": 994,
+   "weight_diff": -4,
+   "odds": 15.5,
+   "popularity": 7,
+   "position": 8,
+   "time": "2:30.6",
+   "margin_sec": 49.6,
+   "interval": "中2週",
+   "other": {
+    "label": "勝ち馬",
+    "name": "ハイトップエース"
+   }
+  },
+  {
+   "date": "2026-09-05",
+   "race_no": 8,
+   "race_name": "十勝平野を青黒に染めろ杯２歳Ａ－４",
+   "class": "A4",
+   "moisture": 2.2,
+   "field_size": 10,
+   "num": 3,
+   "jockey": "長澤幸",
+   "trainer": "服部義",
+   "owner": "高嶋聡",
+   "sled_kg": 530.0,
+   "weight": 998,
+   "weight_diff": 7,
+   "odds": 12.3,
+   "popularity": 5,
+   "position": 8,
+   "time": "1:58.7",
+   "margin_sec": 20.0,
+   "interval": "中1週",
+   "other": {
+    "label": "勝ち馬",
+    "name": "インテグラル"
+   }
+  },
+  {
+   "date": "2026-08-23",
+   "race_no": 8,
+   "race_name": "２歳Ａ－３",
+   "class": "A3",
+   "moisture": 0.6,
+   "field_size": 10,
+   "num": 1,
+   "jockey": "鈴木恵",
+   "trainer": "服部義",
+   "owner": "高嶋聡",
+   "sled_kg": 520.0,
+   "weight": 991,
+   "weight_diff": 17,
+   "odds": 3.4,
+   "popularity": 1,
+   "position": 6,
+   "time": "2:15.6",
+   "margin_sec": 24.9,
+   "interval": "中2週",
+   "other": {
+    "label": "勝ち馬",
+    "name": "ハオリブル"
+   }
+  },
+  {
+   "date": "2026-08-08",
+   "race_no": 8,
+   "race_name": "令和８年８月８日８杯２歳Ａ－４",
+   "class": "A4",
+   "moisture": 2.8,
+   "field_size": 10,
+   "num": 9,
+   "jockey": "鈴木恵",
+   "trainer": "服部義",
+   "owner": "高嶋聡",
+   "sled_kg": 520.0,
+   "weight": 974,
+   "weight_diff": 17,
+   "odds": 8.7,
+   "popularity": 4,
+   "position": 5,
+   "time": "1:40.2",
+   "margin_sec": 8.6,
+   "interval": "中4週",
+   "other": {
+    "label": "勝ち馬",
+    "name": "サッコノイモウト"
+   }
+  },
+  {
+   "date": "2026-07-05",
+   "race_no": 6,
+   "race_name": "寛美♪５０ｔｈ　誕生記念２歳Ａ－２",
+   "class": "A2",
+   "moisture": 0.8,
+   "field_size": 9,
+   "num": 9,
+   "jockey": "長澤幸",
+   "trainer": "服部義",
+   "owner": "高嶋聡",
+   "sled_kg": 510.0,
+   "weight": 957,
+   "weight_diff": -2,
+   "odds": 6.1,
+   "popularity": 4,
+   "position": 8,
+   "time": "2:39.2",
+   "margin_sec": 32.9,
+   "interval": "連闘",
+   "other": {
+    "label": "勝ち馬",
+    "name": "クリスタルソウル"
+   }
+  },
+  {
+   "date": "2026-06-29",
+   "race_no": 2,
+   "race_name": "２歳新馬",
+   "class": "新馬",
+   "moisture": 3.3,
+   "field_size": 9,
+   "num": 1,
+   "jockey": "鈴木恵",
+   "trainer": "服部義",
+   "owner": "高嶋聡",
+   "sled_kg": 490.0,
+   "weight": 959,
+   "weight_diff": null,
+   "odds": 2.1,
+   "popularity": 1,
+   "position": 1,
+   "time": "1:47.2",
+   "margin_sec": 0.0,
+   "interval": null,
+   "other": {
+    "label": "2着馬",
+    "name": "ツカサドジャース"
+   }
+  }
+ ]
+}

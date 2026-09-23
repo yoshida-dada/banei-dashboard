@@ -1,0 +1,61 @@
+{
+ "name": "オオジョ",
+ "sex": "牝",
+ "age": 2,
+ "trainer": "大河和",
+ "owner": "田中稔",
+ "sled_kg": 480.0,
+ "weight": 760,
+ "weight_diff": null,
+ "last_race_date": "2026-09-07",
+ "pedigree": null,
+ "stats": {
+  "total": {
+   "win": 0,
+   "place2": 0,
+   "place3": 0,
+   "other": 1,
+   "n": 1,
+   "win_rate": 0.0,
+   "quinella_rate": 0.0,
+   "show_rate": 0.0
+  },
+  "2026": {
+   "win": 0,
+   "place2": 0,
+   "place3": 0,
+   "other": 1,
+   "n": 1,
+   "win_rate": 0.0,
+   "quinella_rate": 0.0,
+   "show_rate": 0.0
+  }
+ },
+ "races": [
+  {
+   "date": "2026-09-07",
+   "race_no": 2,
+   "race_name": "倫大朗１歳おめでとう記念２歳Ｄ－８",
+   "class": "D",
+   "moisture": 1.5,
+   "field_size": 10,
+   "num": 8,
+   "jockey": "長澤幸",
+   "trainer": "大河和",
+   "owner": "田中稔",
+   "sled_kg": 480.0,
+   "weight": 760,
+   "weight_diff": null,
+   "odds": 12.9,
+   "popularity": 5,
+   "position": 9,
+   "time": "3:43.3",
+   "margin_sec": 100.6,
+   "interval": null,
+   "other": {
+    "label": "勝ち馬",
+    "name": "アリチャン"
+   }
+  }
+ ]
+}

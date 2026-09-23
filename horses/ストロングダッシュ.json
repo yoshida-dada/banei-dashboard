@@ -1,0 +1,143 @@
+{
+ "name": "ストロングダッシュ",
+ "sex": "牡",
+ "age": 2,
+ "trainer": "谷あゆ",
+ "owner": "瀬戸省司",
+ "sled_kg": 520.0,
+ "weight": 945,
+ "weight_diff": 51,
+ "last_race_date": "2026-09-19",
+ "pedigree": {
+  "sire": "徒作",
+  "dam": "パラスアテナ",
+  "sire_sire": "禅福",
+  "sire_dam": "操悦",
+  "dam_sire": "ハシレアキオー",
+  "dam_dam": "龍姫"
+ },
+ "stats": {
+  "total": {
+   "win": 2,
+   "place2": 0,
+   "place3": 0,
+   "other": 2,
+   "n": 4,
+   "win_rate": 0.5,
+   "quinella_rate": 0.5,
+   "show_rate": 0.5
+  },
+  "2026": {
+   "win": 2,
+   "place2": 0,
+   "place3": 0,
+   "other": 2,
+   "n": 4,
+   "win_rate": 0.5,
+   "quinella_rate": 0.5,
+   "show_rate": 0.5
+  }
+ },
+ "races": [
+  {
+   "date": "2026-09-19",
+   "race_no": 4,
+   "race_name": "天孫降臨天音杯２歳Ｂ－２",
+   "class": "B2",
+   "moisture": 0.7,
+   "field_size": 10,
+   "num": 8,
+   "jockey": "中村太",
+   "trainer": "谷あゆ",
+   "owner": "瀬戸省司",
+   "sled_kg": 520.0,
+   "weight": 945,
+   "weight_diff": 51,
+   "odds": 4.6,
+   "popularity": 3,
+   "position": 5,
+   "time": "2:01.0",
+   "margin_sec": 20.0,
+   "interval": "中6週",
+   "other": {
+    "label": "勝ち馬",
+    "name": "ハイトップエース"
+   }
+  },
+  {
+   "date": "2026-08-02",
+   "race_no": 4,
+   "race_name": "陽子ママ帯広旅行記念２歳Ｂ－４",
+   "class": "B4",
+   "moisture": 2.2,
+   "field_size": 10,
+   "num": 10,
+   "jockey": "中村太",
+   "trainer": "谷あゆ",
+   "owner": "瀬戸省司",
+   "sled_kg": 510.0,
+   "weight": 894,
+   "weight_diff": -7,
+   "odds": 3.3,
+   "popularity": 2,
+   "position": 1,
+   "time": "1:51.3",
+   "margin_sec": 0.0,
+   "interval": "中2週",
+   "other": {
+    "label": "2着馬",
+    "name": "ヒロインミコ"
+   }
+  },
+  {
+   "date": "2026-07-19",
+   "race_no": 4,
+   "race_name": "ショコさん８周年おめでとう２歳Ｂ－４",
+   "class": "B4",
+   "moisture": 3.7,
+   "field_size": 10,
+   "num": 4,
+   "jockey": "中村太",
+   "trainer": "谷あゆ",
+   "owner": "瀬戸省司",
+   "sled_kg": 510.0,
+   "weight": 901,
+   "weight_diff": -4,
+   "odds": 3.5,
+   "popularity": 3,
+   "position": 4,
+   "time": "1:57.5",
+   "margin_sec": 19.2,
+   "interval": "連闘",
+   "other": {
+    "label": "勝ち馬",
+    "name": "ミレン"
+   }
+  },
+  {
+   "date": "2026-07-13",
+   "race_no": 2,
+   "race_name": "２歳Ｄ－８",
+   "class": "D",
+   "moisture": 2.7,
+   "field_size": 10,
+   "num": 5,
+   "jockey": "中村太",
+   "trainer": "谷あゆ",
+   "owner": "瀬戸省司",
+   "sled_kg": 490.0,
+   "weight": 905,
+   "weight_diff": null,
+   "odds": 1.5,
+   "popularity": 1,
+   "position": 1,
+   "time": "1:54.1",
+   "margin_sec": 0.0,
+   "interval": null,
+   "other": {
+    "label": "2着馬",
+    "name": "ココロノビジン"
+   }
+  }
+ ]
+}

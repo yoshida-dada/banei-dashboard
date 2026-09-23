@@ -1,0 +1,111 @@
+{
+ "name": "カイセイプリンス",
+ "sex": "牡",
+ "age": 2,
+ "trainer": "藤野俊",
+ "owner": "細川吉博",
+ "sled_kg": 500.0,
+ "weight": 770,
+ "weight_diff": -14,
+ "last_race_date": "2026-09-13",
+ "pedigree": null,
+ "stats": {
+  "total": {
+   "win": 0,
+   "place2": 0,
+   "place3": 1,
+   "other": 2,
+   "n": 3,
+   "win_rate": 0.0,
+   "quinella_rate": 0.0,
+   "show_rate": 0.333
+  },
+  "2026": {
+   "win": 0,
+   "place2": 0,
+   "place3": 1,
+   "other": 2,
+   "n": 3,
+   "win_rate": 0.0,
+   "quinella_rate": 0.0,
+   "show_rate": 0.333
+  }
+ },
+ "races": [
+  {
+   "date": "2026-09-13",
+   "race_no": 2,
+   "race_name": "殿ごろもちきんありがとう２歳Ｄ－６",
+   "class": "D",
+   "moisture": 0.9,
+   "field_size": 10,
+   "num": 6,
+   "jockey": "鈴木恵",
+   "trainer": "藤野俊",
+   "owner": "細川吉博",
+   "sled_kg": 500.0,
+   "weight": 770,
+   "weight_diff": -14,
+   "odds": 3.1,
+   "popularity": 1,
+   "position": 8,
+   "time": "2:51.1",
+   "margin_sec": 37.5,
+   "interval": "連闘",
+   "other": {
+    "label": "勝ち馬",
+    "name": "ツカサヤンキース"
+   }
+  },
+  {
+   "date": "2026-09-07",
+   "race_no": 3,
+   "race_name": "はるさん初ばんえい競馬記念２歳Ｄ－５",
+   "class": "D",
+   "moisture": 1.5,
+   "field_size": 10,
+   "num": 1,
+   "jockey": "鈴木恵",
+   "trainer": "藤野俊",
+   "owner": "細川吉博",
+   "sled_kg": 500.0,
+   "weight": 784,
+   "weight_diff": 6,
+   "odds": 2.1,
+   "popularity": 1,
+   "position": 5,
+   "time": "2:22.3",
+   "margin_sec": 14.8,
+   "interval": "中2週",
+   "other": {
+    "label": "勝ち馬",
+    "name": "キタノショウヘイ"
+   }
+  },
+  {
+   "date": "2026-08-24",
+   "race_no": 2,
+   "race_name": "岩田康誠賞２歳Ｄ－８",
+   "class": "D",
+   "moisture": 0.6,
+   "field_size": 9,
+   "num": 9,
+   "jockey": "鈴木恵",
+   "trainer": "藤野俊",
+   "owner": "細川吉博",
+   "sled_kg": 500.0,
+   "weight": 778,
+   "weight_diff": null,
+   "odds": 5.0,
+   "popularity": 2,
+   "position": 3,
+   "time": "2:19.6",
+   "margin_sec": 2.3,
+   "interval": null,
+   "other": {
+    "label": "勝ち馬",
+    "name": "ホクセイタロウ"
+   }
+  }
+ ]
+}

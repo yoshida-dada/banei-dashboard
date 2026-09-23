@@ -1,0 +1,193 @@
+{
+ "name": "スーパーハクリュウ",
+ "sex": "牝",
+ "age": 2,
+ "trainer": "今井茂",
+ "owner": "曽我部裕",
+ "sled_kg": 480.0,
+ "weight": 878,
+ "weight_diff": 44,
+ "last_race_date": "2026-09-14",
+ "pedigree": {
+  "sire": "サクラダイチ",
+  "dam": null,
+  "sire_sire": "ウンカイ",
+  "sire_dam": "竹小町",
+  "dam_sire": null,
+  "dam_dam": null
+ },
+ "stats": {
+  "total": {
+   "win": 1,
+   "place2": 0,
+   "place3": 0,
+   "other": 5,
+   "n": 6,
+   "win_rate": 0.167,
+   "quinella_rate": 0.167,
+   "show_rate": 0.167
+  },
+  "2026": {
+   "win": 1,
+   "place2": 0,
+   "place3": 0,
+   "other": 5,
+   "n": 6,
+   "win_rate": 0.167,
+   "quinella_rate": 0.167,
+   "show_rate": 0.167
+  }
+ },
+ "races": [
+  {
+   "date": "2026-09-14",
+   "race_no": 2,
+   "race_name": "さっぽろ卓ゲっと開催記念２歳Ｄ－７",
+   "class": "D",
+   "moisture": 0.9,
+   "field_size": 10,
+   "num": 2,
+   "jockey": "中原蓮",
+   "trainer": "今井茂",
+   "owner": "曽我部裕",
+   "sled_kg": 480.0,
+   "weight": 878,
+   "weight_diff": 44,
+   "odds": 10.8,
+   "popularity": 4,
+   "position": 1,
+   "time": "2:13.6",
+   "margin_sec": 0.0,
+   "interval": "中8週",
+   "other": {
+    "label": "2着馬",
+    "name": "スーパーメジャー"
+   }
+  },
+  {
+   "date": "2026-07-19",
+   "race_no": 2,
+   "race_name": "Ｋａｇｕｙａ　Ｂｏｏｋｓ杯２歳Ｄ－２",
+   "class": "D",
+   "moisture": 3.6,
+   "field_size": 10,
+   "num": 6,
+   "jockey": "中原蓮",
+   "trainer": "今井茂",
+   "owner": "曽我部裕",
+   "sled_kg": 480.0,
+   "weight": 834,
+   "weight_diff": -14,
+   "odds": 11.2,
+   "popularity": 6,
+   "position": 8,
+   "time": "2:50.0",
+   "margin_sec": 54.1,
+   "interval": "中2週",
+   "other": {
+    "label": "勝ち馬",
+    "name": "ワシノオ"
+   }
+  },
+  {
+   "date": "2026-07-05",
+   "race_no": 2,
+   "race_name": "ワークマンハウス帯広開業杯２歳Ｃ－６",
+   "class": "C",
+   "moisture": 0.8,
+   "field_size": 10,
+   "num": 2,
+   "jockey": "中村太",
+   "trainer": "今井茂",
+   "owner": "曽我部裕",
+   "sled_kg": 470.0,
+   "weight": 848,
+   "weight_diff": 17,
+   "odds": 7.4,
+   "popularity": 6,
+   "position": 7,
+   "time": "2:50.0",
+   "margin_sec": 22.8,
+   "interval": "中2週",
+   "other": {
+    "label": "勝ち馬",
+    "name": "アアモンドカイト"
+   }
+  },
+  {
+   "date": "2026-06-21",
+   "race_no": 2,
+   "race_name": "ジャガイモン１５周年記念２歳Ｄ－２",
+   "class": "D",
+   "moisture": 0.6,
+   "field_size": 10,
+   "num": 3,
+   "jockey": "中村太",
+   "trainer": "今井茂",
+   "owner": "曽我部裕",
+   "sled_kg": 470.0,
+   "weight": 831,
+   "weight_diff": -4,
+   "odds": 67.7,
+   "popularity": 10,
+   "position": 5,
+   "time": "2:12.8",
+   "margin_sec": 11.6,
+   "interval": "連闘",
+   "other": {
+    "label": "勝ち馬",
+    "name": "ハオ"
+   }
+  },
+  {
+   "date": "2026-06-15",
+   "race_no": 5,
+   "race_name": "てんひなちゃん爆誕記念２歳Ｄ－４",
+   "class": "D",
+   "moisture": 0.7,
+   "field_size": 9,
+   "num": 7,
+   "jockey": "中村太",
+   "trainer": "今井茂",
+   "owner": "曽我部裕",
+   "sled_kg": 470.0,
+   "weight": 835,
+   "weight_diff": -1,
+   "odds": 75.7,
+   "popularity": 9,
+   "position": 4,
+   "time": "3:13.0",
+   "margin_sec": 41.7,
+   "interval": "中2週",
+   "other": {
+    "label": "勝ち馬",
+    "name": "ヒメトラハピネス"
+   }
+  },
+  {
+   "date": "2026-05-30",
+   "race_no": 2,
+   "race_name": "２歳新馬",
+   "class": "新馬",
+   "moisture": 1.7,
+   "field_size": 10,
+   "num": 1,
+   "jockey": "中村太",
+   "trainer": "今井茂",
+   "owner": "曽我部裕",
+   "sled_kg": 470.0,
+   "weight": 836,
+   "weight_diff": null,
+   "odds": 40.9,
+   "popularity": 10,
+   "position": 8,
+   "time": "4:32.0",
+   "margin_sec": 140.7,
+   "interval": null,
+   "other": {
+    "label": "勝ち馬",
+    "name": "セリュヴァニア"
+   }
+  }
+ ]
+}

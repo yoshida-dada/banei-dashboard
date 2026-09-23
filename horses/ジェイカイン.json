@@ -1,0 +1,193 @@
+{
+ "name": "ジェイカイン",
+ "sex": "牡",
+ "age": 2,
+ "trainer": "松田道",
+ "owner": "小森唯永",
+ "sled_kg": 500.0,
+ "weight": 845,
+ "weight_diff": 23,
+ "last_race_date": "2026-09-21",
+ "pedigree": {
+  "sire": "マツカゼウンカイ",
+  "dam": "アアモンドハナビ",
+  "sire_sire": "マツカゼキング",
+  "sire_dam": "華姫",
+  "dam_sire": "ナリタビッグマン",
+  "dam_dam": "力桜"
+ },
+ "stats": {
+  "total": {
+   "win": 0,
+   "place2": 0,
+   "place3": 1,
+   "other": 5,
+   "n": 6,
+   "win_rate": 0.0,
+   "quinella_rate": 0.0,
+   "show_rate": 0.167
+  },
+  "2026": {
+   "win": 0,
+   "place2": 0,
+   "place3": 1,
+   "other": 5,
+   "n": 6,
+   "win_rate": 0.0,
+   "quinella_rate": 0.0,
+   "show_rate": 0.167
+  }
+ },
+ "races": [
+  {
+   "date": "2026-09-21",
+   "race_no": 2,
+   "race_name": "マリンお疲れ様でした！２歳Ｄ－５",
+   "class": "D",
+   "moisture": 2.5,
+   "field_size": 10,
+   "num": 9,
+   "jockey": "鈴木恵",
+   "trainer": "松田道",
+   "owner": "小森唯永",
+   "sled_kg": 500.0,
+   "weight": 845,
+   "weight_diff": 23,
+   "odds": 21.3,
+   "popularity": 9,
+   "position": 3,
+   "time": "1:57.6",
+   "margin_sec": 10.9,
+   "interval": "中2週",
+   "other": {
+    "label": "勝ち馬",
+    "name": "メオトテンザン"
+   }
+  },
+  {
+   "date": "2026-09-06",
+   "race_no": 2,
+   "race_name": "第１回しんくん卒業記念２歳Ｄ－４",
+   "class": "D",
+   "moisture": 1.8,
+   "field_size": 10,
+   "num": 2,
+   "jockey": "鈴木恵",
+   "trainer": "松田道",
+   "owner": "小森唯永",
+   "sled_kg": 500.0,
+   "weight": 822,
+   "weight_diff": -12,
+   "odds": 4.2,
+   "popularity": 3,
+   "position": 9,
+   "time": "2:53.5",
+   "margin_sec": 55.9,
+   "interval": "中2週",
+   "other": {
+    "label": "勝ち馬",
+    "name": "ココロノビジン"
+   }
+  },
+  {
+   "date": "2026-08-22",
+   "race_no": 2,
+   "race_name": "ぜったい歩かないマン賞２歳Ｄ－４",
+   "class": "D",
+   "moisture": 1.1,
+   "field_size": 9,
+   "num": 1,
+   "jockey": "鈴木恵",
+   "trainer": "松田道",
+   "owner": "小森唯永",
+   "sled_kg": 500.0,
+   "weight": 834,
+   "weight_diff": 14,
+   "odds": 3.7,
+   "popularity": 2,
+   "position": 4,
+   "time": "2:29.4",
+   "margin_sec": 19.1,
+   "interval": "中2週",
+   "other": {
+    "label": "勝ち馬",
+    "name": "トップラン"
+   }
+  },
+  {
+   "date": "2026-08-08",
+   "race_no": 2,
+   "race_name": "なっちゃんまん生誕祭記念２歳Ｄ－４",
+   "class": "D",
+   "moisture": 0.9,
+   "field_size": 10,
+   "num": 1,
+   "jockey": "大友一",
+   "trainer": "松田道",
+   "owner": "小森唯永",
+   "sled_kg": 500.0,
+   "weight": 820,
+   "weight_diff": 4,
+   "odds": 57.9,
+   "popularity": 9,
+   "position": 4,
+   "time": "2:47.6",
+   "margin_sec": 41.7,
+   "interval": "中3週",
+   "other": {
+    "label": "勝ち馬",
+    "name": "キタデテンセイ"
+   }
+  },
+  {
+   "date": "2026-07-18",
+   "race_no": 2,
+   "race_name": "ありがとう　藤田博己社長２歳Ｄ－４",
+   "class": "D",
+   "moisture": 1.6,
+   "field_size": 9,
+   "num": 1,
+   "jockey": "鈴木恵",
+   "trainer": "松田道",
+   "owner": "小森唯永",
+   "sled_kg": 500.0,
+   "weight": 816,
+   "weight_diff": -3,
+   "odds": 7.4,
+   "popularity": 4,
+   "position": 5,
+   "time": "2:27.0",
+   "margin_sec": 23.3,
+   "interval": "連闘",
+   "other": {
+    "label": "勝ち馬",
+    "name": "アルバノチカラ"
+   }
+  },
+  {
+   "date": "2026-07-13",
+   "race_no": 4,
+   "race_name": "２歳Ｄ－６",
+   "class": "D",
+   "moisture": 2.7,
+   "field_size": 10,
+   "num": 7,
+   "jockey": "西将太",
+   "trainer": "松田道",
+   "owner": "小森唯永",
+   "sled_kg": 490.0,
+   "weight": 819,
+   "weight_diff": null,
+   "odds": 25.5,
+   "popularity": 6,
+   "position": 5,
+   "time": "2:39.3",
+   "margin_sec": 43.7,
+   "interval": null,
+   "other": {
+    "label": "勝ち馬",
+    "name": "ヤマトリュウ"
+   }
+  }
+ ]
+}

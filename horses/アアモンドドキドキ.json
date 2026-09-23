@@ -1,0 +1,143 @@
+{
+ "name": "アアモンドドキドキ",
+ "sex": "牝",
+ "age": 2,
+ "trainer": "村上慎",
+ "owner": "下内美繪子",
+ "sled_kg": 490.0,
+ "weight": 841,
+ "weight_diff": 27,
+ "last_race_date": "2026-09-12",
+ "pedigree": {
+  "sire": "ファーストタロウ",
+  "dam": "レディースズコ",
+  "sire_sire": "カネサテンリュウ",
+  "sire_dam": "ニシキウンカイ",
+  "dam_sire": "コジロウスペシャル",
+  "dam_dam": "タカラスズヒメ"
+ },
+ "stats": {
+  "total": {
+   "win": 2,
+   "place2": 0,
+   "place3": 1,
+   "other": 1,
+   "n": 4,
+   "win_rate": 0.5,
+   "quinella_rate": 0.5,
+   "show_rate": 0.75
+  },
+  "2026": {
+   "win": 2,
+   "place2": 0,
+   "place3": 1,
+   "other": 1,
+   "n": 4,
+   "win_rate": 0.5,
+   "quinella_rate": 0.5,
+   "show_rate": 0.75
+  }
+ },
+ "races": [
+  {
+   "date": "2026-09-12",
+   "race_no": 4,
+   "race_name": "北海・Ｄ・王に俺はなる！２歳Ｃ－１",
+   "class": "C1",
+   "moisture": 0.9,
+   "field_size": 10,
+   "num": 2,
+   "jockey": "島津新",
+   "trainer": "村上慎",
+   "owner": "下内美繪子",
+   "sled_kg": 490.0,
+   "weight": 841,
+   "weight_diff": 27,
+   "odds": 6.9,
+   "popularity": 3,
+   "position": 1,
+   "time": "2:11.9",
+   "margin_sec": 0.0,
+   "interval": "中5週",
+   "other": {
+    "label": "2着馬",
+    "name": "ヒメトラハピネス"
+   }
+  },
+  {
+   "date": "2026-08-02",
+   "race_no": 3,
+   "race_name": "祝ＢＯＮさん還暦＆３周年２歳Ｃ－４",
+   "class": "C4",
+   "moisture": 2.2,
+   "field_size": 10,
+   "num": 10,
+   "jockey": "島津新",
+   "trainer": "村上慎",
+   "owner": "下内美繪子",
+   "sled_kg": 480.0,
+   "weight": 814,
+   "weight_diff": 16,
+   "odds": 4.5,
+   "popularity": 3,
+   "position": 1,
+   "time": "1:54.5",
+   "margin_sec": 0.0,
+   "interval": "中3週",
+   "other": {
+    "label": "2着馬",
+    "name": "サカノブラック"
+   }
+  },
+  {
+   "date": "2026-07-11",
+   "race_no": 3,
+   "race_name": "２歳Ｃ－２",
+   "class": "C2",
+   "moisture": 3.1,
+   "field_size": 10,
+   "num": 7,
+   "jockey": "島津新",
+   "trainer": "村上慎",
+   "owner": "下内美繪子",
+   "sled_kg": 470.0,
+   "weight": 798,
+   "weight_diff": 11,
+   "odds": 15.7,
+   "popularity": 5,
+   "position": 4,
+   "time": "1:57.1",
+   "margin_sec": 11.7,
+   "interval": "中3週",
+   "other": {
+    "label": "勝ち馬",
+    "name": "ジェイインター"
+   }
+  },
+  {
+   "date": "2026-06-15",
+   "race_no": 3,
+   "race_name": "２歳新馬",
+   "class": "新馬",
+   "moisture": 0.7,
+   "field_size": 10,
+   "num": 7,
+   "jockey": "島津新",
+   "trainer": "村上慎",
+   "owner": "下内美繪子",
+   "sled_kg": 470.0,
+   "weight": 787,
+   "weight_diff": null,
+   "odds": 22.3,
+   "popularity": 6,
+   "position": 3,
+   "time": "2:21.9",
+   "margin_sec": 20.0,
+   "interval": null,
+   "other": {
+    "label": "勝ち馬",
+    "name": "カイウンセンショウ"
+   }
+  }
+ ]
+}

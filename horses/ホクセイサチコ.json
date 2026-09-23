@@ -1,0 +1,136 @@
+{
+ "name": "ホクセイサチコ",
+ "sex": "牝",
+ "age": 2,
+ "trainer": "松井浩",
+ "owner": "（株）北西ファーム",
+ "sled_kg": 480.0,
+ "weight": 856,
+ "weight_diff": 16,
+ "last_race_date": "2026-09-13",
+ "pedigree": null,
+ "stats": {
+  "total": {
+   "win": 1,
+   "place2": 0,
+   "place3": 0,
+   "other": 3,
+   "n": 4,
+   "win_rate": 0.25,
+   "quinella_rate": 0.25,
+   "show_rate": 0.25
+  },
+  "2026": {
+   "win": 1,
+   "place2": 0,
+   "place3": 0,
+   "other": 3,
+   "n": 4,
+   "win_rate": 0.25,
+   "quinella_rate": 0.25,
+   "show_rate": 0.25
+  }
+ },
+ "races": [
+  {
+   "date": "2026-09-13",
+   "race_no": 3,
+   "race_name": "優太郎くん生誕記念２歳Ｃ－５",
+   "class": "C",
+   "moisture": 0.9,
+   "field_size": 10,
+   "num": 7,
+   "jockey": "☆今井千",
+   "trainer": "松井浩",
+   "owner": "（株）北西ファーム",
+   "sled_kg": 480.0,
+   "weight": 856,
+   "weight_diff": 16,
+   "odds": 5.6,
+   "popularity": 4,
+   "position": 4,
+   "time": "2:17.5",
+   "margin_sec": 17.4,
+   "interval": "中2週",
+   "other": {
+    "label": "勝ち馬",
+    "name": "ガッツデー"
+   }
+  },
+  {
+   "date": "2026-08-29",
+   "race_no": 4,
+   "race_name": "蛯名彩２０２６生誕祭記念２歳Ｃ－４",
+   "class": "C4",
+   "moisture": 1.8,
+   "field_size": 10,
+   "num": 4,
+   "jockey": "阿部優",
+   "trainer": "松井浩",
+   "owner": "（株）北西ファーム",
+   "sled_kg": 490.0,
+   "weight": 840,
+   "weight_diff": -5,
+   "odds": 31.1,
+   "popularity": 8,
+   "position": 4,
+   "time": "2:12.0",
+   "margin_sec": 23.9,
+   "interval": "連闘",
+   "other": {
+    "label": "勝ち馬",
+    "name": "オヤキ"
+   }
+  },
+  {
+   "date": "2026-08-24",
+   "race_no": 4,
+   "race_name": "小沢大仁賞２歳Ｃ－１",
+   "class": "C1",
+   "moisture": 0.6,
+   "field_size": 10,
+   "num": 6,
+   "jockey": "阿部優",
+   "trainer": "松井浩",
+   "owner": "（株）北西ファーム",
+   "sled_kg": 480.0,
+   "weight": 845,
+   "weight_diff": 12,
+   "odds": 4.3,
+   "popularity": 3,
+   "position": 9,
+   "time": "2:27.5",
+   "margin_sec": 42.2,
+   "interval": "中2週",
+   "other": {
+    "label": "勝ち馬",
+    "name": "バニラ"
+   }
+  },
+  {
+   "date": "2026-08-10",
+   "race_no": 2,
+   "race_name": "午年☆☆ひよちゃん爆誕記念２歳Ｄ－８",
+   "class": "D",
+   "moisture": 1.6,
+   "field_size": 10,
+   "num": 2,
+   "jockey": "阿部優",
+   "trainer": "松井浩",
+   "owner": "（株）北西ファーム",
+   "sled_kg": 480.0,
+   "weight": 833,
+   "weight_diff": null,
+   "odds": 2.7,
+   "popularity": 1,
+   "position": 1,
+   "time": "2:17.1",
+   "margin_sec": 0.0,
+   "interval": null,
+   "other": {
+    "label": "2着馬",
+    "name": "ユウキリンリン"
+   }
+  }
+ ]
+}

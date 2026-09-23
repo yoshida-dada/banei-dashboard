@@ -1,0 +1,86 @@
+{
+ "name": "オヤキ",
+ "sex": "牡",
+ "age": 2,
+ "trainer": "谷あゆ",
+ "owner": "梅村智秀",
+ "sled_kg": 510.0,
+ "weight": 796,
+ "weight_diff": -3,
+ "last_race_date": "2026-08-29",
+ "pedigree": null,
+ "stats": {
+  "total": {
+   "win": 2,
+   "place2": 0,
+   "place3": 0,
+   "other": 0,
+   "n": 2,
+   "win_rate": 1.0,
+   "quinella_rate": 1.0,
+   "show_rate": 1.0
+  },
+  "2026": {
+   "win": 2,
+   "place2": 0,
+   "place3": 0,
+   "other": 0,
+   "n": 2,
+   "win_rate": 1.0,
+   "quinella_rate": 1.0,
+   "show_rate": 1.0
+  }
+ },
+ "races": [
+  {
+   "date": "2026-08-29",
+   "race_no": 4,
+   "race_name": "蛯名彩２０２６生誕祭記念２歳Ｃ－４",
+   "class": "C4",
+   "moisture": 1.8,
+   "field_size": 10,
+   "num": 5,
+   "jockey": "渡来心",
+   "trainer": "谷あゆ",
+   "owner": "梅村智秀",
+   "sled_kg": 510.0,
+   "weight": 796,
+   "weight_diff": -3,
+   "odds": 2.3,
+   "popularity": 1,
+   "position": 1,
+   "time": "1:48.1",
+   "margin_sec": 0.0,
+   "interval": "連闘",
+   "other": {
+    "label": "2着馬",
+    "name": "マナザシ"
+   }
+  },
+  {
+   "date": "2026-08-24",
+   "race_no": 3,
+   "race_name": "荻野琢真賞２歳Ｄ－７",
+   "class": "D",
+   "moisture": 0.6,
+   "field_size": 9,
+   "num": 2,
+   "jockey": "渡来心",
+   "trainer": "谷あゆ",
+   "owner": "梅村智秀",
+   "sled_kg": 500.0,
+   "weight": 799,
+   "weight_diff": null,
+   "odds": 2.4,
+   "popularity": 1,
+   "position": 1,
+   "time": "2:02.4",
+   "margin_sec": 0.0,
+   "interval": null,
+   "other": {
+    "label": "2着馬",
+    "name": "ヒノクニファラオ"
+   }
+  }
+ ]
+}

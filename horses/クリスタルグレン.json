@@ -1,0 +1,86 @@
+{
+ "name": "クリスタルグレン",
+ "sex": "牝",
+ "age": 2,
+ "trainer": "西弘美",
+ "owner": "小向勝司",
+ "sled_kg": 480.0,
+ "weight": 825,
+ "weight_diff": -12,
+ "last_race_date": "2026-09-07",
+ "pedigree": null,
+ "stats": {
+  "total": {
+   "win": 0,
+   "place2": 0,
+   "place3": 0,
+   "other": 2,
+   "n": 2,
+   "win_rate": 0.0,
+   "quinella_rate": 0.0,
+   "show_rate": 0.0
+  },
+  "2026": {
+   "win": 0,
+   "place2": 0,
+   "place3": 0,
+   "other": 2,
+   "n": 2,
+   "win_rate": 0.0,
+   "quinella_rate": 0.0,
+   "show_rate": 0.0
+  }
+ },
+ "races": [
+  {
+   "date": "2026-09-07",
+   "race_no": 2,
+   "race_name": "倫大朗１歳おめでとう記念２歳Ｄ－８",
+   "class": "D",
+   "moisture": 1.5,
+   "field_size": 10,
+   "num": 7,
+   "jockey": "赤塚健",
+   "trainer": "西弘美",
+   "owner": "小向勝司",
+   "sled_kg": 480.0,
+   "weight": 825,
+   "weight_diff": -12,
+   "odds": 131.1,
+   "popularity": 10,
+   "position": 6,
+   "time": "2:47.8",
+   "margin_sec": 45.1,
+   "interval": "中2週",
+   "other": {
+    "label": "勝ち馬",
+    "name": "アリチャン"
+   }
+  },
+  {
+   "date": "2026-08-24",
+   "race_no": 2,
+   "race_name": "岩田康誠賞２歳Ｄ－８",
+   "class": "D",
+   "moisture": 0.6,
+   "field_size": 9,
+   "num": 6,
+   "jockey": "西謙一",
+   "trainer": "西弘美",
+   "owner": "小向勝司",
+   "sled_kg": 480.0,
+   "weight": 837,
+   "weight_diff": null,
+   "odds": 23.8,
+   "popularity": 7,
+   "position": 8,
+   "time": "3:00.3",
+   "margin_sec": 43.0,
+   "interval": null,
+   "other": {
+    "label": "勝ち馬",
+    "name": "ホクセイタロウ"
+   }
+  }
+ ]
+}

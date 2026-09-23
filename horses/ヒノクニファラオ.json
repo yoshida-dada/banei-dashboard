@@ -1,0 +1,143 @@
+{
+ "name": "ヒノクニファラオ",
+ "sex": "牡",
+ "age": 2,
+ "trainer": "西弘美",
+ "owner": "（有）古閑牧場",
+ "sled_kg": 500.0,
+ "weight": 798,
+ "weight_diff": 2,
+ "last_race_date": "2026-08-30",
+ "pedigree": {
+  "sire": "アアモンドハリアー",
+  "dam": null,
+  "sire_sire": "スギノハリアー",
+  "sire_dam": "汀朝",
+  "dam_sire": null,
+  "dam_dam": null
+ },
+ "stats": {
+  "total": {
+   "win": 0,
+   "place2": 1,
+   "place3": 0,
+   "other": 3,
+   "n": 4,
+   "win_rate": 0.0,
+   "quinella_rate": 0.25,
+   "show_rate": 0.25
+  },
+  "2026": {
+   "win": 0,
+   "place2": 1,
+   "place3": 0,
+   "other": 3,
+   "n": 4,
+   "win_rate": 0.0,
+   "quinella_rate": 0.25,
+   "show_rate": 0.25
+  }
+ },
+ "races": [
+  {
+   "date": "2026-08-30",
+   "race_no": 2,
+   "race_name": "第１８回しっとの夏記念２歳Ｄ－３",
+   "class": "D",
+   "moisture": 1.6,
+   "field_size": 10,
+   "num": 5,
+   "jockey": "赤塚健",
+   "trainer": "西弘美",
+   "owner": "（有）古閑牧場",
+   "sled_kg": 500.0,
+   "weight": 798,
+   "weight_diff": 2,
+   "odds": 14.7,
+   "popularity": 7,
+   "position": 8,
+   "time": "2:28.7",
+   "margin_sec": 21.6,
+   "interval": "連闘",
+   "other": {
+    "label": "勝ち馬",
+    "name": "イワキニセイ"
+   }
+  },
+  {
+   "date": "2026-08-24",
+   "race_no": 3,
+   "race_name": "荻野琢真賞２歳Ｄ－７",
+   "class": "D",
+   "moisture": 0.6,
+   "field_size": 9,
+   "num": 8,
+   "jockey": "西謙一",
+   "trainer": "西弘美",
+   "owner": "（有）古閑牧場",
+   "sled_kg": 500.0,
+   "weight": 796,
+   "weight_diff": 24,
+   "odds": 6.4,
+   "popularity": 3,
+   "position": 2,
+   "time": "2:24.2",
+   "margin_sec": 21.8,
+   "interval": "中8週",
+   "other": {
+    "label": "勝ち馬",
+    "name": "オヤキ"
+   }
+  },
+  {
+   "date": "2026-06-29",
+   "race_no": 5,
+   "race_name": "渡辺和昭６７歳スタート記念２歳Ｄ－６",
+   "class": "D",
+   "moisture": 3.2,
+   "field_size": 9,
+   "num": 1,
+   "jockey": "中原蓮",
+   "trainer": "西弘美",
+   "owner": "（有）古閑牧場",
+   "sled_kg": 490.0,
+   "weight": 772,
+   "weight_diff": 3,
+   "odds": 17.7,
+   "popularity": 5,
+   "position": 9,
+   "time": "2:59.8",
+   "margin_sec": 47.1,
+   "interval": "中2週",
+   "other": {
+    "label": "勝ち馬",
+    "name": "ヌサマイサンセット"
+   }
+  },
+  {
+   "date": "2026-06-13",
+   "race_no": 3,
+   "race_name": "２歳新馬",
+   "class": "新馬",
+   "moisture": 1.1,
+   "field_size": 10,
+   "num": 10,
+   "jockey": "西将太",
+   "trainer": "西弘美",
+   "owner": "（有）古閑牧場",
+   "sled_kg": 490.0,
+   "weight": 769,
+   "weight_diff": null,
+   "odds": 29.2,
+   "popularity": 7,
+   "position": 8,
+   "time": "3:46.9",
+   "margin_sec": 97.6,
+   "interval": null,
+   "other": {
+    "label": "勝ち馬",
+    "name": "ツカサエンゼル"
+   }
+  }
+ ]
+}

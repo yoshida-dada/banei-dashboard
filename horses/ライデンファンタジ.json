@@ -1,0 +1,193 @@
+{
+ "name": "ライデンファンタジ",
+ "sex": "牡",
+ "age": 2,
+ "trainer": "岩本利",
+ "owner": "田中猛",
+ "sled_kg": 500.0,
+ "weight": 925,
+ "weight_diff": 10,
+ "last_race_date": "2026-09-21",
+ "pedigree": {
+  "sire": "センショウニシキ",
+  "dam": "南花姫",
+  "sire_sire": "ニシキダイジン",
+  "sire_dam": "ウィルトン",
+  "dam_sire": "ミスタートカチ",
+  "dam_dam": "ハナノウンカイ"
+ },
+ "stats": {
+  "total": {
+   "win": 0,
+   "place2": 0,
+   "place3": 2,
+   "other": 4,
+   "n": 6,
+   "win_rate": 0.0,
+   "quinella_rate": 0.0,
+   "show_rate": 0.333
+  },
+  "2026": {
+   "win": 0,
+   "place2": 0,
+   "place3": 2,
+   "other": 4,
+   "n": 6,
+   "win_rate": 0.0,
+   "quinella_rate": 0.0,
+   "show_rate": 0.333
+  }
+ },
+ "races": [
+  {
+   "date": "2026-09-21",
+   "race_no": 2,
+   "race_name": "マリンお疲れ様でした！２歳Ｄ－５",
+   "class": "D",
+   "moisture": 2.5,
+   "field_size": 10,
+   "num": 2,
+   "jockey": "島津新",
+   "trainer": "岩本利",
+   "owner": "田中猛",
+   "sled_kg": 500.0,
+   "weight": 925,
+   "weight_diff": 10,
+   "odds": 9.1,
+   "popularity": 4,
+   "position": 4,
+   "time": "1:58.8",
+   "margin_sec": 12.1,
+   "interval": "中3週",
+   "other": {
+    "label": "勝ち馬",
+    "name": "メオトテンザン"
+   }
+  },
+  {
+   "date": "2026-08-30",
+   "race_no": 2,
+   "race_name": "第１８回しっとの夏記念２歳Ｄ－３",
+   "class": "D",
+   "moisture": 1.6,
+   "field_size": 10,
+   "num": 4,
+   "jockey": "鈴木恵",
+   "trainer": "岩本利",
+   "owner": "田中猛",
+   "sled_kg": 500.0,
+   "weight": 915,
+   "weight_diff": 22,
+   "odds": 2.6,
+   "popularity": 1,
+   "position": 7,
+   "time": "2:27.3",
+   "margin_sec": 20.2,
+   "interval": "中1週",
+   "other": {
+    "label": "勝ち馬",
+    "name": "イワキニセイ"
+   }
+  },
+  {
+   "date": "2026-08-22",
+   "race_no": 3,
+   "race_name": "かよは面白くなりたいで賞２歳Ｄ－１",
+   "class": "D",
+   "moisture": 1.0,
+   "field_size": 10,
+   "num": 3,
+   "jockey": "鈴木恵",
+   "trainer": "岩本利",
+   "owner": "田中猛",
+   "sled_kg": 500.0,
+   "weight": 893,
+   "weight_diff": 3,
+   "odds": 3.2,
+   "popularity": 1,
+   "position": 8,
+   "time": "2:24.3",
+   "margin_sec": 27.7,
+   "interval": "中3週",
+   "other": {
+    "label": "勝ち馬",
+    "name": "マオノクラージュ"
+   }
+  },
+  {
+   "date": "2026-08-01",
+   "race_no": 3,
+   "race_name": "重秋が敦子に会いに来た記念２歳Ｃ－６",
+   "class": "C",
+   "moisture": 3.2,
+   "field_size": 10,
+   "num": 6,
+   "jockey": "鈴木恵",
+   "trainer": "岩本利",
+   "owner": "田中猛",
+   "sled_kg": 500.0,
+   "weight": 890,
+   "weight_diff": 6,
+   "odds": 2.4,
+   "popularity": 1,
+   "position": 6,
+   "time": "2:06.7",
+   "margin_sec": 11.8,
+   "interval": "中1週",
+   "other": {
+    "label": "勝ち馬",
+    "name": "イワキエスポワール"
+   }
+  },
+  {
+   "date": "2026-07-20",
+   "race_no": 2,
+   "race_name": "剛志４３歳おめでとう記念２歳Ｄ－１",
+   "class": "D",
+   "moisture": 2.9,
+   "field_size": 9,
+   "num": 5,
+   "jockey": "鈴木恵",
+   "trainer": "岩本利",
+   "owner": "田中猛",
+   "sled_kg": 500.0,
+   "weight": 884,
+   "weight_diff": 3,
+   "odds": 5.4,
+   "popularity": 3,
+   "position": 3,
+   "time": "2:11.1",
+   "margin_sec": 10.7,
+   "interval": "連闘",
+   "other": {
+    "label": "勝ち馬",
+    "name": "ラストユウセン"
+   }
+  },
+  {
+   "date": "2026-07-13",
+   "race_no": 4,
+   "race_name": "２歳Ｄ－６",
+   "class": "D",
+   "moisture": 2.7,
+   "field_size": 10,
+   "num": 4,
+   "jockey": "鈴木恵",
+   "trainer": "岩本利",
+   "owner": "田中猛",
+   "sled_kg": 490.0,
+   "weight": 881,
+   "weight_diff": null,
+   "odds": 5.7,
+   "popularity": 3,
+   "position": 3,
+   "time": "2:22.4",
+   "margin_sec": 26.8,
+   "interval": null,
+   "other": {
+    "label": "勝ち馬",
+    "name": "ヤマトリュウ"
+   }
+  }
+ ]
+}

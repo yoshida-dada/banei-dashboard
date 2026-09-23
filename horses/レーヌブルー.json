@@ -1,0 +1,193 @@
+{
+ "name": "レーヌブルー",
+ "sex": "牝",
+ "age": 2,
+ "trainer": "大友人",
+ "owner": "横山智",
+ "sled_kg": 480.0,
+ "weight": 821,
+ "weight_diff": 15,
+ "last_race_date": "2026-09-19",
+ "pedigree": {
+  "sire": "センショウニシキ",
+  "dam": "雷鳥姫",
+  "sire_sire": "ニシキダイジン",
+  "sire_dam": "ウィルトン",
+  "dam_sire": "ライデンボーイ",
+  "dam_dam": "鳥源"
+ },
+ "stats": {
+  "total": {
+   "win": 0,
+   "place2": 0,
+   "place3": 0,
+   "other": 6,
+   "n": 6,
+   "win_rate": 0.0,
+   "quinella_rate": 0.0,
+   "show_rate": 0.0
+  },
+  "2026": {
+   "win": 0,
+   "place2": 0,
+   "place3": 0,
+   "other": 6,
+   "n": 6,
+   "win_rate": 0.0,
+   "quinella_rate": 0.0,
+   "show_rate": 0.0
+  }
+ },
+ "races": [
+  {
+   "date": "2026-09-19",
+   "race_no": 2,
+   "race_name": "文紀＆裕美結婚３周年記念杯２歳Ｄ－８",
+   "class": "D",
+   "moisture": 0.7,
+   "field_size": 9,
+   "num": 5,
+   "jockey": "島津新",
+   "trainer": "大友人",
+   "owner": "横山智",
+   "sled_kg": 480.0,
+   "weight": 821,
+   "weight_diff": 15,
+   "odds": 14.3,
+   "popularity": 6,
+   "position": 7,
+   "time": "2:58.3",
+   "margin_sec": 66.2,
+   "interval": "中2週",
+   "other": {
+    "label": "勝ち馬",
+    "name": "フクマルペガサス"
+   }
+  },
+  {
+   "date": "2026-08-31",
+   "race_no": 2,
+   "race_name": "佳乃子のばんえい再来場記念２歳Ｄ－７",
+   "class": "D",
+   "moisture": 1.4,
+   "field_size": 10,
+   "num": 2,
+   "jockey": "大友一",
+   "trainer": "大友人",
+   "owner": "横山智",
+   "sled_kg": 480.0,
+   "weight": 806,
+   "weight_diff": 2,
+   "odds": 142.3,
+   "popularity": 9,
+   "position": 8,
+   "time": "3:06.0",
+   "margin_sec": 42.2,
+   "interval": "連闘",
+   "other": {
+    "label": "勝ち馬",
+    "name": "キンリュウ"
+   }
+  },
+  {
+   "date": "2026-08-24",
+   "race_no": 3,
+   "race_name": "荻野琢真賞２歳Ｄ－７",
+   "class": "D",
+   "moisture": 0.6,
+   "field_size": 9,
+   "num": 3,
+   "jockey": "大友一",
+   "trainer": "大友人",
+   "owner": "横山智",
+   "sled_kg": 480.0,
+   "weight": 804,
+   "weight_diff": -6,
+   "odds": 30.5,
+   "popularity": 8,
+   "position": 8,
+   "time": "2:57.6",
+   "margin_sec": 55.2,
+   "interval": "中2週",
+   "other": {
+    "label": "勝ち馬",
+    "name": "オヤキ"
+   }
+  },
+  {
+   "date": "2026-08-10",
+   "race_no": 3,
+   "race_name": "ベーカリーＰａｎｇｏ！杯２歳Ｄ－７",
+   "class": "D",
+   "moisture": 1.6,
+   "field_size": 10,
+   "num": 5,
+   "jockey": "大友一",
+   "trainer": "大友人",
+   "owner": "横山智",
+   "sled_kg": 480.0,
+   "weight": 810,
+   "weight_diff": 6,
+   "odds": 24.6,
+   "popularity": 8,
+   "position": 9,
+   "time": "4:08.9",
+   "margin_sec": 109.0,
+   "interval": "中2週",
+   "other": {
+    "label": "勝ち馬",
+    "name": "ヒノクニスピード"
+   }
+  },
+  {
+   "date": "2026-07-27",
+   "race_no": 4,
+   "race_name": "２歳Ｄ－６",
+   "class": "D",
+   "moisture": 1.2,
+   "field_size": 8,
+   "num": 5,
+   "jockey": "鈴木恵",
+   "trainer": "大友人",
+   "owner": "横山智",
+   "sled_kg": 480.0,
+   "weight": 804,
+   "weight_diff": -1,
+   "odds": 7.1,
+   "popularity": 4,
+   "position": 8,
+   "time": "3:42.3",
+   "margin_sec": 84.6,
+   "interval": "中2週",
+   "other": {
+    "label": "勝ち馬",
+    "name": "ダリア"
+   }
+  },
+  {
+   "date": "2026-07-13",
+   "race_no": 4,
+   "race_name": "２歳Ｄ－６",
+   "class": "D",
+   "moisture": 2.7,
+   "field_size": 10,
+   "num": 2,
+   "jockey": "大友一",
+   "trainer": "大友人",
+   "owner": "横山智",
+   "sled_kg": 470.0,
+   "weight": 805,
+   "weight_diff": null,
+   "odds": 95.1,
+   "popularity": 10,
+   "position": 6,
+   "time": "2:42.7",
+   "margin_sec": 47.1,
+   "interval": null,
+   "other": {
+    "label": "勝ち馬",
+    "name": "ヤマトリュウ"
+   }
+  }
+ ]
+}

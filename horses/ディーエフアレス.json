@@ -1,0 +1,193 @@
+{
+ "name": "ディーエフアレス",
+ "sex": "牡",
+ "age": 2,
+ "trainer": "小林長",
+ "owner": "池田賢治",
+ "sled_kg": 500.0,
+ "weight": 875,
+ "weight_diff": 17,
+ "last_race_date": "2026-09-20",
+ "pedigree": {
+  "sire": "カンシャノココロ",
+  "dam": null,
+  "sire_sire": "ヤマトオーカン",
+  "sire_dam": "オーイッセー",
+  "dam_sire": null,
+  "dam_dam": null
+ },
+ "stats": {
+  "total": {
+   "win": 0,
+   "place2": 1,
+   "place3": 0,
+   "other": 5,
+   "n": 6,
+   "win_rate": 0.0,
+   "quinella_rate": 0.167,
+   "show_rate": 0.167
+  },
+  "2026": {
+   "win": 0,
+   "place2": 1,
+   "place3": 0,
+   "other": 5,
+   "n": 6,
+   "win_rate": 0.0,
+   "quinella_rate": 0.167,
+   "show_rate": 0.167
+  }
+ },
+ "races": [
+  {
+   "date": "2026-09-20",
+   "race_no": 2,
+   "race_name": "革新された未来２歳Ｄ－１",
+   "class": "D",
+   "moisture": 2.6,
+   "field_size": 10,
+   "num": 10,
+   "jockey": "島津新",
+   "trainer": "小林長",
+   "owner": "池田賢治",
+   "sled_kg": 500.0,
+   "weight": 875,
+   "weight_diff": 17,
+   "odds": 29.2,
+   "popularity": 9,
+   "position": 4,
+   "time": "1:44.4",
+   "margin_sec": 11.1,
+   "interval": "中3週",
+   "other": {
+    "label": "勝ち馬",
+    "name": "ミナトシンザン"
+   }
+  },
+  {
+   "date": "2026-08-30",
+   "race_no": 2,
+   "race_name": "第１８回しっとの夏記念２歳Ｄ－３",
+   "class": "D",
+   "moisture": 1.6,
+   "field_size": 10,
+   "num": 1,
+   "jockey": "島津新",
+   "trainer": "小林長",
+   "owner": "池田賢治",
+   "sled_kg": 500.0,
+   "weight": 858,
+   "weight_diff": 11,
+   "odds": 12.9,
+   "popularity": 6,
+   "position": 2,
+   "time": "2:09.2",
+   "margin_sec": 2.1,
+   "interval": "中1週",
+   "other": {
+    "label": "勝ち馬",
+    "name": "イワキニセイ"
+   }
+  },
+  {
+   "date": "2026-08-17",
+   "race_no": 3,
+   "race_name": "７／１８おい、明彦走れよ杯２歳Ｄ－３",
+   "class": "D",
+   "moisture": 1.4,
+   "field_size": 10,
+   "num": 9,
+   "jockey": "島津新",
+   "trainer": "小林長",
+   "owner": "池田賢治",
+   "sled_kg": 500.0,
+   "weight": 847,
+   "weight_diff": 24,
+   "odds": 40.1,
+   "popularity": 8,
+   "position": 4,
+   "time": "2:29.5",
+   "margin_sec": 15.2,
+   "interval": "中3週",
+   "other": {
+    "label": "勝ち馬",
+    "name": "ホクショウテレサ"
+   }
+  },
+  {
+   "date": "2026-07-27",
+   "race_no": 5,
+   "race_name": "ますざわあいか愛してる２歳Ｃ－６",
+   "class": "C",
+   "moisture": 1.1,
+   "field_size": 9,
+   "num": 3,
+   "jockey": "渡来心",
+   "trainer": "小林長",
+   "owner": "池田賢治",
+   "sled_kg": 500.0,
+   "weight": 823,
+   "weight_diff": -4,
+   "odds": 65.0,
+   "popularity": 9,
+   "position": 8,
+   "time": "2:55.9",
+   "margin_sec": 36.0,
+   "interval": "中3週",
+   "other": {
+    "label": "勝ち馬",
+    "name": "ツカサロイヤル"
+   }
+  },
+  {
+   "date": "2026-07-06",
+   "race_no": 4,
+   "race_name": "☆幸与☆いつもありがとう杯２歳Ｃ－５",
+   "class": "C",
+   "moisture": 0.8,
+   "field_size": 10,
+   "num": 5,
+   "jockey": "渡来心",
+   "trainer": "小林長",
+   "owner": "池田賢治",
+   "sled_kg": 490.0,
+   "weight": 827,
+   "weight_diff": 14,
+   "odds": 25.0,
+   "popularity": 9,
+   "position": 7,
+   "time": "3:00.5",
+   "margin_sec": 52.7,
+   "interval": "中1週",
+   "other": {
+    "label": "勝ち馬",
+    "name": "オオサト"
+   }
+  },
+  {
+   "date": "2026-06-28",
+   "race_no": 3,
+   "race_name": "２歳新馬",
+   "class": "新馬",
+   "moisture": 3.3,
+   "field_size": 9,
+   "num": 3,
+   "jockey": "島津新",
+   "trainer": "小林長",
+   "owner": "池田賢治",
+   "sled_kg": 490.0,
+   "weight": 813,
+   "weight_diff": null,
+   "odds": 8.2,
+   "popularity": 4,
+   "position": 4,
+   "time": "2:26.6",
+   "margin_sec": 44.0,
+   "interval": null,
+   "other": {
+    "label": "勝ち馬",
+    "name": "ミラクルアナ"
+   }
+  }
+ ]
+}

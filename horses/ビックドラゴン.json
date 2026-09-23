@@ -1,0 +1,86 @@
+{
+ "name": "ビックドラゴン",
+ "sex": "牡",
+ "age": 2,
+ "trainer": "西弘美",
+ "owner": "大石正和",
+ "sled_kg": 500.0,
+ "weight": 784,
+ "weight_diff": 29,
+ "last_race_date": "2026-08-31",
+ "pedigree": null,
+ "stats": {
+  "total": {
+   "win": 0,
+   "place2": 0,
+   "place3": 1,
+   "other": 1,
+   "n": 2,
+   "win_rate": 0.0,
+   "quinella_rate": 0.0,
+   "show_rate": 0.5
+  },
+  "2026": {
+   "win": 0,
+   "place2": 0,
+   "place3": 1,
+   "other": 1,
+   "n": 2,
+   "win_rate": 0.0,
+   "quinella_rate": 0.0,
+   "show_rate": 0.5
+  }
+ },
+ "races": [
+  {
+   "date": "2026-08-31",
+   "race_no": 2,
+   "race_name": "佳乃子のばんえい再来場記念２歳Ｄ－７",
+   "class": "D",
+   "moisture": 1.4,
+   "field_size": 10,
+   "num": 5,
+   "jockey": "西謙一",
+   "trainer": "西弘美",
+   "owner": "大石正和",
+   "sled_kg": 500.0,
+   "weight": 784,
+   "weight_diff": 29,
+   "odds": 4.2,
+   "popularity": 2,
+   "position": 3,
+   "time": "2:43.1",
+   "margin_sec": 19.3,
+   "interval": "中3週",
+   "other": {
+    "label": "勝ち馬",
+    "name": "キンリュウ"
+   }
+  },
+  {
+   "date": "2026-08-10",
+   "race_no": 2,
+   "race_name": "午年☆☆ひよちゃん爆誕記念２歳Ｄ－８",
+   "class": "D",
+   "moisture": 1.6,
+   "field_size": 10,
+   "num": 1,
+   "jockey": "西将太",
+   "trainer": "西弘美",
+   "owner": "大石正和",
+   "sled_kg": 500.0,
+   "weight": 755,
+   "weight_diff": null,
+   "odds": 12.6,
+   "popularity": 6,
+   "position": 4,
+   "time": "2:43.7",
+   "margin_sec": 26.6,
+   "interval": null,
+   "other": {
+    "label": "勝ち馬",
+    "name": "ホクセイサチコ"
+   }
+  }
+ ]
+}

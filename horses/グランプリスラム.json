@@ -1,0 +1,143 @@
+{
+ "name": "グランプリスラム",
+ "sex": "牝",
+ "age": 2,
+ "trainer": "今井茂",
+ "owner": "日野未来",
+ "sled_kg": 480.0,
+ "weight": 914,
+ "weight_diff": 13,
+ "last_race_date": "2026-08-31",
+ "pedigree": {
+  "sire": "ブチオ",
+  "dam": "ヒカルモモカ",
+  "sire_sire": "コマローレンス",
+  "sire_dam": "アローマドンナ",
+  "dam_sire": "ナリタボブサップ",
+  "dam_dam": "サトチャンカラフル"
+ },
+ "stats": {
+  "total": {
+   "win": 0,
+   "place2": 1,
+   "place3": 0,
+   "other": 3,
+   "n": 4,
+   "win_rate": 0.0,
+   "quinella_rate": 0.25,
+   "show_rate": 0.25
+  },
+  "2026": {
+   "win": 0,
+   "place2": 1,
+   "place3": 0,
+   "other": 3,
+   "n": 4,
+   "win_rate": 0.0,
+   "quinella_rate": 0.25,
+   "show_rate": 0.25
+  }
+ },
+ "races": [
+  {
+   "date": "2026-08-31",
+   "race_no": 4,
+   "race_name": "てるＱばんえい初見参記念２歳Ｃ－５",
+   "class": "C",
+   "moisture": 1.4,
+   "field_size": 10,
+   "num": 4,
+   "jockey": "☆今井千",
+   "trainer": "今井茂",
+   "owner": "日野未来",
+   "sled_kg": 480.0,
+   "weight": 914,
+   "weight_diff": 13,
+   "odds": 2.4,
+   "popularity": 1,
+   "position": 10,
+   "time": "2:39.3",
+   "margin_sec": 38.1,
+   "interval": "中3週",
+   "other": {
+    "label": "勝ち馬",
+    "name": "モンスター"
+   }
+  },
+  {
+   "date": "2026-08-09",
+   "race_no": 2,
+   "race_name": "２歳Ｃ－２",
+   "class": "C2",
+   "moisture": 2.4,
+   "field_size": 10,
+   "num": 2,
+   "jockey": "☆今井千",
+   "trainer": "今井茂",
+   "owner": "日野未来",
+   "sled_kg": 470.0,
+   "weight": 901,
+   "weight_diff": 2,
+   "odds": 5.2,
+   "popularity": 3,
+   "position": 8,
+   "time": "1:55.5",
+   "margin_sec": 20.8,
+   "interval": "中3週",
+   "other": {
+    "label": "勝ち馬",
+    "name": "キンカザン"
+   }
+  },
+  {
+   "date": "2026-07-18",
+   "race_no": 4,
+   "race_name": "杜野もりんちゅ誕生日記念２歳Ｂ－５",
+   "class": "B",
+   "moisture": 1.7,
+   "field_size": 10,
+   "num": 3,
+   "jockey": "☆今井千",
+   "trainer": "今井茂",
+   "owner": "日野未来",
+   "sled_kg": 480.0,
+   "weight": 899,
+   "weight_diff": 13,
+   "odds": 4.4,
+   "popularity": 2,
+   "position": 6,
+   "time": "2:04.1",
+   "margin_sec": 14.5,
+   "interval": "中2週",
+   "other": {
+    "label": "勝ち馬",
+    "name": "ホクショウジェイク"
+   }
+  },
+  {
+   "date": "2026-06-28",
+   "race_no": 3,
+   "race_name": "２歳新馬",
+   "class": "新馬",
+   "moisture": 3.3,
+   "field_size": 9,
+   "num": 9,
+   "jockey": "☆今井千",
+   "trainer": "今井茂",
+   "owner": "日野未来",
+   "sled_kg": 460.0,
+   "weight": 886,
+   "weight_diff": null,
+   "odds": 2.3,
+   "popularity": 1,
+   "position": 2,
+   "time": "2:00.2",
+   "margin_sec": 17.6,
+   "interval": null,
+   "other": {
+    "label": "勝ち馬",
+    "name": "ミラクルアナ"
+   }
+  }
+ ]
+}

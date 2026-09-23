@@ -1,0 +1,168 @@
+{
+ "name": "ホクセイワッショイ",
+ "sex": "牡",
+ "age": 2,
+ "trainer": "坂本東",
+ "owner": "竹内宏人",
+ "sled_kg": 530.0,
+ "weight": 871,
+ "weight_diff": 27,
+ "last_race_date": "2026-09-19",
+ "pedigree": {
+  "sire": "スギノハリアー",
+  "dam": "アットヒメ",
+  "sire_sire": "サカノタイソン",
+  "sire_dam": "ウィナーローマン",
+  "dam_sire": "リキミノル",
+  "dam_dam": "ショウエイトップ"
+ },
+ "stats": {
+  "total": {
+   "win": 2,
+   "place2": 0,
+   "place3": 2,
+   "other": 1,
+   "n": 5,
+   "win_rate": 0.4,
+   "quinella_rate": 0.4,
+   "show_rate": 0.8
+  },
+  "2026": {
+   "win": 2,
+   "place2": 0,
+   "place3": 2,
+   "other": 1,
+   "n": 5,
+   "win_rate": 0.4,
+   "quinella_rate": 0.4,
+   "show_rate": 0.8
+  }
+ },
+ "races": [
+  {
+   "date": "2026-09-19",
+   "race_no": 8,
+   "race_name": "ＩＦＭＲ十勝開催記念２歳Ａ－２",
+   "class": "A2",
+   "moisture": 0.7,
+   "field_size": 9,
+   "num": 7,
+   "jockey": "阿部武",
+   "trainer": "坂本東",
+   "owner": "竹内宏人",
+   "sled_kg": 530.0,
+   "weight": 871,
+   "weight_diff": 27,
+   "odds": 3.8,
+   "popularity": 2,
+   "position": 1,
+   "time": "1:41.1",
+   "margin_sec": 0.0,
+   "interval": "中2週",
+   "other": {
+    "label": "2着馬",
+    "name": "ハゴロモミニョン"
+   }
+  },
+  {
+   "date": "2026-08-30",
+   "race_no": 8,
+   "race_name": "夢つなぐ帯広西ロータリー杯２歳Ａ－３",
+   "class": "A3",
+   "moisture": 1.6,
+   "field_size": 10,
+   "num": 7,
+   "jockey": "阿部武",
+   "trainer": "坂本東",
+   "owner": "竹内宏人",
+   "sled_kg": 530.0,
+   "weight": 844,
+   "weight_diff": 9,
+   "odds": 3.5,
+   "popularity": 2,
+   "position": 3,
+   "time": "1:52.7",
+   "margin_sec": 3.3,
+   "interval": "中10週",
+   "other": {
+    "label": "勝ち馬",
+    "name": "フジノモンスター"
+   }
+  },
+  {
+   "date": "2026-06-21",
+   "race_no": 6,
+   "race_name": "酒井一圭５１歳生誕記念２歳Ａ－２",
+   "class": "A2",
+   "moisture": 0.7,
+   "field_size": 9,
+   "num": 7,
+   "jockey": "阿部武",
+   "trainer": "坂本東",
+   "owner": "竹内宏人",
+   "sled_kg": 510.0,
+   "weight": 835,
+   "weight_diff": 1,
+   "odds": 6.8,
+   "popularity": 5,
+   "position": 3,
+   "time": "1:51.0",
+   "margin_sec": 7.2,
+   "interval": "連闘",
+   "other": {
+    "label": "勝ち馬",
+    "name": "ドウナンリュウホオ"
+   }
+  },
+  {
+   "date": "2026-06-14",
+   "race_no": 5,
+   "race_name": "和輝くん生誕おめでた杯！２歳Ａ－１",
+   "class": "A1",
+   "moisture": 0.9,
+   "field_size": 8,
+   "num": 3,
+   "jockey": "阿部武",
+   "trainer": "坂本東",
+   "owner": "竹内宏人",
+   "sled_kg": 500.0,
+   "weight": 834,
+   "weight_diff": 12,
+   "odds": 25.6,
+   "popularity": 7,
+   "position": 6,
+   "time": "2:04.7",
+   "margin_sec": 22.1,
+   "interval": "中1週",
+   "other": {
+    "label": "勝ち馬",
+    "name": "アオニシキ"
+   }
+  },
+  {
+   "date": "2026-06-01",
+   "race_no": 3,
+   "race_name": "２歳新馬",
+   "class": "新馬",
+   "moisture": 0.7,
+   "field_size": 10,
+   "num": 1,
+   "jockey": "阿部武",
+   "trainer": "坂本東",
+   "owner": "竹内宏人",
+   "sled_kg": 490.0,
+   "weight": 822,
+   "weight_diff": null,
+   "odds": 3.4,
+   "popularity": 2,
+   "position": 1,
+   "time": "2:09.4",
+   "margin_sec": 0.0,
+   "interval": null,
+   "other": {
+    "label": "2着馬",
+    "name": "アンズティエルナ"
+   }
+  }
+ ]
+}

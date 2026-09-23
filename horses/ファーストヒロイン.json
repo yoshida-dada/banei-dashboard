@@ -1,0 +1,168 @@
+{
+ "name": "ファーストヒロイン",
+ "sex": "牝",
+ "age": 2,
+ "trainer": "村上慎",
+ "owner": "細川弘則",
+ "sled_kg": 480.0,
+ "weight": 905,
+ "weight_diff": 4,
+ "last_race_date": "2026-09-12",
+ "pedigree": {
+  "sire": "フクノカミカゼ",
+  "dam": "カネサヒロイン",
+  "sire_sire": "フクイチ",
+  "sire_dam": "出夢七世",
+  "dam_sire": "アサヒセンショウ",
+  "dam_dam": "カネサウイン"
+ },
+ "stats": {
+  "total": {
+   "win": 0,
+   "place2": 1,
+   "place3": 2,
+   "other": 2,
+   "n": 5,
+   "win_rate": 0.0,
+   "quinella_rate": 0.2,
+   "show_rate": 0.6
+  },
+  "2026": {
+   "win": 0,
+   "place2": 1,
+   "place3": 2,
+   "other": 2,
+   "n": 5,
+   "win_rate": 0.0,
+   "quinella_rate": 0.2,
+   "show_rate": 0.6
+  }
+ },
+ "races": [
+  {
+   "date": "2026-09-12",
+   "race_no": 2,
+   "race_name": "心晴ちゃんもうすぐ２歳記念Ｄ－４",
+   "class": "D",
+   "moisture": 1.0,
+   "field_size": 10,
+   "num": 7,
+   "jockey": "赤塚健",
+   "trainer": "村上慎",
+   "owner": "細川弘則",
+   "sled_kg": 480.0,
+   "weight": 905,
+   "weight_diff": 4,
+   "odds": 8.3,
+   "popularity": 4,
+   "position": 2,
+   "time": "2:27.6",
+   "margin_sec": 24.4,
+   "interval": "連闘",
+   "other": {
+    "label": "勝ち馬",
+    "name": "ツカサカブス"
+   }
+  },
+  {
+   "date": "2026-09-07",
+   "race_no": 3,
+   "race_name": "はるさん初ばんえい競馬記念２歳Ｄ－５",
+   "class": "D",
+   "moisture": 1.5,
+   "field_size": 10,
+   "num": 10,
+   "jockey": "村上章",
+   "trainer": "村上慎",
+   "owner": "細川弘則",
+   "sled_kg": 480.0,
+   "weight": 901,
+   "weight_diff": 24,
+   "odds": 18.0,
+   "popularity": 6,
+   "position": 3,
+   "time": "2:14.0",
+   "margin_sec": 6.5,
+   "interval": "中5週",
+   "other": {
+    "label": "勝ち馬",
+    "name": "キタノショウヘイ"
+   }
+  },
+  {
+   "date": "2026-08-03",
+   "race_no": 3,
+   "race_name": "祝山岸門人芸能生活２５周年２歳Ｄ－３",
+   "class": "D",
+   "moisture": 1.4,
+   "field_size": 10,
+   "num": 5,
+   "jockey": "船山蔵",
+   "trainer": "村上慎",
+   "owner": "細川弘則",
+   "sled_kg": 480.0,
+   "weight": 877,
+   "weight_diff": -1,
+   "odds": 65.5,
+   "popularity": 10,
+   "position": 7,
+   "time": "2:52.0",
+   "margin_sec": 22.9,
+   "interval": "連闘",
+   "other": {
+    "label": "勝ち馬",
+    "name": "ヒメトラルビー"
+   }
+  },
+  {
+   "date": "2026-07-27",
+   "race_no": 2,
+   "race_name": "光廣・明子結婚４２周年記念２歳Ｄ－８",
+   "class": "D",
+   "moisture": 1.3,
+   "field_size": 8,
+   "num": 5,
+   "jockey": "☆今井千",
+   "trainer": "村上慎",
+   "owner": "細川弘則",
+   "sled_kg": 470.0,
+   "weight": 878,
+   "weight_diff": 6,
+   "odds": 5.2,
+   "popularity": 3,
+   "position": 3,
+   "time": "2:51.1",
+   "margin_sec": 16.0,
+   "interval": "中2週",
+   "other": {
+    "label": "勝ち馬",
+    "name": "キタサカエリュウ"
+   }
+  },
+  {
+   "date": "2026-07-13",
+   "race_no": 3,
+   "race_name": "２歳Ｄ－７",
+   "class": "D",
+   "moisture": 2.7,
+   "field_size": 9,
+   "num": 7,
+   "jockey": "菊池一",
+   "trainer": "村上慎",
+   "owner": "細川弘則",
+   "sled_kg": 470.0,
+   "weight": 872,
+   "weight_diff": null,
+   "odds": 13.6,
+   "popularity": 5,
+   "position": 8,
+   "time": "2:55.7",
+   "margin_sec": 64.7,
+   "interval": null,
+   "other": {
+    "label": "勝ち馬",
+    "name": "ミレン"
+   }
+  }
+ ]
+}

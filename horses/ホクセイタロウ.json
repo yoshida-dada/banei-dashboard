@@ -1,0 +1,193 @@
+{
+ "name": "ホクセイタロウ",
+ "sex": "牡",
+ "age": 2,
+ "trainer": "大友人",
+ "owner": "竹内宏人",
+ "sled_kg": 510.0,
+ "weight": 825,
+ "weight_diff": -6,
+ "last_race_date": "2026-08-29",
+ "pedigree": {
+  "sire": "ミタコトナイ",
+  "dam": "タケノソフィア",
+  "sire_sire": "タケタカラ",
+  "sire_dam": "ダイヤスマップ",
+  "dam_sire": "アサノカイリキ",
+  "dam_dam": "快光三世"
+ },
+ "stats": {
+  "total": {
+   "win": 1,
+   "place2": 0,
+   "place3": 0,
+   "other": 5,
+   "n": 6,
+   "win_rate": 0.167,
+   "quinella_rate": 0.167,
+   "show_rate": 0.167
+  },
+  "2026": {
+   "win": 1,
+   "place2": 0,
+   "place3": 0,
+   "other": 5,
+   "n": 6,
+   "win_rate": 0.167,
+   "quinella_rate": 0.167,
+   "show_rate": 0.167
+  }
+ },
+ "races": [
+  {
+   "date": "2026-08-29",
+   "race_no": 4,
+   "race_name": "蛯名彩２０２６生誕祭記念２歳Ｃ－４",
+   "class": "C4",
+   "moisture": 1.8,
+   "field_size": 10,
+   "num": 7,
+   "jockey": "大友一",
+   "trainer": "大友人",
+   "owner": "竹内宏人",
+   "sled_kg": 510.0,
+   "weight": 825,
+   "weight_diff": -6,
+   "odds": 110.9,
+   "popularity": 10,
+   "position": 5,
+   "time": "2:16.4",
+   "margin_sec": 28.3,
+   "interval": "連闘",
+   "other": {
+    "label": "勝ち馬",
+    "name": "オヤキ"
+   }
+  },
+  {
+   "date": "2026-08-24",
+   "race_no": 2,
+   "race_name": "岩田康誠賞２歳Ｄ－８",
+   "class": "D",
+   "moisture": 0.6,
+   "field_size": 9,
+   "num": 3,
+   "jockey": "渡来心",
+   "trainer": "大友人",
+   "owner": "竹内宏人",
+   "sled_kg": 500.0,
+   "weight": 831,
+   "weight_diff": 11,
+   "odds": 43.5,
+   "popularity": 8,
+   "position": 1,
+   "time": "2:17.3",
+   "margin_sec": 0.0,
+   "interval": "中3週",
+   "other": {
+    "label": "2着馬",
+    "name": "ナカゼンミハル"
+   }
+  },
+  {
+   "date": "2026-08-03",
+   "race_no": 2,
+   "race_name": "２歳Ｄ－６",
+   "class": "D",
+   "moisture": 1.4,
+   "field_size": 10,
+   "num": 4,
+   "jockey": "渡来心",
+   "trainer": "大友人",
+   "owner": "竹内宏人",
+   "sled_kg": 500.0,
+   "weight": 820,
+   "weight_diff": 8,
+   "odds": 89.6,
+   "popularity": 10,
+   "position": 10,
+   "time": "3:20.2",
+   "margin_sec": 55.6,
+   "interval": "中1週",
+   "other": {
+    "label": "勝ち馬",
+    "name": "キタノキボウ"
+   }
+  },
+  {
+   "date": "2026-07-25",
+   "race_no": 2,
+   "race_name": "２歳Ｄ－５",
+   "class": "D",
+   "moisture": 2.0,
+   "field_size": 10,
+   "num": 6,
+   "jockey": "渡来心",
+   "trainer": "大友人",
+   "owner": "竹内宏人",
+   "sled_kg": 500.0,
+   "weight": 812,
+   "weight_diff": -1,
+   "odds": 24.5,
+   "popularity": 8,
+   "position": 10,
+   "time": "2:41.7",
+   "margin_sec": 37.9,
+   "interval": "中1週",
+   "other": {
+    "label": "勝ち馬",
+    "name": "イワキフィニティー"
+   }
+  },
+  {
+   "date": "2026-07-13",
+   "race_no": 3,
+   "race_name": "２歳Ｄ－７",
+   "class": "D",
+   "moisture": 2.7,
+   "field_size": 9,
+   "num": 1,
+   "jockey": "渡来心",
+   "trainer": "大友人",
+   "owner": "竹内宏人",
+   "sled_kg": 490.0,
+   "weight": 813,
+   "weight_diff": 9,
+   "odds": 31.0,
+   "popularity": 7,
+   "position": 7,
+   "time": "2:42.1",
+   "margin_sec": 51.1,
+   "interval": "中2週",
+   "other": {
+    "label": "勝ち馬",
+    "name": "ミレン"
+   }
+  },
+  {
+   "date": "2026-06-29",
+   "race_no": 2,
+   "race_name": "２歳新馬",
+   "class": "新馬",
+   "moisture": 3.3,
+   "field_size": 9,
+   "num": 3,
+   "jockey": "渡来心",
+   "trainer": "大友人",
+   "owner": "竹内宏人",
+   "sled_kg": 490.0,
+   "weight": 804,
+   "weight_diff": null,
+   "odds": 38.7,
+   "popularity": 9,
+   "position": 8,
+   "time": "3:15.7",
+   "margin_sec": 88.5,
+   "interval": null,
+   "other": {
+    "label": "勝ち馬",
+    "name": "シンバクシンオー"
+   }
+  }
+ ]
+}

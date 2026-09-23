@@ -216,6 +216,25 @@ table.ht .roi{color:color-mix(in srgb,var(--ev-hue) 78%,var(--ink));font-weight:
 .rbtbl tr.pick{background:color-mix(in srgb,var(--accent) 12%,var(--surface))}
 .rbtbl td.rbtop{color:var(--good);font-weight:800}
 .rbtbl .rbpick{color:var(--accent);font-weight:800;margin-left:3px}
+.hnamelink{cursor:pointer;text-decoration:underline;text-decoration-color:var(--border2);text-underline-offset:2px}
+/* 馬別成績（レース別全着順の馬名タップで開く4階層目、2026-09-24） */
+.hppedgrid{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-bottom:4px}
+.hppedcell{background:var(--surface2);border:1px solid var(--border2);border-radius:9px;padding:6px 9px}
+.hppedcell.sub{opacity:.78}
+.hppedt{font-size:.6rem;color:var(--muted)}
+.hppedn{font-size:.8rem;font-weight:700;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.hprace{border-top:1px solid var(--border2);padding:10px 2px;font-size:.74rem}
+.hprace:first-child{border-top:0}
+.hpr1{display:flex;align-items:center;gap:7px;font-weight:800}
+.hpdate{color:var(--ink)}
+.hprno{color:var(--muted);font-weight:600}
+.hppop{color:var(--muted);font-weight:600;margin-left:auto}
+.hpto{color:var(--muted)}
+.hpto.hit{color:var(--good)}
+.hprname{margin-top:3px;font-weight:700;color:var(--ink);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.hprline{margin-top:3px;color:var(--muted);line-height:1.5}
+.hprline.muted{font-size:.68rem}
+.hpgate{display:inline-flex;align-items:center;justify-content:center;width:16px;height:16px;border-radius:4px;font-size:.64rem;font-weight:800}
 .hnamewrap{flex:1;min-width:0}
 .hsub{font-size:.72rem;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin-top:1px}
 .hjk{font-size:.72rem;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin-top:1px}
@@ -1510,7 +1529,7 @@ function loadLogic(){
 // その日の全レースの予想◎・着順・単勝払戻を、レース番号タップでさらに全頭着順を確認できるようにする。
 // データは race_history.json（build_race_history.py が archive+DB から生成、読み取り専用）。
 const WD_JP=["日","月","火","水","木","金","土"];
-let histState={date:null, race:null};
+let histState={date:null, race:null, horse:null};
 function loadRaceHistory(cb){
   if(window.__HIST){ cb(window.__HIST); return; }
   fetch("./race_history.json?t="+Date.now()).then(r=>r.json()).then(j=>{ window.__HIST=j; cb(j); })
@@ -1518,7 +1537,7 @@ function loadRaceHistory(cb){
       if(b) b.innerHTML='<div class="tknote">日別詳細データ(race_history.json)の読込に失敗しました。</div>'; });
 }
 function openDayDetail(date){
-  histState={date, race:null};
+  histState={date, race:null, horse:null};
   document.getElementById("histModal").style.display="flex";
   document.getElementById("histTitle").textContent=date.replace(/-/g,"/");
   document.getElementById("histBody").innerHTML='<div class="tknote">読込中…</div>';
@@ -1526,10 +1545,12 @@ function openDayDetail(date){
 }
 function openRaceDetail(raceNo){
   histState.race=raceNo;
+  histState.horse=null;
   renderHistModal();
 }
 function closeHistModal(){ document.getElementById("histModal").style.display="none"; }
 function renderHistModal(){
+  if(histState.horse){ renderHorseProfile(); return; }
   const H=window.__HIST, day=H && H.days[histState.date];
   const body=document.getElementById("histBody");
   if(!day){ document.getElementById("histTitle").textContent=histState.date.replace(/-/g,"/");
@@ -1560,7 +1581,7 @@ function renderHistModal(){
     const rows=race.horses.map(h=>{
       const wTxt = h.weight!=null ? h.weight+(h.weight_diff!=null?"("+(h.weight_diff>0?"+":"")+h.weight_diff+")":"") : "—";
       return `<tr class="${h.is_pick?'pick':''}"><td class="${h.pos===1?'rbtop':''}">${h.pos??'—'}</td>`
-        +`<td>${h.name||''}${h.is_pick?'<span class="rbpick">◎</span>':''}</td>`
+        +`<td><span class="hnamelink" data-horse="${h.name}">${h.name||''}</span>${h.is_pick?'<span class="rbpick">◎</span>':''}</td>`
         +`<td>${h.time||'—'}</td><td>${h.popularity??'—'}</td>`
         +`<td>${h.odds!=null?h.odds.toFixed(1):'—'}</td><td>${h.jockey||'—'}</td>`
         +`<td>${wTxt}</td><td>${h.gate??'—'}</td><td>${h.num}</td>`
@@ -1573,9 +1594,90 @@ function renderHistModal(){
       +`<div class="rbtblwrap"><table class="rbtbl"><thead><tr><th>着</th><th class="l">馬名</th><th>タイム</th>`
       +`<th>人気</th><th>単勝</th><th>騎手</th><th>馬体重</th><th>枠</th><th>番</th><th>性齢</th><th>そり</th></tr></thead>`
       +`<tbody>${rows}</tbody></table></div>`
+      +`<div class="tknote">馬名をタップすると通算成績・過去成績・血統を表示します。</div>`
       +payoutsHtml(race.payouts);
     document.getElementById("histBackBtn").onclick=()=>{ histState.race=null; renderHistModal(); };
+    body.querySelectorAll(".hnamelink").forEach(el=>el.onclick=()=>openHorseProfile(el.dataset.horse));
   }
+}
+// ===== 馬別成績（日別成績→レース別全着順に続く3階層目、2026-09-24）=====
+// dashboard/horses/<馬名>.json（build_horse_profiles.pyが生成、809頭分を1頭1ファイルに分割済み。
+// 全頭一括ロードだと19MB超になるため、タップされた馬だけ都度fetchする）。
+let hpShowAll=false;
+function openHorseProfile(name){
+  histState.horse=name;
+  hpShowAll=false;
+  document.getElementById("histTitle").textContent=name;
+  document.getElementById("histBody").innerHTML='<div class="tknote">読込中…</div>';
+  loadHorseProfile(name, renderHorseProfile);
+}
+function loadHorseProfile(name, cb){
+  window.__HORSES = window.__HORSES || {};
+  if(window.__HORSES[name]){ cb(); return; }
+  fetch("./horses/"+encodeURIComponent(name)+".json?t="+Date.now()).then(r=>{ if(!r.ok) throw 0; return r.json(); })
+    .then(j=>{ window.__HORSES[name]=j; cb(); })
+    .catch(()=>{ const b=document.getElementById("histBody");
+      if(b) b.innerHTML='<div class="tknote">この馬の成績データが見つかりませんでした。</div>'; });
+}
+function hpYearRows(stats){
+  const years=Object.keys(stats).filter(k=>k!=="total").sort((a,b)=>b-a);
+  const row=(label,s)=>`<tr><td class="l">${label}</td><td>${s.win}</td><td>${s.place2}</td><td>${s.place3}</td>`
+    +`<td>${s.other}</td><td>${s.n}</td><td>${tkPct(s.win_rate)}</td><td>${tkPct(s.quinella_rate)}</td><td>${tkPct(s.show_rate)}</td></tr>`;
+  return row("通算",stats.total)+years.map(y=>row(y+"年",stats[y])).join("");
+}
+function hpPedigreeHtml(p){
+  if(!p || !(p.sire||p.dam)) return "";
+  return `<div class="tksect">血統</div><div class="hppedgrid">`
+    +`<div class="hppedcell"><div class="hppedt">父</div><div class="hppedn">${p.sire||'—'}</div></div>`
+    +`<div class="hppedcell"><div class="hppedt">母</div><div class="hppedn">${p.dam||'—'}</div></div>`
+    +`<div class="hppedcell sub"><div class="hppedt">父父</div><div class="hppedn">${p.sire_sire||'—'}</div></div>`
+    +`<div class="hppedcell sub"><div class="hppedt">父母</div><div class="hppedn">${p.sire_dam||'—'}</div></div>`
+    +`<div class="hppedcell sub"><div class="hppedt">母父</div><div class="hppedn">${p.dam_sire||'—'}</div></div>`
+    +`<div class="hppedcell sub"><div class="hppedt">母母</div><div class="hppedn">${p.dam_dam||'—'}</div></div></div>`;
+}
+function renderHorseProfile(){
+  const name=histState.horse, h=window.__HORSES && window.__HORSES[name];
+  const body=document.getElementById("histBody");
+  document.getElementById("histTitle").textContent=name;
+  if(!h){ body.innerHTML='<div class="tknote">この馬の成績データがありません。</div>'; return; }
+  const shown = hpShowAll ? h.races : h.races.slice(0,5);
+  const cards = shown.map(r=>{
+    const gate=((r.num-1)%8)+1;
+    const wTxt = r.weight!=null ? r.weight+(r.weight_diff!=null?"("+(r.weight_diff>0?"+":"")+r.weight_diff+")":"") : "—";
+    const posTxt = r.position!=null ? r.position+"着" : "—";
+    const marginTxt = r.position===1 ? "" : (r.margin_sec!=null ? " (+"+r.margin_sec.toFixed(1)+"s)" : "");
+    return `<div class="hprace">`
+      +`<div class="hpr1"><span class="hpdate">${r.date.slice(2).replace(/-/g,'/')}</span>`
+      +`<span class="hprno">帯広${r.race_no}R</span>`
+      +`<span class="hppop">人気${r.popularity??'—'}</span>`
+      +`<span class="hpto ${r.position===1?'hit':''}">→${posTxt}${marginTxt}</span></div>`
+      +`<div class="hprname">${r.race_name||''}</div>`
+      +`<div class="hprline">${r.class||''}　200m　${r.time||'—'}</div>`
+      +`<div class="hprline">頭数${r.field_size??'—'}　`
+      +`<span class="hpgate" style="${capStyle(gate)}">${gate}</span>　馬番${r.num}　`
+      +`<b>${r.jockey||'—'}</b>　そり${r.sled_kg!=null?r.sled_kg.toFixed(0):'—'}　馬場水分${r.moisture??'—'}%</div>`
+      +`<div class="hprline">馬体重${wTxt}`
+      +(r.other?`　${r.other.label} ${r.other.name||''}`:'')
+      +(r.interval?`　間隔 ${r.interval}`:'')+`</div>`
+      +`<div class="hprline muted">調教師 ${r.trainer||'—'}</div></div>`;
+  }).join("");
+  const more = h.races.length>5
+    ? `<button class="histback" type="button" id="hpMoreBtn">${hpShowAll?'表示を減らす':'もっと見る('+h.races.length+'走すべて)'}</button>`
+    : "";
+  body.innerHTML=
+    `<button class="histback" type="button" id="histBackBtn">← ${histState.date.slice(5).replace('-','/')} ${histState.race}Rへ</button>`
+    +`<div class="rbmeta">${h.sex||''}${h.age??''}　調教師 ${h.trainer||'—'}　馬主 ${h.owner||'—'}`
+    +`${h.sled_kg!=null?'　そり重量 '+h.sled_kg.toFixed(0):''}`
+    +`${h.weight!=null?'　馬体重 '+h.weight+(h.weight_diff!=null?"("+(h.weight_diff>0?"+":"")+h.weight_diff+")":""):''}</div>`
+    +`<div class="tksect">通算成績（${h.races.length}走）</div>`
+    +`<div class="dttblwrap"><table class="dttbl"><thead><tr><th class="l"></th><th>1着</th><th>2着</th>`
+    +`<th>3着</th><th>4着以下</th><th>計</th><th>勝率</th><th>連対率</th><th>複勝率</th></tr></thead>`
+    +`<tbody>${hpYearRows(h.stats)}</tbody></table></div>`
+    +hpPedigreeHtml(h.pedigree)
+    +`<div class="tksect">過去成績</div>${cards}${more}`;
+  document.getElementById("histBackBtn").onclick=()=>{ histState.horse=null; renderHistModal(); };
+  const mb=document.getElementById("hpMoreBtn");
+  if(mb) mb.onclick=()=>{ hpShowAll=!hpShowAll; renderHorseProfile(); };
 }
 const _hmc=document.getElementById("histClose");
 if(_hmc) _hmc.addEventListener("click", closeHistModal);

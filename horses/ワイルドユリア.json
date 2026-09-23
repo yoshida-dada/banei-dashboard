@@ -1,0 +1,86 @@
+{
+ "name": "ワイルドユリア",
+ "sex": "牝",
+ "age": 2,
+ "trainer": "今井茂",
+ "owner": "長谷川義信",
+ "sled_kg": 480.0,
+ "weight": 805,
+ "weight_diff": 15,
+ "last_race_date": "2026-09-19",
+ "pedigree": null,
+ "stats": {
+  "total": {
+   "win": 0,
+   "place2": 0,
+   "place3": 0,
+   "other": 2,
+   "n": 2,
+   "win_rate": 0.0,
+   "quinella_rate": 0.0,
+   "show_rate": 0.0
+  },
+  "2026": {
+   "win": 0,
+   "place2": 0,
+   "place3": 0,
+   "other": 2,
+   "n": 2,
+   "win_rate": 0.0,
+   "quinella_rate": 0.0,
+   "show_rate": 0.0
+  }
+ },
+ "races": [
+  {
+   "date": "2026-09-19",
+   "race_no": 2,
+   "race_name": "文紀＆裕美結婚３周年記念杯２歳Ｄ－８",
+   "class": "D",
+   "moisture": 0.7,
+   "field_size": 9,
+   "num": 3,
+   "jockey": "中村太",
+   "trainer": "今井茂",
+   "owner": "長谷川義信",
+   "sled_kg": 480.0,
+   "weight": 805,
+   "weight_diff": 15,
+   "odds": 4.3,
+   "popularity": 2,
+   "position": 9,
+   "time": "3:57.8",
+   "margin_sec": 125.7,
+   "interval": "中3週",
+   "other": {
+    "label": "勝ち馬",
+    "name": "フクマルペガサス"
+   }
+  },
+  {
+   "date": "2026-08-24",
+   "race_no": 3,
+   "race_name": "荻野琢真賞２歳Ｄ－７",
+   "class": "D",
+   "moisture": 0.6,
+   "field_size": 9,
+   "num": 6,
+   "jockey": "中村太",
+   "trainer": "今井茂",
+   "owner": "長谷川義信",
+   "sled_kg": 480.0,
+   "weight": 790,
+   "weight_diff": null,
+   "odds": 13.9,
+   "popularity": 6,
+   "position": 6,
+   "time": "2:47.4",
+   "margin_sec": 45.0,
+   "interval": null,
+   "other": {
+    "label": "勝ち馬",
+    "name": "オヤキ"
+   }
+  }
+ ]
+}

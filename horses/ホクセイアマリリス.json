@@ -1,0 +1,168 @@
+{
+ "name": "ホクセイアマリリス",
+ "sex": "牝",
+ "age": 2,
+ "trainer": "大橋和",
+ "owner": "（有）竹内産業",
+ "sled_kg": 480.0,
+ "weight": 833,
+ "weight_diff": 12,
+ "last_race_date": "2026-08-03",
+ "pedigree": {
+  "sire": "アアモンドロシア",
+  "dam": "粋恋",
+  "sire_sire": "スミヨシセンショー",
+  "sire_dam": "ハリケーンマオ",
+  "dam_sire": "シルバーボーイ",
+  "dam_dam": null
+ },
+ "stats": {
+  "total": {
+   "win": 0,
+   "place2": 0,
+   "place3": 1,
+   "other": 4,
+   "n": 5,
+   "win_rate": 0.0,
+   "quinella_rate": 0.0,
+   "show_rate": 0.2
+  },
+  "2026": {
+   "win": 0,
+   "place2": 0,
+   "place3": 1,
+   "other": 4,
+   "n": 5,
+   "win_rate": 0.0,
+   "quinella_rate": 0.0,
+   "show_rate": 0.2
+  }
+ },
+ "races": [
+  {
+   "date": "2026-08-03",
+   "race_no": 3,
+   "race_name": "祝山岸門人芸能生活２５周年２歳Ｄ－３",
+   "class": "D",
+   "moisture": 1.4,
+   "field_size": 10,
+   "num": 8,
+   "jockey": "中村太",
+   "trainer": "大橋和",
+   "owner": "（有）竹内産業",
+   "sled_kg": 480.0,
+   "weight": 833,
+   "weight_diff": 12,
+   "odds": 12.1,
+   "popularity": 6,
+   "position": 8,
+   "time": "2:54.1",
+   "margin_sec": 25.0,
+   "interval": "中1週",
+   "other": {
+    "label": "勝ち馬",
+    "name": "ヒメトラルビー"
+   }
+  },
+  {
+   "date": "2026-07-25",
+   "race_no": 2,
+   "race_name": "２歳Ｄ－５",
+   "class": "D",
+   "moisture": 2.0,
+   "field_size": 10,
+   "num": 8,
+   "jockey": "中村太",
+   "trainer": "大橋和",
+   "owner": "（有）竹内産業",
+   "sled_kg": 480.0,
+   "weight": 821,
+   "weight_diff": 3,
+   "odds": 29.4,
+   "popularity": 9,
+   "position": 3,
+   "time": "2:16.5",
+   "margin_sec": 12.7,
+   "interval": "中2週",
+   "other": {
+    "label": "勝ち馬",
+    "name": "イワキフィニティー"
+   }
+  },
+  {
+   "date": "2026-07-06",
+   "race_no": 3,
+   "race_name": "ロータス神奈川支部旅行記念２歳Ｄ－４",
+   "class": "D",
+   "moisture": 0.8,
+   "field_size": 10,
+   "num": 9,
+   "jockey": "中村太",
+   "trainer": "大橋和",
+   "owner": "（有）竹内産業",
+   "sled_kg": 470.0,
+   "weight": 818,
+   "weight_diff": -2,
+   "odds": 20.5,
+   "popularity": 7,
+   "position": 9,
+   "time": "2:59.4",
+   "margin_sec": 39.9,
+   "interval": "連闘",
+   "other": {
+    "label": "勝ち馬",
+    "name": "ショウライトモモ"
+   }
+  },
+  {
+   "date": "2026-06-29",
+   "race_no": 5,
+   "race_name": "渡辺和昭６７歳スタート記念２歳Ｄ－６",
+   "class": "D",
+   "moisture": 3.2,
+   "field_size": 9,
+   "num": 4,
+   "jockey": "中村太",
+   "trainer": "大橋和",
+   "owner": "（有）竹内産業",
+   "sled_kg": 470.0,
+   "weight": 820,
+   "weight_diff": 3,
+   "odds": 23.6,
+   "popularity": 7,
+   "position": 6,
+   "time": "2:34.5",
+   "margin_sec": 21.8,
+   "interval": "中2週",
+   "other": {
+    "label": "勝ち馬",
+    "name": "ヌサマイサンセット"
+   }
+  },
+  {
+   "date": "2026-06-13",
+   "race_no": 2,
+   "race_name": "２歳新馬",
+   "class": "新馬",
+   "moisture": 1.1,
+   "field_size": 10,
+   "num": 2,
+   "jockey": "中村太",
+   "trainer": "大橋和",
+   "owner": "（有）竹内産業",
+   "sled_kg": 470.0,
+   "weight": 817,
+   "weight_diff": null,
+   "odds": 35.9,
+   "popularity": 9,
+   "position": 9,
+   "time": "3:27.7",
+   "margin_sec": 80.9,
+   "interval": null,
+   "other": {
+    "label": "勝ち馬",
+    "name": "ワールドジパング"
+   }
+  }
+ ]
+}

@@ -1,0 +1,86 @@
+{
+ "name": "メオトテンザン",
+ "sex": "牡",
+ "age": 2,
+ "trainer": "平田義",
+ "owner": "長澤政秋",
+ "sled_kg": 500.0,
+ "weight": 869,
+ "weight_diff": -9,
+ "last_race_date": "2026-09-21",
+ "pedigree": null,
+ "stats": {
+  "total": {
+   "win": 1,
+   "place2": 1,
+   "place3": 0,
+   "other": 0,
+   "n": 2,
+   "win_rate": 0.5,
+   "quinella_rate": 1.0,
+   "show_rate": 1.0
+  },
+  "2026": {
+   "win": 1,
+   "place2": 1,
+   "place3": 0,
+   "other": 0,
+   "n": 2,
+   "win_rate": 0.5,
+   "quinella_rate": 1.0,
+   "show_rate": 1.0
+  }
+ },
+ "races": [
+  {
+   "date": "2026-09-21",
+   "race_no": 2,
+   "race_name": "マリンお疲れ様でした！２歳Ｄ－５",
+   "class": "D",
+   "moisture": 2.5,
+   "field_size": 10,
+   "num": 8,
+   "jockey": "西謙一",
+   "trainer": "平田義",
+   "owner": "長澤政秋",
+   "sled_kg": 500.0,
+   "weight": 869,
+   "weight_diff": -9,
+   "odds": 3.3,
+   "popularity": 2,
+   "position": 1,
+   "time": "1:46.7",
+   "margin_sec": 0.0,
+   "interval": "中2週",
+   "other": {
+    "label": "2着馬",
+    "name": "アーススノーパール"
+   }
+  },
+  {
+   "date": "2026-09-07",
+   "race_no": 2,
+   "race_name": "倫大朗１歳おめでとう記念２歳Ｄ－８",
+   "class": "D",
+   "moisture": 1.5,
+   "field_size": 10,
+   "num": 4,
+   "jockey": "西謙一",
+   "trainer": "平田義",
+   "owner": "長澤政秋",
+   "sled_kg": 500.0,
+   "weight": 878,
+   "weight_diff": null,
+   "odds": 2.9,
+   "popularity": 1,
+   "position": 2,
+   "time": "2:06.1",
+   "margin_sec": 3.4,
+   "interval": null,
+   "other": {
+    "label": "勝ち馬",
+    "name": "アリチャン"
+   }
+  }
+ ]
+}

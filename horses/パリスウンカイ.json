@@ -1,0 +1,168 @@
+{
+ "name": "パリスウンカイ",
+ "sex": "牝",
+ "age": 2,
+ "trainer": "今井茂",
+ "owner": "中村光雄",
+ "sled_kg": 490.0,
+ "weight": 822,
+ "weight_diff": 8,
+ "last_race_date": "2026-09-06",
+ "pedigree": {
+  "sire": "コウシュハウンカイ",
+  "dam": "ヤマノファンタジー",
+  "sire_sire": "ウンカイ",
+  "sire_dam": "タカラドーベル",
+  "dam_sire": "ジャングルソング",
+  "dam_dam": "ヤマノダイコヒメ"
+ },
+ "stats": {
+  "total": {
+   "win": 1,
+   "place2": 0,
+   "place3": 0,
+   "other": 4,
+   "n": 5,
+   "win_rate": 0.2,
+   "quinella_rate": 0.2,
+   "show_rate": 0.2
+  },
+  "2026": {
+   "win": 1,
+   "place2": 0,
+   "place3": 0,
+   "other": 4,
+   "n": 5,
+   "win_rate": 0.2,
+   "quinella_rate": 0.2,
+   "show_rate": 0.2
+  }
+ },
+ "races": [
+  {
+   "date": "2026-09-06",
+   "race_no": 3,
+   "race_name": "儒烏風亭らでん３周年記念２歳Ｃ－３",
+   "class": "C3",
+   "moisture": 1.8,
+   "field_size": 10,
+   "num": 6,
+   "jockey": "中村太",
+   "trainer": "今井茂",
+   "owner": "中村光雄",
+   "sled_kg": 490.0,
+   "weight": 822,
+   "weight_diff": 8,
+   "odds": 20.0,
+   "popularity": 9,
+   "position": 7,
+   "time": "2:14.1",
+   "margin_sec": 24.3,
+   "interval": "中3週",
+   "other": {
+    "label": "勝ち馬",
+    "name": "イワキファンファン"
+   }
+  },
+  {
+   "date": "2026-08-15",
+   "race_no": 2,
+   "race_name": "春陽・侑和・尚城誕生日記念２歳Ｄ－５",
+   "class": "D",
+   "moisture": 2.1,
+   "field_size": 10,
+   "num": 4,
+   "jockey": "☆今井千",
+   "trainer": "今井茂",
+   "owner": "中村光雄",
+   "sled_kg": 470.0,
+   "weight": 814,
+   "weight_diff": 14,
+   "odds": 2.7,
+   "popularity": 1,
+   "position": 1,
+   "time": "2:12.7",
+   "margin_sec": 0.0,
+   "interval": "中2週",
+   "other": {
+    "label": "2着馬",
+    "name": "プリンセスローミー"
+   }
+  },
+  {
+   "date": "2026-08-01",
+   "race_no": 2,
+   "race_name": "名倉家族来場記念リベンジ編２歳Ｄ－５",
+   "class": "D",
+   "moisture": 3.3,
+   "field_size": 10,
+   "num": 1,
+   "jockey": "中村太",
+   "trainer": "今井茂",
+   "owner": "中村光雄",
+   "sled_kg": 480.0,
+   "weight": 800,
+   "weight_diff": 9,
+   "odds": 9.6,
+   "popularity": 6,
+   "position": 9,
+   "time": "2:05.7",
+   "margin_sec": 19.6,
+   "interval": "連闘",
+   "other": {
+    "label": "勝ち馬",
+    "name": "ガッツデー"
+   }
+  },
+  {
+   "date": "2026-07-25",
+   "race_no": 3,
+   "race_name": "氷室うつ郎生誕記念２０２６ ２歳Ｄ－３",
+   "class": "D",
+   "moisture": 1.9,
+   "field_size": 10,
+   "num": 4,
+   "jockey": "中村太",
+   "trainer": "今井茂",
+   "owner": "中村光雄",
+   "sled_kg": 480.0,
+   "weight": 791,
+   "weight_diff": 13,
+   "odds": 6.8,
+   "popularity": 4,
+   "position": 9,
+   "time": "2:29.6",
+   "margin_sec": 37.0,
+   "interval": "中1週",
+   "other": {
+    "label": "勝ち馬",
+    "name": "ゴーゴーソウタ"
+   }
+  },
+  {
+   "date": "2026-07-13",
+   "race_no": 4,
+   "race_name": "２歳Ｄ－６",
+   "class": "D",
+   "moisture": 2.7,
+   "field_size": 10,
+   "num": 1,
+   "jockey": "島津新",
+   "trainer": "今井茂",
+   "owner": "中村光雄",
+   "sled_kg": 470.0,
+   "weight": 778,
+   "weight_diff": null,
+   "odds": 37.9,
+   "popularity": 7,
+   "position": 4,
+   "time": "2:23.7",
+   "margin_sec": 28.1,
+   "interval": null,
+   "other": {
+    "label": "勝ち馬",
+    "name": "ヤマトリュウ"
+   }
+  }
+ ]
+}

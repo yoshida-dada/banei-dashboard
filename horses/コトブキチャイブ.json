@@ -1,0 +1,161 @@
+{
+ "name": "コトブキチャイブ",
+ "sex": "牝",
+ "age": 2,
+ "trainer": "平田義",
+ "owner": "竹久克明",
+ "sled_kg": 470.0,
+ "weight": 824,
+ "weight_diff": -4,
+ "last_race_date": "2026-09-12",
+ "pedigree": null,
+ "stats": {
+  "total": {
+   "win": 0,
+   "place2": 1,
+   "place3": 0,
+   "other": 4,
+   "n": 5,
+   "win_rate": 0.0,
+   "quinella_rate": 0.2,
+   "show_rate": 0.2
+  },
+  "2026": {
+   "win": 0,
+   "place2": 1,
+   "place3": 0,
+   "other": 4,
+   "n": 5,
+   "win_rate": 0.0,
+   "quinella_rate": 0.2,
+   "show_rate": 0.2
+  }
+ },
+ "races": [
+  {
+   "date": "2026-09-12",
+   "race_no": 2,
+   "race_name": "心晴ちゃんもうすぐ２歳記念Ｄ－４",
+   "class": "D",
+   "moisture": 1.0,
+   "field_size": 10,
+   "num": 4,
+   "jockey": "☆臼杵龍",
+   "trainer": "平田義",
+   "owner": "竹久克明",
+   "sled_kg": 470.0,
+   "weight": 824,
+   "weight_diff": -4,
+   "odds": 24.8,
+   "popularity": 9,
+   "position": 8,
+   "time": "2:53.4",
+   "margin_sec": 50.2,
+   "interval": "中1週",
+   "other": {
+    "label": "勝ち馬",
+    "name": "ツカサカブス"
+   }
+  },
+  {
+   "date": "2026-08-31",
+   "race_no": 2,
+   "race_name": "佳乃子のばんえい再来場記念２歳Ｄ－７",
+   "class": "D",
+   "moisture": 1.4,
+   "field_size": 10,
+   "num": 7,
+   "jockey": "☆吉田理",
+   "trainer": "平田義",
+   "owner": "竹久克明",
+   "sled_kg": 470.0,
+   "weight": 828,
+   "weight_diff": 27,
+   "odds": 6.5,
+   "popularity": 3,
+   "position": 2,
+   "time": "2:38.7",
+   "margin_sec": 14.9,
+   "interval": "中2週",
+   "other": {
+    "label": "勝ち馬",
+    "name": "キンリュウ"
+   }
+  },
+  {
+   "date": "2026-08-17",
+   "race_no": 2,
+   "race_name": "直井辰矢三十路祝賀杯２歳Ｄ－６",
+   "class": "D",
+   "moisture": 1.4,
+   "field_size": 10,
+   "num": 6,
+   "jockey": "西将太",
+   "trainer": "平田義",
+   "owner": "竹久克明",
+   "sled_kg": 480.0,
+   "weight": 801,
+   "weight_diff": -7,
+   "odds": 11.3,
+   "popularity": 5,
+   "position": 5,
+   "time": "2:55.8",
+   "margin_sec": 38.4,
+   "interval": "連闘",
+   "other": {
+    "label": "勝ち馬",
+    "name": "サクライブキ"
+   }
+  },
+  {
+   "date": "2026-08-10",
+   "race_no": 3,
+   "race_name": "ベーカリーＰａｎｇｏ！杯２歳Ｄ－７",
+   "class": "D",
+   "moisture": 1.6,
+   "field_size": 10,
+   "num": 7,
+   "jockey": "西将太",
+   "trainer": "平田義",
+   "owner": "竹久克明",
+   "sled_kg": 480.0,
+   "weight": 808,
+   "weight_diff": 15,
+   "odds": 20.8,
+   "popularity": 7,
+   "position": 6,
+   "time": "3:06.4",
+   "margin_sec": 46.5,
+   "interval": "中2週",
+   "other": {
+    "label": "勝ち馬",
+    "name": "ヒノクニスピード"
+   }
+  },
+  {
+   "date": "2026-07-27",
+   "race_no": 4,
+   "race_name": "２歳Ｄ－６",
+   "class": "D",
+   "moisture": 1.2,
+   "field_size": 8,
+   "num": 7,
+   "jockey": "西将太",
+   "trainer": "平田義",
+   "owner": "竹久克明",
+   "sled_kg": 480.0,
+   "weight": 793,
+   "weight_diff": null,
+   "odds": 20.6,
+   "popularity": 7,
+   "position": 7,
+   "time": "3:28.6",
+   "margin_sec": 70.9,
+   "interval": null,
+   "other": {
+    "label": "勝ち馬",
+    "name": "ダリア"
+   }
+  }
+ ]
+}

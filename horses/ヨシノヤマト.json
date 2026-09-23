@@ -1,0 +1,168 @@
+{
+ "name": "ヨシノヤマト",
+ "sex": "牝",
+ "age": 2,
+ "trainer": "小林長",
+ "owner": "南信良",
+ "sled_kg": 480.0,
+ "weight": 953,
+ "weight_diff": 11,
+ "last_race_date": "2026-08-17",
+ "pedigree": {
+  "sire": "オーシャンスター",
+  "dam": "桜姫",
+  "sire_sire": "ニュートリノ",
+  "sire_dam": "宝勇姫",
+  "dam_sire": "アローファイター",
+  "dam_dam": "宮姫"
+ },
+ "stats": {
+  "total": {
+   "win": 0,
+   "place2": 0,
+   "place3": 1,
+   "other": 4,
+   "n": 5,
+   "win_rate": 0.0,
+   "quinella_rate": 0.0,
+   "show_rate": 0.2
+  },
+  "2026": {
+   "win": 0,
+   "place2": 0,
+   "place3": 1,
+   "other": 4,
+   "n": 5,
+   "win_rate": 0.0,
+   "quinella_rate": 0.0,
+   "show_rate": 0.2
+  }
+ },
+ "races": [
+  {
+   "date": "2026-08-17",
+   "race_no": 3,
+   "race_name": "７／１８おい、明彦走れよ杯２歳Ｄ－３",
+   "class": "D",
+   "moisture": 1.4,
+   "field_size": 10,
+   "num": 6,
+   "jockey": "中村太",
+   "trainer": "小林長",
+   "owner": "南信良",
+   "sled_kg": 480.0,
+   "weight": 953,
+   "weight_diff": 11,
+   "odds": 10.8,
+   "popularity": 5,
+   "position": 6,
+   "time": "2:39.8",
+   "margin_sec": 25.5,
+   "interval": "中5週",
+   "other": {
+    "label": "勝ち馬",
+    "name": "ホクショウテレサ"
+   }
+  },
+  {
+   "date": "2026-07-13",
+   "race_no": 5,
+   "race_name": "駿睿誕生日なのに留守番記念２歳Ｃ－４",
+   "class": "C4",
+   "moisture": 2.6,
+   "field_size": 10,
+   "num": 2,
+   "jockey": "中村太",
+   "trainer": "小林長",
+   "owner": "南信良",
+   "sled_kg": 470.0,
+   "weight": 942,
+   "weight_diff": 10,
+   "odds": 17.4,
+   "popularity": 5,
+   "position": 9,
+   "time": "2:36.5",
+   "margin_sec": 46.6,
+   "interval": "中6週",
+   "other": {
+    "label": "勝ち馬",
+    "name": "トウメイクイン"
+   }
+  },
+  {
+   "date": "2026-06-01",
+   "race_no": 5,
+   "race_name": "友雅くん！２３歳やね記念２歳未受賞－３",
+   "class": "未勝利",
+   "moisture": 0.7,
+   "field_size": 8,
+   "num": 5,
+   "jockey": "中村太",
+   "trainer": "小林長",
+   "owner": "南信良",
+   "sled_kg": 470.0,
+   "weight": 932,
+   "weight_diff": 10,
+   "odds": 11.8,
+   "popularity": 6,
+   "position": 3,
+   "time": "3:01.5",
+   "margin_sec": 49.4,
+   "interval": "中2週",
+   "other": {
+    "label": "勝ち馬",
+    "name": "フブキライデン"
+   }
+  },
+  {
+   "date": "2026-05-18",
+   "race_no": 5,
+   "race_name": "柚原娘々２周年おめでとう賞２歳受賞・未受賞",
+   "class": "未勝利",
+   "moisture": 0.6,
+   "field_size": 10,
+   "num": 2,
+   "jockey": "阿部優",
+   "trainer": "小林長",
+   "owner": "南信良",
+   "sled_kg": 470.0,
+   "weight": 922,
+   "weight_diff": -9,
+   "odds": 63.9,
+   "popularity": 8,
+   "position": 10,
+   "time": "3:36.2",
+   "margin_sec": 99.9,
+   "interval": "中2週",
+   "other": {
+    "label": "勝ち馬",
+    "name": "ビエイキャノン"
+   }
+  },
+  {
+   "date": "2026-05-04",
+   "race_no": 2,
+   "race_name": "２歳新馬",
+   "class": "新馬",
+   "moisture": 2.8,
+   "field_size": 10,
+   "num": 9,
+   "jockey": "☆阿部優",
+   "trainer": "小林長",
+   "owner": "南信良",
+   "sled_kg": 460.0,
+   "weight": 931,
+   "weight_diff": null,
+   "odds": 11.4,
+   "popularity": 6,
+   "position": 10,
+   "time": "3:33.6",
+   "margin_sec": 105.5,
+   "interval": null,
+   "other": {
+    "label": "勝ち馬",
+    "name": "ハゴロモゴールド"
+   }
+  }
+ ]
+}

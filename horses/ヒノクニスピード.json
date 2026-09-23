@@ -1,0 +1,136 @@
+{
+ "name": "ヒノクニスピード",
+ "sex": "牡",
+ "age": 2,
+ "trainer": "久田守",
+ "owner": "（有）古閑牧場",
+ "sled_kg": 510.0,
+ "weight": 835,
+ "weight_diff": 3,
+ "last_race_date": "2026-09-20",
+ "pedigree": null,
+ "stats": {
+  "total": {
+   "win": 2,
+   "place2": 0,
+   "place3": 1,
+   "other": 1,
+   "n": 4,
+   "win_rate": 0.5,
+   "quinella_rate": 0.5,
+   "show_rate": 0.75
+  },
+  "2026": {
+   "win": 2,
+   "place2": 0,
+   "place3": 1,
+   "other": 1,
+   "n": 4,
+   "win_rate": 0.5,
+   "quinella_rate": 0.5,
+   "show_rate": 0.75
+  }
+ },
+ "races": [
+  {
+   "date": "2026-09-20",
+   "race_no": 3,
+   "race_name": "ホップステップ・ゲッチュ２歳Ｃ－４",
+   "class": "C4",
+   "moisture": 2.6,
+   "field_size": 10,
+   "num": 8,
+   "jockey": "金田利",
+   "trainer": "久田守",
+   "owner": "（有）古閑牧場",
+   "sled_kg": 510.0,
+   "weight": 835,
+   "weight_diff": 3,
+   "odds": 4.5,
+   "popularity": 2,
+   "position": 1,
+   "time": "1:38.8",
+   "margin_sec": 0.0,
+   "interval": "中2週",
+   "other": {
+    "label": "2着馬",
+    "name": "イワキソルシエール"
+   }
+  },
+  {
+   "date": "2026-09-06",
+   "race_no": 3,
+   "race_name": "儒烏風亭らでん３周年記念２歳Ｃ－３",
+   "class": "C3",
+   "moisture": 1.8,
+   "field_size": 10,
+   "num": 5,
+   "jockey": "金田利",
+   "trainer": "久田守",
+   "owner": "（有）古閑牧場",
+   "sled_kg": 510.0,
+   "weight": 832,
+   "weight_diff": 20,
+   "odds": 6.3,
+   "popularity": 4,
+   "position": 3,
+   "time": "1:52.1",
+   "margin_sec": 2.3,
+   "interval": "中1週",
+   "other": {
+    "label": "勝ち馬",
+    "name": "イワキファンファン"
+   }
+  },
+  {
+   "date": "2026-08-24",
+   "race_no": 4,
+   "race_name": "小沢大仁賞２歳Ｃ－１",
+   "class": "C1",
+   "moisture": 0.6,
+   "field_size": 10,
+   "num": 8,
+   "jockey": "金田利",
+   "trainer": "久田守",
+   "owner": "（有）古閑牧場",
+   "sled_kg": 500.0,
+   "weight": 812,
+   "weight_diff": 8,
+   "odds": 20.5,
+   "popularity": 7,
+   "position": 5,
+   "time": "2:07.2",
+   "margin_sec": 21.9,
+   "interval": "中2週",
+   "other": {
+    "label": "勝ち馬",
+    "name": "バニラ"
+   }
+  },
+  {
+   "date": "2026-08-10",
+   "race_no": 3,
+   "race_name": "ベーカリーＰａｎｇｏ！杯２歳Ｄ－７",
+   "class": "D",
+   "moisture": 1.6,
+   "field_size": 10,
+   "num": 8,
+   "jockey": "金田利",
+   "trainer": "久田守",
+   "owner": "（有）古閑牧場",
+   "sled_kg": 500.0,
+   "weight": 804,
+   "weight_diff": null,
+   "odds": 4.5,
+   "popularity": 3,
+   "position": 1,
+   "time": "2:19.9",
+   "margin_sec": 0.0,
+   "interval": null,
+   "other": {
+    "label": "2着馬",
+    "name": "トカチキャップ"
+   }
+  }
+ ]
+}

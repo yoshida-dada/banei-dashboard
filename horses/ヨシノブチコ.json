@@ -1,0 +1,86 @@
+{
+ "name": "ヨシノブチコ",
+ "sex": "牝",
+ "age": 2,
+ "trainer": "小林長",
+ "owner": "南信良",
+ "sled_kg": 470.0,
+ "weight": 788,
+ "weight_diff": 13,
+ "last_race_date": "2026-09-14",
+ "pedigree": null,
+ "stats": {
+  "total": {
+   "win": 0,
+   "place2": 0,
+   "place3": 0,
+   "other": 2,
+   "n": 2,
+   "win_rate": 0.0,
+   "quinella_rate": 0.0,
+   "show_rate": 0.0
+  },
+  "2026": {
+   "win": 0,
+   "place2": 0,
+   "place3": 0,
+   "other": 2,
+   "n": 2,
+   "win_rate": 0.0,
+   "quinella_rate": 0.0,
+   "show_rate": 0.0
+  }
+ },
+ "races": [
+  {
+   "date": "2026-09-14",
+   "race_no": 2,
+   "race_name": "さっぽろ卓ゲっと開催記念２歳Ｄ－７",
+   "class": "D",
+   "moisture": 0.9,
+   "field_size": 10,
+   "num": 3,
+   "jockey": "☆今井千",
+   "trainer": "小林長",
+   "owner": "南信良",
+   "sled_kg": 470.0,
+   "weight": 788,
+   "weight_diff": 13,
+   "odds": 5.3,
+   "popularity": 2,
+   "position": 7,
+   "time": "2:41.2",
+   "margin_sec": 27.6,
+   "interval": "中3週",
+   "other": {
+    "label": "勝ち馬",
+    "name": "スーパーハクリュウ"
+   }
+  },
+  {
+   "date": "2026-08-24",
+   "race_no": 3,
+   "race_name": "荻野琢真賞２歳Ｄ－７",
+   "class": "D",
+   "moisture": 0.6,
+   "field_size": 9,
+   "num": 1,
+   "jockey": "☆今井千",
+   "trainer": "小林長",
+   "owner": "南信良",
+   "sled_kg": 470.0,
+   "weight": 775,
+   "weight_diff": null,
+   "odds": 8.8,
+   "popularity": 5,
+   "position": 5,
+   "time": "2:37.2",
+   "margin_sec": 34.8,
+   "interval": null,
+   "other": {
+    "label": "勝ち馬",
+    "name": "オヤキ"
+   }
+  }
+ ]
+}

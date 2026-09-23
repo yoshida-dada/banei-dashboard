@@ -1,0 +1,161 @@
+{
+ "name": "ジェイマット",
+ "sex": "牡",
+ "age": 2,
+ "trainer": "金山明",
+ "owner": "小森唯永",
+ "sled_kg": 500.0,
+ "weight": 873,
+ "weight_diff": 20,
+ "last_race_date": "2026-09-21",
+ "pedigree": null,
+ "stats": {
+  "total": {
+   "win": 0,
+   "place2": 1,
+   "place3": 1,
+   "other": 3,
+   "n": 5,
+   "win_rate": 0.0,
+   "quinella_rate": 0.2,
+   "show_rate": 0.4
+  },
+  "2026": {
+   "win": 0,
+   "place2": 1,
+   "place3": 1,
+   "other": 3,
+   "n": 5,
+   "win_rate": 0.0,
+   "quinella_rate": 0.2,
+   "show_rate": 0.4
+  }
+ },
+ "races": [
+  {
+   "date": "2026-09-21",
+   "race_no": 3,
+   "race_name": "必勝！三上夫婦記念２歳Ｄ－２",
+   "class": "D",
+   "moisture": 2.5,
+   "field_size": 10,
+   "num": 8,
+   "jockey": "中村太",
+   "trainer": "金山明",
+   "owner": "小森唯永",
+   "sled_kg": 500.0,
+   "weight": 873,
+   "weight_diff": 20,
+   "odds": 5.8,
+   "popularity": 2,
+   "position": 4,
+   "time": "1:51.4",
+   "margin_sec": 9.5,
+   "interval": "中3週",
+   "other": {
+    "label": "勝ち馬",
+    "name": "ヒノクニレディー"
+   }
+  },
+  {
+   "date": "2026-08-29",
+   "race_no": 2,
+   "race_name": "植田・丸山結婚記念２歳Ｄ－１",
+   "class": "D",
+   "moisture": 1.8,
+   "field_size": 10,
+   "num": 10,
+   "jockey": "中村太",
+   "trainer": "金山明",
+   "owner": "小森唯永",
+   "sled_kg": 500.0,
+   "weight": 853,
+   "weight_diff": 9,
+   "odds": 8.3,
+   "popularity": 5,
+   "position": 5,
+   "time": "2:06.0",
+   "margin_sec": 23.4,
+   "interval": "連闘",
+   "other": {
+    "label": "勝ち馬",
+    "name": "ポップコーン"
+   }
+  },
+  {
+   "date": "2026-08-22",
+   "race_no": 2,
+   "race_name": "ぜったい歩かないマン賞２歳Ｄ－４",
+   "class": "D",
+   "moisture": 1.1,
+   "field_size": 9,
+   "num": 9,
+   "jockey": "中村太",
+   "trainer": "金山明",
+   "owner": "小森唯永",
+   "sled_kg": 500.0,
+   "weight": 844,
+   "weight_diff": 7,
+   "odds": 16.6,
+   "popularity": 6,
+   "position": 2,
+   "time": "2:13.0",
+   "margin_sec": 2.7,
+   "interval": "中1週",
+   "other": {
+    "label": "勝ち馬",
+    "name": "トップラン"
+   }
+  },
+  {
+   "date": "2026-08-10",
+   "race_no": 2,
+   "race_name": "午年☆☆ひよちゃん爆誕記念２歳Ｄ－８",
+   "class": "D",
+   "moisture": 1.6,
+   "field_size": 10,
+   "num": 3,
+   "jockey": "中村太",
+   "trainer": "金山明",
+   "owner": "小森唯永",
+   "sled_kg": 500.0,
+   "weight": 837,
+   "weight_diff": 10,
+   "odds": 15.7,
+   "popularity": 7,
+   "position": 3,
+   "time": "2:37.8",
+   "margin_sec": 20.7,
+   "interval": "中2週",
+   "other": {
+    "label": "勝ち馬",
+    "name": "ホクセイサチコ"
+   }
+  },
+  {
+   "date": "2026-07-27",
+   "race_no": 4,
+   "race_name": "２歳Ｄ－６",
+   "class": "D",
+   "moisture": 1.2,
+   "field_size": 8,
+   "num": 2,
+   "jockey": "中村太",
+   "trainer": "金山明",
+   "owner": "小森唯永",
+   "sled_kg": 500.0,
+   "weight": 827,
+   "weight_diff": null,
+   "odds": 8.8,
+   "popularity": 5,
+   "position": 6,
+   "time": "3:14.9",
+   "margin_sec": 57.2,
+   "interval": null,
+   "other": {
+    "label": "勝ち馬",
+    "name": "ダリア"
+   }
+  }
+ ]
+}

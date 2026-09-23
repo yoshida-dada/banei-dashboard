@@ -1,0 +1,136 @@
+{
+ "name": "トウヤノマピュース",
+ "sex": "牝",
+ "age": 2,
+ "trainer": "森芳浩",
+ "owner": "森靖晃",
+ "sled_kg": 480.0,
+ "weight": 794,
+ "weight_diff": 11,
+ "last_race_date": "2026-09-19",
+ "pedigree": null,
+ "stats": {
+  "total": {
+   "win": 0,
+   "place2": 0,
+   "place3": 0,
+   "other": 4,
+   "n": 4,
+   "win_rate": 0.0,
+   "quinella_rate": 0.0,
+   "show_rate": 0.0
+  },
+  "2026": {
+   "win": 0,
+   "place2": 0,
+   "place3": 0,
+   "other": 4,
+   "n": 4,
+   "win_rate": 0.0,
+   "quinella_rate": 0.0,
+   "show_rate": 0.0
+  }
+ },
+ "races": [
+  {
+   "date": "2026-09-19",
+   "race_no": 2,
+   "race_name": "文紀＆裕美結婚３周年記念杯２歳Ｄ－８",
+   "class": "D",
+   "moisture": 0.7,
+   "field_size": 9,
+   "num": 8,
+   "jockey": "村上章",
+   "trainer": "森芳浩",
+   "owner": "森靖晃",
+   "sled_kg": 480.0,
+   "weight": 794,
+   "weight_diff": 11,
+   "odds": 61.5,
+   "popularity": 9,
+   "position": 4,
+   "time": "2:24.4",
+   "margin_sec": 32.3,
+   "interval": "中1週",
+   "other": {
+    "label": "勝ち馬",
+    "name": "フクマルペガサス"
+   }
+  },
+  {
+   "date": "2026-09-07",
+   "race_no": 2,
+   "race_name": "倫大朗１歳おめでとう記念２歳Ｄ－８",
+   "class": "D",
+   "moisture": 1.5,
+   "field_size": 10,
+   "num": 2,
+   "jockey": "村上章",
+   "trainer": "森芳浩",
+   "owner": "森靖晃",
+   "sled_kg": 480.0,
+   "weight": 783,
+   "weight_diff": 10,
+   "odds": 86.7,
+   "popularity": 9,
+   "position": 8,
+   "time": "3:09.3",
+   "margin_sec": 66.6,
+   "interval": "中2週",
+   "other": {
+    "label": "勝ち馬",
+    "name": "アリチャン"
+   }
+  },
+  {
+   "date": "2026-08-24",
+   "race_no": 3,
+   "race_name": "荻野琢真賞２歳Ｄ－７",
+   "class": "D",
+   "moisture": 0.6,
+   "field_size": 9,
+   "num": 5,
+   "jockey": "菊池一",
+   "trainer": "森芳浩",
+   "owner": "森靖晃",
+   "sled_kg": 480.0,
+   "weight": 773,
+   "weight_diff": 0,
+   "odds": 34.7,
+   "popularity": 9,
+   "position": 9,
+   "time": "3:07.8",
+   "margin_sec": 65.4,
+   "interval": "中2週",
+   "other": {
+    "label": "勝ち馬",
+    "name": "オヤキ"
+   }
+  },
+  {
+   "date": "2026-08-10",
+   "race_no": 3,
+   "race_name": "ベーカリーＰａｎｇｏ！杯２歳Ｄ－７",
+   "class": "D",
+   "moisture": 1.6,
+   "field_size": 10,
+   "num": 6,
+   "jockey": "村上章",
+   "trainer": "森芳浩",
+   "owner": "森靖晃",
+   "sled_kg": 480.0,
+   "weight": 773,
+   "weight_diff": null,
+   "odds": 14.5,
+   "popularity": 6,
+   "position": 8,
+   "time": "3:35.5",
+   "margin_sec": 75.6,
+   "interval": null,
+   "other": {
+    "label": "勝ち馬",
+    "name": "ヒノクニスピード"
+   }
+  }
+ ]
+}

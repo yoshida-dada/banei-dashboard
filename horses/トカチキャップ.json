@@ -1,0 +1,136 @@
+{
+ "name": "トカチキャップ",
+ "sex": "牝",
+ "age": 2,
+ "trainer": "中島敏",
+ "owner": "高橋勝坦",
+ "sled_kg": 480.0,
+ "weight": 851,
+ "weight_diff": 3,
+ "last_race_date": "2026-09-14",
+ "pedigree": null,
+ "stats": {
+  "total": {
+   "win": 0,
+   "place2": 1,
+   "place3": 1,
+   "other": 2,
+   "n": 4,
+   "win_rate": 0.0,
+   "quinella_rate": 0.25,
+   "show_rate": 0.5
+  },
+  "2026": {
+   "win": 0,
+   "place2": 1,
+   "place3": 1,
+   "other": 2,
+   "n": 4,
+   "win_rate": 0.0,
+   "quinella_rate": 0.25,
+   "show_rate": 0.5
+  }
+ },
+ "races": [
+  {
+   "date": "2026-09-14",
+   "race_no": 3,
+   "race_name": "さおりん誕生日後祝い２歳Ｄ－３",
+   "class": "D",
+   "moisture": 0.8,
+   "field_size": 9,
+   "num": 7,
+   "jockey": "西謙一",
+   "trainer": "中島敏",
+   "owner": "高橋勝坦",
+   "sled_kg": 480.0,
+   "weight": 851,
+   "weight_diff": 3,
+   "odds": 2.7,
+   "popularity": 1,
+   "position": 5,
+   "time": "2:19.4",
+   "margin_sec": 18.2,
+   "interval": "中2週",
+   "other": {
+    "label": "勝ち馬",
+    "name": "ヒロインクロエ"
+   }
+  },
+  {
+   "date": "2026-08-30",
+   "race_no": 2,
+   "race_name": "第１８回しっとの夏記念２歳Ｄ－３",
+   "class": "D",
+   "moisture": 1.6,
+   "field_size": 10,
+   "num": 7,
+   "jockey": "西謙一",
+   "trainer": "中島敏",
+   "owner": "高橋勝坦",
+   "sled_kg": 480.0,
+   "weight": 848,
+   "weight_diff": -2,
+   "odds": 8.3,
+   "popularity": 4,
+   "position": 3,
+   "time": "2:09.3",
+   "margin_sec": 2.2,
+   "interval": "中2週",
+   "other": {
+    "label": "勝ち馬",
+    "name": "イワキニセイ"
+   }
+  },
+  {
+   "date": "2026-08-16",
+   "race_no": 2,
+   "race_name": "彩加ちゃんハピ馬☆記念２歳Ｄ－２",
+   "class": "D",
+   "moisture": 1.8,
+   "field_size": 10,
+   "num": 3,
+   "jockey": "西謙一",
+   "trainer": "中島敏",
+   "owner": "高橋勝坦",
+   "sled_kg": 480.0,
+   "weight": 850,
+   "weight_diff": -6,
+   "odds": 3.9,
+   "popularity": 1,
+   "position": 7,
+   "time": "2:36.8",
+   "margin_sec": 30.0,
+   "interval": "連闘",
+   "other": {
+    "label": "勝ち馬",
+    "name": "ヒノクニゴールド"
+   }
+  },
+  {
+   "date": "2026-08-10",
+   "race_no": 3,
+   "race_name": "ベーカリーＰａｎｇｏ！杯２歳Ｄ－７",
+   "class": "D",
+   "moisture": 1.6,
+   "field_size": 10,
+   "num": 1,
+   "jockey": "西謙一",
+   "trainer": "中島敏",
+   "owner": "高橋勝坦",
+   "sled_kg": 480.0,
+   "weight": 856,
+   "weight_diff": null,
+   "odds": 3.3,
+   "popularity": 1,
+   "position": 2,
+   "time": "2:26.0",
+   "margin_sec": 6.1,
+   "interval": null,
+   "other": {
+    "label": "勝ち馬",
+    "name": "ヒノクニスピード"
+   }
+  }
+ ]
+}

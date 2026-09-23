@@ -1,0 +1,161 @@
+{
+ "name": "キタノスミレ",
+ "sex": "牝",
+ "age": 2,
+ "trainer": "大橋和",
+ "owner": "小倉たまき",
+ "sled_kg": 500.0,
+ "weight": 922,
+ "weight_diff": -5,
+ "last_race_date": "2026-09-20",
+ "pedigree": null,
+ "stats": {
+  "total": {
+   "win": 2,
+   "place2": 2,
+   "place3": 0,
+   "other": 1,
+   "n": 5,
+   "win_rate": 0.4,
+   "quinella_rate": 0.8,
+   "show_rate": 0.8
+  },
+  "2026": {
+   "win": 2,
+   "place2": 2,
+   "place3": 0,
+   "other": 1,
+   "n": 5,
+   "win_rate": 0.4,
+   "quinella_rate": 0.8,
+   "show_rate": 0.8
+  }
+ },
+ "races": [
+  {
+   "date": "2026-09-20",
+   "race_no": 4,
+   "race_name": "Ｃａｌｌ　ｍｅ　ＫＩＮＧ２歳Ｂ－１",
+   "class": "B1",
+   "moisture": 2.6,
+   "field_size": 10,
+   "num": 8,
+   "jockey": "西将太",
+   "trainer": "大橋和",
+   "owner": "小倉たまき",
+   "sled_kg": 500.0,
+   "weight": 922,
+   "weight_diff": -5,
+   "odds": 10.3,
+   "popularity": 6,
+   "position": 2,
+   "time": "1:31.1",
+   "margin_sec": 0.8,
+   "interval": "中1週",
+   "other": {
+    "label": "勝ち馬",
+    "name": "ツガルユリ"
+   }
+  },
+  {
+   "date": "2026-09-07",
+   "race_no": 5,
+   "race_name": "ぼーよし爆誕祭２０２６ ２歳Ｂ－５",
+   "class": "B",
+   "moisture": 1.5,
+   "field_size": 9,
+   "num": 6,
+   "jockey": "西将太",
+   "trainer": "大橋和",
+   "owner": "小倉たまき",
+   "sled_kg": 500.0,
+   "weight": 927,
+   "weight_diff": 25,
+   "odds": 1.8,
+   "popularity": 1,
+   "position": 1,
+   "time": "1:51.7",
+   "margin_sec": 0.0,
+   "interval": "中3週",
+   "other": {
+    "label": "2着馬",
+    "name": "ゴーゴーソウタ"
+   }
+  },
+  {
+   "date": "2026-08-15",
+   "race_no": 4,
+   "race_name": "翔、智香　結婚記念２歳Ｂ－４",
+   "class": "B4",
+   "moisture": 2.1,
+   "field_size": 10,
+   "num": 1,
+   "jockey": "西将太",
+   "trainer": "大橋和",
+   "owner": "小倉たまき",
+   "sled_kg": 490.0,
+   "weight": 902,
+   "weight_diff": 0,
+   "odds": 2.8,
+   "popularity": 1,
+   "position": 5,
+   "time": "2:07.6",
+   "margin_sec": 20.2,
+   "interval": "連闘",
+   "other": {
+    "label": "勝ち馬",
+    "name": "ハオ"
+   }
+  },
+  {
+   "date": "2026-08-08",
+   "race_no": 3,
+   "race_name": "善貴・里織入籍記念２歳Ｄ－１",
+   "class": "D",
+   "moisture": 0.9,
+   "field_size": 10,
+   "num": 6,
+   "jockey": "西将太",
+   "trainer": "大橋和",
+   "owner": "小倉たまき",
+   "sled_kg": 480.0,
+   "weight": 902,
+   "weight_diff": 0,
+   "odds": 1.4,
+   "popularity": 1,
+   "position": 1,
+   "time": "1:53.5",
+   "margin_sec": 0.0,
+   "interval": "中1週",
+   "other": {
+    "label": "2着馬",
+    "name": "メオトコトブキ"
+   }
+  },
+  {
+   "date": "2026-07-27",
+   "race_no": 3,
+   "race_name": "やすよとあすか初ばんえい杯２歳Ｄ－７",
+   "class": "D",
+   "moisture": 1.2,
+   "field_size": 9,
+   "num": 8,
+   "jockey": "西将太",
+   "trainer": "大橋和",
+   "owner": "小倉たまき",
+   "sled_kg": 480.0,
+   "weight": 902,
+   "weight_diff": null,
+   "odds": 4.8,
+   "popularity": 4,
+   "position": 2,
+   "time": "2:13.0",
+   "margin_sec": 0.6,
+   "interval": null,
+   "other": {
+    "label": "勝ち馬",
+    "name": "ポプコ"
+   }
+  }
+ ]
+}

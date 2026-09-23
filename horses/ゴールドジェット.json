@@ -1,0 +1,61 @@
+{
+ "name": "ゴールドジェット",
+ "sex": "セン",
+ "age": 2,
+ "trainer": "林　豊",
+ "owner": "尾ヶ瀬馨",
+ "sled_kg": 490.0,
+ "weight": 935,
+ "weight_diff": null,
+ "last_race_date": "2026-09-07",
+ "pedigree": null,
+ "stats": {
+  "total": {
+   "win": 0,
+   "place2": 0,
+   "place3": 0,
+   "other": 1,
+   "n": 1,
+   "win_rate": 0.0,
+   "quinella_rate": 0.0,
+   "show_rate": 0.0
+  },
+  "2026": {
+   "win": 0,
+   "place2": 0,
+   "place3": 0,
+   "other": 1,
+   "n": 1,
+   "win_rate": 0.0,
+   "quinella_rate": 0.0,
+   "show_rate": 0.0
+  }
+ },
+ "races": [
+  {
+   "date": "2026-09-07",
+   "race_no": 2,
+   "race_name": "倫大朗１歳おめでとう記念２歳Ｄ－８",
+   "class": "D",
+   "moisture": 1.5,
+   "field_size": 10,
+   "num": 1,
+   "jockey": "島津新",
+   "trainer": "林　豊",
+   "owner": "尾ヶ瀬馨",
+   "sled_kg": 490.0,
+   "weight": 935,
+   "weight_diff": null,
+   "odds": 18.5,
+   "popularity": 7,
+   "position": 5,
+   "time": "2:46.4",
+   "margin_sec": 43.7,
+   "interval": null,
+   "other": {
+    "label": "勝ち馬",
+    "name": "アリチャン"
+   }
+  }
+ ]
+}

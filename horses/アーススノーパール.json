@@ -1,0 +1,111 @@
+{
+ "name": "アーススノーパール",
+ "sex": "牡",
+ "age": 2,
+ "trainer": "坂本東",
+ "owner": "（株）トンデンファ",
+ "sled_kg": 500.0,
+ "weight": 891,
+ "weight_diff": 9,
+ "last_race_date": "2026-09-21",
+ "pedigree": null,
+ "stats": {
+  "total": {
+   "win": 0,
+   "place2": 1,
+   "place3": 1,
+   "other": 1,
+   "n": 3,
+   "win_rate": 0.0,
+   "quinella_rate": 0.333,
+   "show_rate": 0.667
+  },
+  "2026": {
+   "win": 0,
+   "place2": 1,
+   "place3": 1,
+   "other": 1,
+   "n": 3,
+   "win_rate": 0.0,
+   "quinella_rate": 0.333,
+   "show_rate": 0.667
+  }
+ },
+ "races": [
+  {
+   "date": "2026-09-21",
+   "race_no": 2,
+   "race_name": "マリンお疲れ様でした！２歳Ｄ－５",
+   "class": "D",
+   "moisture": 2.5,
+   "field_size": 10,
+   "num": 1,
+   "jockey": "阿部優",
+   "trainer": "坂本東",
+   "owner": "（株）トンデンファ",
+   "sled_kg": 500.0,
+   "weight": 891,
+   "weight_diff": 9,
+   "odds": 3.1,
+   "popularity": 1,
+   "position": 2,
+   "time": "1:47.4",
+   "margin_sec": 0.7,
+   "interval": "中2週",
+   "other": {
+    "label": "勝ち馬",
+    "name": "メオトテンザン"
+   }
+  },
+  {
+   "date": "2026-09-05",
+   "race_no": 2,
+   "race_name": "大樹３０歳おめでとう記念２歳Ｄ－６",
+   "class": "D",
+   "moisture": 2.2,
+   "field_size": 9,
+   "num": 5,
+   "jockey": "阿部優",
+   "trainer": "坂本東",
+   "owner": "（株）トンデンファ",
+   "sled_kg": 500.0,
+   "weight": 882,
+   "weight_diff": 31,
+   "odds": 4.0,
+   "popularity": 2,
+   "position": 3,
+   "time": "1:49.7",
+   "margin_sec": 10.6,
+   "interval": "中1週",
+   "other": {
+    "label": "勝ち馬",
+    "name": "ユメニシキ"
+   }
+  },
+  {
+   "date": "2026-08-24",
+   "race_no": 3,
+   "race_name": "荻野琢真賞２歳Ｄ－７",
+   "class": "D",
+   "moisture": 0.6,
+   "field_size": 9,
+   "num": 9,
+   "jockey": "阿部武",
+   "trainer": "坂本東",
+   "owner": "（株）トンデンファ",
+   "sled_kg": 500.0,
+   "weight": 851,
+   "weight_diff": null,
+   "odds": 3.7,
+   "popularity": 2,
+   "position": 4,
+   "time": "2:31.5",
+   "margin_sec": 29.1,
+   "interval": null,
+   "other": {
+    "label": "勝ち馬",
+    "name": "オヤキ"
+   }
+  }
+ ]
+}

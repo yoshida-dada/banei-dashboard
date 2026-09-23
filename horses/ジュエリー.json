@@ -1,0 +1,168 @@
+{
+ "name": "ジュエリー",
+ "sex": "牝",
+ "age": 2,
+ "trainer": "大河和",
+ "owner": "大河原昭雄",
+ "sled_kg": 490.0,
+ "weight": 814,
+ "weight_diff": 5,
+ "last_race_date": "2026-09-14",
+ "pedigree": {
+  "sire": "シマノシンザン",
+  "dam": "アーティウィング",
+  "sire_sire": "ツルマキシンザン",
+  "sire_dam": "ヒバリユタカ",
+  "dam_sire": "シベチャタイガー",
+  "dam_dam": "亜委"
+ },
+ "stats": {
+  "total": {
+   "win": 1,
+   "place2": 0,
+   "place3": 1,
+   "other": 3,
+   "n": 5,
+   "win_rate": 0.2,
+   "quinella_rate": 0.2,
+   "show_rate": 0.4
+  },
+  "2026": {
+   "win": 1,
+   "place2": 0,
+   "place3": 1,
+   "other": 3,
+   "n": 5,
+   "win_rate": 0.2,
+   "quinella_rate": 0.2,
+   "show_rate": 0.4
+  }
+ },
+ "races": [
+  {
+   "date": "2026-09-14",
+   "race_no": 4,
+   "race_name": "かおり＆けんと結婚記念２歳Ｃ－２",
+   "class": "C2",
+   "moisture": 0.8,
+   "field_size": 10,
+   "num": 1,
+   "jockey": "大友一",
+   "trainer": "大河和",
+   "owner": "大河原昭雄",
+   "sled_kg": 490.0,
+   "weight": 814,
+   "weight_diff": 5,
+   "odds": 58.0,
+   "popularity": 9,
+   "position": 4,
+   "time": "2:15.0",
+   "margin_sec": 20.3,
+   "interval": "中2週",
+   "other": {
+    "label": "勝ち馬",
+    "name": "ヌサマイサンセット"
+   }
+  },
+  {
+   "date": "2026-08-31",
+   "race_no": 3,
+   "race_name": "第６回キタノタイショウ記念２歳Ｄ－２",
+   "class": "D",
+   "moisture": 1.4,
+   "field_size": 10,
+   "num": 4,
+   "jockey": "長澤幸",
+   "trainer": "大河和",
+   "owner": "大河原昭雄",
+   "sled_kg": 480.0,
+   "weight": 809,
+   "weight_diff": 0,
+   "odds": 3.3,
+   "popularity": 2,
+   "position": 1,
+   "time": "2:15.4",
+   "margin_sec": 0.0,
+   "interval": "中2週",
+   "other": {
+    "label": "2着馬",
+    "name": "ダイキチ"
+   }
+  },
+  {
+   "date": "2026-08-15",
+   "race_no": 3,
+   "race_name": "祝古希！渡辺義夫杯２歳Ｃ－６",
+   "class": "C",
+   "moisture": 2.1,
+   "field_size": 10,
+   "num": 2,
+   "jockey": "長澤幸",
+   "trainer": "大河和",
+   "owner": "大河原昭雄",
+   "sled_kg": 480.0,
+   "weight": 809,
+   "weight_diff": 1,
+   "odds": 9.1,
+   "popularity": 6,
+   "position": 6,
+   "time": "2:21.1",
+   "margin_sec": 13.8,
+   "interval": "連闘",
+   "other": {
+    "label": "勝ち馬",
+    "name": "クリスタルカイオー"
+   }
+  },
+  {
+   "date": "2026-08-10",
+   "race_no": 4,
+   "race_name": "じゅんたさん生誕前夜祭２歳Ｃ－５",
+   "class": "C",
+   "moisture": 1.6,
+   "field_size": 10,
+   "num": 9,
+   "jockey": "長澤幸",
+   "trainer": "大河和",
+   "owner": "大河原昭雄",
+   "sled_kg": 480.0,
+   "weight": 808,
+   "weight_diff": 20,
+   "odds": 11.1,
+   "popularity": 5,
+   "position": 7,
+   "time": "2:24.9",
+   "margin_sec": 23.6,
+   "interval": "中6週",
+   "other": {
+    "label": "勝ち馬",
+    "name": "マオノジュピター"
+   }
+  },
+  {
+   "date": "2026-06-28",
+   "race_no": 3,
+   "race_name": "２歳新馬",
+   "class": "新馬",
+   "moisture": 3.3,
+   "field_size": 9,
+   "num": 8,
+   "jockey": "長澤幸",
+   "trainer": "大河和",
+   "owner": "大河原昭雄",
+   "sled_kg": 470.0,
+   "weight": 788,
+   "weight_diff": null,
+   "odds": 28.1,
+   "popularity": 8,
+   "position": 3,
+   "time": "2:10.1",
+   "margin_sec": 27.5,
+   "interval": null,
+   "other": {
+    "label": "勝ち馬",
+    "name": "ミラクルアナ"
+   }
+  }
+ ]
+}

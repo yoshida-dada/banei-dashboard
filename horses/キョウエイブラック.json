@@ -1,0 +1,161 @@
+{
+ "name": "キョウエイブラック",
+ "sex": "牡",
+ "age": 2,
+ "trainer": "村上慎",
+ "owner": "大野昇",
+ "sled_kg": 510.0,
+ "weight": 828,
+ "weight_diff": 8,
+ "last_race_date": "2026-09-21",
+ "pedigree": null,
+ "stats": {
+  "total": {
+   "win": 0,
+   "place2": 2,
+   "place3": 0,
+   "other": 3,
+   "n": 5,
+   "win_rate": 0.0,
+   "quinella_rate": 0.4,
+   "show_rate": 0.4
+  },
+  "2026": {
+   "win": 0,
+   "place2": 2,
+   "place3": 0,
+   "other": 3,
+   "n": 5,
+   "win_rate": 0.0,
+   "quinella_rate": 0.4,
+   "show_rate": 0.4
+  }
+ },
+ "races": [
+  {
+   "date": "2026-09-21",
+   "race_no": 4,
+   "race_name": "じいじ北海道へようこそ２歳Ｃ－７",
+   "class": "C",
+   "moisture": 2.5,
+   "field_size": 10,
+   "num": 1,
+   "jockey": "菊池一",
+   "trainer": "村上慎",
+   "owner": "大野昇",
+   "sled_kg": 510.0,
+   "weight": 828,
+   "weight_diff": 8,
+   "odds": 3.4,
+   "popularity": 1,
+   "position": 4,
+   "time": "1:55.3",
+   "margin_sec": 11.7,
+   "interval": "中3週",
+   "other": {
+    "label": "勝ち馬",
+    "name": "シャインクィーン"
+   }
+  },
+  {
+   "date": "2026-08-29",
+   "race_no": 2,
+   "race_name": "植田・丸山結婚記念２歳Ｄ－１",
+   "class": "D",
+   "moisture": 1.8,
+   "field_size": 10,
+   "num": 2,
+   "jockey": "菊池一",
+   "trainer": "村上慎",
+   "owner": "大野昇",
+   "sled_kg": 500.0,
+   "weight": 820,
+   "weight_diff": 19,
+   "odds": 7.6,
+   "popularity": 4,
+   "position": 2,
+   "time": "1:50.5",
+   "margin_sec": 7.9,
+   "interval": "中2週",
+   "other": {
+    "label": "勝ち馬",
+    "name": "ポップコーン"
+   }
+  },
+  {
+   "date": "2026-08-15",
+   "race_no": 3,
+   "race_name": "祝古希！渡辺義夫杯２歳Ｃ－６",
+   "class": "C",
+   "moisture": 2.1,
+   "field_size": 10,
+   "num": 8,
+   "jockey": "菊池一",
+   "trainer": "村上慎",
+   "owner": "大野昇",
+   "sled_kg": 500.0,
+   "weight": 801,
+   "weight_diff": 11,
+   "odds": 3.9,
+   "popularity": 1,
+   "position": 5,
+   "time": "2:20.4",
+   "margin_sec": 13.1,
+   "interval": "中2週",
+   "other": {
+    "label": "勝ち馬",
+    "name": "クリスタルカイオー"
+   }
+  },
+  {
+   "date": "2026-08-01",
+   "race_no": 2,
+   "race_name": "名倉家族来場記念リベンジ編２歳Ｄ－５",
+   "class": "D",
+   "moisture": 3.3,
+   "field_size": 10,
+   "num": 8,
+   "jockey": "菊池一",
+   "trainer": "村上慎",
+   "owner": "大野昇",
+   "sled_kg": 500.0,
+   "weight": 790,
+   "weight_diff": 15,
+   "odds": 23.8,
+   "popularity": 9,
+   "position": 2,
+   "time": "1:52.7",
+   "margin_sec": 6.6,
+   "interval": "連闘",
+   "other": {
+    "label": "勝ち馬",
+    "name": "ガッツデー"
+   }
+  },
+  {
+   "date": "2026-07-27",
+   "race_no": 4,
+   "race_name": "２歳Ｄ－６",
+   "class": "D",
+   "moisture": 1.2,
+   "field_size": 8,
+   "num": 4,
+   "jockey": "菊池一",
+   "trainer": "村上慎",
+   "owner": "大野昇",
+   "sled_kg": 500.0,
+   "weight": 775,
+   "weight_diff": null,
+   "odds": 31.7,
+   "popularity": 8,
+   "position": 4,
+   "time": "3:04.1",
+   "margin_sec": 46.4,
+   "interval": null,
+   "other": {
+    "label": "勝ち馬",
+    "name": "ダリア"
+   }
+  }
+ ]
+}

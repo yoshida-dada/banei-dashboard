@@ -1,0 +1,193 @@
+{
+ "name": "ツカサドジャース",
+ "sex": "牡",
+ "age": 2,
+ "trainer": "谷あゆ",
+ "owner": "川口晋司",
+ "sled_kg": 510.0,
+ "weight": 879,
+ "weight_diff": 2,
+ "last_race_date": "2026-09-21",
+ "pedigree": {
+  "sire": "フウジンライデン",
+  "dam": "コウシュハヨナ",
+  "sire_sire": "カゲシュウホー",
+  "sire_dam": "ライデンホーキョク",
+  "dam_sire": "テンマビュウテイ",
+  "dam_dam": "秋姫"
+ },
+ "stats": {
+  "total": {
+   "win": 0,
+   "place2": 1,
+   "place3": 0,
+   "other": 5,
+   "n": 6,
+   "win_rate": 0.0,
+   "quinella_rate": 0.167,
+   "show_rate": 0.167
+  },
+  "2026": {
+   "win": 0,
+   "place2": 1,
+   "place3": 0,
+   "other": 5,
+   "n": 6,
+   "win_rate": 0.0,
+   "quinella_rate": 0.167,
+   "show_rate": 0.167
+  }
+ },
+ "races": [
+  {
+   "date": "2026-09-21",
+   "race_no": 4,
+   "race_name": "じいじ北海道へようこそ２歳Ｃ－７",
+   "class": "C",
+   "moisture": 2.5,
+   "field_size": 10,
+   "num": 4,
+   "jockey": "中原蓮",
+   "trainer": "谷あゆ",
+   "owner": "川口晋司",
+   "sled_kg": 510.0,
+   "weight": 879,
+   "weight_diff": 2,
+   "odds": 9.4,
+   "popularity": 5,
+   "position": 6,
+   "time": "2:09.7",
+   "margin_sec": 26.1,
+   "interval": "中3週",
+   "other": {
+    "label": "勝ち馬",
+    "name": "シャインクィーン"
+   }
+  },
+  {
+   "date": "2026-08-31",
+   "race_no": 4,
+   "race_name": "てるＱばんえい初見参記念２歳Ｃ－５",
+   "class": "C",
+   "moisture": 1.4,
+   "field_size": 10,
+   "num": 9,
+   "jockey": "中村太",
+   "trainer": "谷あゆ",
+   "owner": "川口晋司",
+   "sled_kg": 510.0,
+   "weight": 877,
+   "weight_diff": 0,
+   "odds": 29.8,
+   "popularity": 7,
+   "position": 7,
+   "time": "2:30.9",
+   "margin_sec": 29.7,
+   "interval": "中2週",
+   "other": {
+    "label": "勝ち馬",
+    "name": "モンスター"
+   }
+  },
+  {
+   "date": "2026-08-16",
+   "race_no": 3,
+   "race_name": "おけばんばくん記念２歳Ｃ－３",
+   "class": "C3",
+   "moisture": 1.8,
+   "field_size": 9,
+   "num": 1,
+   "jockey": "☆今井千",
+   "trainer": "谷あゆ",
+   "owner": "川口晋司",
+   "sled_kg": 490.0,
+   "weight": 877,
+   "weight_diff": 25,
+   "odds": 2.3,
+   "popularity": 1,
+   "position": 7,
+   "time": "2:29.6",
+   "margin_sec": 22.5,
+   "interval": "中4週",
+   "other": {
+    "label": "勝ち馬",
+    "name": "メオトコトブキ"
+   }
+  },
+  {
+   "date": "2026-07-18",
+   "race_no": 4,
+   "race_name": "杜野もりんちゅ誕生日記念２歳Ｂ－５",
+   "class": "B",
+   "moisture": 1.7,
+   "field_size": 10,
+   "num": 4,
+   "jockey": "中村太",
+   "trainer": "谷あゆ",
+   "owner": "川口晋司",
+   "sled_kg": 510.0,
+   "weight": 852,
+   "weight_diff": -2,
+   "odds": 13.7,
+   "popularity": 7,
+   "position": 7,
+   "time": "2:06.5",
+   "margin_sec": 16.9,
+   "interval": "中1週",
+   "other": {
+    "label": "勝ち馬",
+    "name": "ホクショウジェイク"
+   }
+  },
+  {
+   "date": "2026-07-06",
+   "race_no": 5,
+   "race_name": "ゆみこ生誕記念２歳Ｂ－４",
+   "class": "B4",
+   "moisture": 0.8,
+   "field_size": 10,
+   "num": 4,
+   "jockey": "☆今井千",
+   "trainer": "谷あゆ",
+   "owner": "川口晋司",
+   "sled_kg": 490.0,
+   "weight": 854,
+   "weight_diff": 5,
+   "odds": 5.9,
+   "popularity": 4,
+   "position": 6,
+   "time": "2:25.6",
+   "margin_sec": 25.6,
+   "interval": "連闘",
+   "other": {
+    "label": "勝ち馬",
+    "name": "ハイトップエース"
+   }
+  },
+  {
+   "date": "2026-06-29",
+   "race_no": 2,
+   "race_name": "２歳新馬",
+   "class": "新馬",
+   "moisture": 3.3,
+   "field_size": 9,
+   "num": 7,
+   "jockey": "☆今井千",
+   "trainer": "谷あゆ",
+   "owner": "川口晋司",
+   "sled_kg": 480.0,
+   "weight": 849,
+   "weight_diff": null,
+   "odds": 6.7,
+   "popularity": 3,
+   "position": 2,
+   "time": "1:54.2",
+   "margin_sec": 7.0,
+   "interval": null,
+   "other": {
+    "label": "勝ち馬",
+    "name": "シンバクシンオー"
+   }
+  }
+ ]
+}

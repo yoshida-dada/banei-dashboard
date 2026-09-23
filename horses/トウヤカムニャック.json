@@ -1,0 +1,136 @@
+{
+ "name": "トウヤカムニャック",
+ "sex": "牝",
+ "age": 2,
+ "trainer": "森芳浩",
+ "owner": "森靖晃",
+ "sled_kg": 480.0,
+ "weight": 801,
+ "weight_diff": 4,
+ "last_race_date": "2026-09-19",
+ "pedigree": null,
+ "stats": {
+  "total": {
+   "win": 0,
+   "place2": 0,
+   "place3": 0,
+   "other": 4,
+   "n": 4,
+   "win_rate": 0.0,
+   "quinella_rate": 0.0,
+   "show_rate": 0.0
+  },
+  "2026": {
+   "win": 0,
+   "place2": 0,
+   "place3": 0,
+   "other": 4,
+   "n": 4,
+   "win_rate": 0.0,
+   "quinella_rate": 0.0,
+   "show_rate": 0.0
+  }
+ },
+ "races": [
+  {
+   "date": "2026-09-19",
+   "race_no": 2,
+   "race_name": "文紀＆裕美結婚３周年記念杯２歳Ｄ－８",
+   "class": "D",
+   "moisture": 0.7,
+   "field_size": 9,
+   "num": 4,
+   "jockey": "阿部武",
+   "trainer": "森芳浩",
+   "owner": "森靖晃",
+   "sled_kg": 480.0,
+   "weight": 801,
+   "weight_diff": 4,
+   "odds": 37.3,
+   "popularity": 8,
+   "position": 6,
+   "time": "2:50.0",
+   "margin_sec": 57.9,
+   "interval": "中2週",
+   "other": {
+    "label": "勝ち馬",
+    "name": "フクマルペガサス"
+   }
+  },
+  {
+   "date": "2026-08-31",
+   "race_no": 2,
+   "race_name": "佳乃子のばんえい再来場記念２歳Ｄ－７",
+   "class": "D",
+   "moisture": 1.4,
+   "field_size": 10,
+   "num": 10,
+   "jockey": "阿部武",
+   "trainer": "森芳浩",
+   "owner": "森靖晃",
+   "sled_kg": 480.0,
+   "weight": 797,
+   "weight_diff": 5,
+   "odds": 163.1,
+   "popularity": 10,
+   "position": 10,
+   "time": "3:41.9",
+   "margin_sec": 78.1,
+   "interval": "連闘",
+   "other": {
+    "label": "勝ち馬",
+    "name": "キンリュウ"
+   }
+  },
+  {
+   "date": "2026-08-24",
+   "race_no": 2,
+   "race_name": "岩田康誠賞２歳Ｄ－８",
+   "class": "D",
+   "moisture": 0.6,
+   "field_size": 9,
+   "num": 7,
+   "jockey": "村上章",
+   "trainer": "森芳浩",
+   "owner": "森靖晃",
+   "sled_kg": 480.0,
+   "weight": 792,
+   "weight_diff": -1,
+   "odds": 112.9,
+   "popularity": 9,
+   "position": 9,
+   "time": "3:01.5",
+   "margin_sec": 44.2,
+   "interval": "中2週",
+   "other": {
+    "label": "勝ち馬",
+    "name": "ホクセイタロウ"
+   }
+  },
+  {
+   "date": "2026-08-10",
+   "race_no": 2,
+   "race_name": "午年☆☆ひよちゃん爆誕記念２歳Ｄ－８",
+   "class": "D",
+   "moisture": 1.6,
+   "field_size": 10,
+   "num": 5,
+   "jockey": "渡来心",
+   "trainer": "森芳浩",
+   "owner": "森靖晃",
+   "sled_kg": 480.0,
+   "weight": 793,
+   "weight_diff": null,
+   "odds": 15.9,
+   "popularity": 8,
+   "position": 10,
+   "time": "3:18.4",
+   "margin_sec": 61.3,
+   "interval": null,
+   "other": {
+    "label": "勝ち馬",
+    "name": "ホクセイサチコ"
+   }
+  }
+ ]
+}
