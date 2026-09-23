@@ -31,6 +31,7 @@
    "show_rate": 0.0
   }
  },
+ "insider_label_count": 0,
  "races": [
   {
    "date": "2026-09-14",
@@ -55,7 +56,8 @@
    "other": {
     "label": "勝ち馬",
     "name": "スーパーハクリュウ"
-   }
+   },
+   "insider_labels": []
   },
   {
    "date": "2026-08-24",
@@ -80,7 +82,8 @@
    "other": {
     "label": "勝ち馬",
     "name": "オヤキ"
-   }
+   },
+   "insider_labels": []
   }
  ]
 }

@@ -38,6 +38,7 @@
    "show_rate": 0.429
   }
  },
+ "insider_label_count": 0,
  "races": [
   {
    "date": "2026-09-19",
@@ -62,7 +63,8 @@
    "other": {
     "label": "勝ち馬",
     "name": "ホクセイワッショイ"
-   }
+   },
+   "insider_labels": []
   },
   {
    "date": "2026-09-05",
@@ -87,7 +89,8 @@
    "other": {
     "label": "勝ち馬",
     "name": "インテグラル"
-   }
+   },
+   "insider_labels": []
   },
   {
    "date": "2026-08-16",
@@ -112,7 +115,8 @@
    "other": {
     "label": "2着馬",
     "name": "シンゲキノハルキ"
-   }
+   },
+   "insider_labels": []
   },
   {
    "date": "2026-08-08",
@@ -137,7 +141,8 @@
    "other": {
     "label": "2着馬",
     "name": "ゴールドブリオン"
-   }
+   },
+   "insider_labels": []
   },
   {
    "date": "2026-07-19",
@@ -159,7 +164,8 @@
    "time": null,
    "margin_sec": null,
    "interval": "中2週",
-   "other": null
+   "other": null,
+   "insider_labels": []
   },
   {
    "date": "2026-07-04",
@@ -184,7 +190,8 @@
    "other": {
     "label": "勝ち馬",
     "name": "キングジョー"
-   }
+   },
+   "insider_labels": []
   },
   {
    "date": "2026-06-29",
@@ -209,7 +216,8 @@
    "other": {
     "label": "勝ち馬",
     "name": "オシマダイヤ"
-   }
+   },
+   "insider_labels": []
   },
   {
    "date": "2026-06-13",
@@ -234,7 +242,8 @@
    "other": {
     "label": "勝ち馬",
     "name": "ワールドジパング"
-   }
+   },
+   "insider_labels": []
   }
  ]
 }

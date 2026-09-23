@@ -31,6 +31,7 @@
    "show_rate": 0.75
   }
  },
+ "insider_label_count": 0,
  "races": [
   {
    "date": "2026-09-20",
@@ -55,7 +56,8 @@
    "other": {
     "label": "2着馬",
     "name": "イワキソルシエール"
-   }
+   },
+   "insider_labels": []
   },
   {
    "date": "2026-09-06",
@@ -80,7 +82,8 @@
    "other": {
     "label": "勝ち馬",
     "name": "イワキファンファン"
-   }
+   },
+   "insider_labels": []
   },
   {
    "date": "2026-08-24",
@@ -105,7 +108,8 @@
    "other": {
     "label": "勝ち馬",
     "name": "バニラ"
-   }
+   },
+   "insider_labels": []
   },
   {
    "date": "2026-08-10",
@@ -130,7 +134,8 @@
    "other": {
     "label": "2着馬",
     "name": "トカチキャップ"
-   }
+   },
+   "insider_labels": []
   }
  ]
 }

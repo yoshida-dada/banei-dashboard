@@ -38,6 +38,7 @@
    "show_rate": 0.4
   }
  },
+ "insider_label_count": 1,
  "races": [
   {
    "date": "2026-09-19",
@@ -62,7 +63,8 @@
    "other": {
     "label": "勝ち馬",
     "name": "ヴァンクール"
-   }
+   },
+   "insider_labels": []
   },
   {
    "date": "2026-09-05",
@@ -87,7 +89,13 @@
    "other": {
     "label": "2着馬",
     "name": "ショウナンボーイ"
-   }
+   },
+   "insider_labels": [
+    {
+     "label_type": "仕掛け",
+     "note": ""
+    }
+   ]
   },
   {
    "date": "2026-08-10",
@@ -112,7 +120,8 @@
    "other": {
     "label": "勝ち馬",
     "name": "ヒノクニスピード"
-   }
+   },
+   "insider_labels": []
   },
   {
    "date": "2026-07-13",
@@ -137,7 +146,8 @@
    "other": {
     "label": "勝ち馬",
     "name": "ミレン"
-   }
+   },
+   "insider_labels": []
   },
   {
    "date": "2026-06-29",
@@ -162,7 +172,8 @@
    "other": {
     "label": "勝ち馬",
     "name": "シンバクシンオー"
-   }
+   },
+   "insider_labels": []
   }
  ]
 }

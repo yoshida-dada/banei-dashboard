@@ -38,6 +38,7 @@
    "show_rate": 0.25
   }
  },
+ "insider_label_count": 0,
  "races": [
   {
    "date": "2026-08-30",
@@ -62,7 +63,8 @@
    "other": {
     "label": "勝ち馬",
     "name": "イワキニセイ"
-   }
+   },
+   "insider_labels": []
   },
   {
    "date": "2026-08-24",
@@ -87,7 +89,8 @@
    "other": {
     "label": "勝ち馬",
     "name": "オヤキ"
-   }
+   },
+   "insider_labels": []
   },
   {
    "date": "2026-06-29",
@@ -112,7 +115,8 @@
    "other": {
     "label": "勝ち馬",
     "name": "ヌサマイサンセット"
-   }
+   },
+   "insider_labels": []
   },
   {
    "date": "2026-06-13",
@@ -137,7 +141,8 @@
    "other": {
     "label": "勝ち馬",
     "name": "ツカサエンゼル"
-   }
+   },
+   "insider_labels": []
   }
  ]
 }

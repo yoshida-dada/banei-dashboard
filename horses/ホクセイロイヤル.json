@@ -38,6 +38,7 @@
    "show_rate": 0.25
   }
  },
+ "insider_label_count": 0,
  "races": [
   {
    "date": "2026-09-19",
@@ -62,7 +63,8 @@
    "other": {
     "label": "勝ち馬",
     "name": "ハイトップエース"
-   }
+   },
+   "insider_labels": []
   },
   {
    "date": "2026-09-06",
@@ -87,7 +89,8 @@
    "other": {
     "label": "勝ち馬",
     "name": "ショウライトマユ"
-   }
+   },
+   "insider_labels": []
   },
   {
    "date": "2026-08-23",
@@ -112,7 +115,8 @@
    "other": {
     "label": "勝ち馬",
     "name": "ハオリブル"
-   }
+   },
+   "insider_labels": []
   },
   {
    "date": "2026-08-09",
@@ -137,7 +141,8 @@
    "other": {
     "label": "2着馬",
     "name": "ツガルイチバン"
-   }
+   },
+   "insider_labels": []
   },
   {
    "date": "2026-07-19",
@@ -162,7 +167,8 @@
    "other": {
     "label": "勝ち馬",
     "name": "ミレン"
-   }
+   },
+   "insider_labels": []
   },
   {
    "date": "2026-06-27",
@@ -184,7 +190,8 @@
    "time": null,
    "margin_sec": null,
    "interval": "中2週",
-   "other": null
+   "other": null,
+   "insider_labels": []
   },
   {
    "date": "2026-06-08",
@@ -209,7 +216,8 @@
    "other": {
     "label": "勝ち馬",
     "name": "ヤマカツサクラ"
-   }
+   },
+   "insider_labels": []
   },
   {
    "date": "2026-05-31",
@@ -234,7 +242,8 @@
    "other": {
     "label": "勝ち馬",
     "name": "アオニシキ"
-   }
+   },
+   "insider_labels": []
   },
   {
    "date": "2026-05-17",
@@ -259,7 +268,8 @@
    "other": {
     "label": "勝ち馬",
     "name": "クリスタルザイオン"
-   }
+   },
+   "insider_labels": []
   }
  ]
 }

@@ -38,6 +38,7 @@
    "show_rate": 0.3
   }
  },
+ "insider_label_count": 1,
  "races": [
   {
    "date": "2026-09-19",
@@ -62,7 +63,8 @@
    "other": {
     "label": "勝ち馬",
     "name": "ホクセイワッショイ"
-   }
+   },
+   "insider_labels": []
   },
   {
    "date": "2026-08-31",
@@ -87,7 +89,8 @@
    "other": {
     "label": "勝ち馬",
     "name": "クリスタルソリッド"
-   }
+   },
+   "insider_labels": []
   },
   {
    "date": "2026-08-22",
@@ -112,7 +115,8 @@
    "other": {
     "label": "勝ち馬",
     "name": "ニシオギオリジン"
-   }
+   },
+   "insider_labels": []
   },
   {
    "date": "2026-08-01",
@@ -137,7 +141,13 @@
    "other": {
     "label": "2着馬",
     "name": "フジノモンスター"
-   }
+   },
+   "insider_labels": [
+    {
+     "label_type": "仕掛け",
+     "note": ""
+    }
+   ]
   },
   {
    "date": "2026-07-26",
@@ -162,7 +172,8 @@
    "other": {
     "label": "勝ち馬",
     "name": "ドウナンテンセイ"
-   }
+   },
+   "insider_labels": []
   },
   {
    "date": "2026-07-11",
@@ -187,7 +198,8 @@
    "other": {
     "label": "勝ち馬",
     "name": "ヤマカツサクラ"
-   }
+   },
+   "insider_labels": []
   },
   {
    "date": "2026-06-22",
@@ -212,7 +224,8 @@
    "other": {
     "label": "勝ち馬",
     "name": "クラウンワン"
-   }
+   },
+   "insider_labels": []
   },
   {
    "date": "2026-06-07",
@@ -237,7 +250,8 @@
    "other": {
     "label": "2着馬",
     "name": "ヒノクニキングオー"
-   }
+   },
+   "insider_labels": []
   },
   {
    "date": "2026-05-25",
@@ -262,7 +276,8 @@
    "other": {
     "label": "勝ち馬",
     "name": "キョウエイギンガ"
-   }
+   },
+   "insider_labels": []
   },
   {
    "date": "2026-05-17",
@@ -287,7 +302,8 @@
    "other": {
     "label": "勝ち馬",
     "name": "クリスタルソリッド"
-   }
+   },
+   "insider_labels": []
   }
  ]
 }

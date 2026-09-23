@@ -31,6 +31,7 @@
    "show_rate": 1.0
   }
  },
+ "insider_label_count": 0,
  "races": [
   {
    "date": "2026-09-21",
@@ -55,7 +56,8 @@
    "other": {
     "label": "2着馬",
     "name": "アーススノーパール"
-   }
+   },
+   "insider_labels": []
   },
   {
    "date": "2026-09-07",
@@ -80,7 +82,8 @@
    "other": {
     "label": "勝ち馬",
     "name": "アリチャン"
-   }
+   },
+   "insider_labels": []
   }
  ]
 }

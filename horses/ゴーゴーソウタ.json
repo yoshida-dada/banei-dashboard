@@ -38,6 +38,7 @@
    "show_rate": 0.5
   }
  },
+ "insider_label_count": 0,
  "races": [
   {
    "date": "2026-09-13",
@@ -62,7 +63,8 @@
    "other": {
     "label": "勝ち馬",
     "name": "ロイヤルウンカイ"
-   }
+   },
+   "insider_labels": []
   },
   {
    "date": "2026-09-07",
@@ -87,7 +89,8 @@
    "other": {
     "label": "勝ち馬",
     "name": "キタノスミレ"
-   }
+   },
+   "insider_labels": []
   },
   {
    "date": "2026-08-16",
@@ -112,7 +115,8 @@
    "other": {
     "label": "勝ち馬",
     "name": "キタデテンセイ"
-   }
+   },
+   "insider_labels": []
   },
   {
    "date": "2026-08-02",
@@ -137,7 +141,8 @@
    "other": {
     "label": "勝ち馬",
     "name": "ストロングダッシュ"
-   }
+   },
+   "insider_labels": []
   },
   {
    "date": "2026-07-25",
@@ -162,7 +167,8 @@
    "other": {
     "label": "2着馬",
     "name": "ヒサノタイガー"
-   }
+   },
+   "insider_labels": []
   },
   {
    "date": "2026-07-13",
@@ -187,7 +193,8 @@
    "other": {
     "label": "勝ち馬",
     "name": "ストロングダッシュ"
-   }
+   },
+   "insider_labels": []
   },
   {
    "date": "2026-05-31",
@@ -209,7 +216,8 @@
    "time": "6:03.0",
    "margin_sec": 206.6,
    "interval": null,
-   "other": null
+   "other": null,
+   "insider_labels": []
   }
  ]
 }

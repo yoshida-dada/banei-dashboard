@@ -38,6 +38,7 @@
    "show_rate": 0.0
   }
  },
+ "insider_label_count": 0,
  "races": [
   {
    "date": "2026-07-18",
@@ -59,7 +60,8 @@
    "time": null,
    "margin_sec": null,
    "interval": "中2週",
-   "other": null
+   "other": null,
+   "insider_labels": []
   },
   {
    "date": "2026-07-04",
@@ -84,7 +86,8 @@
    "other": {
     "label": "勝ち馬",
     "name": "キングジョー"
-   }
+   },
+   "insider_labels": []
   },
   {
    "date": "2026-06-21",
@@ -109,7 +112,8 @@
    "other": {
     "label": "勝ち馬",
     "name": "ハオ"
-   }
+   },
+   "insider_labels": []
   },
   {
    "date": "2026-06-15",
@@ -134,7 +138,8 @@
    "other": {
     "label": "勝ち馬",
     "name": "キタサカエヒトミ"
-   }
+   },
+   "insider_labels": []
   },
   {
    "date": "2026-05-30",
@@ -156,7 +161,8 @@
    "time": null,
    "margin_sec": null,
    "interval": null,
-   "other": null
+   "other": null,
+   "insider_labels": []
   }
  ]
 }

@@ -38,6 +38,7 @@
    "show_rate": 0.429
   }
  },
+ "insider_label_count": 0,
  "races": [
   {
    "date": "2026-09-21",
@@ -62,7 +63,8 @@
    "other": {
     "label": "勝ち馬",
     "name": "ヤマトリュウ"
-   }
+   },
+   "insider_labels": []
   },
   {
    "date": "2026-08-29",
@@ -87,7 +89,8 @@
    "other": {
     "label": "勝ち馬",
     "name": "テンノキズナ"
-   }
+   },
+   "insider_labels": []
   },
   {
    "date": "2026-08-23",
@@ -112,7 +115,8 @@
    "other": {
     "label": "勝ち馬",
     "name": "ヒロインミコ"
-   }
+   },
+   "insider_labels": []
   },
   {
    "date": "2026-08-10",
@@ -137,7 +141,8 @@
    "other": {
     "label": "勝ち馬",
     "name": "ジェイノダイジン"
-   }
+   },
+   "insider_labels": []
   },
   {
    "date": "2026-07-25",
@@ -162,7 +167,8 @@
    "other": {
     "label": "勝ち馬",
     "name": "ハオリブル"
-   }
+   },
+   "insider_labels": []
   },
   {
    "date": "2026-06-29",
@@ -184,7 +190,8 @@
    "time": "1:53.3",
    "margin_sec": 0.0,
    "interval": "中2週",
-   "other": null
+   "other": null,
+   "insider_labels": []
   },
   {
    "date": "2026-06-14",
@@ -209,7 +216,8 @@
    "other": {
     "label": "勝ち馬",
     "name": "コハクヒメ"
-   }
+   },
+   "insider_labels": []
   }
  ]
 }

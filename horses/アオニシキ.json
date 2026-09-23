@@ -38,6 +38,7 @@
    "show_rate": 0.667
   }
  },
+ "insider_label_count": 0,
  "races": [
   {
    "date": "2026-09-20",
@@ -62,7 +63,8 @@
    "other": {
     "label": "勝ち馬",
     "name": "クリスタルザイオン"
-   }
+   },
+   "insider_labels": []
   },
   {
    "date": "2026-09-06",
@@ -87,7 +89,8 @@
    "other": {
     "label": "勝ち馬",
     "name": "マオノエトワール"
-   }
+   },
+   "insider_labels": []
   },
   {
    "date": "2026-08-17",
@@ -112,7 +115,8 @@
    "other": {
     "label": "勝ち馬",
     "name": "マオノエトワール"
-   }
+   },
+   "insider_labels": []
   },
   {
    "date": "2026-08-09",
@@ -134,7 +138,8 @@
    "time": null,
    "margin_sec": null,
    "interval": "中8週",
-   "other": null
+   "other": null,
+   "insider_labels": []
   },
   {
    "date": "2026-06-14",
@@ -159,7 +164,8 @@
    "other": {
     "label": "2着馬",
     "name": "ビエイキャノン"
-   }
+   },
+   "insider_labels": []
   },
   {
    "date": "2026-05-31",
@@ -184,7 +190,8 @@
    "other": {
     "label": "2着馬",
     "name": "ビエイキャノン"
-   }
+   },
+   "insider_labels": []
   },
   {
    "date": "2026-05-18",
@@ -209,7 +216,8 @@
    "other": {
     "label": "2着馬",
     "name": "サカノヒカルアオ"
-   }
+   },
+   "insider_labels": []
   }
  ]
 }

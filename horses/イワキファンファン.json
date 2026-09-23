@@ -38,6 +38,7 @@
    "show_rate": 0.222
   }
  },
+ "insider_label_count": 0,
  "races": [
   {
    "date": "2026-09-12",
@@ -62,7 +63,8 @@
    "other": {
     "label": "勝ち馬",
     "name": "マルホンカヒア"
-   }
+   },
+   "insider_labels": []
   },
   {
    "date": "2026-09-06",
@@ -87,7 +89,8 @@
    "other": {
     "label": "2着馬",
     "name": "ヌサマイサンセット"
-   }
+   },
+   "insider_labels": []
   },
   {
    "date": "2026-08-16",
@@ -112,7 +115,8 @@
    "other": {
     "label": "勝ち馬",
     "name": "キタデテンセイ"
-   }
+   },
+   "insider_labels": []
   },
   {
    "date": "2026-08-02",
@@ -137,7 +141,8 @@
    "other": {
     "label": "勝ち馬",
     "name": "ストロングダッシュ"
-   }
+   },
+   "insider_labels": []
   },
   {
    "date": "2026-07-25",
@@ -162,7 +167,8 @@
    "other": {
     "label": "勝ち馬",
     "name": "ハオリブル"
-   }
+   },
+   "insider_labels": []
   },
   {
    "date": "2026-07-12",
@@ -187,7 +193,8 @@
    "other": {
     "label": "2着馬",
     "name": "ホクセイヒビキ"
-   }
+   },
+   "insider_labels": []
   },
   {
    "date": "2026-06-21",
@@ -212,7 +219,8 @@
    "other": {
     "label": "勝ち馬",
     "name": "ハオ"
-   }
+   },
+   "insider_labels": []
   },
   {
    "date": "2026-06-08",
@@ -237,7 +245,8 @@
    "other": {
     "label": "勝ち馬",
     "name": "キタサカエアイ"
-   }
+   },
+   "insider_labels": []
   },
   {
    "date": "2026-06-01",
@@ -262,7 +271,8 @@
    "other": {
     "label": "勝ち馬",
     "name": "キングペガサス"
-   }
+   },
+   "insider_labels": []
   },
   {
    "date": "2026-05-17",
@@ -284,7 +294,8 @@
    "time": "5:19.7",
    "margin_sec": 185.0,
    "interval": null,
-   "other": null
+   "other": null,
+   "insider_labels": []
   }
  ]
 }

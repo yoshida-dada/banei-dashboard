@@ -38,6 +38,7 @@
    "show_rate": 0.167
   }
  },
+ "insider_label_count": 0,
  "races": [
   {
    "date": "2026-09-06",
@@ -59,7 +60,8 @@
    "time": null,
    "margin_sec": null,
    "interval": "中3週",
-   "other": null
+   "other": null,
+   "insider_labels": []
   },
   {
    "date": "2026-08-16",
@@ -84,7 +86,8 @@
    "other": {
     "label": "勝ち馬",
     "name": "ヒノクニゴールド"
-   }
+   },
+   "insider_labels": []
   },
   {
    "date": "2026-08-03",
@@ -109,7 +112,8 @@
    "other": {
     "label": "勝ち馬",
     "name": "ヒメトラルビー"
-   }
+   },
+   "insider_labels": []
   },
   {
    "date": "2026-07-19",
@@ -134,7 +138,8 @@
    "other": {
     "label": "勝ち馬",
     "name": "ワシノオ"
-   }
+   },
+   "insider_labels": []
   },
   {
    "date": "2026-07-05",
@@ -159,7 +164,8 @@
    "other": {
     "label": "勝ち馬",
     "name": "アアモンドカイト"
-   }
+   },
+   "insider_labels": []
   },
   {
    "date": "2026-06-22",
@@ -184,7 +190,8 @@
    "other": {
     "label": "勝ち馬",
     "name": "ロキノクラン"
-   }
+   },
+   "insider_labels": []
   },
   {
    "date": "2026-06-15",
@@ -209,7 +216,8 @@
    "other": {
     "label": "勝ち馬",
     "name": "ヒメトラハピネス"
-   }
+   },
+   "insider_labels": []
   },
   {
    "date": "2026-05-30",
@@ -231,7 +239,8 @@
    "time": null,
    "margin_sec": null,
    "interval": null,
-   "other": null
+   "other": null,
+   "insider_labels": []
   }
  ]
 }

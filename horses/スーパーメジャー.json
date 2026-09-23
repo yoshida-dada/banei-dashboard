@@ -38,6 +38,7 @@
    "show_rate": 0.111
   }
  },
+ "insider_label_count": 0,
  "races": [
   {
    "date": "2026-09-14",
@@ -62,7 +63,8 @@
    "other": {
     "label": "勝ち馬",
     "name": "スーパーハクリュウ"
-   }
+   },
+   "insider_labels": []
   },
   {
    "date": "2026-09-07",
@@ -87,7 +89,8 @@
    "other": {
     "label": "勝ち馬",
     "name": "キタノショウヘイ"
-   }
+   },
+   "insider_labels": []
   },
   {
    "date": "2026-08-22",
@@ -109,7 +112,8 @@
    "time": null,
    "margin_sec": null,
    "interval": "中2週",
-   "other": null
+   "other": null,
+   "insider_labels": []
   },
   {
    "date": "2026-08-08",
@@ -134,7 +138,8 @@
    "other": {
     "label": "勝ち馬",
     "name": "キタデテンセイ"
-   }
+   },
+   "insider_labels": []
   },
   {
    "date": "2026-07-25",
@@ -159,7 +164,8 @@
    "other": {
     "label": "勝ち馬",
     "name": "ゴーゴーソウタ"
-   }
+   },
+   "insider_labels": []
   },
   {
    "date": "2026-07-12",
@@ -184,7 +190,8 @@
    "other": {
     "label": "勝ち馬",
     "name": "イワキファンファン"
-   }
+   },
+   "insider_labels": []
   },
   {
    "date": "2026-06-21",
@@ -209,7 +216,8 @@
    "other": {
     "label": "勝ち馬",
     "name": "ハオ"
-   }
+   },
+   "insider_labels": []
   },
   {
    "date": "2026-06-13",
@@ -234,7 +242,8 @@
    "other": {
     "label": "勝ち馬",
     "name": "ヒロインミコ"
-   }
+   },
+   "insider_labels": []
   },
   {
    "date": "2026-05-31",
@@ -259,7 +268,8 @@
    "other": {
     "label": "勝ち馬",
     "name": "ドウナンテンセイ"
-   }
+   },
+   "insider_labels": []
   },
   {
    "date": "2026-05-16",
@@ -284,7 +294,8 @@
    "other": {
     "label": "勝ち馬",
     "name": "クリスタルソウル"
-   }
+   },
+   "insider_labels": []
   }
  ]
 }

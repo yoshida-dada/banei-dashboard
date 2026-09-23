@@ -38,6 +38,7 @@
    "show_rate": 0.4
   }
  },
+ "insider_label_count": 0,
  "races": [
   {
    "date": "2026-08-31",
@@ -62,7 +63,8 @@
    "other": {
     "label": "2着馬",
     "name": "ストロングポイント"
-   }
+   },
+   "insider_labels": []
   },
   {
    "date": "2026-08-17",
@@ -87,7 +89,8 @@
    "other": {
     "label": "勝ち馬",
     "name": "ロイヤルノチカラ"
-   }
+   },
+   "insider_labels": []
   },
   {
    "date": "2026-08-09",
@@ -112,7 +115,8 @@
    "other": {
     "label": "勝ち馬",
     "name": "キンカザン"
-   }
+   },
+   "insider_labels": []
   },
   {
    "date": "2026-07-18",
@@ -137,7 +141,8 @@
    "other": {
     "label": "勝ち馬",
     "name": "ホクショウジェイク"
-   }
+   },
+   "insider_labels": []
   },
   {
    "date": "2026-06-29",
@@ -162,7 +167,8 @@
    "other": {
     "label": "勝ち馬",
     "name": "クリボー"
-   }
+   },
+   "insider_labels": []
   }
  ]
 }

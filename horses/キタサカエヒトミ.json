@@ -38,6 +38,7 @@
    "show_rate": 0.833
   }
  },
+ "insider_label_count": 0,
  "races": [
   {
    "date": "2026-09-13",
@@ -62,7 +63,8 @@
    "other": {
     "label": "勝ち馬",
     "name": "アンズティエルナ"
-   }
+   },
+   "insider_labels": []
   },
   {
    "date": "2026-08-16",
@@ -87,7 +89,8 @@
    "other": {
     "label": "2着馬",
     "name": "アンズティエルナ"
-   }
+   },
+   "insider_labels": []
   },
   {
    "date": "2026-08-02",
@@ -112,7 +115,8 @@
    "other": {
     "label": "勝ち馬",
     "name": "クリスタルザイオン"
-   }
+   },
+   "insider_labels": []
   },
   {
    "date": "2026-07-04",
@@ -137,7 +141,8 @@
    "other": {
     "label": "2着馬",
     "name": "クシロキングマン"
-   }
+   },
+   "insider_labels": []
   },
   {
    "date": "2026-06-27",
@@ -162,7 +167,8 @@
    "other": {
     "label": "勝ち馬",
     "name": "フェアリーマックス"
-   }
+   },
+   "insider_labels": []
   },
   {
    "date": "2026-06-15",
@@ -187,7 +193,8 @@
    "other": {
     "label": "2着馬",
     "name": "ケンハヤチ"
-   }
+   },
+   "insider_labels": []
   },
   {
    "date": "2026-05-31",
@@ -209,7 +216,8 @@
    "time": null,
    "margin_sec": null,
    "interval": null,
-   "other": null
+   "other": null,
+   "insider_labels": []
   }
  ]
 }

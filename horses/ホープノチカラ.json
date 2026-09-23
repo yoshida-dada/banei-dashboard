@@ -38,6 +38,7 @@
    "show_rate": 0.091
   }
  },
+ "insider_label_count": 1,
  "races": [
   {
    "date": "2026-09-12",
@@ -62,7 +63,8 @@
    "other": {
     "label": "勝ち馬",
     "name": "ラストユウセン"
-   }
+   },
+   "insider_labels": []
   },
   {
    "date": "2026-09-07",
@@ -87,7 +89,8 @@
    "other": {
     "label": "勝ち馬",
     "name": "キタノスミレ"
-   }
+   },
+   "insider_labels": []
   },
   {
    "date": "2026-08-15",
@@ -112,7 +115,13 @@
    "other": {
     "label": "勝ち馬",
     "name": "ホクセイヤマト"
-   }
+   },
+   "insider_labels": [
+    {
+     "label_type": "ヤレズ",
+     "note": ""
+    }
+   ]
   },
   {
    "date": "2026-08-08",
@@ -137,7 +146,8 @@
    "other": {
     "label": "勝ち馬",
     "name": "ホクセイスピカ"
-   }
+   },
+   "insider_labels": []
   },
   {
    "date": "2026-07-20",
@@ -162,7 +172,8 @@
    "other": {
     "label": "勝ち馬",
     "name": "ツガルユリ"
-   }
+   },
+   "insider_labels": []
   },
   {
    "date": "2026-07-04",
@@ -187,7 +198,8 @@
    "other": {
     "label": "勝ち馬",
     "name": "キタサカエヒトミ"
-   }
+   },
+   "insider_labels": []
   },
   {
    "date": "2026-06-22",
@@ -212,7 +224,8 @@
    "other": {
     "label": "勝ち馬",
     "name": "クラウンワン"
-   }
+   },
+   "insider_labels": []
   },
   {
    "date": "2026-06-13",
@@ -237,7 +250,8 @@
    "other": {
     "label": "勝ち馬",
     "name": "アンズティエルナ"
-   }
+   },
+   "insider_labels": []
   },
   {
    "date": "2026-05-25",
@@ -262,7 +276,8 @@
    "other": {
     "label": "2着馬",
     "name": "レガシーブラック"
-   }
+   },
+   "insider_labels": []
   },
   {
    "date": "2026-05-18",
@@ -287,7 +302,8 @@
    "other": {
     "label": "勝ち馬",
     "name": "ビエイキャノン"
-   }
+   },
+   "insider_labels": []
   },
   {
    "date": "2026-05-04",
@@ -312,7 +328,8 @@
    "other": {
     "label": "勝ち馬",
     "name": "ハゴロモゴールド"
-   }
+   },
+   "insider_labels": []
   }
  ]
 }

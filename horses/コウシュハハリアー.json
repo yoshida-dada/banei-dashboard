@@ -68,6 +68,7 @@
    "show_rate": 0.25
   }
  },
+ "insider_label_count": 6,
  "races": [
   {
    "date": "2026-09-20",
@@ -92,7 +93,8 @@
    "other": {
     "label": "勝ち馬",
     "name": "レイリーキング"
-   }
+   },
+   "insider_labels": []
   },
   {
    "date": "2026-09-06",
@@ -117,7 +119,13 @@
    "other": {
     "label": "勝ち馬",
     "name": "クリスタルイプセ"
-   }
+   },
+   "insider_labels": [
+    {
+     "label_type": "引き",
+     "note": "イプセ仕掛け、炭治郎、ハリアー引き"
+    }
+   ]
   },
   {
    "date": "2026-08-22",
@@ -142,7 +150,8 @@
    "other": {
     "label": "勝ち馬",
     "name": "シンエイファイト"
-   }
+   },
+   "insider_labels": []
   },
   {
    "date": "2026-08-02",
@@ -167,7 +176,8 @@
    "other": {
     "label": "勝ち馬",
     "name": "アソワールド"
-   }
+   },
+   "insider_labels": []
   },
   {
    "date": "2026-07-25",
@@ -192,7 +202,8 @@
    "other": {
     "label": "勝ち馬",
     "name": "ココロノニダイメ"
-   }
+   },
+   "insider_labels": []
   },
   {
    "date": "2026-07-11",
@@ -217,7 +228,8 @@
    "other": {
     "label": "勝ち馬",
     "name": "コブダイヤ"
-   }
+   },
+   "insider_labels": []
   },
   {
    "date": "2026-06-29",
@@ -242,7 +254,8 @@
    "other": {
     "label": "勝ち馬",
     "name": "コウシュハテンセイ"
-   }
+   },
+   "insider_labels": []
   },
   {
    "date": "2026-06-15",
@@ -267,7 +280,8 @@
    "other": {
     "label": "勝ち馬",
     "name": "トワイチロ"
-   }
+   },
+   "insider_labels": []
   },
   {
    "date": "2026-05-25",
@@ -292,7 +306,8 @@
    "other": {
     "label": "勝ち馬",
     "name": "ゴールデンペガサス"
-   }
+   },
+   "insider_labels": []
   },
   {
    "date": "2026-05-17",
@@ -317,7 +332,8 @@
    "other": {
     "label": "勝ち馬",
     "name": "ホクセイタイヨウ"
-   }
+   },
+   "insider_labels": []
   },
   {
    "date": "2026-04-27",
@@ -342,7 +358,8 @@
    "other": {
     "label": "勝ち馬",
     "name": "マサタカラ"
-   }
+   },
+   "insider_labels": []
   },
   {
    "date": "2026-04-17",
@@ -367,7 +384,8 @@
    "other": {
     "label": "勝ち馬",
     "name": "クロコトブキ"
-   }
+   },
+   "insider_labels": []
   },
   {
    "date": "2026-03-22",
@@ -392,7 +410,8 @@
    "other": {
     "label": "勝ち馬",
     "name": "ジェイホースワン"
-   }
+   },
+   "insider_labels": []
   },
   {
    "date": "2026-03-07",
@@ -417,7 +436,8 @@
    "other": {
     "label": "勝ち馬",
     "name": "トウケイレーヴ"
-   }
+   },
+   "insider_labels": []
   },
   {
    "date": "2026-02-16",
@@ -442,7 +462,8 @@
    "other": {
     "label": "勝ち馬",
     "name": "ウンカイダイマオー"
-   }
+   },
+   "insider_labels": []
   },
   {
    "date": "2026-02-08",
@@ -467,7 +488,8 @@
    "other": {
     "label": "勝ち馬",
     "name": "コウシュハテンセイ"
-   }
+   },
+   "insider_labels": []
   },
   {
    "date": "2026-01-18",
@@ -492,7 +514,8 @@
    "other": {
     "label": "勝ち馬",
     "name": "ゼン"
-   }
+   },
+   "insider_labels": []
   },
   {
    "date": "2026-01-09",
@@ -517,7 +540,8 @@
    "other": {
     "label": "2着馬",
     "name": "トウケイレーヴ"
-   }
+   },
+   "insider_labels": []
   },
   {
    "date": "2025-12-22",
@@ -542,7 +566,8 @@
    "other": {
     "label": "2着馬",
     "name": "ゼン"
-   }
+   },
+   "insider_labels": []
   },
   {
    "date": "2025-12-13",
@@ -567,7 +592,8 @@
    "other": {
     "label": "勝ち馬",
     "name": "ウンカイダイマオー"
-   }
+   },
+   "insider_labels": []
   },
   {
    "date": "2025-12-01",
@@ -592,7 +618,8 @@
    "other": {
     "label": "2着馬",
     "name": "リュウセイウンカイ"
-   }
+   },
+   "insider_labels": []
   },
   {
    "date": "2025-11-15",
@@ -617,7 +644,8 @@
    "other": {
     "label": "2着馬",
     "name": "アサゾラ"
-   }
+   },
+   "insider_labels": []
   },
   {
    "date": "2025-10-25",
@@ -642,7 +670,8 @@
    "other": {
     "label": "2着馬",
     "name": "サカノハマナカ"
-   }
+   },
+   "insider_labels": []
   },
   {
    "date": "2025-10-19",
@@ -667,7 +696,8 @@
    "other": {
     "label": "勝ち馬",
     "name": "ホクセイテンリュウ"
-   }
+   },
+   "insider_labels": []
   },
   {
    "date": "2025-09-29",
@@ -692,7 +722,8 @@
    "other": {
     "label": "2着馬",
     "name": "ホクセイサクラコ"
-   }
+   },
+   "insider_labels": []
   },
   {
    "date": "2025-09-15",
@@ -717,7 +748,8 @@
    "other": {
     "label": "勝ち馬",
     "name": "ゼン"
-   }
+   },
+   "insider_labels": []
   },
   {
    "date": "2025-08-16",
@@ -742,7 +774,8 @@
    "other": {
     "label": "勝ち馬",
     "name": "ユーフォリア"
-   }
+   },
+   "insider_labels": []
   },
   {
    "date": "2025-08-03",
@@ -767,7 +800,8 @@
    "other": {
     "label": "勝ち馬",
     "name": "シルバーアロイ"
-   }
+   },
+   "insider_labels": []
   },
   {
    "date": "2025-07-19",
@@ -792,7 +826,8 @@
    "other": {
     "label": "2着馬",
     "name": "スターフェニックス"
-   }
+   },
+   "insider_labels": []
   },
   {
    "date": "2025-07-14",
@@ -817,7 +852,8 @@
    "other": {
     "label": "勝ち馬",
     "name": "ホクセイポルシェ"
-   }
+   },
+   "insider_labels": []
   },
   {
    "date": "2025-06-21",
@@ -842,7 +878,8 @@
    "other": {
     "label": "勝ち馬",
     "name": "シンエイハリアー"
-   }
+   },
+   "insider_labels": []
   },
   {
    "date": "2025-06-07",
@@ -867,7 +904,8 @@
    "other": {
     "label": "勝ち馬",
     "name": "キタノユウシン"
-   }
+   },
+   "insider_labels": []
   },
   {
    "date": "2025-06-02",
@@ -892,7 +930,8 @@
    "other": {
     "label": "勝ち馬",
     "name": "ジェイマーシー"
-   }
+   },
+   "insider_labels": []
   },
   {
    "date": "2025-05-26",
@@ -917,7 +956,8 @@
    "other": {
     "label": "勝ち馬",
     "name": "ジェイマーシー"
-   }
+   },
+   "insider_labels": []
   },
   {
    "date": "2025-05-18",
@@ -942,7 +982,8 @@
    "other": {
     "label": "勝ち馬",
     "name": "ホクセイポルシェ"
-   }
+   },
+   "insider_labels": []
   },
   {
    "date": "2025-04-19",
@@ -967,7 +1008,8 @@
    "other": {
     "label": "勝ち馬",
     "name": "ショータイム"
-   }
+   },
+   "insider_labels": []
   },
   {
    "date": "2025-03-08",
@@ -992,7 +1034,8 @@
    "other": {
     "label": "勝ち馬",
     "name": "テッチャン"
-   }
+   },
+   "insider_labels": []
   },
   {
    "date": "2025-03-02",
@@ -1017,7 +1060,8 @@
    "other": {
     "label": "勝ち馬",
     "name": "ネオキングダム"
-   }
+   },
+   "insider_labels": []
   },
   {
    "date": "2025-02-17",
@@ -1042,7 +1086,8 @@
    "other": {
     "label": "勝ち馬",
     "name": "ピンチハチャンス"
-   }
+   },
+   "insider_labels": []
   },
   {
    "date": "2025-01-26",
@@ -1067,7 +1112,8 @@
    "other": {
     "label": "勝ち馬",
     "name": "ピンチハチャンス"
-   }
+   },
+   "insider_labels": []
   },
   {
    "date": "2025-01-12",
@@ -1092,7 +1138,8 @@
    "other": {
     "label": "勝ち馬",
     "name": "ピンチハチャンス"
-   }
+   },
+   "insider_labels": []
   },
   {
    "date": "2025-01-02",
@@ -1117,7 +1164,8 @@
    "other": {
     "label": "勝ち馬",
     "name": "トワイチロ"
-   }
+   },
+   "insider_labels": []
   },
   {
    "date": "2024-12-23",
@@ -1142,7 +1190,8 @@
    "other": {
     "label": "勝ち馬",
     "name": "ピュアリーナナセ"
-   }
+   },
+   "insider_labels": []
   },
   {
    "date": "2024-12-16",
@@ -1167,7 +1216,8 @@
    "other": {
     "label": "勝ち馬",
     "name": "マルモタイショウ"
-   }
+   },
+   "insider_labels": []
   },
   {
    "date": "2024-11-24",
@@ -1192,7 +1242,8 @@
    "other": {
     "label": "勝ち馬",
     "name": "テッチャン"
-   }
+   },
+   "insider_labels": []
   },
   {
    "date": "2024-11-18",
@@ -1217,7 +1268,8 @@
    "other": {
     "label": "勝ち馬",
     "name": "ヤマトタイコー"
-   }
+   },
+   "insider_labels": []
   },
   {
    "date": "2024-10-26",
@@ -1242,7 +1294,8 @@
    "other": {
     "label": "勝ち馬",
     "name": "ジェイヒーロー"
-   }
+   },
+   "insider_labels": []
   },
   {
    "date": "2024-09-29",
@@ -1264,7 +1317,8 @@
    "time": null,
    "margin_sec": null,
    "interval": "中1週",
-   "other": null
+   "other": null,
+   "insider_labels": []
   },
   {
    "date": "2024-09-21",
@@ -1289,7 +1343,8 @@
    "other": {
     "label": "勝ち馬",
     "name": "フレイムゴールド"
-   }
+   },
+   "insider_labels": []
   },
   {
    "date": "2024-09-08",
@@ -1314,7 +1369,8 @@
    "other": {
     "label": "勝ち馬",
     "name": "マサタカラ"
-   }
+   },
+   "insider_labels": []
   },
   {
    "date": "2024-08-17",
@@ -1339,7 +1395,8 @@
    "other": {
     "label": "勝ち馬",
     "name": "トワトラナノココロ"
-   }
+   },
+   "insider_labels": []
   },
   {
    "date": "2024-08-12",
@@ -1364,7 +1421,8 @@
    "other": {
     "label": "勝ち馬",
     "name": "マルモタイショウ"
-   }
+   },
+   "insider_labels": []
   },
   {
    "date": "2024-07-28",
@@ -1389,7 +1447,8 @@
    "other": {
     "label": "勝ち馬",
     "name": "ミチシオ"
-   }
+   },
+   "insider_labels": []
   },
   {
    "date": "2024-07-06",
@@ -1414,7 +1473,8 @@
    "other": {
     "label": "勝ち馬",
     "name": "マサタカラ"
-   }
+   },
+   "insider_labels": []
   },
   {
    "date": "2024-06-24",
@@ -1439,7 +1499,8 @@
    "other": {
     "label": "勝ち馬",
     "name": "イナサンブラック"
-   }
+   },
+   "insider_labels": []
   },
   {
    "date": "2024-06-08",
@@ -1464,7 +1525,8 @@
    "other": {
     "label": "勝ち馬",
     "name": "ピュアリーナナセ"
-   }
+   },
+   "insider_labels": []
   },
   {
    "date": "2024-05-25",
@@ -1489,7 +1551,8 @@
    "other": {
     "label": "勝ち馬",
     "name": "ゴールドハンター"
-   }
+   },
+   "insider_labels": []
   },
   {
    "date": "2024-05-19",
@@ -1514,7 +1577,8 @@
    "other": {
     "label": "2着馬",
     "name": "スーパークイーン"
-   }
+   },
+   "insider_labels": []
   },
   {
    "date": "2024-04-27",
@@ -1539,7 +1603,8 @@
    "other": {
     "label": "勝ち馬",
     "name": "ジャパントップ"
-   }
+   },
+   "insider_labels": []
   },
   {
    "date": "2024-03-17",
@@ -1564,7 +1629,8 @@
    "other": {
     "label": "勝ち馬",
     "name": "ダイリンファイター"
-   }
+   },
+   "insider_labels": []
   },
   {
    "date": "2024-02-25",
@@ -1589,7 +1655,13 @@
    "other": {
     "label": "勝ち馬",
     "name": "ピンチハチャンス"
-   }
+   },
+   "insider_labels": [
+    {
+     "label_type": "引き",
+     "note": "ピンチ仕掛け、ハリアー引き。ギリ入れ大口"
+    }
+   ]
   },
   {
    "date": "2024-02-11",
@@ -1614,7 +1686,13 @@
    "other": {
     "label": "勝ち馬",
     "name": "マルホンリョウダイ"
-   }
+   },
+   "insider_labels": [
+    {
+     "label_type": "仕掛け",
+     "note": "ハリアー仕掛け、ピンチ引き。ボブはフリー"
+    }
+   ]
   },
   {
    "date": "2024-02-04",
@@ -1639,7 +1717,13 @@
    "other": {
     "label": "勝ち馬",
     "name": "マルホンリョウダイ"
-   }
+   },
+   "insider_labels": [
+    {
+     "label_type": "引き",
+     "note": "内容的には引き"
+    }
+   ]
   },
   {
    "date": "2024-01-20",
@@ -1664,7 +1748,13 @@
    "other": {
     "label": "2着馬",
     "name": "ピンチハチャンス"
-   }
+   },
+   "insider_labels": [
+    {
+     "label_type": "フリー",
+     "note": null
+    }
+   ]
   },
   {
    "date": "2024-01-07",
@@ -1689,7 +1779,8 @@
    "other": {
     "label": "勝ち馬",
     "name": "マルモタイショウ"
-   }
+   },
+   "insider_labels": []
   },
   {
    "date": "2023-12-29",
@@ -1714,7 +1805,8 @@
    "other": {
     "label": "勝ち馬",
     "name": "マルモタイショウ"
-   }
+   },
+   "insider_labels": []
   },
   {
    "date": "2023-12-16",
@@ -1739,7 +1831,8 @@
    "other": {
     "label": "2着馬",
     "name": "マルモタイショウ"
-   }
+   },
+   "insider_labels": []
   },
   {
    "date": "2023-12-04",
@@ -1764,7 +1857,8 @@
    "other": {
     "label": "勝ち馬",
     "name": "ナカゼンガキタ"
-   }
+   },
+   "insider_labels": []
   },
   {
    "date": "2023-11-13",
@@ -1789,7 +1883,8 @@
    "other": {
     "label": "勝ち馬",
     "name": "アバシリサクラ"
-   }
+   },
+   "insider_labels": []
   },
   {
    "date": "2023-11-05",
@@ -1814,7 +1909,8 @@
    "other": {
     "label": "勝ち馬",
     "name": "サクラシュンカ"
-   }
+   },
+   "insider_labels": []
   },
   {
    "date": "2023-10-15",
@@ -1839,7 +1935,8 @@
    "other": {
     "label": "勝ち馬",
     "name": "オレワチャンピオン"
-   }
+   },
+   "insider_labels": []
   },
   {
    "date": "2023-10-09",
@@ -1864,7 +1961,8 @@
    "other": {
     "label": "勝ち馬",
     "name": "トワイチロ"
-   }
+   },
+   "insider_labels": []
   },
   {
    "date": "2023-09-18",
@@ -1889,7 +1987,8 @@
    "other": {
     "label": "勝ち馬",
     "name": "ダイリンファイター"
-   }
+   },
+   "insider_labels": []
   },
   {
    "date": "2023-09-10",
@@ -1914,7 +2013,13 @@
    "other": {
     "label": "勝ち馬",
     "name": "トワイチロ"
-   }
+   },
+   "insider_labels": [
+    {
+     "label_type": "ヤレズ",
+     "note": "内容的には仕掛けてたけど坂ミス。体もう少し増やしたい"
+    }
+   ]
   },
   {
    "date": "2023-08-28",
@@ -1939,7 +2044,8 @@
    "other": {
     "label": "勝ち馬",
     "name": "オーシャンウイナー"
-   }
+   },
+   "insider_labels": []
   },
   {
    "date": "2023-08-13",
@@ -1964,7 +2070,8 @@
    "other": {
     "label": "勝ち馬",
     "name": "キタノボブサップ"
-   }
+   },
+   "insider_labels": []
   },
   {
    "date": "2023-07-22",
@@ -1986,7 +2093,8 @@
    "time": null,
    "margin_sec": null,
    "interval": "中1週",
-   "other": null
+   "other": null,
+   "insider_labels": []
   },
   {
    "date": "2023-07-10",
@@ -2011,7 +2119,8 @@
    "other": {
     "label": "勝ち馬",
     "name": "アルジャンノオー"
-   }
+   },
+   "insider_labels": []
   },
   {
    "date": "2023-06-25",
@@ -2036,7 +2145,8 @@
    "other": {
     "label": "勝ち馬",
     "name": "ピンチハチャンス"
-   }
+   },
+   "insider_labels": []
   },
   {
    "date": "2023-06-11",
@@ -2061,7 +2171,8 @@
    "other": {
     "label": "勝ち馬",
     "name": "アルジャンノオー"
-   }
+   },
+   "insider_labels": []
   },
   {
    "date": "2023-06-03",
@@ -2086,7 +2197,8 @@
    "other": {
     "label": "勝ち馬",
     "name": "オールラウンダー"
-   }
+   },
+   "insider_labels": []
   },
   {
    "date": "2023-05-20",
@@ -2111,7 +2223,8 @@
    "other": {
     "label": "勝ち馬",
     "name": "ダイリンファイター"
-   }
+   },
+   "insider_labels": []
   },
   {
    "date": "2023-05-06",
@@ -2136,7 +2249,8 @@
    "other": {
     "label": "勝ち馬",
     "name": "ノエルブラン"
-   }
+   },
+   "insider_labels": []
   },
   {
    "date": "2023-04-24",
@@ -2161,7 +2275,8 @@
    "other": {
     "label": "2着馬",
     "name": "ダイヤカツヒメ"
-   }
+   },
+   "insider_labels": []
   },
   {
    "date": "2023-03-18",
@@ -2186,7 +2301,8 @@
    "other": {
     "label": "勝ち馬",
     "name": "アルジャンノオー"
-   }
+   },
+   "insider_labels": []
   },
   {
    "date": "2023-02-27",
@@ -2211,7 +2327,8 @@
    "other": {
     "label": "勝ち馬",
     "name": "ピンチハチャンス"
-   }
+   },
+   "insider_labels": []
   },
   {
    "date": "2023-02-13",
@@ -2236,7 +2353,8 @@
    "other": {
     "label": "勝ち馬",
     "name": "ピンチハチャンス"
-   }
+   },
+   "insider_labels": []
   },
   {
    "date": "2023-02-06",
@@ -2261,7 +2379,8 @@
    "other": {
     "label": "勝ち馬",
     "name": "マルモタイショウ"
-   }
+   },
+   "insider_labels": []
   },
   {
    "date": "2023-01-23",
@@ -2286,7 +2405,8 @@
    "other": {
     "label": "勝ち馬",
     "name": "ツガルノヒロイモノ"
-   }
+   },
+   "insider_labels": []
   },
   {
    "date": "2023-01-03",
@@ -2311,7 +2431,8 @@
    "other": {
     "label": "勝ち馬",
     "name": "サクラヒメ"
-   }
+   },
+   "insider_labels": []
   }
  ]
 }

@@ -31,6 +31,7 @@
    "show_rate": 0.25
   }
  },
+ "insider_label_count": 0,
  "races": [
   {
    "date": "2026-09-12",
@@ -55,7 +56,8 @@
    "other": {
     "label": "勝ち馬",
     "name": "ツカサカブス"
-   }
+   },
+   "insider_labels": []
   },
   {
    "date": "2026-09-05",
@@ -80,7 +82,8 @@
    "other": {
     "label": "勝ち馬",
     "name": "ユメニシキ"
-   }
+   },
+   "insider_labels": []
   },
   {
    "date": "2026-08-24",
@@ -105,7 +108,8 @@
    "other": {
     "label": "勝ち馬",
     "name": "ホクセイタロウ"
-   }
+   },
+   "insider_labels": []
   },
   {
    "date": "2026-08-10",
@@ -127,7 +131,8 @@
    "time": null,
    "margin_sec": null,
    "interval": "中2週",
-   "other": null
+   "other": null,
+   "insider_labels": []
   },
   {
    "date": "2026-07-27",
@@ -152,7 +157,8 @@
    "other": {
     "label": "勝ち馬",
     "name": "ポプコ"
-   }
+   },
+   "insider_labels": []
   }
  ]
 }

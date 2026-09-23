@@ -38,6 +38,7 @@
    "show_rate": 0.429
   }
  },
+ "insider_label_count": 0,
  "races": [
   {
    "date": "2026-09-12",
@@ -59,7 +60,8 @@
    "time": null,
    "margin_sec": null,
    "interval": "中2週",
-   "other": null
+   "other": null,
+   "insider_labels": []
   },
   {
    "date": "2026-08-29",
@@ -84,7 +86,8 @@
    "other": {
     "label": "2着馬",
     "name": "キョウエイブラック"
-   }
+   },
+   "insider_labels": []
   },
   {
    "date": "2026-08-23",
@@ -109,7 +112,8 @@
    "other": {
     "label": "勝ち馬",
     "name": "マルホンカヒア"
-   }
+   },
+   "insider_labels": []
   },
   {
    "date": "2026-08-08",
@@ -134,7 +138,8 @@
    "other": {
     "label": "勝ち馬",
     "name": "キタノスミレ"
-   }
+   },
+   "insider_labels": []
   },
   {
    "date": "2026-07-25",
@@ -159,7 +164,8 @@
    "other": {
     "label": "勝ち馬",
     "name": "ゴーゴーソウタ"
-   }
+   },
+   "insider_labels": []
   },
   {
    "date": "2026-07-12",
@@ -184,7 +190,8 @@
    "other": {
     "label": "勝ち馬",
     "name": "イワキファンファン"
-   }
+   },
+   "insider_labels": []
   },
   {
    "date": "2026-06-20",
@@ -209,7 +216,8 @@
    "other": {
     "label": "勝ち馬",
     "name": "ハオリブル"
-   }
+   },
+   "insider_labels": []
   },
   {
    "date": "2026-06-13",
@@ -234,7 +242,8 @@
    "other": {
     "label": "勝ち馬",
     "name": "ツカサエンゼル"
-   }
+   },
+   "insider_labels": []
   }
  ]
 }
