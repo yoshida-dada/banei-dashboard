@@ -249,6 +249,7 @@ table.ht .roi{color:color-mix(in srgb,var(--ev-hue) 78%,var(--ink));font-weight:
 .hsub{font-size:.72rem;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin-top:1px}
 .hjk{font-size:.72rem;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin-top:1px}
 .hsub.howner{display:block;opacity:.72}
+.promowatch{display:block;color:var(--accent);font-weight:700;white-space:normal;max-width:none}
 .hjk::before{content:"騎 ";opacity:.6}
 .hjk .jrec{color:var(--ink);font-weight:600}
 .finish{flex:none;font-size:.66rem;color:var(--muted);border:1px solid var(--border);border-radius:6px;padding:2px 6px;text-align:center;line-height:1.25}
@@ -794,6 +795,11 @@ const medal = p => (p>=1 && p<=3)
 // タップで日付/ラベル種別/メモの詳細を表示（2026-08-13、h.insider_label_details）。
 const insiderFlagIcon = h => h.insider_flag
   ? `<span class="iflag" data-num="${h.num}" title="タップで八百長ラベル詳細を表示">🚨</span>` : '';
+// 入着すれば昇級する馬のウォッチ表示（P3-2拡張 Stage5、2026-08-24…2026-09-24）。
+// build_dashboard_data.pyがh.promo_watchとして事前計算（発走前から分かるレース固定属性のみ使用＝リーク無し）。
+const promoWatchLine = (h, cls) => h.promo_watch
+  ? `<span class="${cls} promowatch" title="現在の番組賞金にこのレースの${h.promo_watch.position}着分の本賞金を足すと${h.promo_watch.next_class}に届きます">`
+    + `⬆${h.promo_watch.position}着以内で${h.promo_watch.next_class}へ昇級</span>` : '';
 function showInsiderLabelModal(h){
   const modal=document.getElementById("iflagModal"); if(!modal) return;
   document.getElementById("iflagTitle").textContent=`${h.num}番 ${h.name||''} の八百長ラベル履歴（過去5走）`;
@@ -1039,7 +1045,7 @@ const COLS = [
   {key:"num", label:"馬番", always:true, th:'<th class="l">馬</th>',
    td:h=>`<td class="l"><span class="numcell">${medal(h.position)}<span class="tnum" style="${capStyle(h.gate)}">${h.num}</span></span></td>`},
   {key:"name", label:"馬名・馬齢・厩舎・馬主", always:true, th:'<th class="l">馬名 / 馬齢・厩舎・馬主</th>',
-   td:h=>`<td class="l"><div class="c2"><span class="tname clickable" data-num="${h.num}"><span class="tname-txt">${h.name||''}</span>${insiderFlagIcon(h)}</span><span class="tsub">${(h.sex||'')+(h.age!=null?h.age:'')}${h.trainer?'・'+cleanInst(h.trainer):''}</span>${h.owner&&h.owner!=='不明'?`<span class="tsub towner">${h.owner}</span>`:''}</div></td>`},
+   td:h=>`<td class="l"><div class="c2"><span class="tname clickable" data-num="${h.num}"><span class="tname-txt">${h.name||''}</span>${insiderFlagIcon(h)}</span><span class="tsub">${(h.sex||'')+(h.age!=null?h.age:'')}${h.trainer?'・'+cleanInst(h.trainer):''}</span>${h.owner&&h.owner!=='不明'?`<span class="tsub towner">${h.owner}</span>`:''}${promoWatchLine(h,"tsub")}</div></td>`},
   {key:"jockey", label:"騎手・成績", th:'<th class="l">騎手 / 成績</th>',
    td:h=>`<td class="l"><div class="c2"><span class="tjk">${h.jockey||'—'}</span><span class="tsub num">${recFmt(h.jockey_record)}</span></div></td>`},
   {key:"sled", label:"斤量", th:'<th>斤量</th>',
@@ -1134,6 +1140,7 @@ function cardView(hs, maxW, hasResult){
       +`<span class="hnamewrap"><span class="hname clickable" data-num="${h.num}"><span class="hname-txt">${h.name||''}</span>${insiderFlagIcon(h)}</span>`
       +`<span class="hsub">${(h.sex||'')+(h.age!=null?h.age:'')}${h.trainer?' ・ '+cleanInst(h.trainer):''}</span>`
       +(h.owner&&h.owner!=='不明'?`<span class="hsub howner">${h.owner}</span>`:'')
+      +promoWatchLine(h,"hsub")
       +`<span class="hjk">${h.jockey||'騎手不明'} <span class="jrec">${recFmt(h.jockey_record)}</span></span></span>`
       +`<span class="finish ${h.position!=null&&h.position<=3?'top':''}">${finish}</span></div>`
       +`<div class="mgrid">`
