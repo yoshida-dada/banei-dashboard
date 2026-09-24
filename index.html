@@ -193,6 +193,10 @@ table.ht .roi{color:color-mix(in srgb,var(--ev-hue) 78%,var(--ink));font-weight:
 /* 日別成績→日別サマリー／レース別全着順モーダル（成績タブ、2026-09-24。nar.yukochi.comの
    /record/日付・/race/obihiro/日付/R番 ページを参考に、日付・レース番号タップで開く） */
 .histbox{background:var(--surface);border:1px solid var(--border);border-radius:12px;max-width:480px;width:100%;max-height:82vh;overflow-y:auto;padding:14px 16px;box-shadow:0 8px 30px rgba(0,0,0,.35)}
+/* グラフ拡大表示（馬体重/決着タイム推移をタップで拡大、2026-09-24）。同じviewBox付きSVGを
+   ワイドな箱で表示するだけで、ベクター描画なのでボケずに大きく見える。 */
+.chartbox{background:var(--surface);border:1px solid var(--border);border-radius:12px;max-width:680px;width:94vw;max-height:88vh;overflow-y:auto;padding:14px 16px;box-shadow:0 8px 30px rgba(0,0,0,.35)}
+.tkchart-click{cursor:zoom-in}
 .histback{display:inline-block;background:none;border:1px solid var(--border);border-radius:7px;padding:4px 10px;font-size:.7rem;color:var(--muted);cursor:pointer;font-family:inherit;margin-bottom:10px}
 .hdsummary{display:flex;gap:8px;margin-bottom:10px}
 .hdtile{flex:1;background:var(--surface2);border:1px solid var(--border2);border-radius:10px;padding:8px;text-align:center}
@@ -666,6 +670,13 @@ table.ht .numcell{display:inline-flex;align-items:center;gap:4px}
   <div class="histbox">
     <div class="iflaghead"><span id="histTitle"></span><button id="histClose" type="button">✕</button></div>
     <div id="histBody"></div>
+  </div>
+</div>
+
+<div id="chartModal" class="iflagmodal" style="display:none;z-index:210">
+  <div class="chartbox">
+    <div class="iflaghead"><span id="chartModalTitle"></span><button id="chartModalClose" type="button">✕</button></div>
+    <div id="chartModalBody"></div>
   </div>
 </div>
 
@@ -1773,8 +1784,8 @@ function svgWeightTrend(races){
   const diff = r.prev? r.last.weight-r.prev.weight : null;
   return `<div class="tksect">馬体重推移（直近${r.n}走${races.length>r.n?'／全'+races.length+'走中':''}）`
     +`<span class="hpwnow">直近 ${r.last.weight}kg${diff!=null?`（前走比${diff>0?'+':''}${diff}）`:''}</span></div>`
-    +r.svg
-    +`<div class="tknote">帯＝直近走中で3着以内だった馬体重の範囲（参考）。●オレンジ=1着／●濃色=2〜3着／○白抜き=4着以下／輪＝八百長ラベル（赤=仕掛け/青=引き/緑=ヤレズ/黄=その他。下記の過去成績を参照）</div>`;
+    +`<div class="tkchart-click" data-chart-title="馬体重推移">${r.svg}</div>`
+    +`<div class="tknote">帯＝直近走中で3着以内だった馬体重の範囲（参考）。●オレンジ=1着／●濃色=2〜3着／○白抜き=4着以下／輪＝八百長ラベル（赤=仕掛け/青=引き/緑=ヤレズ/黄=その他。下記の過去成績を参照）。タップで拡大</div>`;
 }
 // 決着タイム推移: 縦軸を全馬共通(HP_TIME_MIN〜MAX秒)に固定し、他馬と比べてどのタイム帯が
 // 得意かを見やすくする（2026-09-24。当初はDB全走のp1〜p99＝80〜220秒にしたが、ボリュームゾーン
@@ -1813,8 +1824,8 @@ function svgTimeTrend(races){
   if(!r) return "";
   return `<div class="tksect">決着タイム推移（直近${r.n}走${races.length>r.n?'／全'+races.length+'走中':''}）`
     +`<span class="hpwnow">直近 ${r.last.time||'—'}</span></div>`
-    +r.svg
-    +`<div class="tknote">左軸(決着タイム)は全馬共通で${hpFmtMinSec(HP_TIME_MIN)}〜${hpFmtMinSec(HP_TIME_MAX)}に固定（馬ごとの得意タイム帯を比較しやすくするため。範囲外の走は上下端に丸めて表示）。主目盛=30秒毎・補助目盛=10秒毎。帯＝3着以内だったタイムの範囲。背景の水色バー＝馬場水分率（右軸、0〜${HP_MOIST_AXIS_MAX}%）。点線＝そのレースの勝ち馬タイム（実線との差＝負けた時のタイム差）。●オレンジ=1着／●濃色=2〜3着／○白抜き=4着以下／輪＝八百長ラベル（赤=仕掛け/青=引き/緑=ヤレズ/黄=その他。下記の過去成績を参照）</div>`;
+    +`<div class="tkchart-click" data-chart-title="決着タイム推移">${r.svg}</div>`
+    +`<div class="tknote">左軸(決着タイム)は全馬共通で${hpFmtMinSec(HP_TIME_MIN)}〜${hpFmtMinSec(HP_TIME_MAX)}に固定（馬ごとの得意タイム帯を比較しやすくするため。範囲外の走は上下端に丸めて表示）。主目盛=30秒毎・補助目盛=10秒毎。帯＝3着以内だったタイムの範囲。背景の水色バー＝馬場水分率（右軸、0〜${HP_MOIST_AXIS_MAX}%）。点線＝そのレースの勝ち馬タイム（実線との差＝負けた時のタイム差）。●オレンジ=1着／●濃色=2〜3着／○白抜き=4着以下／輪＝八百長ラベル（赤=仕掛け/青=引き/緑=ヤレズ/黄=その他。下記の過去成績を参照）。タップで拡大</div>`;
 }
 function hpPedigreeHtml(p){
   if(!p || !(p.sire||p.dam)) return "";
@@ -1881,7 +1892,20 @@ function renderHorseProfile(){
   };
   const mb=document.getElementById("hpMoreBtn");
   if(mb) mb.onclick=()=>{ hpShowAll=!hpShowAll; renderHorseProfile(); };
+  body.querySelectorAll(".tkchart-click").forEach(el=>el.onclick=()=>openChartZoom(el));
 }
+// グラフ拡大表示（馬体重/決着タイム推移をタップで拡大、2026-09-24）。同じSVG(viewBox付き)を
+// 大きい箱に複製するだけでベクター描画のためボケない。
+function openChartZoom(el){
+  document.getElementById("chartModalTitle").textContent=el.dataset.chartTitle||"";
+  document.getElementById("chartModalBody").innerHTML=el.innerHTML;
+  document.getElementById("chartModal").style.display="flex";
+}
+function closeChartZoom(){ document.getElementById("chartModal").style.display="none"; }
+const _cmc=document.getElementById("chartModalClose");
+if(_cmc) _cmc.addEventListener("click", closeChartZoom);
+const _cmm=document.getElementById("chartModal");
+if(_cmm) _cmm.addEventListener("click", e=>{ if(e.target===_cmm) closeChartZoom(); });
 const _hmc=document.getElementById("histClose");
 if(_hmc) _hmc.addEventListener("click", closeHistModal);
 const _hmm=document.getElementById("histModal");
