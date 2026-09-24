@@ -1749,8 +1749,9 @@ function svgWeightTrend(races){
     +`<div class="tknote">帯＝直近走中で3着以内だった馬体重の範囲（参考）。●オレンジ=1着／●濃色=2〜3着／○白抜き=4着以下</div>`;
 }
 // 決着タイム推移: 縦軸を全馬共通(HP_TIME_MIN〜MAX秒)に固定し、他馬と比べてどのタイム帯が
-// 得意かを見やすくする（2026-09-24。範囲はDB全走のタイム分布のp1〜p99付近＝80〜220秒に設定）。
-const HP_TIME_MIN=80, HP_TIME_MAX=220;
+// 得意かを見やすくする（2026-09-24。当初はDB全走のp1〜p99＝80〜220秒にしたが、ボリュームゾーン
+// (1分半〜2分台後半)が狭く見づらいとのフィードバックで上限を3分に短縮）。
+const HP_TIME_MIN=80, HP_TIME_MAX=180;
 const hpFmtMinSec = sec => { const m=Math.floor(sec/60), s=Math.round(sec-m*60); return `${m}:${s<10?'0':''}${s}`; };
 function svgTimeTrend(races){
   const r=svgTrendChart(races,{valueFn:p=>p.time_sec,fixedMin:HP_TIME_MIN,fixedMax:HP_TIME_MAX,
