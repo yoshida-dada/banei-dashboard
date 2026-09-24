@@ -2,7 +2,7 @@
  "name": "ユウマイチバンボシ",
  "sex": "牡",
  "age": 8,
- "trainer": "大友人（ばんえい）",
+ "trainer": "大友人",
  "owner": "大道哲也",
  "sled_kg": 630.0,
  "weight": 942,
@@ -79,6 +79,14 @@
    "change": null
   }
  ],
+ "reconstructed_now": {
+  "snapshot_date": "2026-07-12",
+  "class_code": "B4",
+  "program_prize_k": 2830,
+  "year_prize_k": 0,
+  "reconstructed": true,
+  "reconstructed_races": 0
+ },
  "next_class": {
   "next_class": "B4",
   "need_k": 570
@@ -93,7 +101,7 @@
    "field_size": 10,
    "num": 8,
    "jockey": "大友一",
-   "trainer": "大友人（ばんえい）",
+   "trainer": "大友人",
    "owner": "大道哲也",
    "sled_kg": 630.0,
    "weight": 942,

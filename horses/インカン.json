@@ -59,9 +59,17 @@
    "change": null
   }
  ],
+ "reconstructed_now": {
+  "snapshot_date": "2026-07-12",
+  "class_code": "C1",
+  "program_prize_k": 3659,
+  "year_prize_k": 812,
+  "reconstructed": true,
+  "reconstructed_races": 3
+ },
  "next_class": {
-  "next_class": "B4",
-  "need_k": 21
+  "next_class": "B3",
+  "need_k": 641
  },
  "races": [
   {
@@ -294,7 +302,7 @@
    "field_size": 10,
    "num": 5,
    "jockey": "渡来心",
-   "trainer": "谷あゆ（ばんえい）",
+   "trainer": "谷あゆ",
    "owner": "石久保斉",
    "sled_kg": 630.0,
    "weight": 1049,

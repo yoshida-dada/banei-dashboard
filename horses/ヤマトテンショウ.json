@@ -59,9 +59,17 @@
    "change": null
   }
  ],
+ "reconstructed_now": {
+  "snapshot_date": "2026-07-12",
+  "class_code": "B4",
+  "program_prize_k": 6358,
+  "year_prize_k": 3745,
+  "reconstructed": true,
+  "reconstructed_races": 2
+ },
  "next_class": {
-  "next_class": "B3",
-  "need_k": 560
+  "next_class": "B1",
+  "need_k": 342
  },
  "races": [
   {
@@ -208,7 +216,7 @@
    "field_size": 10,
    "num": 8,
    "jockey": "中村太",
-   "trainer": "谷あゆ（ばんえい）",
+   "trainer": "谷あゆ",
    "owner": "矢藤秀樹",
    "sled_kg": 640.0,
    "weight": 1045,

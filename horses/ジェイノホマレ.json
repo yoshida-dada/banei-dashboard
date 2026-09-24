@@ -59,9 +59,17 @@
    "change": null
   }
  ],
+ "reconstructed_now": {
+  "snapshot_date": "2026-07-12",
+  "class_code": "C1",
+  "program_prize_k": 3292,
+  "year_prize_k": 492,
+  "reconstructed": true,
+  "reconstructed_races": 2
+ },
  "next_class": {
   "next_class": "B4",
-  "need_k": 471
+  "need_k": 108
  },
  "races": [
   {
@@ -208,7 +216,7 @@
    "field_size": 10,
    "num": 6,
    "jockey": "阿部優",
-   "trainer": "坂本東（ばんえい）",
+   "trainer": "坂本東",
    "owner": "小森唯永",
    "sled_kg": 610.0,
    "weight": 963,

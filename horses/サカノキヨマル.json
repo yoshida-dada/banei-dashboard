@@ -2,7 +2,7 @@
  "name": "サカノキヨマル",
  "sex": "牡",
  "age": 7,
- "trainer": "田上忠（ばんえい）",
+ "trainer": "田上忠",
  "owner": "（株）大阪畜産",
  "sled_kg": 620.0,
  "weight": 1034,
@@ -79,9 +79,17 @@
    "change": null
   }
  ],
+ "reconstructed_now": {
+  "snapshot_date": "2026-07-12",
+  "class_code": "B4",
+  "program_prize_k": 2736,
+  "year_prize_k": 526,
+  "reconstructed": true,
+  "reconstructed_races": 2
+ },
  "next_class": {
   "next_class": "B4",
-  "need_k": 736
+  "need_k": 664
  },
  "races": [
   {
@@ -92,8 +100,8 @@
    "moisture": 2.6,
    "field_size": 10,
    "num": 2,
-   "jockey": "菅原響",
-   "trainer": "田上忠（ばんえい）",
+   "jockey": "☆菅原響",
+   "trainer": "田上忠",
    "owner": "（株）大阪畜産",
    "sled_kg": 620.0,
    "weight": 1034,

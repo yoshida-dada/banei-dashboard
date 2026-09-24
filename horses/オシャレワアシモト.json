@@ -2,7 +2,7 @@
  "name": "オシャレワアシモト",
  "sex": "牝",
  "age": 5,
- "trainer": "服部義（ばんえい）",
+ "trainer": "服部義",
  "owner": "鈴木正浩",
  "sled_kg": 610.0,
  "weight": 1021,
@@ -79,9 +79,17 @@
    "change": null
   }
  ],
+ "reconstructed_now": {
+  "snapshot_date": "2026-07-12",
+  "class_code": "B4",
+  "program_prize_k": 2759,
+  "year_prize_k": 440,
+  "reconstructed": true,
+  "reconstructed_races": 2
+ },
  "next_class": {
   "next_class": "B4",
-  "need_k": 990
+  "need_k": 641
  },
  "races": [
   {
@@ -93,7 +101,7 @@
    "field_size": 10,
    "num": 4,
    "jockey": "長澤幸",
-   "trainer": "服部義（ばんえい）",
+   "trainer": "服部義",
    "owner": "鈴木正浩",
    "sled_kg": 610.0,
    "weight": 1021,

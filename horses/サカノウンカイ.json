@@ -2,7 +2,7 @@
  "name": "サカノウンカイ",
  "sex": "牡",
  "age": 6,
- "trainer": "田上忠（ばんえい）",
+ "trainer": "田上忠",
  "owner": "（株）大阪畜産",
  "sled_kg": 630.0,
  "weight": 972,
@@ -79,9 +79,17 @@
    "change": null
   }
  ],
+ "reconstructed_now": {
+  "snapshot_date": "2026-07-12",
+  "class_code": "B4",
+  "program_prize_k": 2940,
+  "year_prize_k": 837,
+  "reconstructed": true,
+  "reconstructed_races": 1
+ },
  "next_class": {
   "next_class": "B4",
-  "need_k": 790
+  "need_k": 460
  },
  "races": [
   {
@@ -93,7 +101,7 @@
    "field_size": 10,
    "num": 10,
    "jockey": "船山蔵",
-   "trainer": "田上忠（ばんえい）",
+   "trainer": "田上忠",
    "owner": "（株）大阪畜産",
    "sled_kg": 630.0,
    "weight": 972,

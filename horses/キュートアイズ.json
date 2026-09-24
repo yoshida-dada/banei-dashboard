@@ -2,7 +2,7 @@
  "name": "キュートアイズ",
  "sex": "牝",
  "age": 5,
- "trainer": "小北栄（ばんえい）",
+ "trainer": "小北栄",
  "owner": "砂田護",
  "sled_kg": 610.0,
  "weight": 997,
@@ -79,9 +79,17 @@
    "change": null
   }
  ],
+ "reconstructed_now": {
+  "snapshot_date": "2026-07-12",
+  "class_code": "B4",
+  "program_prize_k": 2587,
+  "year_prize_k": 243,
+  "reconstructed": true,
+  "reconstructed_races": 3
+ },
  "next_class": {
   "next_class": "B4",
-  "need_k": 1023
+  "need_k": 813
  },
  "races": [
   {
@@ -93,7 +101,7 @@
    "field_size": 10,
    "num": 6,
    "jockey": "赤塚健",
-   "trainer": "小北栄（ばんえい）",
+   "trainer": "小北栄",
    "owner": "砂田護",
    "sled_kg": 610.0,
    "weight": 997,

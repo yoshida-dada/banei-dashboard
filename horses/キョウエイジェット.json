@@ -59,9 +59,17 @@
    "change": null
   }
  ],
+ "reconstructed_now": {
+  "snapshot_date": "2026-07-12",
+  "class_code": "B4",
+  "program_prize_k": 5074,
+  "year_prize_k": 2630,
+  "reconstructed": true,
+  "reconstructed_races": 5
+ },
  "next_class": {
-  "next_class": "B3",
-  "need_k": 553
+  "next_class": "B2",
+  "need_k": 426
  },
  "races": [
   {
@@ -262,7 +270,7 @@
    "field_size": 10,
    "num": 2,
    "jockey": "菊池一",
-   "trainer": "村上慎（ばんえい）",
+   "trainer": "村上慎",
    "owner": "大野昇",
    "sled_kg": 640.0,
    "weight": 1012,

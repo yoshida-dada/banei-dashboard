@@ -59,9 +59,17 @@
    "change": null
   }
  ],
+ "reconstructed_now": {
+  "snapshot_date": "2026-07-12",
+  "class_code": "B4",
+  "program_prize_k": 3962,
+  "year_prize_k": 1241,
+  "reconstructed": true,
+  "reconstructed_races": 1
+ },
  "next_class": {
   "next_class": "B3",
-  "need_k": 357
+  "need_k": 338
  },
  "races": [
   {
@@ -208,7 +216,7 @@
    "field_size": 10,
    "num": 7,
    "jockey": "赤塚健",
-   "trainer": "久田守（ばんえい）",
+   "trainer": "久田守",
    "owner": "加藤芳枝",
    "sled_kg": 630.0,
    "weight": 989,

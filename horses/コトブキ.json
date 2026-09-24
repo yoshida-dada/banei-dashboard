@@ -2,7 +2,7 @@
  "name": "コトブキ",
  "sex": "牡",
  "age": 10,
- "trainer": "森芳浩（ばんえい）",
+ "trainer": "森芳浩",
  "owner": "坂本尊則",
  "sled_kg": 630.0,
  "weight": 1010,
@@ -79,9 +79,17 @@
    "change": null
   }
  ],
+ "reconstructed_now": {
+  "snapshot_date": "2026-07-12",
+  "class_code": "B4",
+  "program_prize_k": 2300,
+  "year_prize_k": 99,
+  "reconstructed": true,
+  "reconstructed_races": 1
+ },
  "next_class": {
   "next_class": "B4",
-  "need_k": 1163
+  "need_k": 1100
  },
  "races": [
   {
@@ -93,7 +101,7 @@
    "field_size": 10,
    "num": 5,
    "jockey": "菊池一",
-   "trainer": "森芳浩（ばんえい）",
+   "trainer": "森芳浩",
    "owner": "坂本尊則",
    "sled_kg": 630.0,
    "weight": 1010,

@@ -244,6 +244,9 @@ table.ht .roi{color:color-mix(in srgb,var(--ev-hue) 78%,var(--ink));font-weight:
 .hpclsbadge.up{background:var(--accent-soft);color:var(--accent);border:1px solid var(--accent)}
 .hpclsbadge.down{background:var(--surface2);color:var(--muted);border:1px solid var(--border)}
 .hpinswarn{background:var(--accent-soft);border:1px solid var(--accent);border-radius:9px;padding:7px 10px;font-size:.72rem;color:var(--ink);margin-top:8px}
+.hpreconbox{background:var(--good-soft);border:1px solid var(--good);border-radius:10px;padding:8px 11px;margin-bottom:10px}
+.hpreconhead{font-size:.68rem;font-weight:800;color:var(--good);margin-bottom:3px}
+.hpreconrow{font-size:.8rem;color:var(--ink)}
 .hpgate{display:inline-flex;align-items:center;justify-content:center;width:16px;height:16px;border-radius:4px;font-size:.64rem;font-weight:800}
 .hnamewrap{flex:1;min-width:0}
 .hsub{font-size:.72rem;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin-top:1px}
@@ -1842,7 +1845,7 @@ function hpPedigreeHtml(p){
 }
 // 格付け・番組賞金の推移（2026-09-24。nar.yukochi.comの「格付け・番組賞金の推移」表を参考に、
 // horse_ratingsの日次スナップショットのうち値が変化した日だけをbuild_horse_profiles.pyで抽出）。
-function hpRatingsHtml(ratings, nextClass){
+function hpRatingsHtml(ratings, nextClass, recon){
   if(!ratings || !ratings.length) return "";
   const rows=ratings.map(r=>{
     const badge = r.change==="up" ? '<span class="hpclsbadge up">昇</span>'
@@ -1851,15 +1854,24 @@ function hpRatingsHtml(ratings, nextClass){
     const diff = r.diff_k==null ? '—' : (r.diff_k===0?'±0':(r.diff_k>0?'+':'')+(r.diff_k/10).toFixed(1));
     return `<tr><td class="l">${r.date}</td><td class="l">${r.class||'—'}${badge}</td><td>${prize}</td><td>${diff}</td></tr>`;
   }).join("");
+  // 「現在推定」＝公式スナップショット(更新頻度が粗い)をrace_purses(着順別本賞金)の実収入で
+  // 本日時点まで再構成した値（Stage3、2026-09-24。522頭で検証済み、詳細はROADMAP.md）。
+  const reconBox = (recon && recon.reconstructed)
+    ? `<div class="hpreconbox"><div class="hpreconhead">📈 現在推定（当サイト再構成・${recon.reconstructed_races}走反映）</div>`
+      +`<div class="hpreconrow">番組賞金 <b>${(recon.program_prize_k/10).toFixed(1)}万円</b>　`
+      +`本年賞金 <b>${(recon.year_prize_k/10).toFixed(1)}万円</b></div></div>`
+    : "";
   const nextNote = nextClass
-    ? `<div class="tknote">次のクラス（${nextClass.next_class}）まであと約${(nextClass.need_k/10).toFixed(1)}万円</div>` : "";
+    ? `<div class="tknote">次のクラス（${nextClass.next_class}）まであと約${(nextClass.need_k/10).toFixed(1)}万円（現在推定ベース）</div>` : "";
   return `<div class="tksect">格付け・番組賞金の推移（当サイト計算・帯広）</div>`
+    +reconBox
     +`<div class="dttblwrap"><table class="dttbl"><thead><tr><th class="l">レース日</th><th class="l">クラス</th>`
     +`<th>番組賞金</th><th>増減</th></tr></thead><tbody>${rows}</tbody></table></div>`
     +nextNote
     +`<div class="tknote">番組賞金の帯でクラスが機械的に決まる想定（C2&lt;220万／C1 220-340／B4 340-430／`
     +`B3 430-550／B2 550-670／B1 670-850／A2 850-1000／A1 1000-1300／open≥1300万）。`
-    +`データは2026-07-12以降の蓄積分のみのため行数は少なめ（変化が無ければ1行）。今後の蓄積で伸びます。</div>`;
+    +`表の行は公式スナップショット（更新頻度が粗く、2026-07-12以降の蓄積分のみのため行数は少なめ）。`
+    +`「現在推定」はその後の実際のレース結果で当サイトが計算し直した参考値です。</div>`;
 }
 function renderHorseProfile(){
   const name=histState.horse, h=window.__HORSES && window.__HORSES[name];
@@ -1910,7 +1922,7 @@ function renderHorseProfile(){
     +hpSeasonHtml(h.races)
     +hpJockeyHtml(h.races)
     +hpPedigreeHtml(h.pedigree)
-    +hpRatingsHtml(h.ratings, h.next_class)
+    +hpRatingsHtml(h.ratings, h.next_class, h.reconstructed_now)
     +`<div class="tksect">過去成績</div>${cards}${more}`;
   document.getElementById("histBackBtn").onclick=()=>{
     if(histState.race!=null){ histState.horse=null; renderHistModal(); } else { closeHistModal(); }

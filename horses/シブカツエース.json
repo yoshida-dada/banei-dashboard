@@ -2,7 +2,7 @@
  "name": "シブカツエース",
  "sex": "牡",
  "age": 5,
- "trainer": "小北栄（ばんえい）",
+ "trainer": "小北栄",
  "owner": "渋佐一夫",
  "sled_kg": 620.0,
  "weight": 974,
@@ -79,9 +79,17 @@
    "change": null
   }
  ],
+ "reconstructed_now": {
+  "snapshot_date": "2026-07-12",
+  "class_code": "B4",
+  "program_prize_k": 2811,
+  "year_prize_k": 332,
+  "reconstructed": true,
+  "reconstructed_races": 1
+ },
  "next_class": {
   "next_class": "B4",
-  "need_k": 711
+  "need_k": 589
  },
  "races": [
   {
@@ -92,8 +100,8 @@
    "moisture": 2.6,
    "field_size": 10,
    "num": 9,
-   "jockey": "吉田理",
-   "trainer": "小北栄（ばんえい）",
+   "jockey": "☆吉田理",
+   "trainer": "小北栄",
    "owner": "渋佐一夫",
    "sled_kg": 620.0,
    "weight": 974,

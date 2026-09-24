@@ -2,7 +2,7 @@
  "name": "ゴールドキング",
  "sex": "牡",
  "age": 6,
- "trainer": "服部義（ばんえい）",
+ "trainer": "服部義",
  "owner": "安井利夫",
  "sled_kg": 630.0,
  "weight": 1077,
@@ -79,6 +79,14 @@
    "change": null
   }
  ],
+ "reconstructed_now": {
+  "snapshot_date": "2026-07-12",
+  "class_code": "B4",
+  "program_prize_k": 2525,
+  "year_prize_k": 124,
+  "reconstructed": true,
+  "reconstructed_races": 0
+ },
  "next_class": {
   "next_class": "B4",
   "need_k": 875
@@ -93,7 +101,7 @@
    "field_size": 10,
    "num": 3,
    "jockey": "島津新",
-   "trainer": "服部義（ばんえい）",
+   "trainer": "服部義",
    "owner": "安井利夫",
    "sled_kg": 630.0,
    "weight": 1077,

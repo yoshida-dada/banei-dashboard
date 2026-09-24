@@ -59,9 +59,17 @@
    "change": null
   }
  ],
+ "reconstructed_now": {
+  "snapshot_date": "2026-07-12",
+  "class_code": "B3",
+  "program_prize_k": 6055,
+  "year_prize_k": 2036,
+  "reconstructed": true,
+  "reconstructed_races": 4
+ },
  "next_class": {
-  "next_class": "B2",
-  "need_k": 740
+  "next_class": "B1",
+  "need_k": 645
  },
  "races": [
   {
@@ -262,7 +270,7 @@
    "field_size": 10,
    "num": 1,
    "jockey": "島津新",
-   "trainer": "長部幸（ばんえい）",
+   "trainer": "長部幸",
    "owner": "山下高広",
    "sled_kg": 620.0,
    "weight": 1056,

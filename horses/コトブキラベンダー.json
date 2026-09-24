@@ -59,9 +59,17 @@
    "change": null
   }
  ],
+ "reconstructed_now": {
+  "snapshot_date": "2026-07-12",
+  "class_code": "B4",
+  "program_prize_k": 4772,
+  "year_prize_k": 885,
+  "reconstructed": true,
+  "reconstructed_races": 5
+ },
  "next_class": {
-  "next_class": "B3",
-  "need_k": 14
+  "next_class": "B2",
+  "need_k": 728
  },
  "races": [
   {
@@ -208,7 +216,7 @@
    "field_size": 10,
    "num": 3,
    "jockey": "西謙一",
-   "trainer": "平田義（ばんえい）",
+   "trainer": "平田義",
    "owner": "竹久克明",
    "sled_kg": 620.0,
    "weight": 1025,

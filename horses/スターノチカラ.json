@@ -59,9 +59,17 @@
    "change": null
   }
  ],
+ "reconstructed_now": {
+  "snapshot_date": "2026-07-12",
+  "class_code": "B3",
+  "program_prize_k": 5355,
+  "year_prize_k": 2591,
+  "reconstructed": true,
+  "reconstructed_races": 2
+ },
  "next_class": {
   "next_class": "B2",
-  "need_k": 1120
+  "need_k": 145
  },
  "races": [
   {
@@ -235,7 +243,7 @@
    "field_size": 10,
    "num": 9,
    "jockey": "長澤幸",
-   "trainer": "服部義（ばんえい）",
+   "trainer": "服部義",
    "owner": "赤麿秀人",
    "sled_kg": 640.0,
    "weight": 1050,

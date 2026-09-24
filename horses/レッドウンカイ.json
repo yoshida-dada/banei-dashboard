@@ -59,9 +59,17 @@
    "change": null
   }
  ],
+ "reconstructed_now": {
+  "snapshot_date": "2026-07-12",
+  "class_code": "B2",
+  "program_prize_k": 6720,
+  "year_prize_k": 838,
+  "reconstructed": true,
+  "reconstructed_races": 1
+ },
  "next_class": {
-  "next_class": "B1",
-  "need_k": 280
+  "next_class": "A2",
+  "need_k": 1780
  },
  "races": [
   {
@@ -154,7 +162,7 @@
    "field_size": 10,
    "num": 4,
    "jockey": "金田利",
-   "trainer": "松井浩（ばんえい）",
+   "trainer": "松井浩",
    "owner": "竹内宏人",
    "sled_kg": 650.0,
    "weight": 958,

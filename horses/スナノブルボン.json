@@ -2,7 +2,7 @@
  "name": "スナノブルボン",
  "sex": "牡",
  "age": 6,
- "trainer": "西邑春（ばんえい）",
+ "trainer": "西邑春",
  "owner": "砂田護",
  "sled_kg": 630.0,
  "weight": 1067,
@@ -79,9 +79,17 @@
    "change": null
   }
  ],
+ "reconstructed_now": {
+  "snapshot_date": "2026-07-12",
+  "class_code": "B4",
+  "program_prize_k": 2287,
+  "year_prize_k": 18,
+  "reconstructed": true,
+  "reconstructed_races": 1
+ },
  "next_class": {
   "next_class": "B4",
-  "need_k": 1131
+  "need_k": 1113
  },
  "races": [
   {
@@ -93,7 +101,7 @@
    "field_size": 10,
    "num": 7,
    "jockey": "中村太",
-   "trainer": "西邑春（ばんえい）",
+   "trainer": "西邑春",
    "owner": "砂田護",
    "sled_kg": 630.0,
    "weight": 1067,
