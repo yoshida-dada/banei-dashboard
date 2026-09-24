@@ -97,6 +97,19 @@
    "change": null
   },
   {
+   "date": "2026-08-02",
+   "race_no": 10,
+   "position": 6,
+   "earned_yen": 0,
+   "program_prize_k": 5120,
+   "year_prize_k": 1761,
+   "class": "B3",
+   "next_class": "B2",
+   "next_class_need_k": 380,
+   "diff_k": 0,
+   "change": null
+  },
+  {
    "date": "2026-07-18",
    "race_no": 9,
    "position": 2,
@@ -197,6 +210,19 @@
    "class": "B4",
    "next_class": "B3",
    "next_class_need_k": 819,
+   "diff_k": 122,
+   "change": "up"
+  },
+  {
+   "date": "2026-04-19",
+   "race_no": 8,
+   "position": 7,
+   "earned_yen": 0,
+   "program_prize_k": 3359,
+   "year_prize_k": 0,
+   "class": "C1",
+   "next_class": "B4",
+   "next_class_need_k": 41,
    "diff_k": null,
    "change": null
   }
