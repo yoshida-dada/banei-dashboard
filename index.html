@@ -1735,11 +1735,17 @@ function svgTrendChart(races, opts){
     const stroke = (p.position==null||p.position>3)?"var(--muted)":fill;
     return `<circle cx="${sx(i).toFixed(1)}" cy="${sy(opts.valueFn(p)).toFixed(1)}" r="3" fill="${fill}" stroke="${stroke}"/>`;
   }).join("");
+  // 八百長ラベルが付いたレースの点に赤い輪を重ねて示す（2026-09-24）。ドット本体の色分け(着順)は
+  // そのまま残し、輪はドットに触れない半径にして視覚的に独立したマークにする。
+  const insiderRings=pts.map((p,i)=>{
+    if(!(p.insider_labels && p.insider_labels.length)) return "";
+    return `<circle cx="${sx(i).toFixed(1)}" cy="${sy(opts.valueFn(p)).toFixed(1)}" r="6.5" fill="none" stroke="var(--accent)" stroke-width="1.4"/>`;
+  }).join("");
   const tIdx=[...new Set([0,Math.floor((n-1)/2),n-1])];
   const xticks=tIdx.map(i=>`<text x="${sx(i).toFixed(1)}" y="${H-6}" font-size="8" fill="var(--muted)" text-anchor="middle">`
     +`${pts[i].date.slice(5).replace('-','/')}</text>`).join("");
   return {n, last:pts[n-1], prev:pts[n-2],
-    svg:`<svg class="tksvg" viewBox="0 0 ${W} ${H}" role="img" aria-label="${opts.label||''}">${extra}${band}${grid}${line}${dots}${xticks}</svg>`};
+    svg:`<svg class="tksvg" viewBox="0 0 ${W} ${H}" role="img" aria-label="${opts.label||''}">${extra}${band}${grid}${line}${dots}${insiderRings}${xticks}</svg>`};
 }
 function svgWeightTrend(races){
   const r=svgTrendChart(races,{valueFn:p=>p.weight,label:"馬体重推移"});
@@ -1748,7 +1754,7 @@ function svgWeightTrend(races){
   return `<div class="tksect">馬体重推移（直近${r.n}走${races.length>r.n?'／全'+races.length+'走中':''}）`
     +`<span class="hpwnow">直近 ${r.last.weight}kg${diff!=null?`（前走比${diff>0?'+':''}${diff}）`:''}</span></div>`
     +r.svg
-    +`<div class="tknote">帯＝直近走中で3着以内だった馬体重の範囲（参考）。●オレンジ=1着／●濃色=2〜3着／○白抜き=4着以下</div>`;
+    +`<div class="tknote">帯＝直近走中で3着以内だった馬体重の範囲（参考）。●オレンジ=1着／●濃色=2〜3着／○白抜き=4着以下／赤い輪＝八百長ラベルあり（下記の過去成績を参照）</div>`;
 }
 // 決着タイム推移: 縦軸を全馬共通(HP_TIME_MIN〜MAX秒)に固定し、他馬と比べてどのタイム帯が
 // 得意かを見やすくする（2026-09-24。当初はDB全走のp1〜p99＝80〜220秒にしたが、ボリュームゾーン
@@ -1785,7 +1791,7 @@ function svgTimeTrend(races){
   return `<div class="tksect">決着タイム推移（直近${r.n}走${races.length>r.n?'／全'+races.length+'走中':''}）`
     +`<span class="hpwnow">直近 ${r.last.time||'—'}</span></div>`
     +r.svg
-    +`<div class="tknote">左軸(決着タイム)は全馬共通で${hpFmtMinSec(HP_TIME_MIN)}〜${hpFmtMinSec(HP_TIME_MAX)}に固定（馬ごとの得意タイム帯を比較しやすくするため。範囲外の走は上下端に丸めて表示）。主目盛=30秒毎・補助目盛=10秒毎。帯＝3着以内だったタイムの範囲。背景の水色バー＝馬場水分率（右軸、0〜${HP_MOIST_AXIS_MAX}%）。●オレンジ=1着／●濃色=2〜3着／○白抜き=4着以下</div>`;
+    +`<div class="tknote">左軸(決着タイム)は全馬共通で${hpFmtMinSec(HP_TIME_MIN)}〜${hpFmtMinSec(HP_TIME_MAX)}に固定（馬ごとの得意タイム帯を比較しやすくするため。範囲外の走は上下端に丸めて表示）。主目盛=30秒毎・補助目盛=10秒毎。帯＝3着以内だったタイムの範囲。背景の水色バー＝馬場水分率（右軸、0〜${HP_MOIST_AXIS_MAX}%）。●オレンジ=1着／●濃色=2〜3着／○白抜き=4着以下／赤い輪＝八百長ラベルあり（下記の過去成績を参照）</div>`;
 }
 function hpPedigreeHtml(p){
   if(!p || !(p.sire||p.dam)) return "";
