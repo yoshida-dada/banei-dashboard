@@ -240,6 +240,9 @@ table.ht .roi{color:color-mix(in srgb,var(--ev-hue) 78%,var(--ink));font-weight:
 .hprline{margin-top:3px;color:var(--muted);line-height:1.5}
 .hprline.muted{font-size:.68rem}
 .hprline.hpins{color:var(--accent);font-weight:700}
+.hpclsbadge{font-size:.6rem;font-weight:800;padding:1px 5px;border-radius:5px;margin-left:4px;display:inline-block}
+.hpclsbadge.up{background:var(--accent-soft);color:var(--accent);border:1px solid var(--accent)}
+.hpclsbadge.down{background:var(--surface2);color:var(--muted);border:1px solid var(--border)}
 .hpinswarn{background:var(--accent-soft);border:1px solid var(--accent);border-radius:9px;padding:7px 10px;font-size:.72rem;color:var(--ink);margin-top:8px}
 .hpgate{display:inline-flex;align-items:center;justify-content:center;width:16px;height:16px;border-radius:4px;font-size:.64rem;font-weight:800}
 .hnamewrap{flex:1;min-width:0}
@@ -1837,6 +1840,27 @@ function hpPedigreeHtml(p){
     +`<div class="hppedcell sub"><div class="hppedt">母父</div><div class="hppedn">${p.dam_sire||'—'}</div></div>`
     +`<div class="hppedcell sub"><div class="hppedt">母母</div><div class="hppedn">${p.dam_dam||'—'}</div></div></div>`;
 }
+// 格付け・番組賞金の推移（2026-09-24。nar.yukochi.comの「格付け・番組賞金の推移」表を参考に、
+// horse_ratingsの日次スナップショットのうち値が変化した日だけをbuild_horse_profiles.pyで抽出）。
+function hpRatingsHtml(ratings, nextClass){
+  if(!ratings || !ratings.length) return "";
+  const rows=ratings.map(r=>{
+    const badge = r.change==="up" ? '<span class="hpclsbadge up">昇</span>'
+      : r.change==="down" ? '<span class="hpclsbadge down">降</span>' : '';
+    const prize = r.program_prize_k!=null ? (r.program_prize_k/10).toFixed(1)+'万円' : '—';
+    const diff = r.diff_k==null ? '—' : (r.diff_k===0?'±0':(r.diff_k>0?'+':'')+(r.diff_k/10).toFixed(1));
+    return `<tr><td class="l">${r.date}</td><td class="l">${r.class||'—'}${badge}</td><td>${prize}</td><td>${diff}</td></tr>`;
+  }).join("");
+  const nextNote = nextClass
+    ? `<div class="tknote">次のクラス（${nextClass.next_class}）まであと約${(nextClass.need_k/10).toFixed(1)}万円</div>` : "";
+  return `<div class="tksect">格付け・番組賞金の推移（当サイト計算・帯広）</div>`
+    +`<div class="dttblwrap"><table class="dttbl"><thead><tr><th class="l">レース日</th><th class="l">クラス</th>`
+    +`<th>番組賞金</th><th>増減</th></tr></thead><tbody>${rows}</tbody></table></div>`
+    +nextNote
+    +`<div class="tknote">番組賞金の帯でクラスが機械的に決まる想定（C2&lt;220万／C1 220-340／B4 340-430／`
+    +`B3 430-550／B2 550-670／B1 670-850／A2 850-1000／A1 1000-1300／open≥1300万）。`
+    +`データは2026-07-12以降の蓄積分のみのため行数は少なめ（変化が無ければ1行）。今後の蓄積で伸びます。</div>`;
+}
 function renderHorseProfile(){
   const name=histState.horse, h=window.__HORSES && window.__HORSES[name];
   const body=document.getElementById("histBody");
@@ -1886,6 +1910,7 @@ function renderHorseProfile(){
     +hpSeasonHtml(h.races)
     +hpJockeyHtml(h.races)
     +hpPedigreeHtml(h.pedigree)
+    +hpRatingsHtml(h.ratings, h.next_class)
     +`<div class="tksect">過去成績</div>${cards}${more}`;
   document.getElementById("histBackBtn").onclick=()=>{
     if(histState.race!=null){ histState.horse=null; renderHistModal(); } else { closeHistModal(); }
