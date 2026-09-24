@@ -62,17 +62,27 @@
  "ratings_reconstructed": [
   {
    "date": "2026-09-19",
+   "race_no": 6,
+   "position": 1,
+   "earned_yen": 300000,
    "program_prize_k": 2647,
    "year_prize_k": 600,
    "class": "C1",
+   "next_class": "B4",
+   "next_class_need_k": 753,
    "diff_k": 300,
    "change": null
   },
   {
    "date": "2026-05-03",
+   "race_no": 1,
+   "position": 1,
+   "earned_yen": 300000,
    "program_prize_k": 2347,
    "year_prize_k": 300,
    "class": "C1",
+   "next_class": "B4",
+   "next_class_need_k": 1053,
    "diff_k": null,
    "change": null
   }

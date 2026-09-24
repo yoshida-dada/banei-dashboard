@@ -52,25 +52,40 @@
  "ratings_reconstructed": [
   {
    "date": "2026-08-24",
+   "race_no": 4,
+   "position": 3,
+   "earned_yen": 69000,
    "program_prize_k": 388,
    "year_prize_k": 388,
    "class": "C2",
+   "next_class": "C1",
+   "next_class_need_k": 1812,
    "diff_k": 69,
    "change": null
   },
   {
    "date": "2026-08-03",
+   "race_no": 4,
+   "position": 5,
+   "earned_yen": 19000,
    "program_prize_k": 319,
    "year_prize_k": 319,
    "class": "C2",
+   "next_class": "C1",
+   "next_class_need_k": 1881,
    "diff_k": 19,
    "change": null
   },
   {
    "date": "2026-06-29",
+   "race_no": 4,
+   "position": 1,
+   "earned_yen": 300000,
    "program_prize_k": 300,
    "year_prize_k": 300,
    "class": "C2",
+   "next_class": "C1",
+   "next_class_need_k": 1900,
    "diff_k": null,
    "change": null
   }

@@ -1847,8 +1847,17 @@ function hpRatingsRow(r){
     : r.change==="down" ? '<span class="hpclsbadge down">降</span>' : '';
   const prize = r.program_prize_k!=null ? (r.program_prize_k/10).toFixed(1)+'万円' : '—';
   const diff = r.diff_k==null ? '—' : (r.diff_k===0?'±0':(r.diff_k>0?'+':'')+(r.diff_k/10).toFixed(1));
-  return `<tr><td class="l">${r.date}</td><td class="l">帯広</td><td class="l">${r.class||'—'}${badge}</td>`
-    +`<td>${prize}</td><td>${diff}</td></tr>`;
+  const posTxt = r.position!=null ? r.position+'着' : '—';
+  const earnedTxt = r.earned_yen!=null ? (r.earned_yen/10000).toFixed(1)+'万円' : '—';
+  // next_class自体はレース毎の密な行(dense)にしかない（公式スナップショット行には無い）。
+  // undefined(データ無し)と null(既に最上位クラス)を区別する。
+  let nextTxt = "—";
+  if("next_class" in r){
+    nextTxt = r.next_class_need_k!=null ? `${r.next_class}まで+${(r.next_class_need_k/10).toFixed(1)}万円` : "最上位";
+  }
+  return `<tr><td class="l">${r.date}</td><td class="l">帯広</td><td>${posTxt}</td>`
+    +`<td class="l">${r.class||'—'}${badge}</td><td>${prize}</td><td>${earnedTxt}</td>`
+    +`<td>${diff}</td><td class="l">${nextTxt}</td></tr>`;
 }
 function hpRatingsHtml(ratings, nextClass, recon, ratingsReconstructed){
   // レース毎の密な推移（Stage4、2026-09-24。nar.yukochi.comの表と同形式）を優先表示。
@@ -1865,7 +1874,8 @@ function hpRatingsHtml(ratings, nextClass, recon, ratingsReconstructed){
     : "表は公式スナップショット（更新頻度が粗く、2026-07-12以降の蓄積分のみのため行数は少なめ）。";
   return `<div class="tksect">格付け・番組賞金の推移（${dense?'当サイト再構成・レース毎':'公式スナップショット'}）</div>`
     +`<div class="dttblwrap"><table class="dttbl"><thead><tr><th class="l">レース日</th><th class="l">場</th>`
-    +`<th class="l">クラス</th><th>番組賞金</th><th>増減</th></tr></thead><tbody>${rows}</tbody></table></div>`
+    +`<th>着順</th><th class="l">クラス</th><th>番組賞金</th><th>獲得賞金</th><th>増減</th>`
+    +`<th class="l">次のクラスまで</th></tr></thead><tbody>${rows}</tbody></table></div>`
     +nextNote
     +`<div class="tknote">番組賞金の帯でクラスが機械的に決まる想定（C2&lt;220万／C1 220-340／B4 340-430／`
     +`B3 430-550／B2 550-670／B1 670-850／A2 850-1000／A1 1000-1300／open≥1300万）。${srcNote}</div>`;
