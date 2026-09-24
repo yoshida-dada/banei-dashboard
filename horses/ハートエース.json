@@ -68,6 +68,7 @@
    "popularity": 10,
    "position": null,
    "time": null,
+   "time_sec": null,
    "margin_sec": null,
    "interval": "中5週",
    "other": null,
@@ -91,6 +92,7 @@
    "popularity": 4,
    "position": null,
    "time": null,
+   "time_sec": null,
    "margin_sec": null,
    "interval": "連闘",
    "other": null,
@@ -114,6 +116,7 @@
    "popularity": 5,
    "position": 10,
    "time": "2:33.7",
+   "time_sec": 153.7,
    "margin_sec": 35.9,
    "interval": "中2週",
    "other": {
@@ -140,6 +143,7 @@
    "popularity": 8,
    "position": 3,
    "time": "2:13.4",
+   "time_sec": 133.4,
    "margin_sec": 5.1,
    "interval": "中2週",
    "other": {
@@ -166,6 +170,7 @@
    "popularity": 7,
    "position": 9,
    "time": "2:45.8",
+   "time_sec": 165.8,
    "margin_sec": 50.0,
    "interval": "中2週",
    "other": {
@@ -192,6 +197,7 @@
    "popularity": 7,
    "position": 2,
    "time": "2:05.8",
+   "time_sec": 125.8,
    "margin_sec": 5.7,
    "interval": "中1週",
    "other": {
@@ -218,6 +224,7 @@
    "popularity": 4,
    "position": 8,
    "time": "3:36.5",
+   "time_sec": 216.5,
    "margin_sec": 77.8,
    "interval": "中2週",
    "other": {
@@ -244,6 +251,7 @@
    "popularity": 4,
    "position": 9,
    "time": "3:15.3",
+   "time_sec": 195.3,
    "margin_sec": 70.4,
    "interval": "連闘",
    "other": {
@@ -270,6 +278,7 @@
    "popularity": 2,
    "position": 4,
    "time": "2:52.2",
+   "time_sec": 172.2,
    "margin_sec": 26.8,
    "interval": "中2週",
    "other": {
@@ -296,6 +305,7 @@
    "popularity": 8,
    "position": 8,
    "time": "2:33.9",
+   "time_sec": 153.9,
    "margin_sec": 24.8,
    "interval": "中1週",
    "other": {
@@ -322,6 +332,7 @@
    "popularity": 9,
    "position": 9,
    "time": "2:25.0",
+   "time_sec": 145.0,
    "margin_sec": 22.0,
    "interval": "中4週",
    "other": {
@@ -348,6 +359,7 @@
    "popularity": 9,
    "position": 9,
    "time": "2:37.1",
+   "time_sec": 157.1,
    "margin_sec": 45.7,
    "interval": "中3週",
    "other": {
@@ -374,6 +386,7 @@
    "popularity": 9,
    "position": 10,
    "time": "2:15.0",
+   "time_sec": 135.0,
    "margin_sec": 47.3,
    "interval": "連闘",
    "other": {
@@ -400,6 +413,7 @@
    "popularity": 6,
    "position": 8,
    "time": "2:09.9",
+   "time_sec": 129.9,
    "margin_sec": 17.1,
    "interval": "中2週",
    "other": {
@@ -426,6 +440,7 @@
    "popularity": 8,
    "position": 10,
    "time": "2:21.8",
+   "time_sec": 141.8,
    "margin_sec": 38.9,
    "interval": "中2週",
    "other": {
@@ -452,6 +467,7 @@
    "popularity": 4,
    "position": 2,
    "time": "1:50.6",
+   "time_sec": 110.6,
    "margin_sec": 3.6,
    "interval": "中2週",
    "other": {
@@ -478,6 +494,7 @@
    "popularity": 5,
    "position": 5,
    "time": "2:20.1",
+   "time_sec": 140.1,
    "margin_sec": 28.3,
    "interval": "中1週",
    "other": {
@@ -504,6 +521,7 @@
    "popularity": 4,
    "position": 8,
    "time": "2:08.9",
+   "time_sec": 128.9,
    "margin_sec": 16.1,
    "interval": "中1週",
    "other": {
@@ -530,6 +548,7 @@
    "popularity": 5,
    "position": 5,
    "time": "2:02.7",
+   "time_sec": 122.7,
    "margin_sec": 14.9,
    "interval": "中3週",
    "other": {
@@ -556,6 +575,7 @@
    "popularity": 4,
    "position": 7,
    "time": "2:07.3",
+   "time_sec": 127.3,
    "margin_sec": 24.2,
    "interval": "中2週",
    "other": {
@@ -582,6 +602,7 @@
    "popularity": 2,
    "position": 1,
    "time": "1:58.8",
+   "time_sec": 118.8,
    "margin_sec": 0.0,
    "interval": "連闘",
    "other": {
@@ -608,6 +629,7 @@
    "popularity": 4,
    "position": 3,
    "time": "1:33.7",
+   "time_sec": 93.7,
    "margin_sec": 1.9,
    "interval": "中3週",
    "other": {
@@ -634,6 +656,7 @@
    "popularity": 7,
    "position": 6,
    "time": "1:42.9",
+   "time_sec": 102.9,
    "margin_sec": 20.4,
    "interval": "中2週",
    "other": {
@@ -660,6 +683,7 @@
    "popularity": 3,
    "position": 9,
    "time": "2:14.8",
+   "time_sec": 134.8,
    "margin_sec": 17.4,
    "interval": "連闘",
    "other": {
@@ -686,6 +710,7 @@
    "popularity": 10,
    "position": 3,
    "time": "1:37.9",
+   "time_sec": 97.9,
    "margin_sec": 10.8,
    "interval": "中2週",
    "other": {
@@ -712,6 +737,7 @@
    "popularity": 5,
    "position": 1,
    "time": "2:04.2",
+   "time_sec": 124.2,
    "margin_sec": 0.0,
    "interval": "中2週",
    "other": {
@@ -738,6 +764,7 @@
    "popularity": 10,
    "position": 8,
    "time": "2:17.7",
+   "time_sec": 137.7,
    "margin_sec": 20.2,
    "interval": "中2週",
    "other": {
@@ -764,6 +791,7 @@
    "popularity": 8,
    "position": 7,
    "time": "2:47.6",
+   "time_sec": 167.6,
    "margin_sec": 34.7,
    "interval": "連闘",
    "other": {
@@ -790,6 +818,7 @@
    "popularity": 7,
    "position": 9,
    "time": "2:58.6",
+   "time_sec": 178.6,
    "margin_sec": 45.4,
    "interval": "中3週",
    "other": {
@@ -816,6 +845,7 @@
    "popularity": 8,
    "position": 4,
    "time": "2:40.0",
+   "time_sec": 160.0,
    "margin_sec": 6.8,
    "interval": "中2週",
    "other": {
@@ -842,6 +872,7 @@
    "popularity": 7,
    "position": 7,
    "time": "2:43.7",
+   "time_sec": 163.7,
    "margin_sec": 27.3,
    "interval": "連闘",
    "other": {
@@ -868,6 +899,7 @@
    "popularity": 8,
    "position": 2,
    "time": "2:32.8",
+   "time_sec": 152.8,
    "margin_sec": 0.1,
    "interval": "中2週",
    "other": {
@@ -894,6 +926,7 @@
    "popularity": 7,
    "position": 10,
    "time": "3:44.5",
+   "time_sec": 224.5,
    "margin_sec": 101.9,
    "interval": null,
    "other": {
