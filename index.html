@@ -882,7 +882,7 @@ function render(){
   }
   // このレースの着順別本賞金（発走前から公開されているレース固定属性、2026-09-24）。
   const prizeHtml = (r.prize_positions && r.prize_positions.length)
-    ? `<div class="prizeline">${r.prize_positions.map((y,i)=>`<div>${i+1}着 ${(y/10000).toFixed(1)}万円</div>`).join("")}</div>`
+    ? `<div class="prizeline">${r.prize_positions.map((y,i)=>`${i+1}着 ${(y/10000).toFixed(1)}万円`).join("　")}</div>`
     : "";
   document.getElementById("meta").innerHTML =
     `<div class="meta"><div class="top"><span class="rname">${r.race_no}R ${r.race_name||''}</span></div>`
