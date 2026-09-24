@@ -640,6 +640,8 @@ table.ht .numcell{display:inline-flex;align-items:center;gap:4px}
   </div>
   <div id="colsPanel" class="colspanel" style="display:none"></div>
   <div id="horses"></div>
+  <div class="secthead"><span class="sect">展開イメージ（第2障害通過順の傾向）</span></div>
+  <div id="raceflow"></div>
   <div class="secthead">
     <span class="sect">馬場適性（このレースの出走馬）</span>
     <div class="vtoggle" id="dimseg">
@@ -911,6 +913,7 @@ function render(){
   else { host.innerHTML = betsView(r); wireBetSettings(r); }
 
   if(view!=="bets") stopLive();
+  renderRaceFlow(r);
   renderAptitude(r);
   if(window.__curTop==="analysis") renderAnalysis();
 }
@@ -1194,6 +1197,62 @@ function bandStats(past,cfg,b){
   const rs = past.filter(x=>{ const v=x[cfg.key]; return v!=null && v>b.lo && v<=b.hi; });
   const n=rs.length, p3=rs.filter(x=>x.p<=3).length;
   return {n, rate: n? p3/n : null};
+}
+// 展開イメージ（第2障害通過順の傾向、2026-09-25）。ばんえいはセパレートコース（平地の
+// 脚質4分類・コーナーでの位置取りは存在しない）なので、これは「駆け引き」ではなく馬個体の
+// そり・障害適性の癖（直近5走の第2障害通過順を相対位置0=先頭〜1=最後尾で平均したもの、
+// build_dashboard_data.py側でas_of計算済み=リーク無し）を示す。3チェックポイント
+// （スタート=馬番順=事実／第2障害=傾向／ゴール=モデル予測順位）を線でつなぐ。
+function renderRaceFlow(r){
+  const host=document.getElementById("raceflow"); if(!host) return;
+  const all=r.horses||[];
+  const withObs=all.filter(h=>h.pos2_rel!=null);
+  if(all.length<3 || withObs.length<2){
+    host.innerHTML='<div class="apthint">直近走の第2障害通過順データが少なく、このレースでは表示できません。</div>';
+    return;
+  }
+  const n=all.length, W=340, rowH=22, padT=20, padB=8, padL=24, padR=24;
+  const H=padT+padB+rowH*(n-1);
+  const laneY=i=>padT+i*rowH;
+  const x1=padL, x2=W/2, x3=W-padR;
+
+  const startOrder=[...all].sort((a,b)=>a.num-b.num);
+  const obsOrder=[...all].sort((a,b)=>{
+    const av=a.pos2_rel!=null?a.pos2_rel:0.5, bv=b.pos2_rel!=null?b.pos2_rel:0.5;
+    return (av-bv)||(a.num-b.num);
+  });
+  const goalOrder=[...all].sort((a,b)=>(a.rank||99)-(b.rank||99));
+  const y1={},y2={},y3={};
+  startOrder.forEach((h,i)=>y1[h.num]=laneY(i));
+  obsOrder.forEach((h,i)=>y2[h.num]=laneY(i));
+  goalOrder.forEach((h,i)=>y3[h.num]=laneY(i));
+
+  const dot=(h,cx,cy)=>{
+    const c=CAP[h.gate]||['#888','#fff'];
+    return `<circle cx="${cx}" cy="${cy}" r="7" fill="${c[0]}" stroke="var(--surface)" stroke-width="1"/>`
+      +`<text x="${cx}" y="${(cy+2.6).toFixed(1)}" font-size="7.5" text-anchor="middle" font-weight="800" fill="${c[1]}">${h.num}</text>`;
+  };
+  const lines=all.map(h=>{
+    const isTop=h.rank===1, hasObs=h.pos2_rel!=null;
+    const color=isTop?"var(--accent)":"var(--ink)";
+    const dash=hasObs?"":' stroke-dasharray="2 2"';
+    return `<polyline points="${x1},${y1[h.num]} ${x2},${y2[h.num]} ${x3},${y3[h.num]}" fill="none" `
+      +`stroke="${color}" stroke-width="${isTop?2:1}" opacity="${isTop?0.95:0.32}"${dash}/>`;
+  }).join("");
+  const dots1=startOrder.map(h=>dot(h,x1,y1[h.num])).join("");
+  const dots2=obsOrder.map(h=>dot(h,x2,y2[h.num])).join("");
+  const dots3=goalOrder.map(h=>dot(h,x3,y3[h.num])).join("");
+  const heads=`<text x="${x1}" y="12" font-size="8.5" text-anchor="middle" fill="var(--muted)">スタート</text>`
+    +`<text x="${x2}" y="12" font-size="8.5" text-anchor="middle" fill="var(--muted)">第2障害(傾向)</text>`
+    +`<text x="${x3}" y="12" font-size="8.5" text-anchor="middle" fill="var(--muted)">ゴール(予想)</text>`;
+
+  host.innerHTML=
+    `<svg class="tksvg" viewBox="0 0 ${W} ${H+14}">${heads}<g transform="translate(0,4)">`
+    +`${lines}${dots1}${dots2}${dots3}</g></svg>`
+    +`<div class="tknote">ばんえいはセパレートコース（平地の脚質分類・位置取りとは無関係）。`
+    +`「第2障害」は直近5走の第2障害通過順を相対位置(先頭〜最後尾)で平均した傾向値、`
+    +`「ゴール」はモデルの予測順位。破線＝直近データが無い馬（中央付近に仮置き）。`
+    +`◎(オレンジ線)＝AI本命。</div>`;
 }
 function renderAptitude(r){
   document.querySelectorAll("#dimseg button").forEach(b=>b.setAttribute("aria-pressed",b.dataset.d===dim));
