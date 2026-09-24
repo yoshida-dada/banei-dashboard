@@ -81,6 +81,7 @@ header{padding:calc(14px + env(safe-area-inset-top)) calc(14px + env(safe-area-i
 .chip.trk-h{background:rgba(240,136,62,.18);color:#d9822b}
 .chip.trk-s{background:rgba(127,127,127,.12);color:var(--muted)}
 .assess{display:flex;align-items:center;gap:9px;margin-top:11px;font-size:.84rem;flex-wrap:wrap}
+.prizeline{margin-top:9px;font-size:.72rem;color:var(--muted);line-height:1.6}
 .assess .al{font-weight:800;padding:3px 12px;border-radius:999px;font-size:.82rem;white-space:nowrap}
 .assess .an{color:var(--muted)}
 .assess .an2{color:var(--edge);font-weight:600}
@@ -879,6 +880,10 @@ function render(){
       +`<div class="rescell"><div class="t">結果1着</div><div class="v num">—</div>`
       +`<div class="hitmark x">発走前</div></div>`;
   }
+  // このレースの着順別本賞金（発走前から公開されているレース固定属性、2026-09-24）。
+  const prizeHtml = (r.prize_positions && r.prize_positions.length)
+    ? `<div class="prizeline">${r.prize_positions.map((y,i)=>`<div>${i+1}着 ${(y/10000).toFixed(1)}万円</div>`).join("")}</div>`
+    : "";
   document.getElementById("meta").innerHTML =
     `<div class="meta"><div class="top"><span class="rname">${r.race_no}R ${r.race_name||''}</span></div>`
     +`<div class="chips"><span class="chip">クラス <b>${r.class||'—'}</b></span>`
@@ -888,6 +893,7 @@ function render(){
     +(r.post_time?`<span class="chip">発走 <b>${r.post_time}</b></span>`:'')
     +(hasResult?`<span class="chip">決着 <b>${r.win_time||'—'}</b></span>`:'')
     +preBadge+updChip+`</div>`
+    +prizeHtml
     +asHtml+`</div>`;
   renderSuspicionAlert(r);
   renderResultTab(r, hasResult, resultRow);
