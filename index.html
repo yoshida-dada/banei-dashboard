@@ -180,7 +180,7 @@ table.ht .roi{color:color-mix(in srgb,var(--ev-hue) 78%,var(--ink));font-weight:
 .hname .hname-txt{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0}
 .iflag{flex:none;font-size:.85em;cursor:pointer}
 .tname.clickable,.hname.clickable{cursor:pointer}
-.tname.clickable .tname-txt,.hname.clickable .hname-txt{text-decoration:underline;text-decoration-color:var(--border2);text-underline-offset:2px}
+.tname.clickable .tname-txt,.hname.clickable .hname-txt{text-decoration:underline;text-decoration-color:var(--muted);text-underline-offset:2px}
 .iflagmodal{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:200;display:flex;align-items:center;justify-content:center;padding:16px}
 .iflagbox{background:var(--surface);border:1px solid var(--border);border-radius:12px;max-width:420px;width:100%;max-height:80vh;overflow-y:auto;padding:14px 16px;box-shadow:0 8px 30px rgba(0,0,0,.35)}
 .iflaghead{display:flex;justify-content:space-between;align-items:flex-start;gap:8px;font-weight:800;font-size:.86rem;margin-bottom:8px;color:var(--ink)}
@@ -217,7 +217,7 @@ table.ht .roi{color:color-mix(in srgb,var(--ev-hue) 78%,var(--ink));font-weight:
 .rbtbl tr.pick{background:color-mix(in srgb,var(--accent) 12%,var(--surface))}
 .rbtbl td.rbtop{color:var(--good);font-weight:800}
 .rbtbl .rbpick{color:var(--accent);font-weight:800;margin-left:3px}
-.hnamelink{cursor:pointer;text-decoration:underline;text-decoration-color:var(--border2);text-underline-offset:2px}
+.hnamelink{cursor:pointer;text-decoration:underline;text-decoration-color:var(--muted);text-underline-offset:2px}
 /* 馬別成績（レース別全着順の馬名タップで開く4階層目、2026-09-24） */
 .hppedgrid{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-bottom:4px}
 .hppedcell{background:var(--surface2);border:1px solid var(--border2);border-radius:9px;padding:6px 9px}
@@ -356,6 +356,7 @@ table.ht .numcell{display:inline-flex;align-items:center;gap:4px}
 .tile .tv.pos{color:var(--good)} .tile .tv.neg{color:var(--accent)}
 .tile .tn{font-size:.62rem;color:var(--muted);margin-top:1px}
 .tksect{font-weight:800;font-size:.84rem;margin:20px 0 9px}
+.hpwnow{float:right;font-weight:600;font-size:.7rem;color:var(--muted)}
 .barrow{display:flex;align-items:center;gap:8px;margin:6px 0;font-size:.72rem}
 .barrow .bl{width:112px;flex:none;color:var(--ink)}
 .bartrack{flex:1;height:17px;background:var(--surface2);border:1px solid var(--border2);border-radius:5px;position:relative;overflow:hidden}
@@ -377,7 +378,7 @@ table.ht .numcell{display:inline-flex;align-items:center;gap:4px}
 .dttbl th{color:var(--muted);font-size:.64rem;font-weight:700;position:sticky;top:0;background:var(--surface)}
 .dtrow{cursor:pointer}
 .dtrow:active{background:var(--surface2)}
-.dtdate{text-decoration:underline;text-decoration-color:var(--border2);text-underline-offset:2px}
+.dtdate{text-decoration:underline;text-decoration-color:var(--muted);text-underline-offset:2px}
 .dtwrate{display:inline-flex;align-items:center;gap:6px;min-width:96px}
 .dtbar{width:44px;height:8px;border-radius:4px;background:var(--border2);overflow:hidden;flex:none}
 .dtbar i{display:block;height:100%;background:var(--muted)}
@@ -1636,11 +1637,87 @@ function loadHorseProfile(name, cb){
     .catch(()=>{ const b=document.getElementById("histBody");
       if(b) b.innerHTML='<div class="tknote">この馬の成績データが見つかりませんでした。</div>'; });
 }
+function hpStatRow(label,s){
+  return `<tr><td class="l">${label}</td><td>${s.win}</td><td>${s.place2}</td><td>${s.place3}</td>`
+    +`<td>${s.other}</td><td>${s.n}</td><td>${tkPct(s.win_rate)}</td><td>${tkPct(s.quinella_rate)}</td><td>${tkPct(s.show_rate)}</td></tr>`;
+}
+function hpStatsAgg(positions){
+  const c=[0,0,0,0];
+  positions.forEach(p=>{ if(p!=null) c[Math.min(p,4)-1]++; });
+  const n=c.reduce((a,b)=>a+b,0);
+  return {win:c[0],place2:c[1],place3:c[2],other:c[3],n,
+    win_rate:n?c[0]/n:null, quinella_rate:n?(c[0]+c[1])/n:null, show_rate:n?(c[0]+c[1]+c[2])/n:null};
+}
 function hpYearRows(stats){
   const years=Object.keys(stats).filter(k=>k!=="total").sort((a,b)=>b-a);
-  const row=(label,s)=>`<tr><td class="l">${label}</td><td>${s.win}</td><td>${s.place2}</td><td>${s.place3}</td>`
-    +`<td>${s.other}</td><td>${s.n}</td><td>${tkPct(s.win_rate)}</td><td>${tkPct(s.quinella_rate)}</td><td>${tkPct(s.show_rate)}</td></tr>`;
-  return row("通算",stats.total)+years.map(y=>row(y+"年",stats[y])).join("");
+  return hpStatRow("通算",stats.total)+years.map(y=>hpStatRow(y+"年",stats[y])).join("");
+}
+// 条件(水分量)別・季節別・騎手別・馬体重推移（2026-09-24、nar.yukochi.com/horse/のスクショを
+// 参考に実装。水分帯・騎手フィルタ・体重グラフの窓幅は参考サイトの実表示に合わせた）。
+const HP_MOIST_LABELS=["水分率1.0%未満","水分率1.0〜1.9%","水分率2.0〜2.9%","水分率3.0%以上"];
+const HP_SEASONS=[["春（3〜5月）",[3,4,5]],["夏（6〜8月）",[6,7,8]],["秋（9〜11月）",[9,10,11]],["冬（12〜2月）",[12,1,2]]];
+function hpBreakdownTableHtml(title, groups){
+  const rows=groups.filter(([,arr])=>arr.length).map(([label,arr])=>hpStatRow(label,hpStatsAgg(arr))).join("");
+  if(!rows) return "";
+  return `<div class="tksect">${title}</div><div class="dttblwrap"><table class="dttbl"><thead><tr>`
+    +`<th class="l"></th><th>1着</th><th>2着</th><th>3着</th><th>4着以下</th><th>計</th>`
+    +`<th>勝率</th><th>連対率</th><th>複勝率</th></tr></thead><tbody>${rows}</tbody></table></div>`;
+}
+function hpMoistureHtml(races){
+  const buckets=[[],[],[],[]];
+  races.forEach(r=>{ if(r.moisture==null) return;
+    buckets[r.moisture<1?0:r.moisture<2?1:r.moisture<3?2:3].push(r.position); });
+  return hpBreakdownTableHtml("条件別成績（馬場水分・4区分）", HP_MOIST_LABELS.map((l,i)=>[l,buckets[i]]));
+}
+function hpSeasonHtml(races){
+  const groups=HP_SEASONS.map(([label,months])=>[label,
+    races.filter(r=>months.includes(+r.date.slice(5,7))).map(r=>r.position)]);
+  return hpBreakdownTableHtml("季節別成績（4区分）", groups);
+}
+function hpJockeyHtml(races){
+  const byJockey={};
+  races.forEach(r=>{ const j=r.jockey||"不明"; (byJockey[j]=byJockey[j]||[]).push(r.position); });
+  const groups=Object.entries(byJockey).filter(([,arr])=>arr.length>=2).sort((a,b)=>b[1].length-a[1].length);
+  const title = groups.length ? `騎手別成績（${groups.length}人・2走以上）` : "騎手別成績";
+  return hpBreakdownTableHtml(title, groups);
+}
+// 馬体重推移: 直近24走に絞り(全走だと長すぎて潰れるため)、着順で点の色を分け、
+// 3着以内だった馬体重帯を薄く塗る（参考サイトは1着/2着以内/3着以内の3段だが簡易的に1段にまとめた）。
+function svgWeightTrend(races){
+  const N=24;
+  const all=[...races].reverse().filter(r=>r.weight!=null);  // 古い→新しい
+  const pts=all.slice(-N);
+  if(pts.length<2) return "";
+  const n=pts.length, W=340,H=150,padL=32,padR=12,padT=16,padB=20;
+  const ws=pts.map(p=>p.weight), mn=Math.min(...ws), mx=Math.max(...ws), rng=(mx-mn)||1;
+  const sx=i=>padL+(i/Math.max(n-1,1))*(W-padL-padR);
+  const sy=v=>H-padB-((v-mn)/rng)*(H-padT-padB);
+  const top3=pts.filter(p=>p.position!=null&&p.position<=3).map(p=>p.weight);
+  let band="";
+  if(top3.length>=2){
+    const bmin=Math.min(...top3), bmax=Math.max(...top3);
+    band=`<rect x="${padL}" y="${sy(bmax).toFixed(1)}" width="${(W-padL-padR).toFixed(1)}" `
+      +`height="${(sy(bmin)-sy(bmax)).toFixed(1)}" fill="var(--accent)" opacity=".13"/>`;
+  }
+  let grid="";
+  [mn,(mn+mx)/2,mx].forEach(v=>{
+    grid+=`<line x1="${padL}" y1="${sy(v).toFixed(1)}" x2="${W-padR}" y2="${sy(v).toFixed(1)}" stroke="var(--border2)"/>`
+      +`<text x="${padL-4}" y="${(sy(v)+3).toFixed(1)}" font-size="8" fill="var(--muted)" text-anchor="end">${Math.round(v)}</text>`;
+  });
+  const line=`<polyline points="${pts.map((p,i)=>`${sx(i).toFixed(1)},${sy(p.weight).toFixed(1)}`).join(" ")}" fill="none" stroke="var(--ink)" stroke-width="1.6"/>`;
+  const dots=pts.map((p,i)=>{
+    const fill = p.position===1?"var(--accent)":(p.position!=null&&p.position<=3?"var(--ink)":"var(--surface)");
+    const stroke = (p.position==null||p.position>3)?"var(--muted)":fill;
+    return `<circle cx="${sx(i).toFixed(1)}" cy="${sy(p.weight).toFixed(1)}" r="3" fill="${fill}" stroke="${stroke}"/>`;
+  }).join("");
+  const tIdx=[...new Set([0,Math.floor((n-1)/2),n-1])];
+  const xticks=tIdx.map(i=>`<text x="${sx(i).toFixed(1)}" y="${H-6}" font-size="8" fill="var(--muted)" text-anchor="middle">`
+    +`${pts[i].date.slice(5).replace('-','/')}</text>`).join("");
+  const last=pts[n-1], prev=pts[n-2], diff=prev?last.weight-prev.weight:null;
+  return `<div class="tksect">馬体重推移（直近${n}走${races.length>n?'／全'+races.length+'走中':''}）`
+    +`<span class="hpwnow">直近 ${last.weight}kg${diff!=null?`（前走比${diff>0?'+':''}${diff}）`:''}</span></div>`
+    +`<svg class="tksvg" viewBox="0 0 ${W} ${H}" role="img" aria-label="馬体重推移">${band}${grid}${line}${dots}${xticks}</svg>`
+    +`<div class="tknote">帯＝直近走中で3着以内だった馬体重の範囲（参考）。●オレンジ=1着／●濃色=2〜3着／○白抜き=4着以下</div>`;
 }
 function hpPedigreeHtml(p){
   if(!p || !(p.sire||p.dam)) return "";
@@ -1691,10 +1768,14 @@ function renderHorseProfile(){
     +`${h.sled_kg!=null?'　そり重量 '+h.sled_kg.toFixed(0):''}`
     +`${h.weight!=null?'　馬体重 '+h.weight+(h.weight_diff!=null?"("+(h.weight_diff>0?"+":"")+h.weight_diff+")":""):''}</div>`
     +(h.insider_label_count>0?`<div class="hpinswarn">🚨 八百長ラベル ${h.insider_label_count}件（下記の過去成績に表示）</div>`:'')
+    +svgWeightTrend(h.races)
     +`<div class="tksect">通算成績（${h.races.length}走）</div>`
     +`<div class="dttblwrap"><table class="dttbl"><thead><tr><th class="l"></th><th>1着</th><th>2着</th>`
     +`<th>3着</th><th>4着以下</th><th>計</th><th>勝率</th><th>連対率</th><th>複勝率</th></tr></thead>`
     +`<tbody>${hpYearRows(h.stats)}</tbody></table></div>`
+    +hpMoistureHtml(h.races)
+    +hpSeasonHtml(h.races)
+    +hpJockeyHtml(h.races)
     +hpPedigreeHtml(h.pedigree)
     +`<div class="tksect">過去成績</div>${cards}${more}`;
   document.getElementById("histBackBtn").onclick=()=>{
