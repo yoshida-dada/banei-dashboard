@@ -1690,7 +1690,7 @@ function svgTrendChart(races, opts){
   const all=[...races].reverse().filter(r=>opts.valueFn(r)!=null);  // 古い→新しい
   const pts=all.slice(-N);
   if(pts.length<2) return null;
-  const n=pts.length, W=340,H=150,padL=opts.padL||32,padR=12,padT=16,padB=20;
+  const n=pts.length, W=340,H=150,padL=opts.padL||32,padR=opts.padR||12,padT=16,padB=20;
   const vals=pts.map(opts.valueFn);
   const mn=opts.fixedMin!=null?opts.fixedMin:Math.min(...vals);
   const mx=opts.fixedMax!=null?opts.fixedMax:Math.max(...vals);
@@ -1698,6 +1698,8 @@ function svgTrendChart(races, opts){
   const clamp=v=>Math.max(mn,Math.min(mx,v));
   const sx=i=>padL+(i/Math.max(n-1,1))*(W-padL-padR);
   const sy=v=>H-padB-((clamp(v)-mn)/rng)*(H-padT-padB);
+  // 第2軸レイヤー（決着タイム推移の馬場水分バー等）。band/gridより奥に描く。2026-09-24。
+  const extra = opts.extraFn ? opts.extraFn(pts, sx, {W,H,padL,padR,padT,padB}) : "";
   const top3=pts.filter(p=>p.position!=null&&p.position<=3).map(opts.valueFn);
   let band="";
   if(top3.length>=2){
@@ -1737,7 +1739,7 @@ function svgTrendChart(races, opts){
   const xticks=tIdx.map(i=>`<text x="${sx(i).toFixed(1)}" y="${H-6}" font-size="8" fill="var(--muted)" text-anchor="middle">`
     +`${pts[i].date.slice(5).replace('-','/')}</text>`).join("");
   return {n, last:pts[n-1], prev:pts[n-2],
-    svg:`<svg class="tksvg" viewBox="0 0 ${W} ${H}" role="img" aria-label="${opts.label||''}">${band}${grid}${line}${dots}${xticks}</svg>`};
+    svg:`<svg class="tksvg" viewBox="0 0 ${W} ${H}" role="img" aria-label="${opts.label||''}">${extra}${band}${grid}${line}${dots}${xticks}</svg>`};
 }
 function svgWeightTrend(races){
   const r=svgTrendChart(races,{valueFn:p=>p.weight,label:"馬体重推移"});
@@ -1753,15 +1755,37 @@ function svgWeightTrend(races){
 // (1分半〜2分台後半)が狭く見づらいとのフィードバックで上限を3分に短縮）。
 const HP_TIME_MIN=80, HP_TIME_MAX=180;
 const hpFmtMinSec = sec => { const m=Math.floor(sec/60), s=Math.round(sec-m*60); return `${m}:${s<10?'0':''}${s}`; };
+// 決着タイム推移の第2軸: 馬場水分率を右軸の棒グラフで背景に重ねる（2026-09-24）。
+// 水分率の固定上限4.0%は既存の馬場適性スライダー(DIMS.moist.slMax)と同じ値に揃える。
+const HP_MOIST_AXIS_MAX=4.0;
+function hpMoistBarsFn(pts, sx, dim){
+  const {H,padL,padR,padT,padB}=dim;
+  const baseY=H-padB, usableH=H-padT-padB;
+  const spacing = pts.length>1 ? (dim.W-padL-padR)/(pts.length-1) : 20;
+  const bw=Math.min(9,spacing*0.6);
+  let bars="";
+  pts.forEach((p,i)=>{
+    if(p.moisture==null) return;
+    const h=Math.min(1,p.moisture/HP_MOIST_AXIS_MAX)*usableH;
+    bars+=`<rect x="${(sx(i)-bw/2).toFixed(1)}" y="${(baseY-h).toFixed(1)}" width="${bw.toFixed(1)}" `
+      +`height="${h.toFixed(1)}" fill="var(--wet)" opacity=".3"/>`;
+  });
+  let axis="";
+  [0,2,4].forEach(v=>{
+    const y=baseY-(v/HP_MOIST_AXIS_MAX)*usableH;
+    axis+=`<text x="${dim.W-padR+3}" y="${(y+3).toFixed(1)}" font-size="8" fill="var(--wet)">${v}%</text>`;
+  });
+  return bars+axis;
+}
 function svgTimeTrend(races){
   const r=svgTrendChart(races,{valueFn:p=>p.time_sec,fixedMin:HP_TIME_MIN,fixedMax:HP_TIME_MAX,
-    bandColor:"var(--edge)",label:"決着タイム推移",padL:40,
-    majorStep:30,minorStep:10,axisFmt:hpFmtMinSec});
+    bandColor:"var(--edge)",label:"決着タイム推移",padL:40,padR:24,
+    majorStep:30,minorStep:10,axisFmt:hpFmtMinSec,extraFn:hpMoistBarsFn});
   if(!r) return "";
   return `<div class="tksect">決着タイム推移（直近${r.n}走${races.length>r.n?'／全'+races.length+'走中':''}）`
     +`<span class="hpwnow">直近 ${r.last.time||'—'}</span></div>`
     +r.svg
-    +`<div class="tknote">縦軸は全馬共通で${hpFmtMinSec(HP_TIME_MIN)}〜${hpFmtMinSec(HP_TIME_MAX)}に固定（馬ごとの得意タイム帯を比較しやすくするため。範囲外の走は上下端に丸めて表示）。主目盛=30秒毎・補助目盛=10秒毎。帯＝3着以内だったタイムの範囲。●オレンジ=1着／●濃色=2〜3着／○白抜き=4着以下</div>`;
+    +`<div class="tknote">左軸(決着タイム)は全馬共通で${hpFmtMinSec(HP_TIME_MIN)}〜${hpFmtMinSec(HP_TIME_MAX)}に固定（馬ごとの得意タイム帯を比較しやすくするため。範囲外の走は上下端に丸めて表示）。主目盛=30秒毎・補助目盛=10秒毎。帯＝3着以内だったタイムの範囲。背景の水色バー＝馬場水分率（右軸、0〜${HP_MOIST_AXIS_MAX}%）。●オレンジ=1着／●濃色=2〜3着／○白抜き=4着以下</div>`;
 }
 function hpPedigreeHtml(p){
   if(!p || !(p.sire||p.dam)) return "";
