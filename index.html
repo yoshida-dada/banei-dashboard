@@ -1690,7 +1690,7 @@ function svgTrendChart(races, opts){
   const all=[...races].reverse().filter(r=>opts.valueFn(r)!=null);  // 古い→新しい
   const pts=all.slice(-N);
   if(pts.length<2) return null;
-  const n=pts.length, W=340,H=150,padL=32,padR=12,padT=16,padB=20;
+  const n=pts.length, W=340,H=150,padL=opts.padL||32,padR=12,padT=16,padB=20;
   const vals=pts.map(opts.valueFn);
   const mn=opts.fixedMin!=null?opts.fixedMin:Math.min(...vals);
   const mx=opts.fixedMax!=null?opts.fixedMax:Math.max(...vals);
@@ -1706,10 +1706,27 @@ function svgTrendChart(races, opts){
       +`height="${(sy(bmin)-sy(bmax)).toFixed(1)}" fill="${opts.bandColor||'var(--accent)'}" opacity=".13"/>`;
   }
   let grid="";
-  [mn,(mn+mx)/2,mx].forEach(v=>{
-    grid+=`<line x1="${padL}" y1="${sy(v).toFixed(1)}" x2="${W-padR}" y2="${sy(v).toFixed(1)}" stroke="var(--border2)"/>`
-      +`<text x="${padL-4}" y="${(sy(v)+3).toFixed(1)}" font-size="8" fill="var(--muted)" text-anchor="end">${Math.round(v)}</text>`;
-  });
+  if(opts.majorStep){
+    // 主要目盛(majorStep単位、ラベル付き横線) + 補助目盛(minorStep単位、軸際に短い刻みのみ)。
+    // 決着タイム推移(30秒毎主要/10秒毎補助)向け。2026-09-24。
+    const minorStep=opts.minorStep||opts.majorStep;
+    const fmt=opts.axisFmt||(v=>Math.round(v));
+    const start=Math.ceil(mn/minorStep)*minorStep;
+    for(let v=start; v<=mx+1e-6; v+=minorStep){
+      const rv=Math.round(v), y=sy(rv).toFixed(1);
+      if(rv % opts.majorStep === 0){
+        grid+=`<line x1="${padL}" y1="${y}" x2="${W-padR}" y2="${y}" stroke="var(--border2)"/>`
+          +`<text x="${padL-4}" y="${(sy(rv)+3).toFixed(1)}" font-size="8" fill="var(--muted)" text-anchor="end">${fmt(rv)}</text>`;
+      } else {
+        grid+=`<line x1="${padL-3}" y1="${y}" x2="${padL}" y2="${y}" stroke="var(--muted)"/>`;
+      }
+    }
+  } else {
+    [mn,(mn+mx)/2,mx].forEach(v=>{
+      grid+=`<line x1="${padL}" y1="${sy(v).toFixed(1)}" x2="${W-padR}" y2="${sy(v).toFixed(1)}" stroke="var(--border2)"/>`
+        +`<text x="${padL-4}" y="${(sy(v)+3).toFixed(1)}" font-size="8" fill="var(--muted)" text-anchor="end">${Math.round(v)}</text>`;
+    });
+  }
   const line=`<polyline points="${pts.map((p,i)=>`${sx(i).toFixed(1)},${sy(opts.valueFn(p)).toFixed(1)}`).join(" ")}" fill="none" stroke="var(--ink)" stroke-width="1.6"/>`;
   const dots=pts.map((p,i)=>{
     const fill = p.position===1?"var(--accent)":(p.position!=null&&p.position<=3?"var(--ink)":"var(--surface)");
@@ -1734,14 +1751,16 @@ function svgWeightTrend(races){
 // 決着タイム推移: 縦軸を全馬共通(HP_TIME_MIN〜MAX秒)に固定し、他馬と比べてどのタイム帯が
 // 得意かを見やすくする（2026-09-24。範囲はDB全走のタイム分布のp1〜p99付近＝80〜220秒に設定）。
 const HP_TIME_MIN=80, HP_TIME_MAX=220;
+const hpFmtMinSec = sec => { const m=Math.floor(sec/60), s=Math.round(sec-m*60); return `${m}:${s<10?'0':''}${s}`; };
 function svgTimeTrend(races){
   const r=svgTrendChart(races,{valueFn:p=>p.time_sec,fixedMin:HP_TIME_MIN,fixedMax:HP_TIME_MAX,
-    bandColor:"var(--edge)",label:"決着タイム推移"});
+    bandColor:"var(--edge)",label:"決着タイム推移",padL:40,
+    majorStep:30,minorStep:10,axisFmt:hpFmtMinSec});
   if(!r) return "";
   return `<div class="tksect">決着タイム推移（直近${r.n}走${races.length>r.n?'／全'+races.length+'走中':''}）`
     +`<span class="hpwnow">直近 ${r.last.time||'—'}</span></div>`
     +r.svg
-    +`<div class="tknote">縦軸は全馬共通で${HP_TIME_MIN}〜${HP_TIME_MAX}秒に固定（馬ごとの得意タイム帯を比較しやすくするため。範囲外の走は上下端に丸めて表示）。帯＝3着以内だったタイムの範囲。●オレンジ=1着／●濃色=2〜3着／○白抜き=4着以下</div>`;
+    +`<div class="tknote">縦軸は全馬共通で${hpFmtMinSec(HP_TIME_MIN)}〜${hpFmtMinSec(HP_TIME_MAX)}に固定（馬ごとの得意タイム帯を比較しやすくするため。範囲外の走は上下端に丸めて表示）。主目盛=30秒毎・補助目盛=10秒毎。帯＝3着以内だったタイムの範囲。●オレンジ=1着／●濃色=2〜3着／○白抜き=4着以下</div>`;
 }
 function hpPedigreeHtml(p){
   if(!p || !(p.sire||p.dam)) return "";
