@@ -1202,11 +1202,15 @@ function bandStats(past,cfg,b){
   const n=rs.length, p3=rs.filter(x=>x.p<=3).length;
   return {n, rate: n? p3/n : null};
 }
-// 展開イメージ（第2障害通過順の傾向、2026-09-25）。ばんえいはセパレートコース（平地の
-// 脚質4分類・コーナーでの位置取りは存在しない）なので、これは「駆け引き」ではなく馬個体の
-// そり・障害適性の癖（直近5走の第2障害通過順を相対位置0=先頭〜1=最後尾で平均したもの、
-// build_dashboard_data.py側でas_of計算済み=リーク無し）を示す。3チェックポイント
+// 展開イメージ（第2障害通過順の傾向、2026-09-25 + 前半タイムの箱ひげ幅 2026-09-26）。
+// ばんえいはセパレートコース（平地の脚質4分類・コーナーでの位置取りは存在しない）なので、
+// これは「駆け引き」ではなく馬個体のそり・障害適性の癖を示す。3チェックポイント
 // （スタート=馬番順=事実／第2障害=傾向／ゴール=モデル予測順位）を線でつなぐ。
+// 縦のレーン順は直近5走の第2障害通過順（相対位置、build_dashboard_data.py側でas_of計算済み=
+// リーク無し）で決めるが、単一の平均点だけだと実際より精度が高く見える絵になってしまうため、
+// 第2障害の位置に直近5走の前半タイム(fh_min/avg/max)の幅を箱ひげ(横帯)として重ね、
+// 馬ごとの安定/不安定も伝える。生タイムは馬場水分・ソリ重量で変動し他馬との絶対時間比較には
+// 使えないため、あくまで「その馬自身の振れ幅」の目安として横幅のみに用いる。
 function renderRaceFlow(r){
   const host=document.getElementById("raceflow"); if(!host) return;
   const all=r.horses||[];
@@ -1215,10 +1219,11 @@ function renderRaceFlow(r){
     host.innerHTML='<div class="apthint">直近走の第2障害通過順データが少なく、このレースでは表示できません。</div>';
     return;
   }
-  const n=all.length, W=340, rowH=22, padT=20, padB=8, padL=24, padR=24;
+  const n=all.length, W=360, rowH=22, padT=20, padB=8, padL=24, padR=24;
   const H=padT+padB+rowH*(n-1);
   const laneY=i=>padT+i*rowH;
   const x1=padL, x2=W/2, x3=W-padR;
+  const BOXW=34; // 前半タイムの箱ひげの最大半幅(px)。最も振れ幅が大きい馬がこの幅になる
 
   const startOrder=[...all].sort((a,b)=>a.num-b.num);
   const obsOrder=[...all].sort((a,b)=>{
@@ -1231,32 +1236,55 @@ function renderRaceFlow(r){
   obsOrder.forEach((h,i)=>y2[h.num]=laneY(i));
   goalOrder.forEach((h,i)=>y3[h.num]=laneY(i));
 
+  // 箱ひげのスケール: 全馬中で最大の振れ幅(max-min)を持つ馬がBOXW、他はその比率で縮小
+  // （ばらつきが少ない馬ほど帯が細くなる＝安定して同じタイミングで通過する馬が視覚的にわかる）
+  const spreads = all.filter(h=>h.fh_n>=2).map(h=>h.fh_max-h.fh_min);
+  const maxSpread = spreads.length ? Math.max(...spreads, 0.1) : 0.1;
+  const boxGeom = h=>{
+    if(h.fh_n>=1 && h.fh_avg!=null){
+      const spread = (h.fh_n>=2) ? (h.fh_max-h.fh_min) : 0;
+      const halfW = spread>0 ? BOXW*(spread/maxSpread) : 0;
+      const frac = spread>0 ? (h.fh_avg-h.fh_min)/spread : 0.5;
+      return {halfW, avgX: x2-halfW+2*halfW*frac};
+    }
+    return {halfW:0, avgX:x2};
+  };
+  const geoms={}; all.forEach(h=>geoms[h.num]=boxGeom(h));
+
   const dot=(h,cx,cy)=>{
     const c=CAP[h.gate]||['#888','#fff'];
     return `<circle cx="${cx}" cy="${cy}" r="7" fill="${c[0]}" stroke="var(--surface)" stroke-width="1"/>`
       +`<text x="${cx}" y="${(cy+2.6).toFixed(1)}" font-size="7.5" text-anchor="middle" font-weight="800" fill="${c[1]}">${h.num}</text>`;
   };
+  const box=(h,cy,geom)=>{
+    if(geom.halfW<=0) return "";
+    const c=CAP[h.gate]||['#888','#fff'];
+    return `<rect x="${(x2-geom.halfW).toFixed(1)}" y="${cy-4}" width="${(geom.halfW*2).toFixed(1)}" height="8" rx="3" `
+      +`fill="${c[0]}" opacity="0.22" stroke="${c[0]}" stroke-width="1" stroke-opacity="0.5"/>`;
+  };
   const lines=all.map(h=>{
     const isTop=h.rank===1, hasObs=h.pos2_rel!=null;
     const color=isTop?"var(--accent)":"var(--ink)";
     const dash=hasObs?"":' stroke-dasharray="2 2"';
-    return `<polyline points="${x1},${y1[h.num]} ${x2},${y2[h.num]} ${x3},${y3[h.num]}" fill="none" `
+    const mx=geoms[h.num].avgX;
+    return `<polyline points="${x1},${y1[h.num]} ${mx.toFixed(1)},${y2[h.num]} ${x3},${y3[h.num]}" fill="none" `
       +`stroke="${color}" stroke-width="${isTop?2:1}" opacity="${isTop?0.95:0.32}"${dash}/>`;
   }).join("");
+  const boxes2=obsOrder.map(h=>box(h,y2[h.num],geoms[h.num])).join("");
   const dots1=startOrder.map(h=>dot(h,x1,y1[h.num])).join("");
-  const dots2=obsOrder.map(h=>dot(h,x2,y2[h.num])).join("");
+  const dots2=obsOrder.map(h=>dot(h,geoms[h.num].avgX,y2[h.num])).join("");
   const dots3=goalOrder.map(h=>dot(h,x3,y3[h.num])).join("");
   const heads=`<text x="${x1}" y="12" font-size="8.5" text-anchor="middle" fill="var(--muted)">スタート</text>`
-    +`<text x="${x2}" y="12" font-size="8.5" text-anchor="middle" fill="var(--muted)">第2障害(傾向)</text>`
+    +`<text x="${x2}" y="12" font-size="8.5" text-anchor="middle" fill="var(--muted)">第2障害(前半タイムの幅)</text>`
     +`<text x="${x3}" y="12" font-size="8.5" text-anchor="middle" fill="var(--muted)">ゴール(予想)</text>`;
 
   host.innerHTML=
     `<svg class="tksvg" viewBox="0 0 ${W} ${H+14}">${heads}<g transform="translate(0,4)">`
-    +`${lines}${dots1}${dots2}${dots3}</g></svg>`
+    +`${lines}${boxes2}${dots1}${dots2}${dots3}</g></svg>`
     +`<div class="tknote">ばんえいはセパレートコース（平地の脚質分類・位置取りとは無関係）。`
-    +`「第2障害」は直近5走の第2障害通過順を相対位置(先頭〜最後尾)で平均した傾向値、`
-    +`「ゴール」はモデルの予測順位。破線＝直近データが無い馬（中央付近に仮置き）。`
-    +`◎(オレンジ線)＝AI本命。</div>`;
+    +`縦位置＝直近5走の第2障害通過順の傾向、横の帯＝直近5走の前半タイムの振れ幅`
+    +`(最低〜最高、帯が広いほど不安定)。「ゴール」はモデルの予測順位。`
+    +`破線＝直近データが無い馬（中央付近に仮置き）。◎(オレンジ線)＝AI本命。</div>`;
 }
 function renderAptitude(r){
   document.querySelectorAll("#dimseg button").forEach(b=>b.setAttribute("aria-pressed",b.dataset.d===dim));
