@@ -199,6 +199,10 @@ table.ht .roi{color:color-mix(in srgb,var(--ev-hue) 78%,var(--ink));font-weight:
 .chartbox{background:var(--surface);border:1px solid var(--border);border-radius:12px;max-width:680px;width:94vw;max-height:88vh;overflow-y:auto;padding:14px 16px;box-shadow:0 8px 30px rgba(0,0,0,.35)}
 .tkchart-click{cursor:zoom-in}
 .histback{display:inline-block;background:none;border:1px solid var(--border);border-radius:7px;padding:4px 10px;font-size:.7rem;color:var(--muted);cursor:pointer;font-family:inherit;margin-bottom:10px}
+.hpmodebar{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:10px}
+.hpmodebar .histback{margin-bottom:0}
+.hpmodebtn{background:var(--surface);border:1px solid var(--border);border-radius:7px;padding:4px 10px;font-size:.7rem;font-weight:700;color:var(--muted);cursor:pointer;font-family:inherit}
+.hpmodebtn.on{background:var(--accent);border-color:var(--accent);color:#fff}
 .hdsummary{display:flex;gap:8px;margin-bottom:10px}
 .hdtile{flex:1;background:var(--surface2);border:1px solid var(--border2);border-radius:10px;padding:8px;text-align:center}
 .hdtile .v{font-size:1.15rem;font-weight:800}
@@ -1701,6 +1705,13 @@ function renderHistModal(){
 // dashboard/horses/<馬名>.json（build_horse_profiles.pyが生成、809頭分を1頭1ファイルに分割済み。
 // 全頭一括ロードだと19MB超になるため、タップされた馬だけ都度fetchする）。
 let hpShowAll=false;
+let hpMode="season";  // "season"=今年度成績(デフォルト) / "career"=通算成績（2026-09-25）
+// ばんえいの年度開始日（概ね4/17。db.repository._banei_season_startのJS版、単一の正はPython側）。
+function hpSeasonStart(d){
+  const m=d.getMonth()+1;
+  const y = (m>4 || (m===4 && d.getDate()>=17)) ? d.getFullYear() : d.getFullYear()-1;
+  return `${y}-04-17`;
+}
 function openHorseProfile(name){
   histState.horse=name;
   hpShowAll=false;
@@ -1957,7 +1968,17 @@ function renderHorseProfile(){
   const body=document.getElementById("histBody");
   document.getElementById("histTitle").textContent=name;
   if(!h){ body.innerHTML='<div class="tknote">この馬の成績データがありません。</div>'; return; }
-  const shown = hpShowAll ? h.races : h.races.slice(0,5);
+  // 今年度成績(デフォルト)/通算成績の切り替え（2026-09-25）。今年度はシーズン開始日(4/17)
+  // 以降のレースだけに絞り、グラフ・内訳表・過去成績すべてに反映する。
+  const seasonStart = hpSeasonStart(new Date());
+  const races = hpMode==="season" ? h.races.filter(r=>r.date>=seasonStart) : h.races;
+  const insiderCount = hpMode==="season"
+    ? races.reduce((s,r)=>s+((r.insider_labels||[]).length),0)
+    : h.insider_label_count;
+  const statsHtml = hpMode==="season"
+    ? hpStatRow(`今年度（${races.length}走）`, hpStatsAgg(races.map(r=>r.position)))
+    : hpYearRows(h.stats);
+  const shown = hpShowAll ? races : races.slice(0,5);
   const cards = shown.map(r=>{
     const gate=((r.num-1)%8)+1;
     const wTxt = r.weight!=null ? r.weight+(r.weight_diff!=null?"("+(r.weight_diff>0?"+":"")+r.weight_diff+")":"") : "—";
@@ -1980,32 +2001,40 @@ function renderHorseProfile(){
       +(r.insider_labels||[]).map(l=>`<div class="hprline hpins">🚨 ${l.label_type||'—'}${l.note?'：'+l.note:''}</div>`).join("")
       +`</div>`;
   }).join("");
-  const more = h.races.length>5
-    ? `<button class="histback" type="button" id="hpMoreBtn">${hpShowAll?'表示を減らす':'もっと見る('+h.races.length+'走すべて)'}</button>`
+  const more = races.length>5
+    ? `<button class="histback" type="button" id="hpMoreBtn">${hpShowAll?'表示を減らす':'もっと見る('+races.length+'走すべて)'}</button>`
     : "";
   const backLabel = histState.race!=null
     ? `← ${histState.date.slice(5).replace('-','/')} ${histState.race}Rへ` : "✕ 閉じる";
+  const modeBar = `<div class="hpmodebar">`
+    +`<button class="histback" type="button" id="histBackBtn">${backLabel}</button>`
+    +`<button class="hpmodebtn${hpMode==='season'?' on':''}" data-mode="season">今年度成績</button>`
+    +`<button class="hpmodebtn${hpMode==='career'?' on':''}" data-mode="career">通算成績</button>`
+    +`</div>`;
   body.innerHTML=
-    `<button class="histback" type="button" id="histBackBtn">${backLabel}</button>`
+    modeBar
     +`<div class="rbmeta">${h.sex||''}${h.age??''}　調教師 ${h.trainer||'—'}　馬主 ${h.owner||'—'}`
     +`${h.sled_kg!=null?'　そり重量 '+h.sled_kg.toFixed(0):''}`
     +`${h.weight!=null?'　馬体重 '+h.weight+(h.weight_diff!=null?"("+(h.weight_diff>0?"+":"")+h.weight_diff+")":""):''}</div>`
-    +(h.insider_label_count>0?`<div class="hpinswarn">🚨 八百長ラベル ${h.insider_label_count}件（下記の過去成績に表示）</div>`:'')
-    +svgWeightTrend(h.races)
-    +svgTimeTrend(h.races)
-    +`<div class="tksect">通算成績（${h.races.length}走）</div>`
+    +(insiderCount>0?`<div class="hpinswarn">🚨 八百長ラベル ${insiderCount}件（下記の過去成績に表示）</div>`:'')
+    +svgWeightTrend(races)
+    +svgTimeTrend(races)
+    +`<div class="tksect">${hpMode==="season"?"今年度成績":"通算成績（"+races.length+"走）"}</div>`
     +`<div class="dttblwrap"><table class="dttbl"><thead><tr><th class="l"></th><th>1着</th><th>2着</th>`
     +`<th>3着</th><th>4着以下</th><th>計</th><th>勝率</th><th>連対率</th><th>複勝率</th></tr></thead>`
-    +`<tbody>${hpYearRows(h.stats)}</tbody></table></div>`
-    +hpMoistureHtml(h.races)
-    +hpSeasonHtml(h.races)
-    +hpJockeyHtml(h.races)
+    +`<tbody>${statsHtml}</tbody></table></div>`
+    +hpMoistureHtml(races)
+    +hpSeasonHtml(races)
+    +hpJockeyHtml(races)
     +hpPedigreeHtml(h.pedigree)
     +hpRatingsHtml(h.ratings, h.next_class, h.reconstructed_now, h.ratings_reconstructed)
-    +`<div class="tksect">過去成績</div>${cards}${more}`;
+    +`<div class="tksect">過去成績</div>${cards||'<div class="tknote">今年度はまだ出走がありません。</div>'}${more}`;
   document.getElementById("histBackBtn").onclick=()=>{
     if(histState.race!=null){ histState.horse=null; renderHistModal(); } else { closeHistModal(); }
   };
+  body.querySelectorAll(".hpmodebtn").forEach(b=>b.onclick=()=>{
+    hpMode=b.dataset.mode; hpShowAll=false; renderHorseProfile();
+  });
   const mb=document.getElementById("hpMoreBtn");
   if(mb) mb.onclick=()=>{ hpShowAll=!hpShowAll; renderHorseProfile(); };
   body.querySelectorAll(".tkchart-click").forEach(el=>el.onclick=()=>openChartZoom(el));
