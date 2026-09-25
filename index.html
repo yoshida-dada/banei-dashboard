@@ -34,6 +34,19 @@ body::before{content:"";position:fixed;top:0;left:0;right:0;height:env(safe-area
 .num{font-variant-numeric:tabular-nums;font-feature-settings:"tnum" 1}
 .wrap{max-width:560px;margin:0 auto;padding:0 12px calc(40px + env(safe-area-inset-bottom))}
 
+/* PC表示（2026-09-26、ユーザー要望でボタン切替式に追加）。デフォルトはスマホ幅のまま
+   （既存の560px列）で、data-layout="desktop" の時だけ横幅を広げ、レース予測タブの
+   出馬表/展開イメージ・馬場適性を2カラムに組み替える。@mediaではなくJSのボタントグルで
+   明示的に切り替える設計（localStorageに保存、初回のみ画面幅から自動判定）。 */
+:root[data-layout="desktop"] .wrap,
+:root[data-layout="desktop"] header,
+:root[data-layout="desktop"] .nav-in{max-width:1120px}
+.predgrid{display:block}
+:root[data-layout="desktop"] .predgrid{display:grid;grid-template-columns:minmax(0,1fr) 380px;gap:0 28px;align-items:start}
+:root[data-layout="desktop"] .predside{min-width:0}
+.layout-btn{margin-left:8px;background:var(--surface);border:1px solid var(--border);color:var(--ink);border-radius:9px;padding:5px 11px;font-size:.74rem;font-weight:700;font-family:inherit;cursor:pointer;white-space:nowrap}
+.layout-btn[aria-pressed="true"]{background:var(--edge);border-color:var(--edge);color:#fff}
+
 header{padding:calc(14px + env(safe-area-inset-top)) calc(14px + env(safe-area-inset-right)) 8px calc(14px + env(safe-area-inset-left));max-width:560px;margin:0 auto}
 .brand{display:flex;align-items:center;gap:9px;font-weight:800;font-size:1.12rem;letter-spacing:.01em}
 .brand .dot{width:11px;height:11px;border-radius:50%;background:var(--accent);flex:none;box-shadow:0 0 0 4px var(--accent-soft)}
@@ -594,7 +607,7 @@ table.ht .numcell{display:inline-flex;align-items:center;gap:4px}
 </style>
 
 <header>
-  <div class="brand"><span class="dot"></span>ばんえい予測レビュー<small id="gen"></small><button class="notify-btn" id="notifyBtn" type="button" title="発走10分前にスマホへ通知" aria-pressed="false">🔔 通知</button></div>
+  <div class="brand"><span class="dot"></span>ばんえい予測レビュー<small id="gen"></small><button class="notify-btn" id="notifyBtn" type="button" title="発走10分前にスマホへ通知" aria-pressed="false">🔔 通知</button><button class="layout-btn" id="layoutToggle" type="button" aria-pressed="false">🖥 PC表示</button></div>
   <div class="toptabs" id="toptabs">
     <button data-t="race" aria-pressed="true">レース予測</button>
     <button data-t="result" aria-pressed="false">レース結果</button>
@@ -628,34 +641,40 @@ table.ht .numcell{display:inline-flex;align-items:center;gap:4px}
 <div class="wrap" id="mainwrap">
   <div id="suspicionAlert"></div>
   <div id="meta"></div>
-  <div class="secthead">
-    <span class="sect">出走馬 予測</span>
-    <div class="vtoggle" id="stoggle">
-      <button data-s="rank" aria-pressed="true">予測順</button>
-      <button data-s="num" aria-pressed="false">馬番順</button>
+  <div class="predgrid">
+    <div class="predmain">
+      <div class="secthead">
+        <span class="sect">出走馬 予測</span>
+        <div class="vtoggle" id="stoggle">
+          <button data-s="rank" aria-pressed="true">予測順</button>
+          <button data-s="num" aria-pressed="false">馬番順</button>
+        </div>
+        <div class="vtoggle" id="vtoggle">
+          <button data-v="table" aria-pressed="true">表</button>
+          <button data-v="card" aria-pressed="false">カード</button>
+          <button data-v="bets" aria-pressed="false">買い目</button>
+        </div>
+        <button class="setbtn" id="colsToggle">⚙ 列</button>
+        <button class="setbtn" id="copyPredBtn" type="button" title="ディスコード等に貼れる形式でコピー">📋 コピー</button>
+      </div>
+      <div id="colsPanel" class="colspanel" style="display:none"></div>
+      <div id="horses"></div>
     </div>
-    <div class="vtoggle" id="vtoggle">
-      <button data-v="table" aria-pressed="true">表</button>
-      <button data-v="card" aria-pressed="false">カード</button>
-      <button data-v="bets" aria-pressed="false">買い目</button>
+    <div class="predside">
+      <div id="raceflowtime"></div>
+      <div class="secthead">
+        <span class="sect">馬場適性（このレースの出走馬）</span>
+        <div class="vtoggle" id="dimseg">
+          <button data-d="time" aria-pressed="true">決着タイム</button>
+          <button data-d="moist" aria-pressed="false">馬場水分</button>
+        </div>
+      </div>
+      <div class="apthint" id="heatlead"></div>
+      <div id="heatmap"></div>
+      <div class="apthint" id="slidlead" style="margin-top:20px"></div>
+      <div id="slider"></div>
     </div>
-    <button class="setbtn" id="colsToggle">⚙ 列</button>
-    <button class="setbtn" id="copyPredBtn" type="button" title="ディスコード等に貼れる形式でコピー">📋 コピー</button>
   </div>
-  <div id="colsPanel" class="colspanel" style="display:none"></div>
-  <div id="horses"></div>
-  <div id="raceflowtime"></div>
-  <div class="secthead">
-    <span class="sect">馬場適性（このレースの出走馬）</span>
-    <div class="vtoggle" id="dimseg">
-      <button data-d="time" aria-pressed="true">決着タイム</button>
-      <button data-d="moist" aria-pressed="false">馬場水分</button>
-    </div>
-  </div>
-  <div class="apthint" id="heatlead"></div>
-  <div id="heatmap"></div>
-  <div class="apthint" id="slidlead" style="margin-top:20px"></div>
-  <div id="slider"></div>
   <div class="foot" id="foot"></div>
 </div>
 
@@ -2828,6 +2847,30 @@ if ("serviceWorker" in navigator) {
     navigator.serviceWorker.register("./service-worker.js").catch(() => {});
   });
 }
+
+// --- PC表示切替（2026-09-26）: data-layout属性でCSS(.predgrid等)を切り替える。
+// 初回のみ画面幅から自動判定（900px以上ならdesktop）、以降はユーザーの明示的な選択を
+// localStorageに保存して次回以降も優先する（画面幅が変わっても勝手に戻らない）。
+(function(){
+  const btn = document.getElementById("layoutToggle");
+  if(!btn) return;
+  const LS_KEY = "banei_layout";
+  function apply(mode){
+    document.documentElement.dataset.layout = mode;
+    btn.setAttribute("aria-pressed", mode==="desktop" ? "true" : "false");
+    btn.textContent = mode==="desktop" ? "📱 スマホ表示" : "🖥 PC表示";
+  }
+  let saved = localStorage.getItem(LS_KEY);
+  if(saved !== "desktop" && saved !== "mobile"){
+    saved = matchMedia("(min-width:900px)").matches ? "desktop" : "mobile";
+  }
+  apply(saved);
+  btn.addEventListener("click", ()=>{
+    const next = document.documentElement.dataset.layout==="desktop" ? "mobile" : "desktop";
+    localStorage.setItem(LS_KEY, next);
+    apply(next);
+  });
+})();
 
 // --- 発走10分前のネイティブ通知（KEIRIN方式を踏襲: 権限リクエスト→当日の各レースを setTimeout でスケジュール→SWの showNotification で発火）---
 (function(){
