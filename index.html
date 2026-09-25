@@ -801,6 +801,10 @@ const medal = p => (p>=1 && p<=3)
 // タップで日付/ラベル種別/メモの詳細を表示（2026-08-13、h.insider_label_details）。
 const insiderFlagIcon = h => h.insider_flag
   ? `<span class="iflag" data-num="${h.num}" title="タップで八百長ラベル詳細を表示">🚨</span>` : '';
+// 乗り替わり警告（2026-09-26）。build_dashboard_data.pyがh.jockey_switchedとして事前計算
+// （前走の騎手と当日騎手を比較。前走情報が無い/不明な場合はfalse＝表示しない）。
+const jockeySwitchIcon = h => h.jockey_switched
+  ? `<span class="jsw" title="乗り替わり（前走から騎手が変わっています）">⚠️</span>` : '';
 // 入着すれば昇級する馬のウォッチ表示（P3-2拡張 Stage5、2026-08-24…2026-09-24）。
 // build_dashboard_data.pyがh.promo_watchとして事前計算（発走前から分かるレース固定属性のみ使用＝リーク無し）。
 const promoWatchLine = (h, cls) => h.promo_watch
@@ -1059,7 +1063,7 @@ const COLS = [
   {key:"name", label:"馬名・馬齢・厩舎・馬主", always:true, th:'<th class="l">馬名 / 馬齢・厩舎・馬主</th>',
    td:h=>`<td class="l"><div class="c2"><span class="tname clickable" data-num="${h.num}"><span class="tname-txt">${h.name||''}</span>${insiderFlagIcon(h)}</span><span class="tsub">${(h.sex||'')+(h.age!=null?h.age:'')}${h.trainer?'・'+cleanInst(h.trainer):''}</span>${h.owner&&h.owner!=='不明'?`<span class="tsub towner">${h.owner}</span>`:''}${promoWatchLine(h,"tsub")}</div></td>`},
   {key:"jockey", label:"騎手・成績", th:'<th class="l">騎手 / 成績</th>',
-   td:h=>`<td class="l"><div class="c2"><span class="tjk">${h.jockey||'—'}</span><span class="tsub num">${recFmt(h.jockey_record)}</span></div></td>`},
+   td:h=>`<td class="l"><div class="c2"><span class="tjk">${h.jockey||'—'}${jockeySwitchIcon(h)}</span><span class="tsub num">${recFmt(h.jockey_record)}</span></div></td>`},
   {key:"sled", label:"斤量", th:'<th>斤量</th>',
    td:h=>`<td class="num"><div class="c2 c2r"><span>${sledTop(h)}</span><span class="tsub num">${sledSub(h)}</span></div></td>`},
   {key:"abil", label:"能力/Elo", th:'<th>能力/Elo</th>',
@@ -1153,7 +1157,7 @@ function cardView(hs, maxW, hasResult){
       +`<span class="hsub">${(h.sex||'')+(h.age!=null?h.age:'')}${h.trainer?' ・ '+cleanInst(h.trainer):''}</span>`
       +(h.owner&&h.owner!=='不明'?`<span class="hsub howner">${h.owner}</span>`:'')
       +promoWatchLine(h,"hsub")
-      +`<span class="hjk">${h.jockey||'騎手不明'} <span class="jrec">${recFmt(h.jockey_record)}</span></span></span>`
+      +`<span class="hjk">${h.jockey||'騎手不明'}${jockeySwitchIcon(h)} <span class="jrec">${recFmt(h.jockey_record)}</span></span></span>`
       +`<span class="finish ${h.position!=null&&h.position<=3?'top':''}">${finish}</span></div>`
       +`<div class="mgrid">`
       +`<div class="m abil"><div class="t">能力指数</div><div class="v num">${h.ability!=null?h.ability.toFixed(1):'—'}</div><div class="msub num">Elo ${h.elo!=null?h.elo:'—'}</div></div>`
