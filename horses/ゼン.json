@@ -232,7 +232,10 @@
   "reconstructed": true,
   "reconstructed_races": 4
  },
- "next_class": null,
+ "next_class": {
+  "next_class": "open",
+  "need_k": -813
+ },
  "races": [
   {
    "date": "2026-08-29",

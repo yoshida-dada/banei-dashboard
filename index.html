@@ -1075,8 +1075,8 @@ const COLS = [
   {key:"odds", label:"オッズ・単勝EV", th:'<th>オッズ / EV</th>',
    td:h=>`<td class="num"><div class="c2 c2r"><span>${h.odds!=null?h.odds.toFixed(1):'—'}</span><span class="tsub num ${h.ev_buy?'roi':''}">${h.ev!=null?'×'+h.ev.toFixed(2):'—'}</span></div></td>`},
   {key:"pop", label:"人気", th:'<th>人気</th>', td:h=>`<td class="num">${h.popularity?h.popularity:'—'}</td>`},
-  {key:"prize", label:"本年賞金・クラス", th:'<th>本年賞金/級</th>',
-   td:h=>`<td class="num"><div class="c2 c2r"><span>${h.prize_year!=null?(h.prize_year/10).toFixed(0)+'万':'—'}</span><span class="tsub">${h.horse_class||'—'}</span></div></td>`},
+  {key:"prize", label:"番組賞金/本年賞金・クラス", th:'<th>番組/本年賞金・級</th>',
+   td:h=>`<td class="num"><div class="c2 c2r"><span>${h.prize_program!=null?h.prize_program.toLocaleString():'—'}${h.prize_year!=null?'/'+h.prize_year.toLocaleString():''}</span><span class="tsub">${h.horse_class||'—'}</span></div></td>`},
   {key:"fin", label:"着順・決着タイム", th:'<th>着 / 決着</th>',
    td:(h,hasResult)=>{ const top=h.position!=null&&h.position<=3; const fin=!hasResult?"—":(h.position!=null?`${h.position}着`:"除外"); const rt=hasResult&&h.result_time?h.result_time:"—"; return `<td class="fin ${top?'top':''}"><div class="c2 c2r"><span>${fin}</span><span class="tsub num">${rt}</span></div></td>`; }},
 ];
