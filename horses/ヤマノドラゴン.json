@@ -61,6 +61,14 @@
  "insider_label_count": 0,
  "ratings": [
   {
+   "date": "2026-09-25",
+   "class": "B3",
+   "program_prize_k": 4887,
+   "year_prize_k": 560,
+   "diff_k": 341,
+   "change": null
+  },
+  {
    "date": "2026-07-12",
    "class": "B3",
    "program_prize_k": 4546,
@@ -69,184 +77,12 @@
    "change": null
   }
  ],
- "ratings_reconstructed": [
-  {
-   "date": "2026-09-19",
-   "race_no": 9,
-   "position": 3,
-   "earned_yen": 71000,
-   "program_prize_k": 4887,
-   "year_prize_k": 560,
-   "class": "B3",
-   "next_class": "B2",
-   "next_class_need_k": 613,
-   "diff_k": 71,
-   "change": null
-  },
-  {
-   "date": "2026-08-30",
-   "race_no": 9,
-   "position": 4,
-   "earned_yen": 37000,
-   "program_prize_k": 4816,
-   "year_prize_k": 489,
-   "class": "B3",
-   "next_class": "B2",
-   "next_class_need_k": 684,
-   "diff_k": 37,
-   "change": null
-  },
-  {
-   "date": "2026-08-22",
-   "race_no": 12,
-   "position": 4,
-   "earned_yen": 37000,
-   "program_prize_k": 4779,
-   "year_prize_k": 452,
-   "class": "B3",
-   "next_class": "B2",
-   "next_class_need_k": 721,
-   "diff_k": 37,
-   "change": null
-  },
-  {
-   "date": "2026-08-09",
-   "race_no": 9,
-   "position": 3,
-   "earned_yen": 71000,
-   "program_prize_k": 4742,
-   "year_prize_k": 415,
-   "class": "B3",
-   "next_class": "B2",
-   "next_class_need_k": 758,
-   "diff_k": 71,
-   "change": null
-  },
-  {
-   "date": "2026-07-27",
-   "race_no": 10,
-   "position": 2,
-   "earned_yen": 125000,
-   "program_prize_k": 4671,
-   "year_prize_k": 344,
-   "class": "B3",
-   "next_class": "B2",
-   "next_class_need_k": 829,
-   "diff_k": 125,
-   "change": null
-  },
-  {
-   "date": "2026-07-11",
-   "race_no": 12,
-   "position": 7,
-   "earned_yen": 0,
-   "program_prize_k": 4546,
-   "year_prize_k": 219,
-   "class": "B3",
-   "next_class": "B2",
-   "next_class_need_k": 954,
-   "diff_k": 0,
-   "change": null
-  },
-  {
-   "date": "2026-06-27",
-   "race_no": 9,
-   "position": 2,
-   "earned_yen": 125000,
-   "program_prize_k": 4546,
-   "year_prize_k": 219,
-   "class": "B3",
-   "next_class": "B2",
-   "next_class_need_k": 954,
-   "diff_k": 125,
-   "change": null
-  },
-  {
-   "date": "2026-06-07",
-   "race_no": 9,
-   "position": 6,
-   "earned_yen": 0,
-   "program_prize_k": 4421,
-   "year_prize_k": 94,
-   "class": "B3",
-   "next_class": "B2",
-   "next_class_need_k": 1079,
-   "diff_k": 0,
-   "change": null
-  },
-  {
-   "date": "2026-05-23",
-   "race_no": 8,
-   "position": 4,
-   "earned_yen": 37000,
-   "program_prize_k": 4421,
-   "year_prize_k": 94,
-   "class": "B3",
-   "next_class": "B2",
-   "next_class_need_k": 1079,
-   "diff_k": 37,
-   "change": null
-  },
-  {
-   "date": "2026-05-10",
-   "race_no": 9,
-   "position": 5,
-   "earned_yen": 20000,
-   "program_prize_k": 4384,
-   "year_prize_k": 57,
-   "class": "B3",
-   "next_class": "B2",
-   "next_class_need_k": 1116,
-   "diff_k": 20,
-   "change": null
-  },
-  {
-   "date": "2026-05-02",
-   "race_no": 8,
-   "position": 9,
-   "earned_yen": 0,
-   "program_prize_k": 4364,
-   "year_prize_k": 37,
-   "class": "B3",
-   "next_class": "B2",
-   "next_class_need_k": 1136,
-   "diff_k": 0,
-   "change": null
-  },
-  {
-   "date": "2026-04-26",
-   "race_no": 8,
-   "position": 7,
-   "earned_yen": 0,
-   "program_prize_k": 4364,
-   "year_prize_k": 37,
-   "class": "B3",
-   "next_class": "B2",
-   "next_class_need_k": 1136,
-   "diff_k": 0,
-   "change": null
-  },
-  {
-   "date": "2026-04-21",
-   "race_no": 9,
-   "position": 4,
-   "earned_yen": 37000,
-   "program_prize_k": 4364,
-   "year_prize_k": 37,
-   "class": "B3",
-   "next_class": "B2",
-   "next_class_need_k": 1136,
-   "diff_k": null,
-   "change": null
-  }
- ],
+ "ratings_reconstructed": [],
  "reconstructed_now": {
-  "snapshot_date": "2026-07-12",
+  "snapshot_date": "2026-09-25",
   "class_code": "B3",
   "program_prize_k": 4887,
-  "year_prize_k": 560,
-  "reconstructed": true,
-  "reconstructed_races": 5
+  "year_prize_k": 560
  },
  "next_class": {
   "next_class": "B2",

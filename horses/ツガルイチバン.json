@@ -41,6 +41,14 @@
  "insider_label_count": 0,
  "ratings": [
   {
+   "date": "2026-09-25",
+   "class": "2sai",
+   "program_prize_k": 634,
+   "year_prize_k": 634,
+   "diff_k": 330,
+   "change": null
+  },
+  {
    "date": "2026-07-12",
    "class": "2sai",
    "program_prize_k": 304,
@@ -49,132 +57,12 @@
    "change": null
   }
  ],
- "ratings_reconstructed": [
-  {
-   "date": "2026-09-12",
-   "race_no": 6,
-   "position": 6,
-   "earned_yen": 0,
-   "program_prize_k": 634,
-   "year_prize_k": 634,
-   "class": "C2",
-   "next_class": "C1",
-   "next_class_need_k": 1566,
-   "diff_k": 0,
-   "change": null
-  },
-  {
-   "date": "2026-09-05",
-   "race_no": 4,
-   "position": 2,
-   "earned_yen": 144000,
-   "program_prize_k": 634,
-   "year_prize_k": 634,
-   "class": "C2",
-   "next_class": "C1",
-   "next_class_need_k": 1566,
-   "diff_k": 144,
-   "change": null
-  },
-  {
-   "date": "2026-08-15",
-   "race_no": 5,
-   "position": 4,
-   "earned_yen": 42000,
-   "program_prize_k": 490,
-   "year_prize_k": 490,
-   "class": "C2",
-   "next_class": "C1",
-   "next_class_need_k": 1710,
-   "diff_k": 42,
-   "change": null
-  },
-  {
-   "date": "2026-08-09",
-   "race_no": 4,
-   "position": 2,
-   "earned_yen": 144000,
-   "program_prize_k": 448,
-   "year_prize_k": 448,
-   "class": "C2",
-   "next_class": "C1",
-   "next_class_need_k": 1752,
-   "diff_k": 144,
-   "change": null
-  },
-  {
-   "date": "2026-07-26",
-   "race_no": 4,
-   "position": 7,
-   "earned_yen": 0,
-   "program_prize_k": 304,
-   "year_prize_k": 304,
-   "class": "C2",
-   "next_class": "C1",
-   "next_class_need_k": 1896,
-   "diff_k": 0,
-   "change": null
-  },
-  {
-   "date": "2026-06-20",
-   "race_no": 4,
-   "position": 4,
-   "earned_yen": 42000,
-   "program_prize_k": 304,
-   "year_prize_k": 304,
-   "class": "C2",
-   "next_class": "C1",
-   "next_class_need_k": 1896,
-   "diff_k": 42,
-   "change": null
-  },
-  {
-   "date": "2026-06-08",
-   "race_no": 5,
-   "position": 8,
-   "earned_yen": 0,
-   "program_prize_k": 262,
-   "year_prize_k": 262,
-   "class": "C2",
-   "next_class": "C1",
-   "next_class_need_k": 1938,
-   "diff_k": 0,
-   "change": null
-  },
-  {
-   "date": "2026-05-25",
-   "race_no": 6,
-   "position": 9,
-   "earned_yen": 0,
-   "program_prize_k": 262,
-   "year_prize_k": 262,
-   "class": "C2",
-   "next_class": "C1",
-   "next_class_need_k": 1938,
-   "diff_k": 0,
-   "change": null
-  },
-  {
-   "date": "2026-05-16",
-   "race_no": 2,
-   "position": 2,
-   "earned_yen": 262000,
-   "program_prize_k": 262,
-   "year_prize_k": 262,
-   "class": "C2",
-   "next_class": "C1",
-   "next_class_need_k": 1938,
-   "diff_k": null,
-   "change": null
-  }
- ],
+ "ratings_reconstructed": [],
  "reconstructed_now": {
-  "snapshot_date": "2026-07-12",
+  "snapshot_date": "2026-09-25",
   "class_code": "2sai",
   "program_prize_k": 634,
-  "year_prize_k": 634,
-  "reconstructed": true,
-  "reconstructed_races": 3
+  "year_prize_k": 634
  },
  "next_class": null,
  "races": [

@@ -61,6 +61,14 @@
  "insider_label_count": 0,
  "ratings": [
   {
+   "date": "2026-09-25",
+   "class": "C1",
+   "program_prize_k": 3367,
+   "year_prize_k": 657,
+   "diff_k": 351,
+   "change": null
+  },
+  {
    "date": "2026-07-12",
    "class": "C1",
    "program_prize_k": 3016,
@@ -69,184 +77,12 @@
    "change": null
   }
  ],
- "ratings_reconstructed": [
-  {
-   "date": "2026-09-20",
-   "race_no": 6,
-   "position": 2,
-   "earned_yen": 111000,
-   "program_prize_k": 3367,
-   "year_prize_k": 657,
-   "class": "C1",
-   "next_class": "B4",
-   "next_class_need_k": 33,
-   "diff_k": 111,
-   "change": null
-  },
-  {
-   "date": "2026-08-29",
-   "race_no": 7,
-   "position": 2,
-   "earned_yen": 111000,
-   "program_prize_k": 3256,
-   "year_prize_k": 546,
-   "class": "C1",
-   "next_class": "B4",
-   "next_class_need_k": 144,
-   "diff_k": 111,
-   "change": null
-  },
-  {
-   "date": "2026-08-22",
-   "race_no": 5,
-   "position": 3,
-   "earned_yen": 63000,
-   "program_prize_k": 3145,
-   "year_prize_k": 435,
-   "class": "C1",
-   "next_class": "B4",
-   "next_class_need_k": 255,
-   "diff_k": 63,
-   "change": null
-  },
-  {
-   "date": "2026-08-09",
-   "race_no": 5,
-   "position": 4,
-   "earned_yen": 33000,
-   "program_prize_k": 3082,
-   "year_prize_k": 372,
-   "class": "C1",
-   "next_class": "B4",
-   "next_class_need_k": 318,
-   "diff_k": 33,
-   "change": null
-  },
-  {
-   "date": "2026-07-25",
-   "race_no": 5,
-   "position": 4,
-   "earned_yen": 33000,
-   "program_prize_k": 3049,
-   "year_prize_k": 339,
-   "class": "C1",
-   "next_class": "B4",
-   "next_class_need_k": 351,
-   "diff_k": 33,
-   "change": null
-  },
-  {
-   "date": "2026-07-06",
-   "race_no": 7,
-   "position": 8,
-   "earned_yen": 0,
-   "program_prize_k": 3016,
-   "year_prize_k": 306,
-   "class": "C1",
-   "next_class": "B4",
-   "next_class_need_k": 384,
-   "diff_k": 0,
-   "change": null
-  },
-  {
-   "date": "2026-06-22",
-   "race_no": 7,
-   "position": 3,
-   "earned_yen": 63000,
-   "program_prize_k": 3016,
-   "year_prize_k": 306,
-   "class": "C1",
-   "next_class": "B4",
-   "next_class_need_k": 384,
-   "diff_k": 63,
-   "change": null
-  },
-  {
-   "date": "2026-06-13",
-   "race_no": 8,
-   "position": 3,
-   "earned_yen": 63000,
-   "program_prize_k": 2953,
-   "year_prize_k": 243,
-   "class": "C1",
-   "next_class": "B4",
-   "next_class_need_k": 447,
-   "diff_k": 63,
-   "change": null
-  },
-  {
-   "date": "2026-05-25",
-   "race_no": 7,
-   "position": 5,
-   "earned_yen": 18000,
-   "program_prize_k": 2890,
-   "year_prize_k": 180,
-   "class": "C1",
-   "next_class": "B4",
-   "next_class_need_k": 510,
-   "diff_k": 18,
-   "change": null
-  },
-  {
-   "date": "2026-05-18",
-   "race_no": 7,
-   "position": 7,
-   "earned_yen": 0,
-   "program_prize_k": 2872,
-   "year_prize_k": 162,
-   "class": "C1",
-   "next_class": "B4",
-   "next_class_need_k": 528,
-   "diff_k": 0,
-   "change": null
-  },
-  {
-   "date": "2026-05-10",
-   "race_no": 5,
-   "position": 4,
-   "earned_yen": 33000,
-   "program_prize_k": 2872,
-   "year_prize_k": 162,
-   "class": "C1",
-   "next_class": "B4",
-   "next_class_need_k": 528,
-   "diff_k": 33,
-   "change": null
-  },
-  {
-   "date": "2026-05-02",
-   "race_no": 5,
-   "position": 2,
-   "earned_yen": 111000,
-   "program_prize_k": 2839,
-   "year_prize_k": 129,
-   "class": "C1",
-   "next_class": "B4",
-   "next_class_need_k": 561,
-   "diff_k": 111,
-   "change": null
-  },
-  {
-   "date": "2026-04-18",
-   "race_no": 5,
-   "position": 5,
-   "earned_yen": 18000,
-   "program_prize_k": 2728,
-   "year_prize_k": 18,
-   "class": "C1",
-   "next_class": "B4",
-   "next_class_need_k": 672,
-   "diff_k": null,
-   "change": null
-  }
- ],
+ "ratings_reconstructed": [],
  "reconstructed_now": {
-  "snapshot_date": "2026-07-12",
+  "snapshot_date": "2026-09-25",
   "class_code": "C1",
   "program_prize_k": 3367,
-  "year_prize_k": 657,
-  "reconstructed": true,
-  "reconstructed_races": 5
+  "year_prize_k": 657
  },
  "next_class": {
   "next_class": "B4",

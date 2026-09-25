@@ -51,6 +51,14 @@
  "insider_label_count": 0,
  "ratings": [
   {
+   "date": "2026-09-25",
+   "class": "C2",
+   "program_prize_k": 1472,
+   "year_prize_k": 411,
+   "diff_k": 411,
+   "change": null
+  },
+  {
    "date": "2026-07-12",
    "class": "C2",
    "program_prize_k": 1061,
@@ -59,93 +67,12 @@
    "change": null
   }
  ],
- "ratings_reconstructed": [
-  {
-   "date": "2026-09-12",
-   "race_no": 1,
-   "position": 6,
-   "earned_yen": 0,
-   "program_prize_k": 1472,
-   "year_prize_k": 411,
-   "class": "C2",
-   "next_class": "C1",
-   "next_class_need_k": 728,
-   "diff_k": 0,
-   "change": null
-  },
-  {
-   "date": "2026-08-30",
-   "race_no": 1,
-   "position": 1,
-   "earned_yen": 300000,
-   "program_prize_k": 1472,
-   "year_prize_k": 411,
-   "class": "C2",
-   "next_class": "C1",
-   "next_class_need_k": 728,
-   "diff_k": 300,
-   "change": null
-  },
-  {
-   "date": "2026-08-24",
-   "race_no": 1,
-   "position": 6,
-   "earned_yen": 0,
-   "program_prize_k": 1172,
-   "year_prize_k": 111,
-   "class": "C2",
-   "next_class": "C1",
-   "next_class_need_k": 1028,
-   "diff_k": 0,
-   "change": null
-  },
-  {
-   "date": "2026-08-08",
-   "race_no": 1,
-   "position": 7,
-   "earned_yen": 0,
-   "program_prize_k": 1172,
-   "year_prize_k": 111,
-   "class": "C2",
-   "next_class": "C1",
-   "next_class_need_k": 1028,
-   "diff_k": 0,
-   "change": null
-  },
-  {
-   "date": "2026-07-27",
-   "race_no": 1,
-   "position": 2,
-   "earned_yen": 111000,
-   "program_prize_k": 1172,
-   "year_prize_k": 111,
-   "class": "C2",
-   "next_class": "C1",
-   "next_class_need_k": 1028,
-   "diff_k": 111,
-   "change": null
-  },
-  {
-   "date": "2026-05-31",
-   "race_no": 1,
-   "position": null,
-   "earned_yen": 0,
-   "program_prize_k": 1061,
-   "year_prize_k": 0,
-   "class": "C2",
-   "next_class": "C1",
-   "next_class_need_k": 1139,
-   "diff_k": null,
-   "change": null
-  }
- ],
+ "ratings_reconstructed": [],
  "reconstructed_now": {
-  "snapshot_date": "2026-07-12",
+  "snapshot_date": "2026-09-25",
   "class_code": "C2",
   "program_prize_k": 1472,
-  "year_prize_k": 411,
-  "reconstructed": true,
-  "reconstructed_races": 2
+  "year_prize_k": 411
  },
  "next_class": {
   "next_class": "C1",

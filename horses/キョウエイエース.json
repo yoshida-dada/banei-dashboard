@@ -61,6 +61,14 @@
  "insider_label_count": 0,
  "ratings": [
   {
+   "date": "2026-09-25",
+   "class": "open",
+   "program_prize_k": 19862,
+   "year_prize_k": 1027,
+   "diff_k": 77,
+   "change": null
+  },
+  {
    "date": "2026-07-12",
    "class": "open",
    "program_prize_k": 19785,
@@ -69,93 +77,12 @@
    "change": null
   }
  ],
- "ratings_reconstructed": [
-  {
-   "date": "2026-08-23",
-   "race_no": 11,
-   "position": 6,
-   "earned_yen": 0,
-   "program_prize_k": 19862,
-   "year_prize_k": 1027,
-   "class": "open",
-   "next_class": null,
-   "next_class_need_k": null,
-   "diff_k": 0,
-   "change": null
-  },
-  {
-   "date": "2026-08-08",
-   "race_no": 11,
-   "position": 9,
-   "earned_yen": 0,
-   "program_prize_k": 19862,
-   "year_prize_k": 1027,
-   "class": "open",
-   "next_class": null,
-   "next_class_need_k": null,
-   "diff_k": 0,
-   "change": null
-  },
-  {
-   "date": "2026-07-25",
-   "race_no": 11,
-   "position": 5,
-   "earned_yen": 77000,
-   "program_prize_k": 19862,
-   "year_prize_k": 1027,
-   "class": "open",
-   "next_class": null,
-   "next_class_need_k": null,
-   "diff_k": 77,
-   "change": null
-  },
-  {
-   "date": "2026-06-28",
-   "race_no": 11,
-   "position": 2,
-   "earned_yen": 950000,
-   "program_prize_k": 19785,
-   "year_prize_k": 950,
-   "class": "open",
-   "next_class": null,
-   "next_class_need_k": null,
-   "diff_k": 950,
-   "change": null
-  },
-  {
-   "date": "2026-04-27",
-   "race_no": 11,
-   "position": 8,
-   "earned_yen": 0,
-   "program_prize_k": 18835,
-   "year_prize_k": 0,
-   "class": "open",
-   "next_class": null,
-   "next_class_need_k": null,
-   "diff_k": 0,
-   "change": null
-  },
-  {
-   "date": "2026-04-17",
-   "race_no": 11,
-   "position": 8,
-   "earned_yen": 0,
-   "program_prize_k": 18835,
-   "year_prize_k": 0,
-   "class": "open",
-   "next_class": null,
-   "next_class_need_k": null,
-   "diff_k": null,
-   "change": null
-  }
- ],
+ "ratings_reconstructed": [],
  "reconstructed_now": {
-  "snapshot_date": "2026-07-12",
+  "snapshot_date": "2026-09-25",
   "class_code": "open",
   "program_prize_k": 19862,
-  "year_prize_k": 1027,
-  "reconstructed": true,
-  "reconstructed_races": 1
+  "year_prize_k": 1027
  },
  "next_class": null,
  "races": [

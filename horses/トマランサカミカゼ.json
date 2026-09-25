@@ -71,6 +71,14 @@
  "insider_label_count": 0,
  "ratings": [
   {
+   "date": "2026-09-25",
+   "class": "B3",
+   "program_prize_k": 4571,
+   "year_prize_k": 494,
+   "diff_k": 179,
+   "change": null
+  },
+  {
    "date": "2026-07-12",
    "class": "B3",
    "program_prize_k": 4392,
@@ -79,184 +87,12 @@
    "change": null
   }
  ],
- "ratings_reconstructed": [
-  {
-   "date": "2026-09-21",
-   "race_no": 10,
-   "position": 3,
-   "earned_yen": 71000,
-   "program_prize_k": 4571,
-   "year_prize_k": 494,
-   "class": "B3",
-   "next_class": "B2",
-   "next_class_need_k": 929,
-   "diff_k": 71,
-   "change": null
-  },
-  {
-   "date": "2026-08-30",
-   "race_no": 9,
-   "position": 3,
-   "earned_yen": 71000,
-   "program_prize_k": 4500,
-   "year_prize_k": 423,
-   "class": "B3",
-   "next_class": "B2",
-   "next_class_need_k": 1000,
-   "diff_k": 71,
-   "change": null
-  },
-  {
-   "date": "2026-08-24",
-   "race_no": 10,
-   "position": 4,
-   "earned_yen": 37000,
-   "program_prize_k": 4429,
-   "year_prize_k": 352,
-   "class": "B3",
-   "next_class": "B2",
-   "next_class_need_k": 1071,
-   "diff_k": 37,
-   "change": null
-  },
-  {
-   "date": "2026-08-09",
-   "race_no": 9,
-   "position": 7,
-   "earned_yen": 0,
-   "program_prize_k": 4392,
-   "year_prize_k": 315,
-   "class": "B3",
-   "next_class": "B2",
-   "next_class_need_k": 1108,
-   "diff_k": 0,
-   "change": null
-  },
-  {
-   "date": "2026-07-25",
-   "race_no": 9,
-   "position": 7,
-   "earned_yen": 0,
-   "program_prize_k": 4392,
-   "year_prize_k": 315,
-   "class": "B3",
-   "next_class": "B2",
-   "next_class_need_k": 1108,
-   "diff_k": 0,
-   "change": null
-  },
-  {
-   "date": "2026-07-04",
-   "race_no": 9,
-   "position": 7,
-   "earned_yen": 0,
-   "program_prize_k": 4392,
-   "year_prize_k": 315,
-   "class": "B3",
-   "next_class": "B2",
-   "next_class_need_k": 1108,
-   "diff_k": 0,
-   "change": null
-  },
-  {
-   "date": "2026-06-21",
-   "race_no": 10,
-   "position": 8,
-   "earned_yen": 0,
-   "program_prize_k": 4392,
-   "year_prize_k": 315,
-   "class": "B3",
-   "next_class": "B2",
-   "next_class_need_k": 1108,
-   "diff_k": 0,
-   "change": null
-  },
-  {
-   "date": "2026-06-07",
-   "race_no": 8,
-   "position": 2,
-   "earned_yen": 122000,
-   "program_prize_k": 4392,
-   "year_prize_k": 315,
-   "class": "B3",
-   "next_class": "B2",
-   "next_class_need_k": 1108,
-   "diff_k": 122,
-   "change": "up"
-  },
-  {
-   "date": "2026-05-24",
-   "race_no": 7,
-   "position": 3,
-   "earned_yen": 69000,
-   "program_prize_k": 4270,
-   "year_prize_k": 193,
-   "class": "B4",
-   "next_class": "B3",
-   "next_class_need_k": 30,
-   "diff_k": 69,
-   "change": null
-  },
-  {
-   "date": "2026-05-09",
-   "race_no": 6,
-   "position": 4,
-   "earned_yen": 36000,
-   "program_prize_k": 4201,
-   "year_prize_k": 124,
-   "class": "B4",
-   "next_class": "B3",
-   "next_class_need_k": 99,
-   "diff_k": 36,
-   "change": null
-  },
-  {
-   "date": "2026-05-04",
-   "race_no": 8,
-   "position": 6,
-   "earned_yen": 0,
-   "program_prize_k": 4165,
-   "year_prize_k": 88,
-   "class": "B4",
-   "next_class": "B3",
-   "next_class_need_k": 135,
-   "diff_k": 0,
-   "change": null
-  },
-  {
-   "date": "2026-04-27",
-   "race_no": 6,
-   "position": 5,
-   "earned_yen": 19000,
-   "program_prize_k": 4165,
-   "year_prize_k": 88,
-   "class": "B4",
-   "next_class": "B3",
-   "next_class_need_k": 135,
-   "diff_k": 19,
-   "change": null
-  },
-  {
-   "date": "2026-04-17",
-   "race_no": 7,
-   "position": 3,
-   "earned_yen": 69000,
-   "program_prize_k": 4146,
-   "year_prize_k": 69,
-   "class": "B4",
-   "next_class": "B3",
-   "next_class_need_k": 154,
-   "diff_k": null,
-   "change": null
-  }
- ],
+ "ratings_reconstructed": [],
  "reconstructed_now": {
-  "snapshot_date": "2026-07-12",
+  "snapshot_date": "2026-09-25",
   "class_code": "B3",
   "program_prize_k": 4571,
-  "year_prize_k": 494,
-  "reconstructed": true,
-  "reconstructed_races": 3
+  "year_prize_k": 494
  },
  "next_class": {
   "next_class": "B2",
