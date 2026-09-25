@@ -1215,7 +1215,7 @@ function renderRaceFlowTime(r){
   const withFh=all.filter(h=>h.fh_avg!=null);
   if(all.length<3 || withFh.length<2){ host.innerHTML=""; return; }
   const rows=[...all].sort((a,b)=>a.num-b.num);
-  const n=rows.length, W=340, rowH=26, padT=20, padB=20, padL=76, padR=64;
+  const n=rows.length, W=340, rowH=32, padT=20, padB=20, padL=76, padR=64;
   const H=padT+padB+rowH*(n-1);
   const laneY=i=>padT+i*rowH;
   const plotW=W-padL-padR;
@@ -1230,6 +1230,13 @@ function renderRaceFlowTime(r){
   domMin-=dpad; domMax+=dpad;
   const mid=(domMin+domMax)/2;
   const xFor=t=>padL+((t-domMin)/(domMax-domMin))*plotW;
+  const pxPerSec=plotW/(domMax-domMin);
+
+  // 上がり(終い)による詰め/後退の目安（2026-09-26、ユーザー要望）: 第2障害時点の前半タイム差が
+  // 終いでどれくらい詰まる/開くかを示すため、出走馬の上がりタイム平均を基準に、各馬の上がりが
+  // それより速い/遅い分だけ前半タイムの位置から左右にずらした矢印を重ねる。
+  const agariVals = rows.filter(h=>h.agari_avg!=null).map(h=>h.agari_avg);
+  const fieldAgari = agariVals.length ? agariVals.reduce((a,b)=>a+b,0)/agariVals.length : null;
 
   const gridTop=laneY(0)-14, gridBot=laneY(n-1)+10;
   const grid=[0,0.5,1].map(v=>{
@@ -1246,12 +1253,34 @@ function renderRaceFlowTime(r){
       +`<text x="${cx}" y="${(cy+2.8).toFixed(1)}" font-size="8" text-anchor="middle" font-weight="800" fill="${c[1]}">${h.num}</text>`;
   };
   const nameLabel=(h,cy)=>
-    `<text x="${padL-10}" y="${(cy+2.8).toFixed(1)}" font-size="7.5" text-anchor="end" fill="var(--ink)">${shortName(h.name)}</text>`;
+    `<text x="${padL-10}" y="${(cy-1.5).toFixed(1)}" font-size="7.5" text-anchor="end" fill="var(--ink)">${shortName(h.name)}</text>`;
   const numLabel=(h,cy)=>{
     if(h.fh_avg==null) return "";
     const mm = (h.fh_min!=null && h.fh_max!=null) ? `(${h.fh_min.toFixed(0)}–${h.fh_max.toFixed(0)})` : "";
-    return `<text x="${W-padR+8}" y="${(cy+2.8).toFixed(1)}" font-size="7" text-anchor="start" fill="var(--muted)">`
+    let line1 = `<text x="${W-padR+8}" y="${(cy-1.5).toFixed(1)}" font-size="7" text-anchor="start" fill="var(--muted)">`
       +`<tspan font-weight="700" fill="var(--ink)">${h.fh_avg.toFixed(1)}s</tspan> ${mm}</text>`;
+    let line2 = "";
+    if(h.agari_avg!=null && fieldAgari!=null){
+      const diff = fieldAgari - h.agari_avg; // +=平均より上りが速い(詰める)
+      const col = diff>=0 ? "var(--good)" : "var(--accent)";
+      const glyph = diff>=0 ? "▲詰め" : "▼後退";
+      line2 = `<text x="${W-padR+8}" y="${(cy+9).toFixed(1)}" font-size="6.5" text-anchor="start" fill="${col}">`
+        +`上り${h.agari_avg.toFixed(1)}s ${glyph}${Math.abs(diff).toFixed(1)}s</text>`;
+    }
+    return line1 + line2;
+  };
+  // 上がりタイムによる詰め/後退の矢印: 前半タイムの位置(丸)から、平均上がりタイムとの差の分だけ
+  // 左(詰める＝終いが平均より速い)/右(後退＝終いが平均より遅い)にずらした矢印を重ねて示す。
+  const agariArrow=(h,cx,cy)=>{
+    if(h.agari_avg==null || fieldAgari==null) return "";
+    const diff = fieldAgari - h.agari_avg;
+    let dx = -diff*pxPerSec;
+    if(Math.abs(dx) < 3) return "";
+    dx = Math.sign(dx) * Math.min(Math.abs(dx), 30);
+    const col = dx<0 ? "var(--good)" : "var(--accent)";
+    const x0 = cx + Math.sign(dx)*10, x1 = x0+dx, tip = Math.sign(dx);
+    return `<line x1="${x0.toFixed(1)}" y1="${cy}" x2="${x1.toFixed(1)}" y2="${cy}" stroke="${col}" stroke-width="2" opacity="0.8" stroke-linecap="round"/>`
+      +`<path d="M ${x1.toFixed(1)},${cy} l ${(-tip*5).toFixed(1)},-3.2 l 0,6.4 z" fill="${col}" opacity="0.9"/>`;
   };
   const rowSvg = h=>{
     const cy=laneY(rows.indexOf(h));
@@ -1266,20 +1295,21 @@ function renderRaceFlowTime(r){
         +`<line x1="${xFor(h.fh_min).toFixed(1)}" y1="${cy-5.5}" x2="${xFor(h.fh_min).toFixed(1)}" y2="${cy+5.5}" stroke="var(--ink)" stroke-width="1.6" opacity="0.5"/>`
         +`<line x1="${xFor(h.fh_max).toFixed(1)}" y1="${cy-5.5}" x2="${xFor(h.fh_max).toFixed(1)}" y2="${cy+5.5}" stroke="var(--ink)" stroke-width="1.6" opacity="0.5"/>`
       : "";
-    return nameLabel(h,cy) + whisker + dot(h,xFor(h.fh_avg),cy) + numLabel(h,cy);
+    return nameLabel(h,cy) + whisker + dot(h,xFor(h.fh_avg),cy) + agariArrow(h,xFor(h.fh_avg),cy) + numLabel(h,cy);
   };
   const body = rows.map(rowSvg).join("");
-  const heads=`<text x="${padL}" y="12" font-size="8.5" text-anchor="start" fill="var(--muted)">◀ 前半タイム</text>`;
+  const heads=`<text x="${padL}" y="12" font-size="8.5" text-anchor="start" fill="var(--muted)">◀ 第2障害降下時点</text>`;
   const ticks=`<text x="${xFor(domMin).toFixed(1)}" y="${gridBot+14}" font-size="7" text-anchor="start" fill="var(--muted)">${domMin.toFixed(1)}s</text>`
     +`<text x="${xFor(domMax).toFixed(1)}" y="${gridBot+14}" font-size="7" text-anchor="end" fill="var(--muted)">${domMax.toFixed(1)}s</text>`;
 
   host.innerHTML=
-    `<div class="secthead"><span class="sect">展開イメージ（前半タイムの傾向）</span></div>`
+    `<div class="secthead"><span class="sect">展開イメージ(第2障害降下時点のタイム傾向)</span></div>`
     +`<svg class="tksvg" viewBox="0 0 ${W} ${H+14}">${heads}<g transform="translate(0,4)">${zebra}${grid}${body}${ticks}</g></svg>`
     +`<div class="tknote">ばんえいはセパレートコース（平地の脚質分類・位置取りとは無関係）。`
-    +`縦＝馬番順、横＝直近5走の前半タイム(総合−上り、第1・第2障害を含む)の平均/最速/最遅。`
-    +`生タイムは馬場水分・ソリ重量の影響を受けるため他馬との絶対比較には注意`
-    +`（同条件で走ったとは限らない）。左ほど速い(前半タイムが短い)。</div>`;
+    +`縦＝馬番順、横＝直近5走の前半タイム(総合−上り、第1・第2障害を含む＝第2障害降下時点まで)の`
+    +`平均/最速/最遅。生タイムは馬場水分・ソリ重量の影響を受けるため他馬との絶対比較には注意`
+    +`（同条件で走ったとは限らない）。左ほど速い。緑の矢印＝上がりが出走馬平均より速く終いで`
+    +`差を詰める傾向、赤の矢印＝平均より遅く差が開く傾向（矢印の長さ＝詰め/後退の目安秒数）。</div>`;
 }
 function renderAptitude(r){
   document.querySelectorAll("#dimseg button").forEach(b=>b.setAttribute("aria-pressed",b.dataset.d===dim));
