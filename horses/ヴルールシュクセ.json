@@ -57,12 +57,106 @@
    "change": null
   }
  ],
- "ratings_reconstructed": [],
+ "ratings_reconstructed": [
+  {
+   "date": "2026-09-21",
+   "race_no": 3,
+   "position": 7,
+   "earned_yen": 0,
+   "program_prize_k": 200,
+   "year_prize_k": 200,
+   "class": "C2",
+   "next_class": "C1",
+   "next_class_need_k": 2000,
+   "diff_k": 0,
+   "change": null
+  },
+  {
+   "date": "2026-08-29",
+   "race_no": 3,
+   "position": 6,
+   "earned_yen": 0,
+   "program_prize_k": 200,
+   "year_prize_k": 200,
+   "class": "C2",
+   "next_class": "C1",
+   "next_class_need_k": 2000,
+   "diff_k": 0,
+   "change": null
+  },
+  {
+   "date": "2026-08-23",
+   "race_no": 3,
+   "position": 7,
+   "earned_yen": 0,
+   "program_prize_k": 200,
+   "year_prize_k": 200,
+   "class": "C2",
+   "next_class": "C1",
+   "next_class_need_k": 2000,
+   "diff_k": 0,
+   "change": null
+  },
+  {
+   "date": "2026-08-01",
+   "race_no": 4,
+   "position": 10,
+   "earned_yen": 0,
+   "program_prize_k": 200,
+   "year_prize_k": 200,
+   "class": "C2",
+   "next_class": "C1",
+   "next_class_need_k": 2000,
+   "diff_k": 0,
+   "change": null
+  },
+  {
+   "date": "2026-07-27",
+   "race_no": 5,
+   "position": 2,
+   "earned_yen": 122000,
+   "program_prize_k": 200,
+   "year_prize_k": 200,
+   "class": "C2",
+   "next_class": "C1",
+   "next_class_need_k": 2000,
+   "diff_k": 122,
+   "change": null
+  },
+  {
+   "date": "2026-07-13",
+   "race_no": 5,
+   "position": null,
+   "earned_yen": 0,
+   "program_prize_k": 78,
+   "year_prize_k": 78,
+   "class": "C2",
+   "next_class": "C1",
+   "next_class_need_k": 2122,
+   "diff_k": 0,
+   "change": null
+  },
+  {
+   "date": "2026-06-29",
+   "race_no": 3,
+   "position": 4,
+   "earned_yen": 78000,
+   "program_prize_k": 78,
+   "year_prize_k": 78,
+   "class": "C2",
+   "next_class": "C1",
+   "next_class_need_k": 2122,
+   "diff_k": null,
+   "change": null
+  }
+ ],
  "reconstructed_now": {
   "snapshot_date": "2026-09-25",
   "class_code": "2sai",
   "program_prize_k": 200,
-  "year_prize_k": 200
+  "year_prize_k": 200,
+  "reconstructed": true,
+  "reconstructed_races": 0
  },
  "next_class": null,
  "races": [

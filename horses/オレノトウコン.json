@@ -87,12 +87,28 @@
    "change": null
   }
  ],
- "ratings_reconstructed": [],
+ "ratings_reconstructed": [
+  {
+   "date": "2026-09-21",
+   "race_no": 9,
+   "position": 5,
+   "earned_yen": 20000,
+   "program_prize_k": 4387,
+   "year_prize_k": 20,
+   "class": "B3",
+   "next_class": "B2",
+   "next_class_need_k": 1113,
+   "diff_k": null,
+   "change": null
+  }
+ ],
  "reconstructed_now": {
   "snapshot_date": "2026-09-25",
   "class_code": "B3",
   "program_prize_k": 4387,
-  "year_prize_k": 20
+  "year_prize_k": 20,
+  "reconstructed": true,
+  "reconstructed_races": 0
  },
  "next_class": {
   "next_class": "B2",

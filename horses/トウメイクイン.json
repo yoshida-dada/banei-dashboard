@@ -57,12 +57,119 @@
    "change": null
   }
  ],
- "ratings_reconstructed": [],
+ "ratings_reconstructed": [
+  {
+   "date": "2026-09-12",
+   "race_no": 6,
+   "position": 3,
+   "earned_yen": 81000,
+   "program_prize_k": 717,
+   "year_prize_k": 717,
+   "class": "C2",
+   "next_class": "C1",
+   "next_class_need_k": 1483,
+   "diff_k": 81,
+   "change": null
+  },
+  {
+   "date": "2026-08-30",
+   "race_no": 4,
+   "position": 5,
+   "earned_yen": 23000,
+   "program_prize_k": 636,
+   "year_prize_k": 636,
+   "class": "C2",
+   "next_class": "C1",
+   "next_class_need_k": 1564,
+   "diff_k": 23,
+   "change": null
+  },
+  {
+   "date": "2026-08-23",
+   "race_no": 4,
+   "position": 2,
+   "earned_yen": 144000,
+   "program_prize_k": 613,
+   "year_prize_k": 613,
+   "class": "C2",
+   "next_class": "C1",
+   "next_class_need_k": 1587,
+   "diff_k": 144,
+   "change": null
+  },
+  {
+   "date": "2026-08-08",
+   "race_no": 4,
+   "position": 4,
+   "earned_yen": 42000,
+   "program_prize_k": 469,
+   "year_prize_k": 469,
+   "class": "C2",
+   "next_class": "C1",
+   "next_class_need_k": 1731,
+   "diff_k": 42,
+   "change": null
+  },
+  {
+   "date": "2026-07-20",
+   "race_no": 4,
+   "position": 6,
+   "earned_yen": 0,
+   "program_prize_k": 427,
+   "year_prize_k": 427,
+   "class": "C2",
+   "next_class": "C1",
+   "next_class_need_k": 1773,
+   "diff_k": 0,
+   "change": null
+  },
+  {
+   "date": "2026-07-13",
+   "race_no": 5,
+   "position": 1,
+   "earned_yen": 330000,
+   "program_prize_k": 427,
+   "year_prize_k": 427,
+   "class": "C2",
+   "next_class": "C1",
+   "next_class_need_k": 1773,
+   "diff_k": 330,
+   "change": null
+  },
+  {
+   "date": "2026-06-22",
+   "race_no": 4,
+   "position": 5,
+   "earned_yen": 19000,
+   "program_prize_k": 97,
+   "year_prize_k": 97,
+   "class": "C2",
+   "next_class": "C1",
+   "next_class_need_k": 2103,
+   "diff_k": 19,
+   "change": null
+  },
+  {
+   "date": "2026-06-15",
+   "race_no": 2,
+   "position": 4,
+   "earned_yen": 78000,
+   "program_prize_k": 78,
+   "year_prize_k": 78,
+   "class": "C2",
+   "next_class": "C1",
+   "next_class_need_k": 2122,
+   "diff_k": null,
+   "change": null
+  }
+ ],
  "reconstructed_now": {
   "snapshot_date": "2026-09-25",
   "class_code": "2sai",
   "program_prize_k": 717,
-  "year_prize_k": 717
+  "year_prize_k": 717,
+  "reconstructed": true,
+  "reconstructed_races": 0
  },
  "next_class": null,
  "races": [
