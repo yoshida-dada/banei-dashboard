@@ -644,10 +644,7 @@ table.ht .numcell{display:inline-flex;align-items:center;gap:4px}
   </div>
   <div id="colsPanel" class="colspanel" style="display:none"></div>
   <div id="horses"></div>
-  <div class="secthead"><span class="sect">展開イメージ（第2障害通過順の傾向）</span></div>
-  <div id="raceflow"></div>
   <div id="raceflowtime"></div>
-  <div id="raceflowresid"></div>
   <div class="secthead">
     <span class="sect">馬場適性（このレースの出走馬）</span>
     <div class="vtoggle" id="dimseg">
@@ -919,9 +916,7 @@ function render(){
   else { host.innerHTML = betsView(r); wireBetSettings(r); }
 
   if(view!=="bets") stopLive();
-  renderRaceFlow(r);
   renderRaceFlowTime(r);
-  renderRaceFlowResid(r);
   renderAptitude(r);
   if(window.__curTop==="analysis") renderAnalysis();
 }
@@ -1206,78 +1201,14 @@ function bandStats(past,cfg,b){
   const n=rs.length, p3=rs.filter(x=>x.p<=3).length;
   return {n, rate: n? p3/n : null};
 }
-// 展開イメージ（第2障害通過順の傾向、2026-09-25 → 1軸の箱ひげ表示に変更 2026-09-26）。
+// 展開イメージ（第2障害通過順ベース→生タイムベースに変更、2026-09-26）。
 // ばんえいはセパレートコース（平地の脚質4分類・コーナーでの位置取りは存在しない）なので、
-// これは「駆け引き」ではなく馬個体のそり・障害適性の癖を示す。スタート/ゴールの3点を線で
-// つなぐ構成はレース展開があるように誤解させるため撤去し、縦＝馬番順（固定）・横＝直近5走の
-// 第2障害通過順（相対位置0=先頭〜1=最後尾、build_dashboard_data.py側でas_of計算済み=
-// リーク無し）の1軸プロットにする。単一の平均点だけだと実際より精度が高く見えるため、
-// 直近5走の最速〜最遅（pos2_min〜pos2_max）を箱ひげ(横帯)として示し、平均位置に馬番を置く。
-// 通過順（相対位置）は元々同一レース内で0-1正規化された値なので、生タイムと違い水分・重量の
-// 影響を受けず馬同士の横位置をそのまま比較してよい。
-function renderRaceFlow(r){
-  const host=document.getElementById("raceflow"); if(!host) return;
-  const all=r.horses||[];
-  const withObs=all.filter(h=>h.pos2_rel!=null);
-  if(all.length<3 || withObs.length<2){
-    host.innerHTML='<div class="apthint">直近走の第2障害通過順データが少なく、このレースでは表示できません。</div>';
-    return;
-  }
-  const rows=[...all].sort((a,b)=>a.num-b.num);
-  const n=rows.length, W=340, rowH=26, padT=20, padB=8, padL=76, padR=10;
-  const H=padT+padB+rowH*(n-1);
-  const laneY=i=>padT+i*rowH;
-  const plotW=W-padL-padR;
-  const xFor=v=>padL+v*plotW;
-  const shortName=nm=>{ nm=nm||""; return nm.length>6 ? nm.slice(0,6)+"…" : nm; };
-
-  // 背景: 縦グリッド(0/0.25/0.5/0.75/1)と行の縞模様。横に長いプロットで目を迷わせないための
-  // 補助線で、色は馬の識別色(ゲート色)と衝突しないよう常にink/edgeトークンを使う
-  // （白・黄色などの淡いゲート色をライン色に使うとクリーム背景に埋もれて見えなくなる問題への対処）。
-  const gridTop=laneY(0)-14, gridBot=laneY(n-1)+10;
-  const grid=[0,0.25,0.5,0.75,1].map(v=>
-    `<line x1="${xFor(v).toFixed(1)}" y1="${gridTop}" x2="${xFor(v).toFixed(1)}" y2="${gridBot}" stroke="var(--edge)" stroke-width="1" opacity="${v===0.5?0.7:0.4}"/>`
-  ).join("");
-  const zebra=rows.map((h,i)=> i%2===0
-    ? `<rect x="0" y="${laneY(i)-rowH/2}" width="${W}" height="${rowH}" fill="var(--edge)" opacity="0.28"/>`
-    : "").join("");
-
-  const dot=(h,cx,cy)=>{
-    const c=CAP[h.gate]||['#888','#fff'];
-    return `<circle cx="${cx}" cy="${cy}" r="8" fill="${c[0]}" stroke="var(--surface)" stroke-width="1.5"/>`
-      +`<text x="${cx}" y="${(cy+2.8).toFixed(1)}" font-size="8" text-anchor="middle" font-weight="800" fill="${c[1]}">${h.num}</text>`;
-  };
-  const nameLabel = (h,cy)=>
-    `<text x="${padL-10}" y="${(cy+2.8).toFixed(1)}" font-size="7.5" text-anchor="end" fill="var(--ink)">${shortName(h.name)}</text>`;
-  const rowSvg = h=>{
-    const cy=laneY(rows.indexOf(h));
-    if(h.pos2_rel==null){
-      return nameLabel(h,cy)
-        +`<circle cx="${xFor(0.5)}" cy="${cy}" r="8" fill="none" stroke="var(--muted)" stroke-width="1.3" stroke-dasharray="2 2"/>`
-        +`<text x="${xFor(0.5)}" y="${(cy+2.8).toFixed(1)}" font-size="8" text-anchor="middle" fill="var(--muted)">${h.num}</text>`;
-    }
-    const hasSpread = h.pos2_min!=null && h.pos2_max!=null && h.pos2_max>h.pos2_min;
-    const whisker = hasSpread
-      ? `<line x1="${xFor(h.pos2_min).toFixed(1)}" y1="${cy}" x2="${xFor(h.pos2_max).toFixed(1)}" y2="${cy}" stroke="var(--ink)" stroke-width="2.5" opacity="0.3"/>`
-        +`<line x1="${xFor(h.pos2_min).toFixed(1)}" y1="${cy-5.5}" x2="${xFor(h.pos2_min).toFixed(1)}" y2="${cy+5.5}" stroke="var(--ink)" stroke-width="1.6" opacity="0.5"/>`
-        +`<line x1="${xFor(h.pos2_max).toFixed(1)}" y1="${cy-5.5}" x2="${xFor(h.pos2_max).toFixed(1)}" y2="${cy+5.5}" stroke="var(--ink)" stroke-width="1.6" opacity="0.5"/>`
-      : "";
-    return nameLabel(h,cy) + whisker + dot(h,xFor(h.pos2_rel),cy);
-  };
-  const body = rows.map(rowSvg).join("");
-  const heads=`<text x="${padL}" y="12" font-size="8.5" text-anchor="start" fill="var(--muted)">◀ 第2障害</text>`;
-
-  host.innerHTML=
-    `<svg class="tksvg" viewBox="0 0 ${W} ${H+14}">${heads}<g transform="translate(0,4)">${zebra}${grid}${body}</g></svg>`
-    +`<div class="tknote">ばんえいはセパレートコース（平地の脚質分類・位置取りとは無関係）。`
-    +`縦＝馬番順、横＝直近5走の第2障害通過順（左ほど先頭・右ほど最後尾）。`
-    +`帯＝直近5走の最速〜最遅の振れ幅、丸＝その平均位置。`
-    +`点線の丸＝直近データが無い馬（中央に仮置き）。</div>`;
-}
-// 上の通過順ベースとの比較用（2026-09-26、ユーザー要望）。直近5走の前半タイム(=総合-上り、
-// 第1・第2障害を含む)の生秒数で同じ形式の箱ひげを描く。生タイムは馬場水分・ソリ重量で
-// 変動するため他馬との絶対比較の厳密な指標ではない点をnoteで明記した上で、あくまで
-// 「通過順ベースだとこう見えるが、生タイムだとこう見える」を見比べるための併記。
+// これは「駆け引き」ではなく馬個体のそり・障害適性の癖を示す。当初は同一レース内で0-1正規化
+// できる第2障害通過順ベースを採用していたが、「強い相手だと相対的に後方になる」対戦相手バイアス
+// があるとの指摘、および残差ベース（水分・重量・クラス補正）も比較検討した上で、最終的に
+// ユーザー判断で最も直感的な生タイム（直近5走の前半タイム=総合-上り、第1・第2障害を含む）を
+// 採用。生タイムは馬場水分・ソリ重量の影響を受けるため他馬との絶対比較には注意が必要な点は
+// note に明記。縦＝馬番順（固定）、横＝直近5走の前半タイムの平均/最速/最遅の箱ひげ。
 function renderRaceFlowTime(r){
   const host=document.getElementById("raceflowtime"); if(!host) return;
   const all=r.horses||[];
@@ -1343,89 +1274,12 @@ function renderRaceFlowTime(r){
     +`<text x="${xFor(domMax).toFixed(1)}" y="${gridBot+14}" font-size="7" text-anchor="end" fill="var(--muted)">${domMax.toFixed(1)}s</text>`;
 
   host.innerHTML=
-    `<div class="secthead"><span class="sect">比較: 前半タイム（生タイム）ベース</span></div>`
+    `<div class="secthead"><span class="sect">展開イメージ（前半タイムの傾向）</span></div>`
     +`<svg class="tksvg" viewBox="0 0 ${W} ${H+14}">${heads}<g transform="translate(0,4)">${zebra}${grid}${body}${ticks}</g></svg>`
-    +`<div class="tknote">上の通過順ベースの図と同じ並び順で比較用に表示。こちらは直近5走の`
-    +`前半タイム(総合−上り)の生秒数の平均/最速/最遅で、馬場水分・ソリ重量の影響を受けるため`
-    +`他馬との絶対比較には注意（同条件で走ったとは限らない）。左ほど速い(前半タイムが短い)。</div>`;
-}
-// 3つ目の比較（2026-09-26、ユーザー指摘への対応）: 通過順ベースは「強い相手だと相対的に
-// 後方になる」対戦相手バイアスを持ち、生タイムベースは「馬場水分・ソリ重量で歪む」条件バイアスを
-// 持つ——両方を解消した指標として、既存のタイムモデル(クラス×重量×水分率の回帰、f_obstacle等と
-// 同じロジック)による残差を偏差値化した障害力指数(time_index_for_past_race)の直近5走
-// 平均/最高/最低を箱ひげで示す。全レースを横断して学習した回帰モデルの残差なので対戦相手の
-// 強さに依存せず、かつ水分率・ソリ重量・クラスで補正済み。偏差値50=平均、高いほど好走（速い）。
-function renderRaceFlowResid(r){
-  const host=document.getElementById("raceflowresid"); if(!host) return;
-  const all=r.horses||[];
-  const withResid=all.filter(h=>h.fhr_avg!=null);
-  if(all.length<3 || withResid.length<2){ host.innerHTML=""; return; }
-  const rows=[...all].sort((a,b)=>a.num-b.num);
-  const n=rows.length, W=340, rowH=26, padT=20, padB=20, padL=76, padR=64;
-  const H=padT+padB+rowH*(n-1);
-  const laneY=i=>padT+i*rowH;
-  const plotW=W-padL-padR;
-  const shortName=nm=>{ nm=nm||""; return nm.length>6 ? nm.slice(0,6)+"…" : nm; };
-
-  const mins=rows.filter(h=>h.fhr_min!=null).map(h=>h.fhr_min);
-  const maxs=rows.filter(h=>h.fhr_max!=null).map(h=>h.fhr_max);
-  if(!mins.length){ host.innerHTML=""; return; }
-  let domMin=Math.min(...mins), domMax=Math.max(...maxs);
-  if(domMax<=domMin) domMax=domMin+1;
-  const dpad=(domMax-domMin)*0.08;
-  domMin-=dpad; domMax+=dpad;
-  const mid=(domMin+domMax)/2;
-  // 偏差値は高いほど好走(速い)なので、他の2図と「左=速い」の向きを揃えるため軸を反転させる
-  const xFor=t=>padL+plotW*(domMax-t)/(domMax-domMin);
-
-  const gridTop=laneY(0)-14, gridBot=laneY(n-1)+10;
-  const grid=[0,0.5,1].map(v=>{
-    const t=domMin+v*(domMax-domMin);
-    return `<line x1="${xFor(t).toFixed(1)}" y1="${gridTop}" x2="${xFor(t).toFixed(1)}" y2="${gridBot}" stroke="var(--edge)" stroke-width="1" opacity="${v===0.5?0.7:0.4}"/>`;
-  }).join("");
-  const zebra=rows.map((h,i)=> i%2===0
-    ? `<rect x="0" y="${laneY(i)-rowH/2}" width="${W}" height="${rowH}" fill="var(--edge)" opacity="0.28"/>`
-    : "").join("");
-
-  const dot=(h,cx,cy)=>{
-    const c=CAP[h.gate]||['#888','#fff'];
-    return `<circle cx="${cx}" cy="${cy}" r="8" fill="${c[0]}" stroke="var(--surface)" stroke-width="1.5"/>`
-      +`<text x="${cx}" y="${(cy+2.8).toFixed(1)}" font-size="8" text-anchor="middle" font-weight="800" fill="${c[1]}">${h.num}</text>`;
-  };
-  const nameLabel=(h,cy)=>
-    `<text x="${padL-10}" y="${(cy+2.8).toFixed(1)}" font-size="7.5" text-anchor="end" fill="var(--ink)">${shortName(h.name)}</text>`;
-  const numLabel=(h,cy)=>{
-    if(h.fhr_avg==null) return "";
-    const mm = (h.fhr_min!=null && h.fhr_max!=null) ? `(${h.fhr_min.toFixed(0)}–${h.fhr_max.toFixed(0)})` : "";
-    return `<text x="${W-padR+8}" y="${(cy+2.8).toFixed(1)}" font-size="7" text-anchor="start" fill="var(--muted)">`
-      +`<tspan font-weight="700" fill="var(--ink)">${h.fhr_avg.toFixed(1)}</tspan> ${mm}</text>`;
-  };
-  const rowSvg = h=>{
-    const cy=laneY(rows.indexOf(h));
-    if(h.fhr_avg==null){
-      return nameLabel(h,cy)
-        +`<circle cx="${xFor(mid).toFixed(1)}" cy="${cy}" r="8" fill="none" stroke="var(--muted)" stroke-width="1.3" stroke-dasharray="2 2"/>`
-        +`<text x="${xFor(mid).toFixed(1)}" y="${(cy+2.8).toFixed(1)}" font-size="8" text-anchor="middle" fill="var(--muted)">${h.num}</text>`;
-    }
-    const hasSpread = h.fhr_min!=null && h.fhr_max!=null && h.fhr_max>h.fhr_min;
-    const whisker = hasSpread
-      ? `<line x1="${xFor(h.fhr_min).toFixed(1)}" y1="${cy}" x2="${xFor(h.fhr_max).toFixed(1)}" y2="${cy}" stroke="var(--ink)" stroke-width="2.5" opacity="0.3"/>`
-        +`<line x1="${xFor(h.fhr_min).toFixed(1)}" y1="${cy-5.5}" x2="${xFor(h.fhr_min).toFixed(1)}" y2="${cy+5.5}" stroke="var(--ink)" stroke-width="1.6" opacity="0.5"/>`
-        +`<line x1="${xFor(h.fhr_max).toFixed(1)}" y1="${cy-5.5}" x2="${xFor(h.fhr_max).toFixed(1)}" y2="${cy+5.5}" stroke="var(--ink)" stroke-width="1.6" opacity="0.5"/>`
-      : "";
-    return nameLabel(h,cy) + whisker + dot(h,xFor(h.fhr_avg),cy) + numLabel(h,cy);
-  };
-  const body = rows.map(rowSvg).join("");
-  const heads=`<text x="${padL}" y="12" font-size="8.5" text-anchor="start" fill="var(--muted)">◀ 障害力指数(残差)</text>`;
-  const ticks=`<text x="${xFor(domMax).toFixed(1)}" y="${gridBot+14}" font-size="7" text-anchor="start" fill="var(--muted)">${domMax.toFixed(0)}</text>`
-    +`<text x="${xFor(domMin).toFixed(1)}" y="${gridBot+14}" font-size="7" text-anchor="end" fill="var(--muted)">${domMin.toFixed(0)}</text>`;
-
-  host.innerHTML=
-    `<div class="secthead"><span class="sect">比較: 障害力指数（水分・重量・クラス補正済み残差）</span></div>`
-    +`<svg class="tksvg" viewBox="0 0 ${W} ${H+14}">${heads}<g transform="translate(0,4)">${zebra}${grid}${body}${ticks}</g></svg>`
-    +`<div class="tknote">通過順ベースは対戦相手の強さに、生タイムベースは馬場水分・ソリ重量に`
-    +`左右される問題があるため、両方を補正した指標として、クラス×重量×水分率の回帰残差を`
-    +`偏差値化した指数(50=平均、高いほど好走)の直近5走平均/最高/最低を表示。左ほど好走(速い)。</div>`;
+    +`<div class="tknote">ばんえいはセパレートコース（平地の脚質分類・位置取りとは無関係）。`
+    +`縦＝馬番順、横＝直近5走の前半タイム(総合−上り、第1・第2障害を含む)の平均/最速/最遅。`
+    +`生タイムは馬場水分・ソリ重量の影響を受けるため他馬との絶対比較には注意`
+    +`（同条件で走ったとは限らない）。左ほど速い(前半タイムが短い)。</div>`;
 }
 function renderAptitude(r){
   document.querySelectorAll("#dimseg button").forEach(b=>b.setAttribute("aria-pressed",b.dataset.d===dim));
