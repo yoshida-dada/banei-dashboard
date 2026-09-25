@@ -35,15 +35,22 @@ body::before{content:"";position:fixed;top:0;left:0;right:0;height:env(safe-area
 .wrap{max-width:560px;margin:0 auto;padding:0 12px calc(40px + env(safe-area-inset-bottom))}
 
 /* PC表示（2026-09-26、ユーザー要望でボタン切替式に追加）。デフォルトはスマホ幅のまま
-   （既存の560px列）で、data-layout="desktop" の時だけ横幅を広げ、レース予測タブの
-   出馬表/展開イメージ・馬場適性を2カラムに組み替える。@mediaではなくJSのボタントグルで
-   明示的に切り替える設計（localStorageに保存、初回のみ画面幅から自動判定）。 */
+   （既存の560px列）で、data-layout="desktop" の時だけ横幅を広げる。@mediaではなくJSの
+   ボタントグルで明示的に切り替える設計（localStorageに保存、初回のみ画面幅から自動判定）。
+   2026-09-26 修正: 当初は出馬表と展開イメージを左右に並べたが「単純に横に並べただけで
+   見にくい」とのフィードバックにより再設計。出馬表(#horses)は情報量が多く列数も多いため
+   常に全幅を使い、展開イメージ(#raceflowtime)と馬場適性(#heatmap等)という「性質の近い
+   分析パネル同士」を左右均等の2カラムに組み替える（表とチャートのような異質な組み合わせを
+   横に並べるのをやめ、対になる情報同士を並べる方針に変更）。 */
 :root[data-layout="desktop"] .wrap,
 :root[data-layout="desktop"] header,
 :root[data-layout="desktop"] .nav-in{max-width:1120px}
 .predgrid{display:block}
-:root[data-layout="desktop"] .predgrid{display:grid;grid-template-columns:minmax(0,1fr) 380px;gap:0 28px;align-items:start}
-:root[data-layout="desktop"] .predside{min-width:0}
+:root[data-layout="desktop"] .predgrid{display:grid;grid-template-columns:1fr 1fr;gap:0 28px;align-items:start;margin-top:8px}
+/* データ分析タブ（2026-09-26）: 拡大するだけで見にくいとのフィードバックにより、
+   チャート+詳細（左）と過去3走/10走サマリー表（右）を並べ、条件別(condHtml)は下に全幅で表示 */
+.anagrid{display:block}
+:root[data-layout="desktop"] .anagrid{display:grid;grid-template-columns:1fr 1fr;gap:0 28px;align-items:start}
 .layout-btn{margin-left:8px;background:var(--surface);border:1px solid var(--border);color:var(--ink);border-radius:9px;padding:5px 11px;font-size:.74rem;font-weight:700;font-family:inherit;cursor:pointer;white-space:nowrap}
 .layout-btn[aria-pressed="true"]{background:var(--edge);border-color:var(--edge);color:#fff}
 
@@ -641,27 +648,27 @@ table.ht .numcell{display:inline-flex;align-items:center;gap:4px}
 <div class="wrap" id="mainwrap">
   <div id="suspicionAlert"></div>
   <div id="meta"></div>
-  <div class="predgrid">
-    <div class="predmain">
-      <div class="secthead">
-        <span class="sect">出走馬 予測</span>
-        <div class="vtoggle" id="stoggle">
-          <button data-s="rank" aria-pressed="true">予測順</button>
-          <button data-s="num" aria-pressed="false">馬番順</button>
-        </div>
-        <div class="vtoggle" id="vtoggle">
-          <button data-v="table" aria-pressed="true">表</button>
-          <button data-v="card" aria-pressed="false">カード</button>
-          <button data-v="bets" aria-pressed="false">買い目</button>
-        </div>
-        <button class="setbtn" id="colsToggle">⚙ 列</button>
-        <button class="setbtn" id="copyPredBtn" type="button" title="ディスコード等に貼れる形式でコピー">📋 コピー</button>
-      </div>
-      <div id="colsPanel" class="colspanel" style="display:none"></div>
-      <div id="horses"></div>
+  <div class="secthead">
+    <span class="sect">出走馬 予測</span>
+    <div class="vtoggle" id="stoggle">
+      <button data-s="rank" aria-pressed="true">予測順</button>
+      <button data-s="num" aria-pressed="false">馬番順</button>
     </div>
-    <div class="predside">
+    <div class="vtoggle" id="vtoggle">
+      <button data-v="table" aria-pressed="true">表</button>
+      <button data-v="card" aria-pressed="false">カード</button>
+      <button data-v="bets" aria-pressed="false">買い目</button>
+    </div>
+    <button class="setbtn" id="colsToggle">⚙ 列</button>
+    <button class="setbtn" id="copyPredBtn" type="button" title="ディスコード等に貼れる形式でコピー">📋 コピー</button>
+  </div>
+  <div id="colsPanel" class="colspanel" style="display:none"></div>
+  <div id="horses"></div>
+  <div class="predgrid">
+    <div class="predflow">
       <div id="raceflowtime"></div>
+    </div>
+    <div class="predapt">
       <div class="secthead">
         <span class="sect">馬場適性（このレースの出走馬）</span>
         <div class="vtoggle" id="dimseg">
@@ -2815,7 +2822,8 @@ function renderAnalysis(){
   if(S.pt==null||S.pt>=trend.length) S.pt=trend.length-1;   // 既定は直近走を選択
   const btns=hs.map(x=>`<button class="abtn${x.num===h.num?' on':''}" data-n="${x.num}" style="${capStyle(x.gate)}">${x.num}</button>`).join("");
   const body=trend.length
-    ? `<div class="acard">${anaChartSvg(trend,S.pt)}</div>`+anaDetailHtml(trend[S.pt])+anaSummaryHtml(trend,anaRanks(hs),h.num)
+    ? `<div class="anagrid"><div class="anachart"><div class="acard">${anaChartSvg(trend,S.pt)}</div>${anaDetailHtml(trend[S.pt])}</div>`
+      +`<div class="anasum">${anaSummaryHtml(trend,anaRanks(hs),h.num)}</div></div>`
     : `<div class="meta">${h.trend===undefined?"近走の推移データを準備中です（次回の自動更新で反映されます）。":"この馬の過去走データがありません（初出走）。"}</div>`;
   host.innerHTML=`<div class="ahead"><span class="at1">近走の推移</span><span class="at2">${r.date.slice(5).replace('-','/')} ${r.race_no}R ${r.race_name||""} ・番号を押すと馬を切り替え</span></div>`
     +`<div class="arow">${btns}</div>`
