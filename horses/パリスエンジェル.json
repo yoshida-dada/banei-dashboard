@@ -2,12 +2,12 @@
  "name": "パリスエンジェル",
  "sex": "牝",
  "age": 2,
- "trainer": "今井茂",
+ "trainer": "今井茂（ばんえい）",
  "owner": "中村光雄",
- "sled_kg": 480.0,
- "weight": 862,
- "weight_diff": 21,
- "last_race_date": "2026-09-21",
+ "sled_kg": 490.0,
+ "weight": null,
+ "weight_diff": null,
+ "last_race_date": "2026-09-26",
  "pedigree": {
   "sire": "ジャングルソング",
   "dam": "ヤマノダイコヒメ",
@@ -200,6 +200,31 @@
  "next_class": null,
  "races": [
   {
+   "date": "2026-09-26",
+   "race_no": 2,
+   "race_name": "雪城眞尋生誕記念２歳Ｄ－３",
+   "class": "D",
+   "moisture": 1.1,
+   "field_size": 10,
+   "num": 5,
+   "jockey": "中原蓮",
+   "trainer": "今井茂（ばんえい）",
+   "owner": "中村光雄",
+   "sled_kg": 490.0,
+   "weight": null,
+   "weight_diff": null,
+   "odds": 47.7,
+   "popularity": 10,
+   "position": null,
+   "time": null,
+   "time_sec": null,
+   "margin_sec": null,
+   "race_level_z": null,
+   "interval": "連闘",
+   "other": null,
+   "insider_labels": []
+  },
+  {
    "date": "2026-09-21",
    "race_no": 3,
    "race_name": "必勝！三上夫婦記念２歳Ｄ－２",
@@ -219,6 +244,7 @@
    "time": "2:05.3",
    "time_sec": 125.3,
    "margin_sec": 23.4,
+   "race_level_z": 0.94,
    "interval": "中3週",
    "other": {
     "label": "勝ち馬",
@@ -246,6 +272,7 @@
    "time": "2:38.7",
    "time_sec": 158.7,
    "margin_sec": 48.7,
+   "race_level_z": -0.81,
    "interval": "連闘",
    "other": {
     "label": "勝ち馬",
@@ -273,6 +300,7 @@
    "time": "2:26.8",
    "time_sec": 146.8,
    "margin_sec": 27.2,
+   "race_level_z": -0.25,
    "interval": "中3週",
    "other": {
     "label": "勝ち馬",
@@ -300,6 +328,7 @@
    "time": "1:57.5",
    "time_sec": 117.5,
    "margin_sec": 2.6,
+   "race_level_z": 0.46,
    "interval": "中1週",
    "other": {
     "label": "勝ち馬",
@@ -327,6 +356,7 @@
    "time": "2:16.6",
    "time_sec": 136.6,
    "margin_sec": 10.2,
+   "race_level_z": -0.5,
    "interval": "中1週",
    "other": {
     "label": "勝ち馬",
@@ -354,6 +384,7 @@
    "time": "1:57.9",
    "time_sec": 117.9,
    "margin_sec": 0.9,
+   "race_level_z": 1.07,
    "interval": "中2週",
    "other": {
     "label": "勝ち馬",
@@ -381,6 +412,7 @@
    "time": "2:27.5",
    "time_sec": 147.5,
    "margin_sec": 25.2,
+   "race_level_z": -0.03,
    "interval": "中2週",
    "other": {
     "label": "勝ち馬",
@@ -408,6 +440,7 @@
    "time": "2:24.7",
    "time_sec": 144.7,
    "margin_sec": 39.4,
+   "race_level_z": -0.11,
    "interval": "連闘",
    "other": {
     "label": "勝ち馬",
@@ -435,6 +468,7 @@
    "time": "3:23.6",
    "time_sec": 203.6,
    "margin_sec": 40.9,
+   "race_level_z": -1.55,
    "interval": "中2週",
    "other": {
     "label": "勝ち馬",
@@ -462,6 +496,7 @@
    "time": "3:30.5",
    "time_sec": 210.5,
    "margin_sec": 70.1,
+   "race_level_z": -1.6,
    "interval": null,
    "other": {
     "label": "勝ち馬",

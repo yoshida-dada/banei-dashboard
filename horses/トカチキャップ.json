@@ -2,12 +2,12 @@
  "name": "トカチキャップ",
  "sex": "牝",
  "age": 2,
- "trainer": "中島敏",
+ "trainer": "中島敏（ばんえい）",
  "owner": "高橋勝坦",
- "sled_kg": 480.0,
- "weight": 851,
- "weight_diff": 3,
- "last_race_date": "2026-09-14",
+ "sled_kg": 490.0,
+ "weight": null,
+ "weight_diff": null,
+ "last_race_date": "2026-09-26",
  "pedigree": null,
  "stats": {
   "total": {
@@ -107,6 +107,31 @@
  "next_class": null,
  "races": [
   {
+   "date": "2026-09-26",
+   "race_no": 2,
+   "race_name": "雪城眞尋生誕記念２歳Ｄ－３",
+   "class": "D",
+   "moisture": 1.1,
+   "field_size": 10,
+   "num": 4,
+   "jockey": "西謙一",
+   "trainer": "中島敏（ばんえい）",
+   "owner": "高橋勝坦",
+   "sled_kg": 490.0,
+   "weight": null,
+   "weight_diff": null,
+   "odds": 6.2,
+   "popularity": 2,
+   "position": null,
+   "time": null,
+   "time_sec": null,
+   "margin_sec": null,
+   "race_level_z": null,
+   "interval": "中1週",
+   "other": null,
+   "insider_labels": []
+  },
+  {
    "date": "2026-09-14",
    "race_no": 3,
    "race_name": "さおりん誕生日後祝い２歳Ｄ－３",
@@ -126,6 +151,7 @@
    "time": "2:19.4",
    "time_sec": 139.4,
    "margin_sec": 18.2,
+   "race_level_z": 0.9,
    "interval": "中2週",
    "other": {
     "label": "勝ち馬",
@@ -153,6 +179,7 @@
    "time": "2:09.3",
    "time_sec": 129.3,
    "margin_sec": 2.2,
+   "race_level_z": 1.07,
    "interval": "中2週",
    "other": {
     "label": "勝ち馬",
@@ -180,6 +207,7 @@
    "time": "2:36.8",
    "time_sec": 156.8,
    "margin_sec": 30.0,
+   "race_level_z": -0.17,
    "interval": "連闘",
    "other": {
     "label": "勝ち馬",
@@ -207,6 +235,7 @@
    "time": "2:26.0",
    "time_sec": 146.0,
    "margin_sec": 6.1,
+   "race_level_z": 0.35,
    "interval": null,
    "other": {
     "label": "勝ち馬",

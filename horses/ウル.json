@@ -2,12 +2,12 @@
  "name": "ウル",
  "sex": "牡",
  "age": 3,
- "trainer": "金田勇",
+ "trainer": "金田勇（ばんえい）",
  "owner": "菊地英雄",
- "sled_kg": 600.0,
- "weight": 1002,
- "weight_diff": 6,
- "last_race_date": "2026-09-12",
+ "sled_kg": 620.0,
+ "weight": null,
+ "weight_diff": null,
+ "last_race_date": "2026-09-26",
  "pedigree": {
   "sire": "コウシュハウンカイ",
   "dam": "ウノツバキ",
@@ -161,6 +161,31 @@
  },
  "races": [
   {
+   "date": "2026-09-26",
+   "race_no": 4,
+   "race_name": "木下智史ぼっち贅沢慰安旅行Ｃ２－１",
+   "class": "C2",
+   "moisture": 1.1,
+   "field_size": 10,
+   "num": 10,
+   "jockey": "金田利",
+   "trainer": "金田勇（ばんえい）",
+   "owner": "菊地英雄",
+   "sled_kg": 620.0,
+   "weight": null,
+   "weight_diff": null,
+   "odds": 9.7,
+   "popularity": 3,
+   "position": null,
+   "time": null,
+   "time_sec": null,
+   "margin_sec": null,
+   "race_level_z": null,
+   "interval": "中2週",
+   "other": null,
+   "insider_labels": []
+  },
+  {
    "date": "2026-09-12",
    "race_no": 5,
    "race_name": "十勝放射線技師会８０周年Ｃ２－１混合",
@@ -180,6 +205,7 @@
    "time": "2:20.2",
    "time_sec": 140.2,
    "margin_sec": 7.8,
+   "race_level_z": 0.9,
    "interval": "中1週",
    "other": {
     "label": "勝ち馬",
@@ -207,6 +233,7 @@
    "time": "2:12.8",
    "time_sec": 132.8,
    "margin_sec": 0.0,
+   "race_level_z": 0.99,
    "interval": "中1週",
    "other": {
     "label": "2着馬",
@@ -234,6 +261,7 @@
    "time": "2:18.3",
    "time_sec": 138.3,
    "margin_sec": 21.0,
+   "race_level_z": 0.83,
    "interval": "連闘",
    "other": {
     "label": "勝ち馬",
@@ -261,6 +289,7 @@
    "time": "2:20.2",
    "time_sec": 140.2,
    "margin_sec": 16.5,
+   "race_level_z": 0.71,
    "interval": "中3週",
    "other": {
     "label": "勝ち馬",
@@ -288,6 +317,7 @@
    "time": "1:54.5",
    "time_sec": 114.5,
    "margin_sec": 0.0,
+   "race_level_z": 1.32,
    "interval": "連闘",
    "other": {
     "label": "2着馬",
@@ -315,6 +345,7 @@
    "time": "2:02.3",
    "time_sec": 122.3,
    "margin_sec": 1.0,
+   "race_level_z": 1.08,
    "interval": "中16週",
    "other": {
     "label": "勝ち馬",
@@ -342,6 +373,7 @@
    "time": "1:46.1",
    "time_sec": 106.1,
    "margin_sec": 0.0,
+   "race_level_z": 1.64,
    "interval": "中2週",
    "other": {
     "label": "2着馬",
@@ -369,6 +401,7 @@
    "time": "1:50.2",
    "time_sec": 110.2,
    "margin_sec": 2.8,
+   "race_level_z": 0.88,
    "interval": "連闘",
    "other": {
     "label": "勝ち馬",
@@ -396,6 +429,7 @@
    "time": "2:09.0",
    "time_sec": 129.0,
    "margin_sec": 14.8,
+   "race_level_z": 0.42,
    "interval": "中2週",
    "other": {
     "label": "勝ち馬",
@@ -423,6 +457,7 @@
    "time": "2:17.6",
    "time_sec": 137.6,
    "margin_sec": 18.7,
+   "race_level_z": -0.02,
    "interval": "中1週",
    "other": {
     "label": "勝ち馬",
@@ -450,6 +485,7 @@
    "time": "1:55.0",
    "time_sec": 115.0,
    "margin_sec": 9.3,
+   "race_level_z": 0.76,
    "interval": "中3週",
    "other": {
     "label": "勝ち馬",
@@ -477,6 +513,7 @@
    "time": "2:01.4",
    "time_sec": 121.4,
    "margin_sec": 3.6,
+   "race_level_z": 0.8,
    "interval": "中1週",
    "other": {
     "label": "勝ち馬",
@@ -504,6 +541,7 @@
    "time": "1:57.8",
    "time_sec": 117.8,
    "margin_sec": 0.0,
+   "race_level_z": 1.21,
    "interval": "中2週",
    "other": {
     "label": "2着馬",
@@ -531,6 +569,7 @@
    "time": "2:32.8",
    "time_sec": 152.8,
    "margin_sec": 18.8,
+   "race_level_z": -0.08,
    "interval": "中3週",
    "other": {
     "label": "勝ち馬",
@@ -558,6 +597,7 @@
    "time": "2:33.3",
    "time_sec": 153.3,
    "margin_sec": 23.8,
+   "race_level_z": -0.07,
    "interval": "中2週",
    "other": {
     "label": "勝ち馬",
@@ -585,6 +625,7 @@
    "time": "1:44.5",
    "time_sec": 104.5,
    "margin_sec": 7.1,
+   "race_level_z": 1.95,
    "interval": "中1週",
    "other": {
     "label": "勝ち馬",
@@ -612,6 +653,7 @@
    "time": "2:23.1",
    "time_sec": 143.1,
    "margin_sec": 20.8,
+   "race_level_z": 0.01,
    "interval": "中3週",
    "other": {
     "label": "勝ち馬",
@@ -639,6 +681,7 @@
    "time": "2:38.6",
    "time_sec": 158.6,
    "margin_sec": 39.9,
+   "race_level_z": -0.59,
    "interval": "中1週",
    "other": {
     "label": "勝ち馬",
@@ -666,6 +709,7 @@
    "time": "1:49.9",
    "time_sec": 109.9,
    "margin_sec": 9.1,
+   "race_level_z": 1.28,
    "interval": "中2週",
    "other": {
     "label": "勝ち馬",
@@ -693,6 +737,7 @@
    "time": "2:50.0",
    "time_sec": 170.0,
    "margin_sec": 43.4,
+   "race_level_z": -1.52,
    "interval": "中2週",
    "other": {
     "label": "勝ち馬",
@@ -720,6 +765,7 @@
    "time": "2:47.9",
    "time_sec": 167.9,
    "margin_sec": 0.0,
+   "race_level_z": -0.49,
    "interval": "中1週",
    "other": {
     "label": "2着馬",
@@ -747,6 +793,7 @@
    "time": "4:39.9",
    "time_sec": 279.9,
    "margin_sec": 153.5,
+   "race_level_z": -5.58,
    "interval": null,
    "other": null,
    "insider_labels": []

@@ -2,12 +2,12 @@
  "name": "トト",
  "sex": "牡",
  "age": 2,
- "trainer": "服部義",
+ "trainer": "服部義（ばんえい）",
  "owner": "安井利夫",
  "sled_kg": 520.0,
- "weight": 858,
- "weight_diff": 10,
- "last_race_date": "2026-09-21",
+ "weight": null,
+ "weight_diff": null,
+ "last_race_date": "2026-09-26",
  "pedigree": {
   "sire": "ホクショウユヅル",
   "dam": "アスリート",
@@ -161,6 +161,31 @@
  "next_class": null,
  "races": [
   {
+   "date": "2026-09-26",
+   "race_no": 3,
+   "race_name": "霊視鑑定士白龍誕生日記念２歳Ｃ－１",
+   "class": "C1",
+   "moisture": 1.1,
+   "field_size": 10,
+   "num": 10,
+   "jockey": "長澤幸",
+   "trainer": "服部義（ばんえい）",
+   "owner": "安井利夫",
+   "sled_kg": 520.0,
+   "weight": null,
+   "weight_diff": null,
+   "odds": 31.7,
+   "popularity": 10,
+   "position": null,
+   "time": null,
+   "time_sec": null,
+   "margin_sec": null,
+   "race_level_z": null,
+   "interval": "連闘",
+   "other": null,
+   "insider_labels": []
+  },
+  {
    "date": "2026-09-21",
    "race_no": 5,
    "race_name": "ＫＰＣ１０周年お祝い記念２歳Ｂ－５",
@@ -180,6 +205,7 @@
    "time": "2:10.3",
    "time_sec": 130.3,
    "margin_sec": 33.7,
+   "race_level_z": -0.28,
    "interval": "中3週",
    "other": {
     "label": "勝ち馬",
@@ -207,6 +233,7 @@
    "time": "2:22.5",
    "time_sec": 142.5,
    "margin_sec": 41.6,
+   "race_level_z": -1.1,
    "interval": "連闘",
    "other": {
     "label": "勝ち馬",
@@ -234,6 +261,7 @@
    "time": "2:23.3",
    "time_sec": 143.3,
    "margin_sec": 26.5,
+   "race_level_z": -0.96,
    "interval": "中1週",
    "other": {
     "label": "勝ち馬",
@@ -261,6 +289,7 @@
    "time": "2:05.6",
    "time_sec": 125.6,
    "margin_sec": 6.0,
+   "race_level_z": -0.32,
    "interval": "中2週",
    "other": {
     "label": "勝ち馬",
@@ -288,6 +317,7 @@
    "time": "1:59.5",
    "time_sec": 119.5,
    "margin_sec": 22.9,
+   "race_level_z": -0.34,
    "interval": "中3週",
    "other": {
     "label": "勝ち馬",
@@ -315,6 +345,7 @@
    "time": "1:53.3",
    "time_sec": 113.3,
    "margin_sec": 0.0,
+   "race_level_z": 0.98,
    "interval": "中2週",
    "other": null,
    "insider_labels": []
@@ -339,6 +370,7 @@
    "time": "2:30.7",
    "time_sec": 150.7,
    "margin_sec": 18.2,
+   "race_level_z": 0.87,
    "interval": null,
    "other": {
     "label": "勝ち馬",

@@ -2,12 +2,12 @@
  "name": "アーススノーパール",
  "sex": "牡",
  "age": 2,
- "trainer": "坂本東",
+ "trainer": "坂本東（ばんえい）",
  "owner": "（株）トンデンファ",
- "sled_kg": 500.0,
- "weight": 891,
- "weight_diff": 9,
- "last_race_date": "2026-09-21",
+ "sled_kg": 510.0,
+ "weight": null,
+ "weight_diff": null,
+ "last_race_date": "2026-09-26",
  "pedigree": null,
  "stats": {
   "total": {
@@ -94,6 +94,31 @@
  "next_class": null,
  "races": [
   {
+   "date": "2026-09-26",
+   "race_no": 2,
+   "race_name": "雪城眞尋生誕記念２歳Ｄ－３",
+   "class": "D",
+   "moisture": 1.1,
+   "field_size": 10,
+   "num": 3,
+   "jockey": "阿部優",
+   "trainer": "坂本東（ばんえい）",
+   "owner": "（株）トンデンファ",
+   "sled_kg": 510.0,
+   "weight": null,
+   "weight_diff": null,
+   "odds": 2.9,
+   "popularity": 1,
+   "position": null,
+   "time": null,
+   "time_sec": null,
+   "margin_sec": null,
+   "race_level_z": null,
+   "interval": "連闘",
+   "other": null,
+   "insider_labels": []
+  },
+  {
    "date": "2026-09-21",
    "race_no": 2,
    "race_name": "マリンお疲れ様でした！２歳Ｄ－５",
@@ -113,6 +138,7 @@
    "time": "1:47.4",
    "time_sec": 107.4,
    "margin_sec": 0.7,
+   "race_level_z": 1.76,
    "interval": "中2週",
    "other": {
     "label": "勝ち馬",
@@ -140,6 +166,7 @@
    "time": "1:49.7",
    "time_sec": 109.7,
    "margin_sec": 10.6,
+   "race_level_z": 1.76,
    "interval": "中1週",
    "other": {
     "label": "勝ち馬",
@@ -167,6 +194,7 @@
    "time": "2:31.5",
    "time_sec": 151.5,
    "margin_sec": 29.1,
+   "race_level_z": 0.5,
    "interval": null,
    "other": {
     "label": "勝ち馬",

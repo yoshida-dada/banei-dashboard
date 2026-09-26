@@ -2,12 +2,12 @@
  "name": "アアモンドカイト",
  "sex": "牡",
  "age": 2,
- "trainer": "村上慎",
+ "trainer": "村上慎（ばんえい）",
  "owner": "下内美繪子",
  "sled_kg": 520.0,
- "weight": 902,
- "weight_diff": -5,
- "last_race_date": "2026-08-30",
+ "weight": null,
+ "weight_diff": null,
+ "last_race_date": "2026-09-26",
  "pedigree": {
   "sire": "ゴールドインパクト",
   "dam": null,
@@ -148,6 +148,31 @@
  "next_class": null,
  "races": [
   {
+   "date": "2026-09-26",
+   "race_no": 3,
+   "race_name": "霊視鑑定士白龍誕生日記念２歳Ｃ－１",
+   "class": "C1",
+   "moisture": 1.1,
+   "field_size": 10,
+   "num": 5,
+   "jockey": "菊池一",
+   "trainer": "村上慎（ばんえい）",
+   "owner": "下内美繪子",
+   "sled_kg": 520.0,
+   "weight": null,
+   "weight_diff": null,
+   "odds": 7.9,
+   "popularity": 4,
+   "position": null,
+   "time": null,
+   "time_sec": null,
+   "margin_sec": null,
+   "race_level_z": null,
+   "interval": "中3週",
+   "other": null,
+   "insider_labels": []
+  },
+  {
    "date": "2026-08-30",
    "race_no": 4,
    "race_name": "ゆにふぃ３期生１周年記念杯２歳Ｂ－２",
@@ -167,6 +192,7 @@
    "time": "2:31.6",
    "time_sec": 151.6,
    "margin_sec": 44.8,
+   "race_level_z": -1.58,
    "interval": "連闘",
    "other": {
     "label": "勝ち馬",
@@ -194,6 +220,7 @@
    "time": "2:19.5",
    "time_sec": 139.5,
    "margin_sec": 39.2,
+   "race_level_z": -0.81,
    "interval": "中5週",
    "other": {
     "label": "勝ち馬",
@@ -221,6 +248,7 @@
    "time": "1:58.7",
    "time_sec": 118.7,
    "margin_sec": 7.2,
+   "race_level_z": -0.67,
    "interval": "中2週",
    "other": {
     "label": "勝ち馬",
@@ -248,6 +276,7 @@
    "time": "2:27.2",
    "time_sec": 147.2,
    "margin_sec": 0.0,
+   "race_level_z": -0.02,
    "interval": "中1週",
    "other": {
     "label": "2着馬",
@@ -275,6 +304,7 @@
    "time": "2:12.3",
    "time_sec": 132.3,
    "margin_sec": 10.0,
+   "race_level_z": 0.67,
    "interval": "連闘",
    "other": {
     "label": "勝ち馬",
@@ -302,6 +332,7 @@
    "time": "3:01.6",
    "time_sec": 181.6,
    "margin_sec": 50.7,
+   "race_level_z": -0.38,
    "interval": null,
    "other": {
     "label": "勝ち馬",

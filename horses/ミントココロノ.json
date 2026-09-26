@@ -2,12 +2,12 @@
  "name": "ミントココロノ",
  "sex": "牝",
  "age": 2,
- "trainer": "大友人",
+ "trainer": "大友人（ばんえい）",
  "owner": "細川弘則",
- "sled_kg": 480.0,
- "weight": 829,
- "weight_diff": 17,
- "last_race_date": "2026-09-14",
+ "sled_kg": 490.0,
+ "weight": null,
+ "weight_diff": null,
+ "last_race_date": "2026-09-26",
  "pedigree": {
   "sire": "ココロノタカラ",
   "dam": "桜ミント2014",
@@ -161,6 +161,31 @@
  "next_class": null,
  "races": [
   {
+   "date": "2026-09-26",
+   "race_no": 2,
+   "race_name": "雪城眞尋生誕記念２歳Ｄ－３",
+   "class": "D",
+   "moisture": 1.1,
+   "field_size": 10,
+   "num": 9,
+   "jockey": "大友一",
+   "trainer": "大友人（ばんえい）",
+   "owner": "細川弘則",
+   "sled_kg": 490.0,
+   "weight": null,
+   "weight_diff": null,
+   "odds": 20.4,
+   "popularity": 8,
+   "position": null,
+   "time": null,
+   "time_sec": null,
+   "margin_sec": null,
+   "race_level_z": null,
+   "interval": "中1週",
+   "other": null,
+   "insider_labels": []
+  },
+  {
    "date": "2026-09-14",
    "race_no": 3,
    "race_name": "さおりん誕生日後祝い２歳Ｄ－３",
@@ -180,6 +205,7 @@
    "time": "2:19.1",
    "time_sec": 139.1,
    "margin_sec": 17.9,
+   "race_level_z": 0.91,
    "interval": "中1週",
    "other": {
     "label": "勝ち馬",
@@ -207,6 +233,7 @@
    "time": "2:18.4",
    "time_sec": 138.4,
    "margin_sec": 20.8,
+   "race_level_z": 0.61,
    "interval": "中3週",
    "other": {
     "label": "勝ち馬",
@@ -234,6 +261,7 @@
    "time": "2:49.9",
    "time_sec": 169.9,
    "margin_sec": 43.1,
+   "race_level_z": -0.73,
    "interval": "中1週",
    "other": {
     "label": "勝ち馬",
@@ -261,6 +289,7 @@
    "time": "2:38.5",
    "time_sec": 158.5,
    "margin_sec": 45.0,
+   "race_level_z": 0.05,
    "interval": "中2週",
    "other": {
     "label": "勝ち馬",
@@ -288,6 +317,7 @@
    "time": "2:10.9",
    "time_sec": 130.9,
    "margin_sec": 20.5,
+   "race_level_z": -0.27,
    "interval": "中2週",
    "other": {
     "label": "勝ち馬",
@@ -315,6 +345,7 @@
    "time": "2:32.3",
    "time_sec": 152.3,
    "margin_sec": 5.1,
+   "race_level_z": -0.27,
    "interval": "連闘",
    "other": {
     "label": "勝ち馬",
@@ -342,6 +373,7 @@
    "time": "2:22.3",
    "time_sec": 142.3,
    "margin_sec": 29.7,
+   "race_level_z": 0.42,
    "interval": null,
    "other": {
     "label": "勝ち馬",

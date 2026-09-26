@@ -2,12 +2,12 @@
  "name": "ジェイマット",
  "sex": "牡",
  "age": 2,
- "trainer": "金山明",
+ "trainer": "金山明（ばんえい）",
  "owner": "小森唯永",
- "sled_kg": 500.0,
- "weight": 873,
- "weight_diff": 20,
- "last_race_date": "2026-09-21",
+ "sled_kg": 510.0,
+ "weight": null,
+ "weight_diff": null,
+ "last_race_date": "2026-09-26",
  "pedigree": null,
  "stats": {
   "total": {
@@ -120,6 +120,31 @@
  "next_class": null,
  "races": [
   {
+   "date": "2026-09-26",
+   "race_no": 2,
+   "race_name": "雪城眞尋生誕記念２歳Ｄ－３",
+   "class": "D",
+   "moisture": 1.1,
+   "field_size": 10,
+   "num": 8,
+   "jockey": "中村太",
+   "trainer": "金山明（ばんえい）",
+   "owner": "小森唯永",
+   "sled_kg": 510.0,
+   "weight": null,
+   "weight_diff": null,
+   "odds": 6.2,
+   "popularity": 2,
+   "position": null,
+   "time": null,
+   "time_sec": null,
+   "margin_sec": null,
+   "race_level_z": null,
+   "interval": "連闘",
+   "other": null,
+   "insider_labels": []
+  },
+  {
    "date": "2026-09-21",
    "race_no": 3,
    "race_name": "必勝！三上夫婦記念２歳Ｄ－２",
@@ -139,6 +164,7 @@
    "time": "1:51.4",
    "time_sec": 111.4,
    "margin_sec": 9.5,
+   "race_level_z": 1.59,
    "interval": "中3週",
    "other": {
     "label": "勝ち馬",
@@ -166,6 +192,7 @@
    "time": "2:06.0",
    "time_sec": 126.0,
    "margin_sec": 23.4,
+   "race_level_z": 1.2,
    "interval": "連闘",
    "other": {
     "label": "勝ち馬",
@@ -193,6 +220,7 @@
    "time": "2:13.0",
    "time_sec": 133.0,
    "margin_sec": 2.7,
+   "race_level_z": 1.13,
    "interval": "中1週",
    "other": {
     "label": "勝ち馬",
@@ -220,6 +248,7 @@
    "time": "2:37.8",
    "time_sec": 157.8,
    "margin_sec": 20.7,
+   "race_level_z": -0.09,
    "interval": "中2週",
    "other": {
     "label": "勝ち馬",
@@ -247,6 +276,7 @@
    "time": "3:14.9",
    "time_sec": 194.9,
    "margin_sec": 57.2,
+   "race_level_z": -1.54,
    "interval": null,
    "other": {
     "label": "勝ち馬",

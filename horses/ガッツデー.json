@@ -2,12 +2,12 @@
  "name": "ガッツデー",
  "sex": "牡",
  "age": 2,
- "trainer": "松田道",
+ "trainer": "松田道（ばんえい）",
  "owner": "小森唯永",
- "sled_kg": 510.0,
- "weight": 796,
- "weight_diff": 2,
- "last_race_date": "2026-09-13",
+ "sled_kg": 530.0,
+ "weight": null,
+ "weight_diff": null,
+ "last_race_date": "2026-09-26",
  "pedigree": {
   "sire": "マツカゼウンカイ",
   "dam": "アアモンドコハル",
@@ -174,6 +174,31 @@
  "next_class": null,
  "races": [
   {
+   "date": "2026-09-26",
+   "race_no": 6,
+   "race_name": "ありさ、大輝来場記念２歳Ｂ－３",
+   "class": "B3",
+   "moisture": 1.1,
+   "field_size": 10,
+   "num": 8,
+   "jockey": "鈴木恵",
+   "trainer": "松田道（ばんえい）",
+   "owner": "小森唯永",
+   "sled_kg": 530.0,
+   "weight": null,
+   "weight_diff": null,
+   "odds": 11.8,
+   "popularity": 5,
+   "position": null,
+   "time": null,
+   "time_sec": null,
+   "margin_sec": null,
+   "race_level_z": null,
+   "interval": "中1週",
+   "other": null,
+   "insider_labels": []
+  },
+  {
    "date": "2026-09-13",
    "race_no": 3,
    "race_name": "優太郎くん生誕記念２歳Ｃ－５",
@@ -193,6 +218,7 @@
    "time": "2:00.1",
    "time_sec": 120.1,
    "margin_sec": 0.0,
+   "race_level_z": 1.19,
    "interval": "連闘",
    "other": {
     "label": "2着馬",
@@ -220,6 +246,7 @@
    "time": "1:57.8",
    "time_sec": 117.8,
    "margin_sec": 8.0,
+   "race_level_z": 0.67,
    "interval": "中3週",
    "other": {
     "label": "勝ち馬",
@@ -247,6 +274,7 @@
    "time": "2:51.9",
    "time_sec": 171.9,
    "margin_sec": 49.8,
+   "race_level_z": -1.88,
    "interval": "中2週",
    "other": {
     "label": "勝ち馬",
@@ -274,6 +302,7 @@
    "time": "1:46.1",
    "time_sec": 106.1,
    "margin_sec": 0.0,
+   "race_level_z": 1.56,
    "interval": "連闘",
    "other": {
     "label": "2着馬",
@@ -301,6 +330,7 @@
    "time": "2:25.4",
    "time_sec": 145.4,
    "margin_sec": 32.8,
+   "race_level_z": 0.34,
    "interval": "中3週",
    "other": {
     "label": "勝ち馬",
@@ -328,6 +358,7 @@
    "time": "3:05.7",
    "time_sec": 185.7,
    "margin_sec": 45.6,
+   "race_level_z": -1.08,
    "interval": "中1週",
    "other": {
     "label": "勝ち馬",
@@ -355,6 +386,7 @@
    "time": "2:11.8",
    "time_sec": 131.8,
    "margin_sec": 7.1,
+   "race_level_z": 0.7,
    "interval": "中1週",
    "other": {
     "label": "勝ち馬",
@@ -382,6 +414,7 @@
    "time": "3:11.9",
    "time_sec": 191.9,
    "margin_sec": 59.4,
+   "race_level_z": -0.88,
    "interval": null,
    "other": {
     "label": "勝ち馬",

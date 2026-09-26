@@ -2,12 +2,12 @@
  "name": "ジェイインター",
  "sex": "牡",
  "age": 2,
- "trainer": "藤本匠",
+ "trainer": "藤本匠（ばんえい）",
  "owner": "小森唯永",
- "sled_kg": 510.0,
- "weight": 824,
- "weight_diff": 9,
- "last_race_date": "2026-09-14",
+ "sled_kg": 520.0,
+ "weight": null,
+ "weight_diff": null,
+ "last_race_date": "2026-09-26",
  "pedigree": {
   "sire": "マツカゼウンカイ",
   "dam": "ジェイダイアナ",
@@ -187,6 +187,31 @@
  "next_class": null,
  "races": [
   {
+   "date": "2026-09-26",
+   "race_no": 3,
+   "race_name": "霊視鑑定士白龍誕生日記念２歳Ｃ－１",
+   "class": "C1",
+   "moisture": 1.1,
+   "field_size": 10,
+   "num": 1,
+   "jockey": "金田利",
+   "trainer": "藤本匠（ばんえい）",
+   "owner": "小森唯永",
+   "sled_kg": 520.0,
+   "weight": null,
+   "weight_diff": null,
+   "odds": 4.3,
+   "popularity": 2,
+   "position": null,
+   "time": null,
+   "time_sec": null,
+   "margin_sec": null,
+   "race_level_z": null,
+   "interval": "中1週",
+   "other": null,
+   "insider_labels": []
+  },
+  {
    "date": "2026-09-14",
    "race_no": 4,
    "race_name": "かおり＆けんと結婚記念２歳Ｃ－２",
@@ -206,6 +231,7 @@
    "time": "2:10.0",
    "time_sec": 130.0,
    "margin_sec": 15.3,
+   "race_level_z": 1.11,
    "interval": "中1週",
    "other": {
     "label": "勝ち馬",
@@ -233,6 +259,7 @@
    "time": "2:10.8",
    "time_sec": 130.8,
    "margin_sec": 25.2,
+   "race_level_z": -0.46,
    "interval": "中3週",
    "other": {
     "label": "勝ち馬",
@@ -260,6 +287,7 @@
    "time": "2:15.9",
    "time_sec": 135.9,
    "margin_sec": 14.7,
+   "race_level_z": -0.95,
    "interval": "中2週",
    "other": {
     "label": "勝ち馬",
@@ -287,6 +315,7 @@
    "time": "2:01.2",
    "time_sec": 121.2,
    "margin_sec": 30.3,
+   "race_level_z": -0.88,
    "interval": "連闘",
    "other": {
     "label": "勝ち馬",
@@ -314,6 +343,7 @@
    "time": "2:44.7",
    "time_sec": 164.7,
    "margin_sec": 52.8,
+   "race_level_z": -1.89,
    "interval": "中2週",
    "other": {
     "label": "勝ち馬",
@@ -341,6 +371,7 @@
    "time": "1:45.4",
    "time_sec": 105.4,
    "margin_sec": 0.0,
+   "race_level_z": 1.35,
    "interval": "中3週",
    "other": {
     "label": "2着馬",
@@ -368,6 +399,7 @@
    "time": "2:26.3",
    "time_sec": 146.3,
    "margin_sec": 16.7,
+   "race_level_z": 0.11,
    "interval": "連闘",
    "other": {
     "label": "勝ち馬",
@@ -395,6 +427,7 @@
    "time": "2:40.3",
    "time_sec": 160.3,
    "margin_sec": 36.6,
+   "race_level_z": 0.07,
    "interval": "中2週",
    "other": {
     "label": "勝ち馬",
@@ -422,6 +455,7 @@
    "time": "3:23.1",
    "time_sec": 203.1,
    "margin_sec": 46.7,
+   "race_level_z": -1.49,
    "interval": null,
    "other": {
     "label": "勝ち馬",

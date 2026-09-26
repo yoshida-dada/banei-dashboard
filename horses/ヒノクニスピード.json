@@ -2,12 +2,12 @@
  "name": "ヒノクニスピード",
  "sex": "牡",
  "age": 2,
- "trainer": "久田守",
+ "trainer": "久田守（ばんえい）",
  "owner": "（有）古閑牧場",
- "sled_kg": 510.0,
- "weight": 835,
- "weight_diff": 3,
- "last_race_date": "2026-09-20",
+ "sled_kg": 530.0,
+ "weight": null,
+ "weight_diff": null,
+ "last_race_date": "2026-09-26",
  "pedigree": null,
  "stats": {
   "total": {
@@ -107,6 +107,31 @@
  "next_class": null,
  "races": [
   {
+   "date": "2026-09-26",
+   "race_no": 6,
+   "race_name": "ありさ、大輝来場記念２歳Ｂ－３",
+   "class": "B3",
+   "moisture": 1.1,
+   "field_size": 10,
+   "num": 1,
+   "jockey": "金田利",
+   "trainer": "久田守（ばんえい）",
+   "owner": "（有）古閑牧場",
+   "sled_kg": 530.0,
+   "weight": null,
+   "weight_diff": null,
+   "odds": 11.8,
+   "popularity": 5,
+   "position": null,
+   "time": null,
+   "time_sec": null,
+   "margin_sec": null,
+   "race_level_z": null,
+   "interval": "連闘",
+   "other": null,
+   "insider_labels": []
+  },
+  {
    "date": "2026-09-20",
    "race_no": 3,
    "race_name": "ホップステップ・ゲッチュ２歳Ｃ－４",
@@ -126,6 +151,7 @@
    "time": "1:38.8",
    "time_sec": 98.8,
    "margin_sec": 0.0,
+   "race_level_z": 1.26,
    "interval": "中2週",
    "other": {
     "label": "2着馬",
@@ -153,6 +179,7 @@
    "time": "1:52.1",
    "time_sec": 112.1,
    "margin_sec": 2.3,
+   "race_level_z": 0.92,
    "interval": "中1週",
    "other": {
     "label": "勝ち馬",
@@ -180,6 +207,7 @@
    "time": "2:07.2",
    "time_sec": 127.2,
    "margin_sec": 21.9,
+   "race_level_z": 0.65,
    "interval": "中2週",
    "other": {
     "label": "勝ち馬",
@@ -207,6 +235,7 @@
    "time": "2:19.9",
    "time_sec": 139.9,
    "margin_sec": 0.0,
+   "race_level_z": 0.67,
    "interval": null,
    "other": {
     "label": "2着馬",
