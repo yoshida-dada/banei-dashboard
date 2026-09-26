@@ -37,20 +37,23 @@ body::before{content:"";position:fixed;top:0;left:0;right:0;height:env(safe-area
 /* PC表示（2026-09-26、ユーザー要望でボタン切替式に追加）。デフォルトはスマホ幅のまま
    （既存の560px列）で、data-layout="desktop" の時だけ横幅を広げる。@mediaではなくJSの
    ボタントグルで明示的に切り替える設計（localStorageに保存、初回のみ画面幅から自動判定）。
-   2026-09-26 修正: 当初は出馬表と展開イメージを左右に並べたが「単純に横に並べただけで
-   見にくい」とのフィードバックにより再設計。出馬表(#horses)は情報量が多く列数も多いため
-   常に全幅を使い、展開イメージ(#raceflowtime)と馬場適性(#heatmap等)という「性質の近い
-   分析パネル同士」を左右均等の2カラムに組み替える（表とチャートのような異質な組み合わせを
-   横に並べるのをやめ、対になる情報同士を並べる方針に変更）。 */
+   2026-09-26 何度か再設計: 出馬表(#horses)は列数が多いため常に全幅。展開イメージ
+   (#raceflowtime)も全幅（横に並べると窮屈になるとのフィードバックのため）。馬場適性
+   セクション内の帯別ヒートマップ(#heatmap)と想定条件スライダー(#slider)のみ、同じ
+   情報の別表現同士なので左右2カラム（.aptgrid、末尾で定義）に並べる。 */
 :root[data-layout="desktop"] .wrap,
 :root[data-layout="desktop"] header,
 :root[data-layout="desktop"] .nav-in{max-width:1120px}
-.predgrid{display:block}
-:root[data-layout="desktop"] .predgrid{display:grid;grid-template-columns:1fr 1fr;gap:0 28px;align-items:start;margin-top:8px}
 /* データ分析タブ（2026-09-26）: 拡大するだけで見にくいとのフィードバックにより、
    チャート+詳細（左）と過去3走/10走サマリー表（右）を並べ、条件別(condHtml)は下に全幅で表示 */
 .anagrid{display:block}
 :root[data-layout="desktop"] .anagrid{display:grid;grid-template-columns:1fr 1fr;gap:0 28px;align-items:start}
+/* 2026-09-26 再修正: 展開イメージは全幅に戻し、代わりに帯別ヒートマップと想定条件
+   スライダー（同じ「馬場適性」セクション内の2つの表現）を左右に並べる */
+.aptgrid{display:block}
+.aptslider{margin-top:20px}
+:root[data-layout="desktop"] .aptgrid{display:grid;grid-template-columns:1fr 1fr;gap:0 28px;align-items:start}
+:root[data-layout="desktop"] .aptslider{margin-top:0}
 .layout-btn{margin-left:8px;background:var(--surface);border:1px solid var(--border);color:var(--ink);border-radius:9px;padding:5px 11px;font-size:.74rem;font-weight:700;font-family:inherit;cursor:pointer;white-space:nowrap}
 .layout-btn[aria-pressed="true"]{background:var(--edge);border-color:var(--edge);color:#fff}
 
@@ -664,21 +667,21 @@ table.ht .numcell{display:inline-flex;align-items:center;gap:4px}
   </div>
   <div id="colsPanel" class="colspanel" style="display:none"></div>
   <div id="horses"></div>
-  <div class="predgrid">
-    <div class="predflow">
-      <div id="raceflowtime"></div>
+  <div id="raceflowtime"></div>
+  <div class="secthead">
+    <span class="sect">馬場適性（このレースの出走馬）</span>
+    <div class="vtoggle" id="dimseg">
+      <button data-d="time" aria-pressed="true">決着タイム</button>
+      <button data-d="moist" aria-pressed="false">馬場水分</button>
     </div>
-    <div class="predapt">
-      <div class="secthead">
-        <span class="sect">馬場適性（このレースの出走馬）</span>
-        <div class="vtoggle" id="dimseg">
-          <button data-d="time" aria-pressed="true">決着タイム</button>
-          <button data-d="moist" aria-pressed="false">馬場水分</button>
-        </div>
-      </div>
+  </div>
+  <div class="aptgrid">
+    <div class="aptheat">
       <div class="apthint" id="heatlead"></div>
       <div id="heatmap"></div>
-      <div class="apthint" id="slidlead" style="margin-top:20px"></div>
+    </div>
+    <div class="aptslider">
+      <div class="apthint" id="slidlead"></div>
       <div id="slider"></div>
     </div>
   </div>
@@ -2856,7 +2859,7 @@ if ("serviceWorker" in navigator) {
   });
 }
 
-// --- PC表示切替（2026-09-26）: data-layout属性でCSS(.predgrid等)を切り替える。
+// --- PC表示切替（2026-09-26）: data-layout属性でCSS(.aptgrid/.anagrid等)を切り替える。
 // 初回のみ画面幅から自動判定（900px以上ならdesktop）、以降はユーザーの明示的な選択を
 // localStorageに保存して次回以降も優先する（画面幅が変わっても勝手に戻らない）。
 (function(){
