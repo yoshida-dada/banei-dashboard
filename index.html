@@ -605,6 +605,14 @@ table.ht .numcell{display:inline-flex;align-items:center;gap:4px}
 .arank{font-size:.72rem;font-weight:700;color:var(--muted);margin-left:5px}
 .arank.top{color:var(--accent)}
 .csec{margin-top:26px}
+/* 全馬比較カードグリッド（データ分析タブ、2026-09-26） */
+.ovgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:10px;margin-top:10px}
+.ovcard{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:10px 12px;box-shadow:var(--shadow)}
+.ovhead{display:flex;align-items:center;gap:7px;margin-bottom:6px}
+.ovhead .ovn{min-width:24px;height:24px;line-height:22px;text-align:center;border-radius:5px;font-weight:800;font-size:.8rem}
+.ovhead .ovnm{font-weight:800;font-size:.9rem;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.ovempty{color:var(--muted);font-size:.78rem}
+.ovtbl{font-size:.74rem}
 .ccard{background:var(--surface);border:1px solid var(--border);border-radius:14px;box-shadow:var(--shadow);overflow:hidden}
 .crow{padding:10px 12px;border-top:1px solid var(--border2)}
 .crow:first-child{border-top:0}
@@ -1298,10 +1306,16 @@ function renderRaceFlowTime(r){
     ? `<rect x="0" y="${laneY(i)-rowH/2}" width="${W}" height="${rowH}" fill="var(--edge)" opacity="0.28"/>`
     : "").join("");
 
-  const dot=(h,cx,cy)=>{
+  // 丸(円)とラベル文字を分けたのは、間に箱ひげの帯を挟んで描くため（2026-09-26）。
+  // 円→帯→文字の順で描かないと、円が帯の中央部分を覆い隠して「帯が切れて見える」不具合になる
+  // （振れ幅が小さい馬ほど円の直径に対して帯が短く、丸ごと隠れて壊れて見えていた）。
+  const dotCircle=(h,cx,cy)=>{
     const c=CAP[h.gate]||['#888','#fff'];
-    return `<circle cx="${cx}" cy="${cy}" r="${8*S}" fill="${c[0]}" stroke="var(--surface)" stroke-width="${1.5*S}"/>`
-      +`<text x="${cx}" y="${(cy+2.8*S).toFixed(1)}" font-size="${8*S}" text-anchor="middle" font-weight="800" fill="${c[1]}">${h.num}</text>`;
+    return `<circle cx="${cx}" cy="${cy}" r="${8*S}" fill="${c[0]}" stroke="var(--surface)" stroke-width="${1.5*S}"/>`;
+  };
+  const dotText=(h,cx,cy)=>{
+    const c=CAP[h.gate]||['#888','#fff'];
+    return `<text x="${cx}" y="${(cy+2.8*S).toFixed(1)}" font-size="${8*S}" text-anchor="middle" font-weight="800" fill="${c[1]}">${h.num}</text>`;
   };
   const nameLabel=(h,cy)=>
     `<text x="${padL-10*S}" y="${(cy-1.5*S).toFixed(1)}" font-size="${7.5*S}" text-anchor="end" fill="var(--ink)">${shortName(h.name)}</text>`;
@@ -1342,11 +1356,11 @@ function renderRaceFlowTime(r){
     }
     const hasSpread = h.fh_min!=null && h.fh_max!=null && h.fh_max>h.fh_min;
     const whisker = hasSpread
-      ? `<line x1="${xFor(h.fh_min).toFixed(1)}" y1="${cy}" x2="${xFor(h.fh_max).toFixed(1)}" y2="${cy}" stroke="var(--ink)" stroke-width="2.5" opacity="0.3"/>`
-        +`<line x1="${xFor(h.fh_min).toFixed(1)}" y1="${cy-5.5*S}" x2="${xFor(h.fh_min).toFixed(1)}" y2="${cy+5.5*S}" stroke="var(--ink)" stroke-width="1.6" opacity="0.5"/>`
-        +`<line x1="${xFor(h.fh_max).toFixed(1)}" y1="${cy-5.5*S}" x2="${xFor(h.fh_max).toFixed(1)}" y2="${cy+5.5*S}" stroke="var(--ink)" stroke-width="1.6" opacity="0.5"/>`
+      ? `<line x1="${xFor(h.fh_min).toFixed(1)}" y1="${cy}" x2="${xFor(h.fh_max).toFixed(1)}" y2="${cy}" stroke="var(--ink)" stroke-width="${2.5*S}" opacity="0.45"/>`
+        +`<line x1="${xFor(h.fh_min).toFixed(1)}" y1="${cy-5.5*S}" x2="${xFor(h.fh_min).toFixed(1)}" y2="${cy+5.5*S}" stroke="var(--ink)" stroke-width="${1.6*S}" opacity="0.65"/>`
+        +`<line x1="${xFor(h.fh_max).toFixed(1)}" y1="${cy-5.5*S}" x2="${xFor(h.fh_max).toFixed(1)}" y2="${cy+5.5*S}" stroke="var(--ink)" stroke-width="${1.6*S}" opacity="0.65"/>`
       : "";
-    return nameLabel(h,cy) + whisker + dot(h,xFor(h.fh_avg),cy) + agariArrow(h,xFor(h.fh_avg),cy) + numLabel(h,cy);
+    return nameLabel(h,cy) + dotCircle(h,xFor(h.fh_avg),cy) + whisker + agariArrow(h,xFor(h.fh_avg),cy) + dotText(h,xFor(h.fh_avg),cy) + numLabel(h,cy);
   };
   const body = rows.map(rowSvg).join("");
   const heads=`<text x="${padL}" y="${12*S}" font-size="${8.5*S}" text-anchor="start" fill="var(--muted)">◀ 第2障害降下時点</text>`;
@@ -2835,121 +2849,35 @@ function anaSummaryHtml(trend,rk,num){
   const body=rows.map(([lab,f,key])=>`<tr><td>${lab}</td>${sets.map(([n,a])=>`<td>${f(a)}${key?rankHtml(key,n):""}</td>`).join("")}</tr>`).join("");
   return `<div class="adet"><table class="asumt"><thead><tr><th></th>${th}</tr></thead><tbody>${body}</tbody></table></div>`;
 }
-// 全馬を俯瞰する箱ひげ図（データ分析タブ、2026-09-26、ユーザー要望）。展開イメージ
-// (renderRaceFlowTime)と同じ視覚パターン（馬番順の行＋横帯の箱ひげ＋平均の丸＋右側に数値）を
-// 指標を差し替えて再利用する。1着との差はh.trendの"gs"(符号付き着差、1着=2着との勝ち幅で正、
-// それ以外は負け幅で負)を使い、勝敗が符号でひと目で分かるようにする。前半/後半タイムは通常の
-// 「左=速い」の向き、着差は「左=良い(勝ち幅が大きい/負け幅が小さい)」の向きに揃えて、
-// 3枚とも「左ほど良い」で統一している。
-function anaStat(vals){
-  const v = vals.filter(x=>x!=null);
-  if(!v.length) return null;
-  return {avg: v.reduce((a,b)=>a+b,0)/v.length, min: Math.min(...v), max: Math.max(...v), n: v.length};
-}
-function renderBoxOverview(hs, containerW, cfg){
-  // cfg: {title, note, get(h)->{avg,min,max}|null, fmtAvg(v), fmtRange(mn,mx), invert}
-  const rows = [...hs].sort((a,b)=>a.num-b.num).map(h=>({h, stat: cfg.get(h)}));
-  const withStat = rows.filter(r=>r.stat);
-  if(withStat.length<2) return "";
-  const isDesktop = document.documentElement.dataset.layout==="desktop";
-  const S = isDesktop ? 1.6 : 1;
-  const n=rows.length, W=Math.max(340, containerW||340);
-  const rowH=32*S, padT=20*S, padB=20*S, padL=76*S, padR=84*S;
-  const H=padT+padB+rowH*(n-1);
-  const laneY=i=>padT+i*rowH;
-  const plotW=W-padL-padR;
-  const shortName=nm=>{ nm=nm||""; return nm.length>6 ? nm.slice(0,6)+"…" : nm; };
-
-  const mins=withStat.map(r=>r.stat.min), maxs=withStat.map(r=>r.stat.max);
-  let domMin=Math.min(...mins), domMax=Math.max(...maxs);
-  if(domMax<=domMin) domMax=domMin+1;
-  const dpad=(domMax-domMin)*0.08;
-  domMin-=dpad; domMax+=dpad;
-  const mid=(domMin+domMax)/2;
-  const xFor = cfg.invert
-    ? (t=>padL+plotW*(domMax-t)/(domMax-domMin))
-    : (t=>padL+((t-domMin)/(domMax-domMin))*plotW);
-
-  const gridTop=laneY(0)-14*S, gridBot=laneY(n-1)+10*S;
-  const grid=[0,0.5,1].map(v=>{
-    const t=domMin+v*(domMax-domMin);
-    return `<line x1="${xFor(t).toFixed(1)}" y1="${gridTop}" x2="${xFor(t).toFixed(1)}" y2="${gridBot}" stroke="var(--edge)" stroke-width="1" opacity="${v===0.5?0.7:0.4}"/>`;
-  }).join("");
-  const zebra=rows.map((r,i)=> i%2===0
-    ? `<rect x="0" y="${laneY(i)-rowH/2}" width="${W}" height="${rowH}" fill="var(--edge)" opacity="0.28"/>`
-    : "").join("");
-
-  const dot=(h,cx,cy)=>{
-    const c=CAP[h.gate]||['#888','#fff'];
-    return `<circle cx="${cx}" cy="${cy}" r="${8*S}" fill="${c[0]}" stroke="var(--surface)" stroke-width="${1.5*S}"/>`
-      +`<text x="${cx}" y="${(cy+2.8*S).toFixed(1)}" font-size="${8*S}" text-anchor="middle" font-weight="800" fill="${c[1]}">${h.num}</text>`;
-  };
-  const nameLabel=(h,cy)=>
-    `<text x="${padL-10*S}" y="${(cy+2.8*S).toFixed(1)}" font-size="${7.5*S}" text-anchor="end" fill="var(--ink)">${shortName(h.name)}</text>`;
-  const numLabel=(stat,cy)=>{
-    if(!stat) return "";
-    return `<text x="${W-padR+8*S}" y="${(cy+2.8*S).toFixed(1)}" font-size="${7.5*S}" text-anchor="start" fill="var(--muted)">`
-      +`<tspan font-weight="700" fill="var(--ink)">${cfg.fmtAvg(stat.avg)}</tspan> ${cfg.fmtRange(stat.min,stat.max)}</text>`;
-  };
-  const rowSvg = r=>{
-    const cy=laneY(rows.indexOf(r));
-    if(!r.stat){
-      return nameLabel(r.h,cy)
-        +`<circle cx="${xFor(mid).toFixed(1)}" cy="${cy}" r="${8*S}" fill="none" stroke="var(--muted)" stroke-width="1.3" stroke-dasharray="2 2"/>`
-        +`<text x="${xFor(mid).toFixed(1)}" y="${(cy+2.8*S).toFixed(1)}" font-size="${8*S}" text-anchor="middle" fill="var(--muted)">${r.h.num}</text>`;
+// 全馬を一覧できるカードグリッド（データ分析タブ、2026-09-26、ユーザー要望で箱ひげ図から
+// 変更）。各馬について直近3走/10走の成績(1-2-3-着外)・平均着順・1着との差(平均)・
+// 前半/後半タイム(平均)を表にしたカードを馬番順に並べる。集計ロジックはanaSummaryHtmlの
+// 該当5行と同じ（1着との差は既存の"g"=勝ち馬は0の従来定義のまま。符号付き版が必要になれば
+// 別途検討）。
+function anaOverviewGrid(hs){
+  const cards = [...hs].sort((a,b)=>a.num-b.num).map(h=>{
+    const trend = h.trend||[];
+    const head = `<div class="ovhead"><span class="ovn" style="${capStyle(h.gate)}">${h.num}</span><span class="ovnm">${h.name}</span></div>`;
+    if(!trend.length){
+      return `<div class="ovcard">${head}<div class="ovempty">近走データなし</div></div>`;
     }
-    const {min,max,avg}=r.stat;
-    const hasSpread = max>min;
-    const whisker = hasSpread
-      ? `<line x1="${xFor(min).toFixed(1)}" y1="${cy}" x2="${xFor(max).toFixed(1)}" y2="${cy}" stroke="var(--ink)" stroke-width="2.5" opacity="0.3"/>`
-        +`<line x1="${xFor(min).toFixed(1)}" y1="${cy-5.5*S}" x2="${xFor(min).toFixed(1)}" y2="${cy+5.5*S}" stroke="var(--ink)" stroke-width="1.6" opacity="0.5"/>`
-        +`<line x1="${xFor(max).toFixed(1)}" y1="${cy-5.5*S}" x2="${xFor(max).toFixed(1)}" y2="${cy+5.5*S}" stroke="var(--ink)" stroke-width="1.6" opacity="0.5"/>`
-      : "";
-    return nameLabel(r.h,cy) + whisker + dot(r.h,xFor(avg),cy) + numLabel(r.stat,cy);
-  };
-  const body = rows.map(rowSvg).join("");
-  const heads=`<text x="${padL}" y="${12*S}" font-size="${8.5*S}" text-anchor="start" fill="var(--muted)">${cfg.axisLabel}</text>`;
-  const zeroLine = (cfg.invert && domMin<0 && domMax>0)
-    ? `<line x1="${xFor(0).toFixed(1)}" y1="${gridTop}" x2="${xFor(0).toFixed(1)}" y2="${gridBot}" stroke="var(--ink)" stroke-width="1.5" opacity="0.35"/>` : "";
-
-  return `<div class="secthead" style="margin-top:22px"><span class="sect">${cfg.title}</span></div>`
-    +`<svg class="tksvg" viewBox="0 0 ${W} ${H+14*S}">${heads}<g transform="translate(0,${4*S})">${zebra}${grid}${zeroLine}${body}</g></svg>`
-    +`<div class="tknote">${cfg.note}</div>`;
-}
-function renderAnaOverview(hs, host){
-  const containerW = host.clientWidth || 360;
-  const gapChart = renderBoxOverview(hs, containerW, {
-    title: "1着との差（全馬比較、直近10走）",
-    axisLabel: "◀ 良い（勝ち幅が大きい／負け幅が小さい）",
-    invert: true,
-    get: h => anaStat((h.trend||[]).map(t=>t.gs)),
-    fmtAvg: v => (v>=0?"+":"")+v.toFixed(1)+"s",
-    fmtRange: (mn,mx) => `(${mn>=0?"+":""}${mn.toFixed(0)}–${mx>=0?"+":""}${mx.toFixed(0)})`,
-    note: "縦＝馬番順、横＝直近10走の1着との差（1着の走は2着との勝ち幅を＋、それ以外は勝ち馬との"
-      +"負け幅を－で表示）。帯＝振れ幅、丸＝平均。0のライン＝勝ち負けの境目。左ほど良い。",
-  });
-  const fhChart = renderBoxOverview(hs, containerW, {
-    title: "前半タイム（全馬比較、直近10走）",
-    axisLabel: "◀ 速い",
-    invert: false,
-    get: h => anaStat((h.trend||[]).map(t=>t.fh)),
-    fmtAvg: v => v.toFixed(1)+"s",
-    fmtRange: (mn,mx) => `(${mn.toFixed(0)}–${mx.toFixed(0)})`,
-    note: "縦＝馬番順、横＝直近10走の前半タイム(総合−上り、第1・第2障害を含む)。帯＝振れ幅、"
-      +"丸＝平均。生タイムは馬場水分・ソリ重量の影響を受けるため他馬との絶対比較には注意。左ほど速い。",
-  });
-  const lhChart = renderBoxOverview(hs, containerW, {
-    title: "後半タイム（全馬比較、直近10走）",
-    axisLabel: "◀ 速い",
-    invert: false,
-    get: h => anaStat((h.trend||[]).map(t=>t.lh)),
-    fmtAvg: v => v.toFixed(1)+"s",
-    fmtRange: (mn,mx) => `(${mn.toFixed(0)}–${mx.toFixed(0)})`,
-    note: "縦＝馬番順、横＝直近10走の後半（上り）タイム。帯＝振れ幅、丸＝平均。左ほど速い。",
-  });
-  if(!gapChart && !fhChart && !lhChart) return "";
-  return `<div class="ahead"><span class="at1">全馬比較</span><span class="at2">箱ひげで振れ幅も含めて見る</span></div>`
-    + gapChart + fhChart + lhChart;
+    const avg=(a,k)=>{ const v=a.map(t=>t[k]).filter(x=>x!=null); return v.length?v.reduce((x,y)=>x+y,0)/v.length:null; };
+    const rec=a=>{ const c=[0,0,0,0]; a.forEach(t=>{ c[Math.min(t.p,4)-1]++; }); return c.join("-"); };
+    const fmt=(v,d,u)=>v==null?"—":v.toFixed(d)+u;
+    const sets=[[3,trend.slice(-3)],[10,trend.slice(-10)]];
+    const rows=[
+      ["成績(1-2-3-着外)",a=>rec(a)],
+      ["平均着順",a=>fmt(avg(a,"p"),1,"着")],
+      ["1着との差(平均)",a=>fmt(avg(a,"g"),1,"秒")],
+      ["前半タイム(平均)",a=>fmt(avg(a,"fh"),1,"秒")],
+      ["後半タイム(平均)",a=>fmt(avg(a,"lh"),1,"秒")],
+    ];
+    const th=sets.map(([n,a])=>`<th>過去${n}走${a.length<n?`<small>(${a.length})</small>`:""}</th>`).join("");
+    const body=rows.map(([lab,f])=>`<tr><td>${lab}</td>${sets.map(([n,a])=>`<td>${f(a)}</td>`).join("")}</tr>`).join("");
+    return `<div class="ovcard">${head}<table class="asumt ovtbl"><thead><tr><th></th>${th}</tr></thead><tbody>${body}</tbody></table></div>`;
+  }).join("");
+  return `<div class="ahead"><span class="at1">全馬比較</span><span class="at2">直近3走・10走の成績を一覧</span></div>`
+    +`<div class="ovgrid">${cards}</div>`;
 }
 function renderAnalysis(){
   const host=document.getElementById("analysis"), S=window.__ANA, r=get();
@@ -2970,7 +2898,7 @@ function renderAnalysis(){
     ? `<div class="anagrid"><div class="anachart"><div class="acard">${anaChartSvg(trend,S.pt,chartW)}</div>${anaDetailHtml(trend[S.pt])}</div>`
       +`<div class="anasum">${anaSummaryHtml(trend,anaRanks(hs),h.num)}</div></div>`
     : `<div class="meta">${h.trend===undefined?"近走の推移データを準備中です（次回の自動更新で反映されます）。":"この馬の過去走データがありません（初出走）。"}</div>`;
-  host.innerHTML=renderAnaOverview(hs, host)
+  host.innerHTML=anaOverviewGrid(hs)
     +`<div class="ahead csec"><span class="at1">近走の推移</span><span class="at2">${r.date.slice(5).replace('-','/')} ${r.race_no}R ${r.race_name||""} ・番号を押すと馬を切り替え</span></div>`
     +`<div class="arow">${btns}</div>`
     +`<div class="aname">${h.num} ${h.name}<small>近${trend.length}走</small></div>`+body+condHtml(hs);
