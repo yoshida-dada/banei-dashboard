@@ -2855,6 +2855,11 @@ function anaSummaryHtml(trend,rk,num){
 // 該当5行と同じ（1着との差は既存の"g"=勝ち馬は0の従来定義のまま。符号付き版が必要になれば
 // 別途検討）。
 function anaOverviewGrid(hs){
+  const rk = anaRanks(hs);   // このレース出走馬内での順位（過去3走/10走×g/fh/lh、2026-09-26追加）
+  const rankHtml=(key,n,num)=>{
+    const e=rk&&rk[n]&&rk[n][key], r=e&&e.rank[num];
+    return r?` <span class="arank${r<=3?' top':''}" title="このレースの出走馬${e.of}頭中">${r}位</span>`:"";
+  };
   const cards = [...hs].sort((a,b)=>a.num-b.num).map(h=>{
     const trend = h.trend||[];
     const head = `<div class="ovhead"><span class="ovn" style="${capStyle(h.gate)}">${h.num}</span><span class="ovnm">${h.name}</span></div>`;
@@ -2868,15 +2873,15 @@ function anaOverviewGrid(hs){
     const rows=[
       ["成績(1-2-3-着外)",a=>rec(a)],
       ["平均着順",a=>fmt(avg(a,"p"),1,"着")],
-      ["1着との差(平均)",a=>fmt(avg(a,"g"),1,"秒")],
-      ["前半タイム(平均)",a=>fmt(avg(a,"fh"),1,"秒")],
-      ["後半タイム(平均)",a=>fmt(avg(a,"lh"),1,"秒")],
+      ["1着との差(平均)",a=>fmt(avg(a,"g"),1,"秒"),"g"],
+      ["前半タイム(平均)",a=>fmt(avg(a,"fh"),1,"秒"),"fh"],
+      ["後半タイム(平均)",a=>fmt(avg(a,"lh"),1,"秒"),"lh"],
     ];
     const th=sets.map(([n,a])=>`<th>過去${n}走${a.length<n?`<small>(${a.length})</small>`:""}</th>`).join("");
-    const body=rows.map(([lab,f])=>`<tr><td>${lab}</td>${sets.map(([n,a])=>`<td>${f(a)}</td>`).join("")}</tr>`).join("");
+    const body=rows.map(([lab,f,key])=>`<tr><td>${lab}</td>${sets.map(([n,a])=>`<td>${f(a)}${key?rankHtml(key,n,h.num):""}</td>`).join("")}</tr>`).join("");
     return `<div class="ovcard">${head}<table class="asumt ovtbl"><thead><tr><th></th>${th}</tr></thead><tbody>${body}</tbody></table></div>`;
   }).join("");
-  return `<div class="ahead"><span class="at1">全馬比較</span><span class="at2">直近3走・10走の成績を一覧</span></div>`
+  return `<div class="ahead"><span class="at1">全馬比較</span><span class="at2">直近3走・10走の成績を一覧（1着との差/前半/後半タイムは出走馬内の順位も表示）</span></div>`
     +`<div class="ovgrid">${cards}</div>`;
 }
 function renderAnalysis(){
