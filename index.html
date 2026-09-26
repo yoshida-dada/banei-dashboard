@@ -192,13 +192,17 @@ table.ht .abil{color:var(--accent);font-weight:800}
 table.ht .win-c{font-weight:800}
 table.ht .fin{font-size:.68rem;color:var(--muted)}
 table.ht .fin.top{color:var(--good);font-weight:800}
-/* 過去5走（簡易）列（2026-09-26） */
-.p5row{display:flex;gap:3px}
-.p5cell{display:inline-flex;align-items:center;justify-content:center;min-width:20px;height:18px;
-  border-radius:4px;background:var(--surface2);font-size:.64rem;font-weight:700;color:var(--muted);
-  padding:0 2px;white-space:nowrap}
-.p5cell.p5top{background:var(--good-soft);color:var(--good)}
-.p5cell.p5win{background:var(--accent-soft);color:var(--accent)}
+/* 過去5走（簡易）列（2026-09-26、日付/着順/1着とのタイム差の3行×5走） */
+.p5grid{display:flex;gap:5px}
+.p5col{display:flex;flex-direction:column;align-items:center;min-width:34px;
+  border-radius:5px;background:var(--surface2);padding:2px 3px;line-height:1.35}
+.p5col.p5top{background:var(--good-soft)}
+.p5col.p5win{background:var(--accent-soft)}
+.p5d{font-size:.6rem;color:var(--muted)}
+.p5p{font-size:.66rem;font-weight:800;color:var(--ink)}
+.p5col.p5top .p5p{color:var(--good)}
+.p5col.p5win .p5p{color:var(--accent)}
+.p5g{font-size:.6rem;color:var(--muted);font-variant-numeric:tabular-nums}
 /* 単勝ROI>1 ハイライト（スキャン連続でだんだん濃く） */
 table.ht tr.ev1{background:color-mix(in srgb,var(--ev-hue) 13%,transparent)}
 table.ht tr.ev2{background:color-mix(in srgb,var(--ev-hue) 26%,transparent)}
@@ -1142,7 +1146,28 @@ function featColor(v){ if(v==null) return "var(--muted)"; if(v>=6.5) return "var
 function featSpan(v){ return `<span style="color:${featColor(v)};font-weight:800">${v!=null?v.toFixed(1):'—'}</span>`; }
 function featBar(label,v){ const w=Math.max(0,Math.min(100,(v||0)*10));
   return `<div class="ft"><span class="fl">${label}</span><span class="fbar"><span style="width:${w}%;background:${featColor(v)}"></span></span><span class="fv num">${v!=null?v.toFixed(1):'—'}</span></div>`; }
-// テーブルの列定義（always=常時表示。それ以外は「⚙列」で表示/非表示できる）
+// 過去5走の簡易表示（2026-09-26、ユーザー要望）。前走を左端に、1列＝1走で
+// 日付／着順／1着とのタイム差の3行を表示する。「1着とのタイム差」は符号付き着差
+// (h.trend[].gs)を使い、1着の走は2着との勝ち幅を+、それ以外は勝ち馬との負け幅を-で表す
+// （データ分析タブの箱ひげと同じ定義）。レースレベル判定(rz)が|z|>=1.5の走には着順の後ろに
+// 🔥(高レベル)/📉(低レベル)を付ける。詳細は馬別成績モーダル（馬名タップ）で確認する想定の簡易版。
+function past5Html(h){
+  const rows=(h.trend||[]).slice(-5).reverse();
+  if(!rows.length) return `<td class="l"><span class="tsub">—</span></td>`;
+  const cols=rows.map(t=>{
+    const lvl = t.rz!=null && Math.abs(t.rz)>=1.5 ? (t.rz>=1.5?'🔥':'📉') : '';
+    const cls = t.p===1?'p5win':(t.p!=null&&t.p<=3?'p5top':'');
+    const dateTxt = t.d ? t.d.slice(5).replace('-','/') : '—';
+    const posTxt = t.p!=null ? t.p+'着' : '—';
+    const gapTxt = t.gs!=null ? (t.gs>=0?'+':'')+t.gs.toFixed(1)+'s' : '—';
+    const title = `${t.d||''} ${t.c||''} ${posTxt}`;
+    return `<div class="p5col ${cls}" title="${title}"><span class="p5d">${dateTxt}</span>`
+      +`<span class="p5p">${posTxt}${lvl}</span><span class="p5g">${gapTxt}</span></div>`;
+  }).join('');
+  return `<td class="l"><div class="p5grid">${cols}</div></td>`;
+}
+// テーブルの列定義（always=常時表示。それ以外は「⚙列」で表示/非表示できる）。
+// 配列の並び=既定の列順（2026-09-26、ユーザー指定のレイアウトに合わせて並び替え）。
 const COLS = [
   {key:"num", label:"馬番", always:true, th:'<th class="l">馬</th>',
    td:h=>`<td class="l"><span class="numcell">${medal(h.position)}<span class="tnum" style="${capStyle(h.gate)}">${h.num}</span></span></td>`},
@@ -1154,11 +1179,12 @@ const COLS = [
    td:h=>`<td class="num"><div class="c2 c2r"><span>${sledTop(h)}</span><span class="tsub num">${sledSub(h)}</span></div></td>`},
   {key:"abil", label:"能力/Elo", th:'<th>能力/Elo</th>',
    td:h=>`<td class="num"><div class="c2 c2r"><span class="abil">${h.ability!=null?h.ability.toFixed(1):'—'}</span><span class="tsub num">${h.elo!=null?h.elo:'—'}</span></div></td>`},
+  {key:"win", label:"勝率", always:true, th:'<th>勝率</th>', td:h=>`<td class="win-c num">${pct(h.win_prob)}</td>`},
+  {key:"past5", label:"過去5走（簡易）", th:'<th class="l">過去5走</th>', td:past5Html},
   {key:"obstacle", label:"障害力", th:'<th>障害</th>', td:h=>`<td class="num">${featSpan(h.f_obstacle)}</td>`},
   {key:"finish", label:"終い指数", th:'<th>終い</th>', td:h=>`<td class="num">${featSpan(h.f_finish)}</td>`},
   {key:"weight", label:"重量適性", th:'<th>重量</th>', td:h=>`<td class="num">${featSpan(h.f_weight)}</td>`},
   {key:"kuzure", label:"安定性", th:'<th>安定</th>', td:h=>`<td class="num">${featSpan(h.f_kuzure)}</td>`},
-  {key:"win", label:"勝率", always:true, th:'<th>勝率</th>', td:h=>`<td class="win-c num">${pct(h.win_prob)}</td>`},
   {key:"place2", label:"連対率", th:'<th>連対</th>', td:h=>`<td class="num">${pct(h.place2)}</td>`},
   {key:"place3", label:"複勝率", th:'<th>複勝</th>', td:h=>`<td class="num">${pct(h.place3)}</td>`},
   {key:"odds", label:"オッズ・単勝EV", th:'<th>オッズ / EV</th>',
@@ -1168,21 +1194,6 @@ const COLS = [
    td:h=>`<td class="num"><div class="c2 c2r"><span>${h.prize_program!=null?h.prize_program.toLocaleString():'—'}${h.prize_year!=null?'/'+h.prize_year.toLocaleString():''}</span><span class="tsub">${h.horse_class||'—'}</span></div></td>`},
   {key:"fin", label:"着順・決着タイム", th:'<th>着 / 決着</th>',
    td:(h,hasResult)=>{ const top=h.position!=null&&h.position<=3; const fin=!hasResult?"—":(h.position!=null?`${h.position}着`:"除外"); const rt=hasResult&&h.result_time?h.result_time:"—"; return `<td class="fin ${top?'top':''}"><div class="c2 c2r"><span>${fin}</span><span class="tsub num">${rt}</span></div></td>`; }},
-  // 過去5走の簡易表示（2026-09-26、ユーザー要望）。前走を左端に着順を並べ、
-  // レースレベル判定(h.trend[].rz、build_dashboard_data.pyで計算済み)が|z|>=1.5の走には
-  // 🔥/📉を重ねる。詳細は馬別成績モーダル（馬名タップ）で確認する想定の簡易版。
-  {key:"past5", label:"過去5走（簡易）", th:'<th class="l">過去5走</th>',
-   td:h=>{
-     const rows=(h.trend||[]).slice(-5).reverse();
-     if(!rows.length) return `<td class="l"><span class="tsub">—</span></td>`;
-     const cells=rows.map(t=>{
-       const lvl = t.rz!=null && Math.abs(t.rz)>=1.5 ? (t.rz>=1.5?'🔥':'📉') : '';
-       const cls = t.p===1?'p5win':(t.p!=null&&t.p<=3?'p5top':'');
-       const title = `${t.d||''} ${t.c||''} ${t.p!=null?t.p+'着':''}`;
-       return `<span class="p5cell ${cls}" title="${title}">${t.p!=null?t.p:'-'}${lvl}</span>`;
-     }).join('');
-     return `<td class="l"><div class="p5row">${cells}</div></td>`;
-   }},
 ];
 function colHidden(){ try{ return new Set(JSON.parse(localStorage.getItem("cols_hidden")||"[]")); }catch(e){ return new Set(); } }
 const DEFAULT_ORDER = COLS.map(c=>c.key);
