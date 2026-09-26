@@ -311,9 +311,11 @@ table.ht .roi{color:color-mix(in srgb,var(--ev-hue) 78%,var(--ink));font-weight:
 .hsub.howner{display:block;opacity:.72}
 /* 昇級ウォッチをテキスト行からバッジ化（2026-09-26、ユーザー要望で目立たせる）。
    table.ht .tsub の color/font-size（詳細度が.promowatch単体より高い）に文字色・サイズを
-   上書きされて読めなくなる不具合があったため、バッジとして必須の見た目はimportantで固定する。 */
+   上書きされて読めなくなる不具合があったため、バッジとして必須の見た目はimportantで固定する。
+   background/colorはJS側(promoIntensity)がインラインstyleで着以内条件ごとの濃淡を付けるため、
+   ここでは!importantを付けない（インラインstyleは通常の外部ルールより優先されるため上書きできる）。 */
 .promowatch{display:inline-flex!important;align-items:center;margin-top:3px;padding:2px 8px;
-  border-radius:999px;background:var(--accent)!important;color:#fff!important;font-weight:800!important;
+  border-radius:999px;background:var(--accent);color:#fff;font-weight:800!important;
   font-size:.68rem!important;white-space:nowrap;max-width:none;box-shadow:0 1px 3px rgba(0,0,0,.15)}
 .hjk::before{content:"騎 ";opacity:.6}
 .hjk .jrec{color:var(--ink);font-weight:600}
@@ -898,9 +900,20 @@ const jockeySwitchIcon = h => h.jockey_switched
   ? `<span class="jsw" title="乗り替わり（前走から騎手が変わっています）">⚠️</span>` : '';
 // 入着すれば昇級する馬のウォッチ表示（P3-2拡張 Stage5、2026-08-24…2026-09-24）。
 // build_dashboard_data.pyがh.promo_watchとして事前計算（発走前から分かるレース固定属性のみ使用＝リーク無し）。
+// 2026-09-26修正: 全件同じ濃さだと「1着以内でないと昇級しない馬」と「5着以内でも昇級する馬」の
+// 区別がつきにくいとの指摘。1着=最も濃い（緊急度が高い＝入着条件が厳しい）を基準に、着以内の
+// 条件が緩くなるほど同系色で段階的に薄くする（color-mixは.rpill.st-*等で既に使用済みの手法）。
+function promoIntensity(pos){
+  const pct = Math.max(22, 100 - (pos - 1) * 20);
+  return {bg: `color-mix(in srgb, var(--accent) ${pct}%, var(--surface))`,
+          fg: pct >= 50 ? "#fff" : "var(--accent)"};
+}
 const promoWatchLine = (h, cls) => h.promo_watch
-  ? `<span class="${cls} promowatch" title="現在の番組賞金にこのレースの${h.promo_watch.position}着分の本賞金を足すと${h.promo_watch.next_class}に届きます">`
-    + `⬆${h.promo_watch.position}着以内で${h.promo_watch.next_class}へ昇級</span>` : '';
+  ? (() => { const c = promoIntensity(h.promo_watch.position);
+      return `<span class="${cls} promowatch" style="background:${c.bg};color:${c.fg}" `
+        + `title="現在の番組賞金にこのレースの${h.promo_watch.position}着分の本賞金を足すと${h.promo_watch.next_class}に届きます">`
+        + `⬆${h.promo_watch.position}着以内で${h.promo_watch.next_class}へ昇級</span>`; })()
+  : '';
 function showInsiderLabelModal(h){
   const modal=document.getElementById("iflagModal"); if(!modal) return;
   document.getElementById("iflagTitle").textContent=`${h.num}番 ${h.name||''} の八百長ラベル履歴（過去5走）`;
