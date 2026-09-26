@@ -1248,7 +1248,10 @@ function renderRaceFlowTime(r){
   const withFh=all.filter(h=>h.fh_avg!=null);
   if(all.length<3 || withFh.length<2){ host.innerHTML=""; return; }
   const rows=[...all].sort((a,b)=>a.num-b.num);
-  const n=rows.length, W=340, rowH=32, padT=20, padB=20, padL=76, padR=64;
+  // viewBox幅=実際のコンテナ幅(px)にすることで、width:100%でも拡大縮小率が常に1:1になり
+  // 「幅が広いコンテナに置いただけで文字・行が巨大化する」のを防ぐ（2026-09-26、PC全幅化で発覚）。
+  // 増えた分の横幅はplotW（箱ひげの左右の広がり）にだけ回り、行の高さ・文字サイズは不変。
+  const n=rows.length, W=Math.max(340, host.clientWidth||340), rowH=32, padT=20, padB=20, padL=76, padR=64;
   const H=padT+padB+rowH*(n-1);
   const laneY=i=>padT+i*rowH;
   const plotW=W-padL-padR;
@@ -2698,8 +2701,10 @@ const ANA_PANELS=[
   {k:"sl",title:"ソリ重量(kg)　重いほど遅い傾向", color:"#d1495b", labels:true, fmt:v=>String(Math.round(v)), val:t=>t.sl},
   {k:"bw",title:"馬体重(kg)",     color:"var(--dry)",   fmt:v=>String(Math.round(v)), val:t=>t.bw}
 ];
-function anaChartSvg(trend,sel){
-  const W=360, padL=52, padR=14, PH=110, plotT=24, plotH=66, n=trend.length;
+function anaChartSvg(trend,sel,wantW){
+  // wantW=呼び出し側で測った実表示幅(px)。viewBox幅をこれに合わせることで width:100% でも
+  // 拡大縮小率が1:1になり、幅の広いコンテナに置いても行・文字が巨大化しない（2026-09-26）。
+  const W=Math.max(280, wantW||360), padL=52, padR=14, PH=110, plotT=24, plotH=66, n=trend.length;
   const X=i=>padL+(n===1?(W-padL-padR)/2:i*(W-padL-padR)/(n-1));
   const mdLab=d=>+d.slice(5,7)+"/"+ +d.slice(8,10);
   let s=`<svg class="asvg" viewBox="0 0 ${W} ${PH*ANA_PANELS.length+24}" role="img" aria-label="近走の推移グラフ">`;
@@ -2824,8 +2829,14 @@ function renderAnalysis(){
   const trend=h.trend||[];
   if(S.pt==null||S.pt>=trend.length) S.pt=trend.length-1;   // 既定は直近走を選択
   const btns=hs.map(x=>`<button class="abtn${x.num===h.num?' on':''}" data-n="${x.num}" style="${capStyle(x.gate)}">${x.num}</button>`).join("");
+  // .anagridがPC表示で2カラムになる分、チャートに渡すviewBox幅もそのカラム幅(.acardの左右padding
+  // 分を差し引いた実描画幅)に合わせて計算する（2026-09-26、拡大表示になる不具合の修正）。
+  const isDesktop = document.documentElement.dataset.layout==="desktop";
+  const hostW = host.clientWidth || 360;
+  const chartColW = isDesktop ? (hostW-28)/2 : hostW;
+  const chartW = Math.max(280, chartColW-12);
   const body=trend.length
-    ? `<div class="anagrid"><div class="anachart"><div class="acard">${anaChartSvg(trend,S.pt)}</div>${anaDetailHtml(trend[S.pt])}</div>`
+    ? `<div class="anagrid"><div class="anachart"><div class="acard">${anaChartSvg(trend,S.pt,chartW)}</div>${anaDetailHtml(trend[S.pt])}</div>`
       +`<div class="anasum">${anaSummaryHtml(trend,anaRanks(hs),h.num)}</div></div>`
     : `<div class="meta">${h.trend===undefined?"近走の推移データを準備中です（次回の自動更新で反映されます）。":"この馬の過去走データがありません（初出走）。"}</div>`;
   host.innerHTML=`<div class="ahead"><span class="at1">近走の推移</span><span class="at2">${r.date.slice(5).replace('-','/')} ${r.race_no}R ${r.race_name||""} ・番号を押すと馬を切り替え</span></div>`
@@ -2836,9 +2847,11 @@ function renderAnalysis(){
 }
 document.querySelectorAll("#toptabs button").forEach(b=>b.addEventListener("click",()=>switchTop(b.dataset.t)));
 
-// redraw canvases on resize
+// redraw canvases on resize（幅で描き直すSVG=展開イメージ・データ分析チャートも含む）
 let rz; window.addEventListener("resize",()=>{clearTimeout(rz);rz=setTimeout(()=>{
   if(view==="card"){ const r=get(); r.horses.forEach(h=>drawCardDots(document.getElementById("cd_"+h.num), h)); }
+  render();
+  if(window.__curTop==="analysis") renderAnalysis();
 },160);});
 }
 // データ読込: 埋め込み(アーティファクト) or ローカルの data.json(ローカルサーバで自動更新)
@@ -2870,6 +2883,12 @@ if ("serviceWorker" in navigator) {
     document.documentElement.dataset.layout = mode;
     btn.setAttribute("aria-pressed", mode==="desktop" ? "true" : "false");
     btn.textContent = mode==="desktop" ? "📱 スマホ表示" : "🖥 PC表示";
+    // 幅が変わるSVGチャート(展開イメージ・データ分析)はコンテナの実測幅で描き直す必要があるため、
+    // レイアウト切替後に再レンダリングする（次のフレームでCSSの幅変更を確定させてから測る）。
+    requestAnimationFrame(()=>{
+      if(typeof render==="function") render();
+      if(window.__curTop==="analysis" && typeof renderAnalysis==="function") renderAnalysis();
+    });
   }
   let saved = localStorage.getItem(LS_KEY);
   if(saved !== "desktop" && saved !== "mobile"){
