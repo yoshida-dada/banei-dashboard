@@ -203,6 +203,8 @@ table.ht .fin.top{color:var(--good);font-weight:800}
 .p5col.p5top .p5p{color:var(--good)}
 .p5col.p5win .p5p{color:var(--accent)}
 .p5g{font-size:.6rem;color:var(--muted);font-variant-numeric:tabular-nums}
+.p5p.p5-high{border:1.5px solid var(--accent);border-radius:4px;padding:0 3px}
+.p5p.p5-low{border:1.5px solid var(--wet);border-radius:4px;padding:0 3px}
 /* 単勝ROI>1 ハイライト（スキャン連続でだんだん濃く） */
 table.ht tr.ev1{background:color-mix(in srgb,var(--ev-hue) 13%,transparent)}
 table.ht tr.ev2{background:color-mix(in srgb,var(--ev-hue) 26%,transparent)}
@@ -1155,14 +1157,16 @@ function past5Html(h){
   const rows=(h.trend||[]).slice(-5).reverse();
   if(!rows.length) return `<td class="l"><span class="tsub">—</span></td>`;
   const cols=rows.map(t=>{
-    const lvl = t.rz!=null && Math.abs(t.rz)>=1.5 ? (t.rz>=1.5?'🔥':'📉') : '';
+    // レースレベル判定は着順の枠線色で示す（2026-09-26修正: 絵文字が環境により表示されず
+    // 見えなくなっていたため、CSSの枠線ハイライトに変更。高=赤枠／低=青枠）。
+    const lvlCls = t.rz!=null && Math.abs(t.rz)>=1.5 ? (t.rz>=1.5?'p5-high':'p5-low') : '';
     const cls = t.p===1?'p5win':(t.p!=null&&t.p<=3?'p5top':'');
     const dateTxt = t.d ? t.d.slice(5).replace('-','/') : '—';
     const posTxt = t.p!=null ? t.p+'着' : '—';
     const gapTxt = t.gs!=null ? (t.gs>=0?'+':'')+t.gs.toFixed(1)+'s' : '—';
-    const title = `${t.d||''} ${t.c||''} ${posTxt}`;
+    const title = `${t.d||''} ${t.c||''} ${posTxt}${lvlCls?(lvlCls==='p5-high'?'（高レベル）':'（低レベル）'):''}`;
     return `<div class="p5col ${cls}" title="${title}"><span class="p5d">${dateTxt}</span>`
-      +`<span class="p5p">${posTxt}${lvl}</span><span class="p5g">${gapTxt}</span></div>`;
+      +`<span class="p5p ${lvlCls}">${posTxt}</span><span class="p5g">${gapTxt}</span></div>`;
   }).join('');
   return `<td class="l"><div class="p5grid">${cols}</div></td>`;
 }
