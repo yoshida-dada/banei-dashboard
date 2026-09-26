@@ -682,6 +682,7 @@ table.ht .numcell{display:inline-flex;align-items:center;gap:4px}
   </div>
   <div id="colsPanel" class="colspanel" style="display:none"></div>
   <div id="horses"></div>
+  <div id="trackscatter"></div>
   <div id="raceflowtime"></div>
   <div class="secthead">
     <span class="sect">馬場適性（このレースの出走馬）</span>
@@ -965,6 +966,7 @@ function render(){
   else { host.innerHTML = betsView(r); wireBetSettings(r); }
 
   if(view!=="bets") stopLive();
+  renderTrackAptitudeScatter(r);
   renderRaceFlowTime(r);
   renderAptitude(r);
   if(window.__curTop==="analysis") renderAnalysis();
@@ -1249,6 +1251,69 @@ function bandStats(past,cfg,b){
   const rs = past.filter(x=>{ const v=x[cfg.key]; return v!=null && v>b.lo && v<=b.hi; });
   const n=rs.length, p3=rs.filter(x=>x.p<=3).length;
   return {n, rate: n? p3/n : null};
+}
+// 馬場適性マップ（散布図、2026-09-26、ユーザー要望）。横軸＝連対時(1-2着)タイムの平均
+// (h.ren_time_avg、既存)、縦軸＝連対した開催日の馬場指数の平均(h.ren_track_index、新設)。
+// 馬場指数はanalyzer.track_conditionと同じ「実タイム-期待タイム(クラス×ソリ重量×水分率で
+// 回帰)」残差を直近開催日分布でzスコア化したもの＝斤量差は期待タイム側で補正済み。
+// 負(下)=軽くて時計が出る馬場、正(上)=重くて時計が出ない馬場。左下＝軽くて速い馬場が得意、
+// 右上＝重くて時計が出ない馬場が得意、という読み方になる。
+function renderTrackAptitudeScatter(r){
+  const host=document.getElementById("trackscatter"); if(!host) return;
+  const all=r.horses||[];
+  const pts=all.filter(h=>h.ren_time_avg!=null && h.ren_track_index!=null);
+  if(pts.length<2){ host.innerHTML=""; return; }
+  const isDesktop = document.documentElement.dataset.layout==="desktop";
+  const S = isDesktop ? 1.3 : 1;
+  const W=Math.max(340, host.clientWidth||340), Hh=320*S;
+  const padL=40*S, padR=20*S, padT=20*S, padB=38*S;
+  const plotW=W-padL-padR, plotH=Hh-padT-padB;
+
+  const xs=pts.map(h=>h.ren_time_avg), ys=pts.map(h=>h.ren_track_index);
+  let xMin=Math.min(...xs), xMax=Math.max(...xs);
+  let yMin=Math.min(...ys), yMax=Math.max(...ys);
+  if(xMax<=xMin) xMax=xMin+1;
+  if(yMax<=yMin) yMax=yMin+1;
+  const xpad=(xMax-xMin)*0.14 || 1, ypad=(yMax-yMin)*0.18 || 0.3;
+  xMin-=xpad; xMax+=xpad; yMin-=ypad; yMax+=ypad;
+  const xFor=v=>padL+(v-xMin)/(xMax-xMin)*plotW;
+  const yFor=v=>padT+(1-(v-yMin)/(yMax-yMin))*plotH;  // 上=馬場指数が高い(重い)、下=低い(軽い)
+
+  const gridX=[0,0.25,0.5,0.75,1].map(f=>{
+    const x=padL+f*plotW;
+    return `<line x1="${x.toFixed(1)}" y1="${padT}" x2="${x.toFixed(1)}" y2="${padT+plotH}" stroke="var(--border2)" stroke-width="1"/>`;
+  }).join("");
+  const gridY=[0,0.25,0.5,0.75,1].map(f=>{
+    const y=padT+f*plotH;
+    return `<line x1="${padL}" y1="${y.toFixed(1)}" x2="${padL+plotW}" y2="${y.toFixed(1)}" stroke="var(--border2)" stroke-width="1"/>`;
+  }).join("");
+  // z=0(基準的な馬場)のライン。範囲内にあれば軽/重の境目として強調する
+  const zeroLine = (yMin<0 && yMax>0)
+    ? `<line x1="${padL}" y1="${yFor(0).toFixed(1)}" x2="${padL+plotW}" y2="${yFor(0).toFixed(1)}" stroke="var(--edge)" stroke-width="1.4" opacity="0.7" stroke-dasharray="4 3"/>` : "";
+
+  const dot=(h)=>{
+    const c=CAP[h.gate]||['#888','#fff'];
+    const cx=xFor(h.ren_time_avg).toFixed(1), cy=yFor(h.ren_track_index).toFixed(1);
+    return `<circle cx="${cx}" cy="${cy}" r="${8*S}" fill="${c[0]}" stroke="var(--surface)" stroke-width="${1.5*S}"/>`
+      +`<text x="${cx}" y="${(+cy+2.8*S).toFixed(1)}" font-size="${8*S}" text-anchor="middle" font-weight="800" fill="${c[1]}">${h.num}</text>`
+      +`<text x="${cx}" y="${(+cy-10*S).toFixed(1)}" font-size="${7*S}" text-anchor="middle" fill="var(--muted)">${(h.name||"").length>6?h.name.slice(0,6)+"…":h.name}</text>`;
+  };
+  const points = pts.map(dot).join("");
+
+  const axisLabels = `<text x="${padL}" y="${Hh-8*S}" font-size="${7.5*S}" text-anchor="start" fill="var(--muted)">◀ 速い(軽い馬場向き)</text>`
+    +`<text x="${padL+plotW}" y="${Hh-8*S}" font-size="${7.5*S}" text-anchor="end" fill="var(--muted)">遅い(重い馬場向き) ▶</text>`
+    +`<text x="${(4*S).toFixed(1)}" y="${(padT+4*S).toFixed(1)}" font-size="${7.5*S}" text-anchor="start" fill="var(--muted)">▲重い</text>`
+    +`<text x="${(4*S).toFixed(1)}" y="${(padT+plotH).toFixed(1)}" font-size="${7.5*S}" text-anchor="start" fill="var(--muted)">▼軽い</text>`;
+  const nExcluded = all.length - pts.length;
+  const excludedNote = nExcluded>0 ? `連対実績データ不足の${nExcluded}頭は非表示。` : "";
+
+  host.innerHTML=
+    `<div class="secthead"><span class="sect">馬場指数マップ（連対時のタイム×馬場指数）</span></div>`
+    +`<svg class="tksvg" viewBox="0 0 ${W} ${Hh}">${gridX}${gridY}${zeroLine}${axisLabels}${points}</svg>`
+    +`<div class="tknote">横軸＝連対(1-2着)時のタイム平均(秒、生タイム)、縦軸＝連対した開催日の`
+    +`馬場指数の平均(zスコア、ソリ重量・クラス・水分率で補正した実タイムの残差を直近開催日の`
+    +`分布と比較したもの)。左下ほど軽くて時計が出る馬場が得意、右上ほど重くて時計が出ない`
+    +`馬場が得意という傾向を示す。${excludedNote}</div>`;
 }
 // 展開イメージ（第2障害通過順ベース→生タイムベースに変更、2026-09-26）。
 // ばんえいはセパレートコース（平地の脚質4分類・コーナーでの位置取りは存在しない）なので、
