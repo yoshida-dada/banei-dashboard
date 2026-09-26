@@ -924,7 +924,7 @@ function render(){
     : `<span class="chip pre">馬場水分 未定</span>`;
   // 当日馬場判定（結果タイム由来。軽=基準より速い/重=遅い、直近開催比のzスコアで相対判定）
   const trackChip = r.track_label
-    ? `<span class="chip trk ${r.track_label==='軽'?'trk-l':r.track_label==='重'?'trk-h':'trk-s'}" title="当日ここまで${r.track_n||0}レースの結果タイムから推定（基準比${r.track_offset>0?'+':''}${r.track_offset}秒 / z=${r.track_z}）">当日馬場 <b>${r.track_label}</b></span>`
+    ? `<span class="chip trk ${r.track_label==='軽'?'trk-l':r.track_label==='重'?'trk-h':'trk-s'}" title="当日ここまで${r.track_n||0}レースの結果タイムから推定（基準比${r.track_offset>0?'+':''}${r.track_offset}秒）">当日馬場 <b>${r.track_label}</b>${r.track_z!=null?` <span class="num">(z${r.track_z>=0?'+':''}${r.track_z})</span>`:''}</span>`
     : '';
   const preBadge = cancelled ? `<span class="chip cancel">🌧 中止（悪天候）</span>`
     : (hasResult ? "" : `<span class="chip pre">発走前・暫定</span>`);
@@ -1284,15 +1284,19 @@ function renderTrackAptitudeScatter(r){
   const padL=40*S, padR=20*S, padT=20*S, padB=50*S;
   const plotW=W-padL-padR, plotH=Hh-padT-padB;
 
-  const xs=pts.map(h=>h.ren_time_avg), ys=pts.map(h=>h.ren_track_index);
+  const xs=pts.map(h=>h.ren_time_avg);
+  const ys=pts.map(h=>h.ren_track_index);
+  // 本日の想定馬場指数(r.track_z、結果が出るたびanalyzer.track_condition.annotateが更新)も
+  // 軸の範囲に含める（2026-09-26）。範囲外だとハイライト線が描けなくなるため。
+  const yVals = r.track_z!=null ? [...ys, r.track_z] : ys;
   let xMin=Math.min(...xs), xMax=Math.max(...xs);
-  let yMin=Math.min(...ys), yMax=Math.max(...ys);
+  let yMin=Math.min(...yVals), yMax=Math.max(...yVals);
   if(xMax<=xMin) xMax=xMin+1;
   if(yMax<=yMin) yMax=yMin+1;
   const xpad=(xMax-xMin)*0.14 || 1, ypad=(yMax-yMin)*0.18 || 0.3;
   xMin-=xpad; xMax+=xpad; yMin-=ypad; yMax+=ypad;
   const xFor=v=>padL+(v-xMin)/(xMax-xMin)*plotW;
-  const yFor=v=>padT+(1-(v-yMin)/(yMax-yMin))*plotH;  // 上=馬場指数が高い(重い)、下=低い(軽い)
+  const yFor=v=>padT+(1-(v-yMin)/(yMax-yMin))*plotH;  // 上=馬場指数が高い(重)、下=低い(軽)
 
   const gridX=[0,0.25,0.5,0.75,1].map(f=>{
     const x=padL+f*plotW;
@@ -1305,6 +1309,21 @@ function renderTrackAptitudeScatter(r){
   // z=0(基準的な馬場)のライン。範囲内にあれば軽/重の境目として強調する
   const zeroLine = (yMin<0 && yMax>0)
     ? `<line x1="${padL}" y1="${yFor(0).toFixed(1)}" x2="${padL+plotW}" y2="${yFor(0).toFixed(1)}" stroke="var(--edge)" stroke-width="1.4" opacity="0.7" stroke-dasharray="4 3"/>` : "";
+  // 本日の想定馬場指数のハイライト（2026-09-26、ユーザー要望）: 結果が出るたびに
+  // analyzer.track_condition.annotateが当日ここまでの結果から算出するr.track_zを、
+  // 横線として重ねる。単一レースでは判断できないため複数レースの残差平均(既存ロジック)を
+  // そのまま使う＝これ自体が「多少幅を持たせた」推定になっている。どの馬の実績点がこの線に
+  // 近いかで、今日の馬場に合いそうな馬を判断できる。
+  const todayLine = (r.track_z!=null)
+    ? `<line x1="${padL}" y1="${yFor(r.track_z).toFixed(1)}" x2="${padL+plotW}" y2="${yFor(r.track_z).toFixed(1)}" stroke="var(--accent)" stroke-width="${2.2*S}" opacity="0.85"/>`
+      +`<text x="${(padL+plotW-3*S).toFixed(1)}" y="${(yFor(r.track_z)-5*S).toFixed(1)}" font-size="${7.5*S}" text-anchor="end" font-weight="800" fill="var(--accent)">本日想定 z${r.track_z>=0?'+':''}${r.track_z}</text>`
+    : "";
+  // 縦軸=馬場指数の目盛り（2026-09-26、ユーザー要望）。min/中央/maxの3点にzスコアを表示。
+  const yTicks=[0,0.5,1].map(f=>{
+    const v=yMax-f*(yMax-yMin), y=padT+f*plotH;
+    return `<line x1="${(padL-4*S).toFixed(1)}" y1="${y.toFixed(1)}" x2="${padL}" y2="${y.toFixed(1)}" stroke="var(--muted)" stroke-width="1"/>`
+      +`<text x="${(padL-7*S).toFixed(1)}" y="${(y+2.6*S).toFixed(1)}" font-size="${7*S}" text-anchor="end" fill="var(--ink)">${v>=0?'+':''}${v.toFixed(1)}</text>`;
+  }).join("");
 
   const dot=(h)=>{
     const c=CAP[h.gate]||['#888','#fff'];
@@ -1323,21 +1342,24 @@ function renderTrackAptitudeScatter(r){
     return `<line x1="${x.toFixed(1)}" y1="${(padT+plotH).toFixed(1)}" x2="${x.toFixed(1)}" y2="${(padT+plotH+4*S).toFixed(1)}" stroke="var(--muted)" stroke-width="1"/>`
       +`<text x="${x.toFixed(1)}" y="${(padT+plotH+15*S).toFixed(1)}" font-size="${7.5*S}" text-anchor="${anchor}" fill="var(--ink)" font-weight="700">${secFmt(v)}</text>`;
   }).join("");
-  const axisLabels = xTicks
-    +`<text x="${padL}" y="${Hh-8*S}" font-size="${7*S}" text-anchor="start" fill="var(--muted)">◀ 軽い馬場向き</text>`
-    +`<text x="${padL+plotW}" y="${Hh-8*S}" font-size="${7*S}" text-anchor="end" fill="var(--muted)">重い馬場向き ▶</text>`
-    +`<text x="${(4*S).toFixed(1)}" y="${(padT+4*S).toFixed(1)}" font-size="${7.5*S}" text-anchor="start" fill="var(--muted)">▲重い</text>`
-    +`<text x="${(4*S).toFixed(1)}" y="${(padT+plotH).toFixed(1)}" font-size="${7.5*S}" text-anchor="start" fill="var(--muted)">▼軽い</text>`;
+  const axisLabels = xTicks + yTicks
+    +`<text x="${padL}" y="${Hh-8*S}" font-size="${7*S}" text-anchor="start" fill="var(--muted)">◀ 軽馬場向き</text>`
+    +`<text x="${padL+plotW}" y="${Hh-8*S}" font-size="${7*S}" text-anchor="end" fill="var(--muted)">重馬場向き ▶</text>`
+    +`<text x="${(4*S).toFixed(1)}" y="${(padT+4*S).toFixed(1)}" font-size="${7.5*S}" text-anchor="start" fill="var(--muted)">▲重</text>`
+    +`<text x="${(4*S).toFixed(1)}" y="${(padT+plotH).toFixed(1)}" font-size="${7.5*S}" text-anchor="start" fill="var(--muted)">▼軽</text>`;
   const nExcluded = all.length - pts.length;
   const excludedNote = nExcluded>0 ? `連対実績データ不足の${nExcluded}頭は非表示。` : "";
+  const todayNote = r.track_z!=null
+    ? `オレンジの横線＝本日ここまでの結果から推定した想定馬場指数（z${r.track_z>=0?'+':''}${r.track_z}）。この線に近い馬ほど今日の馬場に合いそう。`
+    : "";
 
   host.innerHTML=
     `<div class="secthead"><span class="sect">馬場指数マップ（連対時のタイム×馬場指数）</span></div>`
-    +`<svg class="tksvg" viewBox="0 0 ${W} ${Hh}">${gridX}${gridY}${zeroLine}${axisLabels}${points}</svg>`
+    +`<svg class="tksvg" viewBox="0 0 ${W} ${Hh}">${gridX}${gridY}${zeroLine}${todayLine}${axisLabels}${points}</svg>`
     +`<div class="tknote">横軸＝連対(1-2着)時のタイム平均(秒、生タイム)、縦軸＝連対した開催日の`
     +`馬場指数の平均(zスコア、ソリ重量・クラス・水分率で補正した実タイムの残差を直近開催日の`
     +`分布と比較したもの)。左下ほど軽くて時計が出る馬場が得意、右上ほど重くて時計が出ない`
-    +`馬場が得意という傾向を示す。${excludedNote}</div>`;
+    +`馬場が得意という傾向を示す。${todayNote}${excludedNote}</div>`;
 }
 // 展開イメージ（第2障害通過順ベース→生タイムベースに変更、2026-09-26）。
 // ばんえいはセパレートコース（平地の脚質4分類・コーナーでの位置取りは存在しない）なので、
