@@ -2,11 +2,11 @@
  "name": "シンエイパーク",
  "sex": "牝",
  "age": 4,
- "trainer": "西弘美（ばんえい）",
+ "trainer": "西弘美",
  "owner": "上口詩子",
  "sled_kg": 610.0,
- "weight": null,
- "weight_diff": null,
+ "weight": 968,
+ "weight_diff": 21,
  "last_race_date": "2026-09-26",
  "pedigree": {
   "sire": "ユウトウセイ",
@@ -21,21 +21,21 @@
    "win": 6,
    "place2": 4,
    "place3": 4,
-   "other": 44,
-   "n": 58,
-   "win_rate": 0.103,
-   "quinella_rate": 0.172,
-   "show_rate": 0.241
+   "other": 45,
+   "n": 59,
+   "win_rate": 0.102,
+   "quinella_rate": 0.169,
+   "show_rate": 0.237
   },
   "2026": {
    "win": 2,
    "place2": 1,
    "place3": 2,
-   "other": 13,
-   "n": 18,
-   "win_rate": 0.111,
-   "quinella_rate": 0.167,
-   "show_rate": 0.278
+   "other": 14,
+   "n": 19,
+   "win_rate": 0.105,
+   "quinella_rate": 0.158,
+   "show_rate": 0.263
   },
   "2025": {
    "win": 2,
@@ -78,6 +78,19 @@
   }
  ],
  "ratings_reconstructed": [
+  {
+   "date": "2026-09-26",
+   "race_no": 5,
+   "position": 7,
+   "earned_yen": 0,
+   "program_prize_k": 2715,
+   "year_prize_k": 510,
+   "class": "C1",
+   "next_class": "B4",
+   "next_class_need_k": 685,
+   "diff_k": 0,
+   "change": null
+  },
   {
    "date": "2026-09-19",
    "race_no": 7,
@@ -253,24 +266,27 @@
    "race_no": 5,
    "race_name": "朔乃レイ誕生日杯Ｃ１－７",
    "class": "C1",
-   "moisture": 1.1,
+   "moisture": 1.0,
    "field_size": 9,
    "num": 6,
    "jockey": "西将太",
-   "trainer": "西弘美（ばんえい）",
+   "trainer": "西弘美",
    "owner": "上口詩子",
    "sled_kg": 610.0,
-   "weight": null,
-   "weight_diff": null,
-   "odds": 30.4,
-   "popularity": 7,
-   "position": null,
-   "time": null,
-   "time_sec": null,
-   "margin_sec": null,
-   "race_level_z": null,
+   "weight": 968,
+   "weight_diff": 21,
+   "odds": 35.1,
+   "popularity": 8,
+   "position": 7,
+   "time": "2:36.5",
+   "time_sec": 156.5,
+   "margin_sec": 34.2,
+   "race_level_z": -0.41,
    "interval": "連闘",
-   "other": null,
+   "other": {
+    "label": "勝ち馬",
+    "name": "センショウロック"
+   },
    "insider_labels": []
   },
   {
@@ -685,7 +701,7 @@
    "time": "2:37.4",
    "time_sec": 157.4,
    "margin_sec": 15.0,
-   "race_level_z": -0.06,
+   "race_level_z": -0.07,
    "interval": "中2週",
    "other": {
     "label": "勝ち馬",
@@ -713,7 +729,7 @@
    "time": "2:56.4",
    "time_sec": 176.4,
    "margin_sec": 38.7,
-   "race_level_z": -1.0,
+   "race_level_z": -1.01,
    "interval": "中1週",
    "other": {
     "label": "勝ち馬",
@@ -934,7 +950,7 @@
    "time": "2:19.6",
    "time_sec": 139.6,
    "margin_sec": 42.2,
-   "race_level_z": 0.74,
+   "race_level_z": 0.73,
    "interval": "中2週",
    "other": {
     "label": "勝ち馬",
@@ -1214,7 +1230,7 @@
    "time": "2:29.7",
    "time_sec": 149.7,
    "margin_sec": 12.7,
-   "race_level_z": 0.29,
+   "race_level_z": 0.28,
    "interval": "中5週",
    "other": {
     "label": "勝ち馬",
@@ -1662,7 +1678,7 @@
    "time": "2:20.5",
    "time_sec": 140.5,
    "margin_sec": 18.9,
-   "race_level_z": -0.02,
+   "race_level_z": -0.01,
    "interval": "中2週",
    "other": {
     "label": "勝ち馬",

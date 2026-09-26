@@ -2,11 +2,11 @@
  "name": "アアモンドカイト",
  "sex": "牡",
  "age": 2,
- "trainer": "村上慎（ばんえい）",
+ "trainer": "村上慎",
  "owner": "下内美繪子",
  "sled_kg": 520.0,
- "weight": null,
- "weight_diff": null,
+ "weight": 930,
+ "weight_diff": 28,
  "last_race_date": "2026-09-26",
  "pedigree": {
   "sire": "ゴールドインパクト",
@@ -21,21 +21,21 @@
    "win": 1,
    "place2": 1,
    "place3": 1,
-   "other": 3,
-   "n": 6,
-   "win_rate": 0.167,
-   "quinella_rate": 0.333,
-   "show_rate": 0.5
+   "other": 4,
+   "n": 7,
+   "win_rate": 0.143,
+   "quinella_rate": 0.286,
+   "show_rate": 0.429
   },
   "2026": {
    "win": 1,
    "place2": 1,
    "place3": 1,
-   "other": 3,
-   "n": 6,
-   "win_rate": 0.167,
-   "quinella_rate": 0.333,
-   "show_rate": 0.5
+   "other": 4,
+   "n": 7,
+   "win_rate": 0.143,
+   "quinella_rate": 0.286,
+   "show_rate": 0.429
   }
  },
  "insider_label_count": 0,
@@ -58,6 +58,19 @@
   }
  ],
  "ratings_reconstructed": [
+  {
+   "date": "2026-09-26",
+   "race_no": 3,
+   "position": 4,
+   "earned_yen": 36000,
+   "program_prize_k": 573,
+   "year_prize_k": 573,
+   "class": "C2",
+   "next_class": "C1",
+   "next_class_need_k": 1627,
+   "diff_k": 36,
+   "change": null
+  },
   {
    "date": "2026-08-30",
    "race_no": 4,
@@ -140,10 +153,10 @@
  "reconstructed_now": {
   "snapshot_date": "2026-09-25",
   "class_code": "2sai",
-  "program_prize_k": 537,
-  "year_prize_k": 537,
+  "program_prize_k": 573,
+  "year_prize_k": 573,
   "reconstructed": true,
-  "reconstructed_races": 0
+  "reconstructed_races": 1
  },
  "next_class": null,
  "races": [
@@ -156,20 +169,23 @@
    "field_size": 10,
    "num": 5,
    "jockey": "菊池一",
-   "trainer": "村上慎（ばんえい）",
+   "trainer": "村上慎",
    "owner": "下内美繪子",
    "sled_kg": 520.0,
-   "weight": null,
-   "weight_diff": null,
-   "odds": 7.9,
+   "weight": 930,
+   "weight_diff": 28,
+   "odds": 7.7,
    "popularity": 4,
-   "position": null,
-   "time": null,
-   "time_sec": null,
-   "margin_sec": null,
-   "race_level_z": null,
+   "position": 4,
+   "time": "2:26.3",
+   "time_sec": 146.3,
+   "margin_sec": 29.6,
+   "race_level_z": -0.27,
    "interval": "中3週",
-   "other": null,
+   "other": {
+    "label": "勝ち馬",
+    "name": "マナザシ"
+   },
    "insider_labels": []
   },
   {

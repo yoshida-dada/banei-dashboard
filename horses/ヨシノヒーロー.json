@@ -2,11 +2,11 @@
  "name": "ヨシノヒーロー",
  "sex": "牡",
  "age": 9,
- "trainer": "田上忠（ばんえい）",
+ "trainer": "田上忠",
  "owner": "（株）大阪畜産",
  "sled_kg": 650.0,
- "weight": null,
- "weight_diff": null,
+ "weight": 1065,
+ "weight_diff": 13,
  "last_race_date": "2026-09-26",
  "pedigree": {
   "sire": "インフィニティー",
@@ -21,21 +21,21 @@
    "win": 11,
    "place2": 6,
    "place3": 11,
-   "other": 64,
-   "n": 92,
-   "win_rate": 0.12,
-   "quinella_rate": 0.185,
-   "show_rate": 0.304
+   "other": 65,
+   "n": 93,
+   "win_rate": 0.118,
+   "quinella_rate": 0.183,
+   "show_rate": 0.301
   },
   "2026": {
    "win": 2,
    "place2": 1,
    "place3": 0,
-   "other": 14,
-   "n": 17,
-   "win_rate": 0.118,
-   "quinella_rate": 0.176,
-   "show_rate": 0.176
+   "other": 15,
+   "n": 18,
+   "win_rate": 0.111,
+   "quinella_rate": 0.167,
+   "show_rate": 0.167
   },
   "2025": {
    "win": 2,
@@ -68,7 +68,7 @@
    "show_rate": 0.32
   }
  },
- "insider_label_count": 30,
+ "insider_label_count": 31,
  "ratings": [
   {
    "date": "2026-09-25",
@@ -88,6 +88,19 @@
   }
  ],
  "ratings_reconstructed": [
+  {
+   "date": "2026-09-26",
+   "race_no": 9,
+   "position": 4,
+   "earned_yen": 37000,
+   "program_prize_k": 4530,
+   "year_prize_k": 891,
+   "class": "B3",
+   "next_class": "B2",
+   "next_class_need_k": 970,
+   "diff_k": 37,
+   "change": null
+  },
   {
    "date": "2026-09-21",
    "race_no": 10,
@@ -248,14 +261,14 @@
  "reconstructed_now": {
   "snapshot_date": "2026-09-25",
   "class_code": "B3",
-  "program_prize_k": 4493,
-  "year_prize_k": 854,
+  "program_prize_k": 4530,
+  "year_prize_k": 891,
   "reconstructed": true,
-  "reconstructed_races": 0
+  "reconstructed_races": 1
  },
  "next_class": {
   "next_class": "B2",
-  "need_k": 1007
+  "need_k": 970
  },
  "races": [
   {
@@ -263,25 +276,33 @@
    "race_no": 9,
    "race_name": "まぁさん２０２６生誕祭記念Ｂ３－３",
    "class": "B3",
-   "moisture": 1.1,
+   "moisture": 1.0,
    "field_size": 10,
    "num": 3,
    "jockey": "船山蔵",
-   "trainer": "田上忠（ばんえい）",
+   "trainer": "田上忠",
    "owner": "（株）大阪畜産",
    "sled_kg": 650.0,
-   "weight": null,
-   "weight_diff": null,
-   "odds": 9.2,
-   "popularity": 5,
-   "position": null,
-   "time": null,
-   "time_sec": null,
-   "margin_sec": null,
-   "race_level_z": null,
+   "weight": 1065,
+   "weight_diff": 13,
+   "odds": 60.3,
+   "popularity": 9,
+   "position": 4,
+   "time": "2:04.1",
+   "time_sec": 124.1,
+   "margin_sec": 10.8,
+   "race_level_z": 0.32,
    "interval": "連闘",
-   "other": null,
-   "insider_labels": []
+   "other": {
+    "label": "勝ち馬",
+    "name": "サカノトウカイ"
+   },
+   "insider_labels": [
+    {
+     "label_type": "引き",
+     "note": "東海仕掛け"
+    }
+   ]
   },
   {
    "date": "2026-09-21",
@@ -303,7 +324,7 @@
    "time": "1:59.2",
    "time_sec": 119.2,
    "margin_sec": 21.9,
-   "race_level_z": 0.04,
+   "race_level_z": 0.05,
    "interval": "中2週",
    "other": {
     "label": "勝ち馬",
@@ -677,7 +698,7 @@
    "time": "4:39.3",
    "time_sec": 279.3,
    "margin_sec": 159.4,
-   "race_level_z": -6.52,
+   "race_level_z": -6.53,
    "interval": "中2週",
    "other": null,
    "insider_labels": [
@@ -1193,7 +1214,7 @@
    "time": "2:12.4",
    "time_sec": 132.4,
    "margin_sec": 6.5,
-   "race_level_z": 0.2,
+   "race_level_z": 0.19,
    "interval": "中1週",
    "other": {
     "label": "勝ち馬",
@@ -1226,7 +1247,7 @@
    "time": "2:03.0",
    "time_sec": 123.0,
    "margin_sec": 19.1,
-   "race_level_z": 0.47,
+   "race_level_z": 0.46,
    "interval": "中1週",
    "other": {
     "label": "勝ち馬",
@@ -2449,7 +2470,7 @@
    "time": "2:01.0",
    "time_sec": 121.0,
    "margin_sec": 9.1,
-   "race_level_z": 0.09,
+   "race_level_z": 0.1,
    "interval": "中2週",
    "other": {
     "label": "勝ち馬",

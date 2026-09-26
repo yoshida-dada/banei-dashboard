@@ -2,11 +2,11 @@
  "name": "イワキファンファン",
  "sex": "牝",
  "age": 2,
- "trainer": "小林長（ばんえい）",
+ "trainer": "小林長",
  "owner": "蝦名豊",
  "sled_kg": 510.0,
- "weight": null,
- "weight_diff": null,
+ "weight": 864,
+ "weight_diff": -12,
  "last_race_date": "2026-09-26",
  "pedigree": {
   "sire": "フウジンライデン",
@@ -20,22 +20,22 @@
   "total": {
    "win": 2,
    "place2": 0,
-   "place3": 0,
+   "place3": 1,
    "other": 7,
-   "n": 9,
-   "win_rate": 0.222,
-   "quinella_rate": 0.222,
-   "show_rate": 0.222
+   "n": 10,
+   "win_rate": 0.2,
+   "quinella_rate": 0.2,
+   "show_rate": 0.3
   },
   "2026": {
    "win": 2,
    "place2": 0,
-   "place3": 0,
+   "place3": 1,
    "other": 7,
-   "n": 9,
-   "win_rate": 0.222,
-   "quinella_rate": 0.222,
-   "show_rate": 0.222
+   "n": 10,
+   "win_rate": 0.2,
+   "quinella_rate": 0.2,
+   "show_rate": 0.3
   }
  },
  "insider_label_count": 0,
@@ -58,6 +58,19 @@
   }
  ],
  "ratings_reconstructed": [
+  {
+   "date": "2026-09-26",
+   "race_no": 6,
+   "position": 3,
+   "earned_yen": 81000,
+   "program_prize_k": 776,
+   "year_prize_k": 776,
+   "class": "C2",
+   "next_class": "C1",
+   "next_class_need_k": 1424,
+   "diff_k": 81,
+   "change": null
+  },
   {
    "date": "2026-09-12",
    "race_no": 6,
@@ -192,10 +205,10 @@
  "reconstructed_now": {
   "snapshot_date": "2026-09-25",
   "class_code": "2sai",
-  "program_prize_k": 695,
-  "year_prize_k": 695,
+  "program_prize_k": 776,
+  "year_prize_k": 776,
   "reconstructed": true,
-  "reconstructed_races": 0
+  "reconstructed_races": 1
  },
  "next_class": null,
  "races": [
@@ -204,24 +217,27 @@
    "race_no": 6,
    "race_name": "ありさ、大輝来場記念２歳Ｂ－３",
    "class": "B3",
-   "moisture": 1.1,
+   "moisture": 1.0,
    "field_size": 10,
    "num": 4,
    "jockey": "島津新",
-   "trainer": "小林長（ばんえい）",
+   "trainer": "小林長",
    "owner": "蝦名豊",
    "sled_kg": 510.0,
-   "weight": null,
-   "weight_diff": null,
-   "odds": 14.8,
-   "popularity": 8,
-   "position": null,
-   "time": null,
-   "time_sec": null,
-   "margin_sec": null,
-   "race_level_z": null,
+   "weight": 864,
+   "weight_diff": -12,
+   "odds": 96.6,
+   "popularity": 10,
+   "position": 3,
+   "time": "2:13.2",
+   "time_sec": 133.2,
+   "margin_sec": 9.0,
+   "race_level_z": -0.48,
    "interval": "中2週",
-   "other": null,
+   "other": {
+    "label": "勝ち馬",
+    "name": "リオンハート"
+   },
    "insider_labels": []
   },
   {

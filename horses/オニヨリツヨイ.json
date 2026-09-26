@@ -2,11 +2,11 @@
  "name": "オニヨリツヨイ",
  "sex": "牡",
  "age": 7,
- "trainer": "服部義（ばんえい）",
+ "trainer": "服部義",
  "owner": "石川賢太",
  "sled_kg": 650.0,
- "weight": null,
- "weight_diff": null,
+ "weight": 1045,
+ "weight_diff": 1,
  "last_race_date": "2026-09-26",
  "pedigree": {
   "sire": "ナリタボブサップ",
@@ -21,21 +21,21 @@
    "win": 11,
    "place2": 8,
    "place3": 9,
-   "other": 64,
-   "n": 92,
-   "win_rate": 0.12,
-   "quinella_rate": 0.207,
-   "show_rate": 0.304
+   "other": 65,
+   "n": 93,
+   "win_rate": 0.118,
+   "quinella_rate": 0.204,
+   "show_rate": 0.301
   },
   "2026": {
    "win": 3,
    "place2": 3,
    "place3": 2,
-   "other": 10,
-   "n": 18,
-   "win_rate": 0.167,
-   "quinella_rate": 0.333,
-   "show_rate": 0.444
+   "other": 11,
+   "n": 19,
+   "win_rate": 0.158,
+   "quinella_rate": 0.316,
+   "show_rate": 0.421
   },
   "2025": {
    "win": 2,
@@ -68,7 +68,7 @@
    "show_rate": 0.31
   }
  },
- "insider_label_count": 15,
+ "insider_label_count": 16,
  "ratings": [
   {
    "date": "2026-09-25",
@@ -88,6 +88,19 @@
   }
  ],
  "ratings_reconstructed": [
+  {
+   "date": "2026-09-26",
+   "race_no": 9,
+   "position": 8,
+   "earned_yen": 0,
+   "program_prize_k": 4605,
+   "year_prize_k": 839,
+   "class": "B3",
+   "next_class": "B2",
+   "next_class_need_k": 895,
+   "diff_k": 0,
+   "change": null
+  },
   {
    "date": "2026-08-30",
    "race_no": 12,
@@ -263,25 +276,33 @@
    "race_no": 9,
    "race_name": "まぁさん２０２６生誕祭記念Ｂ３－３",
    "class": "B3",
-   "moisture": 1.1,
+   "moisture": 1.0,
    "field_size": 10,
    "num": 4,
    "jockey": "長澤幸",
-   "trainer": "服部義（ばんえい）",
+   "trainer": "服部義",
    "owner": "石川賢太",
    "sled_kg": 650.0,
-   "weight": null,
-   "weight_diff": null,
-   "odds": 15.4,
-   "popularity": 9,
-   "position": null,
-   "time": null,
-   "time_sec": null,
-   "margin_sec": null,
-   "race_level_z": null,
+   "weight": 1045,
+   "weight_diff": 1,
+   "odds": 102.0,
+   "popularity": 10,
+   "position": 8,
+   "time": "2:10.8",
+   "time_sec": 130.8,
+   "margin_sec": 17.5,
+   "race_level_z": 0.04,
    "interval": "中3週",
-   "other": null,
-   "insider_labels": []
+   "other": {
+    "label": "勝ち馬",
+    "name": "サカノトウカイ"
+   },
+   "insider_labels": [
+    {
+     "label_type": "引き",
+     "note": "東海仕掛け"
+    }
+   ]
   },
   {
    "date": "2026-08-30",
@@ -1117,7 +1138,7 @@
    "time": "2:10.9",
    "time_sec": 130.9,
    "margin_sec": 20.9,
-   "race_level_z": -0.39,
+   "race_level_z": -0.38,
    "interval": "中1週",
    "other": {
     "label": "勝ち馬",
@@ -1907,7 +1928,7 @@
    "time": "1:55.6",
    "time_sec": 115.6,
    "margin_sec": 18.0,
-   "race_level_z": 0.2,
+   "race_level_z": 0.21,
    "interval": "中3週",
    "other": {
     "label": "勝ち馬",

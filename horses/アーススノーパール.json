@@ -2,11 +2,11 @@
  "name": "アーススノーパール",
  "sex": "牡",
  "age": 2,
- "trainer": "坂本東（ばんえい）",
+ "trainer": "坂本東",
  "owner": "（株）トンデンファ",
  "sled_kg": 510.0,
- "weight": null,
- "weight_diff": null,
+ "weight": 892,
+ "weight_diff": 1,
  "last_race_date": "2026-09-26",
  "pedigree": null,
  "stats": {
@@ -14,21 +14,21 @@
    "win": 0,
    "place2": 1,
    "place3": 1,
-   "other": 1,
-   "n": 3,
+   "other": 2,
+   "n": 4,
    "win_rate": 0.0,
-   "quinella_rate": 0.333,
-   "show_rate": 0.667
+   "quinella_rate": 0.25,
+   "show_rate": 0.5
   },
   "2026": {
    "win": 0,
    "place2": 1,
    "place3": 1,
-   "other": 1,
-   "n": 3,
+   "other": 2,
+   "n": 4,
    "win_rate": 0.0,
-   "quinella_rate": 0.333,
-   "show_rate": 0.667
+   "quinella_rate": 0.25,
+   "show_rate": 0.5
   }
  },
  "insider_label_count": 0,
@@ -43,6 +43,19 @@
   }
  ],
  "ratings_reconstructed": [
+  {
+   "date": "2026-09-26",
+   "race_no": 2,
+   "position": 5,
+   "earned_yen": 18000,
+   "program_prize_k": 225,
+   "year_prize_k": 225,
+   "class": "C2",
+   "next_class": "C1",
+   "next_class_need_k": 1975,
+   "diff_k": 18,
+   "change": null
+  },
   {
    "date": "2026-09-21",
    "race_no": 2,
@@ -86,10 +99,10 @@
  "reconstructed_now": {
   "snapshot_date": "2026-09-25",
   "class_code": "2sai",
-  "program_prize_k": 207,
-  "year_prize_k": 207,
+  "program_prize_k": 225,
+  "year_prize_k": 225,
   "reconstructed": true,
-  "reconstructed_races": 0
+  "reconstructed_races": 1
  },
  "next_class": null,
  "races": [
@@ -102,20 +115,23 @@
    "field_size": 10,
    "num": 3,
    "jockey": "阿部優",
-   "trainer": "坂本東（ばんえい）",
+   "trainer": "坂本東",
    "owner": "（株）トンデンファ",
    "sled_kg": 510.0,
-   "weight": null,
-   "weight_diff": null,
-   "odds": 2.9,
+   "weight": 892,
+   "weight_diff": 1,
+   "odds": 1.8,
    "popularity": 1,
-   "position": null,
-   "time": null,
-   "time_sec": null,
-   "margin_sec": null,
-   "race_level_z": null,
+   "position": 5,
+   "time": "2:22.7",
+   "time_sec": 142.7,
+   "margin_sec": 16.0,
+   "race_level_z": 0.74,
    "interval": "連闘",
-   "other": null,
+   "other": {
+    "label": "勝ち馬",
+    "name": "ホクセイウグイス"
+   },
    "insider_labels": []
   },
   {

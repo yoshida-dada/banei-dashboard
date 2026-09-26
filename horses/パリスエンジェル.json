@@ -2,11 +2,11 @@
  "name": "パリスエンジェル",
  "sex": "牝",
  "age": 2,
- "trainer": "今井茂（ばんえい）",
+ "trainer": "今井茂",
  "owner": "中村光雄",
  "sled_kg": 490.0,
- "weight": null,
- "weight_diff": null,
+ "weight": 855,
+ "weight_diff": -7,
  "last_race_date": "2026-09-26",
  "pedigree": {
   "sire": "ジャングルソング",
@@ -21,21 +21,21 @@
    "win": 0,
    "place2": 1,
    "place3": 1,
-   "other": 8,
-   "n": 10,
+   "other": 9,
+   "n": 11,
    "win_rate": 0.0,
-   "quinella_rate": 0.1,
-   "show_rate": 0.2
+   "quinella_rate": 0.091,
+   "show_rate": 0.182
   },
   "2026": {
    "win": 0,
    "place2": 1,
    "place3": 1,
-   "other": 8,
-   "n": 10,
+   "other": 9,
+   "n": 11,
    "win_rate": 0.0,
-   "quinella_rate": 0.1,
-   "show_rate": 0.2
+   "quinella_rate": 0.091,
+   "show_rate": 0.182
   }
  },
  "insider_label_count": 0,
@@ -58,6 +58,19 @@
   }
  ],
  "ratings_reconstructed": [
+  {
+   "date": "2026-09-26",
+   "race_no": 2,
+   "position": 6,
+   "earned_yen": 0,
+   "program_prize_k": 199,
+   "year_prize_k": 199,
+   "class": "C2",
+   "next_class": "C1",
+   "next_class_need_k": 2001,
+   "diff_k": 0,
+   "change": null
+  },
   {
    "date": "2026-09-21",
    "race_no": 3,
@@ -208,20 +221,23 @@
    "field_size": 10,
    "num": 5,
    "jockey": "中原蓮",
-   "trainer": "今井茂（ばんえい）",
+   "trainer": "今井茂",
    "owner": "中村光雄",
    "sled_kg": 490.0,
-   "weight": null,
-   "weight_diff": null,
-   "odds": 47.7,
-   "popularity": 10,
-   "position": null,
-   "time": null,
-   "time_sec": null,
-   "margin_sec": null,
-   "race_level_z": null,
+   "weight": 855,
+   "weight_diff": -7,
+   "odds": 50.2,
+   "popularity": 8,
+   "position": 6,
+   "time": "2:29.0",
+   "time_sec": 149.0,
+   "margin_sec": 22.3,
+   "race_level_z": 0.42,
    "interval": "連闘",
-   "other": null,
+   "other": {
+    "label": "勝ち馬",
+    "name": "ホクセイウグイス"
+   },
    "insider_labels": []
   },
   {
@@ -496,7 +512,7 @@
    "time": "3:30.5",
    "time_sec": 210.5,
    "margin_sec": 70.1,
-   "race_level_z": -1.6,
+   "race_level_z": -1.61,
    "interval": null,
    "other": {
     "label": "勝ち馬",

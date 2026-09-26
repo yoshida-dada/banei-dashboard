@@ -2,11 +2,11 @@
  "name": "コーチャンファスト",
  "sex": "牡",
  "age": 3,
- "trainer": "松田道（ばんえい）",
+ "trainer": "松田道",
  "owner": "石井宏治",
  "sled_kg": 630.0,
- "weight": null,
- "weight_diff": null,
+ "weight": 950,
+ "weight_diff": -4,
  "last_race_date": "2026-09-26",
  "pedigree": {
   "sire": "ジェイファースト",
@@ -21,21 +21,21 @@
    "win": 5,
    "place2": 4,
    "place3": 2,
-   "other": 17,
-   "n": 28,
-   "win_rate": 0.179,
-   "quinella_rate": 0.321,
-   "show_rate": 0.393
+   "other": 18,
+   "n": 29,
+   "win_rate": 0.172,
+   "quinella_rate": 0.31,
+   "show_rate": 0.379
   },
   "2026": {
    "win": 2,
    "place2": 4,
    "place3": 1,
-   "other": 10,
-   "n": 17,
-   "win_rate": 0.118,
-   "quinella_rate": 0.353,
-   "show_rate": 0.412
+   "other": 11,
+   "n": 18,
+   "win_rate": 0.111,
+   "quinella_rate": 0.333,
+   "show_rate": 0.389
   },
   "2025": {
    "win": 3,
@@ -68,6 +68,19 @@
   }
  ],
  "ratings_reconstructed": [
+  {
+   "date": "2026-09-26",
+   "race_no": 7,
+   "position": 8,
+   "earned_yen": 0,
+   "program_prize_k": 2207,
+   "year_prize_k": 825,
+   "class": "C1",
+   "next_class": "B4",
+   "next_class_need_k": 1193,
+   "diff_k": 0,
+   "change": null
+  },
   {
    "date": "2026-09-12",
    "race_no": 5,
@@ -243,24 +256,27 @@
    "race_no": 7,
    "race_name": "ニシコリ８０万人突破記念Ｃ１－４",
    "class": "C1",
-   "moisture": 1.1,
+   "moisture": 1.0,
    "field_size": 9,
    "num": 7,
    "jockey": "赤塚健",
-   "trainer": "松田道（ばんえい）",
+   "trainer": "松田道",
    "owner": "石井宏治",
    "sled_kg": 630.0,
-   "weight": null,
-   "weight_diff": null,
-   "odds": 7.6,
-   "popularity": 3,
-   "position": null,
-   "time": null,
-   "time_sec": null,
-   "margin_sec": null,
-   "race_level_z": null,
+   "weight": 950,
+   "weight_diff": -4,
+   "odds": 26.8,
+   "popularity": 6,
+   "position": 8,
+   "time": "2:29.7",
+   "time_sec": 149.7,
+   "margin_sec": 31.6,
+   "race_level_z": -0.06,
    "interval": "中2週",
-   "other": null,
+   "other": {
+    "label": "勝ち馬",
+    "name": "クリスタルアッシュ"
+   },
    "insider_labels": []
   },
   {
@@ -680,7 +696,7 @@
    "time": "1:51.8",
    "time_sec": 111.8,
    "margin_sec": 0.0,
-   "race_level_z": 1.02,
+   "race_level_z": 1.03,
    "interval": "連闘",
    "other": {
     "label": "2着馬",
@@ -929,7 +945,7 @@
    "time": "1:25.1",
    "time_sec": 85.1,
    "margin_sec": 2.6,
-   "race_level_z": 1.58,
+   "race_level_z": 1.59,
    "interval": "中2週",
    "other": {
     "label": "勝ち馬",
@@ -985,7 +1001,7 @@
    "time": "1:48.4",
    "time_sec": 108.4,
    "margin_sec": 6.3,
-   "race_level_z": 0.03,
+   "race_level_z": 0.04,
    "interval": "中1週",
    "other": {
     "label": "勝ち馬",

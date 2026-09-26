@@ -2,11 +2,11 @@
  "name": "ジェイノホマレ",
  "sex": "牝",
  "age": 3,
- "trainer": "坂本東（ばんえい）",
+ "trainer": "坂本東",
  "owner": "小森唯永",
  "sled_kg": 610.0,
- "weight": null,
- "weight_diff": null,
+ "weight": 915,
+ "weight_diff": -26,
  "last_race_date": "2026-09-26",
  "pedigree": {
   "sire": "フジカチドキ",
@@ -20,22 +20,22 @@
   "total": {
    "win": 4,
    "place2": 4,
-   "place3": 3,
+   "place3": 4,
    "other": 17,
-   "n": 28,
-   "win_rate": 0.143,
-   "quinella_rate": 0.286,
-   "show_rate": 0.393
+   "n": 29,
+   "win_rate": 0.138,
+   "quinella_rate": 0.276,
+   "show_rate": 0.414
   },
   "2026": {
    "win": 1,
    "place2": 2,
-   "place3": 2,
+   "place3": 3,
    "other": 9,
-   "n": 14,
-   "win_rate": 0.071,
-   "quinella_rate": 0.214,
-   "show_rate": 0.357
+   "n": 15,
+   "win_rate": 0.067,
+   "quinella_rate": 0.2,
+   "show_rate": 0.4
   },
   "2025": {
    "win": 3,
@@ -68,6 +68,19 @@
   }
  ],
  "ratings_reconstructed": [
+  {
+   "date": "2026-09-26",
+   "race_no": 5,
+   "position": 3,
+   "earned_yen": 63000,
+   "program_prize_k": 3355,
+   "year_prize_k": 555,
+   "class": "C1",
+   "next_class": "B4",
+   "next_class_need_k": 45,
+   "diff_k": 63,
+   "change": null
+  },
   {
    "date": "2026-09-20",
    "race_no": 6,
@@ -176,14 +189,14 @@
  "reconstructed_now": {
   "snapshot_date": "2026-09-25",
   "class_code": "C1",
-  "program_prize_k": 3292,
-  "year_prize_k": 492,
+  "program_prize_k": 3355,
+  "year_prize_k": 555,
   "reconstructed": true,
-  "reconstructed_races": 0
+  "reconstructed_races": 1
  },
  "next_class": {
   "next_class": "B4",
-  "need_k": 108
+  "need_k": 45
  },
  "races": [
   {
@@ -191,24 +204,27 @@
    "race_no": 5,
    "race_name": "朔乃レイ誕生日杯Ｃ１－７",
    "class": "C1",
-   "moisture": 1.1,
+   "moisture": 1.0,
    "field_size": 9,
    "num": 2,
    "jockey": "阿部優",
-   "trainer": "坂本東（ばんえい）",
+   "trainer": "坂本東",
    "owner": "小森唯永",
    "sled_kg": 610.0,
-   "weight": null,
-   "weight_diff": null,
-   "odds": 12.1,
-   "popularity": 5,
-   "position": null,
-   "time": null,
-   "time_sec": null,
-   "margin_sec": null,
-   "race_level_z": null,
+   "weight": 915,
+   "weight_diff": -26,
+   "odds": 4.7,
+   "popularity": 2,
+   "position": 3,
+   "time": "2:09.0",
+   "time_sec": 129.0,
+   "margin_sec": 6.7,
+   "race_level_z": 0.76,
    "interval": "連闘",
-   "other": null,
+   "other": {
+    "label": "勝ち馬",
+    "name": "センショウロック"
+   },
    "insider_labels": []
   },
   {
@@ -567,7 +583,7 @@
    "time": "1:41.3",
    "time_sec": 101.3,
    "margin_sec": 24.8,
-   "race_level_z": 0.08,
+   "race_level_z": 0.09,
    "interval": "中2週",
    "other": {
     "label": "勝ち馬",
@@ -763,7 +779,7 @@
    "time": "1:25.0",
    "time_sec": 85.0,
    "margin_sec": 1.9,
-   "race_level_z": 0.96,
+   "race_level_z": 0.97,
    "interval": "中2週",
    "other": {
     "label": "勝ち馬",
@@ -791,7 +807,7 @@
    "time": "2:05.0",
    "time_sec": 125.0,
    "margin_sec": 27.7,
-   "race_level_z": -0.71,
+   "race_level_z": -0.7,
    "interval": "中2週",
    "other": {
     "label": "勝ち馬",
@@ -875,7 +891,7 @@
    "time": "1:36.7",
    "time_sec": 96.7,
    "margin_sec": 0.0,
-   "race_level_z": 0.41,
+   "race_level_z": 0.42,
    "interval": "中2週",
    "other": {
     "label": "2着馬",

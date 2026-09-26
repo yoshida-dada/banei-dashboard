@@ -2,11 +2,11 @@
  "name": "ヴルールシュクセ",
  "sex": "牡",
  "age": 2,
- "trainer": "林　豊（ばんえい）",
+ "trainer": "林　豊",
  "owner": "島津信",
  "sled_kg": 510.0,
- "weight": null,
- "weight_diff": null,
+ "weight": 862,
+ "weight_diff": 6,
  "last_race_date": "2026-09-26",
  "pedigree": {
   "sire": "サクラダイチ",
@@ -21,21 +21,21 @@
    "win": 0,
    "place2": 1,
    "place3": 0,
-   "other": 5,
-   "n": 6,
+   "other": 6,
+   "n": 7,
    "win_rate": 0.0,
-   "quinella_rate": 0.167,
-   "show_rate": 0.167
+   "quinella_rate": 0.143,
+   "show_rate": 0.143
   },
   "2026": {
    "win": 0,
    "place2": 1,
    "place3": 0,
-   "other": 5,
-   "n": 6,
+   "other": 6,
+   "n": 7,
    "win_rate": 0.0,
-   "quinella_rate": 0.167,
-   "show_rate": 0.167
+   "quinella_rate": 0.143,
+   "show_rate": 0.143
   }
  },
  "insider_label_count": 0,
@@ -58,6 +58,19 @@
   }
  ],
  "ratings_reconstructed": [
+  {
+   "date": "2026-09-26",
+   "race_no": 2,
+   "position": 9,
+   "earned_yen": 0,
+   "program_prize_k": 200,
+   "year_prize_k": 200,
+   "class": "C2",
+   "next_class": "C1",
+   "next_class_need_k": 2000,
+   "diff_k": 0,
+   "change": null
+  },
   {
    "date": "2026-09-21",
    "race_no": 3,
@@ -169,20 +182,23 @@
    "field_size": 10,
    "num": 7,
    "jockey": "島津新",
-   "trainer": "林　豊（ばんえい）",
+   "trainer": "林　豊",
    "owner": "島津信",
    "sled_kg": 510.0,
-   "weight": null,
-   "weight_diff": null,
-   "odds": 15.9,
-   "popularity": 7,
-   "position": null,
-   "time": null,
-   "time_sec": null,
-   "margin_sec": null,
-   "race_level_z": null,
+   "weight": 862,
+   "weight_diff": 6,
+   "odds": 16.4,
+   "popularity": 6,
+   "position": 9,
+   "time": "2:39.8",
+   "time_sec": 159.8,
+   "margin_sec": 33.1,
+   "race_level_z": 0.02,
    "interval": "連闘",
-   "other": null,
+   "other": {
+    "label": "勝ち馬",
+    "name": "ホクセイウグイス"
+   },
    "insider_labels": []
   },
   {

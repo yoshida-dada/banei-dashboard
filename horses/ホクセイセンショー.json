@@ -2,11 +2,11 @@
  "name": "ホクセイセンショー",
  "sex": "牡",
  "age": 3,
- "trainer": "岩本利（ばんえい）",
+ "trainer": "岩本利",
  "owner": "（株）北西ファーム",
  "sled_kg": 620.0,
- "weight": null,
- "weight_diff": null,
+ "weight": 1000,
+ "weight_diff": 13,
  "last_race_date": "2026-09-26",
  "pedigree": {
   "sire": "アアモンドロシア",
@@ -21,21 +21,21 @@
    "win": 2,
    "place2": 6,
    "place3": 1,
-   "other": 21,
-   "n": 30,
-   "win_rate": 0.067,
-   "quinella_rate": 0.267,
-   "show_rate": 0.3
+   "other": 22,
+   "n": 31,
+   "win_rate": 0.065,
+   "quinella_rate": 0.258,
+   "show_rate": 0.29
   },
   "2026": {
    "win": 1,
    "place2": 3,
    "place3": 1,
-   "other": 11,
-   "n": 16,
-   "win_rate": 0.062,
-   "quinella_rate": 0.25,
-   "show_rate": 0.312
+   "other": 12,
+   "n": 17,
+   "win_rate": 0.059,
+   "quinella_rate": 0.235,
+   "show_rate": 0.294
   },
   "2025": {
    "win": 1,
@@ -68,6 +68,19 @@
   }
  ],
  "ratings_reconstructed": [
+  {
+   "date": "2026-09-26",
+   "race_no": 4,
+   "position": 9,
+   "earned_yen": 0,
+   "program_prize_k": 1530,
+   "year_prize_k": 714,
+   "class": "C2",
+   "next_class": "C1",
+   "next_class_need_k": 670,
+   "diff_k": 0,
+   "change": null
+  },
   {
    "date": "2026-09-21",
    "race_no": 6,
@@ -221,20 +234,23 @@
    "field_size": 10,
    "num": 6,
    "jockey": "島津新",
-   "trainer": "岩本利（ばんえい）",
+   "trainer": "岩本利",
    "owner": "（株）北西ファーム",
    "sled_kg": 620.0,
-   "weight": null,
-   "weight_diff": null,
-   "odds": 11.0,
-   "popularity": 6,
-   "position": null,
-   "time": null,
-   "time_sec": null,
-   "margin_sec": null,
-   "race_level_z": null,
+   "weight": 1000,
+   "weight_diff": 13,
+   "odds": 16.1,
+   "popularity": 8,
+   "position": 9,
+   "time": "2:52.3",
+   "time_sec": 172.3,
+   "margin_sec": 49.9,
+   "race_level_z": -0.47,
    "interval": "連闘",
-   "other": null,
+   "other": {
+    "label": "勝ち馬",
+    "name": "ウル"
+   },
    "insider_labels": []
   },
   {
@@ -565,7 +581,7 @@
    "time": "1:56.5",
    "time_sec": 116.5,
    "margin_sec": 9.2,
-   "race_level_z": 1.04,
+   "race_level_z": 1.03,
    "interval": "中1週",
    "other": {
     "label": "勝ち馬",

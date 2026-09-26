@@ -2,11 +2,11 @@
  "name": "マルゼンイチバン",
  "sex": "牡",
  "age": 5,
- "trainer": "西弘美（ばんえい）",
+ "trainer": "西弘美",
  "owner": "矢藤秀樹",
  "sled_kg": 660.0,
- "weight": null,
- "weight_diff": null,
+ "weight": 1056,
+ "weight_diff": 7,
  "last_race_date": "2026-09-26",
  "pedigree": {
   "sire": "ミンナノマルゼン",
@@ -21,21 +21,21 @@
    "win": 8,
    "place2": 15,
    "place3": 13,
-   "other": 46,
-   "n": 82,
-   "win_rate": 0.098,
-   "quinella_rate": 0.28,
-   "show_rate": 0.439
+   "other": 47,
+   "n": 83,
+   "win_rate": 0.096,
+   "quinella_rate": 0.277,
+   "show_rate": 0.434
   },
   "2026": {
    "win": 1,
    "place2": 3,
    "place3": 4,
-   "other": 12,
-   "n": 20,
-   "win_rate": 0.05,
-   "quinella_rate": 0.2,
-   "show_rate": 0.4
+   "other": 13,
+   "n": 21,
+   "win_rate": 0.048,
+   "quinella_rate": 0.19,
+   "show_rate": 0.381
   },
   "2025": {
    "win": 2,
@@ -88,6 +88,19 @@
   }
  ],
  "ratings_reconstructed": [
+  {
+   "date": "2026-09-26",
+   "race_no": 10,
+   "position": 6,
+   "earned_yen": 0,
+   "program_prize_k": 5548,
+   "year_prize_k": 608,
+   "class": "B2",
+   "next_class": "B1",
+   "next_class_need_k": 1152,
+   "diff_k": 0,
+   "change": null
+  },
   {
    "date": "2026-09-14",
    "race_no": 12,
@@ -289,24 +302,27 @@
    "race_no": 10,
    "race_name": "福田兄弟還暦おめでとう！！Ｂ２－３",
    "class": "B2",
-   "moisture": 1.1,
+   "moisture": 1.0,
    "field_size": 10,
    "num": 1,
    "jockey": "西謙一",
-   "trainer": "西弘美（ばんえい）",
+   "trainer": "西弘美",
    "owner": "矢藤秀樹",
    "sled_kg": 660.0,
-   "weight": null,
-   "weight_diff": null,
-   "odds": 25.6,
-   "popularity": 10,
-   "position": null,
-   "time": null,
-   "time_sec": null,
-   "margin_sec": null,
-   "race_level_z": null,
+   "weight": 1056,
+   "weight_diff": 7,
+   "odds": 21.2,
+   "popularity": 6,
+   "position": 6,
+   "time": "2:10.4",
+   "time_sec": 130.4,
+   "margin_sec": 24.9,
+   "race_level_z": -0.07,
    "interval": "中1週",
-   "other": null,
+   "other": {
+    "label": "勝ち馬",
+    "name": "プラチナガール"
+   },
    "insider_labels": []
   },
   {
@@ -329,7 +345,7 @@
    "time": "1:55.9",
    "time_sec": 115.9,
    "margin_sec": 15.5,
-   "race_level_z": 0.73,
+   "race_level_z": 0.74,
    "interval": "中2週",
    "other": {
     "label": "勝ち馬",
@@ -833,7 +849,7 @@
    "time": "1:41.9",
    "time_sec": 101.9,
    "margin_sec": 3.9,
-   "race_level_z": 0.93,
+   "race_level_z": 0.94,
    "interval": "中3週",
    "other": {
     "label": "勝ち馬",
@@ -2093,7 +2109,7 @@
    "time": "1:50.7",
    "time_sec": 110.7,
    "margin_sec": 11.1,
-   "race_level_z": 0.12,
+   "race_level_z": 0.13,
    "interval": "中2週",
    "other": {
     "label": "勝ち馬",
@@ -2149,7 +2165,7 @@
    "time": "1:28.9",
    "time_sec": 88.9,
    "margin_sec": 0.0,
-   "race_level_z": 1.23,
+   "race_level_z": 1.24,
    "interval": "中2週",
    "other": {
     "label": "2着馬",

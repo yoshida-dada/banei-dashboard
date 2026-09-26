@@ -2,11 +2,11 @@
  "name": "イワキクロヒョウ",
  "sex": "牡",
  "age": 6,
- "trainer": "小林長（ばんえい）",
+ "trainer": "小林長",
  "owner": "蝦名豊",
  "sled_kg": 640.0,
- "weight": null,
- "weight_diff": null,
+ "weight": 1127,
+ "weight_diff": -8,
  "last_race_date": "2026-09-26",
  "pedigree": {
   "sire": "オオノトップ",
@@ -21,21 +21,21 @@
    "win": 3,
    "place2": 14,
    "place3": 10,
-   "other": 65,
-   "n": 92,
-   "win_rate": 0.033,
-   "quinella_rate": 0.185,
-   "show_rate": 0.293
+   "other": 66,
+   "n": 93,
+   "win_rate": 0.032,
+   "quinella_rate": 0.183,
+   "show_rate": 0.29
   },
   "2026": {
    "win": 0,
    "place2": 1,
    "place3": 2,
-   "other": 15,
-   "n": 18,
+   "other": 16,
+   "n": 19,
    "win_rate": 0.0,
-   "quinella_rate": 0.056,
-   "show_rate": 0.167
+   "quinella_rate": 0.053,
+   "show_rate": 0.158
   },
   "2025": {
    "win": 1,
@@ -88,6 +88,19 @@
   }
  ],
  "ratings_reconstructed": [
+  {
+   "date": "2026-09-26",
+   "race_no": 12,
+   "position": 7,
+   "earned_yen": 0,
+   "program_prize_k": 3455,
+   "year_prize_k": 215,
+   "class": "B4",
+   "next_class": "B3",
+   "next_class_need_k": 845,
+   "diff_k": 0,
+   "change": null
+  },
   {
    "date": "2026-09-12",
    "race_no": 8,
@@ -263,24 +276,27 @@
    "race_no": 12,
    "race_name": "Ｂ４－６",
    "class": "B4",
-   "moisture": 1.1,
+   "moisture": 1.0,
    "field_size": 10,
    "num": 5,
    "jockey": "菊池一",
-   "trainer": "小林長（ばんえい）",
+   "trainer": "小林長",
    "owner": "蝦名豊",
    "sled_kg": 640.0,
-   "weight": null,
-   "weight_diff": null,
-   "odds": 8.5,
-   "popularity": 4,
-   "position": null,
-   "time": null,
-   "time_sec": null,
-   "margin_sec": null,
-   "race_level_z": null,
+   "weight": 1127,
+   "weight_diff": -8,
+   "odds": 26.7,
+   "popularity": 9,
+   "position": 7,
+   "time": "2:12.5",
+   "time_sec": 132.5,
+   "margin_sec": 11.2,
+   "race_level_z": 0.21,
    "interval": "中2週",
-   "other": null,
+   "other": {
+    "label": "勝ち馬",
+    "name": "テンボシヴィーナス"
+   },
    "insider_labels": []
   },
   {
@@ -527,7 +543,7 @@
    "time": "2:06.0",
    "time_sec": 126.0,
    "margin_sec": 8.7,
-   "race_level_z": 0.57,
+   "race_level_z": 0.56,
    "interval": "中2週",
    "other": {
     "label": "勝ち馬",
@@ -2873,7 +2889,7 @@
    "time": "1:05.2",
    "time_sec": 65.2,
    "margin_sec": 6.4,
-   "race_level_z": 1.52,
+   "race_level_z": 1.53,
    "interval": "中2週",
    "other": {
     "label": "勝ち馬",

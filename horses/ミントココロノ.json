@@ -2,11 +2,11 @@
  "name": "ミントココロノ",
  "sex": "牝",
  "age": 2,
- "trainer": "大友人（ばんえい）",
+ "trainer": "大友人",
  "owner": "細川弘則",
  "sled_kg": 490.0,
- "weight": null,
- "weight_diff": null,
+ "weight": 832,
+ "weight_diff": 3,
  "last_race_date": "2026-09-26",
  "pedigree": {
   "sire": "ココロノタカラ",
@@ -21,21 +21,21 @@
    "win": 0,
    "place2": 0,
    "place3": 2,
-   "other": 5,
-   "n": 7,
+   "other": 6,
+   "n": 8,
    "win_rate": 0.0,
    "quinella_rate": 0.0,
-   "show_rate": 0.286
+   "show_rate": 0.25
   },
   "2026": {
    "win": 0,
    "place2": 0,
    "place3": 2,
-   "other": 5,
-   "n": 7,
+   "other": 6,
+   "n": 8,
    "win_rate": 0.0,
    "quinella_rate": 0.0,
-   "show_rate": 0.286
+   "show_rate": 0.25
   }
  },
  "insider_label_count": 0,
@@ -58,6 +58,19 @@
   }
  ],
  "ratings_reconstructed": [
+  {
+   "date": "2026-09-26",
+   "race_no": 2,
+   "position": 8,
+   "earned_yen": 0,
+   "program_prize_k": 207,
+   "year_prize_k": 207,
+   "class": "C2",
+   "next_class": "C1",
+   "next_class_need_k": 1993,
+   "diff_k": 0,
+   "change": null
+  },
   {
    "date": "2026-09-14",
    "race_no": 3,
@@ -169,20 +182,23 @@
    "field_size": 10,
    "num": 9,
    "jockey": "大友一",
-   "trainer": "大友人（ばんえい）",
+   "trainer": "大友人",
    "owner": "細川弘則",
    "sled_kg": 490.0,
-   "weight": null,
-   "weight_diff": null,
-   "odds": 20.4,
-   "popularity": 8,
-   "position": null,
-   "time": null,
-   "time_sec": null,
-   "margin_sec": null,
-   "race_level_z": null,
+   "weight": 832,
+   "weight_diff": 3,
+   "odds": 53.1,
+   "popularity": 9,
+   "position": 8,
+   "time": "2:38.5",
+   "time_sec": 158.5,
+   "margin_sec": 31.8,
+   "race_level_z": 0.01,
    "interval": "中1週",
-   "other": null,
+   "other": {
+    "label": "勝ち馬",
+    "name": "ホクセイウグイス"
+   },
    "insider_labels": []
   },
   {

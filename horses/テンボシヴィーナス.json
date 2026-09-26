@@ -2,11 +2,11 @@
  "name": "テンボシヴィーナス",
  "sex": "牝",
  "age": 5,
- "trainer": "岩本利（ばんえい）",
+ "trainer": "岩本利",
  "owner": "日野篤",
  "sled_kg": 620.0,
- "weight": null,
- "weight_diff": null,
+ "weight": 1021,
+ "weight_diff": 3,
  "last_race_date": "2026-09-26",
  "pedigree": {
   "sire": "フジダイビクトリー",
@@ -18,24 +18,24 @@
  },
  "stats": {
   "total": {
-   "win": 6,
+   "win": 7,
    "place2": 10,
    "place3": 3,
    "other": 60,
-   "n": 79,
-   "win_rate": 0.076,
-   "quinella_rate": 0.203,
-   "show_rate": 0.241
+   "n": 80,
+   "win_rate": 0.087,
+   "quinella_rate": 0.212,
+   "show_rate": 0.25
   },
   "2026": {
-   "win": 0,
+   "win": 1,
    "place2": 2,
    "place3": 2,
    "other": 14,
-   "n": 18,
-   "win_rate": 0.0,
-   "quinella_rate": 0.111,
-   "show_rate": 0.222
+   "n": 19,
+   "win_rate": 0.053,
+   "quinella_rate": 0.158,
+   "show_rate": 0.263
   },
   "2025": {
    "win": 3,
@@ -68,7 +68,7 @@
    "show_rate": 0.214
   }
  },
- "insider_label_count": 4,
+ "insider_label_count": 5,
  "ratings": [
   {
    "date": "2026-09-25",
@@ -88,6 +88,19 @@
   }
  ],
  "ratings_reconstructed": [
+  {
+   "date": "2026-09-26",
+   "race_no": 12,
+   "position": 1,
+   "earned_yen": 330000,
+   "program_prize_k": 3343,
+   "year_prize_k": 664,
+   "class": "C1",
+   "next_class": "B4",
+   "next_class_need_k": 57,
+   "diff_k": 330,
+   "change": null
+  },
   {
    "date": "2026-09-14",
    "race_no": 9,
@@ -248,14 +261,14 @@
  "reconstructed_now": {
   "snapshot_date": "2026-09-25",
   "class_code": "B4",
-  "program_prize_k": 3013,
-  "year_prize_k": 334,
+  "program_prize_k": 3343,
+  "year_prize_k": 664,
   "reconstructed": true,
-  "reconstructed_races": 0
+  "reconstructed_races": 1
  },
  "next_class": {
   "next_class": "B3",
-  "need_k": 1287
+  "need_k": 957
  },
  "races": [
   {
@@ -263,25 +276,33 @@
    "race_no": 12,
    "race_name": "Ｂ４－６",
    "class": "B4",
-   "moisture": 1.1,
+   "moisture": 1.0,
    "field_size": 10,
    "num": 3,
    "jockey": "長澤幸",
-   "trainer": "岩本利（ばんえい）",
+   "trainer": "岩本利",
    "owner": "日野篤",
    "sled_kg": 620.0,
-   "weight": null,
-   "weight_diff": null,
-   "odds": 8.5,
-   "popularity": 4,
-   "position": null,
-   "time": null,
-   "time_sec": null,
-   "margin_sec": null,
-   "race_level_z": null,
+   "weight": 1021,
+   "weight_diff": 3,
+   "odds": 17.2,
+   "popularity": 7,
+   "position": 1,
+   "time": "2:01.3",
+   "time_sec": 121.3,
+   "margin_sec": 0.0,
+   "race_level_z": 0.63,
    "interval": "中1週",
-   "other": null,
-   "insider_labels": []
+   "other": {
+    "label": "2着馬",
+    "name": "イワキオーカン"
+   },
+   "insider_labels": [
+    {
+     "label_type": "仕掛け",
+     "note": "オッズ無し"
+    }
+   ]
   },
   {
    "date": "2026-09-14",
@@ -359,7 +380,7 @@
    "time": "2:16.4",
    "time_sec": 136.4,
    "margin_sec": 16.4,
-   "race_level_z": -0.26,
+   "race_level_z": -0.27,
    "interval": "中2週",
    "other": {
     "label": "勝ち馬",
@@ -644,7 +665,7 @@
    "time": "2:14.6",
    "time_sec": 134.6,
    "margin_sec": 14.3,
-   "race_level_z": 0.58,
+   "race_level_z": 0.57,
    "interval": "中1週",
    "other": {
     "label": "勝ち馬",
@@ -1097,7 +1118,7 @@
    "time": "2:52.7",
    "time_sec": 172.7,
    "margin_sec": 16.1,
-   "race_level_z": -0.79,
+   "race_level_z": -0.8,
    "interval": "中2週",
    "other": {
     "label": "勝ち馬",

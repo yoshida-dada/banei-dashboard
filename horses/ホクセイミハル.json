@@ -2,11 +2,11 @@
  "name": "ホクセイミハル",
  "sex": "牝",
  "age": 4,
- "trainer": "長部幸（ばんえい）",
+ "trainer": "長部幸",
  "owner": "（有）竹内産業",
  "sled_kg": 600.0,
- "weight": null,
- "weight_diff": null,
+ "weight": 923,
+ "weight_diff": 10,
  "last_race_date": "2026-09-26",
  "pedigree": {
   "sire": "フジダイビクトリー",
@@ -19,23 +19,23 @@
  "stats": {
   "total": {
    "win": 5,
-   "place2": 3,
+   "place2": 4,
    "place3": 6,
    "other": 40,
-   "n": 54,
-   "win_rate": 0.093,
-   "quinella_rate": 0.148,
-   "show_rate": 0.259
+   "n": 55,
+   "win_rate": 0.091,
+   "quinella_rate": 0.164,
+   "show_rate": 0.273
   },
   "2026": {
    "win": 1,
-   "place2": 1,
+   "place2": 2,
    "place3": 3,
    "other": 11,
-   "n": 16,
-   "win_rate": 0.062,
-   "quinella_rate": 0.125,
-   "show_rate": 0.312
+   "n": 17,
+   "win_rate": 0.059,
+   "quinella_rate": 0.176,
+   "show_rate": 0.353
   },
   "2025": {
    "win": 3,
@@ -78,6 +78,19 @@
   }
  ],
  "ratings_reconstructed": [
+  {
+   "date": "2026-09-26",
+   "race_no": 5,
+   "position": 2,
+   "earned_yen": 111000,
+   "program_prize_k": 2517,
+   "year_prize_k": 588,
+   "class": "C1",
+   "next_class": "B4",
+   "next_class_need_k": 883,
+   "diff_k": 111,
+   "change": null
+  },
   {
    "date": "2026-09-14",
    "race_no": 6,
@@ -212,14 +225,14 @@
  "reconstructed_now": {
   "snapshot_date": "2026-09-25",
   "class_code": "C1",
-  "program_prize_k": 2406,
-  "year_prize_k": 477,
+  "program_prize_k": 2517,
+  "year_prize_k": 588,
   "reconstructed": true,
-  "reconstructed_races": 0
+  "reconstructed_races": 1
  },
  "next_class": {
   "next_class": "B4",
-  "need_k": 994
+  "need_k": 883
  },
  "races": [
   {
@@ -227,24 +240,27 @@
    "race_no": 5,
    "race_name": "朔乃レイ誕生日杯Ｃ１－７",
    "class": "C1",
-   "moisture": 1.1,
+   "moisture": 1.0,
    "field_size": 9,
    "num": 9,
-   "jockey": "今井千",
-   "trainer": "長部幸（ばんえい）",
+   "jockey": "☆今井千",
+   "trainer": "長部幸",
    "owner": "（有）竹内産業",
    "sled_kg": 600.0,
-   "weight": null,
-   "weight_diff": null,
-   "odds": 5.0,
-   "popularity": 2,
-   "position": null,
-   "time": null,
-   "time_sec": null,
-   "margin_sec": null,
-   "race_level_z": null,
+   "weight": 923,
+   "weight_diff": 10,
+   "odds": 5.2,
+   "popularity": 3,
+   "position": 2,
+   "time": "2:06.1",
+   "time_sec": 126.1,
+   "margin_sec": 3.8,
+   "race_level_z": 0.86,
    "interval": "中1週",
-   "other": null,
+   "other": {
+    "label": "勝ち馬",
+    "name": "センショウロック"
+   },
    "insider_labels": []
   },
   {
@@ -547,7 +563,7 @@
    "time": "2:21.6",
    "time_sec": 141.6,
    "margin_sec": 2.5,
-   "race_level_z": 0.71,
+   "race_level_z": 0.7,
    "interval": "中2週",
    "other": {
     "label": "勝ち馬",
@@ -659,7 +675,7 @@
    "time": "2:23.9",
    "time_sec": 143.9,
    "margin_sec": 17.9,
-   "race_level_z": 0.29,
+   "race_level_z": 0.28,
    "interval": "中3週",
    "other": {
     "label": "勝ち馬",
@@ -1751,7 +1767,7 @@
    "time": "3:34.9",
    "time_sec": 214.9,
    "margin_sec": 90.9,
-   "race_level_z": -2.08,
+   "race_level_z": -2.09,
    "interval": null,
    "other": {
     "label": "勝ち馬",

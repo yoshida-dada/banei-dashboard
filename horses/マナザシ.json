@@ -2,11 +2,11 @@
  "name": "マナザシ",
  "sex": "牝",
  "age": 2,
- "trainer": "鈴木邦（ばんえい）",
+ "trainer": "鈴木邦",
  "owner": "田中秀直",
  "sled_kg": 490.0,
- "weight": null,
- "weight_diff": null,
+ "weight": 857,
+ "weight_diff": 14,
  "last_race_date": "2026-09-26",
  "pedigree": {
   "sire": "ブラックシシ",
@@ -18,24 +18,24 @@
  },
  "stats": {
   "total": {
-   "win": 0,
+   "win": 1,
    "place2": 4,
    "place3": 1,
    "other": 3,
-   "n": 8,
-   "win_rate": 0.0,
-   "quinella_rate": 0.5,
-   "show_rate": 0.625
+   "n": 9,
+   "win_rate": 0.111,
+   "quinella_rate": 0.556,
+   "show_rate": 0.667
   },
   "2026": {
-   "win": 0,
+   "win": 1,
    "place2": 4,
    "place3": 1,
    "other": 3,
-   "n": 8,
-   "win_rate": 0.0,
-   "quinella_rate": 0.5,
-   "show_rate": 0.625
+   "n": 9,
+   "win_rate": 0.111,
+   "quinella_rate": 0.556,
+   "show_rate": 0.667
   }
  },
  "insider_label_count": 0,
@@ -58,6 +58,19 @@
   }
  ],
  "ratings_reconstructed": [
+  {
+   "date": "2026-09-26",
+   "race_no": 3,
+   "position": 1,
+   "earned_yen": 330000,
+   "program_prize_k": 876,
+   "year_prize_k": 876,
+   "class": "C2",
+   "next_class": "C1",
+   "next_class_need_k": 1324,
+   "diff_k": 330,
+   "change": null
+  },
   {
    "date": "2026-09-12",
    "race_no": 3,
@@ -166,10 +179,10 @@
  "reconstructed_now": {
   "snapshot_date": "2026-09-25",
   "class_code": "2sai",
-  "program_prize_k": 546,
-  "year_prize_k": 546,
+  "program_prize_k": 876,
+  "year_prize_k": 876,
   "reconstructed": true,
-  "reconstructed_races": 0
+  "reconstructed_races": 1
  },
  "next_class": null,
  "races": [
@@ -181,21 +194,24 @@
    "moisture": 1.1,
    "field_size": 10,
    "num": 9,
-   "jockey": "今井千",
-   "trainer": "鈴木邦（ばんえい）",
+   "jockey": "☆今井千",
+   "trainer": "鈴木邦",
    "owner": "田中秀直",
    "sled_kg": 490.0,
-   "weight": null,
-   "weight_diff": null,
-   "odds": 7.9,
-   "popularity": 4,
-   "position": null,
-   "time": null,
-   "time_sec": null,
-   "margin_sec": null,
-   "race_level_z": null,
+   "weight": 857,
+   "weight_diff": 14,
+   "odds": 5.6,
+   "popularity": 2,
+   "position": 1,
+   "time": "1:56.7",
+   "time_sec": 116.7,
+   "margin_sec": 0.0,
+   "race_level_z": 0.9,
    "interval": "中2週",
-   "other": null,
+   "other": {
+    "label": "2着馬",
+    "name": "シンザンミハル"
+   },
    "insider_labels": []
   },
   {
@@ -246,7 +262,7 @@
    "time": "1:54.8",
    "time_sec": 114.8,
    "margin_sec": 6.7,
-   "race_level_z": 0.75,
+   "race_level_z": 0.76,
    "interval": "中1週",
    "other": {
     "label": "勝ち馬",

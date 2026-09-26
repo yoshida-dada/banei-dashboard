@@ -2,11 +2,11 @@
  "name": "ツカサファースト",
  "sex": "牡",
  "age": 5,
- "trainer": "中島敏（ばんえい）",
+ "trainer": "中島敏",
  "owner": "川口晋司",
  "sled_kg": 660.0,
- "weight": null,
- "weight_diff": null,
+ "weight": 1021,
+ "weight_diff": -11,
  "last_race_date": "2026-09-26",
  "pedigree": {
   "sire": "フジダイビクトリー",
@@ -21,21 +21,21 @@
    "win": 10,
    "place2": 14,
    "place3": 2,
-   "other": 58,
-   "n": 84,
-   "win_rate": 0.119,
-   "quinella_rate": 0.286,
-   "show_rate": 0.31
+   "other": 59,
+   "n": 85,
+   "win_rate": 0.118,
+   "quinella_rate": 0.282,
+   "show_rate": 0.306
   },
   "2026": {
    "win": 1,
    "place2": 2,
    "place3": 0,
-   "other": 16,
-   "n": 19,
-   "win_rate": 0.053,
-   "quinella_rate": 0.158,
-   "show_rate": 0.158
+   "other": 17,
+   "n": 20,
+   "win_rate": 0.05,
+   "quinella_rate": 0.15,
+   "show_rate": 0.15
   },
   "2025": {
    "win": 4,
@@ -88,6 +88,19 @@
   }
  ],
  "ratings_reconstructed": [
+  {
+   "date": "2026-09-26",
+   "race_no": 10,
+   "position": 10,
+   "earned_yen": 0,
+   "program_prize_k": 5769,
+   "year_prize_k": 462,
+   "class": "B2",
+   "next_class": "B1",
+   "next_class_need_k": 931,
+   "diff_k": 0,
+   "change": null
+  },
   {
    "date": "2026-09-21",
    "race_no": 12,
@@ -276,24 +289,27 @@
    "race_no": 10,
    "race_name": "福田兄弟還暦おめでとう！！Ｂ２－３",
    "class": "B2",
-   "moisture": 1.1,
+   "moisture": 1.0,
    "field_size": 10,
    "num": 6,
    "jockey": "赤塚健",
-   "trainer": "中島敏（ばんえい）",
+   "trainer": "中島敏",
    "owner": "川口晋司",
    "sled_kg": 660.0,
-   "weight": null,
-   "weight_diff": null,
-   "odds": 6.4,
-   "popularity": 4,
-   "position": null,
-   "time": null,
-   "time_sec": null,
-   "margin_sec": null,
-   "race_level_z": null,
+   "weight": 1021,
+   "weight_diff": -11,
+   "odds": 106.9,
+   "popularity": 9,
+   "position": 10,
+   "time": "2:41.5",
+   "time_sec": 161.5,
+   "margin_sec": 56.0,
+   "race_level_z": -1.39,
    "interval": "連闘",
-   "other": null,
+   "other": {
+    "label": "勝ち馬",
+    "name": "プラチナガール"
+   },
    "insider_labels": []
   },
   {
@@ -820,7 +836,7 @@
    "time": "1:48.7",
    "time_sec": 108.7,
    "margin_sec": 8.1,
-   "race_level_z": 0.64,
+   "race_level_z": 0.65,
    "interval": "中1週",
    "other": {
     "label": "勝ち馬",
@@ -1553,7 +1569,7 @@
    "time": "2:07.7",
    "time_sec": 127.7,
    "margin_sec": 1.7,
-   "race_level_z": 0.26,
+   "race_level_z": 0.25,
    "interval": "中2週",
    "other": {
     "label": "勝ち馬",
@@ -1812,7 +1828,7 @@
    "time": "2:34.2",
    "time_sec": 154.2,
    "margin_sec": 25.7,
-   "race_level_z": -0.79,
+   "race_level_z": -0.8,
    "interval": "中2週",
    "other": {
     "label": "勝ち馬",
@@ -1952,7 +1968,7 @@
    "time": "2:21.6",
    "time_sec": 141.6,
    "margin_sec": 30.3,
-   "race_level_z": -0.41,
+   "race_level_z": -0.42,
    "interval": "中2週",
    "other": {
     "label": "勝ち馬",
@@ -2204,7 +2220,7 @@
    "time": "1:43.5",
    "time_sec": 103.5,
    "margin_sec": 20.4,
-   "race_level_z": 0.43,
+   "race_level_z": 0.44,
    "interval": "連闘",
    "other": {
     "label": "勝ち馬",

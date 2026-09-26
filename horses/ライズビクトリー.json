@@ -2,11 +2,11 @@
  "name": "ライズビクトリー",
  "sex": "牡",
  "age": 5,
- "trainer": "中島敏（ばんえい）",
+ "trainer": "中島敏",
  "owner": "管野富夫",
  "sled_kg": 650.0,
- "weight": null,
- "weight_diff": null,
+ "weight": 1025,
+ "weight_diff": 2,
  "last_race_date": "2026-09-26",
  "pedigree": {
   "sire": "インフィニティー",
@@ -20,22 +20,22 @@
   "total": {
    "win": 10,
    "place2": 11,
-   "place3": 5,
+   "place3": 6,
    "other": 56,
-   "n": 82,
-   "win_rate": 0.122,
-   "quinella_rate": 0.256,
-   "show_rate": 0.317
+   "n": 83,
+   "win_rate": 0.12,
+   "quinella_rate": 0.253,
+   "show_rate": 0.325
   },
   "2026": {
    "win": 1,
    "place2": 5,
-   "place3": 1,
+   "place3": 2,
    "other": 15,
-   "n": 22,
-   "win_rate": 0.045,
-   "quinella_rate": 0.273,
-   "show_rate": 0.318
+   "n": 23,
+   "win_rate": 0.043,
+   "quinella_rate": 0.261,
+   "show_rate": 0.348
   },
   "2025": {
    "win": 4,
@@ -88,6 +88,19 @@
   }
  ],
  "ratings_reconstructed": [
+  {
+   "date": "2026-09-26",
+   "race_no": 9,
+   "position": 3,
+   "earned_yen": 71000,
+   "program_prize_k": 4770,
+   "year_prize_k": 915,
+   "class": "B3",
+   "next_class": "B2",
+   "next_class_need_k": 730,
+   "diff_k": 71,
+   "change": null
+  },
   {
    "date": "2026-09-12",
    "race_no": 10,
@@ -274,14 +287,14 @@
  "reconstructed_now": {
   "snapshot_date": "2026-09-25",
   "class_code": "B3",
-  "program_prize_k": 4699,
-  "year_prize_k": 844,
+  "program_prize_k": 4770,
+  "year_prize_k": 915,
   "reconstructed": true,
-  "reconstructed_races": 0
+  "reconstructed_races": 1
  },
  "next_class": {
   "next_class": "B2",
-  "need_k": 801
+  "need_k": 730
  },
  "races": [
   {
@@ -289,24 +302,27 @@
    "race_no": 9,
    "race_name": "まぁさん２０２６生誕祭記念Ｂ３－３",
    "class": "B3",
-   "moisture": 1.1,
+   "moisture": 1.0,
    "field_size": 10,
    "num": 1,
    "jockey": "金田利",
-   "trainer": "中島敏（ばんえい）",
+   "trainer": "中島敏",
    "owner": "管野富夫",
    "sled_kg": 650.0,
-   "weight": null,
-   "weight_diff": null,
-   "odds": 5.8,
-   "popularity": 3,
-   "position": null,
-   "time": null,
-   "time_sec": null,
-   "margin_sec": null,
-   "race_level_z": null,
+   "weight": 1025,
+   "weight_diff": 2,
+   "odds": 23.8,
+   "popularity": 8,
+   "position": 3,
+   "time": "2:00.5",
+   "time_sec": 120.5,
+   "margin_sec": 7.2,
+   "race_level_z": 0.47,
    "interval": "中2週",
-   "other": null,
+   "other": {
+    "label": "勝ち馬",
+    "name": "サカノトウカイ"
+   },
    "insider_labels": []
   },
   {
@@ -502,7 +518,7 @@
    "time": "1:37.7",
    "time_sec": 97.7,
    "margin_sec": 6.2,
-   "race_level_z": 0.41,
+   "race_level_z": 0.42,
    "interval": "中2週",
    "other": {
     "label": "勝ち馬",
@@ -2008,7 +2024,7 @@
    "time": "2:44.3",
    "time_sec": 164.3,
    "margin_sec": 32.4,
-   "race_level_z": -0.4,
+   "race_level_z": -0.41,
    "interval": "中5週",
    "other": {
     "label": "勝ち馬",
@@ -2148,7 +2164,7 @@
    "time": "2:16.4",
    "time_sec": 136.4,
    "margin_sec": 28.0,
-   "race_level_z": -0.98,
+   "race_level_z": -0.97,
    "interval": "連闘",
    "other": {
     "label": "勝ち馬",
@@ -2456,7 +2472,7 @@
    "time": "1:36.1",
    "time_sec": 96.1,
    "margin_sec": 0.0,
-   "race_level_z": 0.72,
+   "race_level_z": 0.73,
    "interval": "中2週",
    "other": {
     "label": "2着馬",

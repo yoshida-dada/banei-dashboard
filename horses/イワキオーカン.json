@@ -2,11 +2,11 @@
  "name": "イワキオーカン",
  "sex": "牡",
  "age": 7,
- "trainer": "小林長（ばんえい）",
+ "trainer": "小林長",
  "owner": "蝦名豊",
  "sled_kg": 640.0,
- "weight": null,
- "weight_diff": null,
+ "weight": 1072,
+ "weight_diff": 19,
  "last_race_date": "2026-09-26",
  "pedigree": {
   "sire": "キタノドリーマー",
@@ -19,23 +19,23 @@
  "stats": {
   "total": {
    "win": 6,
-   "place2": 10,
+   "place2": 11,
    "place3": 10,
    "other": 65,
-   "n": 91,
-   "win_rate": 0.066,
-   "quinella_rate": 0.176,
-   "show_rate": 0.286
+   "n": 92,
+   "win_rate": 0.065,
+   "quinella_rate": 0.185,
+   "show_rate": 0.293
   },
   "2026": {
    "win": 0,
-   "place2": 0,
+   "place2": 1,
    "place3": 4,
    "other": 15,
-   "n": 19,
+   "n": 20,
    "win_rate": 0.0,
-   "quinella_rate": 0.0,
-   "show_rate": 0.211
+   "quinella_rate": 0.05,
+   "show_rate": 0.25
   },
   "2025": {
    "win": 1,
@@ -88,6 +88,19 @@
   }
  ],
  "ratings_reconstructed": [
+  {
+   "date": "2026-09-26",
+   "race_no": 12,
+   "position": 2,
+   "earned_yen": 122000,
+   "program_prize_k": 4039,
+   "year_prize_k": 460,
+   "class": "B4",
+   "next_class": "B3",
+   "next_class_need_k": 261,
+   "diff_k": 122,
+   "change": null
+  },
   {
    "date": "2026-09-13",
    "race_no": 7,
@@ -261,14 +274,14 @@
  "reconstructed_now": {
   "snapshot_date": "2026-09-25",
   "class_code": "B4",
-  "program_prize_k": 3917,
-  "year_prize_k": 338,
+  "program_prize_k": 4039,
+  "year_prize_k": 460,
   "reconstructed": true,
-  "reconstructed_races": 0
+  "reconstructed_races": 1
  },
  "next_class": {
   "next_class": "B3",
-  "need_k": 383
+  "need_k": 261
  },
  "races": [
   {
@@ -276,24 +289,27 @@
    "race_no": 12,
    "race_name": "Ｂ４－６",
    "class": "B4",
-   "moisture": 1.1,
+   "moisture": 1.0,
    "field_size": 10,
    "num": 9,
    "jockey": "金田利",
-   "trainer": "小林長（ばんえい）",
+   "trainer": "小林長",
    "owner": "蝦名豊",
    "sled_kg": 640.0,
-   "weight": null,
-   "weight_diff": null,
-   "odds": 2.3,
-   "popularity": 1,
-   "position": null,
-   "time": null,
-   "time_sec": null,
-   "margin_sec": null,
-   "race_level_z": null,
+   "weight": 1072,
+   "weight_diff": 19,
+   "odds": 4.0,
+   "popularity": 2,
+   "position": 2,
+   "time": "2:01.9",
+   "time_sec": 121.9,
+   "margin_sec": 0.6,
+   "race_level_z": 0.66,
    "interval": "中1週",
-   "other": null,
+   "other": {
+    "label": "勝ち馬",
+    "name": "テンボシヴィーナス"
+   },
    "insider_labels": []
   },
   {
@@ -960,7 +976,7 @@
    "time": "1:41.4",
    "time_sec": 101.4,
    "margin_sec": 8.6,
-   "race_level_z": 0.98,
+   "race_level_z": 0.99,
    "interval": "中1週",
    "other": {
     "label": "勝ち馬",
@@ -1237,7 +1253,7 @@
    "time": "2:05.0",
    "time_sec": 125.0,
    "margin_sec": 16.4,
-   "race_level_z": 0.45,
+   "race_level_z": 0.44,
    "interval": "中2週",
    "other": {
     "label": "勝ち馬",
@@ -2074,7 +2090,7 @@
    "time": "1:48.5",
    "time_sec": 108.5,
    "margin_sec": 0.0,
-   "race_level_z": 0.45,
+   "race_level_z": 0.46,
    "interval": "中1週",
    "other": {
     "label": "2着馬",
@@ -2158,7 +2174,7 @@
    "time": "2:05.9",
    "time_sec": 125.9,
    "margin_sec": 16.5,
-   "race_level_z": -0.06,
+   "race_level_z": -0.05,
    "interval": "中2週",
    "other": {
     "label": "勝ち馬",

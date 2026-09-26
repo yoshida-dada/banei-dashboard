@@ -2,11 +2,11 @@
  "name": "コウシュハテンセイ",
  "sex": "牡",
  "age": 6,
- "trainer": "藤本匠（ばんえい）",
+ "trainer": "藤本匠",
  "owner": "（株）北西ファーム",
  "sled_kg": 725.0,
- "weight": null,
- "weight_diff": null,
+ "weight": 1120,
+ "weight_diff": -1,
  "last_race_date": "2026-09-26",
  "pedigree": {
   "sire": "マルニセンプー",
@@ -18,24 +18,24 @@
  },
  "stats": {
   "total": {
-   "win": 19,
+   "win": 20,
    "place2": 15,
    "place3": 16,
    "other": 42,
-   "n": 92,
-   "win_rate": 0.207,
-   "quinella_rate": 0.37,
-   "show_rate": 0.543
+   "n": 93,
+   "win_rate": 0.215,
+   "quinella_rate": 0.376,
+   "show_rate": 0.548
   },
   "2026": {
-   "win": 5,
+   "win": 6,
    "place2": 2,
    "place3": 5,
    "other": 6,
-   "n": 18,
-   "win_rate": 0.278,
-   "quinella_rate": 0.389,
-   "show_rate": 0.667
+   "n": 19,
+   "win_rate": 0.316,
+   "quinella_rate": 0.421,
+   "show_rate": 0.684
   },
   "2025": {
    "win": 3,
@@ -88,6 +88,19 @@
   }
  ],
  "ratings_reconstructed": [
+  {
+   "date": "2026-09-26",
+   "race_no": 11,
+   "position": 1,
+   "earned_yen": 850000,
+   "program_prize_k": 12540,
+   "year_prize_k": 4671,
+   "class": "A1",
+   "next_class": "open",
+   "next_class_need_k": 460,
+   "diff_k": 850,
+   "change": null
+  },
   {
    "date": "2026-09-20",
    "race_no": 11,
@@ -248,14 +261,14 @@
  "reconstructed_now": {
   "snapshot_date": "2026-09-25",
   "class_code": "A1",
-  "program_prize_k": 11690,
-  "year_prize_k": 3821,
+  "program_prize_k": 12540,
+  "year_prize_k": 4671,
   "reconstructed": true,
-  "reconstructed_races": 0
+  "reconstructed_races": 1
  },
  "next_class": {
   "next_class": "open",
-  "need_k": 1310
+  "need_k": 460
  },
  "races": [
   {
@@ -263,24 +276,27 @@
    "race_no": 11,
    "race_name": "デイリースポーツ杯Ａ１－１混合",
    "class": "A1",
-   "moisture": 1.1,
+   "moisture": 1.0,
    "field_size": 10,
    "num": 9,
    "jockey": "菊池一",
-   "trainer": "藤本匠（ばんえい）",
+   "trainer": "藤本匠",
    "owner": "（株）北西ファーム",
    "sled_kg": 725.0,
-   "weight": null,
-   "weight_diff": null,
-   "odds": 6.5,
-   "popularity": 3,
-   "position": null,
-   "time": null,
-   "time_sec": null,
-   "margin_sec": null,
-   "race_level_z": null,
+   "weight": 1120,
+   "weight_diff": -1,
+   "odds": 1.9,
+   "popularity": 1,
+   "position": 1,
+   "time": "1:53.0",
+   "time_sec": 113.0,
+   "margin_sec": 0.0,
+   "race_level_z": 0.54,
    "interval": "連闘",
-   "other": null,
+   "other": {
+    "label": "2着馬",
+    "name": "ヤマノコーネル"
+   },
    "insider_labels": []
   },
   {
@@ -947,7 +963,7 @@
    "time": "1:44.2",
    "time_sec": 104.2,
    "margin_sec": 1.2,
-   "race_level_z": 0.97,
+   "race_level_z": 0.96,
    "interval": "中2週",
    "other": {
     "label": "勝ち馬",
@@ -1031,7 +1047,7 @@
    "time": "1:55.2",
    "time_sec": 115.2,
    "margin_sec": 18.8,
-   "race_level_z": 0.43,
+   "race_level_z": 0.42,
    "interval": "中1週",
    "other": {
     "label": "勝ち馬",
@@ -1255,7 +1271,7 @@
    "time": "1:54.9",
    "time_sec": 114.9,
    "margin_sec": 10.7,
-   "race_level_z": 0.3,
+   "race_level_z": 0.29,
    "interval": "中4週",
    "other": {
     "label": "勝ち馬",
@@ -1395,7 +1411,7 @@
    "time": "2:22.9",
    "time_sec": 142.9,
    "margin_sec": 15.5,
-   "race_level_z": -0.9,
+   "race_level_z": -0.91,
    "interval": "中1週",
    "other": {
     "label": "勝ち馬",
@@ -1568,7 +1584,7 @@
    "time": "1:59.7",
    "time_sec": 119.7,
    "margin_sec": 3.1,
-   "race_level_z": 0.25,
+   "race_level_z": 0.24,
    "interval": "連闘",
    "other": {
     "label": "勝ち馬",
@@ -2156,7 +2172,7 @@
    "time": "1:50.6",
    "time_sec": 110.6,
    "margin_sec": 9.7,
-   "race_level_z": 0.53,
+   "race_level_z": 0.54,
    "interval": "中1週",
    "other": {
     "label": "勝ち馬",
@@ -2726,7 +2742,7 @@
    "time": "1:49.1",
    "time_sec": 109.1,
    "margin_sec": 13.9,
-   "race_level_z": 0.25,
+   "race_level_z": 0.26,
    "interval": "中2週",
    "other": {
     "label": "勝ち馬",
@@ -2754,7 +2770,7 @@
    "time": "1:31.3",
    "time_sec": 91.3,
    "margin_sec": 0.0,
-   "race_level_z": 1.4,
+   "race_level_z": 1.41,
    "interval": "中1週",
    "other": {
     "label": "2着馬",
@@ -2843,7 +2859,7 @@
    "time": "1:27.0",
    "time_sec": 87.0,
    "margin_sec": 0.0,
-   "race_level_z": 1.82,
+   "race_level_z": 1.83,
    "interval": "中1週",
    "other": {
     "label": "2着馬",

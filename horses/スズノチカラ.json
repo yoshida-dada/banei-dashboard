@@ -2,11 +2,11 @@
  "name": "スズノチカラ",
  "sex": "牝",
  "age": 3,
- "trainer": "服部義（ばんえい）",
+ "trainer": "服部義",
  "owner": "赤麿秀人",
  "sled_kg": 610.0,
- "weight": null,
- "weight_diff": null,
+ "weight": 994,
+ "weight_diff": -4,
  "last_race_date": "2026-09-26",
  "pedigree": {
   "sire": "イノリノチカラ",
@@ -21,21 +21,21 @@
    "win": 4,
    "place2": 4,
    "place3": 0,
-   "other": 23,
-   "n": 31,
-   "win_rate": 0.129,
-   "quinella_rate": 0.258,
-   "show_rate": 0.258
+   "other": 24,
+   "n": 32,
+   "win_rate": 0.125,
+   "quinella_rate": 0.25,
+   "show_rate": 0.25
   },
   "2026": {
    "win": 2,
    "place2": 2,
    "place3": 0,
-   "other": 14,
-   "n": 18,
-   "win_rate": 0.111,
-   "quinella_rate": 0.222,
-   "show_rate": 0.222
+   "other": 15,
+   "n": 19,
+   "win_rate": 0.105,
+   "quinella_rate": 0.211,
+   "show_rate": 0.211
   },
   "2025": {
    "win": 2,
@@ -48,7 +48,7 @@
    "show_rate": 0.308
   }
  },
- "insider_label_count": 6,
+ "insider_label_count": 7,
  "ratings": [
   {
    "date": "2026-09-25",
@@ -68,6 +68,19 @@
   }
  ],
  "ratings_reconstructed": [
+  {
+   "date": "2026-09-26",
+   "race_no": 7,
+   "position": 5,
+   "earned_yen": 18000,
+   "program_prize_k": 2290,
+   "year_prize_k": 813,
+   "class": "C1",
+   "next_class": "B4",
+   "next_class_need_k": 1110,
+   "diff_k": 18,
+   "change": null
+  },
   {
    "date": "2026-09-21",
    "race_no": 7,
@@ -228,14 +241,14 @@
  "reconstructed_now": {
   "snapshot_date": "2026-09-25",
   "class_code": "C1",
-  "program_prize_k": 2272,
-  "year_prize_k": 795,
+  "program_prize_k": 2290,
+  "year_prize_k": 813,
   "reconstructed": true,
-  "reconstructed_races": 0
+  "reconstructed_races": 1
  },
  "next_class": {
   "next_class": "B4",
-  "need_k": 1128
+  "need_k": 1110
  },
  "races": [
   {
@@ -243,25 +256,33 @@
    "race_no": 7,
    "race_name": "ニシコリ８０万人突破記念Ｃ１－４",
    "class": "C1",
-   "moisture": 1.1,
+   "moisture": 1.0,
    "field_size": 9,
    "num": 3,
    "jockey": "長澤幸",
-   "trainer": "服部義（ばんえい）",
+   "trainer": "服部義",
    "owner": "赤麿秀人",
    "sled_kg": 610.0,
-   "weight": null,
-   "weight_diff": null,
-   "odds": 45.6,
-   "popularity": 9,
-   "position": null,
-   "time": null,
-   "time_sec": null,
-   "margin_sec": null,
-   "race_level_z": null,
+   "weight": 994,
+   "weight_diff": -4,
+   "odds": 6.5,
+   "popularity": 2,
+   "position": 5,
+   "time": "2:15.0",
+   "time_sec": 135.0,
+   "margin_sec": 16.9,
+   "race_level_z": 0.51,
    "interval": "連闘",
-   "other": null,
-   "insider_labels": []
+   "other": {
+    "label": "勝ち馬",
+    "name": "クリスタルアッシュ"
+   },
+   "insider_labels": [
+    {
+     "label_type": "ヤレズ",
+     "note": ""
+    }
+   ]
   },
   {
    "date": "2026-09-21",

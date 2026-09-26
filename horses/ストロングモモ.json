@@ -2,11 +2,11 @@
  "name": "ストロングモモ",
  "sex": "牝",
  "age": 3,
- "trainer": "小林長（ばんえい）",
+ "trainer": "小林長",
  "owner": "宮田邦子",
  "sled_kg": 600.0,
- "weight": null,
- "weight_diff": null,
+ "weight": 1017,
+ "weight_diff": 14,
  "last_race_date": "2026-09-26",
  "pedigree": {
   "sire": "ニシキエーカン",
@@ -19,23 +19,23 @@
  "stats": {
   "total": {
    "win": 3,
-   "place2": 3,
+   "place2": 4,
    "place3": 7,
    "other": 16,
-   "n": 29,
-   "win_rate": 0.103,
-   "quinella_rate": 0.207,
-   "show_rate": 0.448
+   "n": 30,
+   "win_rate": 0.1,
+   "quinella_rate": 0.233,
+   "show_rate": 0.467
   },
   "2026": {
    "win": 2,
-   "place2": 0,
+   "place2": 1,
    "place3": 2,
    "other": 12,
-   "n": 16,
-   "win_rate": 0.125,
-   "quinella_rate": 0.125,
-   "show_rate": 0.25
+   "n": 17,
+   "win_rate": 0.118,
+   "quinella_rate": 0.176,
+   "show_rate": 0.294
   },
   "2025": {
    "win": 1,
@@ -68,6 +68,19 @@
   }
  ],
  "ratings_reconstructed": [
+  {
+   "date": "2026-09-26",
+   "race_no": 4,
+   "position": 2,
+   "earned_yen": 111000,
+   "program_prize_k": 2036,
+   "year_prize_k": 903,
+   "class": "C2",
+   "next_class": "C1",
+   "next_class_need_k": 164,
+   "diff_k": 111,
+   "change": null
+  },
   {
    "date": "2026-09-13",
    "race_no": 5,
@@ -215,14 +228,14 @@
  "reconstructed_now": {
   "snapshot_date": "2026-09-25",
   "class_code": "C2",
-  "program_prize_k": 1925,
-  "year_prize_k": 792,
+  "program_prize_k": 2036,
+  "year_prize_k": 903,
   "reconstructed": true,
-  "reconstructed_races": 0
+  "reconstructed_races": 1
  },
  "next_class": {
   "next_class": "C1",
-  "need_k": 275
+  "need_k": 164
  },
  "races": [
   {
@@ -234,20 +247,23 @@
    "field_size": 10,
    "num": 9,
    "jockey": "船山蔵",
-   "trainer": "小林長（ばんえい）",
+   "trainer": "小林長",
    "owner": "宮田邦子",
    "sled_kg": 600.0,
-   "weight": null,
-   "weight_diff": null,
-   "odds": 12.9,
-   "popularity": 7,
-   "position": null,
-   "time": null,
-   "time_sec": null,
-   "margin_sec": null,
-   "race_level_z": null,
+   "weight": 1017,
+   "weight_diff": 14,
+   "odds": 10.3,
+   "popularity": 6,
+   "position": 2,
+   "time": "2:15.7",
+   "time_sec": 135.7,
+   "margin_sec": 13.3,
+   "race_level_z": 1.03,
    "interval": "中1週",
-   "other": null,
+   "other": {
+    "label": "勝ち馬",
+    "name": "ウル"
+   },
    "insider_labels": []
   },
   {

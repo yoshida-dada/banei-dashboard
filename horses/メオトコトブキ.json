@@ -2,11 +2,11 @@
  "name": "メオトコトブキ",
  "sex": "牡",
  "age": 2,
- "trainer": "平田義（ばんえい）",
+ "trainer": "平田義",
  "owner": "杉沢勝治",
  "sled_kg": 520.0,
- "weight": null,
- "weight_diff": null,
+ "weight": 845,
+ "weight_diff": -2,
  "last_race_date": "2026-09-26",
  "pedigree": {
   "sire": "ミノルシンザン",
@@ -20,22 +20,22 @@
   "total": {
    "win": 1,
    "place2": 1,
-   "place3": 1,
+   "place3": 2,
    "other": 4,
-   "n": 7,
-   "win_rate": 0.143,
-   "quinella_rate": 0.286,
-   "show_rate": 0.429
+   "n": 8,
+   "win_rate": 0.125,
+   "quinella_rate": 0.25,
+   "show_rate": 0.5
   },
   "2026": {
    "win": 1,
    "place2": 1,
-   "place3": 1,
+   "place3": 2,
    "other": 4,
-   "n": 7,
-   "win_rate": 0.143,
-   "quinella_rate": 0.286,
-   "show_rate": 0.429
+   "n": 8,
+   "win_rate": 0.125,
+   "quinella_rate": 0.25,
+   "show_rate": 0.5
   }
  },
  "insider_label_count": 0,
@@ -58,6 +58,19 @@
   }
  ],
  "ratings_reconstructed": [
+  {
+   "date": "2026-09-26",
+   "race_no": 3,
+   "position": 3,
+   "earned_yen": 69000,
+   "program_prize_k": 615,
+   "year_prize_k": 615,
+   "class": "C2",
+   "next_class": "C1",
+   "next_class_need_k": 1585,
+   "diff_k": 69,
+   "change": null
+  },
   {
    "date": "2026-09-21",
    "race_no": 5,
@@ -153,10 +166,10 @@
  "reconstructed_now": {
   "snapshot_date": "2026-09-25",
   "class_code": "2sai",
-  "program_prize_k": 546,
-  "year_prize_k": 546,
+  "program_prize_k": 615,
+  "year_prize_k": 615,
   "reconstructed": true,
-  "reconstructed_races": 0
+  "reconstructed_races": 1
  },
  "next_class": null,
  "races": [
@@ -169,20 +182,23 @@
    "field_size": 10,
    "num": 7,
    "jockey": "西将太",
-   "trainer": "平田義（ばんえい）",
+   "trainer": "平田義",
    "owner": "杉沢勝治",
    "sled_kg": 520.0,
-   "weight": null,
-   "weight_diff": null,
-   "odds": 11.9,
-   "popularity": 7,
-   "position": null,
-   "time": null,
-   "time_sec": null,
-   "margin_sec": null,
-   "race_level_z": null,
+   "weight": 845,
+   "weight_diff": -2,
+   "odds": 20.2,
+   "popularity": 8,
+   "position": 3,
+   "time": "2:14.7",
+   "time_sec": 134.7,
+   "margin_sec": 18.0,
+   "race_level_z": 0.22,
    "interval": "連闘",
-   "other": null,
+   "other": {
+    "label": "勝ち馬",
+    "name": "マナザシ"
+   },
    "insider_labels": []
   },
   {

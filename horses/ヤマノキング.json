@@ -2,11 +2,11 @@
  "name": "ヤマノキング",
  "sex": "牡",
  "age": 5,
- "trainer": "久田守（ばんえい）",
+ "trainer": "久田守",
  "owner": "中村光雄",
  "sled_kg": 660.0,
- "weight": null,
- "weight_diff": null,
+ "weight": 984,
+ "weight_diff": 6,
  "last_race_date": "2026-09-26",
  "pedigree": {
   "sire": "ジャングルソング",
@@ -18,24 +18,24 @@
  },
  "stats": {
   "total": {
-   "win": 12,
+   "win": 13,
    "place2": 15,
    "place3": 13,
    "other": 47,
-   "n": 87,
-   "win_rate": 0.138,
-   "quinella_rate": 0.31,
-   "show_rate": 0.46
+   "n": 88,
+   "win_rate": 0.148,
+   "quinella_rate": 0.318,
+   "show_rate": 0.466
   },
   "2026": {
-   "win": 2,
+   "win": 3,
    "place2": 2,
    "place3": 4,
    "other": 13,
-   "n": 21,
-   "win_rate": 0.095,
-   "quinella_rate": 0.19,
-   "show_rate": 0.381
+   "n": 22,
+   "win_rate": 0.136,
+   "quinella_rate": 0.227,
+   "show_rate": 0.409
   },
   "2025": {
    "win": 5,
@@ -88,6 +88,19 @@
   }
  ],
  "ratings_reconstructed": [
+  {
+   "date": "2026-09-26",
+   "race_no": 8,
+   "position": 1,
+   "earned_yen": 430000,
+   "program_prize_k": 8478,
+   "year_prize_k": 2047,
+   "class": "B1",
+   "next_class": "A2",
+   "next_class_need_k": 22,
+   "diff_k": 430,
+   "change": null
+  },
   {
    "date": "2026-09-14",
    "race_no": 11,
@@ -274,14 +287,14 @@
  "reconstructed_now": {
   "snapshot_date": "2026-09-25",
   "class_code": "B1",
-  "program_prize_k": 8048,
-  "year_prize_k": 1617,
+  "program_prize_k": 8478,
+  "year_prize_k": 2047,
   "reconstructed": true,
-  "reconstructed_races": 0
+  "reconstructed_races": 1
  },
  "next_class": {
   "next_class": "A2",
-  "need_k": 452
+  "need_k": 22
  },
  "races": [
   {
@@ -289,24 +302,27 @@
    "race_no": 8,
    "race_name": "とかち帯広香川県人会会長杯Ｂ１－１",
    "class": "B1",
-   "moisture": 1.1,
+   "moisture": 1.0,
    "field_size": 10,
    "num": 10,
-   "jockey": "吉田理",
-   "trainer": "久田守（ばんえい）",
+   "jockey": "☆吉田理",
+   "trainer": "久田守",
    "owner": "中村光雄",
    "sled_kg": 660.0,
-   "weight": null,
-   "weight_diff": null,
-   "odds": 17.0,
-   "popularity": 8,
-   "position": null,
-   "time": null,
-   "time_sec": null,
-   "margin_sec": null,
-   "race_level_z": null,
+   "weight": 984,
+   "weight_diff": 6,
+   "odds": 6.1,
+   "popularity": 5,
+   "position": 1,
+   "time": "1:44.9",
+   "time_sec": 104.9,
+   "margin_sec": 0.0,
+   "race_level_z": 0.97,
    "interval": "中1週",
-   "other": null,
+   "other": {
+    "label": "2着馬",
+    "name": "レイリーキング"
+   },
    "insider_labels": []
   },
   {
@@ -1057,7 +1073,7 @@
    "time": "1:52.0",
    "time_sec": 112.0,
    "margin_sec": 7.5,
-   "race_level_z": 0.78,
+   "race_level_z": 0.77,
    "interval": "連闘",
    "other": {
     "label": "勝ち馬",
@@ -1869,7 +1885,7 @@
    "time": "2:25.6",
    "time_sec": 145.6,
    "margin_sec": 21.9,
-   "race_level_z": -0.72,
+   "race_level_z": -0.73,
    "interval": "中2週",
    "other": {
     "label": "勝ち馬",
@@ -2597,7 +2613,7 @@
    "time": "1:56.0",
    "time_sec": 116.0,
    "margin_sec": 30.8,
-   "race_level_z": -0.42,
+   "race_level_z": -0.41,
    "interval": "中1週",
    "other": {
     "label": "勝ち馬",
@@ -2709,7 +2725,7 @@
    "time": "2:06.0",
    "time_sec": 126.0,
    "margin_sec": 14.8,
-   "race_level_z": -0.62,
+   "race_level_z": -0.61,
    "interval": "連闘",
    "other": {
     "label": "勝ち馬",

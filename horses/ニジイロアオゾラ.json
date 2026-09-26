@@ -2,11 +2,11 @@
  "name": "ニジイロアオゾラ",
  "sex": "牝",
  "age": 6,
- "trainer": "岩本利（ばんえい）",
+ "trainer": "岩本利",
  "owner": "丹山東吾",
  "sled_kg": 620.0,
- "weight": null,
- "weight_diff": null,
+ "weight": 1093,
+ "weight_diff": 18,
  "last_race_date": "2026-09-26",
  "pedigree": {
   "sire": "インフィニティー",
@@ -20,22 +20,22 @@
   "total": {
    "win": 9,
    "place2": 7,
-   "place3": 5,
+   "place3": 6,
    "other": 67,
-   "n": 88,
-   "win_rate": 0.102,
-   "quinella_rate": 0.182,
-   "show_rate": 0.239
+   "n": 89,
+   "win_rate": 0.101,
+   "quinella_rate": 0.18,
+   "show_rate": 0.247
   },
   "2026": {
    "win": 2,
    "place2": 0,
-   "place3": 0,
+   "place3": 1,
    "other": 17,
-   "n": 19,
-   "win_rate": 0.105,
-   "quinella_rate": 0.105,
-   "show_rate": 0.105
+   "n": 20,
+   "win_rate": 0.1,
+   "quinella_rate": 0.1,
+   "show_rate": 0.15
   },
   "2025": {
    "win": 1,
@@ -68,7 +68,7 @@
    "show_rate": 0.318
   }
  },
- "insider_label_count": 18,
+ "insider_label_count": 19,
  "ratings": [
   {
    "date": "2026-07-12",
@@ -80,6 +80,19 @@
   }
  ],
  "ratings_reconstructed": [
+  {
+   "date": "2026-09-26",
+   "race_no": 12,
+   "position": 3,
+   "earned_yen": 69000,
+   "program_prize_k": 3666,
+   "year_prize_k": 399,
+   "class": "B4",
+   "next_class": "B3",
+   "next_class_need_k": 634,
+   "diff_k": 69,
+   "change": null
+  },
   {
    "date": "2026-09-21",
    "race_no": 8,
@@ -253,14 +266,14 @@
  "reconstructed_now": {
   "snapshot_date": "2026-07-12",
   "class_code": "B4",
-  "program_prize_k": 3597,
-  "year_prize_k": 330,
+  "program_prize_k": 3666,
+  "year_prize_k": 399,
   "reconstructed": true,
-  "reconstructed_races": 0
+  "reconstructed_races": 1
  },
  "next_class": {
   "next_class": "B3",
-  "need_k": 703
+  "need_k": 634
  },
  "races": [
   {
@@ -268,25 +281,33 @@
    "race_no": 12,
    "race_name": "Ｂ４－６",
    "class": "B4",
-   "moisture": 1.1,
+   "moisture": 1.0,
    "field_size": 10,
    "num": 2,
    "jockey": "渡来心",
-   "trainer": "岩本利（ばんえい）",
+   "trainer": "岩本利",
    "owner": "丹山東吾",
    "sled_kg": 620.0,
-   "weight": null,
-   "weight_diff": null,
-   "odds": 6.0,
-   "popularity": 2,
-   "position": null,
-   "time": null,
-   "time_sec": null,
-   "margin_sec": null,
-   "race_level_z": null,
+   "weight": 1093,
+   "weight_diff": 18,
+   "odds": 12.6,
+   "popularity": 6,
+   "position": 3,
+   "time": "2:02.8",
+   "time_sec": 122.8,
+   "margin_sec": 1.5,
+   "race_level_z": 0.57,
    "interval": "連闘",
-   "other": null,
-   "insider_labels": []
+   "other": {
+    "label": "勝ち馬",
+    "name": "テンボシヴィーナス"
+   },
+   "insider_labels": [
+    {
+     "label_type": "仕掛け",
+     "note": ""
+    }
+   ]
   },
   {
    "date": "2026-09-21",
@@ -949,7 +970,7 @@
    "time": "2:58.8",
    "time_sec": 178.8,
    "margin_sec": 44.8,
-   "race_level_z": -2.14,
+   "race_level_z": -2.15,
    "interval": "中5週",
    "other": {
     "label": "勝ち馬",
@@ -1346,7 +1367,7 @@
    "time": "3:11.8",
    "time_sec": 191.8,
    "margin_sec": 58.3,
-   "race_level_z": -2.56,
+   "race_level_z": -2.57,
    "interval": "中2週",
    "other": {
     "label": "勝ち馬",

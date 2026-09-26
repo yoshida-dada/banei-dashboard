@@ -2,11 +2,11 @@
  "name": "リキ",
  "sex": "牡",
  "age": 3,
- "trainer": "村上慎（ばんえい）",
+ "trainer": "村上慎",
  "owner": "坂井秀彰",
  "sled_kg": 630.0,
- "weight": null,
- "weight_diff": null,
+ "weight": 1051,
+ "weight_diff": -4,
  "last_race_date": "2026-09-26",
  "pedigree": {
   "sire": "ヒノデタイガー",
@@ -21,21 +21,21 @@
    "win": 5,
    "place2": 2,
    "place3": 5,
-   "other": 21,
-   "n": 33,
-   "win_rate": 0.152,
-   "quinella_rate": 0.212,
-   "show_rate": 0.364
+   "other": 22,
+   "n": 34,
+   "win_rate": 0.147,
+   "quinella_rate": 0.206,
+   "show_rate": 0.353
   },
   "2026": {
    "win": 3,
    "place2": 1,
    "place3": 1,
-   "other": 13,
-   "n": 18,
-   "win_rate": 0.167,
-   "quinella_rate": 0.222,
-   "show_rate": 0.278
+   "other": 14,
+   "n": 19,
+   "win_rate": 0.158,
+   "quinella_rate": 0.211,
+   "show_rate": 0.263
   },
   "2025": {
    "win": 2,
@@ -68,6 +68,19 @@
   }
  ],
  "ratings_reconstructed": [
+  {
+   "date": "2026-09-26",
+   "race_no": 7,
+   "position": 4,
+   "earned_yen": 33000,
+   "program_prize_k": 2805,
+   "year_prize_k": 858,
+   "class": "C1",
+   "next_class": "B4",
+   "next_class_need_k": 595,
+   "diff_k": 33,
+   "change": null
+  },
   {
    "date": "2026-09-19",
    "race_no": 7,
@@ -241,14 +254,14 @@
  "reconstructed_now": {
   "snapshot_date": "2026-09-25",
   "class_code": "C1",
-  "program_prize_k": 2772,
-  "year_prize_k": 825,
+  "program_prize_k": 2805,
+  "year_prize_k": 858,
   "reconstructed": true,
-  "reconstructed_races": 0
+  "reconstructed_races": 1
  },
  "next_class": {
   "next_class": "B4",
-  "need_k": 628
+  "need_k": 595
  },
  "races": [
   {
@@ -256,24 +269,27 @@
    "race_no": 7,
    "race_name": "ニシコリ８０万人突破記念Ｃ１－４",
    "class": "C1",
-   "moisture": 1.1,
+   "moisture": 1.0,
    "field_size": 9,
    "num": 6,
    "jockey": "村上章",
-   "trainer": "村上慎（ばんえい）",
+   "trainer": "村上慎",
    "owner": "坂井秀彰",
    "sled_kg": 630.0,
-   "weight": null,
-   "weight_diff": null,
-   "odds": 3.5,
-   "popularity": 1,
-   "position": null,
-   "time": null,
-   "time_sec": null,
-   "margin_sec": null,
-   "race_level_z": null,
+   "weight": 1051,
+   "weight_diff": -4,
+   "odds": 18.4,
+   "popularity": 5,
+   "position": 4,
+   "time": "2:03.8",
+   "time_sec": 123.8,
+   "margin_sec": 5.7,
+   "race_level_z": 1.04,
    "interval": "連闘",
-   "other": null,
+   "other": {
+    "label": "勝ち馬",
+    "name": "クリスタルアッシュ"
+   },
    "insider_labels": []
   },
   {
@@ -548,7 +564,7 @@
    "time": "1:50.0",
    "time_sec": 110.0,
    "margin_sec": 16.1,
-   "race_level_z": 0.99,
+   "race_level_z": 1.0,
    "interval": "連闘",
    "other": {
     "label": "勝ち馬",
@@ -1136,7 +1152,7 @@
    "time": "2:26.9",
    "time_sec": 146.9,
    "margin_sec": 8.0,
-   "race_level_z": -0.26,
+   "race_level_z": -0.25,
    "interval": "中2週",
    "other": {
     "label": "勝ち馬",

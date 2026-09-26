@@ -2,11 +2,11 @@
  "name": "ジェイワンダー",
  "sex": "牡",
  "age": 3,
- "trainer": "松田道（ばんえい）",
+ "trainer": "松田道",
  "owner": "小森唯永",
  "sled_kg": 620.0,
- "weight": null,
- "weight_diff": null,
+ "weight": 975,
+ "weight_diff": 2,
  "last_race_date": "2026-09-26",
  "pedigree": {
   "sire": "フジカチドキ",
@@ -21,21 +21,21 @@
    "win": 4,
    "place2": 3,
    "place3": 6,
-   "other": 20,
-   "n": 33,
-   "win_rate": 0.121,
-   "quinella_rate": 0.212,
-   "show_rate": 0.394
+   "other": 21,
+   "n": 34,
+   "win_rate": 0.118,
+   "quinella_rate": 0.206,
+   "show_rate": 0.382
   },
   "2026": {
    "win": 3,
    "place2": 2,
    "place3": 2,
-   "other": 11,
-   "n": 18,
-   "win_rate": 0.167,
-   "quinella_rate": 0.278,
-   "show_rate": 0.389
+   "other": 12,
+   "n": 19,
+   "win_rate": 0.158,
+   "quinella_rate": 0.263,
+   "show_rate": 0.368
   },
   "2025": {
    "win": 1,
@@ -68,6 +68,19 @@
   }
  ],
  "ratings_reconstructed": [
+  {
+   "date": "2026-09-26",
+   "race_no": 4,
+   "position": 4,
+   "earned_yen": 33000,
+   "program_prize_k": 2223,
+   "year_prize_k": 951,
+   "class": "C1",
+   "next_class": "B4",
+   "next_class_need_k": 1177,
+   "diff_k": 33,
+   "change": "up"
+  },
   {
    "date": "2026-09-19",
    "race_no": 5,
@@ -228,14 +241,14 @@
  "reconstructed_now": {
   "snapshot_date": "2026-09-25",
   "class_code": "C2",
-  "program_prize_k": 2190,
-  "year_prize_k": 918,
+  "program_prize_k": 2223,
+  "year_prize_k": 951,
   "reconstructed": true,
-  "reconstructed_races": 0
+  "reconstructed_races": 1
  },
  "next_class": {
   "next_class": "C1",
-  "need_k": 10
+  "need_k": -23
  },
  "races": [
   {
@@ -247,20 +260,23 @@
    "field_size": 10,
    "num": 8,
    "jockey": "鈴木恵",
-   "trainer": "松田道（ばんえい）",
+   "trainer": "松田道",
    "owner": "小森唯永",
    "sled_kg": 620.0,
-   "weight": null,
-   "weight_diff": null,
-   "odds": 2.5,
-   "popularity": 1,
-   "position": null,
-   "time": null,
-   "time_sec": null,
-   "margin_sec": null,
-   "race_level_z": null,
+   "weight": 975,
+   "weight_diff": 2,
+   "odds": 9.4,
+   "popularity": 5,
+   "position": 4,
+   "time": "2:19.0",
+   "time_sec": 139.0,
+   "margin_sec": 16.6,
+   "race_level_z": 0.95,
    "interval": "連闘",
-   "other": null,
+   "other": {
+    "label": "勝ち馬",
+    "name": "ウル"
+   },
    "insider_labels": []
   },
   {
@@ -367,7 +383,7 @@
    "time": "2:17.3",
    "time_sec": 137.3,
    "margin_sec": 14.7,
-   "race_level_z": 0.87,
+   "race_level_z": 0.86,
    "interval": "中2週",
    "other": {
     "label": "勝ち馬",

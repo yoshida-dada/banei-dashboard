@@ -2,11 +2,11 @@
  "name": "オオネガイキンヒメ",
  "sex": "牝",
  "age": 5,
- "trainer": "岩本利（ばんえい）",
+ "trainer": "岩本利",
  "owner": "大内基晴",
  "sled_kg": 650.0,
- "weight": null,
- "weight_diff": null,
+ "weight": 1097,
+ "weight_diff": 0,
  "last_race_date": "2026-09-26",
  "pedigree": {
   "sire": "ホリセンショウ",
@@ -20,22 +20,22 @@
   "total": {
    "win": 13,
    "place2": 8,
-   "place3": 11,
+   "place3": 12,
    "other": 50,
-   "n": 82,
-   "win_rate": 0.159,
-   "quinella_rate": 0.256,
-   "show_rate": 0.39
+   "n": 83,
+   "win_rate": 0.157,
+   "quinella_rate": 0.253,
+   "show_rate": 0.398
   },
   "2026": {
    "win": 3,
    "place2": 2,
-   "place3": 1,
+   "place3": 2,
    "other": 13,
-   "n": 19,
-   "win_rate": 0.158,
-   "quinella_rate": 0.263,
-   "show_rate": 0.316
+   "n": 20,
+   "win_rate": 0.15,
+   "quinella_rate": 0.25,
+   "show_rate": 0.35
   },
   "2025": {
    "win": 3,
@@ -88,6 +88,19 @@
   }
  ],
  "ratings_reconstructed": [
+  {
+   "date": "2026-09-26",
+   "race_no": 8,
+   "position": 3,
+   "earned_yen": 90000,
+   "program_prize_k": 7411,
+   "year_prize_k": 2211,
+   "class": "B1",
+   "next_class": "A2",
+   "next_class_need_k": 1089,
+   "diff_k": 90,
+   "change": null
+  },
   {
    "date": "2026-09-13",
    "race_no": 9,
@@ -261,14 +274,14 @@
  "reconstructed_now": {
   "snapshot_date": "2026-09-25",
   "class_code": "B1",
-  "program_prize_k": 7321,
-  "year_prize_k": 2121,
+  "program_prize_k": 7411,
+  "year_prize_k": 2211,
   "reconstructed": true,
-  "reconstructed_races": 0
+  "reconstructed_races": 1
  },
  "next_class": {
   "next_class": "A2",
-  "need_k": 1179
+  "need_k": 1089
  },
  "races": [
   {
@@ -276,24 +289,27 @@
    "race_no": 8,
    "race_name": "とかち帯広香川県人会会長杯Ｂ１－１",
    "class": "B1",
-   "moisture": 1.1,
+   "moisture": 1.0,
    "field_size": 10,
    "num": 9,
    "jockey": "鈴木恵",
-   "trainer": "岩本利（ばんえい）",
+   "trainer": "岩本利",
    "owner": "大内基晴",
    "sled_kg": 650.0,
-   "weight": null,
-   "weight_diff": null,
-   "odds": 5.1,
-   "popularity": 1,
-   "position": null,
-   "time": null,
-   "time_sec": null,
-   "margin_sec": null,
-   "race_level_z": null,
+   "weight": 1097,
+   "weight_diff": 0,
+   "odds": 5.7,
+   "popularity": 4,
+   "position": 3,
+   "time": "1:47.4",
+   "time_sec": 107.4,
+   "margin_sec": 2.5,
+   "race_level_z": 0.83,
    "interval": "中1週",
-   "other": null,
+   "other": {
+    "label": "勝ち馬",
+    "name": "ヤマノキング"
+   },
    "insider_labels": []
   },
   {
@@ -792,7 +808,7 @@
    "time": "1:43.1",
    "time_sec": 103.1,
    "margin_sec": 5.1,
-   "race_level_z": 0.82,
+   "race_level_z": 0.83,
    "interval": "中2週",
    "other": {
     "label": "勝ち馬",
@@ -1072,7 +1088,7 @@
    "time": "1:40.0",
    "time_sec": 100.0,
    "margin_sec": 2.0,
-   "race_level_z": 1.03,
+   "race_level_z": 1.04,
    "interval": "中2週",
    "other": {
     "label": "勝ち馬",
@@ -1324,7 +1340,7 @@
    "time": "1:57.2",
    "time_sec": 117.2,
    "margin_sec": 8.1,
-   "race_level_z": 0.33,
+   "race_level_z": 0.34,
    "interval": "中4週",
    "other": {
     "label": "勝ち馬",
@@ -2283,7 +2299,7 @@
    "time": "1:43.4",
    "time_sec": 103.4,
    "margin_sec": 11.0,
-   "race_level_z": -0.05,
+   "race_level_z": -0.04,
    "interval": "中2週",
    "other": {
     "label": "勝ち馬",
@@ -2423,7 +2439,7 @@
    "time": "1:26.2",
    "time_sec": 86.2,
    "margin_sec": 1.0,
-   "race_level_z": 0.79,
+   "race_level_z": 0.8,
    "interval": "中1週",
    "other": {
     "label": "勝ち馬",

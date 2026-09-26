@@ -2,11 +2,11 @@
  "name": "リオンハート",
  "sex": "牝",
  "age": 2,
- "trainer": "今井茂（ばんえい）",
+ "trainer": "今井茂",
  "owner": "長澤廣茂",
  "sled_kg": 500.0,
- "weight": null,
- "weight_diff": null,
+ "weight": 920,
+ "weight_diff": 6,
  "last_race_date": "2026-09-26",
  "pedigree": {
   "sire": "ブチオ",
@@ -18,24 +18,24 @@
  },
  "stats": {
   "total": {
-   "win": 1,
+   "win": 2,
    "place2": 1,
    "place3": 1,
    "other": 1,
-   "n": 4,
-   "win_rate": 0.25,
-   "quinella_rate": 0.5,
-   "show_rate": 0.75
+   "n": 5,
+   "win_rate": 0.4,
+   "quinella_rate": 0.6,
+   "show_rate": 0.8
   },
   "2026": {
-   "win": 1,
+   "win": 2,
    "place2": 1,
    "place3": 1,
    "other": 1,
-   "n": 4,
-   "win_rate": 0.25,
-   "quinella_rate": 0.5,
-   "show_rate": 0.75
+   "n": 5,
+   "win_rate": 0.4,
+   "quinella_rate": 0.6,
+   "show_rate": 0.8
   }
  },
  "insider_label_count": 0,
@@ -58,6 +58,19 @@
   }
  ],
  "ratings_reconstructed": [
+  {
+   "date": "2026-09-26",
+   "race_no": 6,
+   "position": 1,
+   "earned_yen": 390000,
+   "program_prize_k": 1063,
+   "year_prize_k": 1063,
+   "class": "C2",
+   "next_class": "C1",
+   "next_class_need_k": 1137,
+   "diff_k": 390,
+   "change": null
+  },
   {
    "date": "2026-08-30",
    "race_no": 3,
@@ -114,10 +127,10 @@
  "reconstructed_now": {
   "snapshot_date": "2026-09-25",
   "class_code": "2sai",
-  "program_prize_k": 673,
-  "year_prize_k": 673,
+  "program_prize_k": 1063,
+  "year_prize_k": 1063,
   "reconstructed": true,
-  "reconstructed_races": 0
+  "reconstructed_races": 1
  },
  "next_class": null,
  "races": [
@@ -126,24 +139,27 @@
    "race_no": 6,
    "race_name": "ありさ、大輝来場記念２歳Ｂ－３",
    "class": "B3",
-   "moisture": 1.1,
+   "moisture": 1.0,
    "field_size": 10,
    "num": 2,
-   "jockey": "今井千",
-   "trainer": "今井茂（ばんえい）",
+   "jockey": "☆今井千",
+   "trainer": "今井茂",
    "owner": "長澤廣茂",
    "sled_kg": 500.0,
-   "weight": null,
-   "weight_diff": null,
-   "odds": 4.9,
-   "popularity": 2,
-   "position": null,
-   "time": null,
-   "time_sec": null,
-   "margin_sec": null,
-   "race_level_z": null,
+   "weight": 920,
+   "weight_diff": 6,
+   "odds": 6.6,
+   "popularity": 5,
+   "position": 1,
+   "time": "2:04.2",
+   "time_sec": 124.2,
+   "margin_sec": 0.0,
+   "race_level_z": -0.12,
    "interval": "中3週",
-   "other": null,
+   "other": {
+    "label": "2着馬",
+    "name": "プリンセスエア"
+   },
    "insider_labels": []
   },
   {
@@ -222,7 +238,7 @@
    "time": "2:21.2",
    "time_sec": 141.2,
    "margin_sec": 19.0,
-   "race_level_z": -0.78,
+   "race_level_z": -0.77,
    "interval": "連闘",
    "other": {
     "label": "勝ち馬",

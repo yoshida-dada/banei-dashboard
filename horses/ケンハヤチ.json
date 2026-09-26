@@ -2,11 +2,11 @@
  "name": "ケンハヤチ",
  "sex": "牡",
  "age": 2,
- "trainer": "久田守（ばんえい）",
+ "trainer": "久田守",
  "owner": "田島直人",
  "sled_kg": 510.0,
- "weight": null,
- "weight_diff": null,
+ "weight": 891,
+ "weight_diff": 6,
  "last_race_date": "2026-09-26",
  "pedigree": {
   "sire": "カワノイニーツィオ",
@@ -19,23 +19,23 @@
  "stats": {
   "total": {
    "win": 0,
-   "place2": 1,
+   "place2": 2,
    "place3": 1,
    "other": 7,
-   "n": 9,
+   "n": 10,
    "win_rate": 0.0,
-   "quinella_rate": 0.111,
-   "show_rate": 0.222
+   "quinella_rate": 0.2,
+   "show_rate": 0.3
   },
   "2026": {
    "win": 0,
-   "place2": 1,
+   "place2": 2,
    "place3": 1,
    "other": 7,
-   "n": 9,
+   "n": 10,
    "win_rate": 0.0,
-   "quinella_rate": 0.111,
-   "show_rate": 0.222
+   "quinella_rate": 0.2,
+   "show_rate": 0.3
   }
  },
  "insider_label_count": 0,
@@ -58,6 +58,19 @@
   }
  ],
  "ratings_reconstructed": [
+  {
+   "date": "2026-09-26",
+   "race_no": 2,
+   "position": 2,
+   "earned_yen": 111000,
+   "program_prize_k": 321,
+   "year_prize_k": 321,
+   "class": "C2",
+   "next_class": "C1",
+   "next_class_need_k": 1879,
+   "diff_k": 111,
+   "change": null
+  },
   {
    "date": "2026-09-21",
    "race_no": 3,
@@ -179,10 +192,10 @@
  "reconstructed_now": {
   "snapshot_date": "2026-09-25",
   "class_code": "2sai",
-  "program_prize_k": 210,
-  "year_prize_k": 210,
+  "program_prize_k": 321,
+  "year_prize_k": 321,
   "reconstructed": true,
-  "reconstructed_races": 0
+  "reconstructed_races": 1
  },
  "next_class": null,
  "races": [
@@ -195,20 +208,23 @@
    "field_size": 10,
    "num": 1,
    "jockey": "菊池一",
-   "trainer": "久田守（ばんえい）",
+   "trainer": "久田守",
    "owner": "田島直人",
    "sled_kg": 510.0,
-   "weight": null,
-   "weight_diff": null,
-   "odds": 7.1,
+   "weight": 891,
+   "weight_diff": 6,
+   "odds": 7.7,
    "popularity": 4,
-   "position": null,
-   "time": null,
-   "time_sec": null,
-   "margin_sec": null,
-   "race_level_z": null,
+   "position": 2,
+   "time": "2:11.7",
+   "time_sec": 131.7,
+   "margin_sec": 5.0,
+   "race_level_z": 1.21,
    "interval": "連闘",
-   "other": null,
+   "other": {
+    "label": "勝ち馬",
+    "name": "ホクセイウグイス"
+   },
    "insider_labels": []
   },
   {

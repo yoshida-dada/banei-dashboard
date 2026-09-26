@@ -2,11 +2,11 @@
  "name": "ジェイライフ",
  "sex": "牡",
  "age": 6,
- "trainer": "坂本東（ばんえい）",
+ "trainer": "坂本東",
  "owner": "小森唯永",
  "sled_kg": 725.0,
- "weight": null,
- "weight_diff": null,
+ "weight": 1083,
+ "weight_diff": 2,
  "last_race_date": "2026-09-26",
  "pedigree": {
   "sire": "ジェイワン",
@@ -21,21 +21,21 @@
    "win": 15,
    "place2": 12,
    "place3": 16,
-   "other": 46,
-   "n": 89,
-   "win_rate": 0.169,
-   "quinella_rate": 0.303,
-   "show_rate": 0.483
+   "other": 47,
+   "n": 90,
+   "win_rate": 0.167,
+   "quinella_rate": 0.3,
+   "show_rate": 0.478
   },
   "2026": {
    "win": 2,
    "place2": 4,
    "place3": 4,
-   "other": 7,
-   "n": 17,
-   "win_rate": 0.118,
-   "quinella_rate": 0.353,
-   "show_rate": 0.588
+   "other": 8,
+   "n": 18,
+   "win_rate": 0.111,
+   "quinella_rate": 0.333,
+   "show_rate": 0.556
   },
   "2025": {
    "win": 2,
@@ -88,6 +88,19 @@
   }
  ],
  "ratings_reconstructed": [
+  {
+   "date": "2026-09-26",
+   "race_no": 11,
+   "position": 4,
+   "earned_yen": 102000,
+   "program_prize_k": 13045,
+   "year_prize_k": 3259,
+   "class": "open",
+   "next_class": null,
+   "next_class_need_k": null,
+   "diff_k": 102,
+   "change": "up"
+  },
   {
    "date": "2026-09-20",
    "race_no": 11,
@@ -248,14 +261,14 @@
  "reconstructed_now": {
   "snapshot_date": "2026-09-25",
   "class_code": "A1",
-  "program_prize_k": 12943,
-  "year_prize_k": 3157,
+  "program_prize_k": 13045,
+  "year_prize_k": 3259,
   "reconstructed": true,
-  "reconstructed_races": 0
+  "reconstructed_races": 1
  },
  "next_class": {
   "next_class": "open",
-  "need_k": 57
+  "need_k": -45
  },
  "races": [
   {
@@ -263,24 +276,27 @@
    "race_no": 11,
    "race_name": "デイリースポーツ杯Ａ１－１混合",
    "class": "A1",
-   "moisture": 1.1,
+   "moisture": 1.0,
    "field_size": 10,
    "num": 1,
    "jockey": "阿部武",
-   "trainer": "坂本東（ばんえい）",
+   "trainer": "坂本東",
    "owner": "小森唯永",
    "sled_kg": 725.0,
-   "weight": null,
-   "weight_diff": null,
-   "odds": 8.8,
-   "popularity": 6,
-   "position": null,
-   "time": null,
-   "time_sec": null,
-   "margin_sec": null,
-   "race_level_z": null,
+   "weight": 1083,
+   "weight_diff": 2,
+   "odds": 8.5,
+   "popularity": 3,
+   "position": 4,
+   "time": "1:59.6",
+   "time_sec": 119.6,
+   "margin_sec": 6.6,
+   "race_level_z": 0.26,
    "interval": "連闘",
-   "other": null,
+   "other": {
+    "label": "勝ち馬",
+    "name": "コウシュハテンセイ"
+   },
    "insider_labels": []
   },
   {
@@ -804,7 +820,7 @@
    "time": "2:35.9",
    "time_sec": 155.9,
    "margin_sec": 42.7,
-   "race_level_z": -2.04,
+   "race_level_z": -2.05,
    "interval": "中2週",
    "other": {
     "label": "勝ち馬",
@@ -944,7 +960,7 @@
    "time": "59.7",
    "time_sec": 59.7,
    "margin_sec": 11.7,
-   "race_level_z": 2.25,
+   "race_level_z": 2.26,
    "interval": "中2週",
    "other": {
     "label": "勝ち馬",
@@ -1476,7 +1492,7 @@
    "time": "56.9",
    "time_sec": 56.9,
    "margin_sec": 8.3,
-   "race_level_z": 2.34,
+   "race_level_z": 2.35,
    "interval": "中2週",
    "other": {
     "label": "勝ち馬",
@@ -1669,7 +1685,7 @@
    "time": "5:06.2",
    "time_sec": 306.2,
    "margin_sec": 206.6,
-   "race_level_z": -7.53,
+   "race_level_z": -7.54,
    "interval": "中1週",
    "other": null,
    "insider_labels": []
@@ -2839,7 +2855,7 @@
    "time": "1:06.1",
    "time_sec": 66.1,
    "margin_sec": 7.3,
-   "race_level_z": 1.54,
+   "race_level_z": 1.55,
    "interval": "中1週",
    "other": {
     "label": "勝ち馬",

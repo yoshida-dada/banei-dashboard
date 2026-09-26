@@ -2,11 +2,11 @@
  "name": "マルホンエルフ",
  "sex": "牡",
  "age": 2,
- "trainer": "金田勇（ばんえい）",
+ "trainer": "金田勇",
  "owner": "本寺政則",
  "sled_kg": 510.0,
- "weight": null,
- "weight_diff": null,
+ "weight": 909,
+ "weight_diff": 15,
  "last_race_date": "2026-09-26",
  "pedigree": {
   "sire": "サクラダイチ",
@@ -21,21 +21,21 @@
    "win": 0,
    "place2": 2,
    "place3": 2,
-   "other": 4,
-   "n": 8,
+   "other": 5,
+   "n": 9,
    "win_rate": 0.0,
-   "quinella_rate": 0.25,
-   "show_rate": 0.5
+   "quinella_rate": 0.222,
+   "show_rate": 0.444
   },
   "2026": {
    "win": 0,
    "place2": 2,
    "place3": 2,
-   "other": 4,
-   "n": 8,
+   "other": 5,
+   "n": 9,
    "win_rate": 0.0,
-   "quinella_rate": 0.25,
-   "show_rate": 0.5
+   "quinella_rate": 0.222,
+   "show_rate": 0.444
   }
  },
  "insider_label_count": 0,
@@ -58,6 +58,19 @@
   }
  ],
  "ratings_reconstructed": [
+  {
+   "date": "2026-09-26",
+   "race_no": 3,
+   "position": 10,
+   "earned_yen": 0,
+   "program_prize_k": 540,
+   "year_prize_k": 540,
+   "class": "C2",
+   "next_class": "C1",
+   "next_class_need_k": 1660,
+   "diff_k": 0,
+   "change": null
+  },
   {
    "date": "2026-09-12",
    "race_no": 4,
@@ -181,21 +194,24 @@
    "moisture": 1.1,
    "field_size": 10,
    "num": 6,
-   "jockey": "臼杵龍",
-   "trainer": "金田勇（ばんえい）",
+   "jockey": "☆臼杵龍",
+   "trainer": "金田勇",
    "owner": "本寺政則",
    "sled_kg": 510.0,
-   "weight": null,
-   "weight_diff": null,
-   "odds": 5.0,
-   "popularity": 3,
-   "position": null,
-   "time": null,
-   "time_sec": null,
-   "margin_sec": null,
-   "race_level_z": null,
+   "weight": 909,
+   "weight_diff": 15,
+   "odds": 2.7,
+   "popularity": 1,
+   "position": 10,
+   "time": "2:39.0",
+   "time_sec": 159.0,
+   "margin_sec": 42.3,
+   "race_level_z": -0.84,
    "interval": "中2週",
-   "other": null,
+   "other": {
+    "label": "勝ち馬",
+    "name": "マナザシ"
+   },
    "insider_labels": []
   },
   {
@@ -302,7 +318,7 @@
    "time": "1:49.6",
    "time_sec": 109.6,
    "margin_sec": 13.0,
-   "race_level_z": 0.08,
+   "race_level_z": 0.09,
    "interval": "中2週",
    "other": {
     "label": "勝ち馬",
@@ -358,7 +374,7 @@
    "time": "1:40.3",
    "time_sec": 100.3,
    "margin_sec": 3.4,
-   "race_level_z": 0.88,
+   "race_level_z": 0.89,
    "interval": "中2週",
    "other": {
     "label": "勝ち馬",

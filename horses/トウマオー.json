@@ -2,11 +2,11 @@
  "name": "トウマオー",
  "sex": "牡",
  "age": 3,
- "trainer": "大河和（ばんえい）",
+ "trainer": "大河和",
  "owner": "甲角斉",
  "sled_kg": 620.0,
- "weight": null,
- "weight_diff": null,
+ "weight": 929,
+ "weight_diff": -6,
  "last_race_date": "2026-09-26",
  "pedigree": {
   "sire": "ミツボシ",
@@ -21,21 +21,21 @@
    "win": 4,
    "place2": 3,
    "place3": 1,
-   "other": 26,
-   "n": 34,
-   "win_rate": 0.118,
-   "quinella_rate": 0.206,
-   "show_rate": 0.235
+   "other": 27,
+   "n": 35,
+   "win_rate": 0.114,
+   "quinella_rate": 0.2,
+   "show_rate": 0.229
   },
   "2026": {
    "win": 3,
    "place2": 2,
    "place3": 0,
-   "other": 13,
-   "n": 18,
-   "win_rate": 0.167,
-   "quinella_rate": 0.278,
-   "show_rate": 0.278
+   "other": 14,
+   "n": 19,
+   "win_rate": 0.158,
+   "quinella_rate": 0.263,
+   "show_rate": 0.263
   },
   "2025": {
    "win": 1,
@@ -68,6 +68,19 @@
   }
  ],
  "ratings_reconstructed": [
+  {
+   "date": "2026-09-26",
+   "race_no": 4,
+   "position": 8,
+   "earned_yen": 0,
+   "program_prize_k": 1818,
+   "year_prize_k": 780,
+   "class": "C2",
+   "next_class": "C1",
+   "next_class_need_k": 382,
+   "diff_k": 0,
+   "change": null
+  },
   {
    "date": "2026-09-12",
    "race_no": 1,
@@ -247,20 +260,23 @@
    "field_size": 10,
    "num": 1,
    "jockey": "渡来心",
-   "trainer": "大河和（ばんえい）",
+   "trainer": "大河和",
    "owner": "甲角斉",
    "sled_kg": 620.0,
-   "weight": null,
-   "weight_diff": null,
-   "odds": 9.7,
-   "popularity": 3,
-   "position": null,
-   "time": null,
-   "time_sec": null,
-   "margin_sec": null,
-   "race_level_z": null,
+   "weight": 929,
+   "weight_diff": -6,
+   "odds": 37.6,
+   "popularity": 10,
+   "position": 8,
+   "time": "2:31.4",
+   "time_sec": 151.4,
+   "margin_sec": 29.0,
+   "race_level_z": 0.42,
    "interval": "中2週",
-   "other": null,
+   "other": {
+    "label": "勝ち馬",
+    "name": "ウル"
+   },
    "insider_labels": []
   },
   {

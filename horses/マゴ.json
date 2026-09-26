@@ -2,11 +2,11 @@
  "name": "マゴ",
  "sex": "牡",
  "age": 4,
- "trainer": "久田守（ばんえい）",
+ "trainer": "久田守",
  "owner": "尾ヶ瀬浩二",
  "sled_kg": 620.0,
- "weight": null,
- "weight_diff": null,
+ "weight": 1084,
+ "weight_diff": -11,
  "last_race_date": "2026-09-26",
  "pedigree": {
   "sire": "ブラックシシ",
@@ -21,21 +21,21 @@
    "win": 6,
    "place2": 3,
    "place3": 12,
-   "other": 36,
-   "n": 57,
-   "win_rate": 0.105,
-   "quinella_rate": 0.158,
-   "show_rate": 0.368
+   "other": 37,
+   "n": 58,
+   "win_rate": 0.103,
+   "quinella_rate": 0.155,
+   "show_rate": 0.362
   },
   "2026": {
    "win": 1,
    "place2": 0,
    "place3": 3,
-   "other": 13,
-   "n": 17,
-   "win_rate": 0.059,
-   "quinella_rate": 0.059,
-   "show_rate": 0.235
+   "other": 14,
+   "n": 18,
+   "win_rate": 0.056,
+   "quinella_rate": 0.056,
+   "show_rate": 0.222
   },
   "2025": {
    "win": 2,
@@ -78,6 +78,19 @@
   }
  ],
  "ratings_reconstructed": [
+  {
+   "date": "2026-09-26",
+   "race_no": 12,
+   "position": 4,
+   "earned_yen": 36000,
+   "program_prize_k": 3870,
+   "year_prize_k": 300,
+   "class": "B4",
+   "next_class": "B3",
+   "next_class_need_k": 430,
+   "diff_k": 36,
+   "change": null
+  },
   {
    "date": "2026-08-22",
    "race_no": 7,
@@ -212,14 +225,14 @@
  "reconstructed_now": {
   "snapshot_date": "2026-09-25",
   "class_code": "B4",
-  "program_prize_k": 3834,
-  "year_prize_k": 264,
+  "program_prize_k": 3870,
+  "year_prize_k": 300,
   "reconstructed": true,
-  "reconstructed_races": 0
+  "reconstructed_races": 1
  },
  "next_class": {
   "next_class": "B3",
-  "need_k": 466
+  "need_k": 430
  },
  "races": [
   {
@@ -227,24 +240,27 @@
    "race_no": 12,
    "race_name": "Ｂ４－６",
    "class": "B4",
-   "moisture": 1.1,
+   "moisture": 1.0,
    "field_size": 10,
    "num": 10,
-   "jockey": "臼杵龍",
-   "trainer": "久田守（ばんえい）",
+   "jockey": "☆臼杵龍",
+   "trainer": "久田守",
    "owner": "尾ヶ瀬浩二",
    "sled_kg": 620.0,
-   "weight": null,
-   "weight_diff": null,
-   "odds": 15.0,
-   "popularity": 7,
-   "position": null,
-   "time": null,
-   "time_sec": null,
-   "margin_sec": null,
-   "race_level_z": null,
+   "weight": 1084,
+   "weight_diff": -11,
+   "odds": 3.2,
+   "popularity": 1,
+   "position": 4,
+   "time": "2:03.7",
+   "time_sec": 123.7,
+   "margin_sec": 2.4,
+   "race_level_z": 0.53,
    "interval": "中5週",
-   "other": null,
+   "other": {
+    "label": "勝ち馬",
+    "name": "テンボシヴィーナス"
+   },
    "insider_labels": []
   },
   {
@@ -967,7 +983,7 @@
    "time": "2:35.6",
    "time_sec": 155.6,
    "margin_sec": 44.5,
-   "race_level_z": -0.5,
+   "race_level_z": -0.51,
    "interval": "中3週",
    "other": {
     "label": "勝ち馬",

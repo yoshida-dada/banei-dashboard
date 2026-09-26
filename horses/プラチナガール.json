@@ -2,11 +2,11 @@
  "name": "プラチナガール",
  "sex": "牝",
  "age": 5,
- "trainer": "小林長（ばんえい）",
+ "trainer": "小林長",
  "owner": "加藤勇",
  "sled_kg": 630.0,
- "weight": null,
- "weight_diff": null,
+ "weight": 1108,
+ "weight_diff": 7,
  "last_race_date": "2026-09-26",
  "pedigree": {
   "sire": "ニシキエーカン",
@@ -18,24 +18,24 @@
  },
  "stats": {
   "total": {
-   "win": 10,
+   "win": 11,
    "place2": 11,
    "place3": 13,
    "other": 47,
-   "n": 81,
-   "win_rate": 0.123,
-   "quinella_rate": 0.259,
-   "show_rate": 0.42
+   "n": 82,
+   "win_rate": 0.134,
+   "quinella_rate": 0.268,
+   "show_rate": 0.427
   },
   "2026": {
-   "win": 2,
+   "win": 3,
    "place2": 2,
    "place3": 5,
    "other": 10,
-   "n": 19,
-   "win_rate": 0.105,
-   "quinella_rate": 0.211,
-   "show_rate": 0.474
+   "n": 20,
+   "win_rate": 0.15,
+   "quinella_rate": 0.25,
+   "show_rate": 0.5
   },
   "2025": {
    "win": 4,
@@ -88,6 +88,19 @@
   }
  ],
  "ratings_reconstructed": [
+  {
+   "date": "2026-09-26",
+   "race_no": 10,
+   "position": 1,
+   "earned_yen": 420000,
+   "program_prize_k": 6158,
+   "year_prize_k": 1092,
+   "class": "B2",
+   "next_class": "B1",
+   "next_class_need_k": 542,
+   "diff_k": 420,
+   "change": null
+  },
   {
    "date": "2026-09-19",
    "race_no": 10,
@@ -261,14 +274,14 @@
  "reconstructed_now": {
   "snapshot_date": "2026-09-25",
   "class_code": "B2",
-  "program_prize_k": 5738,
-  "year_prize_k": 672,
+  "program_prize_k": 6158,
+  "year_prize_k": 1092,
   "reconstructed": true,
-  "reconstructed_races": 0
+  "reconstructed_races": 1
  },
  "next_class": {
   "next_class": "B1",
-  "need_k": 962
+  "need_k": 542
  },
  "races": [
   {
@@ -276,24 +289,27 @@
    "race_no": 10,
    "race_name": "福田兄弟還暦おめでとう！！Ｂ２－３",
    "class": "B2",
-   "moisture": 1.1,
+   "moisture": 1.0,
    "field_size": 10,
    "num": 10,
-   "jockey": "臼杵龍",
-   "trainer": "小林長（ばんえい）",
+   "jockey": "☆臼杵龍",
+   "trainer": "小林長",
    "owner": "加藤勇",
    "sled_kg": 630.0,
-   "weight": null,
-   "weight_diff": null,
-   "odds": 17.0,
-   "popularity": 9,
-   "position": null,
-   "time": null,
-   "time_sec": null,
-   "margin_sec": null,
-   "race_level_z": null,
+   "weight": 1108,
+   "weight_diff": 7,
+   "odds": 7.7,
+   "popularity": 4,
+   "position": 1,
+   "time": "1:45.5",
+   "time_sec": 105.5,
+   "margin_sec": 0.0,
+   "race_level_z": 0.9,
    "interval": "連闘",
-   "other": null,
+   "other": {
+    "label": "2着馬",
+    "name": "ホクショウムサシ"
+   },
    "insider_labels": []
   },
   {
@@ -624,7 +640,7 @@
    "time": "1:53.2",
    "time_sec": 113.2,
    "margin_sec": 10.3,
-   "race_level_z": -0.01,
+   "race_level_z": -0.0,
    "interval": "中1週",
    "other": {
     "label": "勝ち馬",
@@ -1072,7 +1088,7 @@
    "time": "1:47.3",
    "time_sec": 107.3,
    "margin_sec": 0.0,
-   "race_level_z": 0.81,
+   "race_level_z": 0.82,
    "interval": "中3週",
    "other": {
     "label": "2着馬",
@@ -1520,7 +1536,7 @@
    "time": "2:07.6",
    "time_sec": 127.6,
    "margin_sec": 9.4,
-   "race_level_z": 0.66,
+   "race_level_z": 0.65,
    "interval": "連闘",
    "other": {
     "label": "勝ち馬",

@@ -2,11 +2,11 @@
  "name": "シンゲキノハルキ",
  "sex": "牡",
  "age": 2,
- "trainer": "中島敏（ばんえい）",
+ "trainer": "中島敏",
  "owner": "末松秀義",
  "sled_kg": 530.0,
- "weight": null,
- "weight_diff": null,
+ "weight": 916,
+ "weight_diff": 1,
  "last_race_date": "2026-09-26",
  "pedigree": {
   "sire": "ホリセンショウ",
@@ -21,21 +21,21 @@
    "win": 0,
    "place2": 3,
    "place3": 4,
-   "other": 2,
-   "n": 9,
+   "other": 3,
+   "n": 10,
    "win_rate": 0.0,
-   "quinella_rate": 0.333,
-   "show_rate": 0.778
+   "quinella_rate": 0.3,
+   "show_rate": 0.7
   },
   "2026": {
    "win": 0,
    "place2": 3,
    "place3": 4,
-   "other": 2,
-   "n": 9,
+   "other": 3,
+   "n": 10,
    "win_rate": 0.0,
-   "quinella_rate": 0.333,
-   "show_rate": 0.778
+   "quinella_rate": 0.3,
+   "show_rate": 0.7
   }
  },
  "insider_label_count": 0,
@@ -58,6 +58,19 @@
   }
  ],
  "ratings_reconstructed": [
+  {
+   "date": "2026-09-26",
+   "race_no": 6,
+   "position": 4,
+   "earned_yen": 42000,
+   "program_prize_k": 765,
+   "year_prize_k": 765,
+   "class": "C2",
+   "next_class": "C1",
+   "next_class_need_k": 1435,
+   "diff_k": 42,
+   "change": null
+  },
   {
    "date": "2026-09-13",
    "race_no": 4,
@@ -179,10 +192,10 @@
  "reconstructed_now": {
   "snapshot_date": "2026-09-25",
   "class_code": "2sai",
-  "program_prize_k": 723,
-  "year_prize_k": 723,
+  "program_prize_k": 765,
+  "year_prize_k": 765,
   "reconstructed": true,
-  "reconstructed_races": 0
+  "reconstructed_races": 1
  },
  "next_class": null,
  "races": [
@@ -191,24 +204,27 @@
    "race_no": 6,
    "race_name": "ありさ、大輝来場記念２歳Ｂ－３",
    "class": "B3",
-   "moisture": 1.1,
+   "moisture": 1.0,
    "field_size": 10,
    "num": 3,
    "jockey": "菊池一",
-   "trainer": "中島敏（ばんえい）",
+   "trainer": "中島敏",
    "owner": "末松秀義",
    "sled_kg": 530.0,
-   "weight": null,
-   "weight_diff": null,
-   "odds": 2.8,
-   "popularity": 1,
-   "position": null,
-   "time": null,
-   "time_sec": null,
-   "margin_sec": null,
-   "race_level_z": null,
+   "weight": 916,
+   "weight_diff": 1,
+   "odds": 6.5,
+   "popularity": 4,
+   "position": 4,
+   "time": "2:15.4",
+   "time_sec": 135.4,
+   "margin_sec": 11.2,
+   "race_level_z": -0.51,
    "interval": "中1週",
-   "other": null,
+   "other": {
+    "label": "勝ち馬",
+    "name": "リオンハート"
+   },
    "insider_labels": []
   },
   {

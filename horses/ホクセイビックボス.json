@@ -2,11 +2,11 @@
  "name": "ホクセイビックボス",
  "sex": "牡",
  "age": 6,
- "trainer": "岩本利（ばんえい）",
+ "trainer": "岩本利",
  "owner": "（有）竹内産業",
  "sled_kg": 650.0,
- "weight": null,
- "weight_diff": null,
+ "weight": 1049,
+ "weight_diff": 3,
  "last_race_date": "2026-09-26",
  "pedigree": {
   "sire": "インフィニティー",
@@ -21,21 +21,21 @@
    "win": 9,
    "place2": 10,
    "place3": 8,
-   "other": 62,
-   "n": 89,
-   "win_rate": 0.101,
-   "quinella_rate": 0.213,
-   "show_rate": 0.303
+   "other": 63,
+   "n": 90,
+   "win_rate": 0.1,
+   "quinella_rate": 0.211,
+   "show_rate": 0.3
   },
   "2026": {
    "win": 3,
    "place2": 2,
    "place3": 0,
-   "other": 12,
-   "n": 17,
-   "win_rate": 0.176,
-   "quinella_rate": 0.294,
-   "show_rate": 0.294
+   "other": 13,
+   "n": 18,
+   "win_rate": 0.167,
+   "quinella_rate": 0.278,
+   "show_rate": 0.278
   },
   "2025": {
    "win": 1,
@@ -68,7 +68,7 @@
    "show_rate": 0.28
   }
  },
- "insider_label_count": 1,
+ "insider_label_count": 2,
  "ratings": [
   {
    "date": "2026-09-25",
@@ -88,6 +88,19 @@
   }
  ],
  "ratings_reconstructed": [
+  {
+   "date": "2026-09-26",
+   "race_no": 9,
+   "position": 6,
+   "earned_yen": 0,
+   "program_prize_k": 4402,
+   "year_prize_k": 876,
+   "class": "B3",
+   "next_class": "B2",
+   "next_class_need_k": 1098,
+   "diff_k": 0,
+   "change": null
+  },
   {
    "date": "2026-09-14",
    "race_no": 10,
@@ -250,25 +263,33 @@
    "race_no": 9,
    "race_name": "まぁさん２０２６生誕祭記念Ｂ３－３",
    "class": "B3",
-   "moisture": 1.1,
+   "moisture": 1.0,
    "field_size": 10,
    "num": 9,
    "jockey": "島津新",
-   "trainer": "岩本利（ばんえい）",
+   "trainer": "岩本利",
    "owner": "（有）竹内産業",
    "sled_kg": 650.0,
-   "weight": null,
-   "weight_diff": null,
-   "odds": 11.6,
+   "weight": 1049,
+   "weight_diff": 3,
+   "odds": 12.8,
    "popularity": 6,
-   "position": null,
-   "time": null,
-   "time_sec": null,
-   "margin_sec": null,
-   "race_level_z": null,
+   "position": 6,
+   "time": "2:06.6",
+   "time_sec": 126.6,
+   "margin_sec": 13.3,
+   "race_level_z": 0.21,
    "interval": "中1週",
-   "other": null,
-   "insider_labels": []
+   "other": {
+    "label": "勝ち馬",
+    "name": "サカノトウカイ"
+   },
+   "insider_labels": [
+    {
+     "label_type": "引き",
+     "note": "東海仕掛け"
+    }
+   ]
   },
   {
    "date": "2026-09-14",
@@ -318,7 +339,7 @@
    "time": "1:50.7",
    "time_sec": 110.7,
    "margin_sec": 19.4,
-   "race_level_z": 0.5,
+   "race_level_z": 0.51,
    "interval": "中3週",
    "other": {
     "label": "勝ち馬",
@@ -491,7 +512,7 @@
    "time": "1:54.9",
    "time_sec": 114.9,
    "margin_sec": 2.7,
-   "race_level_z": 0.88,
+   "race_level_z": 0.87,
    "interval": "中3週",
    "other": {
     "label": "勝ち馬",
@@ -575,7 +596,7 @@
    "time": "2:44.7",
    "time_sec": 164.7,
    "margin_sec": 37.2,
-   "race_level_z": -1.27,
+   "race_level_z": -1.28,
    "interval": "中5週",
    "other": {
     "label": "勝ち馬",
@@ -1247,7 +1268,7 @@
    "time": "3:07.8",
    "time_sec": 187.8,
    "margin_sec": 51.8,
-   "race_level_z": -2.28,
+   "race_level_z": -2.29,
    "interval": "中1週",
    "other": {
     "label": "勝ち馬",

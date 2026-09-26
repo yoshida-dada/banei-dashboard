@@ -2,11 +2,11 @@
  "name": "カツテンリフジ",
  "sex": "牡",
  "age": 5,
- "trainer": "村上慎（ばんえい）",
+ "trainer": "村上慎",
  "owner": "岩瀬正実",
  "sled_kg": 670.0,
- "weight": null,
- "weight_diff": null,
+ "weight": 1094,
+ "weight_diff": 2,
  "last_race_date": "2026-09-26",
  "pedigree": {
   "sire": "カツオーカン",
@@ -21,21 +21,21 @@
    "win": 12,
    "place2": 19,
    "place3": 6,
-   "other": 49,
-   "n": 86,
-   "win_rate": 0.14,
-   "quinella_rate": 0.36,
-   "show_rate": 0.43
+   "other": 50,
+   "n": 87,
+   "win_rate": 0.138,
+   "quinella_rate": 0.356,
+   "show_rate": 0.425
   },
   "2026": {
    "win": 4,
    "place2": 4,
    "place3": 1,
-   "other": 11,
-   "n": 20,
-   "win_rate": 0.2,
-   "quinella_rate": 0.4,
-   "show_rate": 0.45
+   "other": 12,
+   "n": 21,
+   "win_rate": 0.19,
+   "quinella_rate": 0.381,
+   "show_rate": 0.429
   },
   "2025": {
    "win": 3,
@@ -88,6 +88,19 @@
   }
  ],
  "ratings_reconstructed": [
+  {
+   "date": "2026-09-26",
+   "race_no": 8,
+   "position": 9,
+   "earned_yen": 0,
+   "program_prize_k": 7874,
+   "year_prize_k": 2281,
+   "class": "B1",
+   "next_class": "A2",
+   "next_class_need_k": 626,
+   "diff_k": 0,
+   "change": null
+  },
   {
    "date": "2026-09-14",
    "race_no": 11,
@@ -276,24 +289,27 @@
    "race_no": 8,
    "race_name": "とかち帯広香川県人会会長杯Ｂ１－１",
    "class": "B1",
-   "moisture": 1.1,
+   "moisture": 1.0,
    "field_size": 10,
    "num": 5,
    "jockey": "赤塚健",
-   "trainer": "村上慎（ばんえい）",
+   "trainer": "村上慎",
    "owner": "岩瀬正実",
    "sled_kg": 670.0,
-   "weight": null,
-   "weight_diff": null,
-   "odds": 5.1,
-   "popularity": 1,
-   "position": null,
-   "time": null,
-   "time_sec": null,
-   "margin_sec": null,
-   "race_level_z": null,
+   "weight": 1094,
+   "weight_diff": 2,
+   "odds": 5.0,
+   "popularity": 2,
+   "position": 9,
+   "time": "2:28.0",
+   "time_sec": 148.0,
+   "margin_sec": 43.1,
+   "race_level_z": -0.84,
    "interval": "中1週",
-   "other": null,
+   "other": {
+    "label": "勝ち馬",
+    "name": "ヤマノキング"
+   },
    "insider_labels": []
   },
   {
@@ -932,7 +948,7 @@
    "time": "1:49.8",
    "time_sec": 109.8,
    "margin_sec": 10.7,
-   "race_level_z": 0.6,
+   "race_level_z": 0.61,
    "interval": "中1週",
    "other": {
     "label": "勝ち馬",
@@ -1184,7 +1200,7 @@
    "time": "1:51.2",
    "time_sec": 111.2,
    "margin_sec": 0.0,
-   "race_level_z": 0.94,
+   "race_level_z": 0.95,
    "interval": "中2週",
    "other": {
     "label": "2着馬",
@@ -1464,7 +1480,7 @@
    "time": "1:46.3",
    "time_sec": 106.3,
    "margin_sec": 2.0,
-   "race_level_z": 0.58,
+   "race_level_z": 0.59,
    "interval": "中1週",
    "other": {
     "label": "勝ち馬",
@@ -2472,7 +2488,7 @@
    "time": "2:04.4",
    "time_sec": 124.4,
    "margin_sec": 25.9,
-   "race_level_z": -0.4,
+   "race_level_z": -0.39,
    "interval": "連闘",
    "other": {
     "label": "勝ち馬",
@@ -2528,7 +2544,7 @@
    "time": "1:21.4",
    "time_sec": 81.4,
    "margin_sec": 2.6,
-   "race_level_z": 1.3,
+   "race_level_z": 1.31,
    "interval": "中1週",
    "other": {
     "label": "勝ち馬",

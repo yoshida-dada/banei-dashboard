@@ -2,11 +2,11 @@
  "name": "トト",
  "sex": "牡",
  "age": 2,
- "trainer": "服部義（ばんえい）",
+ "trainer": "服部義",
  "owner": "安井利夫",
  "sled_kg": 520.0,
- "weight": null,
- "weight_diff": null,
+ "weight": 857,
+ "weight_diff": -1,
  "last_race_date": "2026-09-26",
  "pedigree": {
   "sire": "ホクショウユヅル",
@@ -21,21 +21,21 @@
    "win": 1,
    "place2": 1,
    "place3": 1,
-   "other": 4,
-   "n": 7,
-   "win_rate": 0.143,
-   "quinella_rate": 0.286,
-   "show_rate": 0.429
+   "other": 5,
+   "n": 8,
+   "win_rate": 0.125,
+   "quinella_rate": 0.25,
+   "show_rate": 0.375
   },
   "2026": {
    "win": 1,
    "place2": 1,
    "place3": 1,
-   "other": 4,
-   "n": 7,
-   "win_rate": 0.143,
-   "quinella_rate": 0.286,
-   "show_rate": 0.429
+   "other": 5,
+   "n": 8,
+   "win_rate": 0.125,
+   "quinella_rate": 0.25,
+   "show_rate": 0.375
   }
  },
  "insider_label_count": 0,
@@ -58,6 +58,19 @@
   }
  ],
  "ratings_reconstructed": [
+  {
+   "date": "2026-09-26",
+   "race_no": 3,
+   "position": 8,
+   "earned_yen": 0,
+   "program_prize_k": 519,
+   "year_prize_k": 623,
+   "class": "C2",
+   "next_class": "C1",
+   "next_class_need_k": 1681,
+   "diff_k": 0,
+   "change": null
+  },
   {
    "date": "2026-09-21",
    "race_no": 5,
@@ -169,20 +182,23 @@
    "field_size": 10,
    "num": 10,
    "jockey": "長澤幸",
-   "trainer": "服部義（ばんえい）",
+   "trainer": "服部義",
    "owner": "安井利夫",
    "sled_kg": 520.0,
-   "weight": null,
-   "weight_diff": null,
-   "odds": 31.7,
+   "weight": 857,
+   "weight_diff": -1,
+   "odds": 31.2,
    "popularity": 10,
-   "position": null,
-   "time": null,
-   "time_sec": null,
-   "margin_sec": null,
-   "race_level_z": null,
+   "position": 8,
+   "time": "2:28.0",
+   "time_sec": 148.0,
+   "margin_sec": 31.3,
+   "race_level_z": -0.34,
    "interval": "連闘",
-   "other": null,
+   "other": {
+    "label": "勝ち馬",
+    "name": "マナザシ"
+   },
    "insider_labels": []
   },
   {
@@ -289,7 +305,7 @@
    "time": "2:05.6",
    "time_sec": 125.6,
    "margin_sec": 6.0,
-   "race_level_z": -0.32,
+   "race_level_z": -0.31,
    "interval": "中2週",
    "other": {
     "label": "勝ち馬",

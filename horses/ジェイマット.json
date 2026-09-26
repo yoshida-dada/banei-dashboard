@@ -2,33 +2,33 @@
  "name": "ジェイマット",
  "sex": "牡",
  "age": 2,
- "trainer": "金山明（ばんえい）",
+ "trainer": "金山明",
  "owner": "小森唯永",
  "sled_kg": 510.0,
- "weight": null,
- "weight_diff": null,
+ "weight": 876,
+ "weight_diff": 3,
  "last_race_date": "2026-09-26",
  "pedigree": null,
  "stats": {
   "total": {
    "win": 0,
    "place2": 1,
-   "place3": 1,
+   "place3": 2,
    "other": 3,
-   "n": 5,
+   "n": 6,
    "win_rate": 0.0,
-   "quinella_rate": 0.2,
-   "show_rate": 0.4
+   "quinella_rate": 0.167,
+   "show_rate": 0.5
   },
   "2026": {
    "win": 0,
    "place2": 1,
-   "place3": 1,
+   "place3": 2,
    "other": 3,
-   "n": 5,
+   "n": 6,
    "win_rate": 0.0,
-   "quinella_rate": 0.2,
-   "show_rate": 0.4
+   "quinella_rate": 0.167,
+   "show_rate": 0.5
   }
  },
  "insider_label_count": 0,
@@ -43,6 +43,19 @@
   }
  ],
  "ratings_reconstructed": [
+  {
+   "date": "2026-09-26",
+   "race_no": 2,
+   "position": 3,
+   "earned_yen": 63000,
+   "program_prize_k": 288,
+   "year_prize_k": 288,
+   "class": "C2",
+   "next_class": "C1",
+   "next_class_need_k": 1912,
+   "diff_k": 63,
+   "change": null
+  },
   {
    "date": "2026-09-21",
    "race_no": 3,
@@ -112,10 +125,10 @@
  "reconstructed_now": {
   "snapshot_date": "2026-09-25",
   "class_code": "2sai",
-  "program_prize_k": 225,
-  "year_prize_k": 225,
+  "program_prize_k": 288,
+  "year_prize_k": 288,
   "reconstructed": true,
-  "reconstructed_races": 0
+  "reconstructed_races": 1
  },
  "next_class": null,
  "races": [
@@ -128,20 +141,23 @@
    "field_size": 10,
    "num": 8,
    "jockey": "中村太",
-   "trainer": "金山明（ばんえい）",
+   "trainer": "金山明",
    "owner": "小森唯永",
    "sled_kg": 510.0,
-   "weight": null,
-   "weight_diff": null,
-   "odds": 6.2,
+   "weight": 876,
+   "weight_diff": 3,
+   "odds": 6.0,
    "popularity": 2,
-   "position": null,
-   "time": null,
-   "time_sec": null,
-   "margin_sec": null,
-   "race_level_z": null,
+   "position": 3,
+   "time": "2:16.9",
+   "time_sec": 136.9,
+   "margin_sec": 10.2,
+   "race_level_z": 0.99,
    "interval": "連闘",
-   "other": null,
+   "other": {
+    "label": "勝ち馬",
+    "name": "ホクセイウグイス"
+   },
    "insider_labels": []
   },
   {

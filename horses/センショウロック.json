@@ -2,11 +2,11 @@
  "name": "センショウロック",
  "sex": "牡",
  "age": 4,
- "trainer": "岩本利（ばんえい）",
+ "trainer": "岩本利",
  "owner": "浅野勝善",
  "sled_kg": 630.0,
- "weight": null,
- "weight_diff": null,
+ "weight": 925,
+ "weight_diff": 15,
  "last_race_date": "2026-09-26",
  "pedigree": {
   "sire": "ライデンロック",
@@ -18,24 +18,24 @@
  },
  "stats": {
   "total": {
-   "win": 5,
+   "win": 6,
    "place2": 6,
    "place3": 5,
    "other": 37,
-   "n": 53,
-   "win_rate": 0.094,
-   "quinella_rate": 0.208,
-   "show_rate": 0.302
+   "n": 54,
+   "win_rate": 0.111,
+   "quinella_rate": 0.222,
+   "show_rate": 0.315
   },
   "2026": {
-   "win": 2,
+   "win": 3,
    "place2": 1,
    "place3": 2,
    "other": 14,
-   "n": 19,
-   "win_rate": 0.105,
-   "quinella_rate": 0.158,
-   "show_rate": 0.263
+   "n": 20,
+   "win_rate": 0.15,
+   "quinella_rate": 0.2,
+   "show_rate": 0.3
   },
   "2025": {
    "win": 1,
@@ -78,6 +78,19 @@
   }
  ],
  "ratings_reconstructed": [
+  {
+   "date": "2026-09-26",
+   "race_no": 5,
+   "position": 1,
+   "earned_yen": 300000,
+   "program_prize_k": 2914,
+   "year_prize_k": 873,
+   "class": "C1",
+   "next_class": "B4",
+   "next_class_need_k": 486,
+   "diff_k": 300,
+   "change": null
+  },
   {
    "date": "2026-09-12",
    "race_no": 12,
@@ -251,14 +264,14 @@
  "reconstructed_now": {
   "snapshot_date": "2026-09-25",
   "class_code": "C1",
-  "program_prize_k": 2614,
-  "year_prize_k": 573,
+  "program_prize_k": 2914,
+  "year_prize_k": 873,
   "reconstructed": true,
-  "reconstructed_races": 0
+  "reconstructed_races": 1
  },
  "next_class": {
   "next_class": "B4",
-  "need_k": 786
+  "need_k": 486
  },
  "races": [
   {
@@ -266,24 +279,27 @@
    "race_no": 5,
    "race_name": "朔乃レイ誕生日杯Ｃ１－７",
    "class": "C1",
-   "moisture": 1.1,
+   "moisture": 1.0,
    "field_size": 9,
    "num": 3,
    "jockey": "渡来心",
-   "trainer": "岩本利（ばんえい）",
+   "trainer": "岩本利",
    "owner": "浅野勝善",
    "sled_kg": 630.0,
-   "weight": null,
-   "weight_diff": null,
-   "odds": 15.2,
-   "popularity": 6,
-   "position": null,
-   "time": null,
-   "time_sec": null,
-   "margin_sec": null,
-   "race_level_z": null,
+   "weight": 925,
+   "weight_diff": 15,
+   "odds": 7.3,
+   "popularity": 4,
+   "position": 1,
+   "time": "2:02.3",
+   "time_sec": 122.3,
+   "margin_sec": 0.0,
+   "race_level_z": 1.1,
    "interval": "中2週",
-   "other": null,
+   "other": {
+    "label": "2着馬",
+    "name": "ホクセイミハル"
+   },
    "insider_labels": []
   },
   {
@@ -1179,7 +1195,7 @@
    "time": "3:03.6",
    "time_sec": 183.6,
    "margin_sec": 47.7,
-   "race_level_z": -0.9,
+   "race_level_z": -0.91,
    "interval": "中2週",
    "other": {
     "label": "勝ち馬",
@@ -1599,7 +1615,7 @@
    "time": "2:47.7",
    "time_sec": 167.7,
    "margin_sec": 35.2,
-   "race_level_z": -1.1,
+   "race_level_z": -1.11,
    "interval": "中1週",
    "other": {
     "label": "勝ち馬",

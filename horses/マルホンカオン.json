@@ -2,11 +2,11 @@
  "name": "マルホンカオン",
  "sex": "牡",
  "age": 3,
- "trainer": "小北栄（ばんえい）",
+ "trainer": "小北栄",
  "owner": "本寺政則",
  "sled_kg": 620.0,
- "weight": null,
- "weight_diff": null,
+ "weight": 968,
+ "weight_diff": 0,
  "last_race_date": "2026-09-26",
  "pedigree": {
   "sire": "キタノリュウキ",
@@ -21,21 +21,21 @@
    "win": 3,
    "place2": 6,
    "place3": 4,
-   "other": 15,
-   "n": 28,
-   "win_rate": 0.107,
-   "quinella_rate": 0.321,
-   "show_rate": 0.464
+   "other": 16,
+   "n": 29,
+   "win_rate": 0.103,
+   "quinella_rate": 0.31,
+   "show_rate": 0.448
   },
   "2026": {
    "win": 1,
    "place2": 6,
    "place3": 1,
-   "other": 8,
-   "n": 16,
-   "win_rate": 0.062,
-   "quinella_rate": 0.438,
-   "show_rate": 0.5
+   "other": 9,
+   "n": 17,
+   "win_rate": 0.059,
+   "quinella_rate": 0.412,
+   "show_rate": 0.471
   },
   "2025": {
    "win": 2,
@@ -68,6 +68,19 @@
   }
  ],
  "ratings_reconstructed": [
+  {
+   "date": "2026-09-26",
+   "race_no": 4,
+   "position": 5,
+   "earned_yen": 18000,
+   "program_prize_k": 1979,
+   "year_prize_k": 843,
+   "class": "C2",
+   "next_class": "C1",
+   "next_class_need_k": 221,
+   "diff_k": 18,
+   "change": null
+  },
   {
    "date": "2026-09-14",
    "race_no": 5,
@@ -215,14 +228,14 @@
  "reconstructed_now": {
   "snapshot_date": "2026-09-25",
   "class_code": "C2",
-  "program_prize_k": 1961,
-  "year_prize_k": 825,
+  "program_prize_k": 1979,
+  "year_prize_k": 843,
   "reconstructed": true,
-  "reconstructed_races": 0
+  "reconstructed_races": 1
  },
  "next_class": {
   "next_class": "C1",
-  "need_k": 239
+  "need_k": 221
  },
  "races": [
   {
@@ -234,20 +247,23 @@
    "field_size": 10,
    "num": 7,
    "jockey": "中原蓮",
-   "trainer": "小北栄（ばんえい）",
+   "trainer": "小北栄",
    "owner": "本寺政則",
    "sled_kg": 620.0,
-   "weight": null,
-   "weight_diff": null,
-   "odds": 9.7,
-   "popularity": 3,
-   "position": null,
-   "time": null,
-   "time_sec": null,
-   "margin_sec": null,
-   "race_level_z": null,
+   "weight": 968,
+   "weight_diff": 0,
+   "odds": 4.4,
+   "popularity": 2,
+   "position": 5,
+   "time": "2:19.4",
+   "time_sec": 139.4,
+   "margin_sec": 17.0,
+   "race_level_z": 0.93,
    "interval": "中1週",
-   "other": null,
+   "other": {
+    "label": "勝ち馬",
+    "name": "ウル"
+   },
    "insider_labels": []
   },
   {
@@ -326,7 +342,7 @@
    "time": "2:11.2",
    "time_sec": 131.2,
    "margin_sec": 27.1,
-   "race_level_z": 1.39,
+   "race_level_z": 1.38,
    "interval": "中2週",
    "other": {
     "label": "勝ち馬",
@@ -438,7 +454,7 @@
    "time": "2:38.0",
    "time_sec": 158.0,
    "margin_sec": 24.7,
-   "race_level_z": 0.19,
+   "race_level_z": 0.18,
    "interval": "中2週",
    "other": {
     "label": "勝ち馬",
@@ -550,7 +566,7 @@
    "time": "4:57.5",
    "time_sec": 297.5,
    "margin_sec": 144.0,
-   "race_level_z": -5.97,
+   "race_level_z": -5.98,
    "interval": "中4週",
    "other": null,
    "insider_labels": []
@@ -911,7 +927,7 @@
    "time": "1:47.7",
    "time_sec": 107.7,
    "margin_sec": 5.6,
-   "race_level_z": 0.06,
+   "race_level_z": 0.07,
    "interval": "中4週",
    "other": {
     "label": "勝ち馬",

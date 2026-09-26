@@ -2,11 +2,11 @@
  "name": "マオノソレイユ",
  "sex": "牡",
  "age": 2,
- "trainer": "藤本匠（ばんえい）",
+ "trainer": "藤本匠",
  "owner": "秋田忍",
  "sled_kg": 520.0,
- "weight": null,
- "weight_diff": null,
+ "weight": 904,
+ "weight_diff": -2,
  "last_race_date": "2026-09-26",
  "pedigree": {
   "sire": "コウシュハウンカイ",
@@ -21,21 +21,21 @@
    "win": 1,
    "place2": 1,
    "place3": 1,
-   "other": 6,
-   "n": 9,
-   "win_rate": 0.111,
-   "quinella_rate": 0.222,
-   "show_rate": 0.333
+   "other": 7,
+   "n": 10,
+   "win_rate": 0.1,
+   "quinella_rate": 0.2,
+   "show_rate": 0.3
   },
   "2026": {
    "win": 1,
    "place2": 1,
    "place3": 1,
-   "other": 6,
-   "n": 9,
-   "win_rate": 0.111,
-   "quinella_rate": 0.222,
-   "show_rate": 0.333
+   "other": 7,
+   "n": 10,
+   "win_rate": 0.1,
+   "quinella_rate": 0.2,
+   "show_rate": 0.3
   }
  },
  "insider_label_count": 0,
@@ -58,6 +58,19 @@
   }
  ],
  "ratings_reconstructed": [
+  {
+   "date": "2026-09-26",
+   "race_no": 3,
+   "position": 9,
+   "earned_yen": 0,
+   "program_prize_k": 515,
+   "year_prize_k": 515,
+   "class": "C2",
+   "next_class": "C1",
+   "next_class_need_k": 1685,
+   "diff_k": 0,
+   "change": null
+  },
   {
    "date": "2026-09-21",
    "race_no": 5,
@@ -195,20 +208,23 @@
    "field_size": 10,
    "num": 3,
    "jockey": "阿部優",
-   "trainer": "藤本匠（ばんえい）",
+   "trainer": "藤本匠",
    "owner": "秋田忍",
    "sled_kg": 520.0,
-   "weight": null,
-   "weight_diff": null,
-   "odds": 9.5,
-   "popularity": 6,
-   "position": null,
-   "time": null,
-   "time_sec": null,
-   "margin_sec": null,
-   "race_level_z": null,
+   "weight": 904,
+   "weight_diff": -2,
+   "odds": 20.8,
+   "popularity": 9,
+   "position": 9,
+   "time": "2:32.3",
+   "time_sec": 152.3,
+   "margin_sec": 35.6,
+   "race_level_z": -0.53,
    "interval": "連闘",
-   "other": null,
+   "other": {
+    "label": "勝ち馬",
+    "name": "マナザシ"
+   },
    "insider_labels": []
   },
   {
@@ -343,7 +359,7 @@
    "time": "2:08.2",
    "time_sec": 128.2,
    "margin_sec": 0.0,
-   "race_level_z": 0.89,
+   "race_level_z": 0.9,
    "interval": "中3週",
    "other": {
     "label": "2着馬",

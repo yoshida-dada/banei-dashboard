@@ -2,11 +2,11 @@
  "name": "アサゾラ",
  "sex": "牡",
  "age": 7,
- "trainer": "中島敏（ばんえい）",
+ "trainer": "中島敏",
  "owner": "丹治満夫",
  "sled_kg": 725.0,
- "weight": null,
- "weight_diff": null,
+ "weight": 1143,
+ "weight_diff": 6,
  "last_race_date": "2026-09-26",
  "pedigree": {
   "sire": "インフィニティー",
@@ -21,21 +21,21 @@
    "win": 15,
    "place2": 13,
    "place3": 13,
-   "other": 55,
-   "n": 96,
-   "win_rate": 0.156,
-   "quinella_rate": 0.292,
-   "show_rate": 0.427
+   "other": 56,
+   "n": 97,
+   "win_rate": 0.155,
+   "quinella_rate": 0.289,
+   "show_rate": 0.423
   },
   "2026": {
    "win": 5,
    "place2": 2,
    "place3": 3,
-   "other": 8,
-   "n": 18,
-   "win_rate": 0.278,
-   "quinella_rate": 0.389,
-   "show_rate": 0.556
+   "other": 9,
+   "n": 19,
+   "win_rate": 0.263,
+   "quinella_rate": 0.368,
+   "show_rate": 0.526
   },
   "2025": {
    "win": 4,
@@ -88,6 +88,19 @@
   }
  ],
  "ratings_reconstructed": [
+  {
+   "date": "2026-09-26",
+   "race_no": 11,
+   "position": 5,
+   "earned_yen": 68000,
+   "program_prize_k": 10369,
+   "year_prize_k": 3348,
+   "class": "A1",
+   "next_class": "open",
+   "next_class_need_k": 2631,
+   "diff_k": 68,
+   "change": null
+  },
   {
    "date": "2026-09-21",
    "race_no": 11,
@@ -248,14 +261,14 @@
  "reconstructed_now": {
   "snapshot_date": "2026-09-25",
   "class_code": "A1",
-  "program_prize_k": 10301,
-  "year_prize_k": 3280,
+  "program_prize_k": 10369,
+  "year_prize_k": 3348,
   "reconstructed": true,
-  "reconstructed_races": 0
+  "reconstructed_races": 1
  },
  "next_class": {
   "next_class": "open",
-  "need_k": 2699
+  "need_k": 2631
  },
  "races": [
   {
@@ -263,24 +276,27 @@
    "race_no": 11,
    "race_name": "デイリースポーツ杯Ａ１－１混合",
    "class": "A1",
-   "moisture": 1.1,
+   "moisture": 1.0,
    "field_size": 10,
    "num": 5,
    "jockey": "金田利",
-   "trainer": "中島敏（ばんえい）",
+   "trainer": "中島敏",
    "owner": "丹治満夫",
    "sled_kg": 725.0,
-   "weight": null,
-   "weight_diff": null,
-   "odds": 8.1,
+   "weight": 1143,
+   "weight_diff": 6,
+   "odds": 10.3,
    "popularity": 5,
-   "position": null,
-   "time": null,
-   "time_sec": null,
-   "margin_sec": null,
-   "race_level_z": null,
+   "position": 5,
+   "time": "2:03.6",
+   "time_sec": 123.6,
+   "margin_sec": 10.6,
+   "race_level_z": 0.08,
    "interval": "連闘",
-   "other": null,
+   "other": {
+    "label": "勝ち馬",
+    "name": "コウシュハテンセイ"
+   },
    "insider_labels": []
   },
   {
@@ -443,7 +459,7 @@
    "time": "2:04.4",
    "time_sec": 124.4,
    "margin_sec": 7.7,
-   "race_level_z": 0.27,
+   "race_level_z": 0.26,
    "interval": "連闘",
    "other": {
     "label": "勝ち馬",
@@ -527,7 +543,7 @@
    "time": "1:53.9",
    "time_sec": 113.9,
    "margin_sec": 1.1,
-   "race_level_z": 0.69,
+   "race_level_z": 0.68,
    "interval": "中3週",
    "other": {
     "label": "勝ち馬",
@@ -611,7 +627,7 @@
    "time": "2:04.3",
    "time_sec": 124.3,
    "margin_sec": 5.4,
-   "race_level_z": 0.03,
+   "race_level_z": 0.02,
    "interval": "中4週",
    "other": {
     "label": "勝ち馬",
@@ -779,7 +795,7 @@
    "time": "2:05.0",
    "time_sec": 125.0,
    "margin_sec": 9.8,
-   "race_level_z": -0.08,
+   "race_level_z": -0.09,
    "interval": "連闘",
    "other": {
     "label": "勝ち馬",
@@ -1084,7 +1100,7 @@
    "time": "2:13.6",
    "time_sec": 133.6,
    "margin_sec": 12.3,
-   "race_level_z": -0.35,
+   "race_level_z": -0.36,
    "interval": "中2週",
    "other": {
     "label": "勝ち馬",
@@ -1112,7 +1128,7 @@
    "time": "1:59.5",
    "time_sec": 119.5,
    "margin_sec": 6.6,
-   "race_level_z": 0.12,
+   "race_level_z": 0.11,
    "interval": "連闘",
    "other": {
     "label": "勝ち馬",
@@ -1476,7 +1492,7 @@
    "time": "2:11.4",
    "time_sec": 131.4,
    "margin_sec": 20.0,
-   "race_level_z": -0.13,
+   "race_level_z": -0.14,
    "interval": "中2週",
    "other": {
     "label": "勝ち馬",
@@ -2512,7 +2528,7 @@
    "time": "1:52.7",
    "time_sec": 112.7,
    "margin_sec": 6.4,
-   "race_level_z": 0.52,
+   "race_level_z": 0.51,
    "interval": "中1週",
    "other": {
     "label": "勝ち馬",
@@ -2652,7 +2668,7 @@
    "time": "1:48.9",
    "time_sec": 108.9,
    "margin_sec": 8.0,
-   "race_level_z": 0.37,
+   "race_level_z": 0.38,
    "interval": "連闘",
    "other": {
     "label": "勝ち馬",

@@ -2,11 +2,11 @@
  "name": "サカノトウカイ",
  "sex": "牡",
  "age": 7,
- "trainer": "田上忠（ばんえい）",
+ "trainer": "田上忠",
  "owner": "（株）大阪畜産",
  "sled_kg": 650.0,
- "weight": null,
- "weight_diff": null,
+ "weight": 1102,
+ "weight_diff": 14,
  "last_race_date": "2026-09-26",
  "pedigree": {
   "sire": "キタノオーロラ",
@@ -18,24 +18,24 @@
  },
  "stats": {
   "total": {
-   "win": 9,
+   "win": 10,
    "place2": 11,
    "place3": 11,
    "other": 65,
-   "n": 96,
-   "win_rate": 0.094,
-   "quinella_rate": 0.208,
-   "show_rate": 0.323
+   "n": 97,
+   "win_rate": 0.103,
+   "quinella_rate": 0.216,
+   "show_rate": 0.33
   },
   "2026": {
-   "win": 2,
+   "win": 3,
    "place2": 2,
    "place3": 1,
    "other": 13,
-   "n": 18,
-   "win_rate": 0.111,
-   "quinella_rate": 0.222,
-   "show_rate": 0.278
+   "n": 19,
+   "win_rate": 0.158,
+   "quinella_rate": 0.263,
+   "show_rate": 0.316
   },
   "2025": {
    "win": 3,
@@ -68,7 +68,7 @@
    "show_rate": 0.286
   }
  },
- "insider_label_count": 18,
+ "insider_label_count": 19,
  "ratings": [
   {
    "date": "2026-09-25",
@@ -88,6 +88,19 @@
   }
  ],
  "ratings_reconstructed": [
+  {
+   "date": "2026-09-26",
+   "race_no": 9,
+   "position": 1,
+   "earned_yen": 340000,
+   "program_prize_k": 5304,
+   "year_prize_k": 1212,
+   "class": "B3",
+   "next_class": "B2",
+   "next_class_need_k": 196,
+   "diff_k": 340,
+   "change": null
+  },
   {
    "date": "2026-09-13",
    "race_no": 8,
@@ -248,14 +261,14 @@
  "reconstructed_now": {
   "snapshot_date": "2026-09-25",
   "class_code": "B3",
-  "program_prize_k": 4964,
-  "year_prize_k": 872,
+  "program_prize_k": 5304,
+  "year_prize_k": 1212,
   "reconstructed": true,
-  "reconstructed_races": 0
+  "reconstructed_races": 1
  },
  "next_class": {
   "next_class": "B2",
-  "need_k": 536
+  "need_k": 196
  },
  "races": [
   {
@@ -263,25 +276,33 @@
    "race_no": 9,
    "race_name": "まぁさん２０２６生誕祭記念Ｂ３－３",
    "class": "B3",
-   "moisture": 1.1,
+   "moisture": 1.0,
    "field_size": 10,
    "num": 2,
    "jockey": "松本秀",
-   "trainer": "田上忠（ばんえい）",
+   "trainer": "田上忠",
    "owner": "（株）大阪畜産",
    "sled_kg": 650.0,
-   "weight": null,
-   "weight_diff": null,
-   "odds": 11.6,
-   "popularity": 6,
-   "position": null,
-   "time": null,
-   "time_sec": null,
-   "margin_sec": null,
-   "race_level_z": null,
+   "weight": 1102,
+   "weight_diff": 14,
+   "odds": 9.2,
+   "popularity": 5,
+   "position": 1,
+   "time": "1:53.3",
+   "time_sec": 113.3,
+   "margin_sec": 0.0,
+   "race_level_z": 0.78,
    "interval": "中1週",
-   "other": null,
-   "insider_labels": []
+   "other": {
+    "label": "2着馬",
+    "name": "ジェイオージョ"
+   },
+   "insider_labels": [
+    {
+     "label_type": "仕掛け",
+     "note": "東海仕掛け"
+    }
+   ]
   },
   {
    "date": "2026-09-13",
@@ -331,7 +352,7 @@
    "time": "1:56.1",
    "time_sec": 116.1,
    "margin_sec": 24.8,
-   "race_level_z": 0.27,
+   "race_level_z": 0.28,
    "interval": "中1週",
    "other": {
     "label": "勝ち馬",
@@ -812,7 +833,7 @@
    "time": "2:01.2",
    "time_sec": 121.2,
    "margin_sec": 17.0,
-   "race_level_z": 0.01,
+   "race_level_z": 0.02,
    "interval": "中5週",
    "other": {
     "label": "勝ち馬",
