@@ -13,21 +13,21 @@
    "predicted_top": 7,
    "market_fav": 2,
    "winner": null,
-   "update_stage": "odds",
-   "updated_at": "2026-09-26 14:38",
+   "update_stage": "pre",
+   "updated_at": "2026-09-26 14:39",
    "horses": [
     {
      "num": 7,
      "name": "ジェイメーカー",
      "win_prob": 0.2937,
      "rank": 1,
-     "odds": 6.4,
+     "odds": 4.0,
      "position": null,
      "result_time": null,
      "jockey": "西将太",
      "gate": 7,
      "sled_kg": 620.0,
-     "popularity": 3,
+     "popularity": 2,
      "age": 3,
      "sex": "牡",
      "trainer": "平田義（ばんえい）",
@@ -54,6 +54,7 @@
      "agari_n": 4,
      "insider_flag": false,
      "insider_label_details": [],
+     "owner_flagged": false,
      "sled_prev": 610.0,
      "sled_diff": 10,
      "jockey_record": [
@@ -397,24 +398,23 @@
       ]
      },
      "place3_time_avg": 137.5,
-     "p_market": 0.1244,
-     "win_prob_blend": 0.182,
-     "ev": 1.16,
-     "ev_buy": true,
-     "ev_streak": 3
+     "p_market": 0.1974,
+     "win_prob_blend": 0.2403,
+     "ev": 0.96,
+     "ev_buy": false
     },
     {
      "num": 8,
      "name": "トップオブグレイ",
      "win_prob": 0.1294,
      "rank": 2,
-     "odds": 10.5,
+     "odds": 13.4,
      "position": null,
      "result_time": null,
      "jockey": "島津新",
      "gate": 7,
      "sled_kg": 620.0,
-     "popularity": 6,
+     "popularity": 7,
      "age": 3,
      "sex": "牡",
      "trainer": "藤野俊（ばんえい）",
@@ -441,6 +441,7 @@
      "agari_n": 4,
      "insider_flag": false,
      "insider_label_details": [],
+     "owner_flagged": true,
      "sled_prev": 610.0,
      "sled_diff": 10,
      "jockey_record": [
@@ -820,24 +821,23 @@
       ]
      },
      "place3_time_avg": 154.4,
-     "p_market": 0.0758,
-     "win_prob_blend": 0.099,
-     "ev": 1.04,
-     "ev_buy": true,
-     "ev_streak": 3
+     "p_market": 0.0589,
+     "win_prob_blend": 0.0822,
+     "ev": 1.1,
+     "ev_buy": true
     },
     {
      "num": 3,
      "name": "ヒメトラダイア",
      "win_prob": 0.1113,
      "rank": 3,
-     "odds": 14.3,
+     "odds": 9.4,
      "position": null,
      "result_time": null,
      "jockey": "大友一",
      "gate": 3,
      "sled_kg": 600.0,
-     "popularity": 7,
+     "popularity": 6,
      "age": 3,
      "sex": "牝",
      "trainer": "大友人（ばんえい）",
@@ -864,6 +864,7 @@
      "agari_n": 4,
      "insider_flag": false,
      "insider_label_details": [],
+     "owner_flagged": false,
      "sled_prev": 590.0,
      "sled_diff": 10,
      "jockey_record": [
@@ -1243,18 +1244,17 @@
       ]
      },
      "place3_time_avg": 136.6,
-     "p_market": 0.0557,
-     "win_prob_blend": 0.0768,
-     "ev": 1.1,
-     "ev_buy": true,
-     "ev_streak": 3
+     "p_market": 0.084,
+     "win_prob_blend": 0.0982,
+     "ev": 0.92,
+     "ev_buy": false
     },
     {
      "num": 2,
      "name": "ヨシノマイヒメ",
      "win_prob": 0.0958,
      "rank": 4,
-     "odds": 2.6,
+     "odds": 3.3,
      "position": null,
      "result_time": null,
      "jockey": "船山蔵",
@@ -1287,6 +1287,7 @@
      "agari_n": 4,
      "insider_flag": false,
      "insider_label_details": [],
+     "owner_flagged": false,
      "sled_prev": 590.0,
      "sled_diff": 10,
      "jockey_record": [
@@ -1594,18 +1595,17 @@
       ]
      },
      "place3_time_avg": 137.4,
-     "p_market": 0.3062,
-     "win_prob_blend": 0.2208,
-     "ev": 0.57,
-     "ev_buy": false,
-     "ev_streak": 0
+     "p_market": 0.2392,
+     "win_prob_blend": 0.184,
+     "ev": 0.61,
+     "ev_buy": false
     },
     {
      "num": 9,
      "name": "ファイトボーイ",
      "win_prob": 0.0949,
      "rank": 5,
-     "odds": 24.2,
+     "odds": 35.0,
      "position": null,
      "result_time": null,
      "jockey": "阿部武",
@@ -1638,6 +1638,7 @@
      "agari_n": 4,
      "insider_flag": false,
      "insider_label_details": [],
+     "owner_flagged": true,
      "sled_prev": 610.0,
      "sled_diff": 10,
      "jockey_record": [
@@ -2023,18 +2024,17 @@
       ]
      },
      "place3_time_avg": 139.4,
-     "p_market": 0.0329,
-     "win_prob_blend": 0.0516,
-     "ev": 1.25,
-     "ev_buy": true,
-     "ev_streak": 3
+     "p_market": 0.0226,
+     "win_prob_blend": 0.0395,
+     "ev": 1.38,
+     "ev_buy": true
     },
     {
      "num": 10,
      "name": "ツガルノキンヒメ",
      "win_prob": 0.0949,
      "rank": 6,
-     "odds": 9.4,
+     "odds": 8.3,
      "position": null,
      "result_time": null,
      "jockey": "中原蓮",
@@ -2067,6 +2067,7 @@
      "agari_n": 5,
      "insider_flag": false,
      "insider_label_details": [],
+     "owner_flagged": false,
      "sled_prev": 590.0,
      "sled_diff": 10,
      "jockey_record": [
@@ -2440,24 +2441,23 @@
       ]
      },
      "place3_time_avg": 127.3,
-     "p_market": 0.0847,
-     "win_prob_blend": 0.0954,
-     "ev": 0.9,
-     "ev_buy": false,
-     "ev_streak": 0
+     "p_market": 0.0951,
+     "win_prob_blend": 0.1007,
+     "ev": 0.84,
+     "ev_buy": false
     },
     {
      "num": 5,
      "name": "マオノビクトリー",
      "win_prob": 0.0495,
      "rank": 7,
-     "odds": 20.9,
+     "odds": 25.8,
      "position": null,
      "result_time": null,
      "jockey": "中村太",
      "gate": 5,
      "sled_kg": 620.0,
-     "popularity": 9,
+     "popularity": 8,
      "age": 3,
      "sex": "牡",
      "trainer": "松井浩（ばんえい）",
@@ -2484,6 +2484,7 @@
      "agari_n": 4,
      "insider_flag": false,
      "insider_label_details": [],
+     "owner_flagged": false,
      "sled_prev": 610.0,
      "sled_diff": 10,
      "jockey_record": [
@@ -2851,24 +2852,23 @@
       ]
      },
      "place3_time_avg": 128.4,
-     "p_market": 0.0381,
-     "win_prob_blend": 0.0452,
-     "ev": 0.94,
-     "ev_buy": false,
-     "ev_streak": 0
+     "p_market": 0.0306,
+     "win_prob_blend": 0.0384,
+     "ev": 0.99,
+     "ev_buy": false
     },
     {
      "num": 1,
      "name": "シオン",
      "win_prob": 0.0462,
      "rank": 8,
-     "odds": 7.8,
+     "odds": 6.1,
      "position": null,
      "result_time": null,
      "jockey": "今井千",
      "gate": 1,
      "sled_kg": 590.0,
-     "popularity": 4,
+     "popularity": 3,
      "age": 3,
      "sex": "牝",
      "trainer": "久田守（ばんえい）",
@@ -2895,6 +2895,7 @@
      "agari_n": 4,
      "insider_flag": false,
      "insider_label_details": [],
+     "owner_flagged": false,
      "sled_prev": 590.0,
      "sled_diff": 0,
      "jockey_record": [
@@ -3244,24 +3245,23 @@
       ]
      },
      "place3_time_avg": 133.0,
-     "p_market": 0.1021,
-     "win_prob_blend": 0.0838,
-     "ev": 0.65,
-     "ev_buy": false,
-     "ev_streak": 0
+     "p_market": 0.1294,
+     "win_prob_blend": 0.0956,
+     "ev": 0.58,
+     "ev_buy": false
     },
     {
      "num": 6,
      "name": "クントクン",
      "win_prob": 0.0457,
      "rank": 9,
-     "odds": 5.7,
+     "odds": 6.8,
      "position": null,
      "result_time": null,
      "jockey": "村上章",
      "gate": 6,
      "sled_kg": 620.0,
-     "popularity": 2,
+     "popularity": 4,
      "age": 3,
      "sex": "牡",
      "trainer": "西邑春（ばんえい）",
@@ -3288,6 +3288,7 @@
      "agari_n": 5,
      "insider_flag": false,
      "insider_label_details": [],
+     "owner_flagged": false,
      "sled_prev": 600.0,
      "sled_diff": 20,
      "jockey_record": null,
@@ -3548,24 +3549,23 @@
       ]
      },
      "place3_time_avg": 142.9,
-     "p_market": 0.1397,
-     "win_prob_blend": 0.1023,
-     "ev": 0.58,
-     "ev_buy": false,
-     "ev_streak": 0
+     "p_market": 0.1161,
+     "win_prob_blend": 0.0888,
+     "ev": 0.6,
+     "ev_buy": false
     },
     {
      "num": 4,
      "name": "ハゴロモソラリス",
      "win_prob": 0.0386,
      "rank": 10,
-     "odds": 19.7,
+     "odds": 29.5,
      "position": null,
      "result_time": null,
      "jockey": "西謙一",
      "gate": 4,
      "sled_kg": 620.0,
-     "popularity": 8,
+     "popularity": 9,
      "age": 3,
      "sex": "牡",
      "trainer": "大友人（ばんえい）",
@@ -3592,6 +3592,7 @@
      "agari_n": 4,
      "insider_flag": false,
      "insider_label_details": [],
+     "owner_flagged": true,
      "sled_prev": 610.0,
      "sled_diff": 10,
      "jockey_record": [
@@ -3959,11 +3960,10 @@
       ]
      },
      "place3_time_avg": 136.4,
-     "p_market": 0.0404,
-     "win_prob_blend": 0.0431,
-     "ev": 0.85,
-     "ev_buy": false,
-     "ev_streak": 0
+     "p_market": 0.0268,
+     "win_prob_blend": 0.0322,
+     "ev": 0.95,
+     "ev_buy": false
     }
    ],
    "prize_positions": [
@@ -3972,17 +3972,6 @@
     63000,
     33000,
     18000
-   ],
-   "bets": [
-    {
-     "bet_type": "wide",
-     "bet_type_jp": "ワイド",
-     "combo": "6-9",
-     "odds": 52.3,
-     "ev": 1.42,
-     "prob": 0.0339,
-     "stake": 3000
-    }
    ]
   },
   {
@@ -3990,7 +3979,7 @@
    "race_no": 2,
    "race_name": "雪城眞尋生誕記念２歳Ｄ－３",
    "class": "D",
-   "moisture": null,
+   "moisture": 1.1,
    "field_size": 10,
    "post_time": "15:15",
    "win_time": null,
@@ -3998,14 +3987,14 @@
    "market_fav": 3,
    "winner": null,
    "update_stage": "pre",
-   "updated_at": "2026-09-26 12:30",
+   "updated_at": "2026-09-26 14:39",
    "horses": [
     {
      "num": 3,
      "name": "アーススノーパール",
-     "win_prob": 0.2763,
+     "win_prob": 0.2859,
      "rank": 1,
-     "odds": 3.2,
+     "odds": 2.3,
      "position": null,
      "result_time": null,
      "jockey": "阿部優",
@@ -4026,8 +4015,8 @@
      "horse_class": "2sai",
      "year_form": 4.8,
      "promo_watch": null,
-     "place2": 0.4999,
-     "place3": 0.674,
+     "place2": 0.5143,
+     "place3": 0.6895,
      "ability": 64.5,
      "jockey_switched": false,
      "fh_avg": 83.0,
@@ -4038,6 +4027,7 @@
      "agari_n": 2,
      "insider_flag": false,
      "insider_label_details": [],
+     "owner_flagged": false,
      "sled_prev": 500.0,
      "sled_diff": 10,
      "jockey_record": [
@@ -4146,23 +4136,23 @@
       ]
      },
      "place3_time_avg": 108.6,
-     "p_market": 0.2491,
-     "win_prob_blend": 0.271,
-     "ev": 0.87,
+     "p_market": 0.3467,
+     "win_prob_blend": 0.3328,
+     "ev": 0.77,
      "ev_buy": false
     },
     {
      "num": 8,
      "name": "ジェイマット",
-     "win_prob": 0.1676,
+     "win_prob": 0.165,
      "rank": 2,
-     "odds": 3.2,
+     "odds": 9.0,
      "position": null,
      "result_time": null,
      "jockey": "中村太",
      "gate": 7,
      "sled_kg": 510.0,
-     "popularity": 1,
+     "popularity": 4,
      "age": 2,
      "sex": "牡",
      "trainer": "金山明（ばんえい）",
@@ -4177,8 +4167,8 @@
      "horse_class": "2sai",
      "year_form": 8.4,
      "promo_watch": null,
-     "place2": 0.3335,
-     "place3": 0.491,
+     "place2": 0.3303,
+     "place3": 0.4888,
      "ability": 59.6,
      "jockey_switched": false,
      "fh_avg": 109.5,
@@ -4189,6 +4179,7 @@
      "agari_n": 4,
      "insider_flag": false,
      "insider_label_details": [],
+     "owner_flagged": true,
      "sled_prev": 500.0,
      "sled_diff": 10,
      "jockey_record": [
@@ -4335,23 +4326,23 @@
       ]
      },
      "place3_time_avg": 145.4,
-     "p_market": 0.2491,
-     "win_prob_blend": 0.2275,
-     "ev": 0.73,
-     "ev_buy": false
+     "p_market": 0.0886,
+     "win_prob_blend": 0.1131,
+     "ev": 1.02,
+     "ev_buy": true
     },
     {
      "num": 4,
      "name": "トカチキャップ",
-     "win_prob": 0.1305,
+     "win_prob": 0.1378,
      "rank": 3,
-     "odds": 4.5,
+     "odds": 10.4,
      "position": null,
      "result_time": null,
      "jockey": "西謙一",
      "gate": 4,
      "sled_kg": 490.0,
-     "popularity": 3,
+     "popularity": 5,
      "age": 2,
      "sex": "牝",
      "trainer": "中島敏（ばんえい）",
@@ -4366,8 +4357,8 @@
      "horse_class": "2sai",
      "year_form": 1.7,
      "promo_watch": null,
-     "place2": 0.2664,
-     "place3": 0.4046,
+     "place2": 0.281,
+     "place3": 0.4258,
      "ability": 56.4,
      "jockey_switched": false,
      "fh_avg": 95.8,
@@ -4378,6 +4369,7 @@
      "agari_n": 4,
      "insider_flag": false,
      "insider_label_details": [],
+     "owner_flagged": false,
      "sled_prev": 480.0,
      "sled_diff": 10,
      "jockey_record": [
@@ -4505,23 +4497,23 @@
       ]
      },
      "place3_time_avg": 137.7,
-     "p_market": 0.1771,
-     "win_prob_blend": 0.167,
-     "ev": 0.75,
-     "ev_buy": false
+     "p_market": 0.0767,
+     "win_prob_blend": 0.0967,
+     "ev": 1.01,
+     "ev_buy": true
     },
     {
      "num": 1,
      "name": "ケンハヤチ",
-     "win_prob": 0.0948,
+     "win_prob": 0.0981,
      "rank": 4,
-     "odds": 16.0,
+     "odds": 3.9,
      "position": null,
      "result_time": null,
      "jockey": "菊池一",
      "gate": 1,
      "sled_kg": 510.0,
-     "popularity": 7,
+     "popularity": 2,
      "age": 2,
      "sex": "牡",
      "trainer": "久田守（ばんえい）",
@@ -4536,8 +4528,8 @@
      "horse_class": "2sai",
      "year_form": 5.5,
      "promo_watch": null,
-     "place2": 0.1978,
-     "place3": 0.3088,
+     "place2": 0.2051,
+     "place3": 0.3206,
      "ability": 54.1,
      "jockey_switched": true,
      "fh_avg": 97.0,
@@ -4548,6 +4540,7 @@
      "agari_n": 3,
      "insider_flag": false,
      "insider_label_details": [],
+     "owner_flagged": false,
      "sled_prev": 500.0,
      "sled_diff": 10,
      "jockey_record": [
@@ -4770,23 +4763,23 @@
       ]
      },
      "place3_time_avg": 138.8,
-     "p_market": 0.0498,
-     "win_prob_blend": 0.0655,
-     "ev": 1.05,
-     "ev_buy": true
+     "p_market": 0.2044,
+     "win_prob_blend": 0.1624,
+     "ev": 0.63,
+     "ev_buy": false
     },
     {
      "num": 6,
      "name": "ホクセイウグイス",
-     "win_prob": 0.0824,
+     "win_prob": 0.0734,
      "rank": 5,
-     "odds": 10.6,
+     "odds": 12.8,
      "position": null,
      "result_time": null,
      "jockey": "阿部武",
      "gate": 6,
      "sled_kg": 490.0,
-     "popularity": 5,
+     "popularity": 6,
      "age": 2,
      "sex": "牝",
      "trainer": "林　豊（ばんえい）",
@@ -4801,8 +4794,8 @@
      "horse_class": "2sai",
      "year_form": 8.4,
      "promo_watch": null,
-     "place2": 0.1732,
-     "place3": 0.2728,
+     "place2": 0.1556,
+     "place3": 0.2476,
      "ability": 59.0,
      "jockey_switched": true,
      "fh_avg": 88.2,
@@ -4813,6 +4806,7 @@
      "agari_n": 4,
      "insider_flag": false,
      "insider_label_details": [],
+     "owner_flagged": true,
      "sled_prev": 480.0,
      "sled_diff": 10,
      "jockey_record": null,
@@ -4992,23 +4986,23 @@
       ]
      },
      "place3_time_avg": 129.3,
-     "p_market": 0.0752,
-     "win_prob_blend": 0.0815,
-     "ev": 0.86,
+     "p_market": 0.0623,
+     "win_prob_blend": 0.0678,
+     "ev": 0.87,
      "ev_buy": false
     },
     {
      "num": 2,
      "name": "オレニホレルナ",
-     "win_prob": 0.0695,
+     "win_prob": 0.0727,
      "rank": 6,
-     "odds": 10.6,
+     "odds": 13.4,
      "position": null,
      "result_time": null,
      "jockey": "松本秀",
      "gate": 2,
      "sled_kg": 510.0,
-     "popularity": 5,
+     "popularity": 7,
      "age": 2,
      "sex": "牡",
      "trainer": "大橋和（ばんえい）",
@@ -5023,8 +5017,8 @@
      "horse_class": "2sai",
      "year_form": 4.8,
      "promo_watch": null,
-     "place2": 0.1471,
-     "place3": 0.2338,
+     "place2": 0.1542,
+     "place3": 0.2455,
      "ability": 52.0,
      "jockey_switched": false,
      "fh_avg": 92.8,
@@ -5035,6 +5029,7 @@
      "agari_n": 5,
      "insider_flag": false,
      "insider_label_details": [],
+     "owner_flagged": false,
      "sled_prev": 500.0,
      "sled_diff": 10,
      "jockey_record": [
@@ -5257,23 +5252,23 @@
       ]
      },
      "place3_time_avg": 136.8,
-     "p_market": 0.0752,
-     "win_prob_blend": 0.0767,
-     "ev": 0.81,
+     "p_market": 0.0595,
+     "win_prob_blend": 0.0655,
+     "ev": 0.88,
      "ev_buy": false
     },
     {
      "num": 10,
      "name": "ニシキライデン",
-     "win_prob": 0.0604,
+     "win_prob": 0.0555,
      "rank": 7,
-     "odds": 8.0,
+     "odds": 8.5,
      "position": null,
      "result_time": null,
      "jockey": "長澤幸",
      "gate": 8,
      "sled_kg": 510.0,
-     "popularity": 4,
+     "popularity": 3,
      "age": 2,
      "sex": "牡",
      "trainer": "大河和（ばんえい）",
@@ -5288,8 +5283,8 @@
      "horse_class": "2sai",
      "year_form": 5.0,
      "promo_watch": null,
-     "place2": 0.1285,
-     "place3": 0.2054,
+     "place2": 0.1188,
+     "place3": 0.1913,
      "ability": 57.0,
      "jockey_switched": false,
      "fh_avg": 89.8,
@@ -5300,6 +5295,7 @@
      "agari_n": 4,
      "insider_flag": false,
      "insider_label_details": [],
+     "owner_flagged": true,
      "sled_prev": 500.0,
      "sled_diff": 10,
      "jockey_record": [
@@ -5541,17 +5537,17 @@
       ]
      },
      "place3_time_avg": 121.2,
-     "p_market": 0.0996,
-     "win_prob_blend": 0.0877,
-     "ev": 0.7,
+     "p_market": 0.0938,
+     "win_prob_blend": 0.0802,
+     "ev": 0.68,
      "ev_buy": false
     },
     {
      "num": 9,
      "name": "ミントココロノ",
-     "win_prob": 0.0552,
+     "win_prob": 0.0517,
      "rank": 8,
-     "odds": 0.0,
+     "odds": 40.2,
      "position": null,
      "result_time": null,
      "jockey": "大友一",
@@ -5572,8 +5568,8 @@
      "horse_class": "2sai",
      "year_form": 4.8,
      "promo_watch": null,
-     "place2": 0.1177,
-     "place3": 0.1889,
+     "place2": 0.1109,
+     "place3": 0.179,
      "ability": 53.1,
      "jockey_switched": false,
      "fh_avg": 93.2,
@@ -5584,6 +5580,7 @@
      "agari_n": 5,
      "insider_flag": false,
      "insider_label_details": [],
+     "owner_flagged": true,
      "sled_prev": 480.0,
      "sled_diff": 10,
      "jockey_record": [
@@ -5768,23 +5765,23 @@
       ]
      },
      "place3_time_avg": 145.4,
-     "p_market": null,
-     "win_prob_blend": null,
-     "ev": null,
-     "ev_buy": false
+     "p_market": 0.0198,
+     "win_prob_blend": 0.0285,
+     "ev": 1.15,
+     "ev_buy": true
     },
     {
      "num": 7,
      "name": "ヴルールシュクセ",
-     "win_prob": 0.0457,
+     "win_prob": 0.0419,
      "rank": 9,
-     "odds": 0.0,
+     "odds": 28.1,
      "position": null,
      "result_time": null,
      "jockey": "島津新",
      "gate": 7,
      "sled_kg": 510.0,
-     "popularity": 9,
+     "popularity": 8,
      "age": 2,
      "sex": "牡",
      "trainer": "林　豊（ばんえい）",
@@ -5799,8 +5796,8 @@
      "horse_class": "2sai",
      "year_form": 3.4,
      "promo_watch": null,
-     "place2": 0.0979,
-     "place3": 0.1581,
+     "place2": 0.0903,
+     "place3": 0.1467,
      "ability": 51.9,
      "jockey_switched": false,
      "fh_avg": 83.0,
@@ -5811,6 +5808,7 @@
      "agari_n": 4,
      "insider_flag": false,
      "insider_label_details": [],
+     "owner_flagged": true,
      "sled_prev": 500.0,
      "sled_diff": 10,
      "jockey_record": [
@@ -5976,23 +5974,23 @@
       ]
      },
      "place3_time_avg": 150.2,
-     "p_market": null,
-     "win_prob_blend": null,
-     "ev": null,
+     "p_market": 0.0284,
+     "win_prob_blend": 0.0334,
+     "ev": 0.94,
      "ev_buy": false
     },
     {
      "num": 5,
      "name": "パリスエンジェル",
-     "win_prob": 0.0175,
+     "win_prob": 0.0181,
      "rank": 10,
-     "odds": 32.0,
+     "odds": 40.2,
      "position": null,
      "result_time": null,
      "jockey": "中原蓮",
      "gate": 5,
      "sled_kg": 490.0,
-     "popularity": 8,
+     "popularity": 9,
      "age": 2,
      "sex": "牝",
      "trainer": "今井茂（ばんえい）",
@@ -6007,8 +6005,8 @@
      "horse_class": "2sai",
      "year_form": 3.2,
      "promo_watch": null,
-     "place2": 0.038,
-     "place3": 0.0624,
+     "place2": 0.0395,
+     "place3": 0.065,
      "ability": 50.8,
      "jockey_switched": false,
      "fh_avg": 89.5,
@@ -6019,6 +6017,7 @@
      "agari_n": 4,
      "insider_flag": false,
      "insider_label_details": [],
+     "owner_flagged": false,
      "sled_prev": 480.0,
      "sled_diff": 10,
      "jockey_record": [
@@ -6260,9 +6259,9 @@
       ]
      },
      "place3_time_avg": 117.7,
-     "p_market": 0.0249,
-     "win_prob_blend": 0.0231,
-     "ev": 0.74,
+     "p_market": 0.0198,
+     "win_prob_blend": 0.0197,
+     "ev": 0.79,
      "ev_buy": false
     }
    ],
@@ -6279,7 +6278,7 @@
    "race_no": 3,
    "race_name": "霊視鑑定士白龍誕生日記念２歳Ｃ－１",
    "class": "C1",
-   "moisture": null,
+   "moisture": 1.1,
    "field_size": 10,
    "post_time": "15:50",
    "win_time": null,
@@ -6287,14 +6286,14 @@
    "market_fav": 2,
    "winner": null,
    "update_stage": "pre",
-   "updated_at": "2026-09-26 12:30",
+   "updated_at": "2026-09-26 14:39",
    "horses": [
     {
      "num": 6,
      "name": "マルホンエルフ",
      "win_prob": 0.2453,
      "rank": 1,
-     "odds": 3.5,
+     "odds": 5.1,
      "position": null,
      "result_time": null,
      "jockey": "臼杵龍",
@@ -6327,6 +6326,7 @@
      "agari_n": 5,
      "insider_flag": false,
      "insider_label_details": [],
+     "owner_flagged": true,
      "sled_prev": 500.0,
      "sled_diff": 10,
      "jockey_record": [
@@ -6530,9 +6530,9 @@
       ]
      },
      "place3_time_avg": 104.8,
-     "p_market": 0.2264,
-     "win_prob_blend": 0.2593,
-     "ev": 0.91,
+     "p_market": 0.156,
+     "win_prob_blend": 0.1959,
+     "ev": 1.0,
      "ev_buy": false
     },
     {
@@ -6540,13 +6540,13 @@
      "name": "マナザシ",
      "win_prob": 0.1781,
      "rank": 2,
-     "odds": 8.8,
+     "odds": 8.4,
      "position": null,
      "result_time": null,
      "jockey": "今井千",
      "gate": 8,
      "sled_kg": 490.0,
-     "popularity": 4,
+     "popularity": 5,
      "age": 2,
      "sex": "牝",
      "trainer": "鈴木邦（ばんえい）",
@@ -6573,6 +6573,7 @@
      "agari_n": 5,
      "insider_flag": false,
      "insider_label_details": [],
+     "owner_flagged": false,
      "sled_prev": 490.0,
      "sled_diff": 0,
      "jockey_record": [
@@ -6776,9 +6777,9 @@
       ]
      },
      "place3_time_avg": 124.5,
-     "p_market": 0.09,
-     "win_prob_blend": 0.1273,
-     "ev": 1.12,
+     "p_market": 0.0947,
+     "win_prob_blend": 0.1266,
+     "ev": 1.06,
      "ev_buy": true
     },
     {
@@ -6786,13 +6787,13 @@
      "name": "メオトコトブキ",
      "win_prob": 0.1596,
      "rank": 3,
-     "odds": 17.6,
+     "odds": 16.8,
      "position": null,
      "result_time": null,
      "jockey": "西将太",
      "gate": 7,
      "sled_kg": 520.0,
-     "popularity": 5,
+     "popularity": 7,
      "age": 2,
      "sex": "牡",
      "trainer": "平田義（ばんえい）",
@@ -6819,6 +6820,7 @@
      "agari_n": 4,
      "insider_flag": false,
      "insider_label_details": [],
+     "owner_flagged": false,
      "sled_prev": 520.0,
      "sled_diff": 0,
      "jockey_record": [
@@ -7003,9 +7005,9 @@
       ]
      },
      "place3_time_avg": 130.0,
-     "p_market": 0.045,
-     "win_prob_blend": 0.0781,
-     "ev": 1.37,
+     "p_market": 0.0474,
+     "win_prob_blend": 0.0777,
+     "ev": 1.3,
      "ev_buy": true
     },
     {
@@ -7013,13 +7015,13 @@
      "name": "ジェイインター",
      "win_prob": 0.1018,
      "rank": 4,
-     "odds": 17.6,
+     "odds": 5.6,
      "position": null,
      "result_time": null,
      "jockey": "金田利",
      "gate": 1,
      "sled_kg": 520.0,
-     "popularity": 5,
+     "popularity": 3,
      "age": 2,
      "sex": "牡",
      "trainer": "藤本匠（ばんえい）",
@@ -7046,6 +7048,7 @@
      "agari_n": 5,
      "insider_flag": false,
      "insider_label_details": [],
+     "owner_flagged": true,
      "sled_prev": 510.0,
      "sled_diff": 10,
      "jockey_record": [
@@ -7268,17 +7271,17 @@
       ]
      },
      "place3_time_avg": 135.5,
-     "p_market": 0.045,
-     "win_prob_blend": 0.0667,
-     "ev": 1.17,
-     "ev_buy": true
+     "p_market": 0.1421,
+     "win_prob_blend": 0.1355,
+     "ev": 0.76,
+     "ev_buy": false
     },
     {
      "num": 2,
      "name": "ジェットクイーン",
      "win_prob": 0.0754,
      "rank": 5,
-     "odds": 2.3,
+     "odds": 2.9,
      "position": null,
      "result_time": null,
      "jockey": "村上章",
@@ -7311,6 +7314,7 @@
      "agari_n": 4,
      "insider_flag": false,
      "insider_label_details": [],
+     "owner_flagged": false,
      "sled_prev": 500.0,
      "sled_diff": 0,
      "jockey_record": [
@@ -7533,9 +7537,9 @@
       ]
      },
      "place3_time_avg": 145.6,
-     "p_market": 0.3445,
-     "win_prob_blend": 0.2255,
-     "ev": 0.52,
+     "p_market": 0.2744,
+     "win_prob_blend": 0.1871,
+     "ev": 0.54,
      "ev_buy": false
     },
     {
@@ -7543,13 +7547,13 @@
      "name": "ミナトシンザン",
      "win_prob": 0.0655,
      "rank": 6,
-     "odds": 17.6,
+     "odds": 19.2,
      "position": null,
      "result_time": null,
      "jockey": "西謙一",
      "gate": 4,
      "sled_kg": 520.0,
-     "popularity": 5,
+     "popularity": 8,
      "age": 2,
      "sex": "牡",
      "trainer": "西弘美（ばんえい）",
@@ -7576,6 +7580,7 @@
      "agari_n": 4,
      "insider_flag": false,
      "insider_label_details": [],
+     "owner_flagged": false,
      "sled_prev": 500.0,
      "sled_diff": 20,
      "jockey_record": [
@@ -7760,9 +7765,9 @@
       ]
      },
      "place3_time_avg": 127.5,
-     "p_market": 0.045,
-     "win_prob_blend": 0.0572,
-     "ev": 1.01,
+     "p_market": 0.0414,
+     "win_prob_blend": 0.0521,
+     "ev": 1.0,
      "ev_buy": true
     },
     {
@@ -7770,13 +7775,13 @@
      "name": "シンザンミハル",
      "win_prob": 0.0575,
      "rank": 7,
-     "odds": 17.6,
+     "odds": 22.4,
      "position": null,
      "result_time": null,
      "jockey": "阿部武",
      "gate": 7,
      "sled_kg": 500.0,
-     "popularity": 5,
+     "popularity": 10,
      "age": 2,
      "sex": "牝",
      "trainer": "森芳浩（ばんえい）",
@@ -7803,6 +7808,7 @@
      "agari_n": 4,
      "insider_flag": false,
      "insider_label_details": [],
+     "owner_flagged": false,
      "sled_prev": 500.0,
      "sled_diff": 0,
      "jockey_record": [
@@ -8006,23 +8012,23 @@
       ]
      },
      "place3_time_avg": 140.4,
-     "p_market": 0.045,
-     "win_prob_blend": 0.0546,
-     "ev": 0.96,
-     "ev_buy": false
+     "p_market": 0.0355,
+     "win_prob_blend": 0.0451,
+     "ev": 1.01,
+     "ev_buy": true
     },
     {
      "num": 5,
      "name": "アアモンドカイト",
      "win_prob": 0.0426,
      "rank": 8,
-     "odds": 5.8,
+     "odds": 7.4,
      "position": null,
      "result_time": null,
      "jockey": "菊池一",
      "gate": 5,
      "sled_kg": 520.0,
-     "popularity": 3,
+     "popularity": 4,
      "age": 2,
      "sex": "牡",
      "trainer": "村上慎（ばんえい）",
@@ -8049,6 +8055,7 @@
      "agari_n": 5,
      "insider_flag": false,
      "insider_label_details": [],
+     "owner_flagged": true,
      "sled_prev": 520.0,
      "sled_diff": 0,
      "jockey_record": [
@@ -8214,9 +8221,9 @@
       ]
      },
      "place3_time_avg": 132.7,
-     "p_market": 0.1366,
-     "win_prob_blend": 0.1012,
-     "ev": 0.59,
+     "p_market": 0.1075,
+     "win_prob_blend": 0.0833,
+     "ev": 0.62,
      "ev_buy": false
     },
     {
@@ -8224,13 +8231,13 @@
      "name": "マオノソレイユ",
      "win_prob": 0.0378,
      "rank": 9,
-     "odds": 35.2,
+     "odds": 13.4,
      "position": null,
      "result_time": null,
      "jockey": "阿部優",
      "gate": 3,
      "sled_kg": 520.0,
-     "popularity": 9,
+     "popularity": 6,
      "age": 2,
      "sex": "牡",
      "trainer": "藤本匠（ばんえい）",
@@ -8257,6 +8264,7 @@
      "agari_n": 4,
      "insider_flag": false,
      "insider_label_details": [],
+     "owner_flagged": false,
      "sled_prev": 520.0,
      "sled_diff": 0,
      "jockey_record": [
@@ -8479,23 +8487,23 @@
       ]
      },
      "place3_time_avg": 135.9,
-     "p_market": 0.0225,
-     "win_prob_blend": 0.0301,
-     "ev": 1.06,
-     "ev_buy": true
+     "p_market": 0.0594,
+     "win_prob_blend": 0.0543,
+     "ev": 0.73,
+     "ev_buy": false
     },
     {
      "num": 10,
      "name": "トト",
      "win_prob": 0.0363,
      "rank": 10,
-     "odds": 0.0,
+     "odds": 19.2,
      "position": null,
      "result_time": null,
      "jockey": "長澤幸",
      "gate": 8,
      "sled_kg": 520.0,
-     "popularity": 10,
+     "popularity": 8,
      "age": 2,
      "sex": "牡",
      "trainer": "服部義（ばんえい）",
@@ -8522,6 +8530,7 @@
      "agari_n": 4,
      "insider_flag": false,
      "insider_label_details": [],
+     "owner_flagged": true,
      "sled_prev": 520.0,
      "sled_diff": 0,
      "jockey_record": [
@@ -8706,9 +8715,9 @@
       ]
      },
      "place3_time_avg": 129.9,
-     "p_market": null,
-     "win_prob_blend": null,
-     "ev": null,
+     "p_market": 0.0414,
+     "win_prob_blend": 0.0424,
+     "ev": 0.81,
      "ev_buy": false
     }
    ],
@@ -8725,7 +8734,7 @@
    "race_no": 4,
    "race_name": "木下智史ぼっち贅沢慰安旅行Ｃ２－１",
    "class": "C2",
-   "moisture": null,
+   "moisture": 1.1,
    "field_size": 10,
    "post_time": "16:20",
    "win_time": null,
@@ -8733,20 +8742,20 @@
    "market_fav": 8,
    "winner": null,
    "update_stage": "pre",
-   "updated_at": "2026-09-26 12:30",
+   "updated_at": "2026-09-26 14:39",
    "horses": [
     {
      "num": 2,
      "name": "エムトップ",
      "win_prob": 0.2162,
      "rank": 1,
-     "odds": 17.6,
+     "odds": 3.9,
      "position": null,
      "result_time": null,
      "jockey": "臼杵龍",
      "gate": 2,
      "sled_kg": 610.0,
-     "popularity": 5,
+     "popularity": 2,
      "age": 3,
      "sex": "牡",
      "trainer": "金田勇（ばんえい）",
@@ -8776,6 +8785,7 @@
      "agari_n": 5,
      "insider_flag": false,
      "insider_label_details": [],
+     "owner_flagged": false,
      "sled_prev": 610.0,
      "sled_diff": 0,
      "jockey_record": [
@@ -9119,23 +9129,23 @@
       ]
      },
      "place3_time_avg": 127.1,
-     "p_market": 0.0454,
-     "win_prob_blend": 0.0918,
-     "ev": 1.61,
-     "ev_buy": true
+     "p_market": 0.2029,
+     "win_prob_blend": 0.2166,
+     "ev": 0.84,
+     "ev_buy": false
     },
     {
      "num": 7,
      "name": "マルホンカオン",
      "win_prob": 0.1523,
      "rank": 2,
-     "odds": 5.8,
+     "odds": 9.0,
      "position": null,
      "result_time": null,
      "jockey": "中原蓮",
      "gate": 7,
      "sled_kg": 620.0,
-     "popularity": 2,
+     "popularity": 5,
      "age": 3,
      "sex": "牡",
      "trainer": "小北栄（ばんえい）",
@@ -9165,6 +9175,7 @@
      "agari_n": 5,
      "insider_flag": false,
      "insider_label_details": [],
+     "owner_flagged": true,
      "sled_prev": 610.0,
      "sled_diff": 10,
      "jockey_record": [
@@ -9514,17 +9525,17 @@
       ]
      },
      "place3_time_avg": 120.9,
-     "p_market": 0.1377,
-     "win_prob_blend": 0.167,
-     "ev": 0.97,
-     "ev_buy": false
+     "p_market": 0.0879,
+     "win_prob_blend": 0.1113,
+     "ev": 1.0,
+     "ev_buy": true
     },
     {
      "num": 8,
      "name": "ジェイワンダー",
      "win_prob": 0.1338,
      "rank": 3,
-     "odds": 1.6,
+     "odds": 2.7,
      "position": null,
      "result_time": null,
      "jockey": "鈴木恵",
@@ -9560,6 +9571,7 @@
      "agari_n": 4,
      "insider_flag": false,
      "insider_label_details": [],
+     "owner_flagged": true,
      "sled_prev": 610.0,
      "sled_diff": 10,
      "jockey_record": [
@@ -9939,9 +9951,9 @@
       ]
      },
      "place3_time_avg": 130.9,
-     "p_market": 0.4992,
-     "win_prob_blend": 0.3686,
-     "ev": 0.59,
+     "p_market": 0.2931,
+     "win_prob_blend": 0.2326,
+     "ev": 0.63,
      "ev_buy": false
     },
     {
@@ -9949,7 +9961,7 @@
      "name": "ウル",
      "win_prob": 0.1106,
      "rank": 4,
-     "odds": 8.8,
+     "odds": 6.2,
      "position": null,
      "result_time": null,
      "jockey": "金田利",
@@ -9985,6 +9997,7 @@
      "agari_n": 5,
      "insider_flag": false,
      "insider_label_details": [],
+     "owner_flagged": false,
      "sled_prev": 600.0,
      "sled_diff": 20,
      "jockey_record": [
@@ -10292,23 +10305,23 @@
       ]
      },
      "place3_time_avg": 126.4,
-     "p_market": 0.0908,
-     "win_prob_blend": 0.1139,
-     "ev": 1.0,
-     "ev_buy": true
+     "p_market": 0.1276,
+     "win_prob_blend": 0.1268,
+     "ev": 0.79,
+     "ev_buy": false
     },
     {
      "num": 4,
      "name": "ガオノチカラ",
      "win_prob": 0.0897,
      "rank": 5,
-     "odds": 0.0,
+     "odds": 99.2,
      "position": null,
      "result_time": null,
      "jockey": "長澤幸",
      "gate": 4,
      "sled_kg": 620.0,
-     "popularity": 9,
+     "popularity": 10,
      "age": 3,
      "sex": "牡",
      "trainer": "小北栄（ばんえい）",
@@ -10345,6 +10358,7 @@
        "note": ""
       }
      ],
+     "owner_flagged": true,
      "sled_prev": 610.0,
      "sled_diff": 10,
      "jockey_record": [
@@ -10718,23 +10732,23 @@
       ]
      },
      "place3_time_avg": 112.2,
-     "p_market": null,
-     "win_prob_blend": null,
-     "ev": null,
-     "ev_buy": false
+     "p_market": 0.008,
+     "win_prob_blend": 0.0194,
+     "ev": 1.93,
+     "ev_buy": true
     },
     {
      "num": 5,
      "name": "ジェイワールド",
      "win_prob": 0.0828,
      "rank": 6,
-     "odds": 17.6,
+     "odds": 19.8,
      "position": null,
      "result_time": null,
      "jockey": "西将太",
      "gate": 5,
      "sled_kg": 620.0,
-     "popularity": 5,
+     "popularity": 8,
      "age": 3,
      "sex": "牡",
      "trainer": "金山明（ばんえい）",
@@ -10764,6 +10778,7 @@
      "agari_n": 5,
      "insider_flag": false,
      "insider_label_details": [],
+     "owner_flagged": true,
      "sled_prev": 610.0,
      "sled_diff": 10,
      "jockey_record": [
@@ -11143,9 +11158,9 @@
       ]
      },
      "place3_time_avg": 127.8,
-     "p_market": 0.0454,
-     "win_prob_blend": 0.0656,
-     "ev": 1.15,
+     "p_market": 0.04,
+     "win_prob_blend": 0.0539,
+     "ev": 1.07,
      "ev_buy": true
     },
     {
@@ -11153,13 +11168,13 @@
      "name": "ホクセイセンショー",
      "win_prob": 0.0787,
      "rank": 7,
-     "odds": 17.6,
+     "odds": 8.2,
      "position": null,
      "result_time": null,
      "jockey": "島津新",
      "gate": 6,
      "sled_kg": 620.0,
-     "popularity": 5,
+     "popularity": 4,
      "age": 3,
      "sex": "牡",
      "trainer": "岩本利（ばんえい）",
@@ -11186,6 +11201,7 @@
      "agari_n": 4,
      "insider_flag": false,
      "insider_label_details": [],
+     "owner_flagged": true,
      "sled_prev": 610.0,
      "sled_diff": 10,
      "jockey_record": [
@@ -11547,23 +11563,23 @@
       ]
      },
      "place3_time_avg": 122.3,
-     "p_market": 0.0454,
-     "win_prob_blend": 0.0644,
-     "ev": 1.13,
-     "ev_buy": true
+     "p_market": 0.0965,
+     "win_prob_blend": 0.0938,
+     "ev": 0.77,
+     "ev_buy": false
     },
     {
      "num": 9,
      "name": "ストロングモモ",
      "win_prob": 0.0619,
      "rank": 8,
-     "odds": 0.0,
+     "odds": 16.5,
      "position": null,
      "result_time": null,
      "jockey": "船山蔵",
      "gate": 8,
      "sled_kg": 600.0,
-     "popularity": 9,
+     "popularity": 7,
      "age": 3,
      "sex": "牝",
      "trainer": "小林長（ばんえい）",
@@ -11593,6 +11609,7 @@
      "agari_n": 5,
      "insider_flag": false,
      "insider_label_details": [],
+     "owner_flagged": false,
      "sled_prev": 590.0,
      "sled_diff": 10,
      "jockey_record": [
@@ -11948,9 +11965,9 @@
       ]
      },
      "place3_time_avg": 126.6,
-     "p_market": null,
-     "win_prob_blend": null,
-     "ev": null,
+     "p_market": 0.048,
+     "win_prob_blend": 0.0548,
+     "ev": 0.9,
      "ev_buy": false
     },
     {
@@ -11958,13 +11975,13 @@
      "name": "トウマオー",
      "win_prob": 0.0473,
      "rank": 9,
-     "odds": 8.8,
+     "odds": 11.0,
      "position": null,
      "result_time": null,
      "jockey": "渡来心",
      "gate": 1,
      "sled_kg": 620.0,
-     "popularity": 3,
+     "popularity": 6,
      "age": 3,
      "sex": "牡",
      "trainer": "大河和（ばんえい）",
@@ -11998,6 +12015,7 @@
        "note": ""
       }
      ],
+     "owner_flagged": true,
      "sled_prev": 610.0,
      "sled_diff": 10,
      "jockey_record": null,
@@ -12378,9 +12396,9 @@
       ]
      },
      "place3_time_avg": 132.4,
-     "p_market": 0.0908,
-     "win_prob_blend": 0.0846,
-     "ev": 0.74,
+     "p_market": 0.0719,
+     "win_prob_blend": 0.0649,
+     "ev": 0.71,
      "ev_buy": false
     },
     {
@@ -12388,13 +12406,13 @@
      "name": "ジェイパワー",
      "win_prob": 0.0267,
      "rank": 10,
-     "odds": 17.6,
+     "odds": 33.0,
      "position": null,
      "result_time": null,
      "jockey": "中村太",
      "gate": 3,
      "sled_kg": 620.0,
-     "popularity": 5,
+     "popularity": 9,
      "age": 3,
      "sex": "牡",
      "trainer": "小林長（ばんえい）",
@@ -12424,6 +12442,7 @@
      "agari_n": 5,
      "insider_flag": false,
      "insider_label_details": [],
+     "owner_flagged": true,
      "sled_prev": 610.0,
      "sled_diff": 10,
      "jockey_record": [
@@ -12779,9 +12798,9 @@
       ]
      },
      "place3_time_avg": 119.0,
-     "p_market": 0.0454,
-     "win_prob_blend": 0.0441,
-     "ev": 0.78,
+     "p_market": 0.024,
+     "win_prob_blend": 0.026,
+     "ev": 0.86,
      "ev_buy": false
     }
    ],
@@ -12798,7 +12817,7 @@
    "race_no": 5,
    "race_name": "朔乃レイ誕生日杯Ｃ１－７",
    "class": "C1",
-   "moisture": null,
+   "moisture": 1.1,
    "field_size": 9,
    "post_time": "16:50",
    "win_time": null,
@@ -12806,14 +12825,14 @@
    "market_fav": 7,
    "winner": null,
    "update_stage": "pre",
-   "updated_at": "2026-09-26 12:30",
+   "updated_at": "2026-09-26 14:39",
    "horses": [
     {
      "num": 7,
      "name": "キタサカエヒメコ",
      "win_prob": 0.1829,
      "rank": 1,
-     "odds": 1.3,
+     "odds": 2.5,
      "position": null,
      "result_time": null,
      "jockey": "鈴木恵",
@@ -12846,6 +12865,7 @@
      "agari_n": 5,
      "insider_flag": false,
      "insider_label_details": [],
+     "owner_flagged": false,
      "sled_prev": 590.0,
      "sled_diff": 20,
      "jockey_record": [
@@ -13351,9 +13371,9 @@
       ]
      },
      "place3_time_avg": 129.6,
-     "p_market": 0.5912,
-     "win_prob_blend": 0.4638,
-     "ev": 0.6,
+     "p_market": 0.3162,
+     "win_prob_blend": 0.3017,
+     "ev": 0.75,
      "ev_buy": false
     },
     {
@@ -13361,7 +13381,7 @@
      "name": "ジェイノホマレ",
      "win_prob": 0.1722,
      "rank": 2,
-     "odds": 16.0,
+     "odds": 11.8,
      "position": null,
      "result_time": null,
      "jockey": "阿部優",
@@ -13397,6 +13417,7 @@
      "agari_n": 4,
      "insider_flag": false,
      "insider_label_details": [],
+     "owner_flagged": true,
      "sled_prev": 600.0,
      "sled_diff": 10,
      "jockey_record": [
@@ -13746,9 +13767,9 @@
       ]
      },
      "place3_time_avg": 106.2,
-     "p_market": 0.048,
-     "win_prob_blend": 0.0888,
-     "ev": 1.42,
+     "p_market": 0.067,
+     "win_prob_blend": 0.1077,
+     "ev": 1.27,
      "ev_buy": true
     },
     {
@@ -13756,13 +13777,13 @@
      "name": "ビクトリーイサム",
      "win_prob": 0.1688,
      "rank": 3,
-     "odds": 16.0,
+     "odds": 35.4,
      "position": null,
      "result_time": null,
      "jockey": "吉田理",
      "gate": 4,
      "sled_kg": 620.0,
-     "popularity": 4,
+     "popularity": 8,
      "age": 3,
      "sex": "牡",
      "trainer": "小北栄（ばんえい）",
@@ -13789,6 +13810,7 @@
      "agari_n": 4,
      "insider_flag": false,
      "insider_label_details": [],
+     "owner_flagged": false,
      "sled_prev": 620.0,
      "sled_diff": 0,
      "jockey_record": null,
@@ -14163,9 +14185,9 @@
       ]
      },
      "place3_time_avg": 126.7,
-     "p_market": 0.048,
-     "win_prob_blend": 0.0882,
-     "ev": 1.41,
+     "p_market": 0.0223,
+     "win_prob_blend": 0.0524,
+     "ev": 1.85,
      "ev_buy": true
     },
     {
@@ -14173,13 +14195,13 @@
      "name": "カネオー",
      "win_prob": 0.1497,
      "rank": 4,
-     "odds": 16.0,
+     "odds": 15.2,
      "position": null,
      "result_time": null,
      "jockey": "阿部武",
      "gate": 1,
      "sled_kg": 630.0,
-     "popularity": 4,
+     "popularity": 5,
      "age": 3,
      "sex": "牡",
      "trainer": "坂本東（ばんえい）",
@@ -14206,6 +14228,7 @@
      "agari_n": 4,
      "insider_flag": false,
      "insider_label_details": [],
+     "owner_flagged": false,
      "sled_prev": 620.0,
      "sled_diff": 10,
      "jockey_record": [
@@ -14585,9 +14608,9 @@
       ]
      },
      "place3_time_avg": 121.7,
-     "p_market": 0.048,
-     "win_prob_blend": 0.0846,
-     "ev": 1.35,
+     "p_market": 0.052,
+     "win_prob_blend": 0.087,
+     "ev": 1.32,
      "ev_buy": true
     },
     {
@@ -14595,13 +14618,13 @@
      "name": "センショウロック",
      "win_prob": 0.1355,
      "rank": 5,
-     "odds": 0.0,
+     "odds": 21.2,
      "position": null,
      "result_time": null,
      "jockey": "渡来心",
      "gate": 3,
      "sled_kg": 630.0,
-     "popularity": 9,
+     "popularity": 6,
      "age": 4,
      "sex": "牡",
      "trainer": "岩本利（ばんえい）",
@@ -14628,6 +14651,7 @@
      "agari_n": 5,
      "insider_flag": false,
      "insider_label_details": [],
+     "owner_flagged": true,
      "sled_prev": 620.0,
      "sled_diff": 10,
      "jockey_record": null,
@@ -15122,23 +15146,23 @@
       ]
      },
      "place3_time_avg": 131.7,
-     "p_market": null,
-     "win_prob_blend": null,
-     "ev": null,
-     "ev_buy": false
+     "p_market": 0.0373,
+     "win_prob_blend": 0.0677,
+     "ev": 1.44,
+     "ev_buy": true
     },
     {
      "num": 9,
      "name": "ホクセイミハル",
      "win_prob": 0.0693,
      "rank": 6,
-     "odds": 6.4,
+     "odds": 5.3,
      "position": null,
      "result_time": null,
      "jockey": "今井千",
      "gate": 8,
      "sled_kg": 600.0,
-     "popularity": 2,
+     "popularity": 3,
      "age": 4,
      "sex": "牝",
      "trainer": "長部幸（ばんえい）",
@@ -15165,6 +15189,7 @@
      "agari_n": 5,
      "insider_flag": false,
      "insider_label_details": [],
+     "owner_flagged": true,
      "sled_prev": 600.0,
      "sled_diff": 0,
      "jockey_record": [
@@ -15670,9 +15695,9 @@
       ]
      },
      "place3_time_avg": 139.2,
-     "p_market": 0.1201,
-     "win_prob_blend": 0.1172,
-     "ev": 0.75,
+     "p_market": 0.1491,
+     "win_prob_blend": 0.1318,
+     "ev": 0.7,
      "ev_buy": false
     },
     {
@@ -15680,13 +15705,13 @@
      "name": "カナデ",
      "win_prob": 0.0484,
      "rank": 7,
-     "odds": 10.6,
+     "odds": 2.6,
      "position": null,
      "result_time": null,
      "jockey": "赤塚健",
      "gate": 8,
      "sled_kg": 610.0,
-     "popularity": 3,
+     "popularity": 2,
      "age": 4,
      "sex": "牝",
      "trainer": "岩本利（ばんえい）",
@@ -15713,6 +15738,7 @@
      "agari_n": 5,
      "insider_flag": false,
      "insider_label_details": [],
+     "owner_flagged": true,
      "sled_prev": 600.0,
      "sled_diff": 10,
      "jockey_record": [
@@ -16176,9 +16202,9 @@
       ]
      },
      "place3_time_avg": 129.9,
-     "p_market": 0.0725,
-     "win_prob_blend": 0.0744,
-     "ev": 0.79,
+     "p_market": 0.304,
+     "win_prob_blend": 0.1847,
+     "ev": 0.48,
      "ev_buy": false
     },
     {
@@ -16186,7 +16212,7 @@
      "name": "シンエイパーク",
      "win_prob": 0.0433,
      "rank": 8,
-     "odds": 32.0,
+     "odds": 35.4,
      "position": null,
      "result_time": null,
      "jockey": "西将太",
@@ -16219,6 +16245,7 @@
      "agari_n": 4,
      "insider_flag": false,
      "insider_label_details": [],
+     "owner_flagged": true,
      "sled_prev": 600.0,
      "sled_diff": 10,
      "jockey_record": [
@@ -16748,9 +16775,9 @@
       ]
      },
      "place3_time_avg": 134.7,
-     "p_market": 0.024,
-     "win_prob_blend": 0.0349,
-     "ev": 1.12,
+     "p_market": 0.0223,
+     "win_prob_blend": 0.0325,
+     "ev": 1.15,
      "ev_buy": true
     },
     {
@@ -16758,13 +16785,13 @@
      "name": "コマサンクリスタル",
      "win_prob": 0.0299,
      "rank": 9,
-     "odds": 16.0,
+     "odds": 26.6,
      "position": null,
      "result_time": null,
      "jockey": "中原蓮",
      "gate": 5,
      "sled_kg": 630.0,
-     "popularity": 4,
+     "popularity": 7,
      "age": 4,
      "sex": "牡",
      "trainer": "金田勇（ばんえい）",
@@ -16791,6 +16818,7 @@
      "agari_n": 3,
      "insider_flag": false,
      "insider_label_details": [],
+     "owner_flagged": true,
      "sled_prev": 620.0,
      "sled_diff": 10,
      "jockey_record": [
@@ -17272,9 +17300,9 @@
       ]
      },
      "place3_time_avg": 138.2,
-     "p_market": 0.048,
-     "win_prob_blend": 0.0481,
-     "ev": 0.77,
+     "p_market": 0.0297,
+     "win_prob_blend": 0.0344,
+     "ev": 0.92,
      "ev_buy": false
     }
    ],
@@ -17291,7 +17319,7 @@
    "race_no": 6,
    "race_name": "ありさ、大輝来場記念２歳Ｂ－３",
    "class": "B3",
-   "moisture": null,
+   "moisture": 1.1,
    "field_size": 10,
    "post_time": "17:25",
    "win_time": null,
@@ -17299,14 +17327,14 @@
    "market_fav": 3,
    "winner": null,
    "update_stage": "pre",
-   "updated_at": "2026-09-26 12:30",
+   "updated_at": "2026-09-26 14:39",
    "horses": [
     {
      "num": 3,
      "name": "シンゲキノハルキ",
      "win_prob": 0.2409,
      "rank": 1,
-     "odds": 1.5,
+     "odds": 3.6,
      "position": null,
      "result_time": null,
      "jockey": "菊池一",
@@ -17339,6 +17367,7 @@
      "agari_n": 5,
      "insider_flag": false,
      "insider_label_details": [],
+     "owner_flagged": true,
      "sled_prev": 520.0,
      "sled_diff": 10,
      "jockey_record": [
@@ -17561,9 +17590,9 @@
       ]
      },
      "place3_time_avg": 117.5,
-     "p_market": 0.5272,
-     "win_prob_blend": 0.4585,
-     "ev": 0.69,
+     "p_market": 0.2202,
+     "win_prob_blend": 0.2365,
+     "ev": 0.85,
      "ev_buy": false
     },
     {
@@ -17571,7 +17600,7 @@
      "name": "ヒノクニスピード",
      "win_prob": 0.2094,
      "rank": 2,
-     "odds": 18.4,
+     "odds": 10.1,
      "position": null,
      "result_time": null,
      "jockey": "金田利",
@@ -17604,6 +17633,7 @@
      "agari_n": 3,
      "insider_flag": false,
      "insider_label_details": [],
+     "owner_flagged": false,
      "sled_prev": 510.0,
      "sled_diff": 20,
      "jockey_record": [
@@ -17731,9 +17761,9 @@
       ]
      },
      "place3_time_avg": 116.9,
-     "p_market": 0.043,
-     "win_prob_blend": 0.0856,
-     "ev": 1.57,
+     "p_market": 0.0785,
+     "win_prob_blend": 0.1152,
+     "ev": 1.16,
      "ev_buy": true
     },
     {
@@ -17741,13 +17771,13 @@
      "name": "ガッツデー",
      "win_prob": 0.1082,
      "rank": 3,
-     "odds": 9.2,
+     "odds": 8.2,
      "position": null,
      "result_time": null,
      "jockey": "鈴木恵",
      "gate": 7,
      "sled_kg": 530.0,
-     "popularity": 3,
+     "popularity": 4,
      "age": 2,
      "sex": "牡",
      "trainer": "松田道（ばんえい）",
@@ -17774,6 +17804,7 @@
      "agari_n": 5,
      "insider_flag": false,
      "insider_label_details": [],
+     "owner_flagged": true,
      "sled_prev": 510.0,
      "sled_diff": 20,
      "jockey_record": [
@@ -17977,9 +18008,9 @@
       ]
      },
      "place3_time_avg": 113.1,
-     "p_market": 0.086,
-     "win_prob_blend": 0.1066,
-     "ev": 0.98,
+     "p_market": 0.0967,
+     "win_prob_blend": 0.1047,
+     "ev": 0.86,
      "ev_buy": false
     },
     {
@@ -17987,13 +18018,13 @@
      "name": "マオノジュピター",
      "win_prob": 0.097,
      "rank": 4,
-     "odds": 18.4,
+     "odds": 4.5,
      "position": null,
      "result_time": null,
      "jockey": "西謙一",
      "gate": 8,
      "sled_kg": 530.0,
-     "popularity": 5,
+     "popularity": 2,
      "age": 2,
      "sex": "牡",
      "trainer": "松井浩（ばんえい）",
@@ -18020,6 +18051,7 @@
      "agari_n": 5,
      "insider_flag": false,
      "insider_label_details": [],
+     "owner_flagged": false,
      "sled_prev": 520.0,
      "sled_diff": 10,
      "jockey_record": [
@@ -18261,23 +18293,23 @@
       ]
      },
      "place3_time_avg": 125.4,
-     "p_market": 0.043,
-     "win_prob_blend": 0.0654,
-     "ev": 1.2,
-     "ev_buy": true
+     "p_market": 0.1762,
+     "win_prob_blend": 0.1488,
+     "ev": 0.67,
+     "ev_buy": false
     },
     {
      "num": 7,
      "name": "ロキノクラン",
      "win_prob": 0.077,
      "rank": 5,
-     "odds": 0.0,
+     "odds": 30.4,
      "position": null,
      "result_time": null,
      "jockey": "大友一",
      "gate": 7,
      "sled_kg": 510.0,
-     "popularity": 8,
+     "popularity": 10,
      "age": 2,
      "sex": "牝",
      "trainer": "大友人（ばんえい）",
@@ -18304,6 +18336,7 @@
      "agari_n": 4,
      "insider_flag": false,
      "insider_label_details": [],
+     "owner_flagged": false,
      "sled_prev": 500.0,
      "sled_diff": 10,
      "jockey_record": [
@@ -18507,23 +18540,23 @@
       ]
      },
      "place3_time_avg": 116.2,
-     "p_market": null,
-     "win_prob_blend": null,
-     "ev": null,
-     "ev_buy": false
+     "p_market": 0.0261,
+     "win_prob_blend": 0.0396,
+     "ev": 1.21,
+     "ev_buy": true
     },
     {
      "num": 5,
      "name": "トウメイクイン",
      "win_prob": 0.0755,
      "rank": 6,
-     "odds": 9.2,
+     "odds": 11.4,
      "position": null,
      "result_time": null,
      "jockey": "長澤幸",
      "gate": 5,
      "sled_kg": 510.0,
-     "popularity": 3,
+     "popularity": 6,
      "age": 2,
      "sex": "牝",
      "trainer": "服部義（ばんえい）",
@@ -18550,6 +18583,7 @@
      "agari_n": 5,
      "insider_flag": false,
      "insider_label_details": [],
+     "owner_flagged": false,
      "sled_prev": 500.0,
      "sled_diff": 10,
      "jockey_record": [
@@ -18753,9 +18787,9 @@
       ]
      },
      "place3_time_avg": 117.8,
-     "p_market": 0.086,
-     "win_prob_blend": 0.094,
-     "ev": 0.86,
+     "p_market": 0.0695,
+     "win_prob_blend": 0.0745,
+     "ev": 0.85,
      "ev_buy": false
     },
     {
@@ -18763,7 +18797,7 @@
      "name": "リオンハート",
      "win_prob": 0.0663,
      "rank": 7,
-     "odds": 4.6,
+     "odds": 4.5,
      "position": null,
      "result_time": null,
      "jockey": "今井千",
@@ -18796,6 +18830,7 @@
      "agari_n": 4,
      "insider_flag": false,
      "insider_label_details": [],
+     "owner_flagged": true,
      "sled_prev": 480.0,
      "sled_diff": 20,
      "jockey_record": [
@@ -18923,9 +18958,9 @@
       ]
      },
      "place3_time_avg": 132.9,
-     "p_market": 0.1719,
-     "win_prob_blend": 0.1409,
-     "ev": 0.65,
+     "p_market": 0.1762,
+     "win_prob_blend": 0.1302,
+     "ev": 0.59,
      "ev_buy": false
     },
     {
@@ -18933,13 +18968,13 @@
      "name": "フブキライデン",
      "win_prob": 0.0491,
      "rank": 8,
-     "odds": 0.0,
+     "odds": 11.4,
      "position": null,
      "result_time": null,
      "jockey": "渡来心",
      "gate": 6,
      "sled_kg": 530.0,
-     "popularity": 8,
+     "popularity": 6,
      "age": 2,
      "sex": "牡",
      "trainer": "大河和（ばんえい）",
@@ -18966,6 +19001,7 @@
      "agari_n": 5,
      "insider_flag": false,
      "insider_label_details": [],
+     "owner_flagged": true,
      "sled_prev": 520.0,
      "sled_diff": 10,
      "jockey_record": null,
@@ -19183,9 +19219,9 @@
       ]
      },
      "place3_time_avg": 115.5,
-     "p_market": null,
-     "win_prob_blend": null,
-     "ev": null,
+     "p_market": 0.0695,
+     "win_prob_blend": 0.0641,
+     "ev": 0.73,
      "ev_buy": false
     },
     {
@@ -19193,13 +19229,13 @@
      "name": "イワキファンファン",
      "win_prob": 0.0427,
      "rank": 9,
-     "odds": 18.4,
+     "odds": 18.2,
      "position": null,
      "result_time": null,
      "jockey": "島津新",
      "gate": 4,
      "sled_kg": 510.0,
-     "popularity": 5,
+     "popularity": 8,
      "age": 2,
      "sex": "牝",
      "trainer": "小林長（ばんえい）",
@@ -19226,6 +19262,7 @@
      "agari_n": 5,
      "insider_flag": false,
      "insider_label_details": [],
+     "owner_flagged": true,
      "sled_prev": 500.0,
      "sled_diff": 10,
      "jockey_record": [
@@ -19448,9 +19485,9 @@
       ]
      },
      "place3_time_avg": 113.3,
-     "p_market": 0.043,
-     "win_prob_blend": 0.0491,
-     "ev": 0.9,
+     "p_market": 0.0436,
+     "win_prob_blend": 0.045,
+     "ev": 0.82,
      "ev_buy": false
     },
     {
@@ -19458,7 +19495,7 @@
      "name": "プリンセスエア",
      "win_prob": 0.0339,
      "rank": 10,
-     "odds": 0.0,
+     "odds": 18.2,
      "position": null,
      "result_time": null,
      "jockey": "中原蓮",
@@ -19491,6 +19528,7 @@
      "agari_n": 5,
      "insider_flag": false,
      "insider_label_details": [],
+     "owner_flagged": true,
      "sled_prev": 500.0,
      "sled_diff": 10,
      "jockey_record": null,
@@ -19670,9 +19708,9 @@
       ]
      },
      "place3_time_avg": 115.9,
-     "p_market": null,
-     "win_prob_blend": null,
-     "ev": null,
+     "p_market": 0.0436,
+     "win_prob_blend": 0.0415,
+     "ev": 0.76,
      "ev_buy": false
     }
    ],
@@ -19689,28 +19727,28 @@
    "race_no": 7,
    "race_name": "ニシコリ８０万人突破記念Ｃ１－４",
    "class": "C1",
-   "moisture": null,
+   "moisture": 1.1,
    "field_size": 9,
    "post_time": "17:55",
    "win_time": null,
    "predicted_top": 4,
-   "market_fav": 6,
+   "market_fav": 8,
    "winner": null,
    "update_stage": "pre",
-   "updated_at": "2026-09-26 12:30",
+   "updated_at": "2026-09-26 14:40",
    "horses": [
     {
      "num": 4,
      "name": "クリスタルアッシュ",
      "win_prob": 0.2012,
      "rank": 1,
-     "odds": 18.4,
+     "odds": 4.5,
      "position": null,
      "result_time": null,
      "jockey": "西謙一",
      "gate": 4,
      "sled_kg": 610.0,
-     "popularity": 5,
+     "popularity": 2,
      "age": 3,
      "sex": "牝",
      "trainer": "西弘美（ばんえい）",
@@ -19740,6 +19778,7 @@
      "agari_n": 4,
      "insider_flag": false,
      "insider_label_details": [],
+     "owner_flagged": true,
      "sled_prev": 600.0,
      "sled_diff": 10,
      "jockey_record": [
@@ -20095,17 +20134,17 @@
       ]
      },
      "place3_time_avg": 104.2,
-     "p_market": 0.0426,
-     "win_prob_blend": 0.0876,
-     "ev": 1.61,
-     "ev_buy": true
+     "p_market": 0.1763,
+     "win_prob_blend": 0.1897,
+     "ev": 0.85,
+     "ev_buy": false
     },
     {
      "num": 9,
      "name": "ヨシノフクヒメ",
      "win_prob": 0.1714,
      "rank": 2,
-     "odds": 18.4,
+     "odds": 9.8,
      "position": null,
      "result_time": null,
      "jockey": "吉田理",
@@ -20138,6 +20177,7 @@
      "agari_n": 5,
      "insider_flag": false,
      "insider_label_details": [],
+     "owner_flagged": false,
      "sled_prev": 580.0,
      "sled_diff": 20,
      "jockey_record": [
@@ -20433,9 +20473,9 @@
       ]
      },
      "place3_time_avg": 124.0,
-     "p_market": 0.0426,
-     "win_prob_blend": 0.0828,
-     "ev": 1.52,
+     "p_market": 0.081,
+     "win_prob_blend": 0.1081,
+     "ev": 1.06,
      "ev_buy": true
     },
     {
@@ -20443,7 +20483,7 @@
      "name": "ホクセイシンノスケ",
      "win_prob": 0.1461,
      "rank": 3,
-     "odds": 18.4,
+     "odds": 9.8,
      "position": null,
      "result_time": null,
      "jockey": "島津新",
@@ -20476,6 +20516,7 @@
      "agari_n": 4,
      "insider_flag": false,
      "insider_label_details": [],
+     "owner_flagged": true,
      "sled_prev": 620.0,
      "sled_diff": 10,
      "jockey_record": [
@@ -20825,9 +20866,9 @@
       ]
      },
      "place3_time_avg": 117.1,
-     "p_market": 0.0426,
-     "win_prob_blend": 0.0783,
-     "ev": 1.44,
+     "p_market": 0.081,
+     "win_prob_blend": 0.1022,
+     "ev": 1.0,
      "ev_buy": true
     },
     {
@@ -20835,13 +20876,13 @@
      "name": "ホクセイアサノヤマ",
      "win_prob": 0.1362,
      "rank": 4,
-     "odds": 9.2,
+     "odds": 4.3,
      "position": null,
      "result_time": null,
      "jockey": "鈴木恵",
      "gate": 8,
      "sled_kg": 630.0,
-     "popularity": 3,
+     "popularity": 1,
      "age": 3,
      "sex": "牡",
      "trainer": "今井茂（ばんえい）",
@@ -20868,6 +20909,7 @@
      "agari_n": 5,
      "insider_flag": false,
      "insider_label_details": [],
+     "owner_flagged": true,
      "sled_prev": 620.0,
      "sled_diff": 10,
      "jockey_record": [
@@ -21211,23 +21253,23 @@
       ]
      },
      "place3_time_avg": 116.1,
-     "p_market": 0.0851,
-     "win_prob_blend": 0.12,
-     "ev": 1.1,
-     "ev_buy": true
+     "p_market": 0.1845,
+     "win_prob_blend": 0.1704,
+     "ev": 0.73,
+     "ev_buy": false
     },
     {
      "num": 7,
      "name": "コーチャンファスト",
      "win_prob": 0.1161,
      "rank": 5,
-     "odds": 4.6,
+     "odds": 8.6,
      "position": null,
      "result_time": null,
      "jockey": "赤塚健",
      "gate": 7,
      "sled_kg": 630.0,
-     "popularity": 2,
+     "popularity": 4,
      "age": 3,
      "sex": "牡",
      "trainer": "松田道（ばんえい）",
@@ -21254,6 +21296,7 @@
      "agari_n": 5,
      "insider_flag": false,
      "insider_label_details": [],
+     "owner_flagged": true,
      "sled_prev": 610.0,
      "sled_diff": 20,
      "jockey_record": [
@@ -21603,9 +21646,9 @@
       ]
      },
      "place3_time_avg": 120.2,
-     "p_market": 0.1702,
-     "win_prob_blend": 0.178,
-     "ev": 0.82,
+     "p_market": 0.0922,
+     "win_prob_blend": 0.1027,
+     "ev": 0.88,
      "ev_buy": false
     },
     {
@@ -21613,13 +21656,13 @@
      "name": "リキ",
      "win_prob": 0.0922,
      "rank": 6,
-     "odds": 1.6,
+     "odds": 4.5,
      "position": null,
      "result_time": null,
      "jockey": "村上章",
      "gate": 6,
      "sled_kg": 630.0,
-     "popularity": 1,
+     "popularity": 2,
      "age": 3,
      "sex": "牡",
      "trainer": "村上慎（ばんえい）",
@@ -21646,6 +21689,7 @@
      "agari_n": 4,
      "insider_flag": false,
      "insider_label_details": [],
+     "owner_flagged": true,
      "sled_prev": 620.0,
      "sled_diff": 10,
      "jockey_record": null,
@@ -22020,9 +22064,9 @@
       ]
      },
      "place3_time_avg": 120.7,
-     "p_market": 0.4894,
-     "win_prob_blend": 0.3262,
-     "ev": 0.52,
+     "p_market": 0.1763,
+     "win_prob_blend": 0.1443,
+     "ev": 0.65,
      "ev_buy": false
     },
     {
@@ -22030,13 +22074,13 @@
      "name": "ヒゴサクラ",
      "win_prob": 0.0643,
      "rank": 7,
-     "odds": 18.4,
+     "odds": 11.4,
      "position": null,
      "result_time": null,
      "jockey": "金田利",
      "gate": 1,
      "sled_kg": 610.0,
-     "popularity": 5,
+     "popularity": 7,
      "age": 3,
      "sex": "牝",
      "trainer": "中島敏（ばんえい）",
@@ -22063,6 +22107,7 @@
      "agari_n": 5,
      "insider_flag": false,
      "insider_label_details": [],
+     "owner_flagged": false,
      "sled_prev": 590.0,
      "sled_diff": 20,
      "jockey_record": [
@@ -22418,23 +22463,23 @@
       ]
      },
      "place3_time_avg": 123.9,
-     "p_market": 0.0426,
-     "win_prob_blend": 0.0588,
-     "ev": 1.08,
-     "ev_buy": true
+     "p_market": 0.0696,
+     "win_prob_blend": 0.0695,
+     "ev": 0.79,
+     "ev_buy": false
     },
     {
      "num": 3,
      "name": "スズノチカラ",
      "win_prob": 0.0453,
      "rank": 8,
-     "odds": 0.0,
+     "odds": 11.4,
      "position": null,
      "result_time": null,
      "jockey": "長澤幸",
      "gate": 3,
      "sled_kg": 610.0,
-     "popularity": 9,
+     "popularity": 7,
      "age": 3,
      "sex": "牝",
      "trainer": "服部義（ばんえい）",
@@ -22468,6 +22513,7 @@
        "note": ""
       }
      ],
+     "owner_flagged": true,
      "sled_prev": 600.0,
      "sled_diff": 10,
      "jockey_record": [
@@ -22835,9 +22881,9 @@
       ]
      },
      "place3_time_avg": 120.5,
-     "p_market": null,
-     "win_prob_blend": null,
-     "ev": null,
+     "p_market": 0.0696,
+     "win_prob_blend": 0.0615,
+     "ev": 0.7,
      "ev_buy": false
     },
     {
@@ -22845,13 +22891,13 @@
      "name": "ブレイブハート",
      "win_prob": 0.0272,
      "rank": 9,
-     "odds": 9.2,
+     "odds": 11.4,
      "position": null,
      "result_time": null,
      "jockey": "菊池一",
      "gate": 2,
      "sled_kg": 630.0,
-     "popularity": 3,
+     "popularity": 7,
      "age": 3,
      "sex": "牡",
      "trainer": "槻舘重（ばんえい）",
@@ -22878,6 +22924,7 @@
      "agari_n": 4,
      "insider_flag": false,
      "insider_label_details": [],
+     "owner_flagged": false,
      "sled_prev": 620.0,
      "sled_diff": 10,
      "jockey_record": [
@@ -23245,9 +23292,9 @@
       ]
      },
      "place3_time_avg": 119.4,
-     "p_market": 0.0851,
-     "win_prob_blend": 0.0683,
-     "ev": 0.63,
+     "p_market": 0.0696,
+     "win_prob_blend": 0.0515,
+     "ev": 0.59,
      "ev_buy": false
     }
    ],
@@ -23264,28 +23311,28 @@
    "race_no": 8,
    "race_name": "とかち帯広香川県人会会長杯Ｂ１－１",
    "class": "B1",
-   "moisture": null,
+   "moisture": 1.1,
    "field_size": 10,
    "post_time": "18:25",
    "win_time": null,
    "predicted_top": 5,
-   "market_fav": 1,
+   "market_fav": 9,
    "winner": null,
    "update_stage": "pre",
-   "updated_at": "2026-09-26 12:30",
+   "updated_at": "2026-09-26 14:40",
    "horses": [
     {
      "num": 5,
      "name": "カツテンリフジ",
      "win_prob": 0.1845,
      "rank": 1,
-     "odds": 4.8,
+     "odds": 8.9,
      "position": null,
      "result_time": null,
      "jockey": "赤塚健",
      "gate": 5,
      "sled_kg": 670.0,
-     "popularity": 3,
+     "popularity": 4,
      "age": 5,
      "sex": "牡",
      "trainer": "村上慎（ばんえい）",
@@ -23312,6 +23359,7 @@
      "agari_n": 5,
      "insider_flag": false,
      "insider_label_details": [],
+     "owner_flagged": true,
      "sled_prev": 695.0,
      "sled_diff": -25,
      "jockey_record": [
@@ -24009,17 +24057,17 @@
       ]
      },
      "place3_time_avg": 105.3,
-     "p_market": 0.1667,
-     "win_prob_blend": 0.1956,
-     "ev": 0.94,
-     "ev_buy": false
+     "p_market": 0.0887,
+     "win_prob_blend": 0.1256,
+     "ev": 1.12,
+     "ev_buy": true
     },
     {
      "num": 2,
      "name": "レイリーキング",
      "win_prob": 0.1287,
      "rank": 2,
-     "odds": 4.8,
+     "odds": 6.8,
      "position": null,
      "result_time": null,
      "jockey": "中村太",
@@ -24055,6 +24103,7 @@
      "agari_n": 4,
      "insider_flag": false,
      "insider_label_details": [],
+     "owner_flagged": true,
      "sled_prev": 660.0,
      "sled_diff": 10,
      "jockey_record": [
@@ -24668,9 +24717,9 @@
       ]
      },
      "place3_time_avg": 113.0,
-     "p_market": 0.1667,
-     "win_prob_blend": 0.1725,
-     "ev": 0.83,
+     "p_market": 0.1161,
+     "win_prob_blend": 0.1318,
+     "ev": 0.9,
      "ev_buy": false
     },
     {
@@ -24678,7 +24727,7 @@
      "name": "ヤマノキング",
      "win_prob": 0.1188,
      "rank": 3,
-     "odds": 0.0,
+     "odds": 23.2,
      "position": null,
      "result_time": null,
      "jockey": "吉田理",
@@ -24711,6 +24760,7 @@
      "agari_n": 5,
      "insider_flag": false,
      "insider_label_details": [],
+     "owner_flagged": false,
      "sled_prev": 690.0,
      "sled_diff": -30,
      "jockey_record": null,
@@ -25409,23 +25459,23 @@
       ]
      },
      "place3_time_avg": 114.0,
-     "p_market": null,
-     "win_prob_blend": null,
-     "ev": null,
-     "ev_buy": false
+     "p_market": 0.034,
+     "win_prob_blend": 0.0577,
+     "ev": 1.34,
+     "ev_buy": true
     },
     {
      "num": 1,
      "name": "アシュラダイマオー",
      "win_prob": 0.1142,
      "rank": 4,
-     "odds": 3.6,
+     "odds": 9.6,
      "position": null,
      "result_time": null,
      "jockey": "西将太",
      "gate": 1,
      "sled_kg": 670.0,
-     "popularity": 1,
+     "popularity": 5,
      "age": 6,
      "sex": "牡",
      "trainer": "松井浩（ばんえい）",
@@ -25452,6 +25502,7 @@
      "agari_n": 5,
      "insider_flag": false,
      "insider_label_details": [],
+     "owner_flagged": false,
      "sled_prev": 680.0,
      "sled_diff": -10,
      "jockey_record": [
@@ -26191,9 +26242,9 @@
       ]
      },
      "place3_time_avg": 102.2,
-     "p_market": 0.2222,
-     "win_prob_blend": 0.1994,
-     "ev": 0.72,
+     "p_market": 0.0822,
+     "win_prob_blend": 0.1011,
+     "ev": 0.97,
      "ev_buy": false
     },
     {
@@ -26201,13 +26252,13 @@
      "name": "トム",
      "win_prob": 0.113,
      "rank": 5,
-     "odds": 3.6,
+     "odds": 3.7,
      "position": null,
      "result_time": null,
      "jockey": "今井千",
      "gate": 3,
      "sled_kg": 660.0,
-     "popularity": 1,
+     "popularity": 2,
      "age": 5,
      "sex": "牡",
      "trainer": "鈴木邦（ばんえい）",
@@ -26234,6 +26285,7 @@
      "agari_n": 5,
      "insider_flag": false,
      "insider_label_details": [],
+     "owner_flagged": true,
      "sled_prev": 640.0,
      "sled_diff": 20,
      "jockey_record": [
@@ -26913,9 +26965,9 @@
       ]
      },
      "place3_time_avg": 112.9,
-     "p_market": 0.2222,
-     "win_prob_blend": 0.1987,
-     "ev": 0.72,
+     "p_market": 0.2134,
+     "win_prob_blend": 0.1871,
+     "ev": 0.69,
      "ev_buy": false
     },
     {
@@ -26923,7 +26975,7 @@
      "name": "オオゾラタカラ",
      "win_prob": 0.1086,
      "rank": 6,
-     "odds": 14.4,
+     "odds": 11.6,
      "position": null,
      "result_time": null,
      "jockey": "菊池一",
@@ -26956,6 +27008,7 @@
      "agari_n": 4,
      "insider_flag": false,
      "insider_label_details": [],
+     "owner_flagged": true,
      "sled_prev": 660.0,
      "sled_diff": 10,
      "jockey_record": [
@@ -27653,9 +27706,9 @@
       ]
      },
      "place3_time_avg": 112.9,
-     "p_market": 0.0556,
-     "win_prob_blend": 0.0796,
-     "ev": 1.15,
+     "p_market": 0.0681,
+     "win_prob_blend": 0.0878,
+     "ev": 1.02,
      "ev_buy": true
     },
     {
@@ -27663,13 +27716,13 @@
      "name": "マサタカラ",
      "win_prob": 0.0721,
      "rank": 7,
-     "odds": 0.0,
+     "odds": 29.0,
      "position": null,
      "result_time": null,
      "jockey": "金田利",
      "gate": 7,
      "sled_kg": 670.0,
-     "popularity": 8,
+     "popularity": 9,
      "age": 8,
      "sex": "牡",
      "trainer": "金田勇（ばんえい）",
@@ -27699,6 +27752,7 @@
      "agari_n": 5,
      "insider_flag": false,
      "insider_label_details": [],
+     "owner_flagged": false,
      "sled_prev": 680.0,
      "sled_diff": -10,
      "jockey_record": [
@@ -28402,23 +28456,23 @@
       ]
      },
      "place3_time_avg": 112.5,
-     "p_market": null,
-     "win_prob_blend": null,
-     "ev": null,
-     "ev_buy": false
+     "p_market": 0.0272,
+     "win_prob_blend": 0.0419,
+     "ev": 1.22,
+     "ev_buy": true
     },
     {
      "num": 9,
      "name": "オオネガイキンヒメ",
      "win_prob": 0.0692,
      "rank": 8,
-     "odds": 7.2,
+     "odds": 2.5,
      "position": null,
      "result_time": null,
      "jockey": "鈴木恵",
      "gate": 8,
      "sled_kg": 650.0,
-     "popularity": 5,
+     "popularity": 1,
      "age": 5,
      "sex": "牝",
      "trainer": "岩本利（ばんえい）",
@@ -28445,6 +28499,7 @@
      "agari_n": 5,
      "insider_flag": false,
      "insider_label_details": [],
+     "owner_flagged": true,
      "sled_prev": 640.0,
      "sled_diff": 10,
      "jockey_record": [
@@ -29118,9 +29173,9 @@
       ]
      },
      "place3_time_avg": 107.3,
-     "p_market": 0.1111,
-     "win_prob_blend": 0.1066,
-     "ev": 0.77,
+     "p_market": 0.3158,
+     "win_prob_blend": 0.2033,
+     "ev": 0.51,
      "ev_buy": false
     },
     {
@@ -29128,13 +29183,13 @@
      "name": "タイガ",
      "win_prob": 0.0659,
      "rank": 9,
-     "odds": 0.0,
+     "odds": 58.0,
      "position": null,
      "result_time": null,
      "jockey": "西謙一",
      "gate": 6,
      "sled_kg": 670.0,
-     "popularity": 8,
+     "popularity": 10,
      "age": 6,
      "sex": "牡",
      "trainer": "西弘美（ばんえい）",
@@ -29161,6 +29216,7 @@
      "agari_n": 5,
      "insider_flag": false,
      "insider_label_details": [],
+     "owner_flagged": true,
      "sled_prev": 680.0,
      "sled_diff": -10,
      "jockey_record": [
@@ -29756,23 +29812,23 @@
       ]
      },
      "place3_time_avg": 110.3,
-     "p_market": null,
-     "win_prob_blend": null,
-     "ev": null,
-     "ev_buy": false
+     "p_market": 0.0136,
+     "win_prob_blend": 0.0259,
+     "ev": 1.5,
+     "ev_buy": true
     },
     {
      "num": 7,
      "name": "コブダイヤ",
      "win_prob": 0.025,
      "rank": 10,
-     "odds": 14.4,
+     "odds": 19.3,
      "position": null,
      "result_time": null,
      "jockey": "中原蓮",
      "gate": 7,
      "sled_kg": 670.0,
-     "popularity": 6,
+     "popularity": 7,
      "age": 6,
      "sex": "牡",
      "trainer": "大橋和（ばんえい）",
@@ -29799,6 +29855,7 @@
      "agari_n": 5,
      "insider_flag": false,
      "insider_label_details": [],
+     "owner_flagged": false,
      "sled_prev": 695.0,
      "sled_diff": -25,
      "jockey_record": [
@@ -30514,9 +30571,9 @@
       ]
      },
      "place3_time_avg": 109.8,
-     "p_market": 0.0556,
-     "win_prob_blend": 0.0476,
-     "ev": 0.69,
+     "p_market": 0.0409,
+     "win_prob_blend": 0.0377,
+     "ev": 0.73,
      "ev_buy": false
     }
    ],
@@ -30533,7 +30590,7 @@
    "race_no": 9,
    "race_name": "まぁさん２０２６生誕祭記念Ｂ３－３",
    "class": "B3",
-   "moisture": null,
+   "moisture": 1.1,
    "field_size": 10,
    "post_time": "18:55",
    "win_time": null,
@@ -30541,14 +30598,14 @@
    "market_fav": 8,
    "winner": null,
    "update_stage": "pre",
-   "updated_at": "2026-09-26 12:30",
+   "updated_at": "2026-09-26 14:40",
    "horses": [
     {
      "num": 5,
      "name": "ベルンシュタイン",
      "win_prob": 0.1628,
      "rank": 1,
-     "odds": 13.6,
+     "odds": 8.9,
      "position": null,
      "result_time": null,
      "jockey": "吉田理",
@@ -30581,6 +30638,7 @@
      "agari_n": 4,
      "insider_flag": false,
      "insider_label_details": [],
+     "owner_flagged": true,
      "sled_prev": 640.0,
      "sled_diff": 0,
      "jockey_record": [
@@ -31224,9 +31282,9 @@
       ]
      },
      "place3_time_avg": 116.4,
-     "p_market": 0.0586,
-     "win_prob_blend": 0.0954,
-     "ev": 1.3,
+     "p_market": 0.0895,
+     "win_prob_blend": 0.1126,
+     "ev": 1.0,
      "ev_buy": true
     },
     {
@@ -31234,7 +31292,7 @@
      "name": "クレインテイオウ",
      "win_prob": 0.1402,
      "rank": 2,
-     "odds": 2.7,
+     "odds": 5.2,
      "position": null,
      "result_time": null,
      "jockey": "阿部優",
@@ -31267,6 +31325,7 @@
      "agari_n": 4,
      "insider_flag": false,
      "insider_label_details": [],
+     "owner_flagged": false,
      "sled_prev": 630.0,
      "sled_diff": 10,
      "jockey_record": null,
@@ -31791,9 +31850,9 @@
       ]
      },
      "place3_time_avg": 113.1,
-     "p_market": 0.2953,
-     "win_prob_blend": 0.259,
-     "ev": 0.7,
+     "p_market": 0.1532,
+     "win_prob_blend": 0.1516,
+     "ev": 0.79,
      "ev_buy": false
     },
     {
@@ -31801,13 +31860,13 @@
      "name": "ホクセイシーマ",
      "win_prob": 0.1388,
      "rank": 3,
-     "odds": 13.6,
+     "odds": 5.6,
      "position": null,
      "result_time": null,
      "jockey": "渡来心",
      "gate": 7,
      "sled_kg": 650.0,
-     "popularity": 6,
+     "popularity": 3,
      "age": 5,
      "sex": "牡",
      "trainer": "金山明（ばんえい）",
@@ -31834,6 +31893,7 @@
      "agari_n": 4,
      "insider_flag": false,
      "insider_label_details": [],
+     "owner_flagged": true,
      "sled_prev": 640.0,
      "sled_diff": 10,
      "jockey_record": [
@@ -32399,23 +32459,23 @@
       ]
      },
      "place3_time_avg": 121.0,
-     "p_market": 0.0586,
-     "win_prob_blend": 0.0902,
-     "ev": 1.23,
-     "ev_buy": true
+     "p_market": 0.1423,
+     "win_prob_blend": 0.1439,
+     "ev": 0.81,
+     "ev_buy": false
     },
     {
      "num": 10,
      "name": "ドウナンカツユウホ",
      "win_prob": 0.1148,
      "rank": 4,
-     "odds": 6.8,
+     "odds": 6.2,
      "position": null,
      "result_time": null,
      "jockey": "鈴木恵",
      "gate": 8,
      "sled_kg": 650.0,
-     "popularity": 3,
+     "popularity": 4,
      "age": 8,
      "sex": "牡",
      "trainer": "岩本利（ばんえい）",
@@ -32449,6 +32509,7 @@
        "note": "ペガサスヤレズ、エレジー、ドウナン引き"
       }
      ],
+     "owner_flagged": true,
      "sled_prev": 640.0,
      "sled_diff": 10,
      "jockey_record": [
@@ -33206,9 +33267,9 @@
       ]
      },
      "place3_time_avg": 119.2,
-     "p_market": 0.1172,
-     "win_prob_blend": 0.1325,
-     "ev": 0.9,
+     "p_market": 0.1285,
+     "win_prob_blend": 0.1261,
+     "ev": 0.78,
      "ev_buy": false
     },
     {
@@ -33216,13 +33277,13 @@
      "name": "ライズビクトリー",
      "win_prob": 0.1059,
      "rank": 5,
-     "odds": 6.8,
+     "odds": 6.2,
      "position": null,
      "result_time": null,
      "jockey": "金田利",
      "gate": 1,
      "sled_kg": 650.0,
-     "popularity": 3,
+     "popularity": 4,
      "age": 5,
      "sex": "牡",
      "trainer": "中島敏（ばんえい）",
@@ -33256,6 +33317,7 @@
        "note": ""
       }
      ],
+     "owner_flagged": true,
      "sled_prev": 640.0,
      "sled_diff": 10,
      "jockey_record": [
@@ -33929,9 +33991,9 @@
       ]
      },
      "place3_time_avg": 120.5,
-     "p_market": 0.1172,
-     "win_prob_blend": 0.1288,
-     "ev": 0.88,
+     "p_market": 0.1285,
+     "win_prob_blend": 0.1225,
+     "ev": 0.76,
      "ev_buy": false
     },
     {
@@ -33939,13 +34001,13 @@
      "name": "サカノトウカイ",
      "win_prob": 0.0817,
      "rank": 6,
-     "odds": 0.0,
+     "odds": 15.6,
      "position": null,
      "result_time": null,
      "jockey": "松本秀",
      "gate": 2,
      "sled_kg": 650.0,
-     "popularity": 9,
+     "popularity": 8,
      "age": 7,
      "sex": "牡",
      "trainer": "田上忠（ばんえい）",
@@ -33979,6 +34041,7 @@
        "note": ""
       }
      ],
+     "owner_flagged": true,
      "sled_prev": 640.0,
      "sled_diff": 10,
      "jockey_record": [
@@ -34736,9 +34799,9 @@
       ]
      },
      "place3_time_avg": 118.3,
-     "p_market": null,
-     "win_prob_blend": null,
-     "ev": null,
+     "p_market": 0.0511,
+     "win_prob_blend": 0.0614,
+     "ev": 0.96,
      "ev_buy": false
     },
     {
@@ -34746,13 +34809,13 @@
      "name": "ホクセイビックボス",
      "win_prob": 0.0809,
      "rank": 7,
-     "odds": 0.0,
+     "odds": 15.6,
      "position": null,
      "result_time": null,
      "jockey": "島津新",
      "gate": 8,
      "sled_kg": 650.0,
-     "popularity": 9,
+     "popularity": 8,
      "age": 6,
      "sex": "牡",
      "trainer": "岩本利（ばんえい）",
@@ -34786,6 +34849,7 @@
        "note": ""
       }
      ],
+     "owner_flagged": true,
      "sled_prev": 640.0,
      "sled_diff": 10,
      "jockey_record": [
@@ -35501,9 +35565,9 @@
       ]
      },
      "place3_time_avg": 124.4,
-     "p_market": null,
-     "win_prob_blend": null,
-     "ev": null,
+     "p_market": 0.0511,
+     "win_prob_blend": 0.0612,
+     "ev": 0.96,
      "ev_buy": false
     },
     {
@@ -35511,13 +35575,13 @@
      "name": "ジェイオージョ",
      "win_prob": 0.0754,
      "rank": 8,
-     "odds": 6.8,
+     "odds": 5.2,
      "position": null,
      "result_time": null,
      "jockey": "今井千",
      "gate": 6,
      "sled_kg": 610.0,
-     "popularity": 3,
+     "popularity": 1,
      "age": 4,
      "sex": "牝",
      "trainer": "今井茂（ばんえい）",
@@ -35544,6 +35608,7 @@
      "agari_n": 5,
      "insider_flag": false,
      "insider_label_details": [],
+     "owner_flagged": true,
      "sled_prev": 600.0,
      "sled_diff": 10,
      "jockey_record": [
@@ -36091,9 +36156,9 @@
       ]
      },
      "place3_time_avg": 112.3,
-     "p_market": 0.1172,
-     "win_prob_blend": 0.1143,
-     "ev": 0.78,
+     "p_market": 0.1532,
+     "win_prob_blend": 0.122,
+     "ev": 0.63,
      "ev_buy": false
     },
     {
@@ -36101,13 +36166,13 @@
      "name": "オニヨリツヨイ",
      "win_prob": 0.0689,
      "rank": 9,
-     "odds": 13.6,
+     "odds": 20.8,
      "position": null,
      "result_time": null,
      "jockey": "長澤幸",
      "gate": 4,
      "sled_kg": 650.0,
-     "popularity": 6,
+     "popularity": 10,
      "age": 7,
      "sex": "牡",
      "trainer": "服部義（ばんえい）",
@@ -36134,6 +36199,7 @@
      "agari_n": 5,
      "insider_flag": false,
      "insider_label_details": [],
+     "owner_flagged": true,
      "sled_prev": 640.0,
      "sled_diff": 10,
      "jockey_record": [
@@ -36867,9 +36933,9 @@
       ]
      },
      "place3_time_avg": 117.7,
-     "p_market": 0.0586,
-     "win_prob_blend": 0.0706,
-     "ev": 0.96,
+     "p_market": 0.0383,
+     "win_prob_blend": 0.048,
+     "ev": 1.0,
      "ev_buy": false
     },
     {
@@ -36877,13 +36943,13 @@
      "name": "ヨシノヒーロー",
      "win_prob": 0.0307,
      "rank": 10,
-     "odds": 4.5,
+     "odds": 12.4,
      "position": null,
      "result_time": null,
      "jockey": "船山蔵",
      "gate": 3,
      "sled_kg": 650.0,
-     "popularity": 2,
+     "popularity": 7,
      "age": 9,
      "sex": "牡",
      "trainer": "田上忠（ばんえい）",
@@ -36923,6 +36989,7 @@
        "note": ""
       }
      ],
+     "owner_flagged": true,
      "sled_prev": 640.0,
      "sled_diff": 10,
      "jockey_record": [
@@ -37656,9 +37723,9 @@
       ]
      },
      "place3_time_avg": 119.8,
-     "p_market": 0.1772,
-     "win_prob_blend": 0.1092,
-     "ev": 0.49,
+     "p_market": 0.0643,
+     "win_prob_blend": 0.0506,
+     "ev": 0.63,
      "ev_buy": false
     }
    ],
@@ -37675,28 +37742,28 @@
    "race_no": 10,
    "race_name": "福田兄弟還暦おめでとう！！Ｂ２－３",
    "class": "B2",
-   "moisture": null,
+   "moisture": 1.1,
    "field_size": 10,
    "post_time": "19:25",
    "win_time": null,
    "predicted_top": 7,
-   "market_fav": 2,
+   "market_fav": 7,
    "winner": null,
    "update_stage": "pre",
-   "updated_at": "2026-09-26 12:30",
+   "updated_at": "2026-09-26 14:40",
    "horses": [
     {
      "num": 7,
      "name": "ホクショウムサシ",
      "win_prob": 0.357,
      "rank": 1,
-     "odds": 12.0,
+     "odds": 1.5,
      "position": null,
      "result_time": null,
      "jockey": "鈴木恵",
      "gate": 7,
      "sled_kg": 660.0,
-     "popularity": 4,
+     "popularity": 1,
      "age": 8,
      "sex": "牡",
      "trainer": "村上慎（ばんえい）",
@@ -37726,6 +37793,7 @@
      "agari_n": 5,
      "insider_flag": false,
      "insider_label_details": [],
+     "owner_flagged": true,
      "sled_prev": 650.0,
      "sled_diff": 10,
      "jockey_record": [
@@ -38501,23 +38569,23 @@
       ]
      },
      "place3_time_avg": 111.0,
-     "p_market": 0.0667,
-     "win_prob_blend": 0.1379,
-     "ev": 1.65,
-     "ev_buy": true
+     "p_market": 0.5244,
+     "win_prob_blend": 0.4747,
+     "ev": 0.71,
+     "ev_buy": false
     },
     {
      "num": 2,
      "name": "ホクセイポルシェ",
      "win_prob": 0.134,
      "rank": 2,
-     "odds": 4.0,
+     "odds": 7.0,
      "position": null,
      "result_time": null,
      "jockey": "西将太",
      "gate": 2,
      "sled_kg": 660.0,
-     "popularity": 1,
+     "popularity": 2,
      "age": 5,
      "sex": "牡",
      "trainer": "大友人（ばんえい）",
@@ -38547,6 +38615,7 @@
      "agari_n": 5,
      "insider_flag": false,
      "insider_label_details": [],
+     "owner_flagged": true,
      "sled_prev": 680.0,
      "sled_diff": -20,
      "jockey_record": [
@@ -39190,9 +39259,9 @@
       ]
      },
      "place3_time_avg": 112.3,
-     "p_market": 0.2,
-     "win_prob_blend": 0.1999,
-     "ev": 0.8,
+     "p_market": 0.1124,
+     "win_prob_blend": 0.1238,
+     "ev": 0.87,
      "ev_buy": false
     },
     {
@@ -39200,13 +39269,13 @@
      "name": "マルゼンイチバン",
      "win_prob": 0.0993,
      "rank": 3,
-     "odds": 0.0,
+     "odds": 28.2,
      "position": null,
      "result_time": null,
      "jockey": "西謙一",
      "gate": 1,
      "sled_kg": 660.0,
-     "popularity": 10,
+     "popularity": 8,
      "age": 5,
      "sex": "牡",
      "trainer": "西弘美（ばんえい）",
@@ -39233,6 +39302,7 @@
      "agari_n": 5,
      "insider_flag": false,
      "insider_label_details": [],
+     "owner_flagged": false,
      "sled_prev": 650.0,
      "sled_diff": 10,
      "jockey_record": [
@@ -39906,23 +39976,23 @@
       ]
      },
      "place3_time_avg": 118.1,
-     "p_market": null,
-     "win_prob_blend": null,
-     "ev": null,
-     "ev_buy": false
+     "p_market": 0.0279,
+     "win_prob_blend": 0.045,
+     "ev": 1.27,
+     "ev_buy": true
     },
     {
      "num": 4,
      "name": "キタノユウシン",
      "win_prob": 0.0765,
      "rank": 4,
-     "odds": 12.0,
+     "odds": 28.2,
      "position": null,
      "result_time": null,
      "jockey": "島津新",
      "gate": 4,
      "sled_kg": 660.0,
-     "popularity": 4,
+     "popularity": 8,
      "age": 8,
      "sex": "牡",
      "trainer": "林　豊（ばんえい）",
@@ -39956,6 +40026,7 @@
        "note": ""
       }
      ],
+     "owner_flagged": true,
      "sled_prev": 650.0,
      "sled_diff": 10,
      "jockey_record": [
@@ -40671,23 +40742,23 @@
       ]
      },
      "place3_time_avg": 115.9,
-     "p_market": 0.0667,
-     "win_prob_blend": 0.0804,
-     "ev": 0.97,
-     "ev_buy": false
+     "p_market": 0.0279,
+     "win_prob_blend": 0.0411,
+     "ev": 1.16,
+     "ev_buy": true
     },
     {
      "num": 8,
      "name": "ツカサセンター",
      "win_prob": 0.0758,
      "rank": 5,
-     "odds": 12.0,
+     "odds": 22.5,
      "position": null,
      "result_time": null,
      "jockey": "大友一",
      "gate": 7,
      "sled_kg": 660.0,
-     "popularity": 4,
+     "popularity": 6,
      "age": 5,
      "sex": "牡",
      "trainer": "大河和（ばんえい）",
@@ -40714,6 +40785,7 @@
      "agari_n": 4,
      "insider_flag": false,
      "insider_label_details": [],
+     "owner_flagged": true,
      "sled_prev": 650.0,
      "sled_diff": 10,
      "jockey_record": [
@@ -41417,23 +41489,23 @@
       ]
      },
      "place3_time_avg": 116.6,
-     "p_market": 0.0667,
-     "win_prob_blend": 0.0802,
-     "ev": 0.96,
-     "ev_buy": false
+     "p_market": 0.035,
+     "win_prob_blend": 0.0475,
+     "ev": 1.07,
+     "ev_buy": true
     },
     {
      "num": 9,
      "name": "ツカサマーチ",
      "win_prob": 0.0707,
      "rank": 6,
-     "odds": 4.0,
+     "odds": 9.4,
      "position": null,
      "result_time": null,
      "jockey": "今井千",
      "gate": 8,
      "sled_kg": 650.0,
-     "popularity": 1,
+     "popularity": 3,
      "age": 9,
      "sex": "牡",
      "trainer": "谷あゆ（ばんえい）",
@@ -41463,6 +41535,7 @@
      "agari_n": 5,
      "insider_flag": false,
      "insider_label_details": [],
+     "owner_flagged": true,
      "sled_prev": 640.0,
      "sled_diff": 10,
      "jockey_record": [
@@ -42220,9 +42293,9 @@
       ]
      },
      "place3_time_avg": 115.1,
-     "p_market": 0.2,
-     "win_prob_blend": 0.1598,
-     "ev": 0.64,
+     "p_market": 0.0837,
+     "win_prob_blend": 0.0817,
+     "ev": 0.77,
      "ev_buy": false
     },
     {
@@ -42230,13 +42303,13 @@
      "name": "プラチナガール",
      "win_prob": 0.0614,
      "rank": 7,
-     "odds": 12.0,
+     "odds": 22.5,
      "position": null,
      "result_time": null,
      "jockey": "臼杵龍",
      "gate": 8,
      "sled_kg": 630.0,
-     "popularity": 4,
+     "popularity": 6,
      "age": 5,
      "sex": "牝",
      "trainer": "小林長（ばんえい）",
@@ -42263,6 +42336,7 @@
      "agari_n": 4,
      "insider_flag": false,
      "insider_label_details": [],
+     "owner_flagged": false,
      "sled_prev": 630.0,
      "sled_diff": 0,
      "jockey_record": [
@@ -42930,9 +43004,9 @@
       ]
      },
      "place3_time_avg": 120.2,
-     "p_market": 0.0667,
-     "win_prob_blend": 0.0745,
-     "ev": 0.89,
+     "p_market": 0.035,
+     "win_prob_blend": 0.0441,
+     "ev": 0.99,
      "ev_buy": false
     },
     {
@@ -42940,13 +43014,13 @@
      "name": "ホクセイマジェスタ",
      "win_prob": 0.0556,
      "rank": 8,
-     "odds": 4.0,
+     "odds": 28.2,
      "position": null,
      "result_time": null,
      "jockey": "中村太",
      "gate": 3,
      "sled_kg": 660.0,
-     "popularity": 1,
+     "popularity": 8,
      "age": 5,
      "sex": "牡",
      "trainer": "槻舘重（ばんえい）",
@@ -42973,6 +43047,7 @@
      "agari_n": 3,
      "insider_flag": false,
      "insider_label_details": [],
+     "owner_flagged": true,
      "sled_prev": 650.0,
      "sled_diff": 10,
      "jockey_record": [
@@ -43658,17 +43733,17 @@
       ]
      },
      "place3_time_avg": 121.6,
-     "p_market": 0.2,
-     "win_prob_blend": 0.1469,
-     "ev": 0.59,
-     "ev_buy": false
+     "p_market": 0.0279,
+     "win_prob_blend": 0.0368,
+     "ev": 1.04,
+     "ev_buy": true
     },
     {
      "num": 5,
      "name": "ディーホワイト",
      "win_prob": 0.0469,
      "rank": 9,
-     "odds": 12.0,
+     "odds": 11.2,
      "position": null,
      "result_time": null,
      "jockey": "船山蔵",
@@ -43701,6 +43776,7 @@
      "agari_n": 4,
      "insider_flag": false,
      "insider_label_details": [],
+     "owner_flagged": true,
      "sled_prev": 650.0,
      "sled_diff": 10,
      "jockey_record": [
@@ -44398,9 +44474,9 @@
       ]
      },
      "place3_time_avg": 110.2,
-     "p_market": 0.0667,
-     "win_prob_blend": 0.0678,
-     "ev": 0.81,
+     "p_market": 0.0702,
+     "win_prob_blend": 0.0631,
+     "ev": 0.71,
      "ev_buy": false
     },
     {
@@ -44408,13 +44484,13 @@
      "name": "ツカサファースト",
      "win_prob": 0.0228,
      "rank": 10,
-     "odds": 12.0,
+     "odds": 14.1,
      "position": null,
      "result_time": null,
      "jockey": "赤塚健",
      "gate": 6,
      "sled_kg": 660.0,
-     "popularity": 4,
+     "popularity": 5,
      "age": 5,
      "sex": "牡",
      "trainer": "中島敏（ばんえい）",
@@ -44441,6 +44517,7 @@
      "agari_n": 4,
      "insider_flag": false,
      "insider_label_details": [],
+     "owner_flagged": true,
      "sled_prev": 650.0,
      "sled_diff": 10,
      "jockey_record": [
@@ -45126,9 +45203,9 @@
       ]
      },
      "place3_time_avg": 115.3,
-     "p_market": 0.0667,
-     "win_prob_blend": 0.0527,
-     "ev": 0.63,
+     "p_market": 0.0558,
+     "win_prob_blend": 0.0422,
+     "ev": 0.6,
      "ev_buy": false
     }
    ],
@@ -45145,28 +45222,28 @@
    "race_no": 11,
    "race_name": "デイリースポーツ杯Ａ１－１混合",
    "class": "A1",
-   "moisture": null,
+   "moisture": 1.1,
    "field_size": 10,
    "post_time": "20:00",
    "win_time": null,
    "predicted_top": 9,
-   "market_fav": 5,
+   "market_fav": 10,
    "winner": null,
    "update_stage": "pre",
-   "updated_at": "2026-09-26 12:30",
+   "updated_at": "2026-09-26 14:40",
    "horses": [
     {
      "num": 9,
      "name": "コウシュハテンセイ",
      "win_prob": 0.2299,
      "rank": 1,
-     "odds": 20.8,
+     "odds": 5.3,
      "position": null,
      "result_time": null,
      "jockey": "菊池一",
      "gate": 8,
      "sled_kg": 725.0,
-     "popularity": 8,
+     "popularity": 2,
      "age": 6,
      "sex": "牡",
      "trainer": "藤本匠（ばんえい）",
@@ -45193,6 +45270,7 @@
      "agari_n": 4,
      "insider_flag": false,
      "insider_label_details": [],
+     "owner_flagged": true,
      "sled_prev": 715.0,
      "sled_diff": 10,
      "jockey_record": [
@@ -45926,23 +46004,23 @@
       ]
      },
      "place3_time_avg": 110.9,
-     "p_market": 0.0383,
-     "win_prob_blend": 0.0776,
-     "ev": 1.61,
-     "ev_buy": true
+     "p_market": 0.1498,
+     "win_prob_blend": 0.182,
+     "ev": 0.96,
+     "ev_buy": false
     },
     {
      "num": 5,
      "name": "アサゾラ",
      "win_prob": 0.1212,
      "rank": 2,
-     "odds": 4.1,
+     "odds": 6.8,
      "position": null,
      "result_time": null,
      "jockey": "金田利",
      "gate": 5,
      "sled_kg": 725.0,
-     "popularity": 1,
+     "popularity": 4,
      "age": 7,
      "sex": "牡",
      "trainer": "中島敏（ばんえい）",
@@ -45969,6 +46047,7 @@
      "agari_n": 4,
      "insider_flag": false,
      "insider_label_details": [],
+     "owner_flagged": false,
      "sled_prev": 705.0,
      "sled_diff": 20,
      "jockey_record": [
@@ -46726,9 +46805,9 @@
       ]
      },
      "place3_time_avg": 111.7,
-     "p_market": 0.1944,
-     "win_prob_blend": 0.1781,
-     "ev": 0.73,
+     "p_market": 0.1168,
+     "win_prob_blend": 0.1237,
+     "ev": 0.84,
      "ev_buy": false
     },
     {
@@ -46736,7 +46815,7 @@
      "name": "ヤマノコーネル",
      "win_prob": 0.1165,
      "rank": 3,
-     "odds": 20.8,
+     "odds": 15.4,
      "position": null,
      "result_time": null,
      "jockey": "中村太",
@@ -46769,6 +46848,7 @@
      "agari_n": 4,
      "insider_flag": false,
      "insider_label_details": [],
+     "owner_flagged": false,
      "sled_prev": 710.0,
      "sled_diff": 15,
      "jockey_record": [
@@ -47460,9 +47540,9 @@
       ]
      },
      "place3_time_avg": 113.4,
-     "p_market": 0.0383,
-     "win_prob_blend": 0.0611,
-     "ev": 1.27,
+     "p_market": 0.0516,
+     "win_prob_blend": 0.0717,
+     "ev": 1.1,
      "ev_buy": true
     },
     {
@@ -47470,7 +47550,7 @@
      "name": "コウシュハメジャー",
      "win_prob": 0.1153,
      "rank": 4,
-     "odds": 6.9,
+     "odds": 6.8,
      "position": null,
      "result_time": null,
      "jockey": "渡来心",
@@ -47503,6 +47583,7 @@
      "agari_n": 4,
      "insider_flag": false,
      "insider_label_details": [],
+     "owner_flagged": true,
      "sled_prev": 705.0,
      "sled_diff": 10,
      "jockey_record": [
@@ -48266,9 +48347,9 @@
       ]
      },
      "place3_time_avg": 107.7,
-     "p_market": 0.1155,
-     "win_prob_blend": 0.1248,
-     "ev": 0.86,
+     "p_market": 0.1168,
+     "win_prob_blend": 0.1215,
+     "ev": 0.83,
      "ev_buy": false
     },
     {
@@ -48276,13 +48357,13 @@
      "name": "マルホンリョウダイ",
      "win_prob": 0.0963,
      "rank": 5,
-     "odds": 10.4,
+     "odds": 12.3,
      "position": null,
      "result_time": null,
      "jockey": "西謙一",
      "gate": 4,
      "sled_kg": 725.0,
-     "popularity": 6,
+     "popularity": 7,
      "age": 8,
      "sex": "牡",
      "trainer": "金田勇（ばんえい）",
@@ -48309,6 +48390,7 @@
      "agari_n": 4,
      "insider_flag": false,
      "insider_label_details": [],
+     "owner_flagged": true,
      "sled_prev": 715.0,
      "sled_diff": 10,
      "jockey_record": [
@@ -49012,9 +49094,9 @@
       ]
      },
      "place3_time_avg": 110.3,
-     "p_market": 0.0766,
-     "win_prob_blend": 0.0898,
-     "ev": 0.93,
+     "p_market": 0.0646,
+     "win_prob_blend": 0.0776,
+     "ev": 0.95,
      "ev_buy": false
     },
     {
@@ -49022,13 +49104,13 @@
      "name": "ジェイライフ",
      "win_prob": 0.0863,
      "rank": 6,
-     "odds": 6.9,
+     "odds": 10.2,
      "position": null,
      "result_time": null,
      "jockey": "阿部武",
      "gate": 1,
      "sled_kg": 725.0,
-     "popularity": 4,
+     "popularity": 6,
      "age": 6,
      "sex": "牡",
      "trainer": "坂本東（ばんえい）",
@@ -49058,6 +49140,7 @@
      "agari_n": 4,
      "insider_flag": false,
      "insider_label_details": [],
+     "owner_flagged": true,
      "sled_prev": 710.0,
      "sled_diff": 15,
      "jockey_record": [
@@ -49773,9 +49856,9 @@
       ]
      },
      "place3_time_avg": 107.5,
-     "p_market": 0.1155,
-     "win_prob_blend": 0.1128,
-     "ev": 0.78,
+     "p_market": 0.0779,
+     "win_prob_blend": 0.0844,
+     "ev": 0.86,
      "ev_buy": false
     },
     {
@@ -49783,13 +49866,13 @@
      "name": "フレイムファースト",
      "win_prob": 0.0728,
      "rank": 7,
-     "odds": 20.8,
+     "odds": 17.6,
      "position": null,
      "result_time": null,
      "jockey": "島津新",
      "gate": 7,
      "sled_kg": 720.0,
-     "popularity": 8,
+     "popularity": 10,
      "age": 5,
      "sex": "牡",
      "trainer": "金田勇（ばんえい）",
@@ -49816,6 +49899,7 @@
      "agari_n": 5,
      "insider_flag": false,
      "insider_label_details": [],
+     "owner_flagged": true,
      "sled_prev": 710.0,
      "sled_diff": 10,
      "jockey_record": [
@@ -50441,23 +50525,23 @@
       ]
      },
      "place3_time_avg": 110.1,
-     "p_market": 0.0383,
-     "win_prob_blend": 0.0519,
-     "ev": 1.08,
-     "ev_buy": true
+     "p_market": 0.0451,
+     "win_prob_blend": 0.0558,
+     "ev": 0.98,
+     "ev_buy": false
     },
     {
      "num": 7,
      "name": "スカーレット",
      "win_prob": 0.0584,
      "rank": 8,
-     "odds": 5.2,
+     "odds": 15.4,
      "position": null,
      "result_time": null,
      "jockey": "西将太",
      "gate": 7,
      "sled_kg": 700.0,
-     "popularity": 2,
+     "popularity": 8,
      "age": 5,
      "sex": "牝",
      "trainer": "大橋和（ばんえい）",
@@ -50484,6 +50568,7 @@
      "agari_n": 4,
      "insider_flag": false,
      "insider_label_details": [],
+     "owner_flagged": true,
      "sled_prev": 690.0,
      "sled_diff": 10,
      "jockey_record": [
@@ -51085,9 +51170,9 @@
       ]
      },
      "place3_time_avg": 111.7,
-     "p_market": 0.1532,
-     "win_prob_blend": 0.1182,
-     "ev": 0.61,
+     "p_market": 0.0516,
+     "win_prob_blend": 0.0563,
+     "ev": 0.87,
      "ev_buy": false
     },
     {
@@ -51095,13 +51180,13 @@
      "name": "アアモンドキーマン",
      "win_prob": 0.0529,
      "rank": 9,
-     "odds": 5.2,
+     "odds": 5.8,
      "position": null,
      "result_time": null,
      "jockey": "今井千",
      "gate": 3,
      "sled_kg": 720.0,
-     "popularity": 2,
+     "popularity": 3,
      "age": 9,
      "sex": "セン",
      "trainer": "村上慎（ばんえい）",
@@ -51128,6 +51213,7 @@
      "agari_n": 4,
      "insider_flag": false,
      "insider_label_details": [],
+     "owner_flagged": true,
      "sled_prev": 710.0,
      "sled_diff": 10,
      "jockey_record": [
@@ -51813,9 +51899,9 @@
       ]
      },
      "place3_time_avg": 109.9,
-     "p_market": 0.1532,
-     "win_prob_blend": 0.1142,
-     "ev": 0.59,
+     "p_market": 0.1369,
+     "win_prob_blend": 0.1026,
+     "ev": 0.6,
      "ev_buy": false
     },
     {
@@ -51823,13 +51909,13 @@
      "name": "ショータイム",
      "win_prob": 0.0503,
      "rank": 10,
-     "odds": 10.4,
+     "odds": 4.2,
      "position": null,
      "result_time": null,
      "jockey": "長澤幸",
      "gate": 8,
      "sled_kg": 720.0,
-     "popularity": 6,
+     "popularity": 1,
      "age": 5,
      "sex": "牡",
      "trainer": "大河和（ばんえい）",
@@ -51856,6 +51942,7 @@
      "agari_n": 4,
      "insider_flag": false,
      "insider_label_details": [],
+     "owner_flagged": true,
      "sled_prev": 710.0,
      "sled_diff": 10,
      "jockey_record": [
@@ -52493,9 +52580,9 @@
       ]
      },
      "place3_time_avg": 109.3,
-     "p_market": 0.0766,
-     "win_prob_blend": 0.0715,
-     "ev": 0.74,
+     "p_market": 0.1891,
+     "win_prob_blend": 0.1244,
+     "ev": 0.52,
      "ev_buy": false
     }
    ],
@@ -52512,28 +52599,28 @@
    "race_no": 12,
    "race_name": "Ｂ４－６",
    "class": "B4",
-   "moisture": null,
+   "moisture": 1.1,
    "field_size": 10,
    "post_time": "20:30",
    "win_time": null,
    "predicted_top": 9,
-   "market_fav": 1,
+   "market_fav": 9,
    "winner": null,
    "update_stage": "pre",
-   "updated_at": "2026-09-26 12:30",
+   "updated_at": "2026-09-26 14:40",
    "horses": [
     {
      "num": 9,
      "name": "イワキオーカン",
      "win_prob": 0.191,
      "rank": 1,
-     "odds": 8.0,
+     "odds": 2.5,
      "position": null,
      "result_time": null,
      "jockey": "金田利",
      "gate": 8,
      "sled_kg": 640.0,
-     "popularity": 6,
+     "popularity": 1,
      "age": 7,
      "sex": "牡",
      "trainer": "小林長（ばんえい）",
@@ -52560,6 +52647,7 @@
      "agari_n": 5,
      "insider_flag": false,
      "insider_label_details": [],
+     "owner_flagged": true,
      "sled_prev": 630.0,
      "sled_diff": 10,
      "jockey_record": [
@@ -53287,23 +53375,23 @@
       ]
      },
      "place3_time_avg": 122.6,
-     "p_market": 0.0996,
-     "win_prob_blend": 0.1424,
-     "ev": 1.14,
-     "ev_buy": true
+     "p_market": 0.3159,
+     "win_prob_blend": 0.2759,
+     "ev": 0.69,
+     "ev_buy": false
     },
     {
      "num": 6,
      "name": "トカチリキ",
      "win_prob": 0.1694,
      "rank": 2,
-     "odds": 5.3,
+     "odds": 9.4,
      "position": null,
      "result_time": null,
      "jockey": "西将太",
      "gate": 6,
      "sled_kg": 640.0,
-     "popularity": 2,
+     "popularity": 5,
      "age": 8,
      "sex": "牡",
      "trainer": "藤野俊（ばんえい）",
@@ -53330,6 +53418,7 @@
      "agari_n": 4,
      "insider_flag": false,
      "insider_label_details": [],
+     "owner_flagged": true,
      "sled_prev": 630.0,
      "sled_diff": 10,
      "jockey_record": [
@@ -54075,23 +54164,23 @@
       ]
      },
      "place3_time_avg": 120.0,
-     "p_market": 0.1504,
-     "win_prob_blend": 0.1784,
-     "ev": 0.95,
-     "ev_buy": false
+     "p_market": 0.084,
+     "win_prob_blend": 0.1119,
+     "ev": 1.05,
+     "ev_buy": true
     },
     {
      "num": 10,
      "name": "マゴ",
      "win_prob": 0.1595,
      "rank": 3,
-     "odds": 5.3,
+     "odds": 12.5,
      "position": null,
      "result_time": null,
      "jockey": "臼杵龍",
      "gate": 8,
      "sled_kg": 620.0,
-     "popularity": 2,
+     "popularity": 7,
      "age": 4,
      "sex": "牡",
      "trainer": "久田守（ばんえい）",
@@ -54118,6 +54207,7 @@
      "agari_n": 5,
      "insider_flag": false,
      "insider_label_details": [],
+     "owner_flagged": true,
      "sled_prev": 610.0,
      "sled_diff": 10,
      "jockey_record": null,
@@ -54636,23 +54726,23 @@
       ]
      },
      "place3_time_avg": 112.0,
-     "p_market": 0.1504,
-     "win_prob_blend": 0.1747,
-     "ev": 0.93,
-     "ev_buy": false
+     "p_market": 0.0632,
+     "win_prob_blend": 0.091,
+     "ev": 1.14,
+     "ev_buy": true
     },
     {
      "num": 4,
      "name": "ライデンサマー",
      "win_prob": 0.1124,
      "rank": 4,
-     "odds": 0.0,
+     "odds": 12.5,
      "position": null,
      "result_time": null,
      "jockey": "中原蓮",
      "gate": 4,
      "sled_kg": 640.0,
-     "popularity": 9,
+     "popularity": 7,
      "age": 5,
      "sex": "牡",
      "trainer": "鈴木邦（ばんえい）",
@@ -54679,6 +54769,7 @@
      "agari_n": 5,
      "insider_flag": false,
      "insider_label_details": [],
+     "owner_flagged": true,
      "sled_prev": 630.0,
      "sled_diff": 10,
      "jockey_record": [
@@ -55358,23 +55449,23 @@
       ]
      },
      "place3_time_avg": 127.3,
-     "p_market": null,
-     "win_prob_blend": null,
-     "ev": null,
-     "ev_buy": false
+     "p_market": 0.0632,
+     "win_prob_blend": 0.0805,
+     "ev": 1.01,
+     "ev_buy": true
     },
     {
      "num": 5,
      "name": "イワキクロヒョウ",
      "win_prob": 0.0875,
      "rank": 5,
-     "odds": 0.0,
+     "odds": 9.4,
      "position": null,
      "result_time": null,
      "jockey": "菊池一",
      "gate": 5,
      "sled_kg": 640.0,
-     "popularity": 9,
+     "popularity": 5,
      "age": 6,
      "sex": "牡",
      "trainer": "小林長（ばんえい）",
@@ -55401,6 +55492,7 @@
      "agari_n": 5,
      "insider_flag": false,
      "insider_label_details": [],
+     "owner_flagged": true,
      "sled_prev": 630.0,
      "sled_diff": 10,
      "jockey_record": [
@@ -56134,9 +56226,9 @@
       ]
      },
      "place3_time_avg": 116.8,
-     "p_market": null,
-     "win_prob_blend": null,
-     "ev": null,
+     "p_market": 0.084,
+     "win_prob_blend": 0.0888,
+     "ev": 0.83,
      "ev_buy": false
     },
     {
@@ -56144,13 +56236,13 @@
      "name": "シブカツエース",
      "win_prob": 0.0833,
      "rank": 6,
-     "odds": 16.0,
+     "odds": 18.8,
      "position": null,
      "result_time": null,
      "jockey": "吉田理",
      "gate": 7,
      "sled_kg": 630.0,
-     "popularity": 7,
+     "popularity": 9,
      "age": 5,
      "sex": "牡",
      "trainer": "小北栄（ばんえい）",
@@ -56177,6 +56269,7 @@
      "agari_n": 4,
      "insider_flag": false,
      "insider_label_details": [],
+     "owner_flagged": false,
      "sled_prev": 620.0,
      "sled_diff": 10,
      "jockey_record": [
@@ -56820,9 +56913,9 @@
       ]
      },
      "place3_time_avg": 135.1,
-     "p_market": 0.0498,
-     "win_prob_blend": 0.0679,
-     "ev": 1.09,
+     "p_market": 0.042,
+     "win_prob_blend": 0.0556,
+     "ev": 1.05,
      "ev_buy": true
     },
     {
@@ -56830,13 +56923,13 @@
      "name": "キュートアイズ",
      "win_prob": 0.0689,
      "rank": 7,
-     "odds": 4.0,
+     "odds": 6.8,
      "position": null,
      "result_time": null,
      "jockey": "赤塚健",
      "gate": 1,
      "sled_kg": 620.0,
-     "popularity": 1,
+     "popularity": 2,
      "age": 5,
      "sex": "牝",
      "trainer": "小北栄（ばんえい）",
@@ -56863,6 +56956,7 @@
      "agari_n": 3,
      "insider_flag": false,
      "insider_label_details": [],
+     "owner_flagged": true,
      "sled_prev": 610.0,
      "sled_diff": 10,
      "jockey_record": [
@@ -57434,9 +57528,9 @@
       ]
      },
      "place3_time_avg": 135.1,
-     "p_market": 0.1992,
-     "win_prob_blend": 0.1564,
-     "ev": 0.63,
+     "p_market": 0.1161,
+     "win_prob_blend": 0.1008,
+     "ev": 0.69,
      "ev_buy": false
     },
     {
@@ -57444,13 +57538,13 @@
      "name": "テンボシヴィーナス",
      "win_prob": 0.0605,
      "rank": 8,
-     "odds": 5.3,
+     "odds": 7.5,
      "position": null,
      "result_time": null,
      "jockey": "長澤幸",
      "gate": 3,
      "sled_kg": 620.0,
-     "popularity": 2,
+     "popularity": 3,
      "age": 5,
      "sex": "牝",
      "trainer": "岩本利（ばんえい）",
@@ -57484,6 +57578,7 @@
        "note": "ヨシノ仕掛け。ニジイロ、ホウショウ、テンボシ引き"
       }
      ],
+     "owner_flagged": true,
      "sled_prev": 610.0,
      "sled_diff": 10,
      "jockey_record": [
@@ -58139,9 +58234,9 @@
       ]
      },
      "place3_time_avg": 138.9,
-     "p_market": 0.1504,
-     "win_prob_blend": 0.1244,
-     "ev": 0.66,
+     "p_market": 0.1053,
+     "win_prob_blend": 0.0903,
+     "ev": 0.68,
      "ev_buy": false
     },
     {
@@ -58149,13 +58244,13 @@
      "name": "ニジイロアオゾラ",
      "win_prob": 0.0505,
      "rank": 9,
-     "odds": 5.3,
+     "odds": 7.5,
      "position": null,
      "result_time": null,
      "jockey": "渡来心",
      "gate": 2,
      "sled_kg": 620.0,
-     "popularity": 2,
+     "popularity": 3,
      "age": 6,
      "sex": "牝",
      "trainer": "岩本利（ばんえい）",
@@ -58189,6 +58284,7 @@
        "note": "ヨシノ仕掛け。ニジイロ、ホウショウ、テンボシ引き"
       }
      ],
+     "owner_flagged": true,
      "sled_prev": 610.0,
      "sled_diff": 10,
      "jockey_record": [
@@ -58898,9 +58994,9 @@
       ]
      },
      "place3_time_avg": 126.2,
-     "p_market": 0.1504,
-     "win_prob_blend": 0.1168,
-     "ev": 0.62,
+     "p_market": 0.1053,
+     "win_prob_blend": 0.0848,
+     "ev": 0.64,
      "ev_buy": false
     },
     {
@@ -58908,13 +59004,13 @@
      "name": "ハクホウエイ",
      "win_prob": 0.0172,
      "rank": 10,
-     "odds": 16.0,
+     "odds": 37.6,
      "position": null,
      "result_time": null,
      "jockey": "大友一",
      "gate": 7,
      "sled_kg": 640.0,
-     "popularity": 7,
+     "popularity": 10,
      "age": 8,
      "sex": "牡",
      "trainer": "大友人（ばんえい）",
@@ -58941,6 +59037,7 @@
      "agari_n": 4,
      "insider_flag": false,
      "insider_label_details": [],
+     "owner_flagged": true,
      "sled_prev": 630.0,
      "sled_diff": 10,
      "jockey_record": [
@@ -59692,9 +59789,9 @@
       ]
      },
      "place3_time_avg": 132.7,
-     "p_market": 0.0498,
-     "win_prob_blend": 0.0391,
-     "ev": 0.63,
+     "p_market": 0.021,
+     "win_prob_blend": 0.0204,
+     "ev": 0.77,
      "ev_buy": false
     }
    ],
@@ -59719,7 +59816,7 @@
    "market_fav": null,
    "winner": null,
    "update_stage": "pre",
-   "updated_at": "2026-09-26 12:31",
+   "updated_at": "2026-09-26 14:40",
    "horses": [
     {
      "num": 5,
@@ -59759,6 +59856,7 @@
      "agari_n": 5,
      "insider_flag": false,
      "insider_label_details": [],
+     "owner_flagged": true,
      "sled_prev": 590.0,
      "sled_diff": 0,
      "jockey_record": [
@@ -60145,6 +60243,7 @@
      "agari_n": 5,
      "insider_flag": false,
      "insider_label_details": [],
+     "owner_flagged": true,
      "sled_prev": 610.0,
      "sled_diff": 10,
      "jockey_record": null,
@@ -60550,6 +60649,7 @@
      "agari_n": 5,
      "insider_flag": false,
      "insider_label_details": [],
+     "owner_flagged": true,
      "sled_prev": 590.0,
      "sled_diff": 10,
      "jockey_record": [
@@ -60960,6 +61060,7 @@
      "agari_n": 4,
      "insider_flag": false,
      "insider_label_details": [],
+     "owner_flagged": true,
      "sled_prev": 590.0,
      "sled_diff": 10,
      "jockey_record": [
@@ -61382,6 +61483,7 @@
      "agari_n": 5,
      "insider_flag": false,
      "insider_label_details": [],
+     "owner_flagged": false,
      "sled_prev": 600.0,
      "sled_diff": 10,
      "jockey_record": [
@@ -61804,6 +61906,7 @@
      "agari_n": 5,
      "insider_flag": false,
      "insider_label_details": [],
+     "owner_flagged": true,
      "sled_prev": 610.0,
      "sled_diff": 10,
      "jockey_record": [
@@ -62196,6 +62299,7 @@
      "agari_n": 5,
      "insider_flag": false,
      "insider_label_details": [],
+     "owner_flagged": false,
      "sled_prev": 590.0,
      "sled_diff": 10,
      "jockey_record": [
@@ -62570,6 +62674,7 @@
      "agari_n": 5,
      "insider_flag": false,
      "insider_label_details": [],
+     "owner_flagged": true,
      "sled_prev": 590.0,
      "sled_diff": 10,
      "jockey_record": [
@@ -62974,6 +63079,7 @@
      "agari_n": 4,
      "insider_flag": false,
      "insider_label_details": [],
+     "owner_flagged": false,
      "sled_prev": 590.0,
      "sled_diff": 10,
      "jockey_record": [
@@ -63330,6 +63436,7 @@
      "agari_n": 4,
      "insider_flag": false,
      "insider_label_details": [],
+     "owner_flagged": true,
      "sled_prev": 580.0,
      "sled_diff": 20,
      "jockey_record": [
@@ -63724,7 +63831,7 @@
    "market_fav": null,
    "winner": null,
    "update_stage": "pre",
-   "updated_at": "2026-09-26 12:31",
+   "updated_at": "2026-09-26 14:40",
    "horses": [
     {
      "num": 1,
@@ -63764,6 +63871,7 @@
      "agari_n": 0,
      "insider_flag": false,
      "insider_label_details": [],
+     "owner_flagged": true,
      "sled_prev": 480.0,
      "sled_diff": 10,
      "jockey_record": [
@@ -63877,6 +63985,7 @@
      "agari_n": 3,
      "insider_flag": false,
      "insider_label_details": [],
+     "owner_flagged": false,
      "sled_prev": 470.0,
      "sled_diff": 10,
      "jockey_record": [
@@ -64047,6 +64156,7 @@
      "agari_n": 4,
      "insider_flag": false,
      "insider_label_details": [],
+     "owner_flagged": false,
      "sled_prev": 500.0,
      "sled_diff": 10,
      "jockey_record": [
@@ -64217,6 +64327,7 @@
      "agari_n": 5,
      "insider_flag": false,
      "insider_label_details": [],
+     "owner_flagged": false,
      "sled_prev": 500.0,
      "sled_diff": 10,
      "jockey_record": [
@@ -64463,6 +64574,7 @@
      "agari_n": 4,
      "insider_flag": false,
      "insider_label_details": [],
+     "owner_flagged": true,
      "sled_prev": 480.0,
      "sled_diff": 10,
      "jockey_record": [
@@ -64709,6 +64821,7 @@
      "agari_n": 4,
      "insider_flag": false,
      "insider_label_details": [],
+     "owner_flagged": false,
      "sled_prev": 500.0,
      "sled_diff": 10,
      "jockey_record": [
@@ -64955,6 +65068,7 @@
      "agari_n": 5,
      "insider_flag": false,
      "insider_label_details": [],
+     "owner_flagged": true,
      "sled_prev": 480.0,
      "sled_diff": 10,
      "jockey_record": [
@@ -65201,6 +65315,7 @@
      "agari_n": 5,
      "insider_flag": false,
      "insider_label_details": [],
+     "owner_flagged": false,
      "sled_prev": 480.0,
      "sled_diff": 10,
      "jockey_record": [
@@ -65409,6 +65524,7 @@
      "agari_n": 4,
      "insider_flag": false,
      "insider_label_details": [],
+     "owner_flagged": false,
      "sled_prev": 500.0,
      "sled_diff": 10,
      "jockey_record": null,
@@ -65669,6 +65785,7 @@
      "agari_n": 4,
      "insider_flag": false,
      "insider_label_details": [],
+     "owner_flagged": false,
      "sled_prev": 470.0,
      "sled_diff": 10,
      "jockey_record": [
@@ -65861,7 +65978,7 @@
    "market_fav": null,
    "winner": null,
    "update_stage": "pre",
-   "updated_at": "2026-09-26 12:31",
+   "updated_at": "2026-09-26 14:40",
    "horses": [
     {
      "num": 4,
@@ -65901,6 +66018,7 @@
      "agari_n": 4,
      "insider_flag": false,
      "insider_label_details": [],
+     "owner_flagged": true,
      "sled_prev": 510.0,
      "sled_diff": 10,
      "jockey_record": null,
@@ -66142,6 +66260,7 @@
      "agari_n": 5,
      "insider_flag": false,
      "insider_label_details": [],
+     "owner_flagged": true,
      "sled_prev": 510.0,
      "sled_diff": 10,
      "jockey_record": [
@@ -66388,6 +66507,7 @@
      "agari_n": 4,
      "insider_flag": false,
      "insider_label_details": [],
+     "owner_flagged": true,
      "sled_prev": 480.0,
      "sled_diff": 20,
      "jockey_record": [
@@ -66558,6 +66678,7 @@
      "agari_n": 5,
      "insider_flag": false,
      "insider_label_details": [],
+     "owner_flagged": false,
      "sled_prev": 510.0,
      "sled_diff": 10,
      "jockey_record": [
@@ -66766,6 +66887,7 @@
      "agari_n": 5,
      "insider_flag": false,
      "insider_label_details": [],
+     "owner_flagged": false,
      "sled_prev": 490.0,
      "sled_diff": 10,
      "jockey_record": null,
@@ -66988,6 +67110,7 @@
      "agari_n": 4,
      "insider_flag": false,
      "insider_label_details": [],
+     "owner_flagged": true,
      "sled_prev": 490.0,
      "sled_diff": 0,
      "jockey_record": [
@@ -67272,6 +67395,7 @@
      "agari_n": 4,
      "insider_flag": false,
      "insider_label_details": [],
+     "owner_flagged": true,
      "sled_prev": 510.0,
      "sled_diff": 10,
      "jockey_record": [
@@ -67537,6 +67661,7 @@
      "agari_n": 5,
      "insider_flag": false,
      "insider_label_details": [],
+     "owner_flagged": true,
      "sled_prev": 480.0,
      "sled_diff": 20,
      "jockey_record": [
@@ -67745,6 +67870,7 @@
      "agari_n": 5,
      "insider_flag": false,
      "insider_label_details": [],
+     "owner_flagged": true,
      "sled_prev": 490.0,
      "sled_diff": 10,
      "jockey_record": [
@@ -67972,6 +68098,7 @@
      "agari_n": 5,
      "insider_flag": false,
      "insider_label_details": [],
+     "owner_flagged": false,
      "sled_prev": 510.0,
      "sled_diff": 10,
      "jockey_record": [
@@ -68202,7 +68329,7 @@
    "market_fav": null,
    "winner": null,
    "update_stage": "pre",
-   "updated_at": "2026-09-26 12:31",
+   "updated_at": "2026-09-26 14:41",
    "horses": [
     {
      "num": 5,
@@ -68242,6 +68369,7 @@
      "agari_n": 4,
      "insider_flag": false,
      "insider_label_details": [],
+     "owner_flagged": true,
      "sled_prev": 520.0,
      "sled_diff": 10,
      "jockey_record": [
@@ -68507,6 +68635,7 @@
      "agari_n": 5,
      "insider_flag": false,
      "insider_label_details": [],
+     "owner_flagged": true,
      "sled_prev": 520.0,
      "sled_diff": 10,
      "jockey_record": [
@@ -68753,6 +68882,7 @@
      "agari_n": 4,
      "insider_flag": false,
      "insider_label_details": [],
+     "owner_flagged": false,
      "sled_prev": 500.0,
      "sled_diff": 10,
      "jockey_record": [
@@ -68999,6 +69129,7 @@
      "agari_n": 5,
      "insider_flag": false,
      "insider_label_details": [],
+     "owner_flagged": false,
      "sled_prev": 510.0,
      "sled_diff": 20,
      "jockey_record": null,
@@ -69278,6 +69409,7 @@
      "agari_n": 5,
      "insider_flag": false,
      "insider_label_details": [],
+     "owner_flagged": true,
      "sled_prev": 500.0,
      "sled_diff": 20,
      "jockey_record": [
@@ -69467,6 +69599,7 @@
      "agari_n": 4,
      "insider_flag": false,
      "insider_label_details": [],
+     "owner_flagged": true,
      "sled_prev": 490.0,
      "sled_diff": 20,
      "jockey_record": [
@@ -69751,6 +69884,7 @@
      "agari_n": 5,
      "insider_flag": false,
      "insider_label_details": [],
+     "owner_flagged": false,
      "sled_prev": 500.0,
      "sled_diff": 30,
      "jockey_record": [
@@ -70041,6 +70175,7 @@
      "agari_n": 5,
      "insider_flag": false,
      "insider_label_details": [],
+     "owner_flagged": true,
      "sled_prev": 520.0,
      "sled_diff": 10,
      "jockey_record": null,
@@ -70244,6 +70379,7 @@
      "agari_n": 5,
      "insider_flag": false,
      "insider_label_details": [],
+     "owner_flagged": true,
      "sled_prev": 500.0,
      "sled_diff": 10,
      "jockey_record": [
@@ -70490,6 +70626,7 @@
      "agari_n": 3,
      "insider_flag": false,
      "insider_label_details": [],
+     "owner_flagged": true,
      "sled_prev": 500.0,
      "sled_diff": 10,
      "jockey_record": [
@@ -70701,7 +70838,7 @@
    "market_fav": null,
    "winner": null,
    "update_stage": "pre",
-   "updated_at": "2026-09-26 12:31",
+   "updated_at": "2026-09-26 14:41",
    "horses": [
     {
      "num": 4,
@@ -70741,6 +70878,7 @@
      "agari_n": 5,
      "insider_flag": false,
      "insider_label_details": [],
+     "owner_flagged": true,
      "sled_prev": 610.0,
      "sled_diff": 10,
      "jockey_record": [
@@ -71172,6 +71310,7 @@
      "agari_n": 5,
      "insider_flag": false,
      "insider_label_details": [],
+     "owner_flagged": false,
      "sled_prev": 590.0,
      "sled_diff": 10,
      "jockey_record": [
@@ -71564,6 +71703,7 @@
      "agari_n": 5,
      "insider_flag": false,
      "insider_label_details": [],
+     "owner_flagged": true,
      "sled_prev": 590.0,
      "sled_diff": 10,
      "jockey_record": [
@@ -71962,6 +72102,7 @@
      "agari_n": 5,
      "insider_flag": false,
      "insider_label_details": [],
+     "owner_flagged": false,
      "sled_prev": 590.0,
      "sled_diff": 10,
      "jockey_record": [
@@ -72279,6 +72420,7 @@
      "agari_n": 4,
      "insider_flag": false,
      "insider_label_details": [],
+     "owner_flagged": true,
      "sled_prev": 590.0,
      "sled_diff": 10,
      "jockey_record": [
@@ -72689,6 +72831,7 @@
      "agari_n": 4,
      "insider_flag": false,
      "insider_label_details": [],
+     "owner_flagged": false,
      "sled_prev": 610.0,
      "sled_diff": 10,
      "jockey_record": [
@@ -73105,6 +73248,7 @@
      "agari_n": 5,
      "insider_flag": false,
      "insider_label_details": [],
+     "owner_flagged": true,
      "sled_prev": 610.0,
      "sled_diff": 10,
      "jockey_record": null,
@@ -73462,6 +73606,7 @@
      "agari_n": 5,
      "insider_flag": false,
      "insider_label_details": [],
+     "owner_flagged": true,
      "sled_prev": 590.0,
      "sled_diff": 10,
      "jockey_record": [
@@ -73848,6 +73993,7 @@
      "agari_n": 5,
      "insider_flag": false,
      "insider_label_details": [],
+     "owner_flagged": false,
      "sled_prev": 590.0,
      "sled_diff": 10,
      "jockey_record": [
@@ -74270,6 +74416,7 @@
      "agari_n": 4,
      "insider_flag": false,
      "insider_label_details": [],
+     "owner_flagged": true,
      "sled_prev": 590.0,
      "sled_diff": 10,
      "jockey_record": [
@@ -74652,7 +74799,7 @@
    "market_fav": null,
    "winner": null,
    "update_stage": "pre",
-   "updated_at": "2026-09-26 12:31",
+   "updated_at": "2026-09-26 14:41",
    "horses": [
     {
      "num": 3,
@@ -74692,6 +74839,7 @@
      "agari_n": 4,
      "insider_flag": false,
      "insider_label_details": [],
+     "owner_flagged": false,
      "sled_prev": 600.0,
      "sled_diff": 10,
      "jockey_record": null,
@@ -75103,6 +75251,7 @@
      "agari_n": 4,
      "insider_flag": false,
      "insider_label_details": [],
+     "owner_flagged": true,
      "sled_prev": 600.0,
      "sled_diff": 10,
      "jockey_record": [
@@ -75666,6 +75815,7 @@
      "agari_n": 5,
      "insider_flag": false,
      "insider_label_details": [],
+     "owner_flagged": true,
      "sled_prev": 610.0,
      "sled_diff": 20,
      "jockey_record": [
@@ -76161,6 +76311,7 @@
        "note": ""
       }
      ],
+     "owner_flagged": true,
      "sled_prev": 620.0,
      "sled_diff": 0,
      "jockey_record": [
@@ -76571,6 +76722,7 @@
      "agari_n": 5,
      "insider_flag": false,
      "insider_label_details": [],
+     "owner_flagged": false,
      "sled_prev": 600.0,
      "sled_diff": 10,
      "jockey_record": [
@@ -77077,6 +77229,7 @@
      "agari_n": 5,
      "insider_flag": false,
      "insider_label_details": [],
+     "owner_flagged": true,
      "sled_prev": 620.0,
      "sled_diff": 10,
      "jockey_record": [
@@ -77475,6 +77628,7 @@
      "agari_n": 5,
      "insider_flag": false,
      "insider_label_details": [],
+     "owner_flagged": true,
      "sled_prev": 600.0,
      "sled_diff": 10,
      "jockey_record": [
@@ -77867,6 +78021,7 @@
      "agari_n": 5,
      "insider_flag": false,
      "insider_label_details": [],
+     "owner_flagged": true,
      "sled_prev": 600.0,
      "sled_diff": 10,
      "jockey_record": [
@@ -78265,6 +78420,7 @@
      "agari_n": 4,
      "insider_flag": false,
      "insider_label_details": [],
+     "owner_flagged": false,
      "sled_prev": 620.0,
      "sled_diff": 10,
      "jockey_record": [
@@ -78635,7 +78791,7 @@
    "market_fav": null,
    "winner": null,
    "update_stage": "pre",
-   "updated_at": "2026-09-26 12:31",
+   "updated_at": "2026-09-26 14:41",
    "horses": [
     {
      "num": 7,
@@ -78675,6 +78831,7 @@
      "agari_n": 5,
      "insider_flag": false,
      "insider_label_details": [],
+     "owner_flagged": true,
      "sled_prev": 600.0,
      "sled_diff": 10,
      "jockey_record": [
@@ -79085,6 +79242,7 @@
      "agari_n": 4,
      "insider_flag": false,
      "insider_label_details": [],
+     "owner_flagged": false,
      "sled_prev": 600.0,
      "sled_diff": 0,
      "jockey_record": [
@@ -79465,6 +79623,7 @@
      "agari_n": 4,
      "insider_flag": false,
      "insider_label_details": [],
+     "owner_flagged": false,
      "sled_prev": 620.0,
      "sled_diff": 10,
      "jockey_record": [
@@ -79890,6 +80049,7 @@
      "agari_n": 5,
      "insider_flag": false,
      "insider_label_details": [],
+     "owner_flagged": true,
      "sled_prev": 590.0,
      "sled_diff": 10,
      "jockey_record": [
@@ -80306,6 +80466,7 @@
      "agari_n": 4,
      "insider_flag": false,
      "insider_label_details": [],
+     "owner_flagged": true,
      "sled_prev": 600.0,
      "sled_diff": 10,
      "jockey_record": [
@@ -80728,6 +80889,7 @@
      "agari_n": 4,
      "insider_flag": false,
      "insider_label_details": [],
+     "owner_flagged": true,
      "sled_prev": 620.0,
      "sled_diff": 10,
      "jockey_record": [
@@ -81144,6 +81306,7 @@
      "agari_n": 5,
      "insider_flag": false,
      "insider_label_details": [],
+     "owner_flagged": false,
      "sled_prev": 620.0,
      "sled_diff": 10,
      "jockey_record": [
@@ -81530,6 +81693,7 @@
      "agari_n": 4,
      "insider_flag": false,
      "insider_label_details": [],
+     "owner_flagged": false,
      "sled_prev": 620.0,
      "sled_diff": 10,
      "jockey_record": [
@@ -81928,6 +82092,7 @@
      "agari_n": 5,
      "insider_flag": false,
      "insider_label_details": [],
+     "owner_flagged": false,
      "sled_prev": 610.0,
      "sled_diff": 10,
      "jockey_record": [
@@ -82338,6 +82503,7 @@
      "agari_n": 4,
      "insider_flag": false,
      "insider_label_details": [],
+     "owner_flagged": true,
      "sled_prev": 590.0,
      "sled_diff": 10,
      "jockey_record": [
@@ -82678,7 +82844,7 @@
    "market_fav": null,
    "winner": null,
    "update_stage": "pre",
-   "updated_at": "2026-09-26 12:31",
+   "updated_at": "2026-09-26 14:41",
    "horses": [
     {
      "num": 4,
@@ -82718,6 +82884,7 @@
      "agari_n": 5,
      "insider_flag": false,
      "insider_label_details": [],
+     "owner_flagged": false,
      "sled_prev": 530.0,
      "sled_diff": 10,
      "jockey_record": [
@@ -82983,6 +83150,7 @@
      "agari_n": 5,
      "insider_flag": false,
      "insider_label_details": [],
+     "owner_flagged": false,
      "sled_prev": 530.0,
      "sled_diff": 10,
      "jockey_record": [
@@ -83229,6 +83397,7 @@
      "agari_n": 5,
      "insider_flag": false,
      "insider_label_details": [],
+     "owner_flagged": false,
      "sled_prev": 520.0,
      "sled_diff": 20,
      "jockey_record": null,
@@ -83470,6 +83639,7 @@
      "agari_n": 5,
      "insider_flag": false,
      "insider_label_details": [],
+     "owner_flagged": false,
      "sled_prev": 530.0,
      "sled_diff": 10,
      "jockey_record": [
@@ -83735,6 +83905,7 @@
      "agari_n": 5,
      "insider_flag": false,
      "insider_label_details": [],
+     "owner_flagged": true,
      "sled_prev": 530.0,
      "sled_diff": 10,
      "jockey_record": [
@@ -83981,6 +84152,7 @@
      "agari_n": 4,
      "insider_flag": false,
      "insider_label_details": [],
+     "owner_flagged": false,
      "sled_prev": 500.0,
      "sled_diff": 20,
      "jockey_record": [
@@ -84265,6 +84437,7 @@
      "agari_n": 5,
      "insider_flag": false,
      "insider_label_details": [],
+     "owner_flagged": true,
      "sled_prev": 520.0,
      "sled_diff": 0,
      "jockey_record": [
@@ -84549,6 +84722,7 @@
      "agari_n": 5,
      "insider_flag": false,
      "insider_label_details": [],
+     "owner_flagged": true,
      "sled_prev": 520.0,
      "sled_diff": 0,
      "jockey_record": [
@@ -84814,6 +84988,7 @@
      "agari_n": 4,
      "insider_flag": false,
      "insider_label_details": [],
+     "owner_flagged": true,
      "sled_prev": 510.0,
      "sled_diff": 10,
      "jockey_record": null,
@@ -85093,6 +85268,7 @@
      "agari_n": 4,
      "insider_flag": false,
      "insider_label_details": [],
+     "owner_flagged": false,
      "sled_prev": 520.0,
      "sled_diff": 0,
      "jockey_record": [
@@ -85342,7 +85518,7 @@
    "market_fav": null,
    "winner": null,
    "update_stage": "pre",
-   "updated_at": "2026-09-26 12:31",
+   "updated_at": "2026-09-26 14:41",
    "horses": [
     {
      "num": 8,
@@ -85382,6 +85558,7 @@
      "agari_n": 5,
      "insider_flag": false,
      "insider_label_details": [],
+     "owner_flagged": false,
      "sled_prev": 590.0,
      "sled_diff": 10,
      "jockey_record": [
@@ -85879,6 +86056,7 @@
      "agari_n": 5,
      "insider_flag": false,
      "insider_label_details": [],
+     "owner_flagged": false,
      "sled_prev": 630.0,
      "sled_diff": 10,
      "jockey_record": [
@@ -86517,6 +86695,7 @@
      "agari_n": 4,
      "insider_flag": false,
      "insider_label_details": [],
+     "owner_flagged": true,
      "sled_prev": 620.0,
      "sled_diff": 10,
      "jockey_record": [
@@ -87081,6 +87260,7 @@
        "note": ""
       }
      ],
+     "owner_flagged": true,
      "sled_prev": 630.0,
      "sled_diff": 10,
      "jockey_record": [
@@ -87821,6 +88001,7 @@
      "agari_n": 4,
      "insider_flag": false,
      "insider_label_details": [],
+     "owner_flagged": false,
      "sled_prev": 630.0,
      "sled_diff": 10,
      "jockey_record": [
@@ -88543,6 +88724,7 @@
      "agari_n": 5,
      "insider_flag": false,
      "insider_label_details": [],
+     "owner_flagged": false,
      "sled_prev": 630.0,
      "sled_diff": 10,
      "jockey_record": [
@@ -89319,6 +89501,7 @@
      "agari_n": 5,
      "insider_flag": false,
      "insider_label_details": [],
+     "owner_flagged": true,
      "sled_prev": 630.0,
      "sled_diff": 10,
      "jockey_record": [
@@ -89981,6 +90164,7 @@
      "agari_n": 5,
      "insider_flag": false,
      "insider_label_details": [],
+     "owner_flagged": false,
      "sled_prev": 630.0,
      "sled_diff": 10,
      "jockey_record": [
@@ -90766,6 +90950,7 @@
      "agari_n": 5,
      "insider_flag": false,
      "insider_label_details": [],
+     "owner_flagged": false,
      "sled_prev": 620.0,
      "sled_diff": 10,
      "jockey_record": [
@@ -91356,6 +91541,7 @@
      "agari_n": 4,
      "insider_flag": false,
      "insider_label_details": [],
+     "owner_flagged": true,
      "sled_prev": 620.0,
      "sled_diff": 10,
      "jockey_record": [
@@ -92128,7 +92314,7 @@
    "market_fav": null,
    "winner": null,
    "update_stage": "pre",
-   "updated_at": "2026-09-26 12:31",
+   "updated_at": "2026-09-26 14:41",
    "horses": [
     {
      "num": 5,
@@ -92168,6 +92354,7 @@
      "agari_n": 4,
      "insider_flag": false,
      "insider_label_details": [],
+     "owner_flagged": false,
      "sled_prev": 630.0,
      "sled_diff": 10,
      "jockey_record": [
@@ -92932,6 +93119,7 @@
      "agari_n": 4,
      "insider_flag": false,
      "insider_label_details": [],
+     "owner_flagged": false,
      "sled_prev": 630.0,
      "sled_diff": 10,
      "jockey_record": [
@@ -93715,6 +93903,7 @@
        "note": ""
       }
      ],
+     "owner_flagged": true,
      "sled_prev": 640.0,
      "sled_diff": 10,
      "jockey_record": [
@@ -94479,6 +94668,7 @@
      "agari_n": 5,
      "insider_flag": false,
      "insider_label_details": [],
+     "owner_flagged": false,
      "sled_prev": 640.0,
      "sled_diff": 10,
      "jockey_record": [
@@ -95267,6 +95457,7 @@
      "agari_n": 4,
      "insider_flag": false,
      "insider_label_details": [],
+     "owner_flagged": true,
      "sled_prev": 640.0,
      "sled_diff": 10,
      "jockey_record": [
@@ -96071,6 +96262,7 @@
        "note": ""
       }
      ],
+     "owner_flagged": true,
      "sled_prev": 640.0,
      "sled_diff": 10,
      "jockey_record": [
@@ -96757,6 +96949,7 @@
      "agari_n": 5,
      "insider_flag": false,
      "insider_label_details": [],
+     "owner_flagged": true,
      "sled_prev": 640.0,
      "sled_diff": 10,
      "jockey_record": [
@@ -97467,6 +97660,7 @@
      "agari_n": 3,
      "insider_flag": false,
      "insider_label_details": [],
+     "owner_flagged": true,
      "sled_prev": 640.0,
      "sled_diff": 10,
      "jockey_record": [
@@ -98171,6 +98365,7 @@
      "agari_n": 4,
      "insider_flag": false,
      "insider_label_details": [],
+     "owner_flagged": true,
      "sled_prev": 640.0,
      "sled_diff": 10,
      "jockey_record": [
@@ -98965,6 +99160,7 @@
      "agari_n": 5,
      "insider_flag": false,
      "insider_label_details": [],
+     "owner_flagged": true,
      "sled_prev": 640.0,
      "sled_diff": 10,
      "jockey_record": [
@@ -99749,7 +99945,7 @@
    "market_fav": null,
    "winner": null,
    "update_stage": "pre",
-   "updated_at": "2026-09-26 12:31",
+   "updated_at": "2026-09-26 14:41",
    "horses": [
     {
      "num": 7,
@@ -99789,6 +99985,7 @@
      "agari_n": 5,
      "insider_flag": false,
      "insider_label_details": [],
+     "owner_flagged": false,
      "sled_prev": 790.0,
      "sled_diff": -40,
      "jockey_record": [
@@ -100205,6 +100402,7 @@
      "agari_n": 5,
      "insider_flag": false,
      "insider_label_details": [],
+     "owner_flagged": true,
      "sled_prev": 715.0,
      "sled_diff": 35,
      "jockey_record": [
@@ -100618,6 +100816,7 @@
      "agari_n": 4,
      "insider_flag": false,
      "insider_label_details": [],
+     "owner_flagged": false,
      "sled_prev": 705.0,
      "sled_diff": 25,
      "jockey_record": [
@@ -101154,6 +101353,7 @@
      "agari_n": 4,
      "insider_flag": false,
      "insider_label_details": [],
+     "owner_flagged": false,
      "sled_prev": 715.0,
      "sled_diff": 25,
      "jockey_record": [
@@ -101717,6 +101917,7 @@
      "agari_n": 5,
      "insider_flag": false,
      "insider_label_details": [],
+     "owner_flagged": true,
      "sled_prev": 685.0,
      "sled_diff": 35,
      "jockey_record": [
@@ -102277,6 +102478,7 @@
      "agari_n": 5,
      "insider_flag": false,
      "insider_label_details": [],
+     "owner_flagged": false,
      "sled_prev": 710.0,
      "sled_diff": 30,
      "jockey_record": [
@@ -102744,6 +102946,7 @@
      "agari_n": 5,
      "insider_flag": false,
      "insider_label_details": [],
+     "owner_flagged": false,
      "sled_prev": 685.0,
      "sled_diff": 25,
      "jockey_record": [
@@ -103307,6 +103510,7 @@
      "agari_n": 5,
      "insider_flag": false,
      "insider_label_details": [],
+     "owner_flagged": true,
      "sled_prev": 680.0,
      "sled_diff": 30,
      "jockey_record": [
@@ -103864,6 +104068,7 @@
      "agari_n": 5,
      "insider_flag": false,
      "insider_label_details": [],
+     "owner_flagged": true,
      "sled_prev": 660.0,
      "sled_diff": 30,
      "jockey_record": [
@@ -104420,7 +104625,7 @@
    "market_fav": null,
    "winner": null,
    "update_stage": "pre",
-   "updated_at": "2026-09-26 12:31",
+   "updated_at": "2026-09-26 14:41",
    "horses": [
     {
      "num": 3,
@@ -104463,6 +104668,7 @@
      "agari_n": 4,
      "insider_flag": false,
      "insider_label_details": [],
+     "owner_flagged": false,
      "sled_prev": 640.0,
      "sled_diff": 10,
      "jockey_record": [
@@ -105023,6 +105229,7 @@
      "agari_n": 4,
      "insider_flag": false,
      "insider_label_details": [],
+     "owner_flagged": true,
      "sled_prev": 640.0,
      "sled_diff": 15,
      "jockey_record": [
@@ -105598,6 +105805,7 @@
      "agari_n": 5,
      "insider_flag": false,
      "insider_label_details": [],
+     "owner_flagged": true,
      "sled_prev": 675.0,
      "sled_diff": -20,
      "jockey_record": [
@@ -106195,6 +106403,7 @@
        "note": "ボブ仕掛け、ウチュウジン、テンリュウ、勝利引き"
       }
      ],
+     "owner_flagged": true,
      "sled_prev": 690.0,
      "sled_diff": -20,
      "jockey_record": [
@@ -106965,6 +107174,7 @@
      "agari_n": 5,
      "insider_flag": false,
      "insider_label_details": [],
+     "owner_flagged": true,
      "sled_prev": 650.0,
      "sled_diff": 20,
      "jockey_record": [
@@ -107765,6 +107975,7 @@
      "agari_n": 4,
      "insider_flag": false,
      "insider_label_details": [],
+     "owner_flagged": true,
      "sled_prev": 660.0,
      "sled_diff": 10,
      "jockey_record": [
@@ -108562,6 +108773,7 @@
      "agari_n": 5,
      "insider_flag": false,
      "insider_label_details": [],
+     "owner_flagged": false,
      "sled_prev": 690.0,
      "sled_diff": -30,
      "jockey_record": [
@@ -109296,6 +109508,7 @@
      "agari_n": 5,
      "insider_flag": false,
      "insider_label_details": [],
+     "owner_flagged": false,
      "sled_prev": 660.0,
      "sled_diff": 10,
      "jockey_record": [
@@ -109977,6 +110190,7 @@
        "note": "ボブ仕掛け、ウチュウジン、テンリュウ、勝利引き"
       }
      ],
+     "owner_flagged": true,
      "sled_prev": 660.0,
      "sled_diff": 10,
      "jockey_record": [
@@ -110784,6 +110998,7 @@
        "note": "ボブ仕掛け、ウチュウジン、テンリュウ、勝利引き"
       }
      ],
+     "owner_flagged": true,
      "sled_prev": 660.0,
      "sled_diff": 10,
      "jockey_record": [
