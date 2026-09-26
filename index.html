@@ -4,6 +4,9 @@
 <link rel="manifest" href="./manifest.json">
 <link rel="apple-touch-icon" href="./apple-touch-icon.png">
 <link rel="icon" type="image/png" href="./icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=BIZ+UDGothic:wght@400;700&display=swap" rel="stylesheet">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="ばんえい予測">
@@ -27,7 +30,7 @@
 *{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%}
 body{margin:0;background:var(--bg);color:var(--ink);
-  font-family:system-ui,-apple-system,"Segoe UI","Hiragino Kaku Gothic ProN","Noto Sans JP",sans-serif;
+  font-family:"BIZ UDGothic",system-ui,-apple-system,"Segoe UI","Hiragino Kaku Gothic ProN","Noto Sans JP",sans-serif;
   line-height:1.45;-webkit-font-smoothing:antialiased}
 /* ノッチ/Dynamic Island 下のステータスバー帯を常に背景色で塗り、スクロール中の内容が透けないように（iPhone セーフエリア対応） */
 body::before{content:"";position:fixed;top:0;left:0;right:0;height:env(safe-area-inset-top);background:var(--bg);z-index:40;pointer-events:none}
@@ -1257,11 +1260,13 @@ function renderRaceFlowTime(r){
   // 「幅が広いコンテナに置いただけで文字・行が巨大化する」のを防ぐ（2026-09-26、PC全幅化で発覚）。
   // 増えた分の横幅はplotW（箱ひげの左右の広がり）にだけ回る。ただしこれだけだとPC表示時に
   // 文字が小さすぎて逆に読みにくいとの指摘のため、PC表示時は行高・文字サイズ等をSで
-  // 意図的に1.4倍する（拡大縮小率の事故と違い、狙って一段階だけ大きくする）。
+  // 意図的に1.6倍する（拡大縮小率の事故と違い、狙って一段階だけ大きくする）。
+  // padR(右側の数値ラベル欄)は「上りXX.Xs ▼後退X.Xs」のような2行目が1行目より長くなるため、
+  // 64*Sのままだと拡大時に右端で文字切れしていた（2026-09-26修正）。84*Sに広げて余裕を確保。
   const isDesktop = document.documentElement.dataset.layout==="desktop";
-  const S = isDesktop ? 1.4 : 1;
+  const S = isDesktop ? 1.6 : 1;
   const n=rows.length, W=Math.max(340, host.clientWidth||340);
-  const rowH=32*S, padT=20*S, padB=20*S, padL=76*S, padR=64*S;
+  const rowH=32*S, padT=20*S, padB=20*S, padL=76*S, padR=84*S;
   const H=padT+padB+rowH*(n-1);
   const laneY=i=>padT+i*rowH;
   const plotW=W-padL-padR;
