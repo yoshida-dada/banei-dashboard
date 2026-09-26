@@ -276,6 +276,10 @@ table.ht .roi{color:color-mix(in srgb,var(--ev-hue) 78%,var(--ink));font-weight:
 .hprno{color:var(--muted);font-weight:600}
 .hprvideo{color:var(--edge);font-weight:700;font-size:.68rem;text-decoration:none;
   border:1px solid var(--edge);border-radius:999px;padding:1px 7px;white-space:nowrap}
+/* レースレベル判定バッジ（2026-09-26） */
+.hplevel{font-size:.68rem;font-weight:700;padding:1px 6px;border-radius:999px;white-space:nowrap}
+.hplevel.high{background:var(--accent-soft);color:var(--accent)}
+.hplevel.low{background:var(--border2);color:var(--muted)}
 .hppop{color:var(--muted);font-weight:600;margin-left:auto}
 .hpto{color:var(--muted)}
 .hpto.hit{color:var(--good)}
@@ -2232,6 +2236,14 @@ function renderHorseProfile(){
     // 直接構築（date=YYYYMMDD, race=レース番号, track=obihiro固定）。古いレースは配信元で
     // 消えている場合があるが、サイト側も常時リンクを出しているため同様にそのまま表示する。
     const videoUrl = `http://keiba-lv-st.jp/movie/player?date=${r.date.replace(/-/g,'')}&race=${r.race_no}&track=obihiro`;
+    // レースレベル表示（2026-09-26、ユーザー要望④）: build_horse_profiles.pyが「実タイム-期待
+    // タイム(クラス×ソリ重量×水分率の回帰)」の残差をzスコア化したrace_level_zを事前計算済み。
+    // 単走のブレが大きいため|z|>=1.5の明確な差だけを表示し、ノイズで毎回バッジが付くのを防ぐ。
+    const levelBadge = (r.race_level_z!=null && Math.abs(r.race_level_z)>=1.5)
+      ? (r.race_level_z>=1.5
+          ? `<span class="hplevel high" title="クラス・条件から見た期待タイムより速い(z=${r.race_level_z})">🔥高レベル</span>`
+          : `<span class="hplevel low" title="クラス・条件から見た期待タイムより遅い(z=${r.race_level_z})">📉低レベル</span>`)
+      : "";
     return `<div class="hprace">`
       +`<div class="hpr1"><span class="hpdate">${r.date.slice(2).replace(/-/g,'/')}</span>`
       +`<span class="hprno">帯広${r.race_no}R</span>`
@@ -2239,7 +2251,7 @@ function renderHorseProfile(){
       +`<span class="hppop">人気${r.popularity??'—'}</span>`
       +`<span class="hpto ${r.position===1?'hit':''}">→${posTxt}${marginTxt}</span></div>`
       +`<div class="hprname">${r.race_name||''}</div>`
-      +`<div class="hprline">${r.class||''}　200m　${r.time||'—'}</div>`
+      +`<div class="hprline">${r.class||''}　200m　${r.time||'—'} ${levelBadge}</div>`
       +`<div class="hprline">頭数${r.field_size??'—'}　`
       +`<span class="hpgate" style="${capStyle(gate)}">${gate}</span>　馬番${r.num}　`
       +`<b>${r.jockey||'—'}</b>　そり${r.sled_kg!=null?r.sled_kg.toFixed(0):'—'}　馬場水分${r.moisture??'—'}%</div>`
