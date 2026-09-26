@@ -13497,7 +13497,7 @@
    "market_fav": 7,
    "winner": 3,
    "update_stage": "result",
-   "updated_at": "2026-09-26 17:18",
+   "updated_at": "2026-09-26 17:24",
    "horses": [
     {
      "num": 7,
@@ -14056,7 +14056,8 @@
      "p_market": 0.4377,
      "win_prob_blend": 0.3549,
      "ev": 0.64,
-     "ev_buy": false
+     "ev_buy": false,
+     "ev_streak": 0
     },
     {
      "num": 2,
@@ -14462,7 +14463,8 @@
      "p_market": 0.1676,
      "win_prob_blend": 0.183,
      "ev": 0.86,
-     "ev_buy": false
+     "ev_buy": false,
+     "ev_streak": 0
     },
     {
      "num": 4,
@@ -14890,7 +14892,8 @@
      "p_market": 0.0304,
      "win_prob_blend": 0.0587,
      "ev": 1.52,
-     "ev_buy": true
+     "ev_buy": true,
+     "ev_streak": 0
     },
     {
      "num": 1,
@@ -15323,7 +15326,8 @@
      "p_market": 0.0316,
      "win_prob_blend": 0.0581,
      "ev": 1.45,
-     "ev_buy": true
+     "ev_buy": true,
+     "ev_streak": 0
     },
     {
      "num": 3,
@@ -15871,7 +15875,8 @@
      "p_market": 0.1079,
      "win_prob_blend": 0.125,
      "ev": 0.91,
-     "ev_buy": false
+     "ev_buy": false,
+     "ev_streak": 0
     },
     {
      "num": 9,
@@ -16430,7 +16435,8 @@
      "p_market": 0.1515,
      "win_prob_blend": 0.1259,
      "ev": 0.65,
-     "ev_buy": false
+     "ev_buy": false,
+     "ev_streak": 0
     },
     {
      "num": 8,
@@ -16947,7 +16953,8 @@
      "p_market": 0.0458,
      "win_prob_blend": 0.0527,
      "ev": 0.91,
-     "ev_buy": false
+     "ev_buy": false,
+     "ev_streak": 0
     },
     {
      "num": 6,
@@ -17530,7 +17537,8 @@
      "p_market": 0.0224,
      "win_prob_blend": 0.0314,
      "ev": 1.1,
-     "ev_buy": true
+     "ev_buy": true,
+     "ev_streak": 0
     },
     {
      "num": 5,
@@ -18065,7 +18073,8 @@
      "p_market": 0.0049,
      "win_prob_blend": 0.0103,
      "ev": 1.66,
-     "ev_buy": true
+     "ev_buy": true,
+     "ev_streak": 0
     }
    ],
    "prize_positions": [
