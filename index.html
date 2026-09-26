@@ -192,6 +192,13 @@ table.ht .abil{color:var(--accent);font-weight:800}
 table.ht .win-c{font-weight:800}
 table.ht .fin{font-size:.68rem;color:var(--muted)}
 table.ht .fin.top{color:var(--good);font-weight:800}
+/* 過去5走（簡易）列（2026-09-26） */
+.p5row{display:flex;gap:3px}
+.p5cell{display:inline-flex;align-items:center;justify-content:center;min-width:20px;height:18px;
+  border-radius:4px;background:var(--surface2);font-size:.64rem;font-weight:700;color:var(--muted);
+  padding:0 2px;white-space:nowrap}
+.p5cell.p5top{background:var(--good-soft);color:var(--good)}
+.p5cell.p5win{background:var(--accent-soft);color:var(--accent)}
 /* 単勝ROI>1 ハイライト（スキャン連続でだんだん濃く） */
 table.ht tr.ev1{background:color-mix(in srgb,var(--ev-hue) 13%,transparent)}
 table.ht tr.ev2{background:color-mix(in srgb,var(--ev-hue) 26%,transparent)}
@@ -1161,6 +1168,21 @@ const COLS = [
    td:h=>`<td class="num"><div class="c2 c2r"><span>${h.prize_program!=null?h.prize_program.toLocaleString():'—'}${h.prize_year!=null?'/'+h.prize_year.toLocaleString():''}</span><span class="tsub">${h.horse_class||'—'}</span></div></td>`},
   {key:"fin", label:"着順・決着タイム", th:'<th>着 / 決着</th>',
    td:(h,hasResult)=>{ const top=h.position!=null&&h.position<=3; const fin=!hasResult?"—":(h.position!=null?`${h.position}着`:"除外"); const rt=hasResult&&h.result_time?h.result_time:"—"; return `<td class="fin ${top?'top':''}"><div class="c2 c2r"><span>${fin}</span><span class="tsub num">${rt}</span></div></td>`; }},
+  // 過去5走の簡易表示（2026-09-26、ユーザー要望）。前走を左端に着順を並べ、
+  // レースレベル判定(h.trend[].rz、build_dashboard_data.pyで計算済み)が|z|>=1.5の走には
+  // 🔥/📉を重ねる。詳細は馬別成績モーダル（馬名タップ）で確認する想定の簡易版。
+  {key:"past5", label:"過去5走（簡易）", th:'<th class="l">過去5走</th>',
+   td:h=>{
+     const rows=(h.trend||[]).slice(-5).reverse();
+     if(!rows.length) return `<td class="l"><span class="tsub">—</span></td>`;
+     const cells=rows.map(t=>{
+       const lvl = t.rz!=null && Math.abs(t.rz)>=1.5 ? (t.rz>=1.5?'🔥':'📉') : '';
+       const cls = t.p===1?'p5win':(t.p!=null&&t.p<=3?'p5top':'');
+       const title = `${t.d||''} ${t.c||''} ${t.p!=null?t.p+'着':''}`;
+       return `<span class="p5cell ${cls}" title="${title}">${t.p!=null?t.p:'-'}${lvl}</span>`;
+     }).join('');
+     return `<td class="l"><div class="p5row">${cells}</div></td>`;
+   }},
 ];
 function colHidden(){ try{ return new Set(JSON.parse(localStorage.getItem("cols_hidden")||"[]")); }catch(e){ return new Set(); } }
 const DEFAULT_ORDER = COLS.map(c=>c.key);
