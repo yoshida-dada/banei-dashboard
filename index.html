@@ -672,6 +672,7 @@ table.ht .numcell{display:inline-flex;align-items:center;gap:4px}
     <button data-t="track" aria-pressed="false">成績</button>
     <button data-t="odds" aria-pressed="false">オッズ履歴</button>
     <button data-t="labels" aria-pressed="false">八百長ラベル</button>
+    <button data-t="settings" aria-pressed="false">設定</button>
   </div>
 </header>
 <div id="beStatus" class="bestatus off" hidden></div>
@@ -745,6 +746,7 @@ table.ht .numcell{display:inline-flex;align-items:center;gap:4px}
 <div class="wrap" id="track" style="display:none"></div>
 <div class="wrap" id="odds" style="display:none"></div>
 <div class="wrap" id="labels" style="display:none"></div>
+<div class="wrap" id="settings" style="display:none"></div>
 
 <div id="iflagModal" class="iflagmodal" style="display:none">
   <div class="iflagbox">
@@ -1104,6 +1106,47 @@ function wireBetSettings(r){
   });
   if(backendCfg().url) startLive(r);
   else { const cb=document.getElementById("cartbtn"); if(cb) cb.addEventListener("click",()=>onAddToCart(r)); }
+}
+// 独立の「設定」タブ（2026-09-26）。従来は買い目ビュー内に埋もれていて見つけにくかったため、
+// トップタブから常に到達できるようにした。localStorage(voting_backend/voting_token)は共通なので
+// 買い目ビュー側の設定欄と自動的に同期する。
+function renderSettingsTab(){
+  const host=document.getElementById("settings");
+  const cfg=backendCfg();
+  host.innerHTML = `<div class="secthead"><span class="sect">投票バックエンド設定</span></div>`
+    +`<div class="tknote">スマホPWAとPC(run_all.ps1)をつなぐ設定です。ライブ買い目・八百長ラベル登録・`
+    +`投票カゴ投入に必要です。URLはPCで run_all.ps1 を起動すると数分以内に自動反映されます。`
+    +`Tokenは run_all.ps1 起動時にコンソールへ表示される値を最初の一度だけ入力してください`
+    +`（iOSのSafari/ホーム画面PWAは長期未操作で保存内容が消えることがあり、その場合は再入力が必要です）。</div>`
+    +`<div class="setfields" style="display:grid">`
+    +`<label>Backend URL (https)<input id="stgBeUrl" value="${cfg.url}" placeholder="自動取得されます"></label>`
+    +`<label>Token<input id="stgBeToken" value="${cfg.token}" placeholder="run_all.ps1 が表示するトークン"></label>`
+    +`<button class="savebtn" id="stgBeSave">保存</button>`
+    +`<span class="tknote" id="stgStatus"></span>`
+    +`</div>`;
+  const s=document.getElementById("stgBeSave");
+  if(s) s.addEventListener("click",()=>{
+    localStorage.setItem("voting_backend",(document.getElementById("stgBeUrl").value||"").trim());
+    localStorage.setItem("voting_token",(document.getElementById("stgBeToken").value||"").trim());
+    stopLive();
+    if(view==="bets") render();
+    checkSettingsConnection();
+  });
+  checkSettingsConnection();
+}
+function checkSettingsConnection(){
+  const el=document.getElementById("stgStatus"); if(!el) return;
+  const cfg=backendCfg();
+  if(!cfg.url){ el.textContent="未設定（URLが空です）"; return; }
+  el.textContent="接続確認中…";
+  // /healthはトークン不要（疎通確認のみ）。トークンの正誤は認証付きの/labelsで別途確認する。
+  const now=new Date();
+  const dstr=now.getFullYear()+"-"+String(now.getMonth()+1).padStart(2,"0")+"-"+String(now.getDate()).padStart(2,"0");
+  fetch(cfg.url+"/health").then(r=>{
+    if(!r.ok){ el.textContent="✗ 接続失敗（"+r.status+"）"; return; }
+    return fetch(cfg.url+"/labels?date="+dstr+"&token="+encodeURIComponent(cfg.token))
+      .then(r2=>{ el.textContent = r2.ok ? "✓ 接続OK" : (r2.status===401 ? "✗ トークンが違います（401）" : "✗ 確認失敗（"+r2.status+"）"); });
+  }).catch(()=>{ el.textContent="✗ 接続できません（バックエンドPC・トンネルが起動しているか確認してください）"; });
 }
 function renderLive(){
   const box=document.getElementById("betslive"); if(!box) return;
@@ -2402,10 +2445,12 @@ function switchTop(t){
   document.getElementById("track").style.display=t==="track"?"block":"none";
   document.getElementById("odds").style.display=t==="odds"?"block":"none";
   document.getElementById("labels").style.display=t==="labels"?"block":"none";
+  document.getElementById("settings").style.display=t==="settings"?"block":"none";
   document.querySelectorAll("#toptabs button").forEach(x=>x.setAttribute("aria-pressed", x.dataset.t===t));
   if(t==="track" && !window.__TRACK_LOADED) loadTracking();
   if(t==="odds" && !window.__ODDS_LOADED) loadOdds();
   if(t==="labels" && !window.__LABELS_LOADED) loadInsiderLabels();
+  if(t==="settings") renderSettingsTab();
 }
 function loadTracking(){
   window.__TRACK_LOADED=true;
