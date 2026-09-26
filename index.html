@@ -742,7 +742,22 @@ table.ht .numcell{display:inline-flex;align-items:center;gap:4px}
 function boot(DB){
 const RACES = DB.races;
 const pct = v => v==null ? "—" : (v*100).toFixed(0)+"%";
-const secFmt = s => s==null ? "—" : s.toFixed(1)+"s";
+// 60秒以上は"1:20.5"のような分:秒表記にする（2026-09-26、ユーザー要望）。前半/後半/決着
+// タイムなど、生タイム(秒)を表示する箇所は全てこれを通す。
+const secFmt = s => {
+  if(s==null) return "—";
+  if(s<60) return s.toFixed(1)+"s";
+  const m=Math.floor(s/60), sec=s-m*60;
+  return m+":"+(sec<10?"0":"")+sec.toFixed(1);
+};
+// secFmtの整数秒版（範囲表記の"(1:37–1:51)"等、小数まで出すと長くなる場所用）
+const secFmtWhole = s => {
+  if(s==null) return "—";
+  const v=Math.round(s);
+  if(v<60) return String(v);
+  const m=Math.floor(v/60), sec=v-m*60;
+  return m+":"+String(sec).padStart(2,"0");
+};
 // 枠番→帽色（日本競馬の標準8枠色）
 const CAP = {1:['#ffffff','#1a1a1a'],2:['#2b2b2b','#ffffff'],3:['#e23b32','#ffffff'],
   4:['#2f6fd0','#ffffff'],5:['#f3d000','#1a1a1a'],6:['#2f9e44','#ffffff'],
@@ -1215,7 +1230,7 @@ function cardView(hs, maxW, hasResult){
       +`<div class="feats">${featBar('障害力',h.f_obstacle)}${featBar('終い',h.f_finish)}${featBar('重量適性',h.f_weight)}${featBar('安定',h.f_kuzure)}</div>`
       +market+prizeLine+apt
       +`<div class="cardapt"><div class="lab"><span>過去走 タイム×着順（緑=3着内）</span>`
-      +`<b>3着内平均 ${h.place3_time_avg!=null?h.place3_time_avg.toFixed(0)+'s':'—'}</b></div>`
+      +`<b>3着内平均 ${secFmtWhole(h.place3_time_avg)}</b></div>`
       +`<canvas class="carddots" id="cd_${h.num}"></canvas></div>`
       +`</div>`;
   }).join("");
@@ -1266,7 +1281,7 @@ function renderTrackAptitudeScatter(r){
   const isDesktop = document.documentElement.dataset.layout==="desktop";
   const S = isDesktop ? 1.3 : 1;
   const W=Math.max(340, host.clientWidth||340), Hh=320*S;
-  const padL=40*S, padR=20*S, padT=20*S, padB=38*S;
+  const padL=40*S, padR=20*S, padT=20*S, padB=50*S;
   const plotW=W-padL-padR, plotH=Hh-padT-padB;
 
   const xs=pts.map(h=>h.ren_time_avg), ys=pts.map(h=>h.ren_track_index);
@@ -1300,8 +1315,17 @@ function renderTrackAptitudeScatter(r){
   };
   const points = pts.map(dot).join("");
 
-  const axisLabels = `<text x="${padL}" y="${Hh-8*S}" font-size="${7.5*S}" text-anchor="start" fill="var(--muted)">◀ 速い(軽い馬場向き)</text>`
-    +`<text x="${padL+plotW}" y="${Hh-8*S}" font-size="${7.5*S}" text-anchor="end" fill="var(--muted)">遅い(重い馬場向き) ▶</text>`
+  // 横軸=タイム表記の目盛り（2026-09-26、ユーザー要望）。min/中央/maxの3点にsecFmtで
+  // "1:37"のような分:秒表記を付ける。
+  const xTicks=[0,0.5,1].map((f,i)=>{
+    const v=xMin+f*(xMax-xMin), x=padL+f*plotW;
+    const anchor = i===0?"start":(i===1?"middle":"end");
+    return `<line x1="${x.toFixed(1)}" y1="${(padT+plotH).toFixed(1)}" x2="${x.toFixed(1)}" y2="${(padT+plotH+4*S).toFixed(1)}" stroke="var(--muted)" stroke-width="1"/>`
+      +`<text x="${x.toFixed(1)}" y="${(padT+plotH+15*S).toFixed(1)}" font-size="${7.5*S}" text-anchor="${anchor}" fill="var(--ink)" font-weight="700">${secFmt(v)}</text>`;
+  }).join("");
+  const axisLabels = xTicks
+    +`<text x="${padL}" y="${Hh-8*S}" font-size="${7*S}" text-anchor="start" fill="var(--muted)">◀ 軽い馬場向き</text>`
+    +`<text x="${padL+plotW}" y="${Hh-8*S}" font-size="${7*S}" text-anchor="end" fill="var(--muted)">重い馬場向き ▶</text>`
     +`<text x="${(4*S).toFixed(1)}" y="${(padT+4*S).toFixed(1)}" font-size="${7.5*S}" text-anchor="start" fill="var(--muted)">▲重い</text>`
     +`<text x="${(4*S).toFixed(1)}" y="${(padT+plotH).toFixed(1)}" font-size="${7.5*S}" text-anchor="start" fill="var(--muted)">▼軽い</text>`;
   const nExcluded = all.length - pts.length;
@@ -1386,16 +1410,16 @@ function renderRaceFlowTime(r){
     `<text x="${padL-10*S}" y="${(cy-1.5*S).toFixed(1)}" font-size="${7.5*S}" text-anchor="end" fill="var(--ink)">${shortName(h.name)}</text>`;
   const numLabel=(h,cy)=>{
     if(h.fh_avg==null) return "";
-    const mm = (h.fh_min!=null && h.fh_max!=null) ? `(${h.fh_min.toFixed(0)}–${h.fh_max.toFixed(0)})` : "";
+    const mm = (h.fh_min!=null && h.fh_max!=null) ? `(${secFmtWhole(h.fh_min)}–${secFmtWhole(h.fh_max)})` : "";
     let line1 = `<text x="${W-padR+8*S}" y="${(cy-1.5*S).toFixed(1)}" font-size="${7*S}" text-anchor="start" fill="var(--muted)">`
-      +`<tspan font-weight="700" fill="var(--ink)">${h.fh_avg.toFixed(1)}s</tspan> ${mm}</text>`;
+      +`<tspan font-weight="700" fill="var(--ink)">${secFmt(h.fh_avg)}</tspan> ${mm}</text>`;
     let line2 = "";
     if(h.agari_avg!=null && fieldAgari!=null){
       const diff = fieldAgari - h.agari_avg; // +=平均より上りが速い(詰める)
       const col = diff>=0 ? "var(--good)" : "var(--accent)";
       const glyph = diff>=0 ? "▲詰め" : "▼後退";
       line2 = `<text x="${W-padR+8*S}" y="${(cy+9*S).toFixed(1)}" font-size="${6.5*S}" text-anchor="start" fill="${col}">`
-        +`上り${h.agari_avg.toFixed(1)}s ${glyph}${Math.abs(diff).toFixed(1)}s</text>`;
+        +`上り${secFmt(h.agari_avg)} ${glyph}${Math.abs(diff).toFixed(1)}s</text>`;
     }
     return line1 + line2;
   };
@@ -1429,8 +1453,8 @@ function renderRaceFlowTime(r){
   };
   const body = rows.map(rowSvg).join("");
   const heads=`<text x="${padL}" y="${12*S}" font-size="${8.5*S}" text-anchor="start" fill="var(--muted)">◀ 第2障害降下時点</text>`;
-  const ticks=`<text x="${xFor(domMin).toFixed(1)}" y="${gridBot+14*S}" font-size="${7*S}" text-anchor="start" fill="var(--muted)">${domMin.toFixed(1)}s</text>`
-    +`<text x="${xFor(domMax).toFixed(1)}" y="${gridBot+14*S}" font-size="${7*S}" text-anchor="end" fill="var(--muted)">${domMax.toFixed(1)}s</text>`;
+  const ticks=`<text x="${xFor(domMin).toFixed(1)}" y="${gridBot+14*S}" font-size="${7*S}" text-anchor="start" fill="var(--muted)">${secFmt(domMin)}</text>`
+    +`<text x="${xFor(domMax).toFixed(1)}" y="${gridBot+14*S}" font-size="${7*S}" text-anchor="end" fill="var(--muted)">${secFmt(domMax)}</text>`;
 
   host.innerHTML=
     `<div class="secthead"><span class="sect">展開イメージ(第2障害降下時点のタイム傾向)</span></div>`
@@ -1513,7 +1537,7 @@ function drawCardDots(cv, h){
     c.textAlign="right";c.fillText(p+"着",padL-3,y);});
   if(h.place3_time_avg!=null){ const x=X(h.place3_time_avg);
     c.strokeStyle=accent;c.lineWidth=1.5;c.setLineDash([4,3]);c.beginPath();c.moveTo(x,padT+2);c.lineTo(x,H-padB);c.stroke();c.setLineDash([]);
-    c.fillStyle=accent;c.font="bold 9px system-ui";c.textAlign="center";c.textBaseline="bottom";c.fillText(h.place3_time_avg.toFixed(0)+"s",x,padT+2); }
+    c.fillStyle=accent;c.font="bold 9px system-ui";c.textAlign="center";c.textBaseline="bottom";c.fillText(secFmtWhole(h.place3_time_avg),x,padT+2); }
   c.fillStyle=muted;c.font="8px system-ui";c.textBaseline="top";
   c.textAlign="left";c.fillText("速い←",padL,H-padB+3); c.textAlign="right";c.fillText("→遅い",W-padR,H-padB+3);
   past.forEach(p=>{ const x=X(p.t),y=Y(Math.min(p.p,fs));
@@ -2787,8 +2811,8 @@ window.__ANA={key:null,num:null,pt:null};
 const ANA_PANELS=[
   {k:"g", title:"1着との差(秒)　上ほど小さい", color:"var(--accent)", top0:true, fmt:v=>(Math.abs(v)<0.05?"0.0":v.toFixed(1)), val:t=>t.g==null?null:-t.g},
   // 前半/後半は上下反転（上ほど速い＝1着との差の「上ほど良い」と向きを揃える）
-  {k:"fh",title:"前半タイム(秒)　上ほど速い", color:"var(--edge)", inv:true, fmt:v=>v.toFixed(1), val:t=>t.fh},
-  {k:"lh",title:"後半タイム(秒)　上ほど速い", color:"#a371f7", inv:true, fmt:v=>v.toFixed(1), val:t=>t.lh},
+  {k:"fh",title:"前半タイム　上ほど速い", color:"var(--edge)", inv:true, fmt:v=>secFmtWhole(v), val:t=>t.fh},
+  {k:"lh",title:"後半タイム　上ほど速い", color:"#a371f7", inv:true, fmt:v=>secFmtWhole(v), val:t=>t.lh},
   // タイムとの関係を1枚で読めるよう、水分は各点に数値ラベルを付ける
   {k:"m", title:"馬場水分(%)　高いほど速い傾向", color:"var(--wet)", labels:true, fmt:v=>v.toFixed(1), val:t=>t.m},
   // ソリ重量もタイムを大きく左右するため、水分と同様に各点へ数値ラベルを付ける
@@ -2839,8 +2863,8 @@ function anaDetailHtml(t){
   return `<div class="adet"><div class="adh">${t.d.replace(/-/g,"/")}　${t.c||""}</div><dl>`
     +`<dt>着順</dt><dd>${t.p}着${t.n?"（"+t.n+"頭）":""}</dd>`
     +`<dt>1着との差</dt><dd>${gap}</dd>`
-    +`<dt>前半タイム</dt><dd>${f(t.fh!=null?t.fh.toFixed(1):null,"秒")}</dd>`
-    +`<dt>後半タイム</dt><dd>${f(t.lh!=null?t.lh.toFixed(1):null,"秒")}</dd>`
+    +`<dt>前半タイム</dt><dd>${secFmt(t.fh)}</dd>`
+    +`<dt>後半タイム</dt><dd>${secFmt(t.lh)}</dd>`
     +`<dt>馬体重</dt><dd>${f(t.bw,"kg")}</dd>`
     +`<dt>ソリ重量</dt><dd>${f(t.sl,"kg")}</dd>`
     +`<dt>馬場水分</dt><dd>${f(t.m,"%")}</dd></dl></div>`;
@@ -2900,8 +2924,8 @@ function anaSummaryHtml(trend,rk,num){
     ["成績(1-2-3-着外)",a=>rec(a)],
     ["平均着順",a=>fmt(avg(a,"p"),1,"着")],
     ["1着との差(平均)",a=>fmt(avg(a,"g"),1,"秒"),"g"],
-    ["前半タイム(平均)",a=>fmt(avg(a,"fh"),1,"秒"),"fh"],
-    ["後半タイム(平均)",a=>fmt(avg(a,"lh"),1,"秒"),"lh"],
+    ["前半タイム(平均)",a=>secFmt(avg(a,"fh")),"fh"],
+    ["後半タイム(平均)",a=>secFmt(avg(a,"lh")),"lh"],
     ["馬体重(平均)",a=>fmt(avg(a,"bw"),0,"kg")],
     ["ソリ重量(平均)",a=>fmt(avg(a,"sl"),0,"kg")],
     ["馬場水分(平均)",a=>fmt(avg(a,"m"),1,"%")]
@@ -2939,8 +2963,8 @@ function anaOverviewGrid(hs){
       ["成績(1-2-3-着外)",a=>rec(a)],
       ["平均着順",a=>fmt(avg(a,"p"),1,"着")],
       ["1着との差(平均)",a=>fmt(avg(a,"g"),1,"秒"),"g"],
-      ["前半タイム(平均)",a=>fmt(avg(a,"fh"),1,"秒"),"fh"],
-      ["後半タイム(平均)",a=>fmt(avg(a,"lh"),1,"秒"),"lh"],
+      ["前半タイム(平均)",a=>secFmt(avg(a,"fh")),"fh"],
+      ["後半タイム(平均)",a=>secFmt(avg(a,"lh")),"lh"],
     ];
     const th=sets.map(([n,a])=>`<th>過去${n}走${a.length<n?`<small>(${a.length})</small>`:""}</th>`).join("");
     const body=rows.map(([lab,f,key])=>`<tr><td>${lab}</td>${sets.map(([n,a])=>`<td>${f(a)}${key?rankHtml(key,n,h.num):""}</td>`).join("")}</tr>`).join("");
