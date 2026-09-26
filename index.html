@@ -183,6 +183,10 @@ table.ht .tname .tname-txt{overflow:hidden;text-overflow:ellipsis;white-space:no
 table.ht .tjk{color:var(--ink);font-weight:600;max-width:88px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 table.ht .tsub{font-size:.63rem;color:var(--muted);max-width:150px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-weight:400}
 table.ht .tsub.towner{opacity:.72}
+/* 八百長ラベル対象の馬主ハイライト（2026-09-26、ユーザー要望）。table.ht .tsubの
+   color:var(--muted)より詳細度を上げる必要があるため同じ祖先を含めて記述する。 */
+table.ht .tsub.towner.flagged{color:var(--accent);opacity:1;font-weight:700}
+.hsub.howner.flagged{color:var(--accent);font-weight:700}
 table.ht .tsub.num{font-variant-numeric:tabular-nums}
 table.ht .abil{color:var(--accent);font-weight:800}
 table.ht .win-c{font-weight:800}
@@ -268,6 +272,8 @@ table.ht .roi{color:color-mix(in srgb,var(--ev-hue) 78%,var(--ink));font-weight:
 .hpr1{display:flex;align-items:center;gap:7px;font-weight:800}
 .hpdate{color:var(--ink)}
 .hprno{color:var(--muted);font-weight:600}
+.hprvideo{color:var(--edge);font-weight:700;font-size:.68rem;text-decoration:none;
+  border:1px solid var(--edge);border-radius:999px;padding:1px 7px;white-space:nowrap}
 .hppop{color:var(--muted);font-weight:600;margin-left:auto}
 .hpto{color:var(--muted)}
 .hpto.hit{color:var(--good)}
@@ -1128,7 +1134,7 @@ const COLS = [
   {key:"num", label:"馬番", always:true, th:'<th class="l">馬</th>',
    td:h=>`<td class="l"><span class="numcell">${medal(h.position)}<span class="tnum" style="${capStyle(h.gate)}">${h.num}</span></span></td>`},
   {key:"name", label:"馬名・馬齢・厩舎・馬主", always:true, th:'<th class="l">馬名 / 馬齢・厩舎・馬主</th>',
-   td:h=>`<td class="l"><div class="c2"><span class="tname clickable" data-num="${h.num}"><span class="tname-txt">${h.name||''}</span>${insiderFlagIcon(h)}</span><span class="tsub">${(h.sex||'')+(h.age!=null?h.age:'')}${h.trainer?'・'+cleanInst(h.trainer):''}</span>${h.owner&&h.owner!=='不明'?`<span class="tsub towner">${h.owner}</span>`:''}${promoWatchLine(h,"tsub")}</div></td>`},
+   td:h=>`<td class="l"><div class="c2"><span class="tname clickable" data-num="${h.num}"><span class="tname-txt">${h.name||''}</span>${insiderFlagIcon(h)}</span><span class="tsub">${(h.sex||'')+(h.age!=null?h.age:'')}${h.trainer?'・'+cleanInst(h.trainer):''}</span>${h.owner&&h.owner!=='不明'?`<span class="tsub towner${h.owner_flagged?' flagged':''}"${h.owner_flagged?' title="この馬主は過去に八百長ラベル対象になったことがあります"':''}>${h.owner}</span>`:''}${promoWatchLine(h,"tsub")}</div></td>`},
   {key:"jockey", label:"騎手・成績", th:'<th class="l">騎手 / 成績</th>',
    td:h=>`<td class="l"><div class="c2"><span class="tjk">${h.jockey||'—'}${jockeySwitchIcon(h)}</span><span class="tsub num">${recFmt(h.jockey_record)}</span></div></td>`},
   {key:"sled", label:"斤量", th:'<th>斤量</th>',
@@ -1222,7 +1228,7 @@ function cardView(hs, maxW, hasResult){
       +`<div class="hh">${medal(h.position)}<span class="rk">${h.rank}</span><span class="hnum num" style="${capStyle(h.gate)}">${h.num}</span>`
       +`<span class="hnamewrap"><span class="hname clickable" data-num="${h.num}"><span class="hname-txt">${h.name||''}</span>${insiderFlagIcon(h)}</span>`
       +`<span class="hsub">${(h.sex||'')+(h.age!=null?h.age:'')}${h.trainer?' ・ '+cleanInst(h.trainer):''}</span>`
-      +(h.owner&&h.owner!=='不明'?`<span class="hsub howner">${h.owner}</span>`:'')
+      +(h.owner&&h.owner!=='不明'?`<span class="hsub howner${h.owner_flagged?' flagged':''}"${h.owner_flagged?' title="この馬主は過去に八百長ラベル対象になったことがあります"':''}>${h.owner}</span>`:'')
       +promoWatchLine(h,"hsub")
       +`<span class="hjk">${h.jockey||'騎手不明'}${jockeySwitchIcon(h)} <span class="jrec">${recFmt(h.jockey_record)}</span></span></span>`
       +`<span class="finish ${h.position!=null&&h.position<=3?'top':''}">${finish}</span></div>`
@@ -2218,9 +2224,14 @@ function renderHorseProfile(){
     const wTxt = r.weight!=null ? r.weight+(r.weight_diff!=null?"("+(r.weight_diff>0?"+":"")+r.weight_diff+")":"") : "—";
     const posTxt = r.position!=null ? r.position+"着" : "—";
     const marginTxt = r.position===1 ? "" : (r.margin_sec!=null ? " (+"+r.margin_sec.toFixed(1)+"s)" : "");
+    // レース映像リンク（2026-09-26、ユーザー要望）。keiba.go.jp結果ページに実在するリンクを
+    // 直接構築（date=YYYYMMDD, race=レース番号, track=obihiro固定）。古いレースは配信元で
+    // 消えている場合があるが、サイト側も常時リンクを出しているため同様にそのまま表示する。
+    const videoUrl = `http://keiba-lv-st.jp/movie/player?date=${r.date.replace(/-/g,'')}&race=${r.race_no}&track=obihiro`;
     return `<div class="hprace">`
       +`<div class="hpr1"><span class="hpdate">${r.date.slice(2).replace(/-/g,'/')}</span>`
       +`<span class="hprno">帯広${r.race_no}R</span>`
+      +`<a class="hprvideo" href="${videoUrl}" target="_blank" rel="noopener">🎬映像</a>`
       +`<span class="hppop">人気${r.popularity??'—'}</span>`
       +`<span class="hpto ${r.position===1?'hit':''}">→${posTxt}${marginTxt}</span></div>`
       +`<div class="hprname">${r.race_name||''}</div>`
@@ -2253,6 +2264,7 @@ function renderHorseProfile(){
     +(insiderCount>0?`<div class="hpinswarn">🚨 八百長ラベル ${insiderCount}件（下記の過去成績に表示）</div>`:'')
     +svgWeightTrend(races)
     +svgTimeTrend(races)
+    +`<div class="tksect">過去成績</div>${cards||'<div class="tknote">今年度はまだ出走がありません。</div>'}${more}`
     +`<div class="tksect">${hpMode==="season"?"今年度成績":"通算成績（"+races.length+"走）"}</div>`
     +`<div class="dttblwrap"><table class="dttbl"><thead><tr><th class="l"></th><th>1着</th><th>2着</th>`
     +`<th>3着</th><th>4着以下</th><th>計</th><th>勝率</th><th>連対率</th><th>複勝率</th></tr></thead>`
@@ -2261,8 +2273,7 @@ function renderHorseProfile(){
     +hpSeasonHtml(races)
     +hpJockeyHtml(races)
     +hpPedigreeHtml(h.pedigree)
-    +hpRatingsHtml(h.ratings, h.next_class, h.reconstructed_now, h.ratings_reconstructed)
-    +`<div class="tksect">過去成績</div>${cards||'<div class="tknote">今年度はまだ出走がありません。</div>'}${more}`;
+    +hpRatingsHtml(h.ratings, h.next_class, h.reconstructed_now, h.ratings_reconstructed);
   document.getElementById("histBackBtn").onclick=()=>{
     if(histState.race!=null){ histState.horse=null; renderHistModal(); } else { closeHistModal(); }
   };
