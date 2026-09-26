@@ -284,7 +284,10 @@ table.ht .roi{color:color-mix(in srgb,var(--ev-hue) 78%,var(--ink));font-weight:
 .hsub{font-size:.72rem;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin-top:1px}
 .hjk{font-size:.72rem;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin-top:1px}
 .hsub.howner{display:block;opacity:.72}
-.promowatch{display:block;color:var(--accent);font-weight:700;white-space:normal;max-width:none}
+/* 昇級ウォッチをテキスト行からバッジ化（2026-09-26、ユーザー要望で目立たせる） */
+.promowatch{display:inline-flex;align-items:center;margin-top:3px;padding:2px 8px;
+  border-radius:999px;background:var(--accent);color:#fff;font-weight:800;
+  font-size:.68rem;white-space:nowrap;max-width:none;box-shadow:0 1px 3px rgba(0,0,0,.15)}
 .hjk::before{content:"騎 ";opacity:.6}
 .hjk .jrec{color:var(--ink);font-weight:600}
 .finish{flex:none;font-size:.66rem;color:var(--muted);border:1px solid var(--border);border-radius:6px;padding:2px 6px;text-align:center;line-height:1.25}
