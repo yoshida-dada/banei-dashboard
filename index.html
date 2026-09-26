@@ -228,6 +228,8 @@ table.ht .roi{color:color-mix(in srgb,var(--ev-hue) 78%,var(--ink));font-weight:
 /* 日別成績→日別サマリー／レース別全着順モーダル（成績タブ、2026-09-24。nar.yukochi.comの
    /record/日付・/race/obihiro/日付/R番 ページを参考に、日付・レース番号タップで開く） */
 .histbox{background:var(--surface);border:1px solid var(--border);border-radius:12px;max-width:480px;width:100%;max-height:82vh;overflow-y:auto;padding:14px 16px;box-shadow:0 8px 30px rgba(0,0,0,.35)}
+/* PC表示時は馬別成績モーダルの幅を広げる（2026-09-26、ユーザー要望） */
+:root[data-layout="desktop"] .histbox{max-width:860px}
 /* グラフ拡大表示（馬体重/決着タイム推移をタップで拡大、2026-09-24）。同じviewBox付きSVGを
    ワイドな箱で表示するだけで、ベクター描画なのでボケずに大きく見える。 */
 .chartbox{background:var(--surface);border:1px solid var(--border);border-radius:12px;max-width:680px;width:94vw;max-height:88vh;overflow-y:auto;padding:14px 16px;box-shadow:0 8px 30px rgba(0,0,0,.35)}
@@ -2031,7 +2033,9 @@ function svgTrendChart(races, opts){
   const all=[...races].reverse().filter(r=>opts.valueFn(r)!=null);  // 古い→新しい
   const pts=all.slice(-N);
   if(pts.length<2) return null;
-  const n=pts.length, W=340,H=150,padL=opts.padL||32,padR=opts.padR||12,padT=16,padB=20;
+  // viewBox幅=モーダルの実測幅にすることで、PC表示でモーダルが広がっても行・文字が
+  // 巨大化しない（2026-09-26、モーダル幅拡張に合わせた修正。展開イメージ等と同じ対策）。
+  const n=pts.length, W=Math.max(280, opts.wantW||340),H=150,padL=opts.padL||32,padR=opts.padR||12,padT=16,padB=20;
   const vals=pts.map(opts.valueFn);
   const mn=opts.fixedMin!=null?opts.fixedMin:Math.min(...vals);
   const mx=opts.fixedMax!=null?opts.fixedMax:Math.max(...vals);
@@ -2104,14 +2108,14 @@ function svgTrendChart(races, opts){
   return {n, last:pts[n-1], prev:pts[n-2],
     svg:`<svg class="tksvg" viewBox="0 0 ${W} ${H}" role="img" aria-label="${opts.label||''}">${extra}${band}${grid}${line2}${line}${dots}${insiderRings}${xticks}</svg>`};
 }
-function svgWeightTrend(races){
-  const r=svgTrendChart(races,{valueFn:p=>p.weight,label:"馬体重推移"});
+function svgWeightTrend(races, wantW){
+  const r=svgTrendChart(races,{valueFn:p=>p.weight,label:"馬体重推移",wantW});
   if(!r) return "";
   const diff = r.prev? r.last.weight-r.prev.weight : null;
   return `<div class="tksect">馬体重推移（直近${r.n}走${races.length>r.n?'／全'+races.length+'走中':''}）`
     +`<span class="hpwnow">直近 ${r.last.weight}kg${diff!=null?`（前走比${diff>0?'+':''}${diff}）`:''}</span></div>`
     +`<div class="tkchart-click" data-chart-title="馬体重推移">${r.svg}</div>`
-    +`<div class="tknote">帯＝直近走中で3着以内だった馬体重の範囲（参考）。●オレンジ=1着／●濃色=2〜3着／○白抜き=4着以下／輪＝八百長ラベル（赤=仕掛け/青=引き/緑=ヤレズ/黄=その他。下記の過去成績を参照）。タップで拡大</div>`;
+    +`<div class="tknote">帯＝直近走中で3着以内だった馬体重の範囲（参考）。●オレンジ=1着／●濃色=2〜3着／○白抜き=4着以下／輪＝八百長ラベル（赤=仕掛け/青=引き/緑=ヤレズ/黄=その他。上記の過去成績を参照）。タップで拡大</div>`;
 }
 // 決着タイム推移: 縦軸を全馬共通(HP_TIME_MIN〜MAX秒)に固定し、他馬と比べてどのタイム帯が
 // 得意かを見やすくする（2026-09-24。当初はDB全走のp1〜p99＝80〜220秒にしたが、ボリュームゾーン
@@ -2140,12 +2144,12 @@ function hpMoistBarsFn(pts, sx, dim){
   });
   return bars+axis;
 }
-function svgTimeTrend(races){
+function svgTimeTrend(races, wantW){
   // 勝ち馬タイム(点線)＝自分のtime_sec-margin_sec（margin_sec=自タイム-勝ちタイム、勝ち馬なら0）。
   // 新たなDB問い合わせ不要でmargin_secから逆算できる（2026-09-24、負けた時のタイム差を一目で見せる）。
   const winnerTime = p => p.margin_sec!=null ? p.time_sec-p.margin_sec : null;
   const r=svgTrendChart(races,{valueFn:p=>p.time_sec,fixedMin:HP_TIME_MIN,fixedMax:HP_TIME_MAX,
-    bandColor:"var(--edge)",label:"決着タイム推移",padL:40,padR:24,
+    bandColor:"var(--edge)",label:"決着タイム推移",padL:40,padR:24,wantW,
     majorStep:30,minorStep:10,axisFmt:hpFmtMinSec,extraFn:hpMoistBarsFn,line2Fn:winnerTime});
   if(!r) return "";
   return `<div class="tksect">決着タイム推移（直近${r.n}走${races.length>r.n?'／全'+races.length+'走中':''}）`
@@ -2256,14 +2260,17 @@ function renderHorseProfile(){
     +`<button class="hpmodebtn${hpMode==='season'?' on':''}" data-mode="season">今年度成績</button>`
     +`<button class="hpmodebtn${hpMode==='career'?' on':''}" data-mode="career">通算成績</button>`
     +`</div>`;
+  // モーダルの実測幅（PC表示で.histboxが広がった分をチャートのviewBox幅にも反映する。
+  // 2026-09-26、モーダル幅拡張に合わせた修正）。まだ何も描画していない初回はCSSのmax-width
+  // (モバイル480px/PC860px)で決まる想定幅にフォールバックする。
+  const modalW = body.clientWidth || (document.documentElement.dataset.layout==="desktop"?860:340);
   body.innerHTML=
     modeBar
     +`<div class="rbmeta">${h.sex||''}${h.age??''}　調教師 ${h.trainer||'—'}　馬主 ${h.owner||'—'}`
     +`${h.sled_kg!=null?'　そり重量 '+h.sled_kg.toFixed(0):''}`
     +`${h.weight!=null?'　馬体重 '+h.weight+(h.weight_diff!=null?"("+(h.weight_diff>0?"+":"")+h.weight_diff+")":""):''}</div>`
     +(insiderCount>0?`<div class="hpinswarn">🚨 八百長ラベル ${insiderCount}件（下記の過去成績に表示）</div>`:'')
-    +svgWeightTrend(races)
-    +svgTimeTrend(races)
+    +svgTimeTrend(races, modalW)
     +`<div class="tksect">過去成績</div>${cards||'<div class="tknote">今年度はまだ出走がありません。</div>'}${more}`
     +`<div class="tksect">${hpMode==="season"?"今年度成績":"通算成績（"+races.length+"走）"}</div>`
     +`<div class="dttblwrap"><table class="dttbl"><thead><tr><th class="l"></th><th>1着</th><th>2着</th>`
@@ -2273,7 +2280,8 @@ function renderHorseProfile(){
     +hpSeasonHtml(races)
     +hpJockeyHtml(races)
     +hpPedigreeHtml(h.pedigree)
-    +hpRatingsHtml(h.ratings, h.next_class, h.reconstructed_now, h.ratings_reconstructed);
+    +hpRatingsHtml(h.ratings, h.next_class, h.reconstructed_now, h.ratings_reconstructed)
+    +svgWeightTrend(races, modalW);
   document.getElementById("histBackBtn").onclick=()=>{
     if(histState.race!=null){ histState.horse=null; renderHistModal(); } else { closeHistModal(); }
   };
@@ -3044,6 +3052,7 @@ let rz; window.addEventListener("resize",()=>{clearTimeout(rz);rz=setTimeout(()=
   if(view==="card"){ const r=get(); r.horses.forEach(h=>drawCardDots(document.getElementById("cd_"+h.num), h)); }
   render();
   if(window.__curTop==="analysis") renderAnalysis();
+  if(histState.horse) renderHorseProfile();
 },160);});
 }
 // データ読込: 埋め込み(アーティファクト) or ローカルの data.json(ローカルサーバで自動更新)
@@ -3080,6 +3089,7 @@ if ("serviceWorker" in navigator) {
     requestAnimationFrame(()=>{
       if(typeof render==="function") render();
       if(window.__curTop==="analysis" && typeof renderAnalysis==="function") renderAnalysis();
+      if(histState.horse && typeof renderHorseProfile==="function") renderHorseProfile();
     });
   }
   let saved = localStorage.getItem(LS_KEY);
