@@ -194,7 +194,7 @@ table.ht .fin{font-size:.68rem;color:var(--muted)}
 table.ht .fin.top{color:var(--good);font-weight:800}
 /* 過去5走（簡易）列（2026-09-26、日付/着順/1着とのタイム差の3行×5走） */
 .p5grid{display:flex;gap:5px}
-.p5col{display:flex;flex-direction:column;align-items:center;min-width:34px;
+.p5col{display:flex;flex-direction:column;align-items:center;min-width:34px;cursor:pointer;
   border-radius:5px;background:var(--surface2);padding:2px 3px;line-height:1.35}
 .p5col.p5top{background:var(--good-soft)}
 .p5col.p5win{background:var(--accent-soft)}
@@ -1177,8 +1177,8 @@ function past5Html(h){
     const dateTxt = t.d ? t.d.slice(5).replace('-','/') : '—';
     const posTxt = t.p!=null ? t.p+'着' : '—';
     const gapTxt = t.gs!=null ? (t.gs>=0?'+':'')+t.gs.toFixed(1)+'s' : '—';
-    const title = `${t.d||''} ${t.c||''} ${posTxt}${lvlCls?(lvlCls==='p5-high'?'（高レベル）':'（低レベル）'):''}`;
-    return `<div class="p5col ${cls}" title="${title}"><span class="p5d">${dateTxt}</span>`
+    const title = `${t.d||''} ${t.c||''} ${posTxt}${lvlCls?(lvlCls==='p5-high'?'（高レベル）':'（低レベル）'):''}（タップでレース結果）`;
+    return `<div class="p5col ${cls}" data-date="${t.d||''}" data-horse="${(h.name||'').replace(/"/g,'&quot;')}" title="${title}"><span class="p5d">${dateTxt}</span>`
       +`<span class="p5p ${lvlCls}">${posTxt}</span><span class="p5g">${gapTxt}</span></div>`;
   }).join('');
   return `<td class="l"><div class="p5grid">${cols}</div></td>`;
@@ -1683,6 +1683,12 @@ document.getElementById("horses").addEventListener("click",e=>{
     if(h && h.insider_flag) showInsiderLabelModal(h);
     return;
   }
+  const p5=e.target.closest(".p5col");
+  if(p5){
+    const d=p5.dataset.date, nm=p5.dataset.horse;
+    if(d && nm) openPast5RaceDetail(d, nm);
+    return;
+  }
   const t=e.target.closest(".tname, .hname"); if(!t) return;
   const num=+t.dataset.num; if(!num) return;
   const r=get(); const h=r && r.horses.find(x=>x.num===num);
@@ -2021,6 +2027,21 @@ function openHorseProfileStandalone(name){
   histState={date:null, race:null, horse:name};
   document.getElementById("histModal").style.display="flex";
   openHorseProfile(name);
+}
+// 出走馬予測タブの「過去5走」列タップ→そのレースの全頭着順を表示（2026-09-26）。
+// race_history.jsonはarchive/*.json由来で直近開催分（2026-07-11〜）しか無いため、対象日が
+// 範囲外の場合はrenderHistModal側の「この日のデータがありません」表示に自然にフォールバックする。
+function openPast5RaceDetail(dateStr, horseName){
+  histState={date:dateStr, race:null, horse:null};
+  document.getElementById("histModal").style.display="flex";
+  document.getElementById("histTitle").textContent=dateStr.replace(/-/g,"/");
+  document.getElementById("histBody").innerHTML='<div class="tknote">読込中…</div>';
+  loadRaceHistory(H=>{
+    const day=H.days[dateStr];
+    const race=day && day.races.find(r=>r.horses.some(hh=>hh.name===horseName));
+    histState.race = race ? race.race_no : null;
+    renderHistModal();
+  });
 }
 function loadHorseProfile(name, cb){
   window.__HORSES = window.__HORSES || {};
