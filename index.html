@@ -1279,7 +1279,7 @@ const COLS = [
    td:h=>`<td class="num"><div class="c2 c2r"><span>${h.odds!=null?h.odds.toFixed(1):'—'}</span><span class="tsub num ${h.ev_buy?'roi':''}">${h.ev!=null?'×'+h.ev.toFixed(2):'—'}</span></div></td>`},
   {key:"pop", label:"人気", th:'<th>人気</th>', td:h=>`<td class="num">${h.popularity?h.popularity:'—'}</td>`},
   {key:"prize", label:"番組賞金/本年賞金・クラス", th:'<th>番組/本年賞金(万)・級</th>',
-   td:h=>`<td class="num"><div class="c2 c2r"><span>${h.prize_program!=null?manFmt(h.prize_program):'—'}${h.prize_year!=null?'/'+manFmt(h.prize_year):''}</span><span class="tsub">${h.horse_class||'—'}</span></div></td>`},
+   td:h=>`<td class="num"><div class="c2 c2r"><span>${h.prize_program!=null?manFmt(h.prize_program):'—'}${h.prize_year!=null?'/'+manFmt(h.prize_year):''}</span><span class="tsub">${classLabel(h.horse_class)}</span></div></td>`},
   {key:"fin", label:"着順・決着タイム", th:'<th>着 / 決着</th>',
    td:(h,hasResult)=>{ const top=h.position!=null&&h.position<=3; const fin=!hasResult?"—":(h.position!=null?`${h.position}着`:"除外"); const rt=hasResult&&h.result_time?h.result_time:"—"; return `<td class="fin ${top?'top':''}"><div class="c2 c2r"><span>${fin}</span><span class="tsub num">${rt}</span></div></td>`; }},
   {key:"past5", label:"過去5走（簡易）", th:'<th class="l">過去5走</th>', td:past5Html},
@@ -1844,10 +1844,11 @@ function updateRaceRefreshUI(){
 const CLASS_BAND_HI_K = {"C2":2200,"C1":3400,"B4":4300,"B3":5500,"B2":6700,"B1":8500,"A2":10000,"A1":13000};
 const classLabel = (code, horses) => {
   if(!code) return "—";
-  // 2歳限定戦は"C1"等の見た目が成馬クラスと同じ表記でも賞金帯の定義が別（2歳は通算賞金でなく
-  // 年齢だけで区分）なので、賞金条件は付けない（出走馬が全馬2歳なら2歳限定戦とみなす、2026-09-28）。
+  // 2歳（horse_ratingsの内部コード"2sai"、またはレースの全出走馬が2歳）は独自の年齢区分で
+  // 賞金帯の定義が成馬と別のため、A/B/C/D等のサブ表記は出さず単に「2歳」とする（2026-09-28）。
+  if(code==="2sai") return "2歳";
   const is2yo = Array.isArray(horses) && horses.length>0 && horses.every(h=>h.age===2);
-  if(is2yo) return code;
+  if(is2yo) return "2歳";
   const hi = CLASS_BAND_HI_K[code];
   return hi!=null ? `${code}(${(hi/10).toFixed(0)}万未満)` : code;
 };
