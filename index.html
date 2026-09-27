@@ -273,6 +273,7 @@ table.ht .roi{color:color-mix(in srgb,var(--ev-hue) 78%,var(--ink));font-weight:
 .rbtbl th:nth-child(2),.rbtbl td:nth-child(2){text-align:left}
 .rbtbl th{color:var(--muted);font-size:.62rem;font-weight:700}
 .rbtbl tr.pick{background:color-mix(in srgb,var(--accent) 12%,var(--surface))}
+.verbadge{font-size:.55rem;font-weight:800;color:var(--accent);border:1px solid var(--accent);border-radius:4px;padding:0 3px}
 .v2up{color:var(--good);font-weight:700;margin-left:3px}
 .v2dn{color:var(--accent);font-weight:700;margin-left:3px}
 .hlink,.tname-txt,.hname-txt{cursor:pointer;text-decoration:underline;text-decoration-color:color-mix(in srgb,var(--muted) 70%,transparent);text-underline-offset:2px}
@@ -1226,12 +1227,17 @@ const COLS = [
    td:h=>`<td class="l"><div class="c2"><span class="tjk">${h.jockey||'—'}${jockeySwitchIcon(h)}</span><span class="tsub num">${recFmt(h.jockey_record)}</span></div></td>`},
   {key:"sled", label:"斤量", th:'<th>斤量</th>',
    td:h=>`<td class="num"><div class="c2 c2r"><span>${sledTop(h)}</span><span class="tsub num">${sledSub(h)}</span></div></td>`},
-  {key:"winv2", label:"勝率v2（必須）", always:true, th:'<th title="学習ウェイト版(v2)の勝率と予測順位（▲▼=v1からの順位変化）。v2データが無い日はv1の値を薄字で表示">勝率v2</th>',
-   td:h=>{ if(h.win_prob_v2==null) return `<td class="num"><span class="tsub" title="v2データなし（v1の値）">${pct(h.win_prob)}</span></td>`;
-     const d=(h.rank!=null&&h.rank_v2!=null)?h.rank-h.rank_v2:0;
+  {key:"win", label:"勝率（主予測）", always:true, th:'<th title="主予測の勝率と予測順位。2026-09-26以降はv2（学習ウェイト）、それ以前はv1。▲▼=v1からの順位変化">勝率</th>',
+   td:h=>{ if(h.win_prob==null) return `<td class="num"><span class="tsub">—</span></td>`;
+     const v2=h.win_ver==="v2";
+     const d=(v2&&h.rank!=null&&h.rank_v1!=null)?h.rank_v1-h.rank:0;
      const arrow=d>0?`<span class="v2up">▲${d}</span>`:(d<0?`<span class="v2dn">▼${-d}</span>`:"");
-     return `<td class="win-c num">${pct(h.win_prob_v2)}<div class="tsub">${h.rank_v2}位${arrow}</div></td>`; }},
-  {key:"win", label:"勝率v1（リファレンス）", th:'<th title="現行v1（手決めウェイト）の勝率。リファレンス用">勝率v1</th>', td:h=>`<td class="num">${pct(h.win_prob)}</td>`},
+     return `<td class="win-c num">${pct(h.win_prob)}<div class="tsub">${h.rank!=null?h.rank+'位':''}${v2?' <span class="verbadge">v2</span>':''}${arrow}</div></td>`; }},
+  {key:"winref", label:"勝率（参考：もう一方のバージョン）", th:'<th title="主予測でない側のバージョンの勝率と順位（v2主の日はv1、v1主の日はv2）">参考</th>',
+   td:h=>{ const v2=h.win_ver==="v2";
+     const p=v2?h.win_prob_v1:h.win_prob_v2, rk=v2?h.rank_v1:h.rank_v2;
+     if(p==null) return `<td class="num"><span class="tsub">—</span></td>`;
+     return `<td class="num">${pct(p)}<div class="tsub">${v2?'v1':'v2'} ${rk!=null?rk+'位':''}</div></td>`; }},
   {key:"abil", label:"能力/Elo", th:'<th>能力/Elo</th>',
    td:h=>`<td class="num"><div class="c2 c2r"><span class="abil">${h.ability!=null?h.ability.toFixed(1):'—'}</span><span class="tsub num">${h.elo!=null?h.elo:'—'}</span></div></td>`},
   {key:"obstacle", label:"障害力", th:'<th>障害</th>', td:h=>`<td class="num">${featSpan(h.f_obstacle)}</td>`},
