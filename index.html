@@ -1860,6 +1860,18 @@ function refreshRaceData(){
 const _rrb=document.getElementById("raceRefreshBtn");
 if(_rrb) _rrb.addEventListener("click", refreshRaceData);
 
+// 管理者タブ(成績・八百長ラベル)の表示切替（2026-09-27）。他メンバーへの共有時はデフォルト非表示にし、
+// 自分のブラウザだけ ?admin=<ADMIN_KEY> を一度開けばlocalStorageに記憶して以後も表示され続ける。
+// クライアント側の目隠し程度の制限であり、URLとキーを知っていれば誰でも解除できる点に注意。
+const ADMIN_KEY = "obihiro2026";
+(function(){
+  const q = new URLSearchParams(location.search).get("admin");
+  if(q===ADMIN_KEY) localStorage.setItem("banei_admin","1");
+  else if(q==="0") localStorage.removeItem("banei_admin");
+  if(localStorage.getItem("banei_admin")==="1"){
+    document.querySelectorAll('[data-admin="1"]').forEach(el=>el.hidden=false);
+  }
+})();
 // init
 renderRacePills(); sync();
 // バックエンドURLを自動取得（PCで run_all.ps1 起動時に反映される）
