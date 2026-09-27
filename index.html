@@ -276,6 +276,7 @@ table.ht .roi{color:color-mix(in srgb,var(--ev-hue) 78%,var(--ink));font-weight:
 .rbtbl th:nth-child(2),.rbtbl td:nth-child(2){text-align:left}
 .rbtbl th{color:var(--muted);font-size:.62rem;font-weight:700}
 .rbtbl tr.pick{background:color-mix(in srgb,var(--accent) 12%,var(--surface))}
+.flowupd{margin-left:auto;font-size:.66rem}
 .verbadge{font-size:.55rem;font-weight:800;color:var(--accent);border:1px solid var(--accent);border-radius:4px;padding:0 3px}
 .v2up{color:var(--good);font-weight:700;margin-left:3px}
 .v2dn{color:var(--accent);font-weight:700;margin-left:3px}
@@ -1495,6 +1496,12 @@ function renderRaceFlowTime(r){
   // 表示モード（2026-09-27）: raw=実績タイム / cond=今日の条件補正(ソリ重量・馬場水分・馬場指数、fh_adj_*)
   // / shrink=cond＋馬どうしの差を×0.6に縮小（5走平均の差は実際の差より大きく出るため。732R検証で回帰傾き≈0.6）。
   const mode = window.__flowMode || "raw";
+  // 更新時刻と、補正に反映した当日レース結果の範囲（当日の先行レースの結果を踏まえた展開予測のため表示）
+  const updTxt = r.updated_at ? String(r.updated_at).slice(5,16).replace('-','/') : "—";
+  const h0 = (r.horses||[]).find(h=>h.fh_cond_day!=null||h.fh_cond_upto!=null);
+  const trackTxt = h0 && h0.fh_cond_upto!=null
+    ? `馬場指数: 当日R${h0.fh_cond_upto}までの結果を反映（${h0.fh_cond_day>0?'+':''}${h0.fh_cond_day}秒${h0.fh_cond_day>0?'・遅め':(h0.fh_cond_day<0?'・速め':'')}）`
+    : "馬場指数: 当日の先行レース結果なし（水分までの補正）";
   const adj = mode!=="raw";
   let all=(r.horses||[]).map(h=> adj && h.fh_adj_avg!=null
     ? {...h, fh_avg:h.fh_adj_avg, fh_min:h.fh_adj_min, fh_max:h.fh_adj_max} : h);
@@ -1616,12 +1623,13 @@ function renderRaceFlowTime(r){
     `<div class="secthead"><span class="sect">展開イメージ(第2障害降下時点のタイム傾向)</span>`
     +`<div class="vtoggle" id="flowtoggle"><button data-a="raw" aria-pressed="${mode==='raw'}">実績タイム</button>`
     +`<button data-a="cond" aria-pressed="${mode==='cond'}">今日の条件補正</button>`
-    +`<button data-a="shrink" aria-pressed="${mode==='shrink'}">補正＋差を縮小</button></div></div>`
+    +`<button data-a="shrink" aria-pressed="${mode==='shrink'}">補正＋差を縮小</button></div>`
+    +`<span class="tsub flowupd">🕛 更新 ${updTxt}${adj?' ・'+trackTxt:''}</span></div>`
     +`<svg class="tksvg" viewBox="0 0 ${W} ${H+14*S}">${heads}<g transform="translate(0,${4*S})">${zebra}${grid}${body}${ticks}</g></svg>`
     +`<div class="tknote">縦＝馬番順、横＝直近5走の前半タイム(総合−上り、第1・第2障害を含む＝第2障害降下時点まで)の`
     +`平均/最速/最遅。<br>緑の矢印＝上がりが出走馬平均より速く終いで差を詰める傾向、`
     +`赤の矢印＝平均より遅く差が開く傾向（矢印の長さ＝詰め/後退の目安秒数）。`
-    +(adj?`<br>今日の条件補正＝各走の前半タイムを、今日のソリ重量・馬場水分・馬場指数だった場合の値に補正（前半タイムの回帰係数×今日との差。馬場指数＝その開催日の全走の前半タイム残差。今日の分は先行レースの結果で推定し、序盤で推定できない場合は平均的な馬場として扱う）。左の「斤量±kg」は過去走との平均差。上りは補正していません。`:``)
+    +(adj?`<br>今日の条件補正＝各走の前半タイムを、今日のソリ重量・馬場水分・馬場指数だった場合の値に補正（前半タイムの回帰係数×今日との差。馬場指数＝その開催日の全走の前半タイム残差。今日の分は先行レースの着順タイムから前半タイム換算で推定し、直近のレースほど重く反映。序盤で推定できない場合は平均的な馬場として扱う）。左の「斤量±kg」は過去走との平均差。上りは補正していません。`:``)
     +(mode==="shrink"?`<br>差を縮小＝5走平均の馬どうしの差は実際の差より大きく出やすいため、レース平均からの差を×0.6に縮めて表示（帯の幅・順位は不変）。`:``)
     +`</div>`;
   host.querySelectorAll("#flowtoggle button").forEach(b=>b.onclick=()=>{ window.__flowMode=b.dataset.a; renderRaceFlowTime(r); });
