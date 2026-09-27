@@ -1,4 +1,4 @@
-<title>ばんえい予測レビュー</title>
+<title>ばんえーあい</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#c1462a">
 <link rel="manifest" href="./manifest.json">
@@ -676,7 +676,7 @@ table.ht .numcell{display:inline-flex;align-items:center;gap:4px}
 </style>
 
 <header>
-  <div class="brand"><span class="dot"></span>ばんえい予測レビュー<small id="gen"></small><button class="notify-btn" id="notifyBtn" type="button" title="発走10分前にスマホへ通知" aria-pressed="false">🔔 通知</button><button class="layout-btn" id="layoutToggle" type="button" aria-pressed="false">🖥 PC表示</button></div>
+  <div class="brand"><span class="dot"></span>ばんえーあい<small id="gen"></small><button class="notify-btn" id="notifyBtn" type="button" title="発走10分前にスマホへ通知" aria-pressed="false">🔔 通知</button><button class="layout-btn" id="layoutToggle" type="button" aria-pressed="false">🖥 PC表示</button></div>
   <div class="toptabs" id="toptabs">
     <button data-t="race" aria-pressed="true">レース予測</button>
     <button data-t="result" aria-pressed="false">レース結果</button>
@@ -928,7 +928,27 @@ function renderResultTab(r, hasResult, resultRow){
   el.innerHTML =
     `<div class="meta"><div class="top"><span class="rname">${r.race_no}R ${r.race_name||''}</span></div>`
     +`<div class="chips"><span class="chip">クラス <b>${r.class||'—'}</b></span>${statusChip}</div></div>`;
-  document.getElementById("resultCards").innerHTML = `<div class="result">${resultRow}</div>`;
+  document.getElementById("resultCards").innerHTML = `<div class="result">${resultRow}</div>`+resultFieldTableHtml(r,hasResult);
+}
+// レース結果タブの全頭タイム・着順表（成績タブのレース詳細モーダルと同じ列構成、2026-09-27）。
+function resultFieldTableHtml(r,hasResult){
+  const hs=[...(r.horses||[])].filter(h=>h.position!=null).sort((a,b)=>a.position-b.position);
+  if(!hasResult || !hs.length) return "";
+  const MARKS=["◎","◯","▲","△","☆"];
+  const rows=hs.map(h=>{
+    const mk = h.rank>=1 && h.rank<=5 ? MARKS[h.rank-1] : "";
+    const wTxt = h.weight!=null ? h.weight+(h.weight_diff!=null?"("+(h.weight_diff>0?"+":"")+h.weight_diff+")":"") : "—";
+    return `<tr class="${h.position===1?'pick':''}"><td>${h.gate??'—'}</td><td><span class="hmn" style="${capStyle(h.gate)}">${h.num}</span></td>`
+      +`<td class="${h.position===1?'rbtop':''}">${h.position}</td>`
+      +`<td><span class="hlink" data-horse="${h.name||''}">${h.name||''}</span>${mk?`<span class="rbpick">${mk}</span>`:''}</td>`
+      +`<td>${h.result_time||'—'}</td><td>${h.popularity??'—'}</td>`
+      +`<td>${h.odds!=null?h.odds.toFixed(1):'—'}</td><td>${h.jockey||'—'}</td>`
+      +`<td>${wTxt}</td><td>${(h.sex||'')+(h.age??'')}</td><td>${h.sled_kg!=null?h.sled_kg.toFixed(0):'—'}</td></tr>`;
+  }).join("");
+  return `<div class="rbtblwrap"><table class="rbtbl"><thead><tr><th>枠</th><th>番</th><th>着</th><th class="l">馬名</th>`
+    +`<th>タイム</th><th>人気</th><th>単勝</th><th>騎手</th><th>馬体重</th><th>性齢</th><th>そり</th></tr></thead>`
+    +`<tbody>${rows}</tbody></table></div>`
+    +`<div class="tknote">馬名をタップすると通算成績・過去成績・血統を表示します。</div>`;
 }
 // 払戻金セクション（結果確定後・全券種）。レース結果タブと日別成績のレース詳細モーダルで共用。
 function payoutsHtml(p){
