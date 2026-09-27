@@ -249,10 +249,6 @@ table.ht .roi{color:color-mix(in srgb,var(--ev-hue) 78%,var(--ink));font-weight:
 :root[data-layout="desktop"] .histbox{max-width:860px}
 /* グラフ拡大表示（馬体重/決着タイム推移をタップで拡大、2026-09-24）。同じviewBox付きSVGを
    ワイドな箱で表示するだけで、ベクター描画なのでボケずに大きく見える。 */
-.admgate{max-width:320px;margin:40px auto;padding:22px;background:var(--surface);border:1px solid var(--border);border-radius:12px;text-align:center;display:flex;flex-direction:column;gap:10px}
-.admtitle{font-weight:700;font-size:.9rem}
-.admpw{font-family:inherit;font-size:.9rem;padding:8px 10px;border:1px solid var(--border);border-radius:8px;background:var(--surface2);color:var(--ink);text-align:center}
-.admerr{color:var(--accent);font-size:.72rem;min-height:1em}
 .chartbox{background:var(--surface);border:1px solid var(--border);border-radius:12px;max-width:min(96vw,1300px);width:94vw;max-height:88vh;overflow:auto;padding:14px 16px;box-shadow:0 8px 30px rgba(0,0,0,.35)}
 .tkchart-click{cursor:zoom-in}
 .histback{display:inline-block;background:none;border:1px solid var(--border);border-radius:7px;padding:4px 10px;font-size:.7rem;color:var(--muted);cursor:pointer;font-family:inherit;margin-bottom:10px}
@@ -1865,29 +1861,7 @@ function refreshRaceData(){
 const _rrb=document.getElementById("raceRefreshBtn");
 if(_rrb) _rrb.addEventListener("click", refreshRaceData);
 
-// 管理者ページ(成績・八百長ラベル)のパスワードゲート（2026-09-27）。タブ自体は常時表示だが、
-// 遷移した先でパスワード未入力ならゲート画面を出し、正解でlocalStorageに記憶（以後この端末は素通り）。
-// クライアント側の目隠しであり、パスワードを知っていれば誰でも解除できる点に注意。
-const ADMIN_KEY = "makai-ai-xMwD8Fuq";
-const isAdmin = () => localStorage.getItem("banei_admin")==="1";
-(function(){
-  const q = new URLSearchParams(location.search).get("admin");
-  if(q===ADMIN_KEY) localStorage.setItem("banei_admin","1");
-  else if(q==="0") localStorage.removeItem("banei_admin");
-})();
-function renderAdminGate(tabKey, label){
-  const host=document.getElementById(tabKey); if(!host) return;
-  host.innerHTML = `<div class="admgate"><div class="admtitle">🔒 ${label}は管理者限定です</div>`
-    +`<input type="password" id="admPw" class="admpw" placeholder="管理者パスワード" autocomplete="off">`
-    +`<button class="savebtn" id="admGo">解除</button><div class="admerr" id="admErr"></div></div>`;
-  const go=()=>{
-    const v=document.getElementById("admPw").value;
-    if(v===ADMIN_KEY){ localStorage.setItem("banei_admin","1"); switchTop(tabKey); }
-    else document.getElementById("admErr").textContent="パスワードが違います";
-  };
-  document.getElementById("admGo").onclick=go;
-  document.getElementById("admPw").addEventListener("keydown",e=>{ if(e.key==="Enter") go(); });
-}
+
 // init
 renderRacePills(); sync();
 // バックエンドURLを自動取得（PCで run_all.ps1 起動時に反映される）
@@ -2528,9 +2502,9 @@ function switchTop(t){
   document.getElementById("labels").style.display=t==="labels"?"block":"none";
   document.getElementById("settings").style.display=t==="settings"?"block":"none";
   document.querySelectorAll("#toptabs button").forEach(x=>x.setAttribute("aria-pressed", x.dataset.t===t));
-  if(t==="track"){ if(!isAdmin()) renderAdminGate("track","成績"); else if(!window.__TRACK_LOADED) loadTracking(); }
+  if(t==="track" && !window.__TRACK_LOADED) loadTracking();
   if(t==="odds" && !window.__ODDS_LOADED) loadOdds();
-  if(t==="labels"){ if(!isAdmin()) renderAdminGate("labels","八百長ラベル"); else if(!window.__LABELS_LOADED) loadInsiderLabels(); }
+  if(t==="labels" && !window.__LABELS_LOADED) loadInsiderLabels();
   if(t==="settings") renderSettingsTab();
 }
 function loadTracking(){
