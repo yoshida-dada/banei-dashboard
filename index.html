@@ -273,6 +273,9 @@ table.ht .roi{color:color-mix(in srgb,var(--ev-hue) 78%,var(--ink));font-weight:
 .rbtbl th:nth-child(2),.rbtbl td:nth-child(2){text-align:left}
 .rbtbl th{color:var(--muted);font-size:.62rem;font-weight:700}
 .rbtbl tr.pick{background:color-mix(in srgb,var(--accent) 12%,var(--surface))}
+.rbtbl tr.rbfocus td{font-weight:800;color:var(--ink)}
+.rbtbl tr.rbfocus .hnamelink{font-weight:800}
+.rbvideo{display:inline-block;margin:0 0 10px 8px;padding:4px 10px;border:1px solid var(--border);border-radius:7px;font-size:.7rem;color:var(--accent);text-decoration:none;font-weight:700}
 .rbtbl td.rbtop{color:var(--good);font-weight:800}
 .rbtbl .rbpick{color:var(--accent);font-weight:800;margin-left:3px}
 .hnamelink{cursor:pointer;text-decoration:underline;text-decoration-color:var(--muted);text-underline-offset:2px}
@@ -2024,10 +2027,13 @@ function renderHistModal(){
     const race=day.races.find(r=>r.race_no===histState.race);
     if(!race){ body.innerHTML='<div class="tknote">このレースのデータがありません。</div>'; return; }
     document.getElementById("histTitle").textContent=`${histState.date.slice(5).replace('-','/')} ${race.race_no}R`;
+    const MARKS=["◎","◯","▲","△","☆"];
     const rows=race.horses.map(h=>{
       const wTxt = h.weight!=null ? h.weight+(h.weight_diff!=null?"("+(h.weight_diff>0?"+":"")+h.weight_diff+")":"") : "—";
-      return `<tr class="${h.is_pick?'pick':''}"><td class="${h.pos===1?'rbtop':''}">${h.pos??'—'}</td>`
-        +`<td><span class="hnamelink" data-horse="${h.name}">${h.name||''}</span>${h.is_pick?'<span class="rbpick">◎</span>':''}</td>`
+      const mk = h.rank>=1 && h.rank<=5 ? MARKS[h.rank-1] : (h.is_pick?"◎":"");
+      const focus = histState.focus && h.name===histState.focus;
+      return `<tr class="${h.is_pick?'pick':''}${focus?' rbfocus':''}"><td class="${h.pos===1?'rbtop':''}">${h.pos??'—'}</td>`
+        +`<td><span class="hnamelink" data-horse="${h.name}">${h.name||''}</span>${mk?`<span class="rbpick">${mk}</span>`:''}</td>`
         +`<td>${h.time||'—'}</td><td>${h.popularity??'—'}</td>`
         +`<td>${h.odds!=null?h.odds.toFixed(1):'—'}</td><td>${h.jockey||'—'}</td>`
         +`<td>${wTxt}</td><td>${h.gate??'—'}</td><td>${h.num}</td>`
@@ -2035,6 +2041,7 @@ function renderHistModal(){
     }).join("");
     body.innerHTML=
       `<button class="histback" type="button" id="histBackBtn">← ${histState.date.slice(5).replace('-','/')}の一覧へ</button>`
+      +`<a class="rbvideo" href="http://keiba-lv-st.jp/movie/player?date=${histState.date.replace(/-/g,'')}&race=${race.race_no}&track=obihiro" target="_blank" rel="noopener">🎬 レース映像</a>`
       +`<div class="rbmeta">${race.race_name||''}${race.class?' ・'+race.class:''}`
       +`${race.moisture!=null?' ・馬場水分'+race.moisture+'%':''}${race.post_time?' ・発走'+race.post_time:''}${race.win_time?' ・決着'+race.win_time:''}</div>`
       +`<div class="rbtblwrap"><table class="rbtbl"><thead><tr><th>着</th><th class="l">馬名</th><th>タイム</th>`
@@ -2083,6 +2090,7 @@ function openPast5RaceDetail(dateStr, horseName){
     const day=H.days[dateStr];
     const race=day && day.races.find(r=>r.horses.some(hh=>hh.name===horseName));
     histState.race = race ? race.race_no : null;
+    histState.focus = horseName;
     renderHistModal();
   });
 }
