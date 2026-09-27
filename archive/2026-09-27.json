@@ -1,6 +1,6 @@
 {
  "date": "2026-09-27",
- "archived_at": "2026-09-27 18:28",
+ "archived_at": "2026-09-27 18:29",
  "races": [
   {
    "date": "2026-09-27",
@@ -21757,7 +21757,7 @@
    "market_fav": 8,
    "winner": 4,
    "update_stage": "result",
-   "updated_at": "2026-09-27 18:21",
+   "updated_at": "2026-09-27 18:29",
    "horses": [
     {
      "num": 7,
@@ -26067,11 +26067,7 @@
      "payout": 40680,
      "popularity": 163
     }
-   ],
-   "track_offset": -9.6,
-   "track_z": 0.07,
-   "track_label": "標準",
-   "track_n": 6
+   ]
   },
   {
    "date": "2026-09-27",
@@ -28955,7 +28951,11 @@
      "prob": 0.0357,
      "stake": 1200
     }
-   ]
+   ],
+   "track_offset": -11.3,
+   "track_z": -0.27,
+   "track_label": "標準",
+   "track_n": 7
   },
   {
    "date": "2026-09-27",
