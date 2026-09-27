@@ -2443,7 +2443,7 @@ function renderHorseProfile(){
       +`<div class="hprname">${r.race_name||''}</div>`
       +`<div class="hprline">${r.class||''}　200m　${r.time||'—'} ${levelBadge}</div>`
       +`<div class="hprline">頭数${r.field_size??'—'}　`
-      +`<span class="hpgate" style="${capStyle(gate)}">${gate}</span>　馬番${r.num}　`
+      +`<span class="hmn" style="${capStyle(gate)}">${r.num}</span>　`
       +`<b>${r.jockey||'—'}</b>　そり${r.sled_kg!=null?r.sled_kg.toFixed(0):'—'}　馬場水分${r.moisture??'—'}%</div>`
       +`<div class="hprline">馬体重${wTxt}`
       +(r.other?`　${r.other.label} ${r.other.name||''}`:'')
