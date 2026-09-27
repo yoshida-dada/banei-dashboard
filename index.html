@@ -1235,6 +1235,8 @@ function past5Html(h){
 }
 // テーブルの列定義（always=常時表示。それ以外は「⚙列」で表示/非表示できる）。
 // 配列の並び=既定の列順（2026-09-26、ユーザー指定のレイアウトに合わせて並び替え）。
+// 賞金は内部データが千円単位。表では万円単位（小数が出る場合のみ1桁）で表示する。
+const manFmt = k => { const m=k/10; return (Number.isInteger(m)?m:Number(m.toFixed(1))).toLocaleString(); };
 const COLS = [
   {key:"num", label:"馬番", always:true, th:'<th class="l">馬</th>',
    td:h=>`<td class="l"><span class="numcell">${medal(h.position)}<span class="tnum" style="${capStyle(h.gate)}">${h.num}</span></span></td>`},
@@ -1261,8 +1263,8 @@ const COLS = [
   {key:"odds", label:"オッズ・単勝EV", th:'<th>オッズ / EV</th>',
    td:h=>`<td class="num"><div class="c2 c2r"><span>${h.odds!=null?h.odds.toFixed(1):'—'}</span><span class="tsub num ${h.ev_buy?'roi':''}">${h.ev!=null?'×'+h.ev.toFixed(2):'—'}</span></div></td>`},
   {key:"pop", label:"人気", th:'<th>人気</th>', td:h=>`<td class="num">${h.popularity?h.popularity:'—'}</td>`},
-  {key:"prize", label:"番組賞金/本年賞金・クラス", th:'<th>番組/本年賞金・級</th>',
-   td:h=>`<td class="num"><div class="c2 c2r"><span>${h.prize_program!=null?h.prize_program.toLocaleString():'—'}${h.prize_year!=null?'/'+h.prize_year.toLocaleString():''}</span><span class="tsub">${h.horse_class||'—'}</span></div></td>`},
+  {key:"prize", label:"番組賞金/本年賞金・クラス", th:'<th>番組/本年賞金(万)・級</th>',
+   td:h=>`<td class="num"><div class="c2 c2r"><span>${h.prize_program!=null?manFmt(h.prize_program):'—'}${h.prize_year!=null?'/'+manFmt(h.prize_year):''}</span><span class="tsub">${h.horse_class||'—'}</span></div></td>`},
   {key:"fin", label:"着順・決着タイム", th:'<th>着 / 決着</th>',
    td:(h,hasResult)=>{ const top=h.position!=null&&h.position<=3; const fin=!hasResult?"—":(h.position!=null?`${h.position}着`:"除外"); const rt=hasResult&&h.result_time?h.result_time:"—"; return `<td class="fin ${top?'top':''}"><div class="c2 c2r"><span>${fin}</span><span class="tsub num">${rt}</span></div></td>`; }},
   {key:"past5", label:"過去5走（簡易）", th:'<th class="l">過去5走</th>', td:past5Html},
