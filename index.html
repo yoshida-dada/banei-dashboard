@@ -1492,10 +1492,18 @@ function renderTrackAptitudeScatter(r){
 // note に明記。縦＝馬番順（固定）、横＝直近5走の前半タイムの平均/最速/最遅の箱ひげ。
 function renderRaceFlowTime(r){
   const host=document.getElementById("raceflowtime"); if(!host) return;
-  // 斤量補正モード（2026-09-27）: 各走の前半タイムを今日のソリ重量に補正した値(fh_adj_*)で描く。
-  const adj = window.__flowAdj===true;
-  const all=(r.horses||[]).map(h=> adj && h.fh_adj_avg!=null
+  // 表示モード（2026-09-27）: raw=実績タイム / cond=今日の条件補正(ソリ重量・馬場水分・馬場指数、fh_adj_*)
+  // / shrink=cond＋馬どうしの差を×0.6に縮小（5走平均の差は実際の差より大きく出るため。732R検証で回帰傾き≈0.6）。
+  const mode = window.__flowMode || "raw";
+  const adj = mode!=="raw";
+  let all=(r.horses||[]).map(h=> adj && h.fh_adj_avg!=null
     ? {...h, fh_avg:h.fh_adj_avg, fh_min:h.fh_adj_min, fh_max:h.fh_adj_max} : h);
+  if(mode==="shrink"){
+    const av=all.filter(h=>h.fh_avg!=null).map(h=>h.fh_avg);
+    if(av.length){ const mu=av.reduce((a,b)=>a+b,0)/av.length, K=0.6;
+      all=all.map(h=>{ if(h.fh_avg==null) return h; const dl=(K-1)*(h.fh_avg-mu);   // 平均位置だけ縮め、帯の幅は保つ
+        return {...h, fh_avg:h.fh_avg+dl, fh_min:h.fh_min+dl, fh_max:h.fh_max+dl}; }); }
+  }
   const withFh=all.filter(h=>h.fh_avg!=null);
   if(all.length<3 || withFh.length<2){ host.innerHTML=""; return; }
   const rows=[...all].sort((a,b)=>a.num-b.num);
@@ -1606,15 +1614,17 @@ function renderRaceFlowTime(r){
 
   host.innerHTML=
     `<div class="secthead"><span class="sect">展開イメージ(第2障害降下時点のタイム傾向)</span>`
-    +`<div class="vtoggle" id="flowtoggle"><button data-a="0" aria-pressed="${adj?'false':'true'}">実績タイム</button>`
-    +`<button data-a="1" aria-pressed="${adj?'true':'false'}">斤量補正</button></div></div>`
+    +`<div class="vtoggle" id="flowtoggle"><button data-a="raw" aria-pressed="${mode==='raw'}">実績タイム</button>`
+    +`<button data-a="cond" aria-pressed="${mode==='cond'}">今日の条件補正</button>`
+    +`<button data-a="shrink" aria-pressed="${mode==='shrink'}">補正＋差を縮小</button></div></div>`
     +`<svg class="tksvg" viewBox="0 0 ${W} ${H+14*S}">${heads}<g transform="translate(0,${4*S})">${zebra}${grid}${body}${ticks}</g></svg>`
     +`<div class="tknote">縦＝馬番順、横＝直近5走の前半タイム(総合−上り、第1・第2障害を含む＝第2障害降下時点まで)の`
     +`平均/最速/最遅。<br>緑の矢印＝上がりが出走馬平均より速く終いで差を詰める傾向、`
     +`赤の矢印＝平均より遅く差が開く傾向（矢印の長さ＝詰め/後退の目安秒数）。`
-    +(adj?`<br>斤量補正＝各走の前半タイムを、今日のソリ重量だった場合の値に補正（前半タイムの回帰で求めた重量係数×今日との重量差。左の「斤量±kg」は過去走との平均差）。補正は重量のみで、馬場水分・上りは補正していません。`:``)
+    +(adj?`<br>今日の条件補正＝各走の前半タイムを、今日のソリ重量・馬場水分・馬場指数だった場合の値に補正（前半タイムの回帰係数×今日との差。馬場指数＝その開催日の全走の前半タイム残差。今日の分は先行レースの結果で推定し、序盤で推定できない場合は平均的な馬場として扱う）。左の「斤量±kg」は過去走との平均差。上りは補正していません。`:``)
+    +(mode==="shrink"?`<br>差を縮小＝5走平均の馬どうしの差は実際の差より大きく出やすいため、レース平均からの差を×0.6に縮めて表示（帯の幅・順位は不変）。`:``)
     +`</div>`;
-  host.querySelectorAll("#flowtoggle button").forEach(b=>b.onclick=()=>{ window.__flowAdj=b.dataset.a==="1"; renderRaceFlowTime(r); });
+  host.querySelectorAll("#flowtoggle button").forEach(b=>b.onclick=()=>{ window.__flowMode=b.dataset.a; renderRaceFlowTime(r); });
 }
 function renderAptitude(r){
   document.querySelectorAll("#dimseg button").forEach(b=>b.setAttribute("aria-pressed",b.dataset.d===dim));
