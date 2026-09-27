@@ -1,6 +1,6 @@
 {
  "date": "2026-09-27",
- "archived_at": "2026-09-27 17:51",
+ "archived_at": "2026-09-27 17:53",
  "races": [
   {
    "date": "2026-09-27",
@@ -21756,8 +21756,8 @@
    "predicted_top": 7,
    "market_fav": 7,
    "winner": null,
-   "update_stage": "evscan",
-   "updated_at": "2026-09-27 17:51",
+   "update_stage": "odds",
+   "updated_at": "2026-09-27 17:53",
    "horses": [
     {
      "num": 7,
@@ -22181,12 +22181,13 @@
      },
      "place3_time_avg": 113.1,
      "p_market": 0.1847,
-     "win_prob_blend": 0.2092,
+     "win_prob_blend": 0.2091,
      "ev": 0.9,
      "ev_buy": false,
      "win_prob_blend_v1_1": 0.1992,
      "ev_v1_1": 0.86,
      "ev_buy_v1_1": false,
+     "win_prob_blend_bets_v1_1": 0.1411,
      "ev_streak": 0
     },
     {
@@ -22584,9 +22585,10 @@
      "win_prob_blend": 0.1245,
      "ev": 0.9,
      "ev_buy": false,
-     "win_prob_blend_v1_1": 0.1188,
-     "ev_v1_1": 0.86,
+     "win_prob_blend_v1_1": 0.1187,
+     "ev_v1_1": 0.85,
      "ev_buy_v1_1": false,
+     "win_prob_blend_bets_v1_1": 0.2161,
      "ev_streak": 0
     },
     {
@@ -22596,7 +22598,7 @@
      "rank": 3,
      "win_prob_v2": 0.1023,
      "rank_v2": 3,
-     "odds": 22.8,
+     "odds": 22.7,
      "position": null,
      "result_time": null,
      "jockey": "中村太",
@@ -23016,13 +23018,14 @@
       ]
      },
      "place3_time_avg": 125.0,
-     "p_market": 0.0348,
-     "win_prob_blend": 0.0527,
+     "p_market": 0.035,
+     "win_prob_blend": 0.0528,
      "ev": 1.2,
      "ev_buy": true,
-     "win_prob_blend_v1_1": 0.0443,
+     "win_prob_blend_v1_1": 0.0445,
      "ev_v1_1": 1.01,
      "ev_buy_v1_1": true,
+     "win_prob_blend_bets_v1_1": 0.0327,
      "ev_streak": 3
     },
     {
@@ -23462,9 +23465,10 @@
      "win_prob_blend": 0.1213,
      "ev": 0.76,
      "ev_buy": false,
-     "win_prob_blend_v1_1": 0.1239,
+     "win_prob_blend_v1_1": 0.1238,
      "ev_v1_1": 0.78,
      "ev_buy_v1_1": false,
+     "win_prob_blend_bets_v1_1": 0.0987,
      "ev_streak": 0
     },
     {
@@ -23897,13 +23901,14 @@
       ]
      },
      "place3_time_avg": 128.5,
-     "p_market": 0.0757,
+     "p_market": 0.0756,
      "win_prob_blend": 0.0866,
      "ev": 0.91,
      "ev_buy": false,
      "win_prob_blend_v1_1": 0.0821,
      "ev_v1_1": 0.86,
      "ev_buy_v1_1": false,
+     "win_prob_blend_bets_v1_1": 0.0678,
      "ev_streak": 0
     },
     {
@@ -24346,6 +24351,7 @@
      "win_prob_blend_v1_1": 0.1345,
      "ev_v1_1": 0.73,
      "ev_buy_v1_1": false,
+     "win_prob_blend_bets_v1_1": 0.2143,
      "ev_streak": 0
     },
     {
@@ -24752,6 +24758,7 @@
      "win_prob_blend_v1_1": 0.1515,
      "ev_v1_1": 0.7,
      "ev_buy_v1_1": false,
+     "win_prob_blend_bets_v1_1": 0.1146,
      "ev_streak": 0
     },
     {
@@ -25164,12 +25171,13 @@
      },
      "place3_time_avg": 121.1,
      "p_market": 0.1151,
-     "win_prob_blend": 0.0964,
+     "win_prob_blend": 0.0963,
      "ev": 0.66,
      "ev_buy": false,
-     "win_prob_blend_v1_1": 0.1045,
+     "win_prob_blend_v1_1": 0.1044,
      "ev_v1_1": 0.72,
      "ev_buy_v1_1": false,
+     "win_prob_blend_bets_v1_1": 0.08,
      "ev_streak": 0
     },
     {
@@ -25179,7 +25187,7 @@
      "rank": 9,
      "win_prob_v2": 0.0466,
      "rank_v2": 9,
-     "odds": 92.5,
+     "odds": 91.6,
      "position": null,
      "result_time": null,
      "jockey": "阿部優",
@@ -25593,13 +25601,14 @@
       ]
      },
      "place3_time_avg": 111.5,
-     "p_market": 0.0086,
-     "win_prob_blend": 0.0161,
-     "ev": 1.49,
+     "p_market": 0.0087,
+     "win_prob_blend": 0.0162,
+     "ev": 1.48,
      "ev_buy": true,
      "win_prob_blend_v1_1": 0.0124,
      "ev_v1_1": 1.14,
      "ev_buy_v1_1": true,
+     "win_prob_blend_bets_v1_1": 0.0092,
      "ev_streak": 3
     },
     {
@@ -25976,7 +25985,8 @@
      "win_prob_blend_v1_1": 0.0289,
      "ev_v1_1": 0.92,
      "ev_buy_v1_1": false,
-     "ev_streak": 1
+     "win_prob_blend_bets_v1_1": 0.0255,
+     "ev_streak": 2
     }
    ],
    "prize_positions": [
@@ -25985,7 +25995,8 @@
     63000,
     33000,
     18000
-   ]
+   ],
+   "bets": []
   },
   {
    "date": "2026-09-27",
