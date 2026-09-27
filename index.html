@@ -3115,6 +3115,7 @@ function anaDetailHtml(t){
 // track_history.jsonを生成（読み取り専用、当該日の全レースを使う記述的集計＝リーク対象外）。
 // 棒=馬場指数(zスコア、+=重い/-=軽い)・折れ線=平均決着タイム(秒)の混合グラフ。
 window.__TRACKHIST=null;
+window.__TRACKHIST_RANGE="season";
 function loadTrackHistory(cb){
   if(window.__TRACKHIST){ cb(window.__TRACKHIST); return; }
   fetch("./track_history.json?t="+Date.now()).then(r=>r.json()).then(j=>{ window.__TRACKHIST=j; cb(j); })
@@ -3155,20 +3156,29 @@ function trackHistChartSvg(days,wantW){
   const step=Math.max(1, Math.ceil(n/7));
   const xticks=days.map((d,i)=> i%step===0
     ? `<text x="${xFor(i).toFixed(1)}" y="${H-6*S}" font-size="${6.5*S}" text-anchor="middle" fill="var(--muted)">${d.date.slice(5).replace('-','/')}</text>` : "").join("");
-  const yticksZ=[-zMax,0,zMax].map(v=>`<text x="${(padL-4*S).toFixed(1)}" y="${(yForZ(v)+2.5*S).toFixed(1)}" font-size="${6.5*S}" text-anchor="end" fill="var(--muted)">${v>0?'+':''}${v.toFixed(1)}</text>`).join("");
-  const yticksT=[tMin,(tMin+tMax)/2,tMax].map(v=>`<text x="${(W-padR+4*S).toFixed(1)}" y="${(yForT(v)+2.5*S).toFixed(1)}" font-size="${6.5*S}" text-anchor="start" fill="var(--edge)">${secFmt(v)}</text>`).join("");
+  // 1軸(左)=平均タイム、2軸(右)=馬場指数zスコア（2026-09-28、ユーザー指定で左右を入替）
+  const yticksT=[tMin,(tMin+tMax)/2,tMax].map(v=>`<text x="${(padL-4*S).toFixed(1)}" y="${(yForT(v)+2.5*S).toFixed(1)}" font-size="${6.5*S}" text-anchor="end" fill="var(--edge)">${secFmt(v)}</text>`).join("");
+  const yticksZ=[-zMax,0,zMax].map(v=>`<text x="${(W-padR+4*S).toFixed(1)}" y="${(yForZ(v)+2.5*S).toFixed(1)}" font-size="${6.5*S}" text-anchor="start" fill="var(--muted)">${v>0?'+':''}${v.toFixed(1)}</text>`).join("");
   const zeroLine=`<line x1="${padL}" y1="${yZero.toFixed(1)}" x2="${W-padR}" y2="${yZero.toFixed(1)}" stroke="var(--border)" stroke-width="1"/>`;
   return `<svg class="tksvg" viewBox="0 0 ${W} ${H}">${zeroLine}${bars}`
     +`<polyline points="${linePts}" fill="none" stroke="var(--edge)" stroke-width="${1.6*S}"/>${dots}`
-    +`${xticks}${yticksZ}${yticksT}</svg>`;
+    +`${xticks}${yticksT}${yticksZ}</svg>`;
 }
 function renderTrackHistBox(){
   const box=document.getElementById("trackhistbox"); if(!box) return;
   loadTrackHistory(j=>{
-    const days=j.days||[];
-    if(!days.length){ box.innerHTML='<div class="tknote">今年度の馬場データがまだありません。</div>'; return; }
+    const all=j.days||[];
+    if(!all.length){ box.innerHTML='<div class="tknote">今年度の馬場データがまだありません。</div>'; return; }
+    let days=all;
+    if(window.__TRACKHIST_RANGE==="3m"){
+      const last=new Date(all[all.length-1].date+"T00:00:00"), cut=new Date(last); cut.setMonth(cut.getMonth()-3);
+      const cutIso=cut.toISOString().slice(0,10);
+      days=all.filter(d=>d.date>=cutIso);
+    }
     const w=box.clientWidth||360;
-    box.innerHTML = trackHistChartSvg(days,w)
+    const toggle=`<div class="vtoggle trackrange"><button data-r="season" aria-pressed="${window.__TRACKHIST_RANGE==="season"}">今年度</button>`
+      +`<button data-r="3m" aria-pressed="${window.__TRACKHIST_RANGE==="3m"}">直近3か月</button></div>`;
+    box.innerHTML = toggle + trackHistChartSvg(days,w)
       +`<div class="tknote"><span style="color:${TRK_COLOR['重']}">■重</span> `
       +`<span style="color:${TRK_COLOR['軽']}">■軽</span> <span style="color:${TRK_COLOR['標準']}">■標準</span>`
       +` ＝馬場指数(zスコア、直近開催との相対比較。棒グラフ、左軸)。`
@@ -3176,6 +3186,7 @@ function renderTrackHistBox(){
       +`${j.season_start?j.season_start.slice(5).replace('-','/')+'〜今年度':''}の開催日別集計。`
       +`馬場指数は「クラス・ソリ重量・水分率」で補正した基準タイムとの残差を直近開催と比較したもの`
       +`（レース予測タブの「本日想定馬場指数」等と同じ算出式。この画面は振り返り用で当日制約は無し）。</div>`;
+    box.querySelectorAll(".trackrange button").forEach(b=>b.onclick=()=>{ window.__TRACKHIST_RANGE=b.dataset.r; renderTrackHistBox(); });
   });
 }
 function condHtml(hs){
