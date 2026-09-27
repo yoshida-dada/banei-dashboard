@@ -2026,11 +2026,11 @@ function renderHistModal(){
       const wTxt = h.weight!=null ? h.weight+(h.weight_diff!=null?"("+(h.weight_diff>0?"+":"")+h.weight_diff+")":"") : "—";
       const mk = h.rank>=1 && h.rank<=5 ? MARKS[h.rank-1] : (h.is_pick?"◎":"");
       const focus = histState.focus && h.name===histState.focus;
-      return `<tr class="${h.is_pick?'pick':''}${focus?' rbfocus':''}"><td class="${h.pos===1?'rbtop':''}">${h.pos??'—'}</td>`
-        +`<td><span class="hnamelink" data-horse="${h.name}">${h.name||''}</span>${mk?`<span class="rbpick">${mk}</span>`:''}</td>`
+      return `<tr class="${h.is_pick?'pick':''}${focus?' rbfocus':''}"><td>${h.gate??'—'}</td><td><span class="hmn" style="${capStyle(h.gate)}">${h.num}</span></td><td class="${h.pos===1?'rbtop':''}">${h.pos??'—'}</td>`
+        +`<td><span class="hnamelink" data-horse="${h.name}">${h.name||''}</span>${mk?`<span class="rbpick">${mk}</span>`:''}${h.il?'<span class="p5il" title="八百長ラベル付与馬">🚨</span>':''}</td>`
         +`<td>${h.time||'—'}</td><td>${h.popularity??'—'}</td>`
         +`<td>${h.odds!=null?h.odds.toFixed(1):'—'}</td><td>${h.jockey||'—'}</td>`
-        +`<td>${wTxt}</td><td>${h.gate??'—'}</td><td>${h.num}</td>`
+        +`<td>${wTxt}</td>`
         +`<td>${(h.sex||'')+(h.age??'')}</td><td>${h.sled_kg!=null?h.sled_kg.toFixed(0):'—'}</td></tr>`;
     }).join("");
     body.innerHTML=
@@ -2038,8 +2038,8 @@ function renderHistModal(){
       +`<a class="rbvideo" href="http://keiba-lv-st.jp/movie/player?date=${histState.date.replace(/-/g,'')}&race=${race.race_no}&track=obihiro" target="_blank" rel="noopener">🎬 レース映像</a>`
       +`<div class="rbmeta">${race.race_name||''}${race.class?' ・'+race.class:''}`
       +`${race.moisture!=null?' ・馬場水分'+race.moisture+'%':''}${race.post_time?' ・発走'+race.post_time:''}${race.win_time?' ・決着'+race.win_time:''}</div>`
-      +`<div class="rbtblwrap"><table class="rbtbl"><thead><tr><th>着</th><th class="l">馬名</th><th>タイム</th>`
-      +`<th>人気</th><th>単勝</th><th>騎手</th><th>馬体重</th><th>枠</th><th>番</th><th>性齢</th><th>そり</th></tr></thead>`
+      +`<div class="rbtblwrap"><table class="rbtbl"><thead><tr><th>枠</th><th>番</th><th>着</th><th class="l">馬名</th><th>タイム</th>`
+      +`<th>人気</th><th>単勝</th><th>騎手</th><th>馬体重</th><th>性齢</th><th>そり</th></tr></thead>`
       +`<tbody>${rows}</tbody></table></div>`
       +`<div class="tknote">馬名をタップすると通算成績・過去成績・血統を表示します。</div>`
       +payoutsHtml(race.payouts);
