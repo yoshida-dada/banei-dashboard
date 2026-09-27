@@ -4,10 +4,10 @@
  "age": 3,
  "trainer": "松井浩",
  "owner": "小森唯永",
- "sled_kg": 590.0,
- "weight": 908,
- "weight_diff": 1,
- "last_race_date": "2026-09-19",
+ "sled_kg": 600.0,
+ "weight": 900,
+ "weight_diff": -8,
+ "last_race_date": "2026-09-27",
  "pedigree": {
   "sire": "ジェイワン",
   "dam": "ジェイガーベラ",
@@ -19,23 +19,23 @@
  "stats": {
   "total": {
    "win": 2,
-   "place2": 0,
+   "place2": 1,
    "place3": 3,
    "other": 28,
-   "n": 33,
-   "win_rate": 0.061,
-   "quinella_rate": 0.061,
-   "show_rate": 0.152
+   "n": 34,
+   "win_rate": 0.059,
+   "quinella_rate": 0.088,
+   "show_rate": 0.176
   },
   "2026": {
    "win": 0,
-   "place2": 0,
+   "place2": 1,
    "place3": 1,
    "other": 17,
-   "n": 18,
+   "n": 19,
    "win_rate": 0.0,
-   "quinella_rate": 0.0,
-   "show_rate": 0.056
+   "quinella_rate": 0.053,
+   "show_rate": 0.105
   },
   "2025": {
    "win": 2,
@@ -68,6 +68,19 @@
   }
  ],
  "ratings_reconstructed": [
+  {
+   "date": "2026-09-27",
+   "race_no": 1,
+   "position": 2,
+   "earned_yen": 111000,
+   "program_prize_k": 1378,
+   "year_prize_k": 327,
+   "class": "C2",
+   "next_class": "C1",
+   "next_class_need_k": 822,
+   "diff_k": 111,
+   "change": null
+  },
   {
    "date": "2026-09-19",
    "race_no": 1,
@@ -228,16 +241,44 @@
  "reconstructed_now": {
   "snapshot_date": "2026-09-25",
   "class_code": "C2",
-  "program_prize_k": 1267,
-  "year_prize_k": 216,
+  "program_prize_k": 1378,
+  "year_prize_k": 327,
   "reconstructed": true,
-  "reconstructed_races": 0
+  "reconstructed_races": 1
  },
  "next_class": {
   "next_class": "C1",
-  "need_k": 933
+  "need_k": 822
  },
  "races": [
+  {
+   "date": "2026-09-27",
+   "race_no": 1,
+   "race_name": "ＴｈｉｎｋＢｉｇ　ＹＥＧ杯Ｃ２－９",
+   "class": "C2",
+   "moisture": 1.0,
+   "field_size": 10,
+   "num": 2,
+   "jockey": "阿部優",
+   "trainer": "松井浩",
+   "owner": "小森唯永",
+   "sled_kg": 600.0,
+   "weight": 900,
+   "weight_diff": -8,
+   "odds": 3.7,
+   "popularity": 2,
+   "position": 2,
+   "time": "2:31.9",
+   "time_sec": 151.9,
+   "margin_sec": 11.9,
+   "race_level_z": 0.37,
+   "interval": "中1週",
+   "other": {
+    "label": "勝ち馬",
+    "name": "キンノロナ"
+   },
+   "insider_labels": []
+  },
   {
    "date": "2026-09-19",
    "race_no": 1,
@@ -258,7 +299,7 @@
    "time": "2:21.0",
    "time_sec": 141.0,
    "margin_sec": 11.8,
-   "race_level_z": 0.91,
+   "race_level_z": 0.9,
    "interval": "中2週",
    "other": {
     "label": "勝ち馬",
@@ -482,7 +523,7 @@
    "time": "2:43.5",
    "time_sec": 163.5,
    "margin_sec": 38.6,
-   "race_level_z": -0.1,
+   "race_level_z": -0.11,
    "interval": "中2週",
    "other": {
     "label": "勝ち馬",
@@ -566,7 +607,7 @@
    "time": "3:49.1",
    "time_sec": 229.1,
    "margin_sec": 85.3,
-   "race_level_z": -2.99,
+   "race_level_z": -3.0,
    "interval": "中5週",
    "other": {
     "label": "勝ち馬",
@@ -986,7 +1027,7 @@
    "time": "1:33.7",
    "time_sec": 93.7,
    "margin_sec": 0.0,
-   "race_level_z": 1.35,
+   "race_level_z": 1.36,
    "interval": "連闘",
    "other": {
     "label": "2着馬",
@@ -1070,7 +1111,7 @@
    "time": "2:11.3",
    "time_sec": 131.3,
    "margin_sec": 0.0,
-   "race_level_z": 0.17,
+   "race_level_z": 0.16,
    "interval": "中1週",
    "other": {
     "label": "2着馬",

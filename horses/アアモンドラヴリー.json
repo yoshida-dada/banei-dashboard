@@ -4,10 +4,10 @@
  "age": 4,
  "trainer": "村上慎",
  "owner": "下内美繪子",
- "sled_kg": 620.0,
- "weight": 1092,
- "weight_diff": 7,
- "last_race_date": "2026-09-21",
+ "sled_kg": 630.0,
+ "weight": 1083,
+ "weight_diff": -9,
+ "last_race_date": "2026-09-27",
  "pedigree": {
   "sire": "フクノカミカゼ",
   "dam": "束蜜",
@@ -19,23 +19,23 @@
  "stats": {
   "total": {
    "win": 7,
-   "place2": 6,
+   "place2": 7,
    "place3": 7,
    "other": 35,
-   "n": 55,
-   "win_rate": 0.127,
-   "quinella_rate": 0.236,
-   "show_rate": 0.364
+   "n": 56,
+   "win_rate": 0.125,
+   "quinella_rate": 0.25,
+   "show_rate": 0.375
   },
   "2026": {
    "win": 1,
-   "place2": 5,
+   "place2": 6,
    "place3": 2,
    "other": 11,
-   "n": 19,
-   "win_rate": 0.053,
-   "quinella_rate": 0.316,
-   "show_rate": 0.421
+   "n": 20,
+   "win_rate": 0.05,
+   "quinella_rate": 0.35,
+   "show_rate": 0.45
   },
   "2025": {
    "win": 3,
@@ -78,6 +78,19 @@
   }
  ],
  "ratings_reconstructed": [
+  {
+   "date": "2026-09-27",
+   "race_no": 9,
+   "position": 2,
+   "earned_yen": 122000,
+   "program_prize_k": 3770,
+   "year_prize_k": 757,
+   "class": "B4",
+   "next_class": "B3",
+   "next_class_need_k": 530,
+   "diff_k": 122,
+   "change": null
+  },
   {
    "date": "2026-09-21",
    "race_no": 8,
@@ -251,16 +264,44 @@
  "reconstructed_now": {
   "snapshot_date": "2026-09-25",
   "class_code": "B4",
-  "program_prize_k": 3648,
-  "year_prize_k": 635,
+  "program_prize_k": 3770,
+  "year_prize_k": 757,
   "reconstructed": true,
-  "reconstructed_races": 0
+  "reconstructed_races": 1
  },
  "next_class": {
   "next_class": "B3",
-  "need_k": 652
+  "need_k": 530
  },
  "races": [
+  {
+   "date": "2026-09-27",
+   "race_no": 9,
+   "race_name": "まつぼＲ３２とＲＥＸ生誕祭Ｂ４－４",
+   "class": "B4",
+   "moisture": 0.9,
+   "field_size": 10,
+   "num": 7,
+   "jockey": "中原蓮",
+   "trainer": "村上慎",
+   "owner": "下内美繪子",
+   "sled_kg": 630.0,
+   "weight": 1083,
+   "weight_diff": -9,
+   "odds": 8.3,
+   "popularity": 4,
+   "position": 2,
+   "time": "1:56.6",
+   "time_sec": 116.6,
+   "margin_sec": 4.5,
+   "race_level_z": 0.89,
+   "interval": "連闘",
+   "other": {
+    "label": "勝ち馬",
+    "name": "ブループリンセス"
+   },
+   "insider_labels": []
+  },
   {
    "date": "2026-09-21",
    "race_no": 8,
@@ -421,7 +462,7 @@
    "time": "2:03.7",
    "time_sec": 123.7,
    "margin_sec": 18.2,
-   "race_level_z": 0.57,
+   "race_level_z": 0.56,
    "interval": "中2週",
    "other": {
     "label": "勝ち馬",
@@ -561,7 +602,7 @@
    "time": "2:00.7",
    "time_sec": 120.7,
    "margin_sec": 14.3,
-   "race_level_z": 0.58,
+   "race_level_z": 0.57,
    "interval": "中1週",
    "other": {
     "label": "勝ち馬",
@@ -617,7 +658,7 @@
    "time": "2:15.9",
    "time_sec": 135.9,
    "margin_sec": 15.0,
-   "race_level_z": 0.42,
+   "race_level_z": 0.41,
    "interval": "中4週",
    "other": {
     "label": "勝ち馬",
@@ -978,7 +1019,7 @@
    "time": "2:02.1",
    "time_sec": 122.1,
    "margin_sec": 10.3,
-   "race_level_z": 1.02,
+   "race_level_z": 1.01,
    "interval": "中3週",
    "other": {
     "label": "勝ち馬",

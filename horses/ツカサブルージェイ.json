@@ -4,10 +4,10 @@
  "age": 2,
  "trainer": "金山明",
  "owner": "川口晋司",
- "sled_kg": 520.0,
- "weight": 815,
- "weight_diff": 5,
- "last_race_date": "2026-09-13",
+ "sled_kg": 530.0,
+ "weight": 823,
+ "weight_diff": 8,
+ "last_race_date": "2026-09-27",
  "pedigree": {
   "sire": "シマノシンザン",
   "dam": "星寿",
@@ -21,21 +21,21 @@
    "win": 1,
    "place2": 1,
    "place3": 2,
-   "other": 4,
-   "n": 8,
-   "win_rate": 0.125,
-   "quinella_rate": 0.25,
-   "show_rate": 0.5
+   "other": 5,
+   "n": 9,
+   "win_rate": 0.111,
+   "quinella_rate": 0.222,
+   "show_rate": 0.444
   },
   "2026": {
    "win": 1,
    "place2": 1,
    "place3": 2,
-   "other": 4,
-   "n": 8,
-   "win_rate": 0.125,
-   "quinella_rate": 0.25,
-   "show_rate": 0.5
+   "other": 5,
+   "n": 9,
+   "win_rate": 0.111,
+   "quinella_rate": 0.222,
+   "show_rate": 0.444
   }
  },
  "insider_label_count": 0,
@@ -58,6 +58,19 @@
   }
  ],
  "ratings_reconstructed": [
+  {
+   "date": "2026-09-27",
+   "race_no": 4,
+   "position": 7,
+   "earned_yen": 0,
+   "program_prize_k": 579,
+   "year_prize_k": 579,
+   "class": "C2",
+   "next_class": "C1",
+   "next_class_need_k": 1621,
+   "diff_k": 0,
+   "change": null
+  },
   {
    "date": "2026-09-13",
    "race_no": 4,
@@ -174,6 +187,34 @@
  "next_class": null,
  "races": [
   {
+   "date": "2026-09-27",
+   "race_no": 4,
+   "race_name": "祝！健太・絵里奈　結婚記念２歳Ｂ－５",
+   "class": "B",
+   "moisture": 1.0,
+   "field_size": 10,
+   "num": 1,
+   "jockey": "渡来心",
+   "trainer": "金山明",
+   "owner": "川口晋司",
+   "sled_kg": 530.0,
+   "weight": 823,
+   "weight_diff": 8,
+   "odds": 14.8,
+   "popularity": 8,
+   "position": 7,
+   "time": "2:24.2",
+   "time_sec": 144.2,
+   "margin_sec": 27.4,
+   "race_level_z": -0.38,
+   "interval": "中2週",
+   "other": {
+    "label": "勝ち馬",
+    "name": "ハゴロモトレジャー"
+   },
+   "insider_labels": []
+  },
+  {
    "date": "2026-09-13",
    "race_no": 4,
    "race_name": "あと１年全共北海道２０２７ ２歳Ｂ－４",
@@ -221,7 +262,7 @@
    "time": "1:46.2",
    "time_sec": 106.2,
    "margin_sec": 0.0,
-   "race_level_z": 1.36,
+   "race_level_z": 1.35,
    "interval": "中4週",
    "other": {
     "label": "2着馬",

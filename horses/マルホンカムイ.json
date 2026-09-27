@@ -4,10 +4,10 @@
  "age": 4,
  "trainer": "金田勇",
  "owner": "本寺政則",
- "sled_kg": 610.0,
- "weight": 882,
- "weight_diff": -11,
- "last_race_date": "2026-09-14",
+ "sled_kg": 630.0,
+ "weight": 878,
+ "weight_diff": -4,
+ "last_race_date": "2026-09-27",
  "pedigree": {
   "sire": "キンメダル",
   "dam": "スズネスウィート",
@@ -21,21 +21,21 @@
    "win": 6,
    "place2": 7,
    "place3": 7,
-   "other": 24,
-   "n": 44,
-   "win_rate": 0.136,
-   "quinella_rate": 0.295,
-   "show_rate": 0.455
+   "other": 25,
+   "n": 45,
+   "win_rate": 0.133,
+   "quinella_rate": 0.289,
+   "show_rate": 0.444
   },
   "2026": {
    "win": 1,
    "place2": 2,
    "place3": 1,
-   "other": 11,
-   "n": 15,
-   "win_rate": 0.067,
-   "quinella_rate": 0.2,
-   "show_rate": 0.267
+   "other": 12,
+   "n": 16,
+   "win_rate": 0.062,
+   "quinella_rate": 0.188,
+   "show_rate": 0.25
   },
   "2025": {
    "win": 3,
@@ -78,6 +78,19 @@
   }
  ],
  "ratings_reconstructed": [
+  {
+   "date": "2026-09-27",
+   "race_no": 6,
+   "position": 8,
+   "earned_yen": 0,
+   "program_prize_k": 3101,
+   "year_prize_k": 609,
+   "class": "C1",
+   "next_class": "B4",
+   "next_class_need_k": 299,
+   "diff_k": 0,
+   "change": null
+  },
   {
    "date": "2026-09-14",
    "race_no": 7,
@@ -223,6 +236,34 @@
  },
  "races": [
   {
+   "date": "2026-09-27",
+   "race_no": 6,
+   "race_name": "ＶｔｕｂｅｒぜつぼうちゃんＣ１－６",
+   "class": "C1",
+   "moisture": 0.9,
+   "field_size": 9,
+   "num": 5,
+   "jockey": "中原蓮",
+   "trainer": "金田勇",
+   "owner": "本寺政則",
+   "sled_kg": 630.0,
+   "weight": 878,
+   "weight_diff": -4,
+   "odds": 15.1,
+   "popularity": 6,
+   "position": 8,
+   "time": "2:22.2",
+   "time_sec": 142.2,
+   "margin_sec": 26.0,
+   "race_level_z": 0.29,
+   "interval": "中1週",
+   "other": {
+    "label": "勝ち馬",
+    "name": "アグライア"
+   },
+   "insider_labels": []
+  },
+  {
    "date": "2026-09-14",
    "race_no": 7,
    "race_name": "桜木心菜さん２１歳生誕記念Ｃ１－２",
@@ -242,7 +283,7 @@
    "time": "2:03.8",
    "time_sec": 123.8,
    "margin_sec": 17.0,
-   "race_level_z": 1.05,
+   "race_level_z": 1.04,
    "interval": "中2週",
    "other": {
     "label": "勝ち馬",
@@ -382,7 +423,7 @@
    "time": "2:01.4",
    "time_sec": 121.4,
    "margin_sec": 5.8,
-   "race_level_z": 1.0,
+   "race_level_z": 0.99,
    "interval": "中2週",
    "other": {
     "label": "勝ち馬",
@@ -746,7 +787,7 @@
    "time": "3:03.9",
    "time_sec": 183.9,
    "margin_sec": 52.6,
-   "race_level_z": -1.32,
+   "race_level_z": -1.33,
    "interval": "中1週",
    "other": {
     "label": "勝ち馬",
@@ -939,7 +980,7 @@
    "time": "2:28.7",
    "time_sec": 148.7,
    "margin_sec": 17.7,
-   "race_level_z": 0.55,
+   "race_level_z": 0.54,
    "interval": "中2週",
    "other": {
     "label": "勝ち馬",
@@ -995,7 +1036,7 @@
    "time": "2:38.3",
    "time_sec": 158.3,
    "margin_sec": 0.0,
-   "race_level_z": 0.05,
+   "race_level_z": 0.04,
    "interval": "中1週",
    "other": {
     "label": "2着馬",
@@ -1328,7 +1369,7 @@
    "time": "2:04.5",
    "time_sec": 124.5,
    "margin_sec": 16.3,
-   "race_level_z": 0.19,
+   "race_level_z": 0.2,
    "interval": "中2週",
    "other": {
     "label": "勝ち馬",
@@ -1356,7 +1397,7 @@
    "time": "2:04.8",
    "time_sec": 124.8,
    "margin_sec": 0.0,
-   "race_level_z": 0.69,
+   "race_level_z": 0.68,
    "interval": "中2週",
    "other": {
     "label": "2着馬",
@@ -1468,7 +1509,7 @@
    "time": "2:30.5",
    "time_sec": 150.5,
    "margin_sec": 7.5,
-   "race_level_z": 0.29,
+   "race_level_z": 0.28,
    "interval": "中1週",
    "other": {
     "label": "勝ち馬",

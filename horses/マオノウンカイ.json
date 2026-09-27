@@ -4,10 +4,10 @@
  "age": 3,
  "trainer": "松田道",
  "owner": "秋田忍",
- "sled_kg": 620.0,
- "weight": 930,
- "weight_diff": 14,
- "last_race_date": "2026-09-19",
+ "sled_kg": 630.0,
+ "weight": 925,
+ "weight_diff": -5,
+ "last_race_date": "2026-09-27",
  "pedigree": {
   "sire": "コウシュハウンカイ",
   "dam": "ハツフジヒメ",
@@ -18,24 +18,24 @@
  },
  "stats": {
   "total": {
-   "win": 5,
+   "win": 6,
    "place2": 4,
    "place3": 2,
    "other": 22,
-   "n": 33,
-   "win_rate": 0.152,
-   "quinella_rate": 0.273,
-   "show_rate": 0.333
+   "n": 34,
+   "win_rate": 0.176,
+   "quinella_rate": 0.294,
+   "show_rate": 0.353
   },
   "2026": {
-   "win": 3,
+   "win": 4,
    "place2": 2,
    "place3": 0,
    "other": 13,
-   "n": 18,
-   "win_rate": 0.167,
-   "quinella_rate": 0.278,
-   "show_rate": 0.278
+   "n": 19,
+   "win_rate": 0.211,
+   "quinella_rate": 0.316,
+   "show_rate": 0.316
   },
   "2025": {
    "win": 2,
@@ -68,6 +68,19 @@
   }
  ],
  "ratings_reconstructed": [
+  {
+   "date": "2026-09-27",
+   "race_no": 7,
+   "position": 1,
+   "earned_yen": 300000,
+   "program_prize_k": 3175,
+   "year_prize_k": 1164,
+   "class": "C1",
+   "next_class": "B4",
+   "next_class_need_k": 225,
+   "diff_k": 300,
+   "change": null
+  },
   {
    "date": "2026-09-19",
    "race_no": 7,
@@ -228,16 +241,44 @@
  "reconstructed_now": {
   "snapshot_date": "2026-09-25",
   "class_code": "C1",
-  "program_prize_k": 2875,
-  "year_prize_k": 864,
+  "program_prize_k": 3175,
+  "year_prize_k": 1164,
   "reconstructed": true,
-  "reconstructed_races": 0
+  "reconstructed_races": 1
  },
  "next_class": {
   "next_class": "B4",
-  "need_k": 525
+  "need_k": 225
  },
  "races": [
+  {
+   "date": "2026-09-27",
+   "race_no": 7,
+   "race_name": "ちくでんさんＰＯＧ優勝記念Ｃ１－３混合",
+   "class": "C1",
+   "moisture": 0.9,
+   "field_size": 10,
+   "num": 4,
+   "jockey": "西将太",
+   "trainer": "松田道",
+   "owner": "秋田忍",
+   "sled_kg": 630.0,
+   "weight": 925,
+   "weight_diff": -5,
+   "odds": 7.8,
+   "popularity": 5,
+   "position": 1,
+   "time": "1:58.5",
+   "time_sec": 118.5,
+   "margin_sec": 0.0,
+   "race_level_z": 1.3,
+   "interval": "中1週",
+   "other": {
+    "label": "2着馬",
+    "name": "サクセスオーショウ"
+   },
+   "insider_labels": []
+  },
   {
    "date": "2026-09-19",
    "race_no": 7,
@@ -342,7 +383,7 @@
    "time": "1:55.4",
    "time_sec": 115.4,
    "margin_sec": 14.4,
-   "race_level_z": 0.89,
+   "race_level_z": 0.88,
    "interval": "中2週",
    "other": {
     "label": "勝ち馬",
@@ -762,7 +803,7 @@
    "time": "1:58.7",
    "time_sec": 118.7,
    "margin_sec": 18.0,
-   "race_level_z": -0.65,
+   "race_level_z": -0.64,
    "interval": "連闘",
    "other": {
     "label": "勝ち馬",
@@ -874,7 +915,7 @@
    "time": "1:37.4",
    "time_sec": 97.4,
    "margin_sec": 9.5,
-   "race_level_z": 0.59,
+   "race_level_z": 0.6,
    "interval": "中2週",
    "other": {
     "label": "勝ち馬",

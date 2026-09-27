@@ -4,10 +4,10 @@
  "age": 2,
  "trainer": "西弘美",
  "owner": "（有）古閑牧場",
- "sled_kg": 500.0,
- "weight": 798,
- "weight_diff": 2,
- "last_race_date": "2026-08-30",
+ "sled_kg": 510.0,
+ "weight": 814,
+ "weight_diff": 16,
+ "last_race_date": "2026-09-27",
  "pedigree": {
   "sire": "アアモンドハリアー",
   "dam": null,
@@ -21,21 +21,21 @@
    "win": 0,
    "place2": 1,
    "place3": 0,
-   "other": 3,
-   "n": 4,
+   "other": 4,
+   "n": 5,
    "win_rate": 0.0,
-   "quinella_rate": 0.25,
-   "show_rate": 0.25
+   "quinella_rate": 0.2,
+   "show_rate": 0.2
   },
   "2026": {
    "win": 0,
    "place2": 1,
    "place3": 0,
-   "other": 3,
-   "n": 4,
+   "other": 4,
+   "n": 5,
    "win_rate": 0.0,
-   "quinella_rate": 0.25,
-   "show_rate": 0.25
+   "quinella_rate": 0.2,
+   "show_rate": 0.2
   }
  },
  "insider_label_count": 0,
@@ -58,6 +58,19 @@
   }
  ],
  "ratings_reconstructed": [
+  {
+   "date": "2026-09-27",
+   "race_no": 2,
+   "position": 7,
+   "earned_yen": 0,
+   "program_prize_k": 111,
+   "year_prize_k": 111,
+   "class": "C2",
+   "next_class": "C1",
+   "next_class_need_k": 2089,
+   "diff_k": 0,
+   "change": null
+  },
   {
    "date": "2026-08-30",
    "race_no": 2,
@@ -121,6 +134,34 @@
  },
  "next_class": null,
  "races": [
+  {
+   "date": "2026-09-27",
+   "race_no": 2,
+   "race_name": "もなかみたらし杯２歳Ｄ－６",
+   "class": "D",
+   "moisture": 1.0,
+   "field_size": 10,
+   "num": 5,
+   "jockey": "西謙一",
+   "trainer": "西弘美",
+   "owner": "（有）古閑牧場",
+   "sled_kg": 510.0,
+   "weight": 814,
+   "weight_diff": 16,
+   "odds": 18.5,
+   "popularity": 4,
+   "position": 7,
+   "time": "2:40.8",
+   "time_sec": 160.8,
+   "margin_sec": 36.4,
+   "race_level_z": 0.0,
+   "interval": "中4週",
+   "other": {
+    "label": "勝ち馬",
+    "name": "コマサンブロッサム"
+   },
+   "insider_labels": []
+  },
   {
    "date": "2026-08-30",
    "race_no": 2,

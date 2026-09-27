@@ -4,10 +4,10 @@
  "age": 4,
  "trainer": "松田道",
  "owner": "秋田忍",
- "sled_kg": 715.0,
- "weight": 1037,
- "weight_diff": -16,
- "last_race_date": "2026-09-20",
+ "sled_kg": 740.0,
+ "weight": 1040,
+ "weight_diff": 3,
+ "last_race_date": "2026-09-27",
  "pedigree": {
   "sire": "コウシュハウンカイ",
   "dam": "ジュンチャン",
@@ -21,21 +21,21 @@
    "win": 10,
    "place2": 16,
    "place3": 9,
-   "other": 21,
-   "n": 56,
-   "win_rate": 0.179,
-   "quinella_rate": 0.464,
-   "show_rate": 0.625
+   "other": 22,
+   "n": 57,
+   "win_rate": 0.175,
+   "quinella_rate": 0.456,
+   "show_rate": 0.614
   },
   "2026": {
    "win": 4,
    "place2": 6,
    "place3": 1,
-   "other": 6,
-   "n": 17,
-   "win_rate": 0.235,
-   "quinella_rate": 0.588,
-   "show_rate": 0.647
+   "other": 7,
+   "n": 18,
+   "win_rate": 0.222,
+   "quinella_rate": 0.556,
+   "show_rate": 0.611
   },
   "2025": {
    "win": 4,
@@ -78,6 +78,19 @@
   }
  ],
  "ratings_reconstructed": [
+  {
+   "date": "2026-09-27",
+   "race_no": 11,
+   "position": 5,
+   "earned_yen": 240000,
+   "program_prize_k": 13400,
+   "year_prize_k": 2767,
+   "class": "open",
+   "next_class": null,
+   "next_class_need_k": null,
+   "diff_k": 240,
+   "change": null
+  },
   {
    "date": "2026-09-20",
    "race_no": 11,
@@ -225,13 +238,41 @@
  "reconstructed_now": {
   "snapshot_date": "2026-09-25",
   "class_code": "open",
-  "program_prize_k": 13160,
-  "year_prize_k": 2527,
+  "program_prize_k": 13400,
+  "year_prize_k": 2767,
   "reconstructed": true,
-  "reconstructed_races": 0
+  "reconstructed_races": 1
  },
  "next_class": null,
  "races": [
+  {
+   "date": "2026-09-27",
+   "race_no": 11,
+   "race_name": "第３４回 銀河賞４歳オープン別定",
+   "class": "オープン",
+   "moisture": 0.9,
+   "field_size": 9,
+   "num": 1,
+   "jockey": "金田利",
+   "trainer": "松田道",
+   "owner": "秋田忍",
+   "sled_kg": 740.0,
+   "weight": 1040,
+   "weight_diff": 3,
+   "odds": 42.0,
+   "popularity": 6,
+   "position": 5,
+   "time": "2:11.6",
+   "time_sec": 131.6,
+   "margin_sec": 21.5,
+   "race_level_z": -0.01,
+   "interval": "連闘",
+   "other": {
+    "label": "勝ち馬",
+    "name": "スターイチバン"
+   },
+   "insider_labels": []
+  },
   {
    "date": "2026-09-20",
    "race_no": 11,
@@ -924,7 +965,7 @@
    "time": "1:35.0",
    "time_sec": 95.0,
    "margin_sec": 4.5,
-   "race_level_z": 1.14,
+   "race_level_z": 1.15,
    "interval": "中3週",
    "other": {
     "label": "勝ち馬",
@@ -1453,7 +1494,7 @@
    "time": "1:35.2",
    "time_sec": 95.2,
    "margin_sec": 9.9,
-   "race_level_z": 0.37,
+   "race_level_z": 0.38,
    "interval": "中1週",
    "other": {
     "label": "勝ち馬",

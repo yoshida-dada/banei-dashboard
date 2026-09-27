@@ -4,10 +4,10 @@
  "age": 2,
  "trainer": "中島敏",
  "owner": "坂脇康彰",
- "sled_kg": 480.0,
- "weight": 829,
- "weight_diff": 4,
- "last_race_date": "2026-09-14",
+ "sled_kg": 490.0,
+ "weight": 849,
+ "weight_diff": 20,
+ "last_race_date": "2026-09-27",
  "pedigree": {
   "sire": "ヒノデタイガー",
   "dam": null,
@@ -21,21 +21,21 @@
    "win": 0,
    "place2": 0,
    "place3": 1,
-   "other": 5,
-   "n": 6,
+   "other": 6,
+   "n": 7,
    "win_rate": 0.0,
    "quinella_rate": 0.0,
-   "show_rate": 0.167
+   "show_rate": 0.143
   },
   "2026": {
    "win": 0,
    "place2": 0,
    "place3": 1,
-   "other": 5,
-   "n": 6,
+   "other": 6,
+   "n": 7,
    "win_rate": 0.0,
    "quinella_rate": 0.0,
-   "show_rate": 0.167
+   "show_rate": 0.143
   }
  },
  "insider_label_count": 0,
@@ -58,6 +58,19 @@
   }
  ],
  "ratings_reconstructed": [
+  {
+   "date": "2026-09-27",
+   "race_no": 2,
+   "position": 6,
+   "earned_yen": 0,
+   "program_prize_k": 96,
+   "year_prize_k": 96,
+   "class": "C2",
+   "next_class": "C1",
+   "next_class_need_k": 2104,
+   "diff_k": 0,
+   "change": null
+  },
   {
    "date": "2026-09-14",
    "race_no": 2,
@@ -147,6 +160,34 @@
  },
  "next_class": null,
  "races": [
+  {
+   "date": "2026-09-27",
+   "race_no": 2,
+   "race_name": "もなかみたらし杯２歳Ｄ－６",
+   "class": "D",
+   "moisture": 1.0,
+   "field_size": 10,
+   "num": 9,
+   "jockey": "菊池一",
+   "trainer": "中島敏",
+   "owner": "坂脇康彰",
+   "sled_kg": 490.0,
+   "weight": 849,
+   "weight_diff": 20,
+   "odds": 19.3,
+   "popularity": 5,
+   "position": 6,
+   "time": "2:29.7",
+   "time_sec": 149.7,
+   "margin_sec": 25.3,
+   "race_level_z": 0.42,
+   "interval": "中1週",
+   "other": {
+    "label": "勝ち馬",
+    "name": "コマサンブロッサム"
+   },
+   "insider_labels": []
+  },
   {
    "date": "2026-09-14",
    "race_no": 2,

@@ -4,10 +4,10 @@
  "age": 2,
  "trainer": "田上忠",
  "owner": "（株）大阪畜産",
- "sled_kg": 500.0,
- "weight": 891,
- "weight_diff": -7,
- "last_race_date": "2026-09-21",
+ "sled_kg": 510.0,
+ "weight": 894,
+ "weight_diff": 3,
+ "last_race_date": "2026-09-27",
  "pedigree": {
   "sire": "ミノルシンザン",
   "dam": "サカノスマイル",
@@ -21,21 +21,21 @@
    "win": 1,
    "place2": 1,
    "place3": 1,
-   "other": 4,
-   "n": 7,
-   "win_rate": 0.143,
-   "quinella_rate": 0.286,
-   "show_rate": 0.429
+   "other": 5,
+   "n": 8,
+   "win_rate": 0.125,
+   "quinella_rate": 0.25,
+   "show_rate": 0.375
   },
   "2026": {
    "win": 1,
    "place2": 1,
    "place3": 1,
-   "other": 4,
-   "n": 7,
-   "win_rate": 0.143,
-   "quinella_rate": 0.286,
-   "show_rate": 0.429
+   "other": 5,
+   "n": 8,
+   "win_rate": 0.125,
+   "quinella_rate": 0.25,
+   "show_rate": 0.375
   }
  },
  "insider_label_count": 0,
@@ -58,6 +58,19 @@
   }
  ],
  "ratings_reconstructed": [
+  {
+   "date": "2026-09-27",
+   "race_no": 4,
+   "position": 4,
+   "earned_yen": 42000,
+   "program_prize_k": 606,
+   "year_prize_k": 606,
+   "class": "C2",
+   "next_class": "C1",
+   "next_class_need_k": 1594,
+   "diff_k": 42,
+   "change": null
+  },
   {
    "date": "2026-09-21",
    "race_no": 5,
@@ -153,13 +166,41 @@
  "reconstructed_now": {
   "snapshot_date": "2026-09-25",
   "class_code": "2sai",
-  "program_prize_k": 564,
-  "year_prize_k": 564,
+  "program_prize_k": 606,
+  "year_prize_k": 606,
   "reconstructed": true,
-  "reconstructed_races": 0
+  "reconstructed_races": 1
  },
  "next_class": null,
  "races": [
+  {
+   "date": "2026-09-27",
+   "race_no": 4,
+   "race_name": "祝！健太・絵里奈　結婚記念２歳Ｂ－５",
+   "class": "B",
+   "moisture": 1.0,
+   "field_size": 10,
+   "num": 3,
+   "jockey": "船山蔵",
+   "trainer": "田上忠",
+   "owner": "（株）大阪畜産",
+   "sled_kg": 510.0,
+   "weight": 894,
+   "weight_diff": 3,
+   "odds": 14.3,
+   "popularity": 7,
+   "position": 4,
+   "time": "2:16.4",
+   "time_sec": 136.4,
+   "margin_sec": 19.6,
+   "race_level_z": -0.11,
+   "interval": "連闘",
+   "other": {
+    "label": "勝ち馬",
+    "name": "ハゴロモトレジャー"
+   },
+   "insider_labels": []
+  },
   {
    "date": "2026-09-21",
    "race_no": 5,

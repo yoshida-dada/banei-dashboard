@@ -4,10 +4,10 @@
  "age": 2,
  "trainer": "久田守",
  "owner": "尾ヶ瀬浩二",
- "sled_kg": 490.0,
- "weight": 810,
- "weight_diff": 12,
- "last_race_date": "2026-09-21",
+ "sled_kg": 510.0,
+ "weight": 812,
+ "weight_diff": 2,
+ "last_race_date": "2026-09-27",
  "pedigree": {
   "sire": "ホクショウユヅル",
   "dam": "グローレンス",
@@ -21,21 +21,21 @@
    "win": 1,
    "place2": 0,
    "place3": 3,
-   "other": 6,
-   "n": 10,
-   "win_rate": 0.1,
-   "quinella_rate": 0.1,
-   "show_rate": 0.4
+   "other": 7,
+   "n": 11,
+   "win_rate": 0.091,
+   "quinella_rate": 0.091,
+   "show_rate": 0.364
   },
   "2026": {
    "win": 1,
    "place2": 0,
    "place3": 3,
-   "other": 6,
-   "n": 10,
-   "win_rate": 0.1,
-   "quinella_rate": 0.1,
-   "show_rate": 0.4
+   "other": 7,
+   "n": 11,
+   "win_rate": 0.091,
+   "quinella_rate": 0.091,
+   "show_rate": 0.364
   }
  },
  "insider_label_count": 0,
@@ -58,6 +58,19 @@
   }
  ],
  "ratings_reconstructed": [
+  {
+   "date": "2026-09-27",
+   "race_no": 4,
+   "position": 6,
+   "earned_yen": 0,
+   "program_prize_k": 600,
+   "year_prize_k": 600,
+   "class": "C2",
+   "next_class": "C1",
+   "next_class_need_k": 1600,
+   "diff_k": 0,
+   "change": null
+  },
   {
    "date": "2026-09-21",
    "race_no": 4,
@@ -199,6 +212,34 @@
  },
  "next_class": null,
  "races": [
+  {
+   "date": "2026-09-27",
+   "race_no": 4,
+   "race_name": "祝！健太・絵里奈　結婚記念２歳Ｂ－５",
+   "class": "B",
+   "moisture": 1.0,
+   "field_size": 10,
+   "num": 8,
+   "jockey": "赤塚健",
+   "trainer": "久田守",
+   "owner": "尾ヶ瀬浩二",
+   "sled_kg": 510.0,
+   "weight": 812,
+   "weight_diff": 2,
+   "odds": 7.7,
+   "popularity": 4,
+   "position": 6,
+   "time": "2:23.3",
+   "time_sec": 143.3,
+   "margin_sec": 26.5,
+   "race_level_z": -0.4,
+   "interval": "連闘",
+   "other": {
+    "label": "勝ち馬",
+    "name": "ハゴロモトレジャー"
+   },
+   "insider_labels": []
+  },
   {
    "date": "2026-09-21",
    "race_no": 4,

@@ -4,10 +4,10 @@
  "age": 3,
  "trainer": "村上慎",
  "owner": "渡辺善弘",
- "sled_kg": 590.0,
- "weight": 1014,
- "weight_diff": 10,
- "last_race_date": "2026-09-21",
+ "sled_kg": 600.0,
+ "weight": 1007,
+ "weight_diff": -7,
+ "last_race_date": "2026-09-27",
  "pedigree": {
   "sire": "ファーストタロウ",
   "dam": "ファーストユイナ",
@@ -21,21 +21,21 @@
    "win": 2,
    "place2": 2,
    "place3": 1,
-   "other": 17,
-   "n": 22,
-   "win_rate": 0.091,
-   "quinella_rate": 0.182,
-   "show_rate": 0.227
+   "other": 18,
+   "n": 23,
+   "win_rate": 0.087,
+   "quinella_rate": 0.174,
+   "show_rate": 0.217
   },
   "2026": {
    "win": 0,
    "place2": 1,
    "place3": 1,
-   "other": 16,
-   "n": 18,
+   "other": 17,
+   "n": 19,
    "win_rate": 0.0,
-   "quinella_rate": 0.056,
-   "show_rate": 0.111
+   "quinella_rate": 0.053,
+   "show_rate": 0.105
   },
   "2025": {
    "win": 2,
@@ -68,6 +68,19 @@
   }
  ],
  "ratings_reconstructed": [
+  {
+   "date": "2026-09-27",
+   "race_no": 1,
+   "position": 6,
+   "earned_yen": 0,
+   "program_prize_k": 978,
+   "year_prize_k": 210,
+   "class": "C2",
+   "next_class": "C1",
+   "next_class_need_k": 1222,
+   "diff_k": 0,
+   "change": null
+  },
   {
    "date": "2026-09-21",
    "race_no": 1,
@@ -239,6 +252,34 @@
  },
  "races": [
   {
+   "date": "2026-09-27",
+   "race_no": 1,
+   "race_name": "ＴｈｉｎｋＢｉｇ　ＹＥＧ杯Ｃ２－９",
+   "class": "C2",
+   "moisture": 1.0,
+   "field_size": 10,
+   "num": 7,
+   "jockey": "村上章",
+   "trainer": "村上慎",
+   "owner": "渡辺善弘",
+   "sled_kg": 600.0,
+   "weight": 1007,
+   "weight_diff": -7,
+   "odds": 37.2,
+   "popularity": 9,
+   "position": 6,
+   "time": "2:55.5",
+   "time_sec": 175.5,
+   "margin_sec": 35.5,
+   "race_level_z": -0.63,
+   "interval": "連闘",
+   "other": {
+    "label": "勝ち馬",
+    "name": "キンノロナ"
+   },
+   "insider_labels": []
+  },
+  {
    "date": "2026-09-21",
    "race_no": 1,
    "race_name": "祝３０周年！ＳＰＡＴ４賞Ｃ２－１０",
@@ -286,7 +327,7 @@
    "time": "3:05.2",
    "time_sec": 185.2,
    "margin_sec": 43.4,
-   "race_level_z": -1.23,
+   "race_level_z": -1.24,
    "interval": "中1週",
    "other": {
     "label": "勝ち馬",
@@ -398,7 +439,7 @@
    "time": "2:33.9",
    "time_sec": 153.9,
    "margin_sec": 11.3,
-   "race_level_z": 0.24,
+   "race_level_z": 0.23,
    "interval": "中1週",
    "other": {
     "label": "勝ち馬",
@@ -706,7 +747,7 @@
    "time": "2:03.2",
    "time_sec": 123.2,
    "margin_sec": 16.3,
-   "race_level_z": 0.27,
+   "race_level_z": 0.28,
    "interval": "中2週",
    "other": {
     "label": "勝ち馬",

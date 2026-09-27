@@ -4,10 +4,10 @@
  "age": 4,
  "trainer": "大橋和",
  "owner": "小倉たまき",
- "sled_kg": 610.0,
- "weight": 1020,
- "weight_diff": 4,
- "last_race_date": "2026-08-29",
+ "sled_kg": 620.0,
+ "weight": 1022,
+ "weight_diff": 2,
+ "last_race_date": "2026-09-27",
  "pedigree": {
   "sire": "オホーツクノタカラ",
   "dam": "タイキン",
@@ -19,23 +19,23 @@
  "stats": {
   "total": {
    "win": 3,
-   "place2": 3,
+   "place2": 4,
    "place3": 5,
    "other": 12,
-   "n": 23,
-   "win_rate": 0.13,
-   "quinella_rate": 0.261,
-   "show_rate": 0.478
+   "n": 24,
+   "win_rate": 0.125,
+   "quinella_rate": 0.292,
+   "show_rate": 0.5
   },
   "2026": {
    "win": 2,
-   "place2": 1,
+   "place2": 2,
    "place3": 2,
    "other": 6,
-   "n": 11,
-   "win_rate": 0.182,
-   "quinella_rate": 0.273,
-   "show_rate": 0.455
+   "n": 12,
+   "win_rate": 0.167,
+   "quinella_rate": 0.333,
+   "show_rate": 0.5
   },
   "2025": {
    "win": 0,
@@ -78,6 +78,19 @@
   }
  ],
  "ratings_reconstructed": [
+  {
+   "date": "2026-09-27",
+   "race_no": 5,
+   "position": 2,
+   "earned_yen": 111000,
+   "program_prize_k": 1823,
+   "year_prize_k": 774,
+   "class": "C2",
+   "next_class": "C1",
+   "next_class_need_k": 377,
+   "diff_k": 111,
+   "change": null
+  },
   {
    "date": "2026-08-29",
    "race_no": 6,
@@ -186,16 +199,44 @@
  "reconstructed_now": {
   "snapshot_date": "2026-09-25",
   "class_code": "C2",
-  "program_prize_k": 1712,
-  "year_prize_k": 663,
+  "program_prize_k": 1823,
+  "year_prize_k": 774,
   "reconstructed": true,
-  "reconstructed_races": 0
+  "reconstructed_races": 1
  },
  "next_class": {
   "next_class": "C1",
-  "need_k": 488
+  "need_k": 377
  },
  "races": [
+  {
+   "date": "2026-09-27",
+   "race_no": 5,
+   "race_name": "川上陽大くん６歳記念Ｃ２－２",
+   "class": "C2",
+   "moisture": 0.9,
+   "field_size": 10,
+   "num": 7,
+   "jockey": "林康文",
+   "trainer": "大橋和",
+   "owner": "小倉たまき",
+   "sled_kg": 620.0,
+   "weight": 1022,
+   "weight_diff": 2,
+   "odds": 11.4,
+   "popularity": 6,
+   "position": 2,
+   "time": "2:07.1",
+   "time_sec": 127.1,
+   "margin_sec": 1.5,
+   "race_level_z": 1.52,
+   "interval": "中4週",
+   "other": {
+    "label": "勝ち馬",
+    "name": "ラブファンタジー"
+   },
+   "insider_labels": []
+  },
   {
    "date": "2026-08-29",
    "race_no": 6,
@@ -356,7 +397,7 @@
    "time": "2:09.1",
    "time_sec": 129.1,
    "margin_sec": 0.0,
-   "race_level_z": 1.39,
+   "race_level_z": 1.38,
    "interval": "中2週",
    "other": {
     "label": "2着馬",
@@ -440,7 +481,7 @@
    "time": "2:24.2",
    "time_sec": 144.2,
    "margin_sec": 0.4,
-   "race_level_z": 0.75,
+   "race_level_z": 0.74,
    "interval": "連闘",
    "other": {
     "label": "勝ち馬",
@@ -524,7 +565,7 @@
    "time": "2:28.0",
    "time_sec": 148.0,
    "margin_sec": 18.5,
-   "race_level_z": 0.44,
+   "race_level_z": 0.43,
    "interval": "中4週",
    "other": {
     "label": "勝ち馬",
@@ -689,7 +730,7 @@
    "time": "2:11.2",
    "time_sec": 131.2,
    "margin_sec": 0.0,
-   "race_level_z": 0.36,
+   "race_level_z": 0.35,
    "interval": "中2週",
    "other": {
     "label": "2着馬",
@@ -745,7 +786,7 @@
    "time": "1:53.9",
    "time_sec": 113.9,
    "margin_sec": 16.4,
-   "race_level_z": 1.11,
+   "race_level_z": 1.12,
    "interval": "中3週",
    "other": {
     "label": "勝ち馬",

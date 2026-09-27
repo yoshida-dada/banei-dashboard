@@ -5,9 +5,9 @@
  "trainer": "村上慎",
  "owner": "（株）大阪畜産",
  "sled_kg": 520.0,
- "weight": 1004,
- "weight_diff": 3,
- "last_race_date": "2026-09-13",
+ "weight": 999,
+ "weight_diff": -5,
+ "last_race_date": "2026-09-27",
  "pedigree": {
   "sire": "コウシュハウンカイ",
   "dam": "スーパーブラック",
@@ -21,21 +21,21 @@
    "win": 0,
    "place2": 3,
    "place3": 4,
-   "other": 3,
-   "n": 10,
+   "other": 4,
+   "n": 11,
    "win_rate": 0.0,
-   "quinella_rate": 0.3,
-   "show_rate": 0.7
+   "quinella_rate": 0.273,
+   "show_rate": 0.636
   },
   "2026": {
    "win": 0,
    "place2": 3,
    "place3": 4,
-   "other": 3,
-   "n": 10,
+   "other": 4,
+   "n": 11,
    "win_rate": 0.0,
-   "quinella_rate": 0.3,
-   "show_rate": 0.7
+   "quinella_rate": 0.273,
+   "show_rate": 0.636
   }
  },
  "insider_label_count": 0,
@@ -58,6 +58,19 @@
   }
  ],
  "ratings_reconstructed": [
+  {
+   "date": "2026-09-27",
+   "race_no": 8,
+   "position": 9,
+   "earned_yen": 0,
+   "program_prize_k": 1078,
+   "year_prize_k": 1078,
+   "class": "C2",
+   "next_class": "C1",
+   "next_class_need_k": 1122,
+   "diff_k": 0,
+   "change": null
+  },
   {
    "date": "2026-09-13",
    "race_no": 10,
@@ -200,6 +213,34 @@
  "next_class": null,
  "races": [
   {
+   "date": "2026-09-27",
+   "race_no": 8,
+   "race_name": "祝！教行もうすぐ完走記念２歳Ａ－３",
+   "class": "A3",
+   "moisture": 0.9,
+   "field_size": 10,
+   "num": 1,
+   "jockey": "船山蔵",
+   "trainer": "村上慎",
+   "owner": "（株）大阪畜産",
+   "sled_kg": 520.0,
+   "weight": 999,
+   "weight_diff": -5,
+   "odds": 21.1,
+   "popularity": 7,
+   "position": 9,
+   "time": "2:17.2",
+   "time_sec": 137.2,
+   "margin_sec": 30.2,
+   "race_level_z": -0.51,
+   "interval": "中2週",
+   "other": {
+    "label": "勝ち馬",
+    "name": "ハマカムイ"
+   },
+   "insider_labels": []
+  },
+  {
    "date": "2026-09-13",
    "race_no": 10,
    "race_name": "第３９回 いちい賞２歳牝馬オープン",
@@ -275,7 +316,7 @@
    "time": "1:57.7",
    "time_sec": 117.7,
    "margin_sec": 10.4,
-   "race_level_z": -0.32,
+   "race_level_z": -0.31,
    "interval": "中1週",
    "other": {
     "label": "勝ち馬",

@@ -4,10 +4,10 @@
  "age": 2,
  "trainer": "今井茂",
  "owner": "曽我部裕",
- "sled_kg": 480.0,
- "weight": 878,
- "weight_diff": 44,
- "last_race_date": "2026-09-14",
+ "sled_kg": 500.0,
+ "weight": 889,
+ "weight_diff": 11,
+ "last_race_date": "2026-09-27",
  "pedigree": {
   "sire": "サクラダイチ",
   "dam": null,
@@ -21,21 +21,21 @@
    "win": 1,
    "place2": 0,
    "place3": 0,
-   "other": 5,
-   "n": 6,
-   "win_rate": 0.167,
-   "quinella_rate": 0.167,
-   "show_rate": 0.167
+   "other": 6,
+   "n": 7,
+   "win_rate": 0.143,
+   "quinella_rate": 0.143,
+   "show_rate": 0.143
   },
   "2026": {
    "win": 1,
    "place2": 0,
    "place3": 0,
-   "other": 5,
-   "n": 6,
-   "win_rate": 0.167,
-   "quinella_rate": 0.167,
-   "show_rate": 0.167
+   "other": 6,
+   "n": 7,
+   "win_rate": 0.143,
+   "quinella_rate": 0.143,
+   "show_rate": 0.143
   }
  },
  "insider_label_count": 0,
@@ -58,6 +58,19 @@
   }
  ],
  "ratings_reconstructed": [
+  {
+   "date": "2026-09-27",
+   "race_no": 3,
+   "position": 4,
+   "earned_yen": 36000,
+   "program_prize_k": 387,
+   "year_prize_k": 387,
+   "class": "C2",
+   "next_class": "C1",
+   "next_class_need_k": 1813,
+   "diff_k": 36,
+   "change": null
+  },
   {
    "date": "2026-09-14",
    "race_no": 2,
@@ -140,13 +153,41 @@
  "reconstructed_now": {
   "snapshot_date": "2026-09-25",
   "class_code": "2sai",
-  "program_prize_k": 351,
-  "year_prize_k": 351,
+  "program_prize_k": 387,
+  "year_prize_k": 387,
   "reconstructed": true,
-  "reconstructed_races": 0
+  "reconstructed_races": 1
  },
  "next_class": null,
  "races": [
+  {
+   "date": "2026-09-27",
+   "race_no": 3,
+   "race_name": "彩佳ちゃん生誕２周年記念２歳Ｃ－５",
+   "class": "C",
+   "moisture": 1.0,
+   "field_size": 10,
+   "num": 7,
+   "jockey": "中村太",
+   "trainer": "今井茂",
+   "owner": "曽我部裕",
+   "sled_kg": 500.0,
+   "weight": 889,
+   "weight_diff": 11,
+   "odds": 31.4,
+   "popularity": 8,
+   "position": 4,
+   "time": "2:13.8",
+   "time_sec": 133.8,
+   "margin_sec": 6.2,
+   "race_level_z": 0.54,
+   "interval": "中1週",
+   "other": {
+    "label": "勝ち馬",
+    "name": "スピードシンデレラ"
+   },
+   "insider_labels": []
+  },
   {
    "date": "2026-09-14",
    "race_no": 2,
@@ -223,7 +264,7 @@
    "time": "2:50.0",
    "time_sec": 170.0,
    "margin_sec": 22.8,
-   "race_level_z": -1.02,
+   "race_level_z": -1.03,
    "interval": "中2週",
    "other": {
     "label": "勝ち馬",

@@ -4,10 +4,10 @@
  "age": 2,
  "trainer": "坂本東",
  "owner": "竹内宏人",
- "sled_kg": 510.0,
- "weight": 934,
- "weight_diff": 16,
- "last_race_date": "2026-09-13",
+ "sled_kg": 520.0,
+ "weight": 951,
+ "weight_diff": 17,
+ "last_race_date": "2026-09-27",
  "pedigree": {
   "sire": "コウシュハウンカイ",
   "dam": "ショウエイガール",
@@ -21,21 +21,21 @@
    "win": 0,
    "place2": 1,
    "place3": 2,
-   "other": 6,
-   "n": 9,
+   "other": 7,
+   "n": 10,
    "win_rate": 0.0,
-   "quinella_rate": 0.111,
-   "show_rate": 0.333
+   "quinella_rate": 0.1,
+   "show_rate": 0.3
   },
   "2026": {
    "win": 0,
    "place2": 1,
    "place3": 2,
-   "other": 6,
-   "n": 9,
+   "other": 7,
+   "n": 10,
    "win_rate": 0.0,
-   "quinella_rate": 0.111,
-   "show_rate": 0.333
+   "quinella_rate": 0.1,
+   "show_rate": 0.3
   }
  },
  "insider_label_count": 0,
@@ -58,6 +58,19 @@
   }
  ],
  "ratings_reconstructed": [
+  {
+   "date": "2026-09-27",
+   "race_no": 3,
+   "position": 7,
+   "earned_yen": 0,
+   "program_prize_k": 363,
+   "year_prize_k": 363,
+   "class": "C2",
+   "next_class": "C1",
+   "next_class_need_k": 1837,
+   "diff_k": 0,
+   "change": null
+  },
   {
    "date": "2026-09-13",
    "race_no": 3,
@@ -186,6 +199,34 @@
  },
  "next_class": null,
  "races": [
+  {
+   "date": "2026-09-27",
+   "race_no": 3,
+   "race_name": "彩佳ちゃん生誕２周年記念２歳Ｃ－５",
+   "class": "C",
+   "moisture": 1.0,
+   "field_size": 10,
+   "num": 1,
+   "jockey": "大友一",
+   "trainer": "坂本東",
+   "owner": "竹内宏人",
+   "sled_kg": 520.0,
+   "weight": 951,
+   "weight_diff": 17,
+   "odds": 20.9,
+   "popularity": 7,
+   "position": 7,
+   "time": "2:22.6",
+   "time_sec": 142.6,
+   "margin_sec": 15.0,
+   "race_level_z": 0.22,
+   "interval": "中2週",
+   "other": {
+    "label": "勝ち馬",
+    "name": "スピードシンデレラ"
+   },
+   "insider_labels": []
+  },
   {
    "date": "2026-09-13",
    "race_no": 3,
@@ -374,7 +415,7 @@
    "time": "2:06.6",
    "time_sec": 126.6,
    "margin_sec": 13.3,
-   "race_level_z": 0.41,
+   "race_level_z": 0.42,
    "interval": "中2週",
    "other": {
     "label": "勝ち馬",

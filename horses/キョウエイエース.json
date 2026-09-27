@@ -4,10 +4,10 @@
  "age": 4,
  "trainer": "村上慎",
  "owner": "大野昇",
- "sled_kg": 710.0,
- "weight": 1056,
- "weight_diff": -4,
- "last_race_date": "2026-08-23",
+ "sled_kg": 740.0,
+ "weight": 1062,
+ "weight_diff": 6,
+ "last_race_date": "2026-09-27",
  "pedigree": {
   "sire": "キタノリュウキ",
   "dam": "風蓮",
@@ -21,21 +21,21 @@
    "win": 11,
    "place2": 13,
    "place3": 3,
-   "other": 13,
-   "n": 40,
-   "win_rate": 0.275,
-   "quinella_rate": 0.6,
-   "show_rate": 0.675
+   "other": 14,
+   "n": 41,
+   "win_rate": 0.268,
+   "quinella_rate": 0.585,
+   "show_rate": 0.659
   },
   "2026": {
    "win": 0,
    "place2": 1,
    "place3": 1,
-   "other": 7,
-   "n": 9,
+   "other": 8,
+   "n": 10,
    "win_rate": 0.0,
-   "quinella_rate": 0.111,
-   "show_rate": 0.222
+   "quinella_rate": 0.1,
+   "show_rate": 0.2
   },
   "2025": {
    "win": 5,
@@ -78,6 +78,19 @@
   }
  ],
  "ratings_reconstructed": [
+  {
+   "date": "2026-09-27",
+   "race_no": 11,
+   "position": 6,
+   "earned_yen": 0,
+   "program_prize_k": 19862,
+   "year_prize_k": 1027,
+   "class": "open",
+   "next_class": null,
+   "next_class_need_k": null,
+   "diff_k": 0,
+   "change": null
+  },
   {
    "date": "2026-08-23",
    "race_no": 11,
@@ -167,6 +180,34 @@
  },
  "next_class": null,
  "races": [
+  {
+   "date": "2026-09-27",
+   "race_no": 11,
+   "race_name": "第３４回 銀河賞４歳オープン別定",
+   "class": "オープン",
+   "moisture": 0.9,
+   "field_size": 9,
+   "num": 6,
+   "jockey": "菊池一",
+   "trainer": "村上慎",
+   "owner": "大野昇",
+   "sled_kg": 740.0,
+   "weight": 1062,
+   "weight_diff": 6,
+   "odds": 23.4,
+   "popularity": 5,
+   "position": 6,
+   "time": "2:11.9",
+   "time_sec": 131.9,
+   "margin_sec": 21.8,
+   "race_level_z": -0.02,
+   "interval": "中5週",
+   "other": {
+    "label": "勝ち馬",
+    "name": "スターイチバン"
+   },
+   "insider_labels": []
+  },
   {
    "date": "2026-08-23",
    "race_no": 11,
@@ -271,7 +312,7 @@
    "time": "1:42.6",
    "time_sec": 102.6,
    "margin_sec": 10.8,
-   "race_level_z": 0.19,
+   "race_level_z": 0.2,
    "interval": "中8週",
    "other": {
     "label": "勝ち馬",

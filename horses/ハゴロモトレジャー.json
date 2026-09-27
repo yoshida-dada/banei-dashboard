@@ -4,10 +4,10 @@
  "age": 2,
  "trainer": "村上慎",
  "owner": "井上修",
- "sled_kg": 520.0,
- "weight": 929,
- "weight_diff": 17,
- "last_race_date": "2026-09-21",
+ "sled_kg": 530.0,
+ "weight": 927,
+ "weight_diff": -2,
+ "last_race_date": "2026-09-27",
  "pedigree": {
   "sire": "アサヒリュウセイ",
   "dam": "セタナセンプー",
@@ -18,24 +18,24 @@
  },
  "stats": {
   "total": {
-   "win": 0,
+   "win": 1,
    "place2": 1,
    "place3": 1,
    "other": 7,
-   "n": 9,
-   "win_rate": 0.0,
-   "quinella_rate": 0.111,
-   "show_rate": 0.222
+   "n": 10,
+   "win_rate": 0.1,
+   "quinella_rate": 0.2,
+   "show_rate": 0.3
   },
   "2026": {
-   "win": 0,
+   "win": 1,
    "place2": 1,
    "place3": 1,
    "other": 7,
-   "n": 9,
-   "win_rate": 0.0,
-   "quinella_rate": 0.111,
-   "show_rate": 0.222
+   "n": 10,
+   "win_rate": 0.1,
+   "quinella_rate": 0.2,
+   "show_rate": 0.3
   }
  },
  "insider_label_count": 0,
@@ -58,6 +58,19 @@
   }
  ],
  "ratings_reconstructed": [
+  {
+   "date": "2026-09-27",
+   "race_no": 4,
+   "position": 1,
+   "earned_yen": 390000,
+   "program_prize_k": 942,
+   "year_prize_k": 942,
+   "class": "C2",
+   "next_class": "C1",
+   "next_class_need_k": 1258,
+   "diff_k": 390,
+   "change": null
+  },
   {
    "date": "2026-09-21",
    "race_no": 5,
@@ -179,13 +192,41 @@
  "reconstructed_now": {
   "snapshot_date": "2026-09-25",
   "class_code": "2sai",
-  "program_prize_k": 552,
-  "year_prize_k": 552,
+  "program_prize_k": 942,
+  "year_prize_k": 942,
   "reconstructed": true,
-  "reconstructed_races": 0
+  "reconstructed_races": 1
  },
  "next_class": null,
  "races": [
+  {
+   "date": "2026-09-27",
+   "race_no": 4,
+   "race_name": "祝！健太・絵里奈　結婚記念２歳Ｂ－５",
+   "class": "B",
+   "moisture": 1.0,
+   "field_size": 10,
+   "num": 5,
+   "jockey": "鈴木恵",
+   "trainer": "村上慎",
+   "owner": "井上修",
+   "sled_kg": 530.0,
+   "weight": 927,
+   "weight_diff": -2,
+   "odds": 3.1,
+   "popularity": 1,
+   "position": 1,
+   "time": "1:56.8",
+   "time_sec": 116.8,
+   "margin_sec": 0.0,
+   "race_level_z": 0.79,
+   "interval": "連闘",
+   "other": {
+    "label": "2着馬",
+    "name": "ヨーコ"
+   },
+   "insider_labels": []
+  },
   {
    "date": "2026-09-21",
    "race_no": 5,
@@ -290,7 +331,7 @@
    "time": "1:41.2",
    "time_sec": 101.2,
    "margin_sec": 10.3,
-   "race_level_z": -0.03,
+   "race_level_z": -0.02,
    "interval": "中1週",
    "other": {
     "label": "勝ち馬",
@@ -346,7 +387,7 @@
    "time": "1:53.0",
    "time_sec": 113.0,
    "margin_sec": 12.9,
-   "race_level_z": -0.71,
+   "race_level_z": -0.7,
    "interval": "中2週",
    "other": {
     "label": "勝ち馬",

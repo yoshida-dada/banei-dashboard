@@ -4,10 +4,10 @@
  "age": 2,
  "trainer": "槻舘重",
  "owner": "櫻井陽介",
- "sled_kg": 530.0,
- "weight": 916,
- "weight_diff": -10,
- "last_race_date": "2026-09-14",
+ "sled_kg": 540.0,
+ "weight": 934,
+ "weight_diff": 18,
+ "last_race_date": "2026-09-27",
  "pedigree": {
   "sire": "ゴールドインパクト",
   "dam": "越富士",
@@ -21,21 +21,21 @@
    "win": 1,
    "place2": 3,
    "place3": 1,
-   "other": 3,
-   "n": 8,
-   "win_rate": 0.125,
-   "quinella_rate": 0.5,
-   "show_rate": 0.625
+   "other": 4,
+   "n": 9,
+   "win_rate": 0.111,
+   "quinella_rate": 0.444,
+   "show_rate": 0.556
   },
   "2026": {
    "win": 1,
    "place2": 3,
    "place3": 1,
-   "other": 3,
-   "n": 8,
-   "win_rate": 0.125,
-   "quinella_rate": 0.5,
-   "show_rate": 0.625
+   "other": 4,
+   "n": 9,
+   "win_rate": 0.111,
+   "quinella_rate": 0.444,
+   "show_rate": 0.556
   }
  },
  "insider_label_count": 0,
@@ -58,6 +58,19 @@
   }
  ],
  "ratings_reconstructed": [
+  {
+   "date": "2026-09-27",
+   "race_no": 8,
+   "position": 6,
+   "earned_yen": 0,
+   "program_prize_k": 1133,
+   "year_prize_k": 1133,
+   "class": "C2",
+   "next_class": "C1",
+   "next_class_need_k": 1067,
+   "diff_k": 0,
+   "change": null
+  },
   {
    "date": "2026-09-14",
    "race_no": 8,
@@ -173,6 +186,34 @@
  },
  "next_class": null,
  "races": [
+  {
+   "date": "2026-09-27",
+   "race_no": 8,
+   "race_name": "祝！教行もうすぐ完走記念２歳Ａ－３",
+   "class": "A3",
+   "moisture": 0.9,
+   "field_size": 10,
+   "num": 6,
+   "jockey": "菊池一",
+   "trainer": "槻舘重",
+   "owner": "櫻井陽介",
+   "sled_kg": 540.0,
+   "weight": 934,
+   "weight_diff": 18,
+   "odds": 3.9,
+   "popularity": 2,
+   "position": 6,
+   "time": "2:01.8",
+   "time_sec": 121.8,
+   "margin_sec": 14.8,
+   "race_level_z": 0.21,
+   "interval": "中1週",
+   "other": {
+    "label": "勝ち馬",
+    "name": "ハマカムイ"
+   },
+   "insider_labels": []
+  },
   {
    "date": "2026-09-14",
    "race_no": 8,

@@ -4,10 +4,10 @@
  "age": 4,
  "trainer": "今井茂",
  "owner": "竹内宏人",
- "sled_kg": 685.0,
- "weight": 1097,
- "weight_diff": 7,
- "last_race_date": "2026-09-14",
+ "sled_kg": 720.0,
+ "weight": 1110,
+ "weight_diff": 13,
+ "last_race_date": "2026-09-27",
  "pedigree": {
   "sire": "フジダイビクトリー",
   "dam": "ミドリユー",
@@ -19,23 +19,23 @@
  "stats": {
   "total": {
    "win": 10,
-   "place2": 18,
+   "place2": 19,
    "place3": 3,
    "other": 25,
-   "n": 56,
-   "win_rate": 0.179,
-   "quinella_rate": 0.5,
-   "show_rate": 0.554
+   "n": 57,
+   "win_rate": 0.175,
+   "quinella_rate": 0.509,
+   "show_rate": 0.561
   },
   "2026": {
    "win": 3,
-   "place2": 6,
+   "place2": 7,
    "place3": 1,
    "other": 7,
-   "n": 17,
-   "win_rate": 0.176,
-   "quinella_rate": 0.529,
-   "show_rate": 0.588
+   "n": 18,
+   "win_rate": 0.167,
+   "quinella_rate": 0.556,
+   "show_rate": 0.611
   },
   "2025": {
    "win": 4,
@@ -78,6 +78,19 @@
   }
  ],
  "ratings_reconstructed": [
+  {
+   "date": "2026-09-27",
+   "race_no": 11,
+   "position": 2,
+   "earned_yen": 1140000,
+   "program_prize_k": 10024,
+   "year_prize_k": 4162,
+   "class": "A1",
+   "next_class": "open",
+   "next_class_need_k": 2976,
+   "diff_k": 1140,
+   "change": "up"
+  },
   {
    "date": "2026-09-14",
    "race_no": 11,
@@ -238,16 +251,44 @@
  "reconstructed_now": {
   "snapshot_date": "2026-09-25",
   "class_code": "A2",
-  "program_prize_k": 8884,
-  "year_prize_k": 3022,
+  "program_prize_k": 10024,
+  "year_prize_k": 4162,
   "reconstructed": true,
-  "reconstructed_races": 0
+  "reconstructed_races": 1
  },
  "next_class": {
   "next_class": "A1",
-  "need_k": 1116
+  "need_k": -24
  },
  "races": [
+  {
+   "date": "2026-09-27",
+   "race_no": 11,
+   "race_name": "第３４回 銀河賞４歳オープン別定",
+   "class": "オープン",
+   "moisture": 0.9,
+   "field_size": 9,
+   "num": 4,
+   "jockey": "今井千",
+   "trainer": "今井茂",
+   "owner": "竹内宏人",
+   "sled_kg": 720.0,
+   "weight": 1110,
+   "weight_diff": 13,
+   "odds": 11.0,
+   "popularity": 4,
+   "position": 2,
+   "time": "1:58.3",
+   "time_sec": 118.3,
+   "margin_sec": 8.2,
+   "race_level_z": 0.5,
+   "interval": "中1週",
+   "other": {
+    "label": "勝ち馬",
+    "name": "スターイチバン"
+   },
+   "insider_labels": []
+  },
   {
    "date": "2026-09-14",
    "race_no": 11,
@@ -352,7 +393,7 @@
    "time": "1:37.1",
    "time_sec": 97.1,
    "margin_sec": 2.7,
-   "race_level_z": 0.73,
+   "race_level_z": 0.74,
    "interval": "中3週",
    "other": {
     "label": "勝ち馬",
@@ -660,7 +701,7 @@
    "time": "2:00.1",
    "time_sec": 120.1,
    "margin_sec": 14.1,
-   "race_level_z": 0.35,
+   "race_level_z": 0.34,
    "interval": "中3週",
    "other": {
     "label": "勝ち馬",
@@ -940,7 +981,7 @@
    "time": "1:30.0",
    "time_sec": 90.0,
    "margin_sec": 0.0,
-   "race_level_z": 1.57,
+   "race_level_z": 1.58,
    "interval": "中3週",
    "other": {
     "label": "2着馬",

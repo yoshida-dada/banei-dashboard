@@ -4,10 +4,10 @@
  "age": 2,
  "trainer": "久田守",
  "owner": "大塚容紫子",
- "sled_kg": 500.0,
- "weight": 832,
- "weight_diff": -1,
- "last_race_date": "2026-09-21",
+ "sled_kg": 510.0,
+ "weight": 836,
+ "weight_diff": 4,
+ "last_race_date": "2026-09-27",
  "pedigree": {
   "sire": "ヒノデタイガー",
   "dam": null,
@@ -21,21 +21,21 @@
    "win": 0,
    "place2": 0,
    "place3": 1,
-   "other": 8,
-   "n": 9,
+   "other": 9,
+   "n": 10,
    "win_rate": 0.0,
    "quinella_rate": 0.0,
-   "show_rate": 0.111
+   "show_rate": 0.1
   },
   "2026": {
    "win": 0,
    "place2": 0,
    "place3": 1,
-   "other": 8,
-   "n": 9,
+   "other": 9,
+   "n": 10,
    "win_rate": 0.0,
    "quinella_rate": 0.0,
-   "show_rate": 0.111
+   "show_rate": 0.1
   }
  },
  "insider_label_count": 0,
@@ -58,6 +58,19 @@
   }
  ],
  "ratings_reconstructed": [
+  {
+   "date": "2026-09-27",
+   "race_no": 2,
+   "position": 9,
+   "earned_yen": 0,
+   "program_prize_k": 114,
+   "year_prize_k": 114,
+   "class": "C2",
+   "next_class": "C1",
+   "next_class_need_k": 2086,
+   "diff_k": 0,
+   "change": null
+  },
   {
    "date": "2026-09-21",
    "race_no": 2,
@@ -186,6 +199,34 @@
  },
  "next_class": null,
  "races": [
+  {
+   "date": "2026-09-27",
+   "race_no": 2,
+   "race_name": "もなかみたらし杯２歳Ｄ－６",
+   "class": "D",
+   "moisture": 1.0,
+   "field_size": 10,
+   "num": 8,
+   "jockey": "島津新",
+   "trainer": "久田守",
+   "owner": "大塚容紫子",
+   "sled_kg": 510.0,
+   "weight": 836,
+   "weight_diff": 4,
+   "odds": 63.5,
+   "popularity": 8,
+   "position": 9,
+   "time": "3:03.5",
+   "time_sec": 183.5,
+   "margin_sec": 59.1,
+   "race_level_z": -0.96,
+   "interval": "連闘",
+   "other": {
+    "label": "勝ち馬",
+    "name": "コマサンブロッサム"
+   },
+   "insider_labels": []
+  },
   {
    "date": "2026-09-21",
    "race_no": 2,
@@ -430,7 +471,7 @@
    "time": "3:50.4",
    "time_sec": 230.4,
    "margin_sec": 74.0,
-   "race_level_z": -2.65,
+   "race_level_z": -2.66,
    "interval": null,
    "other": {
     "label": "勝ち馬",

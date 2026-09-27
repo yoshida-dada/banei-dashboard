@@ -1,48 +1,48 @@
 {
- "generated": "2026-09-27T12:32:37",
+ "generated": "2026-09-28T06:07:10",
  "period": {
   "from": "2026-07-11",
   "to": "2026-09-28",
   "race_days": 36
  },
  "races_total": 432,
- "races_settled": 403,
+ "races_settled": 415,
  "hit": {
-  "top1_hits": 117,
-  "top1_n": 403,
-  "top1_rate": 0.29,
-  "fav_hits": 141,
-  "fav_n": 403,
-  "fav_rate": 0.35
+  "top1_hits": 123,
+  "top1_n": 415,
+  "top1_rate": 0.296,
+  "fav_hits": 146,
+  "fav_n": 415,
+  "fav_rate": 0.352
  },
  "calibration": [
   {
    "bucket": "0-10%",
    "lo": 0,
    "pred": 5.7,
-   "actual": 5.3,
-   "n": 2334
+   "actual": 5.2,
+   "n": 2403
   },
   {
    "bucket": "10-20%",
    "lo": 10,
    "pred": 14.0,
-   "actual": 14.0,
-   "n": 1192
+   "actual": 14.1,
+   "n": 1230
   },
   {
    "bucket": "20-30%",
    "lo": 20,
    "pred": 23.9,
-   "actual": 28.8,
-   "n": 299
+   "actual": 29.0,
+   "n": 307
   },
   {
    "bucket": "30-40%",
    "lo": 30,
    "pred": 34.0,
-   "actual": 42.9,
-   "n": 56
+   "actual": 43.9,
+   "n": 57
   },
   {
    "bucket": "40-50%",
@@ -54,9 +54,9 @@
   {
    "bucket": "50-60%",
    "lo": 50,
-   "pred": 52.7,
-   "actual": 75.0,
-   "n": 4
+   "pred": 53.2,
+   "actual": 80.0,
+   "n": 5
   }
  ],
  "bets": {
@@ -506,6 +506,15 @@
  ],
  "daily": [
   {
+   "date": "2026-09-27",
+   "races": 12,
+   "win_hits": 6,
+   "win_rate": 0.5,
+   "place_rate": 0.667,
+   "win_roi": 1.242,
+   "place_roi": 0.842
+  },
+  {
    "date": "2026-09-26",
    "races": 12,
    "win_hits": 3,
@@ -813,8 +822,8 @@
   }
  ],
  "baselines": {
-  "pred_win_roi": 0.789,
-  "fav_win_roi": 0.796,
-  "all_win_roi": 0.652
+  "pred_win_roi": 0.802,
+  "fav_win_roi": 0.799,
+  "all_win_roi": 0.646
  }
 }

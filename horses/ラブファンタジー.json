@@ -4,10 +4,10 @@
  "age": 3,
  "trainer": "坂本東",
  "owner": "三原美香",
- "sled_kg": 590.0,
- "weight": 900,
- "weight_diff": 4,
- "last_race_date": "2026-09-13",
+ "sled_kg": 600.0,
+ "weight": 911,
+ "weight_diff": 11,
+ "last_race_date": "2026-09-27",
  "pedigree": {
   "sire": "キタノイチタロウ",
   "dam": "第二ヘイセイ姫",
@@ -18,24 +18,24 @@
  },
  "stats": {
   "total": {
-   "win": 5,
+   "win": 6,
    "place2": 1,
    "place3": 2,
    "other": 7,
-   "n": 15,
-   "win_rate": 0.333,
-   "quinella_rate": 0.4,
-   "show_rate": 0.533
+   "n": 16,
+   "win_rate": 0.375,
+   "quinella_rate": 0.438,
+   "show_rate": 0.562
   },
   "2026": {
-   "win": 3,
+   "win": 4,
    "place2": 1,
    "place3": 2,
    "other": 3,
-   "n": 9,
-   "win_rate": 0.333,
-   "quinella_rate": 0.444,
-   "show_rate": 0.667
+   "n": 10,
+   "win_rate": 0.4,
+   "quinella_rate": 0.5,
+   "show_rate": 0.7
   },
   "2025": {
    "win": 2,
@@ -68,6 +68,19 @@
   }
  ],
  "ratings_reconstructed": [
+  {
+   "date": "2026-09-27",
+   "race_no": 5,
+   "position": 1,
+   "earned_yen": 300000,
+   "program_prize_k": 2093,
+   "year_prize_k": 1011,
+   "class": "C2",
+   "next_class": "C1",
+   "next_class_need_k": 107,
+   "diff_k": 300,
+   "change": null
+  },
   {
    "date": "2026-09-13",
    "race_no": 5,
@@ -111,16 +124,44 @@
  "reconstructed_now": {
   "snapshot_date": "2026-09-25",
   "class_code": "C2",
-  "program_prize_k": 1793,
-  "year_prize_k": 711,
+  "program_prize_k": 2093,
+  "year_prize_k": 1011,
   "reconstructed": true,
-  "reconstructed_races": 0
+  "reconstructed_races": 1
  },
  "next_class": {
   "next_class": "C1",
-  "need_k": 407
+  "need_k": 107
  },
  "races": [
+  {
+   "date": "2026-09-27",
+   "race_no": 5,
+   "race_name": "川上陽大くん６歳記念Ｃ２－２",
+   "class": "C2",
+   "moisture": 0.9,
+   "field_size": 10,
+   "num": 8,
+   "jockey": "阿部武",
+   "trainer": "坂本東",
+   "owner": "三原美香",
+   "sled_kg": 600.0,
+   "weight": 911,
+   "weight_diff": 11,
+   "odds": 5.7,
+   "popularity": 3,
+   "position": 1,
+   "time": "2:05.6",
+   "time_sec": 125.6,
+   "margin_sec": 0.0,
+   "race_level_z": 1.52,
+   "interval": "中2週",
+   "other": {
+    "label": "2着馬",
+    "name": "タカラエビス"
+   },
+   "insider_labels": []
+  },
   {
    "date": "2026-09-13",
    "race_no": 5,
@@ -250,7 +291,7 @@
    "time": "1:51.8",
    "time_sec": 111.8,
    "margin_sec": 5.0,
-   "race_level_z": 0.44,
+   "race_level_z": 0.45,
    "interval": "中1週",
    "other": {
     "label": "勝ち馬",
@@ -306,7 +347,7 @@
    "time": "2:03.6",
    "time_sec": 123.6,
    "margin_sec": 9.8,
-   "race_level_z": 0.29,
+   "race_level_z": 0.3,
    "interval": "中1週",
    "other": {
     "label": "勝ち馬",

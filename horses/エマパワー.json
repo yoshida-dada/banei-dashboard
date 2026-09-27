@@ -4,10 +4,10 @@
  "age": 3,
  "trainer": "槻舘重",
  "owner": "奥泉愛子",
- "sled_kg": 590.0,
- "weight": 942,
- "weight_diff": -1,
- "last_race_date": "2026-09-12",
+ "sled_kg": 600.0,
+ "weight": 947,
+ "weight_diff": 5,
+ "last_race_date": "2026-09-27",
  "pedigree": {
   "sire": "マルニセンプー",
   "dam": "ヒカルゴゼン",
@@ -21,21 +21,21 @@
    "win": 3,
    "place2": 4,
    "place3": 7,
-   "other": 18,
-   "n": 32,
-   "win_rate": 0.094,
-   "quinella_rate": 0.219,
-   "show_rate": 0.438
+   "other": 19,
+   "n": 33,
+   "win_rate": 0.091,
+   "quinella_rate": 0.212,
+   "show_rate": 0.424
   },
   "2026": {
    "win": 2,
    "place2": 1,
    "place3": 7,
-   "other": 7,
-   "n": 17,
-   "win_rate": 0.118,
-   "quinella_rate": 0.176,
-   "show_rate": 0.588
+   "other": 8,
+   "n": 18,
+   "win_rate": 0.111,
+   "quinella_rate": 0.167,
+   "show_rate": 0.556
   },
   "2025": {
    "win": 1,
@@ -68,6 +68,19 @@
   }
  ],
  "ratings_reconstructed": [
+  {
+   "date": "2026-09-27",
+   "race_no": 7,
+   "position": 6,
+   "earned_yen": 0,
+   "program_prize_k": 2195,
+   "year_prize_k": 1077,
+   "class": "C2",
+   "next_class": "C1",
+   "next_class_need_k": 5,
+   "diff_k": 0,
+   "change": null
+  },
   {
    "date": "2026-09-12",
    "race_no": 5,
@@ -225,6 +238,34 @@
   "need_k": 5
  },
  "races": [
+  {
+   "date": "2026-09-27",
+   "race_no": 7,
+   "race_name": "ちくでんさんＰＯＧ優勝記念Ｃ１－３混合",
+   "class": "C1",
+   "moisture": 0.9,
+   "field_size": 10,
+   "num": 1,
+   "jockey": "鈴木恵",
+   "trainer": "槻舘重",
+   "owner": "奥泉愛子",
+   "sled_kg": 600.0,
+   "weight": 947,
+   "weight_diff": 5,
+   "odds": 16.6,
+   "popularity": 7,
+   "position": 6,
+   "time": "2:07.1",
+   "time_sec": 127.1,
+   "margin_sec": 8.6,
+   "race_level_z": 0.84,
+   "interval": "中2週",
+   "other": {
+    "label": "勝ち馬",
+    "name": "マオノウンカイ"
+   },
+   "insider_labels": []
+  },
   {
    "date": "2026-09-12",
    "race_no": 5,
@@ -637,7 +678,7 @@
    "time": "2:08.8",
    "time_sec": 128.8,
    "margin_sec": 14.1,
-   "race_level_z": 0.15,
+   "race_level_z": 0.14,
    "interval": "中1週",
    "other": {
     "label": "勝ち馬",
@@ -1029,7 +1070,7 @@
    "time": "2:27.7",
    "time_sec": 147.7,
    "margin_sec": 15.0,
-   "race_level_z": -0.98,
+   "race_level_z": -0.97,
    "interval": "中1週",
    "other": {
     "label": "勝ち馬",
@@ -1085,7 +1126,7 @@
    "time": "2:39.0",
    "time_sec": 159.0,
    "margin_sec": 0.7,
-   "race_level_z": -0.86,
+   "race_level_z": -0.87,
    "interval": "連闘",
    "other": {
     "label": "勝ち馬",

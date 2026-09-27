@@ -4,10 +4,10 @@
  "age": 4,
  "trainer": "坂本東",
  "owner": "干場正吉",
- "sled_kg": 790.0,
- "weight": 1168,
- "weight_diff": -18,
- "last_race_date": "2026-08-16",
+ "sled_kg": 750.0,
+ "weight": 1185,
+ "weight_diff": 17,
+ "last_race_date": "2026-09-27",
  "pedigree": {
   "sire": "インフィニティー",
   "dam": "コトブキダイヤ",
@@ -18,23 +18,23 @@
  },
  "stats": {
   "total": {
-   "win": 15,
+   "win": 16,
    "place2": 5,
    "place3": 7,
    "other": 5,
-   "n": 32,
-   "win_rate": 0.469,
-   "quinella_rate": 0.625,
-   "show_rate": 0.844
+   "n": 33,
+   "win_rate": 0.485,
+   "quinella_rate": 0.636,
+   "show_rate": 0.848
   },
   "2026": {
-   "win": 3,
+   "win": 4,
    "place2": 2,
    "place3": 3,
    "other": 0,
-   "n": 8,
-   "win_rate": 0.375,
-   "quinella_rate": 0.625,
+   "n": 9,
+   "win_rate": 0.444,
+   "quinella_rate": 0.667,
    "show_rate": 1.0
   },
   "2025": {
@@ -78,6 +78,19 @@
   }
  ],
  "ratings_reconstructed": [
+  {
+   "date": "2026-09-27",
+   "race_no": 11,
+   "position": 1,
+   "earned_yen": 3000000,
+   "program_prize_k": 23960,
+   "year_prize_k": 7623,
+   "class": "open",
+   "next_class": null,
+   "next_class_need_k": null,
+   "diff_k": 3000,
+   "change": null
+  },
   {
    "date": "2026-08-16",
    "race_no": 11,
@@ -134,13 +147,41 @@
  "reconstructed_now": {
   "snapshot_date": "2026-09-25",
   "class_code": "open",
-  "program_prize_k": 20960,
-  "year_prize_k": 4623,
+  "program_prize_k": 23960,
+  "year_prize_k": 7623,
   "reconstructed": true,
-  "reconstructed_races": 0
+  "reconstructed_races": 1
  },
  "next_class": null,
  "races": [
+  {
+   "date": "2026-09-27",
+   "race_no": 11,
+   "race_name": "第３４回 銀河賞４歳オープン別定",
+   "class": "オープン",
+   "moisture": 0.9,
+   "field_size": 9,
+   "num": 7,
+   "jockey": "阿部優",
+   "trainer": "坂本東",
+   "owner": "干場正吉",
+   "sled_kg": 750.0,
+   "weight": 1185,
+   "weight_diff": 17,
+   "odds": 1.2,
+   "popularity": 1,
+   "position": 1,
+   "time": "1:50.1",
+   "time_sec": 110.1,
+   "margin_sec": 0.0,
+   "race_level_z": 0.94,
+   "interval": "中6週",
+   "other": {
+    "label": "2着馬",
+    "name": "ホクセイテンリュウ"
+   },
+   "insider_labels": []
+  },
   {
    "date": "2026-08-16",
    "race_no": 11,
@@ -189,7 +230,7 @@
    "time": "1:31.8",
    "time_sec": 91.8,
    "margin_sec": 0.0,
-   "race_level_z": 0.65,
+   "race_level_z": 0.66,
    "interval": "中9週",
    "other": {
     "label": "2着馬",
@@ -441,7 +482,7 @@
    "time": "1:36.1",
    "time_sec": 96.1,
    "margin_sec": 4.8,
-   "race_level_z": 0.86,
+   "race_level_z": 0.87,
    "interval": "中4週",
    "other": {
     "label": "勝ち馬",

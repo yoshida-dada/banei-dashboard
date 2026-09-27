@@ -4,10 +4,10 @@
  "age": 2,
  "trainer": "槻舘重",
  "owner": "奥泉愛子",
- "sled_kg": 520.0,
- "weight": 899,
- "weight_diff": 1,
- "last_race_date": "2026-09-13",
+ "sled_kg": 530.0,
+ "weight": 897,
+ "weight_diff": -2,
+ "last_race_date": "2026-09-27",
  "pedigree": {
   "sire": "グレンタイショウ",
   "dam": "夢",
@@ -21,21 +21,21 @@
    "win": 1,
    "place2": 1,
    "place3": 1,
-   "other": 3,
-   "n": 6,
-   "win_rate": 0.167,
-   "quinella_rate": 0.333,
-   "show_rate": 0.5
+   "other": 4,
+   "n": 7,
+   "win_rate": 0.143,
+   "quinella_rate": 0.286,
+   "show_rate": 0.429
   },
   "2026": {
    "win": 1,
    "place2": 1,
    "place3": 1,
-   "other": 3,
-   "n": 6,
-   "win_rate": 0.167,
-   "quinella_rate": 0.333,
-   "show_rate": 0.5
+   "other": 4,
+   "n": 7,
+   "win_rate": 0.143,
+   "quinella_rate": 0.286,
+   "show_rate": 0.429
   }
  },
  "insider_label_count": 0,
@@ -58,6 +58,19 @@
   }
  ],
  "ratings_reconstructed": [
+  {
+   "date": "2026-09-27",
+   "race_no": 4,
+   "position": 9,
+   "earned_yen": 0,
+   "program_prize_k": 558,
+   "year_prize_k": 558,
+   "class": "C2",
+   "next_class": "C1",
+   "next_class_need_k": 1642,
+   "diff_k": 0,
+   "change": null
+  },
   {
    "date": "2026-09-13",
    "race_no": 4,
@@ -161,6 +174,34 @@
  "next_class": null,
  "races": [
   {
+   "date": "2026-09-27",
+   "race_no": 4,
+   "race_name": "祝！健太・絵里奈　結婚記念２歳Ｂ－５",
+   "class": "B",
+   "moisture": 1.0,
+   "field_size": 10,
+   "num": 9,
+   "jockey": "村上章",
+   "trainer": "槻舘重",
+   "owner": "奥泉愛子",
+   "sled_kg": 530.0,
+   "weight": 897,
+   "weight_diff": -2,
+   "odds": 53.5,
+   "popularity": 9,
+   "position": 9,
+   "time": "2:29.7",
+   "time_sec": 149.7,
+   "margin_sec": 32.9,
+   "race_level_z": -0.62,
+   "interval": "中2週",
+   "other": {
+    "label": "勝ち馬",
+    "name": "ハゴロモトレジャー"
+   },
+   "insider_labels": []
+  },
+  {
    "date": "2026-09-13",
    "race_no": 4,
    "race_name": "あと１年全共北海道２０２７ ２歳Ｂ－４",
@@ -208,7 +249,7 @@
    "time": "2:05.4",
    "time_sec": 125.4,
    "margin_sec": 13.7,
-   "race_level_z": 0.22,
+   "race_level_z": 0.23,
    "interval": "中3週",
    "other": {
     "label": "勝ち馬",
@@ -236,7 +277,7 @@
    "time": "2:30.4",
    "time_sec": 150.4,
    "margin_sec": 28.3,
-   "race_level_z": -0.97,
+   "race_level_z": -0.96,
    "interval": "中2週",
    "other": {
     "label": "勝ち馬",

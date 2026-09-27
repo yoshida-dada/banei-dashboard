@@ -4,10 +4,10 @@
  "age": 3,
  "trainer": "大友人",
  "owner": "井上修",
- "sled_kg": 610.0,
- "weight": 958,
- "weight_diff": -2,
- "last_race_date": "2026-09-13",
+ "sled_kg": 620.0,
+ "weight": 959,
+ "weight_diff": 1,
+ "last_race_date": "2026-09-27",
  "pedigree": {
   "sire": "ツガルノウンカイ",
   "dam": "和姫",
@@ -21,21 +21,21 @@
    "win": 0,
    "place2": 3,
    "place3": 5,
-   "other": 23,
-   "n": 31,
+   "other": 24,
+   "n": 32,
    "win_rate": 0.0,
-   "quinella_rate": 0.097,
-   "show_rate": 0.258
+   "quinella_rate": 0.094,
+   "show_rate": 0.25
   },
   "2026": {
    "win": 0,
    "place2": 2,
    "place3": 3,
-   "other": 13,
-   "n": 18,
+   "other": 14,
+   "n": 19,
    "win_rate": 0.0,
-   "quinella_rate": 0.111,
-   "show_rate": 0.278
+   "quinella_rate": 0.105,
+   "show_rate": 0.263
   },
   "2025": {
    "win": 0,
@@ -68,6 +68,19 @@
   }
  ],
  "ratings_reconstructed": [
+  {
+   "date": "2026-09-27",
+   "race_no": 1,
+   "position": 7,
+   "earned_yen": 0,
+   "program_prize_k": 842,
+   "year_prize_k": 210,
+   "class": "C2",
+   "next_class": "C1",
+   "next_class_need_k": 1358,
+   "diff_k": 0,
+   "change": null
+  },
   {
    "date": "2026-09-13",
    "race_no": 1,
@@ -238,6 +251,34 @@
   "need_k": 1358
  },
  "races": [
+  {
+   "date": "2026-09-27",
+   "race_no": 1,
+   "race_name": "ＴｈｉｎｋＢｉｇ　ＹＥＧ杯Ｃ２－９",
+   "class": "C2",
+   "moisture": 1.0,
+   "field_size": 10,
+   "num": 6,
+   "jockey": "鈴木恵",
+   "trainer": "大友人",
+   "owner": "井上修",
+   "sled_kg": 620.0,
+   "weight": 959,
+   "weight_diff": 1,
+   "odds": 18.1,
+   "popularity": 6,
+   "position": 7,
+   "time": "3:05.7",
+   "time_sec": 185.7,
+   "margin_sec": 45.7,
+   "race_level_z": -1.01,
+   "interval": "中2週",
+   "other": {
+    "label": "勝ち馬",
+    "name": "キンノロナ"
+   },
+   "insider_labels": []
+  },
   {
    "date": "2026-09-13",
    "race_no": 1,
@@ -930,7 +971,7 @@
    "time": "2:26.5",
    "time_sec": 146.5,
    "margin_sec": 11.1,
-   "race_level_z": 0.46,
+   "race_level_z": 0.45,
    "interval": "中2週",
    "other": {
     "label": "勝ち馬",
@@ -958,7 +999,7 @@
    "time": "2:36.6",
    "time_sec": 156.6,
    "margin_sec": 33.1,
-   "race_level_z": -0.1,
+   "race_level_z": -0.11,
    "interval": "中1週",
    "other": {
     "label": "勝ち馬",

@@ -4,10 +4,10 @@
  "age": 4,
  "trainer": "久田守",
  "owner": "大塚容紫子",
- "sled_kg": 600.0,
- "weight": 961,
- "weight_diff": -5,
- "last_race_date": "2026-09-14",
+ "sled_kg": 610.0,
+ "weight": 963,
+ "weight_diff": 2,
+ "last_race_date": "2026-09-27",
  "pedigree": {
   "sire": "レットダイヤ",
   "dam": "ダイヤピアス",
@@ -18,24 +18,24 @@
  },
  "stats": {
   "total": {
-   "win": 7,
+   "win": 8,
    "place2": 4,
    "place3": 6,
    "other": 30,
-   "n": 47,
-   "win_rate": 0.149,
-   "quinella_rate": 0.234,
-   "show_rate": 0.362
+   "n": 48,
+   "win_rate": 0.167,
+   "quinella_rate": 0.25,
+   "show_rate": 0.375
   },
   "2026": {
-   "win": 1,
+   "win": 2,
    "place2": 2,
    "place3": 2,
    "other": 11,
-   "n": 16,
-   "win_rate": 0.062,
-   "quinella_rate": 0.188,
-   "show_rate": 0.312
+   "n": 17,
+   "win_rate": 0.118,
+   "quinella_rate": 0.235,
+   "show_rate": 0.353
   },
   "2025": {
    "win": 4,
@@ -78,6 +78,19 @@
   }
  ],
  "ratings_reconstructed": [
+  {
+   "date": "2026-09-27",
+   "race_no": 6,
+   "position": 1,
+   "earned_yen": 300000,
+   "program_prize_k": 3316,
+   "year_prize_k": 906,
+   "class": "C1",
+   "next_class": "B4",
+   "next_class_need_k": 84,
+   "diff_k": 300,
+   "change": null
+  },
   {
    "date": "2026-09-14",
    "race_no": 7,
@@ -212,16 +225,44 @@
  "reconstructed_now": {
   "snapshot_date": "2026-09-25",
   "class_code": "C1",
-  "program_prize_k": 3016,
-  "year_prize_k": 606,
+  "program_prize_k": 3316,
+  "year_prize_k": 906,
   "reconstructed": true,
-  "reconstructed_races": 0
+  "reconstructed_races": 1
  },
  "next_class": {
   "next_class": "B4",
-  "need_k": 384
+  "need_k": 84
  },
  "races": [
+  {
+   "date": "2026-09-27",
+   "race_no": 6,
+   "race_name": "ＶｔｕｂｅｒぜつぼうちゃんＣ１－６",
+   "class": "C1",
+   "moisture": 0.9,
+   "field_size": 9,
+   "num": 4,
+   "jockey": "赤塚健",
+   "trainer": "久田守",
+   "owner": "大塚容紫子",
+   "sled_kg": 610.0,
+   "weight": 963,
+   "weight_diff": 2,
+   "odds": 4.3,
+   "popularity": 3,
+   "position": 1,
+   "time": "1:56.2",
+   "time_sec": 116.2,
+   "margin_sec": 0.0,
+   "race_level_z": 1.34,
+   "interval": "中1週",
+   "other": {
+    "label": "2着馬",
+    "name": "スーパーサンセイ"
+   },
+   "insider_labels": []
+  },
   {
    "date": "2026-09-14",
    "race_no": 7,
@@ -522,7 +563,7 @@
    "time": "2:31.3",
    "time_sec": 151.3,
    "margin_sec": 31.0,
-   "race_level_z": -0.26,
+   "race_level_z": -0.27,
    "interval": "中1週",
    "other": {
     "label": "勝ち馬",
@@ -1026,7 +1067,7 @@
    "time": "2:34.1",
    "time_sec": 154.1,
    "margin_sec": 17.7,
-   "race_level_z": 0.39,
+   "race_level_z": 0.38,
    "interval": "中3週",
    "other": {
     "label": "勝ち馬",
@@ -1110,7 +1151,7 @@
    "time": "2:43.3",
    "time_sec": 163.3,
    "margin_sec": 26.3,
-   "race_level_z": -0.29,
+   "race_level_z": -0.3,
    "interval": "中5週",
    "other": {
     "label": "勝ち馬",
@@ -1194,7 +1235,7 @@
    "time": "2:09.9",
    "time_sec": 129.9,
    "margin_sec": 7.2,
-   "race_level_z": 0.33,
+   "race_level_z": 0.32,
    "interval": "中3週",
    "other": {
     "label": "勝ち馬",

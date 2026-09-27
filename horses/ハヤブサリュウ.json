@@ -4,10 +4,10 @@
  "age": 7,
  "trainer": "服部義",
  "owner": "鈴木正浩",
- "sled_kg": 640.0,
- "weight": 1021,
- "weight_diff": -13,
- "last_race_date": "2026-09-14",
+ "sled_kg": 650.0,
+ "weight": 1032,
+ "weight_diff": 11,
+ "last_race_date": "2026-09-27",
  "pedigree": {
   "sire": "オンリーワン",
   "dam": "キタノミサキ",
@@ -20,22 +20,22 @@
   "total": {
    "win": 10,
    "place2": 8,
-   "place3": 4,
+   "place3": 5,
    "other": 68,
-   "n": 90,
-   "win_rate": 0.111,
-   "quinella_rate": 0.2,
-   "show_rate": 0.244
+   "n": 91,
+   "win_rate": 0.11,
+   "quinella_rate": 0.198,
+   "show_rate": 0.253
   },
   "2026": {
    "win": 1,
    "place2": 1,
-   "place3": 0,
+   "place3": 1,
    "other": 15,
-   "n": 17,
-   "win_rate": 0.059,
-   "quinella_rate": 0.118,
-   "show_rate": 0.118
+   "n": 18,
+   "win_rate": 0.056,
+   "quinella_rate": 0.111,
+   "show_rate": 0.167
   },
   "2025": {
    "win": 3,
@@ -68,7 +68,7 @@
    "show_rate": 0.259
   }
  },
- "insider_label_count": 18,
+ "insider_label_count": 19,
  "ratings": [
   {
    "date": "2026-09-25",
@@ -88,6 +88,19 @@
   }
  ],
  "ratings_reconstructed": [
+  {
+   "date": "2026-09-27",
+   "race_no": 10,
+   "position": 3,
+   "earned_yen": 71000,
+   "program_prize_k": 4528,
+   "year_prize_k": 580,
+   "class": "B3",
+   "next_class": "B2",
+   "next_class_need_k": 972,
+   "diff_k": 71,
+   "change": null
+  },
   {
    "date": "2026-09-14",
    "race_no": 10,
@@ -248,16 +261,49 @@
  "reconstructed_now": {
   "snapshot_date": "2026-09-25",
   "class_code": "B3",
-  "program_prize_k": 4457,
-  "year_prize_k": 509,
+  "program_prize_k": 4528,
+  "year_prize_k": 580,
   "reconstructed": true,
-  "reconstructed_races": 0
+  "reconstructed_races": 1
  },
  "next_class": {
   "next_class": "B2",
-  "need_k": 1043
+  "need_k": 972
  },
  "races": [
+  {
+   "date": "2026-09-27",
+   "race_no": 10,
+   "race_name": "ＲＹＭＨ合同誕生記念Ｒ８Ｂ３－６",
+   "class": "B3",
+   "moisture": 0.9,
+   "field_size": 10,
+   "num": 4,
+   "jockey": "長澤幸",
+   "trainer": "服部義",
+   "owner": "鈴木正浩",
+   "sled_kg": 650.0,
+   "weight": 1032,
+   "weight_diff": 11,
+   "odds": 6.2,
+   "popularity": 3,
+   "position": 3,
+   "time": "1:57.1",
+   "time_sec": 117.1,
+   "margin_sec": 2.5,
+   "race_level_z": 0.65,
+   "interval": "中1週",
+   "other": {
+    "label": "勝ち馬",
+    "name": "トマランサカミカゼ"
+   },
+   "insider_labels": [
+    {
+     "label_type": "仕掛け",
+     "note": "ハヤブサリュウ仕掛け、ケンチャン引き"
+    }
+   ]
+  },
   {
    "date": "2026-09-14",
    "race_no": 10,
@@ -1117,7 +1163,7 @@
    "time": "2:13.0",
    "time_sec": 133.0,
    "margin_sec": 31.8,
-   "race_level_z": 0.05,
+   "race_level_z": 0.04,
    "interval": "中3週",
    "other": {
     "label": "勝ち馬",
@@ -1173,7 +1219,7 @@
    "time": "1:54.6",
    "time_sec": 114.6,
    "margin_sec": 16.3,
-   "race_level_z": 0.61,
+   "race_level_z": 0.6,
    "interval": "中2週",
    "other": {
     "label": "勝ち馬",
@@ -2211,7 +2257,7 @@
    "time": "2:08.8",
    "time_sec": 128.8,
    "margin_sec": 17.7,
-   "race_level_z": -0.72,
+   "race_level_z": -0.71,
    "interval": "中3週",
    "other": {
     "label": "勝ち馬",
@@ -2440,7 +2486,7 @@
    "time": "1:52.9",
    "time_sec": 112.9,
    "margin_sec": 18.0,
-   "race_level_z": 0.65,
+   "race_level_z": 0.64,
    "interval": "中2週",
    "other": {
     "label": "勝ち馬",
@@ -2674,7 +2720,7 @@
    "time": "2:16.2",
    "time_sec": 136.2,
    "margin_sec": 13.0,
-   "race_level_z": -0.25,
+   "race_level_z": -0.26,
    "interval": "中1週",
    "other": {
     "label": "勝ち馬",
@@ -2852,7 +2898,7 @@
    "time": "1:20.9",
    "time_sec": 80.9,
    "margin_sec": 7.9,
-   "race_level_z": 2.25,
+   "race_level_z": 2.24,
    "interval": "中1週",
    "other": {
     "label": "勝ち馬",

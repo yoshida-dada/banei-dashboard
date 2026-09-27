@@ -4,10 +4,10 @@
  "age": 3,
  "trainer": "林　豊",
  "owner": "林光春",
- "sled_kg": 590.0,
- "weight": 1004,
- "weight_diff": -8,
- "last_race_date": "2026-09-05",
+ "sled_kg": 600.0,
+ "weight": 1000,
+ "weight_diff": -4,
+ "last_race_date": "2026-09-27",
  "pedigree": {
   "sire": "ホリセンショウ",
   "dam": "希輝",
@@ -21,21 +21,21 @@
    "win": 2,
    "place2": 5,
    "place3": 5,
-   "other": 17,
-   "n": 29,
-   "win_rate": 0.069,
-   "quinella_rate": 0.241,
-   "show_rate": 0.414
+   "other": 18,
+   "n": 30,
+   "win_rate": 0.067,
+   "quinella_rate": 0.233,
+   "show_rate": 0.4
   },
   "2026": {
    "win": 2,
    "place2": 1,
    "place3": 3,
-   "other": 9,
-   "n": 15,
-   "win_rate": 0.133,
-   "quinella_rate": 0.2,
-   "show_rate": 0.4
+   "other": 10,
+   "n": 16,
+   "win_rate": 0.125,
+   "quinella_rate": 0.188,
+   "show_rate": 0.375
   },
   "2025": {
    "win": 0,
@@ -68,6 +68,19 @@
   }
  ],
  "ratings_reconstructed": [
+  {
+   "date": "2026-09-27",
+   "race_no": 5,
+   "position": 7,
+   "earned_yen": 0,
+   "program_prize_k": 1653,
+   "year_prize_k": 666,
+   "class": "C2",
+   "next_class": "C1",
+   "next_class_need_k": 547,
+   "diff_k": 0,
+   "change": null
+  },
   {
    "date": "2026-09-05",
    "race_no": 12,
@@ -199,6 +212,34 @@
   "need_k": 547
  },
  "races": [
+  {
+   "date": "2026-09-27",
+   "race_no": 5,
+   "race_name": "川上陽大くん６歳記念Ｃ２－２",
+   "class": "C2",
+   "moisture": 0.9,
+   "field_size": 10,
+   "num": 9,
+   "jockey": "島津新",
+   "trainer": "林　豊",
+   "owner": "林光春",
+   "sled_kg": 600.0,
+   "weight": 1000,
+   "weight_diff": -4,
+   "odds": 9.5,
+   "popularity": 5,
+   "position": 7,
+   "time": "2:17.6",
+   "time_sec": 137.6,
+   "margin_sec": 12.0,
+   "race_level_z": 1.01,
+   "interval": "中3週",
+   "other": {
+    "label": "勝ち馬",
+    "name": "ラブファンタジー"
+   },
+   "insider_labels": []
+  },
   {
    "date": "2026-09-05",
    "race_no": 12,
@@ -471,7 +512,7 @@
    "time": "2:12.0",
    "time_sec": 132.0,
    "margin_sec": 20.8,
-   "race_level_z": 0.64,
+   "race_level_z": 0.63,
    "interval": "中1週",
    "other": {
     "label": "勝ち馬",
@@ -588,7 +629,7 @@
    "time": "2:18.1",
    "time_sec": 138.1,
    "margin_sec": 21.9,
-   "race_level_z": -0.65,
+   "race_level_z": -0.64,
    "interval": "中2週",
    "other": {
     "label": "勝ち馬",

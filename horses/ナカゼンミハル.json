@@ -4,10 +4,10 @@
  "age": 2,
  "trainer": "平田義",
  "owner": "高田和廣",
- "sled_kg": 470.0,
- "weight": 854,
- "weight_diff": 14,
- "last_race_date": "2026-09-21",
+ "sled_kg": 480.0,
+ "weight": 859,
+ "weight_diff": 5,
+ "last_race_date": "2026-09-27",
  "pedigree": {
   "sire": "ダイコクパワー",
   "dam": "ナカゼンダッテ",
@@ -20,22 +20,22 @@
   "total": {
    "win": 0,
    "place2": 1,
-   "place3": 0,
+   "place3": 1,
    "other": 5,
-   "n": 6,
+   "n": 7,
    "win_rate": 0.0,
-   "quinella_rate": 0.167,
-   "show_rate": 0.167
+   "quinella_rate": 0.143,
+   "show_rate": 0.286
   },
   "2026": {
    "win": 0,
    "place2": 1,
-   "place3": 0,
+   "place3": 1,
    "other": 5,
-   "n": 6,
+   "n": 7,
    "win_rate": 0.0,
-   "quinella_rate": 0.167,
-   "show_rate": 0.167
+   "quinella_rate": 0.143,
+   "show_rate": 0.286
   }
  },
  "insider_label_count": 0,
@@ -58,6 +58,19 @@
   }
  ],
  "ratings_reconstructed": [
+  {
+   "date": "2026-09-27",
+   "race_no": 2,
+   "position": 3,
+   "earned_yen": 63000,
+   "program_prize_k": 174,
+   "year_prize_k": 174,
+   "class": "C2",
+   "next_class": "C1",
+   "next_class_need_k": 2026,
+   "diff_k": 63,
+   "change": null
+  },
   {
    "date": "2026-09-21",
    "race_no": 2,
@@ -140,13 +153,41 @@
  "reconstructed_now": {
   "snapshot_date": "2026-09-25",
   "class_code": "2sai",
-  "program_prize_k": 111,
-  "year_prize_k": 111,
+  "program_prize_k": 174,
+  "year_prize_k": 174,
   "reconstructed": true,
-  "reconstructed_races": 0
+  "reconstructed_races": 1
  },
  "next_class": null,
  "races": [
+  {
+   "date": "2026-09-27",
+   "race_no": 2,
+   "race_name": "もなかみたらし杯２歳Ｄ－６",
+   "class": "D",
+   "moisture": 1.0,
+   "field_size": 10,
+   "num": 6,
+   "jockey": "☆吉田理",
+   "trainer": "平田義",
+   "owner": "高田和廣",
+   "sled_kg": 480.0,
+   "weight": 859,
+   "weight_diff": 5,
+   "odds": 28.1,
+   "popularity": 7,
+   "position": 3,
+   "time": "2:10.1",
+   "time_sec": 130.1,
+   "margin_sec": 5.7,
+   "race_level_z": 1.22,
+   "interval": "連闘",
+   "other": {
+    "label": "勝ち馬",
+    "name": "コマサンブロッサム"
+   },
+   "insider_labels": []
+  },
   {
    "date": "2026-09-21",
    "race_no": 2,
@@ -251,7 +292,7 @@
    "time": "2:32.3",
    "time_sec": 152.3,
    "margin_sec": 28.5,
-   "race_level_z": -0.04,
+   "race_level_z": -0.05,
    "interval": "中2週",
    "other": {
     "label": "勝ち馬",

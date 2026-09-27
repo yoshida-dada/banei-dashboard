@@ -4,10 +4,10 @@
  "age": 9,
  "trainer": "服部義",
  "owner": "佐藤邦彦",
- "sled_kg": 630.0,
- "weight": 1001,
- "weight_diff": 3,
- "last_race_date": "2026-09-12",
+ "sled_kg": 640.0,
+ "weight": 990,
+ "weight_diff": -11,
+ "last_race_date": "2026-09-27",
  "pedigree": {
   "sire": "キタノドリーマー",
   "dam": "アローモーション",
@@ -21,21 +21,21 @@
    "win": 7,
    "place2": 13,
    "place3": 7,
-   "other": 59,
-   "n": 86,
-   "win_rate": 0.081,
-   "quinella_rate": 0.233,
-   "show_rate": 0.314
+   "other": 60,
+   "n": 87,
+   "win_rate": 0.08,
+   "quinella_rate": 0.23,
+   "show_rate": 0.31
   },
   "2026": {
    "win": 1,
    "place2": 1,
    "place3": 2,
-   "other": 13,
-   "n": 17,
-   "win_rate": 0.059,
-   "quinella_rate": 0.118,
-   "show_rate": 0.235
+   "other": 14,
+   "n": 18,
+   "win_rate": 0.056,
+   "quinella_rate": 0.111,
+   "show_rate": 0.222
   },
   "2025": {
    "win": 2,
@@ -88,6 +88,19 @@
   }
  ],
  "ratings_reconstructed": [
+  {
+   "date": "2026-09-27",
+   "race_no": 9,
+   "position": 9,
+   "earned_yen": 0,
+   "program_prize_k": 4093,
+   "year_prize_k": 645,
+   "class": "B4",
+   "next_class": "B3",
+   "next_class_need_k": 207,
+   "diff_k": 0,
+   "change": null
+  },
   {
    "date": "2026-09-12",
    "race_no": 9,
@@ -245,6 +258,34 @@
   "need_k": 207
  },
  "races": [
+  {
+   "date": "2026-09-27",
+   "race_no": 9,
+   "race_name": "まつぼＲ３２とＲＥＸ生誕祭Ｂ４－４",
+   "class": "B4",
+   "moisture": 0.9,
+   "field_size": 10,
+   "num": 5,
+   "jockey": "長澤幸",
+   "trainer": "服部義",
+   "owner": "佐藤邦彦",
+   "sled_kg": 640.0,
+   "weight": 990,
+   "weight_diff": -11,
+   "odds": 34.6,
+   "popularity": 7,
+   "position": 9,
+   "time": "2:15.9",
+   "time_sec": 135.9,
+   "margin_sec": 23.8,
+   "race_level_z": 0.1,
+   "interval": "中2週",
+   "other": {
+    "label": "勝ち馬",
+    "name": "ブループリンセス"
+   },
+   "insider_labels": []
+  },
   {
    "date": "2026-09-12",
    "race_no": 9,
@@ -466,7 +507,7 @@
    "time": "2:18.9",
    "time_sec": 138.9,
    "margin_sec": 24.3,
-   "race_level_z": -0.11,
+   "race_level_z": -0.12,
    "interval": "中1週",
    "other": {
     "label": "勝ち馬",
@@ -1303,7 +1344,7 @@
    "time": "2:16.8",
    "time_sec": 136.8,
    "margin_sec": 3.3,
-   "race_level_z": -0.16,
+   "race_level_z": -0.17,
    "interval": "中3週",
    "other": {
     "label": "勝ち馬",
@@ -1664,7 +1705,7 @@
    "time": "2:11.7",
    "time_sec": 131.7,
    "margin_sec": 15.5,
-   "race_level_z": 0.0,
+   "race_level_z": -0.0,
    "interval": "中3週",
    "other": {
     "label": "勝ち馬",
@@ -2000,7 +2041,7 @@
    "time": "2:09.1",
    "time_sec": 129.1,
    "margin_sec": 16.1,
-   "race_level_z": 0.18,
+   "race_level_z": 0.17,
    "interval": "中4週",
    "other": {
     "label": "勝ち馬",
@@ -2440,7 +2481,7 @@
    "time": "2:25.8",
    "time_sec": 145.8,
    "margin_sec": 25.7,
-   "race_level_z": -0.92,
+   "race_level_z": -0.93,
    "interval": "中2週",
    "other": {
     "label": "勝ち馬",

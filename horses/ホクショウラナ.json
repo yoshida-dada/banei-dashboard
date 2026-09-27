@@ -4,10 +4,10 @@
  "age": 3,
  "trainer": "坂本東",
  "owner": "井内紀子",
- "sled_kg": 600.0,
- "weight": 1003,
- "weight_diff": 11,
- "last_race_date": "2026-09-12",
+ "sled_kg": 610.0,
+ "weight": 1006,
+ "weight_diff": 3,
+ "last_race_date": "2026-09-27",
  "pedigree": {
   "sire": "ホクショウユヅル",
   "dam": "スイートドリーマー",
@@ -21,21 +21,21 @@
    "win": 4,
    "place2": 5,
    "place3": 3,
-   "other": 19,
-   "n": 31,
-   "win_rate": 0.129,
-   "quinella_rate": 0.29,
-   "show_rate": 0.387
+   "other": 20,
+   "n": 32,
+   "win_rate": 0.125,
+   "quinella_rate": 0.281,
+   "show_rate": 0.375
   },
   "2026": {
    "win": 2,
    "place2": 4,
    "place3": 2,
-   "other": 10,
-   "n": 18,
-   "win_rate": 0.111,
-   "quinella_rate": 0.333,
-   "show_rate": 0.444
+   "other": 11,
+   "n": 19,
+   "win_rate": 0.105,
+   "quinella_rate": 0.316,
+   "show_rate": 0.421
   },
   "2025": {
    "win": 2,
@@ -68,6 +68,19 @@
   }
  ],
  "ratings_reconstructed": [
+  {
+   "date": "2026-09-27",
+   "race_no": 7,
+   "position": 4,
+   "earned_yen": 33000,
+   "program_prize_k": 2602,
+   "year_prize_k": 864,
+   "class": "C1",
+   "next_class": "B4",
+   "next_class_need_k": 798,
+   "diff_k": 33,
+   "change": null
+  },
   {
    "date": "2026-09-12",
    "race_no": 7,
@@ -228,16 +241,44 @@
  "reconstructed_now": {
   "snapshot_date": "2026-09-25",
   "class_code": "C1",
-  "program_prize_k": 2569,
-  "year_prize_k": 831,
+  "program_prize_k": 2602,
+  "year_prize_k": 864,
   "reconstructed": true,
-  "reconstructed_races": 0
+  "reconstructed_races": 1
  },
  "next_class": {
   "next_class": "B4",
-  "need_k": 831
+  "need_k": 798
  },
  "races": [
+  {
+   "date": "2026-09-27",
+   "race_no": 7,
+   "race_name": "ちくでんさんＰＯＧ優勝記念Ｃ１－３混合",
+   "class": "C1",
+   "moisture": 0.9,
+   "field_size": 10,
+   "num": 7,
+   "jockey": "阿部武",
+   "trainer": "坂本東",
+   "owner": "井内紀子",
+   "sled_kg": 610.0,
+   "weight": 1006,
+   "weight_diff": 3,
+   "odds": 5.0,
+   "popularity": 3,
+   "position": 4,
+   "time": "2:04.6",
+   "time_sec": 124.6,
+   "margin_sec": 6.1,
+   "race_level_z": 0.98,
+   "interval": "中2週",
+   "other": {
+    "label": "勝ち馬",
+    "name": "マオノウンカイ"
+   },
+   "insider_labels": []
+  },
   {
    "date": "2026-09-12",
    "race_no": 7,
@@ -566,7 +607,7 @@
    "time": "2:37.3",
    "time_sec": 157.3,
    "margin_sec": 19.3,
-   "race_level_z": -0.06,
+   "race_level_z": -0.07,
    "interval": "中4週",
    "other": {
     "label": "勝ち馬",

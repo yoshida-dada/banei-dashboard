@@ -4,10 +4,10 @@
  "age": 2,
  "trainer": "平田義",
  "owner": "高山支征",
- "sled_kg": 500.0,
- "weight": 1026,
- "weight_diff": -6,
- "last_race_date": "2026-09-19",
+ "sled_kg": 520.0,
+ "weight": 1035,
+ "weight_diff": 9,
+ "last_race_date": "2026-09-27",
  "pedigree": {
   "sire": "ミノルシンザン",
   "dam": "ハイトップフーガ",
@@ -21,21 +21,21 @@
    "win": 2,
    "place2": 0,
    "place3": 3,
-   "other": 5,
-   "n": 10,
-   "win_rate": 0.2,
-   "quinella_rate": 0.2,
-   "show_rate": 0.5
+   "other": 6,
+   "n": 11,
+   "win_rate": 0.182,
+   "quinella_rate": 0.182,
+   "show_rate": 0.455
   },
   "2026": {
    "win": 2,
    "place2": 0,
    "place3": 3,
-   "other": 5,
-   "n": 10,
-   "win_rate": 0.2,
-   "quinella_rate": 0.2,
-   "show_rate": 0.5
+   "other": 6,
+   "n": 11,
+   "win_rate": 0.182,
+   "quinella_rate": 0.182,
+   "show_rate": 0.455
   }
  },
  "insider_label_count": 0,
@@ -58,6 +58,19 @@
   }
  ],
  "ratings_reconstructed": [
+  {
+   "date": "2026-09-27",
+   "race_no": 8,
+   "position": 5,
+   "earned_yen": 30000,
+   "program_prize_k": 1159,
+   "year_prize_k": 1159,
+   "class": "C2",
+   "next_class": "C1",
+   "next_class_need_k": 1041,
+   "diff_k": 30,
+   "change": null
+  },
   {
    "date": "2026-09-19",
    "race_no": 4,
@@ -192,13 +205,41 @@
  "reconstructed_now": {
   "snapshot_date": "2026-09-25",
   "class_code": "2sai",
-  "program_prize_k": 1129,
-  "year_prize_k": 1129,
+  "program_prize_k": 1159,
+  "year_prize_k": 1159,
   "reconstructed": true,
-  "reconstructed_races": 0
+  "reconstructed_races": 1
  },
  "next_class": null,
  "races": [
+  {
+   "date": "2026-09-27",
+   "race_no": 8,
+   "race_name": "祝！教行もうすぐ完走記念２歳Ａ－３",
+   "class": "A3",
+   "moisture": 0.9,
+   "field_size": 10,
+   "num": 5,
+   "jockey": "西謙一",
+   "trainer": "平田義",
+   "owner": "高山支征",
+   "sled_kg": 520.0,
+   "weight": 1035,
+   "weight_diff": 9,
+   "odds": 6.2,
+   "popularity": 4,
+   "position": 5,
+   "time": "2:01.7",
+   "time_sec": 121.7,
+   "margin_sec": 14.7,
+   "race_level_z": 0.15,
+   "interval": "中1週",
+   "other": {
+    "label": "勝ち馬",
+    "name": "ハマカムイ"
+   },
+   "insider_labels": []
+  },
   {
    "date": "2026-09-19",
    "race_no": 4,
@@ -387,7 +428,7 @@
    "time": "2:18.5",
    "time_sec": 138.5,
    "margin_sec": 5.3,
-   "race_level_z": 0.02,
+   "race_level_z": 0.01,
    "interval": "中2週",
    "other": {
     "label": "勝ち馬",

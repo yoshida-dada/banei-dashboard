@@ -4,10 +4,10 @@
  "age": 4,
  "trainer": "長部幸",
  "owner": "江岸利信",
- "sled_kg": 715.0,
- "weight": 1136,
- "weight_diff": 2,
- "last_race_date": "2026-08-29",
+ "sled_kg": 750.0,
+ "weight": 1146,
+ "weight_diff": 10,
+ "last_race_date": "2026-09-27",
  "pedigree": {
   "sire": "スギノハリアー",
   "dam": "ショウウン",
@@ -21,21 +21,21 @@
    "win": 13,
    "place2": 3,
    "place3": 4,
-   "other": 11,
-   "n": 31,
-   "win_rate": 0.419,
-   "quinella_rate": 0.516,
-   "show_rate": 0.645
+   "other": 12,
+   "n": 32,
+   "win_rate": 0.406,
+   "quinella_rate": 0.5,
+   "show_rate": 0.625
   },
   "2026": {
    "win": 2,
    "place2": 0,
    "place3": 1,
-   "other": 8,
-   "n": 11,
-   "win_rate": 0.182,
-   "quinella_rate": 0.182,
-   "show_rate": 0.273
+   "other": 9,
+   "n": 12,
+   "win_rate": 0.167,
+   "quinella_rate": 0.167,
+   "show_rate": 0.25
   },
   "2025": {
    "win": 4,
@@ -78,6 +78,19 @@
   }
  ],
  "ratings_reconstructed": [
+  {
+   "date": "2026-09-27",
+   "race_no": 11,
+   "position": 8,
+   "earned_yen": 0,
+   "program_prize_k": 17141,
+   "year_prize_k": 3640,
+   "class": "open",
+   "next_class": null,
+   "next_class_need_k": null,
+   "diff_k": 0,
+   "change": null
+  },
   {
    "date": "2026-08-29",
    "race_no": 11,
@@ -207,6 +220,34 @@
  "next_class": null,
  "races": [
   {
+   "date": "2026-09-27",
+   "race_no": 11,
+   "race_name": "第３４回 銀河賞４歳オープン別定",
+   "class": "オープン",
+   "moisture": 0.9,
+   "field_size": 9,
+   "num": 8,
+   "jockey": "鈴木恵",
+   "trainer": "長部幸",
+   "owner": "江岸利信",
+   "sled_kg": 750.0,
+   "weight": 1146,
+   "weight_diff": 10,
+   "odds": 6.0,
+   "popularity": 2,
+   "position": 8,
+   "time": "2:26.6",
+   "time_sec": 146.6,
+   "margin_sec": 36.5,
+   "race_level_z": -0.62,
+   "interval": "中4週",
+   "other": {
+    "label": "勝ち馬",
+    "name": "スターイチバン"
+   },
+   "insider_labels": []
+  },
+  {
    "date": "2026-08-29",
    "race_no": 11,
    "race_name": "マロニエ賞オープン",
@@ -254,7 +295,7 @@
    "time": "1:51.8",
    "time_sec": 111.8,
    "margin_sec": 0.0,
-   "race_level_z": 0.85,
+   "race_level_z": 0.84,
    "interval": "中2週",
    "other": {
     "label": "2着馬",
@@ -811,7 +852,7 @@
    "time": "1:51.9",
    "time_sec": 111.9,
    "margin_sec": 6.5,
-   "race_level_z": 0.57,
+   "race_level_z": 0.56,
    "interval": "中5週",
    "other": {
     "label": "勝ち馬",
@@ -979,7 +1020,7 @@
    "time": "1:34.0",
    "time_sec": 94.0,
    "margin_sec": 0.0,
-   "race_level_z": 0.32,
+   "race_level_z": 0.33,
    "interval": "中1週",
    "other": {
     "label": "2着馬",

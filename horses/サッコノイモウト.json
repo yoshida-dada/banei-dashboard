@@ -5,9 +5,9 @@
  "trainer": "鈴木邦",
  "owner": "斉藤修",
  "sled_kg": 520.0,
- "weight": 968,
- "weight_diff": 21,
- "last_race_date": "2026-09-13",
+ "weight": 966,
+ "weight_diff": -2,
+ "last_race_date": "2026-09-27",
  "pedigree": {
   "sire": "ブラックシシ",
   "dam": "ユングフラウ",
@@ -21,21 +21,21 @@
    "win": 2,
    "place2": 0,
    "place3": 2,
-   "other": 5,
-   "n": 9,
-   "win_rate": 0.222,
-   "quinella_rate": 0.222,
-   "show_rate": 0.444
+   "other": 6,
+   "n": 10,
+   "win_rate": 0.2,
+   "quinella_rate": 0.2,
+   "show_rate": 0.4
   },
   "2026": {
    "win": 2,
    "place2": 0,
    "place3": 2,
-   "other": 5,
-   "n": 9,
-   "win_rate": 0.222,
-   "quinella_rate": 0.222,
-   "show_rate": 0.444
+   "other": 6,
+   "n": 10,
+   "win_rate": 0.2,
+   "quinella_rate": 0.2,
+   "show_rate": 0.4
   }
  },
  "insider_label_count": 0,
@@ -58,6 +58,19 @@
   }
  ],
  "ratings_reconstructed": [
+  {
+   "date": "2026-09-27",
+   "race_no": 8,
+   "position": 10,
+   "earned_yen": 0,
+   "program_prize_k": 1100,
+   "year_prize_k": 1100,
+   "class": "C2",
+   "next_class": "C1",
+   "next_class_need_k": 1100,
+   "diff_k": 0,
+   "change": null
+  },
   {
    "date": "2026-09-13",
    "race_no": 10,
@@ -186,6 +199,34 @@
  },
  "next_class": null,
  "races": [
+  {
+   "date": "2026-09-27",
+   "race_no": 8,
+   "race_name": "祝！教行もうすぐ完走記念２歳Ａ－３",
+   "class": "A3",
+   "moisture": 0.9,
+   "field_size": 10,
+   "num": 7,
+   "jockey": "西将太",
+   "trainer": "鈴木邦",
+   "owner": "斉藤修",
+   "sled_kg": 520.0,
+   "weight": 966,
+   "weight_diff": -2,
+   "odds": 37.8,
+   "popularity": 9,
+   "position": 10,
+   "time": "2:43.5",
+   "time_sec": 163.5,
+   "margin_sec": 56.5,
+   "race_level_z": -1.63,
+   "interval": "中2週",
+   "other": {
+    "label": "勝ち馬",
+    "name": "ハマカムイ"
+   },
+   "insider_labels": []
+  },
   {
    "date": "2026-09-13",
    "race_no": 10,

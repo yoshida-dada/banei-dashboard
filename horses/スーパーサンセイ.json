@@ -5,9 +5,9 @@
  "trainer": "長部幸",
  "owner": "江岸利信",
  "sled_kg": 620.0,
- "weight": 1020,
- "weight_diff": -3,
- "last_race_date": "2026-09-21",
+ "weight": 1018,
+ "weight_diff": -2,
+ "last_race_date": "2026-09-27",
  "pedigree": {
   "sire": "スギノハリアー",
   "dam": "浜宝",
@@ -19,23 +19,23 @@
  "stats": {
   "total": {
    "win": 4,
-   "place2": 4,
+   "place2": 5,
    "place3": 3,
    "other": 20,
-   "n": 31,
-   "win_rate": 0.129,
-   "quinella_rate": 0.258,
-   "show_rate": 0.355
+   "n": 32,
+   "win_rate": 0.125,
+   "quinella_rate": 0.281,
+   "show_rate": 0.375
   },
   "2026": {
    "win": 3,
-   "place2": 2,
+   "place2": 3,
    "place3": 1,
    "other": 11,
-   "n": 17,
-   "win_rate": 0.176,
-   "quinella_rate": 0.294,
-   "show_rate": 0.353
+   "n": 18,
+   "win_rate": 0.167,
+   "quinella_rate": 0.333,
+   "show_rate": 0.389
   },
   "2025": {
    "win": 1,
@@ -68,6 +68,19 @@
   }
  ],
  "ratings_reconstructed": [
+  {
+   "date": "2026-09-27",
+   "race_no": 6,
+   "position": 2,
+   "earned_yen": 111000,
+   "program_prize_k": 2411,
+   "year_prize_k": 729,
+   "class": "C1",
+   "next_class": "B4",
+   "next_class_need_k": 989,
+   "diff_k": 111,
+   "change": null
+  },
   {
    "date": "2026-09-21",
    "race_no": 7,
@@ -215,16 +228,44 @@
  "reconstructed_now": {
   "snapshot_date": "2026-09-25",
   "class_code": "C1",
-  "program_prize_k": 2300,
-  "year_prize_k": 618,
+  "program_prize_k": 2411,
+  "year_prize_k": 729,
   "reconstructed": true,
-  "reconstructed_races": 0
+  "reconstructed_races": 1
  },
  "next_class": {
   "next_class": "B4",
-  "need_k": 1100
+  "need_k": 989
  },
  "races": [
+  {
+   "date": "2026-09-27",
+   "race_no": 6,
+   "race_name": "ＶｔｕｂｅｒぜつぼうちゃんＣ１－６",
+   "class": "C1",
+   "moisture": 0.9,
+   "field_size": 9,
+   "num": 6,
+   "jockey": "☆臼杵龍",
+   "trainer": "長部幸",
+   "owner": "江岸利信",
+   "sled_kg": 620.0,
+   "weight": 1018,
+   "weight_diff": -2,
+   "odds": 54.1,
+   "popularity": 8,
+   "position": 2,
+   "time": "1:58.8",
+   "time_sec": 118.8,
+   "margin_sec": 2.6,
+   "race_level_z": 1.25,
+   "interval": "連闘",
+   "other": {
+    "label": "勝ち馬",
+    "name": "アグライア"
+   },
+   "insider_labels": []
+  },
   {
    "date": "2026-09-21",
    "race_no": 7,
@@ -642,7 +683,7 @@
    "time": "1:54.7",
    "time_sec": 114.7,
    "margin_sec": 0.0,
-   "race_level_z": 0.78,
+   "race_level_z": 0.77,
    "interval": "中1週",
    "other": {
     "label": "2着馬",
@@ -782,7 +823,7 @@
    "time": "1:51.9",
    "time_sec": 111.9,
    "margin_sec": 10.9,
-   "race_level_z": 1.25,
+   "race_level_z": 1.26,
    "interval": "中3週",
    "other": {
     "label": "勝ち馬",
@@ -838,7 +879,7 @@
    "time": "1:59.4",
    "time_sec": 119.4,
    "margin_sec": 24.8,
-   "race_level_z": 0.54,
+   "race_level_z": 0.55,
    "interval": "中2週",
    "other": {
     "label": "勝ち馬",

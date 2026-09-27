@@ -4,10 +4,10 @@
  "age": 3,
  "trainer": "小林長",
  "owner": "谷廣和",
- "sled_kg": 590.0,
- "weight": 920,
- "weight_diff": -1,
- "last_race_date": "2026-09-13",
+ "sled_kg": 600.0,
+ "weight": 938,
+ "weight_diff": 18,
+ "last_race_date": "2026-09-27",
  "pedigree": {
   "sire": "ヒノデタイガー",
   "dam": "菊姫",
@@ -21,21 +21,21 @@
    "win": 1,
    "place2": 1,
    "place3": 4,
-   "other": 19,
-   "n": 25,
-   "win_rate": 0.04,
-   "quinella_rate": 0.08,
-   "show_rate": 0.24
+   "other": 20,
+   "n": 26,
+   "win_rate": 0.038,
+   "quinella_rate": 0.077,
+   "show_rate": 0.231
   },
   "2026": {
    "win": 0,
    "place2": 0,
    "place3": 3,
-   "other": 8,
-   "n": 11,
+   "other": 9,
+   "n": 12,
    "win_rate": 0.0,
    "quinella_rate": 0.0,
-   "show_rate": 0.273
+   "show_rate": 0.25
   },
   "2025": {
    "win": 1,
@@ -68,6 +68,19 @@
   }
  ],
  "ratings_reconstructed": [
+  {
+   "date": "2026-09-27",
+   "race_no": 1,
+   "position": 10,
+   "earned_yen": 0,
+   "program_prize_k": 771,
+   "year_prize_k": 222,
+   "class": "C2",
+   "next_class": "C1",
+   "next_class_need_k": 1429,
+   "diff_k": 0,
+   "change": null
+  },
   {
    "date": "2026-09-13",
    "race_no": 1,
@@ -160,6 +173,34 @@
   "need_k": 1429
  },
  "races": [
+  {
+   "date": "2026-09-27",
+   "race_no": 1,
+   "race_name": "ＴｈｉｎｋＢｉｇ　ＹＥＧ杯Ｃ２－９",
+   "class": "C2",
+   "moisture": 1.0,
+   "field_size": 10,
+   "num": 3,
+   "jockey": "渡来心",
+   "trainer": "小林長",
+   "owner": "谷廣和",
+   "sled_kg": 600.0,
+   "weight": 938,
+   "weight_diff": 18,
+   "odds": 9.3,
+   "popularity": 5,
+   "position": 10,
+   "time": "4:06.8",
+   "time_sec": 246.8,
+   "margin_sec": 106.8,
+   "race_level_z": -3.67,
+   "interval": "中2週",
+   "other": {
+    "label": "勝ち馬",
+    "name": "キンノロナ"
+   },
+   "insider_labels": []
+  },
   {
    "date": "2026-09-13",
    "race_no": 1,

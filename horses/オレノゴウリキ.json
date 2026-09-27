@@ -4,10 +4,10 @@
  "age": 2,
  "trainer": "槻舘重",
  "owner": "大森勝廣",
- "sled_kg": 510.0,
- "weight": 887,
- "weight_diff": 30,
- "last_race_date": "2026-09-21",
+ "sled_kg": 520.0,
+ "weight": 884,
+ "weight_diff": -3,
+ "last_race_date": "2026-09-27",
  "pedigree": {
   "sire": "コウシュハレガシー",
   "dam": "コトブキダイヤ",
@@ -21,21 +21,21 @@
    "win": 0,
    "place2": 1,
    "place3": 2,
-   "other": 5,
-   "n": 8,
+   "other": 6,
+   "n": 9,
    "win_rate": 0.0,
-   "quinella_rate": 0.125,
-   "show_rate": 0.375
+   "quinella_rate": 0.111,
+   "show_rate": 0.333
   },
   "2026": {
    "win": 0,
    "place2": 1,
    "place3": 2,
-   "other": 5,
-   "n": 8,
+   "other": 6,
+   "n": 9,
    "win_rate": 0.0,
-   "quinella_rate": 0.125,
-   "show_rate": 0.375
+   "quinella_rate": 0.111,
+   "show_rate": 0.333
   }
  },
  "insider_label_count": 0,
@@ -58,6 +58,19 @@
   }
  ],
  "ratings_reconstructed": [
+  {
+   "date": "2026-09-27",
+   "race_no": 3,
+   "position": 9,
+   "earned_yen": 0,
+   "program_prize_k": 343,
+   "year_prize_k": 343,
+   "class": "C2",
+   "next_class": "C1",
+   "next_class_need_k": 1857,
+   "diff_k": 0,
+   "change": null
+  },
   {
    "date": "2026-09-21",
    "race_no": 4,
@@ -174,6 +187,34 @@
  "next_class": null,
  "races": [
   {
+   "date": "2026-09-27",
+   "race_no": 3,
+   "race_name": "彩佳ちゃん生誕２周年記念２歳Ｃ－５",
+   "class": "C",
+   "moisture": 1.0,
+   "field_size": 10,
+   "num": 4,
+   "jockey": "長澤幸",
+   "trainer": "槻舘重",
+   "owner": "大森勝廣",
+   "sled_kg": 520.0,
+   "weight": 884,
+   "weight_diff": -3,
+   "odds": 4.9,
+   "popularity": 4,
+   "position": 9,
+   "time": "2:26.8",
+   "time_sec": 146.8,
+   "margin_sec": 19.2,
+   "race_level_z": 0.04,
+   "interval": "連闘",
+   "other": {
+    "label": "勝ち馬",
+    "name": "スピードシンデレラ"
+   },
+   "insider_labels": []
+  },
+  {
    "date": "2026-09-21",
    "race_no": 4,
    "race_name": "じいじ北海道へようこそ２歳Ｃ－７",
@@ -249,7 +290,7 @@
    "time": "2:10.9",
    "time_sec": 130.9,
    "margin_sec": 11.3,
-   "race_level_z": 0.49,
+   "race_level_z": 0.48,
    "interval": "中2週",
    "other": {
     "label": "勝ち馬",
@@ -333,7 +374,7 @@
    "time": "2:42.2",
    "time_sec": 162.2,
    "margin_sec": 34.4,
-   "race_level_z": -0.63,
+   "race_level_z": -0.64,
    "interval": "中2週",
    "other": {
     "label": "勝ち馬",
@@ -361,7 +402,7 @@
    "time": "2:33.3",
    "time_sec": 153.3,
    "margin_sec": 23.3,
-   "race_level_z": 0.4,
+   "race_level_z": 0.39,
    "interval": "連闘",
    "other": {
     "label": "勝ち馬",

@@ -4,10 +4,10 @@
  "age": 4,
  "trainer": "坂本東",
  "owner": "中川欣三",
- "sled_kg": 640.0,
- "weight": 1036,
- "weight_diff": 24,
- "last_race_date": "2026-09-21",
+ "sled_kg": 650.0,
+ "weight": 1019,
+ "weight_diff": -17,
+ "last_race_date": "2026-09-27",
  "pedigree": {
   "sire": "インフィニティー",
   "dam": "ミチノクイン",
@@ -20,22 +20,22 @@
   "total": {
    "win": 11,
    "place2": 11,
-   "place3": 8,
+   "place3": 9,
    "other": 26,
-   "n": 56,
-   "win_rate": 0.196,
-   "quinella_rate": 0.393,
-   "show_rate": 0.536
+   "n": 57,
+   "win_rate": 0.193,
+   "quinella_rate": 0.386,
+   "show_rate": 0.544
   },
   "2026": {
    "win": 5,
    "place2": 4,
-   "place3": 4,
+   "place3": 5,
    "other": 9,
-   "n": 22,
-   "win_rate": 0.227,
-   "quinella_rate": 0.409,
-   "show_rate": 0.591
+   "n": 23,
+   "win_rate": 0.217,
+   "quinella_rate": 0.391,
+   "show_rate": 0.609
   },
   "2025": {
    "win": 4,
@@ -78,6 +78,19 @@
   }
  ],
  "ratings_reconstructed": [
+  {
+   "date": "2026-09-27",
+   "race_no": 12,
+   "position": 3,
+   "earned_yen": 90000,
+   "program_prize_k": 6401,
+   "year_prize_k": 2330,
+   "class": "B2",
+   "next_class": "B1",
+   "next_class_need_k": 299,
+   "diff_k": 90,
+   "change": null
+  },
   {
    "date": "2026-09-21",
    "race_no": 12,
@@ -264,16 +277,44 @@
  "reconstructed_now": {
   "snapshot_date": "2026-09-25",
   "class_code": "B2",
-  "program_prize_k": 6311,
-  "year_prize_k": 2240,
+  "program_prize_k": 6401,
+  "year_prize_k": 2330,
   "reconstructed": true,
-  "reconstructed_races": 0
+  "reconstructed_races": 1
  },
  "next_class": {
   "next_class": "B1",
-  "need_k": 389
+  "need_k": 299
  },
  "races": [
+  {
+   "date": "2026-09-27",
+   "race_no": 12,
+   "race_name": "Ｂ１－２混合",
+   "class": "B1",
+   "moisture": 0.9,
+   "field_size": 10,
+   "num": 3,
+   "jockey": "阿部武",
+   "trainer": "坂本東",
+   "owner": "中川欣三",
+   "sled_kg": 650.0,
+   "weight": 1019,
+   "weight_diff": -17,
+   "odds": 4.5,
+   "popularity": 3,
+   "position": 3,
+   "time": "1:44.5",
+   "time_sec": 104.5,
+   "margin_sec": 6.2,
+   "race_level_z": 0.99,
+   "interval": "連闘",
+   "other": {
+    "label": "勝ち馬",
+    "name": "ジェイエクスプレス"
+   },
+   "insider_labels": []
+  },
   {
    "date": "2026-09-21",
    "race_no": 12,
@@ -966,7 +1007,7 @@
    "time": "2:23.2",
    "time_sec": 143.2,
    "margin_sec": 25.9,
-   "race_level_z": -0.11,
+   "race_level_z": -0.12,
    "interval": "中2週",
    "other": {
     "label": "勝ち馬",
@@ -1162,7 +1203,7 @@
    "time": "2:40.0",
    "time_sec": 160.0,
    "margin_sec": 40.3,
-   "race_level_z": -1.01,
+   "race_level_z": -1.02,
    "interval": "中1週",
    "other": {
     "label": "勝ち馬",
@@ -1638,7 +1679,7 @@
    "time": "1:59.1",
    "time_sec": 119.1,
    "margin_sec": 13.7,
-   "race_level_z": 0.26,
+   "race_level_z": 0.25,
    "interval": "中1週",
    "other": {
     "label": "勝ち馬",
@@ -1750,7 +1791,7 @@
    "time": "1:51.9",
    "time_sec": 111.9,
    "margin_sec": 0.0,
-   "race_level_z": 0.53,
+   "race_level_z": 0.52,
    "interval": "中2週",
    "other": {
     "label": "2着馬",
