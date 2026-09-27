@@ -194,7 +194,7 @@ table.ht .fin{font-size:.68rem;color:var(--muted)}
 table.ht .fin.top{color:var(--good);font-weight:800}
 /* 過去5走（簡易）列（2026-09-26、日付/着順/1着とのタイム差の3行×5走） */
 .p5grid{display:flex;gap:5px}
-.p5col{display:flex;flex-direction:column;align-items:center;min-width:34px;cursor:pointer;
+.p5col{display:flex;flex-direction:column;align-items:center;min-width:46px;cursor:pointer;
   border-radius:5px;background:var(--surface2);padding:2px 3px;line-height:1.35}
 .p5col.p5top{background:var(--good-soft)}
 .p5col.p5win{background:var(--accent-soft)}
@@ -202,6 +202,9 @@ table.ht .fin.top{color:var(--good);font-weight:800}
 .p5p{font-size:.66rem;font-weight:800;color:var(--ink)}
 .p5col.p5top .p5p{color:var(--good)}
 .p5col.p5win .p5p{color:var(--accent)}
+.p5il{margin-left:2px;font-size:.6rem}
+.p5t{font-size:.6rem;color:var(--ink);font-variant-numeric:tabular-nums;white-space:nowrap}
+.p5mk{color:var(--accent);font-weight:800;margin-right:2px}
 .p5g{font-size:.6rem;color:var(--muted);font-variant-numeric:tabular-nums}
 .p5p.p5-high{border:1.5px solid var(--accent);border-radius:4px;padding:0 3px}
 .p5p.p5-low{border:1.5px solid var(--wet);border-radius:4px;padding:0 3px}
@@ -1209,8 +1212,12 @@ function past5Html(h){
     const posTxt = t.p!=null ? t.p+'着' : '—';
     const gapTxt = t.gs!=null ? (t.gs>=0?'+':'')+t.gs.toFixed(1)+'s' : '—';
     const title = `${t.d||''} ${t.c||''} ${posTxt}${lvlCls?(lvlCls==='p5-high'?'（高レベル）':'（低レベル）'):''}（タップでレース結果）`;
-    return `<div class="p5col ${cls}" data-date="${t.d||''}" data-horse="${(h.name||'').replace(/"/g,'&quot;')}" title="${title}"><span class="p5d">${dateTxt}</span>`
-      +`<span class="p5p ${lvlCls}">${posTxt}</span><span class="p5g">${gapTxt}</span></div>`;
+    const MK=["◎","◯","▲","△","☆"];
+    const mk = t.mk>=1 && t.mk<=5 ? MK[t.mk-1] : "";
+    const timeTxt = t.t!=null ? secFmt(t.t).replace(/s$/,"") : "—";
+    const il = t.il ? '<span class="p5il" title="このレースに八百長ラベル付与馬あり">🚨</span>' : "";
+    return `<div class="p5col ${cls}" data-date="${t.d||''}" data-horse="${(h.name||'').replace(/"/g,'&quot;')}" title="${title}"><span class="p5d">${dateTxt}${il}</span>`
+      +`<span class="p5p ${lvlCls}">${posTxt}</span><span class="p5t"><b class="p5mk">${mk}</b>${timeTxt}</span><span class="p5g">${gapTxt}</span></div>`;
   }).join('');
   return `<td class="l"><div class="p5grid">${cols}</div></td>`;
 }
