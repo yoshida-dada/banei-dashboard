@@ -245,7 +245,7 @@ table.ht .roi{color:color-mix(in srgb,var(--ev-hue) 78%,var(--ink));font-weight:
 :root[data-layout="desktop"] .histbox{max-width:860px}
 /* グラフ拡大表示（馬体重/決着タイム推移をタップで拡大、2026-09-24）。同じviewBox付きSVGを
    ワイドな箱で表示するだけで、ベクター描画なのでボケずに大きく見える。 */
-.chartbox{background:var(--surface);border:1px solid var(--border);border-radius:12px;max-width:680px;width:94vw;max-height:88vh;overflow-y:auto;padding:14px 16px;box-shadow:0 8px 30px rgba(0,0,0,.35)}
+.chartbox{background:var(--surface);border:1px solid var(--border);border-radius:12px;max-width:min(96vw,1300px);width:94vw;max-height:88vh;overflow:auto;padding:14px 16px;box-shadow:0 8px 30px rgba(0,0,0,.35)}
 .tkchart-click{cursor:zoom-in}
 .histback{display:inline-block;background:none;border:1px solid var(--border);border-radius:7px;padding:4px 10px;font-size:.7rem;color:var(--muted);cursor:pointer;font-family:inherit;margin-bottom:10px}
 .hpmodebar{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:10px}
@@ -273,8 +273,8 @@ table.ht .roi{color:color-mix(in srgb,var(--ev-hue) 78%,var(--ink));font-weight:
 .rbtbl th:nth-child(2),.rbtbl td:nth-child(2){text-align:left}
 .rbtbl th{color:var(--muted);font-size:.62rem;font-weight:700}
 .rbtbl tr.pick{background:color-mix(in srgb,var(--accent) 12%,var(--surface))}
-.hlink{cursor:pointer}
-.hlink:hover{text-decoration:underline;text-decoration-style:dotted}
+.hlink,.tname-txt,.hname-txt{cursor:pointer;text-decoration:underline;text-decoration-color:color-mix(in srgb,var(--muted) 70%,transparent);text-underline-offset:2px}
+.hlink:hover,.tname-txt:hover,.hname-txt:hover{text-decoration-color:var(--accent)}
 .rbtbl tr.rbfocus td{font-weight:800;color:var(--ink)}
 .rbtbl tr.rbfocus .hnamelink{font-weight:800}
 .rbvideo{display:inline-block;margin:0 0 10px 8px;padding:4px 10px;border:1px solid var(--border);border-radius:7px;font-size:.7rem;color:var(--accent);text-decoration:none;font-weight:700}
@@ -2438,8 +2438,13 @@ function renderHorseProfile(){
 // 大きい箱に複製するだけでベクター描画のためボケない。
 function openChartZoom(el){
   document.getElementById("chartModalTitle").textContent=el.dataset.chartTitle||"";
-  document.getElementById("chartModalBody").innerHTML=el.innerHTML;
+  const body=document.getElementById("chartModalBody");
+  body.innerHTML=el.innerHTML;
   document.getElementById("chartModal").style.display="flex";
+  // 元と同じ幅で出すと拡大にならないため、元の幅の1.8倍（上限1250px）で描画。箱に収まらなければ横スクロール
+  const svg=body.querySelector("svg");
+  if(svg){ const w=Math.min(1250, Math.round((el.clientWidth||340)*1.8));
+    svg.style.width=w+"px"; svg.style.maxWidth="none"; svg.style.height="auto"; }
 }
 function closeChartZoom(){ document.getElementById("chartModal").style.display="none"; }
 const _cmc=document.getElementById("chartModalClose");
