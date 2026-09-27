@@ -1238,8 +1238,8 @@ const COLS = [
   {key:"finish", label:"終い指数", th:'<th>終い</th>', td:h=>`<td class="num">${featSpan(h.f_finish)}</td>`},
   {key:"weight", label:"重量適性", th:'<th>重量</th>', td:h=>`<td class="num">${featSpan(h.f_weight)}</td>`},
   {key:"kuzure", label:"安定性", th:'<th>安定</th>', td:h=>`<td class="num">${featSpan(h.f_kuzure)}</td>`},
-  {key:"place2", label:"連対率", th:'<th>連対</th>', td:h=>`<td class="num">${pct(h.place2)}</td>`},
-  {key:"place3", label:"複勝率", th:'<th>複勝</th>', td:h=>`<td class="num">${pct(h.place3)}</td>`},
+  {key:"place2", label:"連対率", defHidden:true, th:'<th>連対</th>', td:h=>`<td class="num">${pct(h.place2)}</td>`},
+  {key:"place3", label:"複勝率", defHidden:true, th:'<th>複勝</th>', td:h=>`<td class="num">${pct(h.place3)}</td>`},
   {key:"odds", label:"オッズ・単勝EV", th:'<th>オッズ / EV</th>',
    td:h=>`<td class="num"><div class="c2 c2r"><span>${h.odds!=null?h.odds.toFixed(1):'—'}</span><span class="tsub num ${h.ev_buy?'roi':''}">${h.ev!=null?'×'+h.ev.toFixed(2):'—'}</span></div></td>`},
   {key:"pop", label:"人気", th:'<th>人気</th>', td:h=>`<td class="num">${h.popularity?h.popularity:'—'}</td>`},
@@ -1249,7 +1249,11 @@ const COLS = [
    td:(h,hasResult)=>{ const top=h.position!=null&&h.position<=3; const fin=!hasResult?"—":(h.position!=null?`${h.position}着`:"除外"); const rt=hasResult&&h.result_time?h.result_time:"—"; return `<td class="fin ${top?'top':''}"><div class="c2 c2r"><span>${fin}</span><span class="tsub num">${rt}</span></div></td>`; }},
   {key:"past5", label:"過去5走（簡易）", th:'<th class="l">過去5走</th>', td:past5Html},
 ];
-function colHidden(){ try{ return new Set(JSON.parse(localStorage.getItem("cols_hidden")||"[]")); }catch(e){ return new Set(); } }
+function colHidden(){
+  // 保存が無い端末は defHidden の列（連対率・複勝率）を既定で非表示にする
+  const def=()=>new Set(COLS.filter(c=>c.defHidden).map(c=>c.key));
+  try{ const raw=localStorage.getItem("cols_hidden"); return raw==null?def():new Set(JSON.parse(raw)); }catch(e){ return def(); }
+}
 const DEFAULT_ORDER = COLS.map(c=>c.key);
 function colOrder(){
   let ord; try{ ord=JSON.parse(localStorage.getItem("cols_order")||"null"); }catch(e){ ord=null; }
