@@ -1226,12 +1226,12 @@ const COLS = [
    td:h=>`<td class="l"><div class="c2"><span class="tjk">${h.jockey||'—'}${jockeySwitchIcon(h)}</span><span class="tsub num">${recFmt(h.jockey_record)}</span></div></td>`},
   {key:"sled", label:"斤量", th:'<th>斤量</th>',
    td:h=>`<td class="num"><div class="c2 c2r"><span>${sledTop(h)}</span><span class="tsub num">${sledSub(h)}</span></div></td>`},
-  {key:"win", label:"勝率", always:true, th:'<th>勝率</th>', td:h=>`<td class="win-c num">${pct(h.win_prob)}</td>`},
-  {key:"winv2", label:"勝率v2（学習ウェイト・比較用）", th:'<th title="学習ウェイト版(v2)の勝率と予測順位。現行v1との比較用">勝率v2</th>',
-   td:h=>{ if(h.win_prob_v2==null) return `<td class="num"><span class="tsub">—</span></td>`;
+  {key:"winv2", label:"勝率v2（必須）", always:true, th:'<th title="学習ウェイト版(v2)の勝率と予測順位（▲▼=v1からの順位変化）。v2データが無い日はv1の値を薄字で表示">勝率v2</th>',
+   td:h=>{ if(h.win_prob_v2==null) return `<td class="num"><span class="tsub" title="v2データなし（v1の値）">${pct(h.win_prob)}</span></td>`;
      const d=(h.rank!=null&&h.rank_v2!=null)?h.rank-h.rank_v2:0;
      const arrow=d>0?`<span class="v2up">▲${d}</span>`:(d<0?`<span class="v2dn">▼${-d}</span>`:"");
-     return `<td class="num">${pct(h.win_prob_v2)}<div class="tsub">${h.rank_v2}位${arrow}</div></td>`; }},
+     return `<td class="win-c num">${pct(h.win_prob_v2)}<div class="tsub">${h.rank_v2}位${arrow}</div></td>`; }},
+  {key:"win", label:"勝率v1（リファレンス）", th:'<th title="現行v1（手決めウェイト）の勝率。リファレンス用">勝率v1</th>', td:h=>`<td class="num">${pct(h.win_prob)}</td>`},
   {key:"abil", label:"能力/Elo", th:'<th>能力/Elo</th>',
    td:h=>`<td class="num"><div class="c2 c2r"><span class="abil">${h.ability!=null?h.ability.toFixed(1):'—'}</span><span class="tsub num">${h.elo!=null?h.elo:'—'}</span></div></td>`},
   {key:"obstacle", label:"障害力", th:'<th>障害</th>', td:h=>`<td class="num">${featSpan(h.f_obstacle)}</td>`},
