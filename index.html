@@ -1495,7 +1495,7 @@ function renderRaceFlowTime(r){
   const host=document.getElementById("raceflowtime"); if(!host) return;
   // 表示モード（2026-09-27）: raw=実績タイム / cond=今日の条件補正(ソリ重量・馬場水分・馬場指数、fh_adj_*)
   // / shrink=cond＋馬どうしの差を×0.6に縮小（5走平均の差は実際の差より大きく出るため。732R検証で回帰傾き≈0.6）。
-  const mode = window.__flowMode || "raw";
+  const mode = window.__flowMode || "shrink";
   // 更新時刻と、補正に反映した当日レース結果の範囲（当日の先行レースの結果を踏まえた展開予測のため表示）
   const updTxt = r.updated_at ? String(r.updated_at).slice(5,16).replace('-','/') : "—";
   const h0 = (r.horses||[]).find(h=>h.fh_cond_day!=null||h.fh_cond_upto!=null);
@@ -1622,15 +1622,13 @@ function renderRaceFlowTime(r){
   host.innerHTML=
     `<div class="secthead"><span class="sect">展開イメージ(第2障害降下時点のタイム傾向)</span>`
     +`<div class="vtoggle" id="flowtoggle"><button data-a="raw" aria-pressed="${mode==='raw'}">実績タイム</button>`
-    +`<button data-a="cond" aria-pressed="${mode==='cond'}">今日の条件補正</button>`
-    +`<button data-a="shrink" aria-pressed="${mode==='shrink'}">補正＋差を縮小</button></div>`
+    +`<button data-a="shrink" aria-pressed="${mode==='shrink'}">今日の条件補正</button></div>`
     +`<span class="tsub flowupd">🕛 更新 ${updTxt}${adj?' ・'+trackTxt:''}</span></div>`
     +`<svg class="tksvg" viewBox="0 0 ${W} ${H+14*S}">${heads}<g transform="translate(0,${4*S})">${zebra}${grid}${body}${ticks}</g></svg>`
     +`<div class="tknote">縦＝馬番順、横＝直近5走の前半タイム(総合−上り、第1・第2障害を含む＝第2障害降下時点まで)の`
     +`平均/最速/最遅。<br>緑の矢印＝上がりが出走馬平均より速く終いで差を詰める傾向、`
     +`赤の矢印＝平均より遅く差が開く傾向（矢印の長さ＝詰め/後退の目安秒数）。`
-    +(adj?`<br>今日の条件補正＝各走の前半タイムを、今日のソリ重量・馬場水分・馬場指数だった場合の値に補正（前半タイムの回帰係数×今日との差。馬場指数＝その開催日の全走の前半タイム残差。今日の分は先行レースの着順タイムから前半タイム換算で推定し、直近のレースほど重く反映。序盤で推定できない場合は平均的な馬場として扱う）。左の「斤量±kg」は過去走との平均差。上りは補正していません。`:``)
-    +(mode==="shrink"?`<br>差を縮小＝5走平均の馬どうしの差は実際の差より大きく出やすいため、レース平均からの差を×0.6に縮めて表示（帯の幅・順位は不変）。`:``)
+    +(adj?`<br>今日の条件補正＝各走の前半タイムを、今日のソリ重量・馬場水分・馬場指数だった場合の値に補正（前半タイムの回帰係数×今日との差。馬場指数＝その開催日の全走の前半タイム残差。今日の分は先行レースの着順タイムから前半タイム換算で推定し、直近のレースほど重く反映。序盤で推定できない場合は平均的な馬場として扱う）した上で、5走平均の馬どうしの差は実際の差より大きく出やすいため、レース平均からの差を×0.6に縮めて表示（帯の幅・順位は不変）。左の「斤量±kg」は過去走との平均差。上りは補正していません。`:``)
     +`</div>`;
   host.querySelectorAll("#flowtoggle button").forEach(b=>b.onclick=()=>{ window.__flowMode=b.dataset.a; renderRaceFlowTime(r); });
 }
