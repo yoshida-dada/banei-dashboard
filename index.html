@@ -741,7 +741,6 @@ table.ht .numcell{display:inline-flex;align-items:center;gap:4px}
       <div id="slider"></div>
     </div>
   </div>
-  <div class="foot" id="foot"></div>
 </div>
 
 <div class="wrap" id="resultTab" style="display:none">
@@ -876,24 +875,6 @@ document.querySelectorAll("#dates .dpill").forEach(p=>p.addEventListener("click"
   curDate=p.dataset.d; curRno=nextRaceNoFor(curDate); renderRacePills(); sync();
 }));
 
-// レース短評（勝率分布から軸の堅さ・混戦度を判定。Eloの裏付けも併記）
-function raceAssessment(r){
-  const hs=[...r.horses].filter(h=>h.win_prob!=null&&h.win_prob>0).sort((a,b)=>b.win_prob-a.win_prob);
-  if(hs.length<3) return null;
-  const p1=hs[0].win_prob,p2=hs[1].win_prob,p3=hs[2].win_prob,p4=hs[3]?hs[3].win_prob:0;
-  const g12=p1-p2,g23=p2-p3,g34=p3-p4, a=hs[0].num,b=hs[1].num,c=hs[2].num;
-  const eloTop=[...hs].sort((x,y)=>(y.elo||0)-(x.elo||0))[0];
-  const eloNote = eloTop.num===a ? "Eloも最上位で裏付けあり" : `Elo最上位は${eloTop.num}番`;
-  let o;
-  if(p1>=0.34 && g12>=0.14) o={label:"軸鉄板",note:`${a}番が明確に抜けている`,cls:"ax"};
-  else if(p1>=0.26 && g12>=0.07) o={label:"軸有力",note:`${a}番が本命、相手を絞って`,cls:"ax"};
-  else if(p1>=0.22 && p2>=0.18 && g23>=0.06) o={label:"2強",note:`${a}番・${b}番の一騎打ち`,cls:"two"};
-  else if(p3>=0.15 && g34>=0.05) o={label:"3強",note:`${a}・${b}・${c}番の上位3頭`,cls:"two"};
-  else if(p1<0.18) o={label:"大混戦",note:"抜けた馬なし・波乱含み",cls:"chaos"};
-  else o={label:"混戦",note:"有力数頭で拮抗",cls:"mix"};
-  o.eloNote=eloNote;
-  return o;
-}
 // 着順メダル（1着=金,2着=銀,3着=銅）。枠は常に確保（プレースホルダー）し、着順確定後のみ表示。
 const medal = p => (p>=1 && p<=3)
   ? `<span class="medal m${p}" title="${p}着">${p}</span>`
@@ -982,8 +963,7 @@ function render(){
     : (hasResult ? "" : `<span class="chip pre">発走前・暫定</span>`);
   const updChip = r.updated_at
     ? `<span class="chip upd">🕛 ${(STAGE[r.update_stage]||'更新')} ${String(r.updated_at).slice(5,16).replace('-','/')}</span>` : "";
-  const asm = raceAssessment(r);
-  const asHtml = asm ? `<div class="assess ${asm.cls}"><span class="al">${asm.label}</span><span class="an">${asm.note}<span class="an2">・${asm.eloNote}</span></span></div>` : "";
+  const asHtml = "";
   let resultRow;
   if(hasResult){
     resultRow =
@@ -1482,7 +1462,7 @@ function renderTrackAptitudeScatter(r){
     +`<svg class="tksvg" viewBox="0 0 ${W} ${Hh}">${gridX}${gridY}${zeroLine}${todayLine}${axisLabels}${points}</svg>`
     +`<div class="tknote">横軸＝連対(1-2着)時のタイム平均(秒、生タイム)、縦軸＝連対した開催日の`
     +`馬場指数の平均(zスコア、ソリ重量・クラス・水分率で補正した実タイムの残差を直近開催日の`
-    +`分布と比較したもの)。左下ほど軽くて時計が出る馬場が得意、右上ほど重くて時計が出ない`
+    +`分布と比較したもの)。<br>左下ほど軽くて時計が出る馬場が得意、右上ほど重くて時計が出ない`
     +`馬場が得意という傾向を示す。${todayNote}${excludedNote}</div>`;
 }
 // 展開イメージ（第2障害通過順ベース→生タイムベースに変更、2026-09-26）。
@@ -1605,11 +1585,9 @@ function renderRaceFlowTime(r){
   host.innerHTML=
     `<div class="secthead"><span class="sect">展開イメージ(第2障害降下時点のタイム傾向)</span></div>`
     +`<svg class="tksvg" viewBox="0 0 ${W} ${H+14*S}">${heads}<g transform="translate(0,${4*S})">${zebra}${grid}${body}${ticks}</g></svg>`
-    +`<div class="tknote">ばんえいはセパレートコース（平地の脚質分類・位置取りとは無関係）。`
-    +`縦＝馬番順、横＝直近5走の前半タイム(総合−上り、第1・第2障害を含む＝第2障害降下時点まで)の`
-    +`平均/最速/最遅。生タイムは馬場水分・ソリ重量の影響を受けるため他馬との絶対比較には注意`
-    +`（同条件で走ったとは限らない）。左ほど速い。緑の矢印＝上がりが出走馬平均より速く終いで`
-    +`差を詰める傾向、赤の矢印＝平均より遅く差が開く傾向（矢印の長さ＝詰め/後退の目安秒数）。</div>`;
+    +`<div class="tknote">縦＝馬番順、横＝直近5走の前半タイム(総合−上り、第1・第2障害を含む＝第2障害降下時点まで)の`
+    +`平均/最速/最遅。<br>緑の矢印＝上がりが出走馬平均より速く終いで差を詰める傾向、`
+    +`赤の矢印＝平均より遅く差が開く傾向（矢印の長さ＝詰め/後退の目安秒数）。</div>`;
 }
 function renderAptitude(r){
   document.querySelectorAll("#dimseg button").forEach(b=>b.setAttribute("aria-pressed",b.dataset.d===dim));
@@ -1689,24 +1667,6 @@ function drawCardDots(cv, h){
   past.forEach(p=>{ const x=X(p.t),y=Y(Math.min(p.p,fs));
     c.beginPath();c.arc(x,y,2.6,0,7);c.fillStyle=p.p<=3?good:muted;c.globalAlpha=p.p<=3?0.9:0.35;c.fill();c.globalAlpha=1; });
 }
-
-document.getElementById("foot").innerHTML =
-  "能力指数はクラス・ソリ重量・馬場水分で補正した基準タイム＋Eloの合成。勝率/連対率/複勝率は"
-  +"Plackett-Luce（順位確率）モデルによる推定。<b>予測は当日の馬場水分に応じて動的に変わります</b>。"
-  +"下部の馬場適性は各馬の過去走（レース日以前のみ＝リーク防止）から集計。「決着タイム」はそのレースの勝ちタイムで、馬場の速さ・条件を表す（着順と独立）。"
-  +"カードのドット図は横=その馬の走破タイム・縦=着順、緑=3着内、赤破線=3着内平均タイム。"
-  +"騎手名の下の成績は<b>この騎手がこの馬に騎乗した時の (1着,2着,3着,4着以下) 回数</b>（過去騎乗なしは「初騎乗」）。"
-  +"斤量は今走のソリ重量で、括弧内は前回からの増減。"
-  +"「能力/Elo」の下段はEloレーティング（実戦の相対的な強さ）。「障害/終い/重量/安定」は障害力・終い指数・重量適性・安定性（0-10、5が平均目安・高いほど優位）。"
-  +"「安定」は過去走の大崩れ(第2障害での失速等)の少なさ＝馬単位の信頼度(高いほど堅実)。現時点では予測ウェイトに未算入(過去検証で係数評価後に配分)。"
-  +"「本年賞金/級」はばんえい公式格付けの本年賞金(万円)と所属クラス。クラスは番組賞金の帯で決まる(open≥1300万…C2<220万)。"
-  +"番組賞金=地力(累積・Eloと重複)、本年賞金=今年の勢い。カードの「勢い」はレース内での本年賞金の相対(0-10)。"
-  +"※格付けは表示・研究用で、現時点では予測ウェイトに未算入(前向き検証後に評価)。データ日以前の最新のみ参照(リーク防止)。"
-  +"レース名の下の短評は勝率分布からの目安。"
-  +" <b>単勝EV＝市場ブレンド勝率×オッズ</b>。市場ブレンド勝率は、モデル勝率と市場（オッズ由来・控除率除去）確率のログ線形プール(モデル寄与35%)で、モデルの過信を市場で補正した値（「市場勝率」列も参照）。"
-  +" 発走30/20/10分前にオッズを取得し、<b>EV>1（＝妙味あり）</b>の馬を<span style=\"color:var(--ev-hue);font-weight:800\">金色</span>で強調。連続で条件を満たすほど背景を濃く（1回→薄, 3回→濃）。"
-  +" ※実際の買い目（購入候補）は、オッズ変動を見込んだより保守的な条件（ヘアカット×0.8・EV≧1.25）で選定します。"
-  +" オッズ自体は能力評価に用いず、EV/市場ブレンドの計算にのみ使用（表示は実オッズ）。";
 
 // view toggle
 document.querySelectorAll("#vtoggle button").forEach(b=>b.addEventListener("click",()=>{
