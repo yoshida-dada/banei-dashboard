@@ -273,6 +273,8 @@ table.ht .roi{color:color-mix(in srgb,var(--ev-hue) 78%,var(--ink));font-weight:
 .rbtbl th:nth-child(2),.rbtbl td:nth-child(2){text-align:left}
 .rbtbl th{color:var(--muted);font-size:.62rem;font-weight:700}
 .rbtbl tr.pick{background:color-mix(in srgb,var(--accent) 12%,var(--surface))}
+.hlink{cursor:pointer}
+.hlink:hover{text-decoration:underline;text-decoration-style:dotted}
 .rbtbl tr.rbfocus td{font-weight:800;color:var(--ink)}
 .rbtbl tr.rbfocus .hnamelink{font-weight:800}
 .rbvideo{display:inline-block;margin:0 0 10px 8px;padding:4px 10px;border:1px solid var(--border);border-radius:7px;font-size:.7rem;color:var(--accent);text-decoration:none;font-weight:700}
@@ -1443,7 +1445,7 @@ function renderTrackAptitudeScatter(r){
     const cx=xFor(h.ren_time_avg).toFixed(1), cy=yFor(h.ren_track_index).toFixed(1);
     return `<circle cx="${cx}" cy="${cy}" r="${8*S}" fill="${c[0]}" stroke="var(--surface)" stroke-width="${1.5*S}"/>`
       +`<text x="${cx}" y="${(+cy+2.8*S).toFixed(1)}" font-size="${8*S}" text-anchor="middle" font-weight="800" fill="${c[1]}">${h.num}</text>`
-      +`<text x="${cx}" y="${(+cy-10*S).toFixed(1)}" font-size="${7*S}" text-anchor="middle" fill="var(--muted)">${(h.name||"").length>6?h.name.slice(0,6)+"…":h.name}</text>`;
+      +`<text x="${cx}" y="${(+cy-10*S).toFixed(1)}" font-size="${7*S}" text-anchor="middle" fill="var(--muted)" class="hlink" data-horse="${h.name||""}">${(h.name||"").length>6?h.name.slice(0,6)+"…":h.name}</text>`;
   };
   const points = pts.map(dot).join("");
 
@@ -1542,7 +1544,7 @@ function renderRaceFlowTime(r){
     return `<text x="${cx}" y="${(cy+2.8*S).toFixed(1)}" font-size="${8*S}" text-anchor="middle" font-weight="800" fill="${c[1]}">${h.num}</text>`;
   };
   const nameLabel=(h,cy)=>
-    `<text x="${padL-10*S}" y="${(cy-1.5*S).toFixed(1)}" font-size="${7.5*S}" text-anchor="end" fill="var(--ink)">${shortName(h.name)}</text>`;
+    `<text x="${padL-10*S}" y="${(cy-1.5*S).toFixed(1)}" font-size="${7.5*S}" text-anchor="end" fill="var(--ink)" class="hlink" data-horse="${h.name||""}">${shortName(h.name)}</text>`;
   const numLabel=(h,cy)=>{
     if(h.fh_avg==null) return "";
     const mm = (h.fh_min!=null && h.fh_max!=null) ? `(${secFmtWhole(h.fh_min)}–${secFmtWhole(h.fh_max)})` : "";
@@ -1615,7 +1617,7 @@ function renderHeatmap(r){
       return `<td><div class="hcell" style="background:${rateColor(s.rate,s.n)};color:${textOn(s.rate)}">`
         +`<span class="r">${pct(s.rate)}</span><span class="n">${s.n}走</span></div></td>`;
     }).join("");
-    return `<tr><td class="l"><span class="hmn" style="${capStyle(h.gate)}">${h.num}</span><span class="hmnm">${h.name}</span> `
+    return `<tr><td class="l"><span class="hmn" style="${capStyle(h.gate)}">${h.num}</span><span class="hmnm hlink" data-horse="${h.name}">${h.name}</span> `
       +`<span class="hmwp">予測${pct(h.win_prob)}</span></td>${cells}</tr>`;
   }).join("");
   document.getElementById("heatlead").innerHTML =
@@ -1637,7 +1639,7 @@ function renderSlider(r){
   const body = rows.map(o=>{
     const w = o.rate!=null?Math.round(o.rate*100):0;
     const tick = o.h.win_prob!=null?`<span class="wptick" style="left:${Math.min(99,Math.round(o.h.win_prob*100))}%"></span>`:"";
-    return `<div class="rankrow${o.rate==null?' dim':''}"><div class="who"><span class="hmn" style="${capStyle(o.h.gate)}">${o.h.num}</span><span class="rn">${o.h.name}</span></div>`
+    return `<div class="rankrow${o.rate==null?' dim':''}"><div class="who"><span class="hmn" style="${capStyle(o.h.gate)}">${o.h.num}</span><span class="rn hlink" data-horse="${o.h.name}">${o.h.name}</span></div>`
       +`<div class="rtrack"><span class="rfill" style="width:${w}%"></span>${tick}</div>`
       +`<div class="rmeta">${o.rate!=null?pct(o.rate):'該当なし'}<br>${o.n}走</div></div>`;
   }).join("");
@@ -1739,6 +1741,12 @@ document.getElementById("horses").addEventListener("click",e=>{
   const num=+t.dataset.num; if(!num) return;
   const r=get(); const h=r && r.horses.find(x=>x.num===num);
   if(h && h.name) openHorseProfileStandalone(h.name);
+});
+// どのページの馬名でもタップで個別成績を開く（data-horse付き要素。履歴モーダル内はhnamelink側が担当）
+document.addEventListener("click",e=>{
+  const t=e.target.closest("[data-horse]");
+  if(!t||t.classList.contains("p5col")||t.closest("#histModal")) return;
+  const nm=t.dataset.horse; if(nm) openHorseProfileStandalone(nm);
 });
 const _ifc=document.getElementById("iflagClose");
 if(_ifc) _ifc.addEventListener("click", hideInsiderLabelModal);
@@ -2534,7 +2542,7 @@ function renderSuspicionAlert(r){
     const cls=s.signed_score<0?"sa-sell":"sa-notsell";
     const dirTxt=s.signed_score<0?"売れる方向・仕掛け候補":"売れない方向・引き候補";
     return `<div class="sa-item ${cls}">`
-      +`<div class="sa-row"><b>${h.num}番 ${h.name||""}</b> 怪しさ ${s.signed_score>0?"+":""}${s.signed_score.toFixed(1)}（${dirTxt}）</div>`
+      +`<div class="sa-row"><b>${h.num}番 <span class="hlink" data-horse="${h.name||""}">${h.name||""}</span></b> 怪しさ ${s.signed_score>0?"+":""}${s.signed_score.toFixed(1)}（${dirTxt}）</div>`
       +`<button class="sa-toggle" data-i="${i}" data-race-id="${raceId}" data-num="${h.num}">詳細 ▾</button>`
       +`<div class="sa-detail" id="sa-detail-${i}" style="display:none">${suspicionDetailHtml(s)}<div class="sa-chart" id="sa-chart-${i}"></div></div>`
       +`</div>`;
@@ -2902,7 +2910,7 @@ function renderOdds(){
     // しきい値超えの馬は行全体の背景色を変える（方向で色分け、|score|>=SUSPICION_ROW_THRESHOLD）
     const rowFlagCls=susScore!=null&&Math.abs(susScore)>=SUSPICION_ROW_THRESHOLD
       ? (susScore<0?" orow-sell":" orow-notsell") : "";
-    return `<tr class="orowc${selCls}${rowFlagCls}" data-num="${h.num}"><td class="onum">${h.num}</td><td class="l">${h.name}${anom}</td>`
+    return `<tr class="orowc${selCls}${rowFlagCls}" data-num="${h.num}"><td class="onum">${h.num}</td><td class="l"><span class="hlink" data-horse="${h.name}">${h.name}</span>${anom}</td>`
       +`<td>${h.pop!=null?h.pop:"—"}</td>`
       +`<td class="${susCls}" title="八百長検知の符号付き怪しさスコア(参考値)。負=売れる方向(赤)、正=売れない方向(緑)">${susTxt}</td>`
       +`<td class="oiflast"><div class="c2 c2r"><span>${h.first!=null?h.first.toFixed(1):"—"}</span><span class="tsub">${h.last!=null?h.last.toFixed(1):"—"}</span></div></td>`
@@ -2923,7 +2931,7 @@ function renderOdds(){
   host.querySelectorAll("[data-day]").forEach(b=>b.onclick=()=>{S.day=+b.dataset.day;S.race=0;renderOdds();});
   host.querySelectorAll("[data-race]").forEach(b=>b.onclick=()=>{S.race=+b.dataset.race;renderOdds();});
   host.querySelectorAll("[data-bet]").forEach(b=>b.onclick=()=>{S.bet=b.dataset.bet;renderOdds();});
-  host.querySelectorAll(".orowc").forEach(tr=>tr.onclick=()=>{
+  host.querySelectorAll(".orowc").forEach(tr=>tr.onclick=ev=>{ if(ev.target.closest("[data-horse]")) return;
     S.horse=+tr.dataset.num;
     host.querySelectorAll(".orowc").forEach(x=>x.classList.toggle("osel-row",+x.dataset.num===S.horse));
     document.getElementById("ochartwrap").innerHTML=renderOddsChart(race,S.horse);
@@ -2969,7 +2977,7 @@ function renderInsiderLabels(){
   const clsOf=t=>{ const d=ODDS_LABEL_DEFS.find(x=>x.type===t); return d?d.cls:""; };
   const body=rows.map(l=>{
     return `<tr><td>${l.race_date||"—"}</td><td>${l.race_number!=null?l.race_number+"R":"—"}</td>`
-      +`<td class="onum">${l.horse_number}</td><td class="l">${l.horse_name||"—"}</td>`
+      +`<td class="onum">${l.horse_number}</td><td class="l">${l.horse_name?`<span class="hlink" data-horse="${l.horse_name}">${l.horse_name}</span>`:"—"}</td>`
       +`<td><span class="lbadge ${clsOf(l.label_type)}">${l.label_type}</span></td>`
       +`<td class="l">${l.owner||"—"}</td><td class="l">${l.trainer||"—"}</td><td class="l">${l.jockey||"—"}</td>`
       +`<td>${l.position!=null?l.position+"着":"—"}</td>`
@@ -3067,7 +3075,7 @@ function condHtml(hs){
       return `<div class="czr${cz===k?' cur':''}"><span>${lab}</span><span class="bar"><i style="width:${pctv==null?0:Math.min(100,pctv/60*100)}%"></i></span>`
         +`<span>${pctv==null?"—":pctv+"%"}</span><span class="cn2">${z.n}</span></div>`;
     }).join("");
-    return `<div class="crow"><div class="chead"><span class="cn" style="${capStyle(h.gate)}">${h.num}</span><span class="cnm">${h.name}</span></div>`
+    return `<div class="crow"><div class="chead"><span class="cn" style="${capStyle(h.gate)}">${h.num}</span><span class="cnm hlink" data-horse="${h.name}">${h.name}</span></div>`
       +`<div class="cbody"><div>この枠 今回と同じ枠<br>${rec(c.g)}</div>`
       +`<div class="cz"><div class="cztt">枠の内外 3着内率</div>${zr}</div>`
       +`<div>この騎手 今回の騎手で<br>${rec(c.j)}</div>`
@@ -3133,7 +3141,7 @@ function anaOverviewGrid(hs){
   };
   const cards = [...hs].sort((a,b)=>a.num-b.num).map(h=>{
     const trend = h.trend||[];
-    const head = `<div class="ovhead"><span class="ovn" style="${capStyle(h.gate)}">${h.num}</span><span class="ovnm">${h.name}</span></div>`;
+    const head = `<div class="ovhead"><span class="ovn" style="${capStyle(h.gate)}">${h.num}</span><span class="ovnm hlink" data-horse="${h.name}">${h.name}</span></div>`;
     if(!trend.length){
       return `<div class="ovcard">${head}<div class="ovempty">近走データなし</div></div>`;
     }
@@ -3177,7 +3185,7 @@ function renderAnalysis(){
   host.innerHTML=anaOverviewGrid(hs)
     +`<div class="ahead csec"><span class="at1">近走の推移</span><span class="at2">${r.date.slice(5).replace('-','/')} ${r.race_no}R ${r.race_name||""} ・番号を押すと馬を切り替え</span></div>`
     +`<div class="arow">${btns}</div>`
-    +`<div class="aname">${h.num} ${h.name}<small>近${trend.length}走</small></div>`+body+condHtml(hs);
+    +`<div class="aname">${h.num} <span class="hlink" data-horse="${h.name}">${h.name}</span><small>近${trend.length}走</small></div>`+body+condHtml(hs);
   host.querySelectorAll(".abtn").forEach(b=>b.onclick=()=>{ S.num=+b.dataset.n; S.pt=null; renderAnalysis(); });
   host.querySelectorAll(".ahit").forEach(e=>e.onclick=()=>{ S.pt=+e.dataset.i; renderAnalysis(); });
 }
