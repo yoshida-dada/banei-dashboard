@@ -928,7 +928,7 @@ function renderResultTab(r, hasResult, resultRow){
     : (hasResult ? `<span class="chip">決着 <b>${r.win_time||'—'}</b></span>` : `<span class="chip pre">発走前・未確定</span>`);
   el.innerHTML =
     `<div class="meta"><div class="top"><span class="rname">${r.race_no}R ${r.race_name||''}</span></div>`
-    +`<div class="chips"><span class="chip">クラス <b>${r.class||'—'}</b></span>${statusChip}</div></div>`;
+    +`<div class="chips"><span class="chip">クラス <b>${classLabel(r.class)}</b></span>${statusChip}</div></div>`;
   document.getElementById("resultCards").innerHTML = `<div class="result">${resultRow}</div>`+resultFieldTableHtml(r,hasResult);
 }
 // レース結果タブの全頭タイム・着順表（成績タブのレース詳細モーダルと同じ列構成、2026-09-27）。
@@ -1014,7 +1014,7 @@ function render(){
     : "";
   document.getElementById("meta").innerHTML =
     `<div class="meta"><div class="top"><span class="rname">${r.race_no}R ${r.race_name||''}</span></div>`
-    +`<div class="chips"><span class="chip">クラス <b>${r.class||'—'}</b></span>`
+    +`<div class="chips"><span class="chip">クラス <b>${classLabel(r.class)}</b></span>`
     +moistChip
     +trackChip
     +`<span class="chip">${r.field_size}頭</span>`
@@ -1839,6 +1839,14 @@ function updateRaceRefreshUI(){
     : "";
   stat.classList.toggle("err", !raceDataUpdating && !!raceDataUpdateError);
 }
+// クラス帯の賞金条件表示（analyzer/class_bands.pyのCLASS_BANDSと同じ閾値、2026-09-28）。
+// 番組賞金の上限(千円)を万円に変換して「(XXX万未満)」を付す。最上位open・2歳条件・未知コードは付さない。
+const CLASS_BAND_HI_K = {"C2":2200,"C1":3400,"B4":4300,"B3":5500,"B2":6700,"B1":8500,"A2":10000,"A1":13000};
+const classLabel = code => {
+  if(!code) return "—";
+  const hi = CLASS_BAND_HI_K[code];
+  return hi!=null ? `${code}(${(hi/10).toFixed(0)}万未満)` : code;
+};
 function refreshRaceData(){
   if(raceDataUpdating) return;
   raceDataUpdating=true; raceDataUpdateError=false; updateRaceRefreshUI();
