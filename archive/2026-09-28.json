@@ -1,6 +1,6 @@
 {
  "date": "2026-09-28",
- "archived_at": "2026-09-28 19:26",
+ "archived_at": "2026-09-28 19:28",
  "races": [
   {
    "date": "2026-09-28",
@@ -40263,8 +40263,8 @@
    "predicted_top": 9,
    "market_fav": 9,
    "winner": null,
-   "update_stage": "evscan",
-   "updated_at": "2026-09-28 19:26",
+   "update_stage": "odds",
+   "updated_at": "2026-09-28 19:28",
    "horses": [
     {
      "num": 9,
@@ -41011,6 +41011,7 @@
      "win_prob_blend_v1_1": 0.2932,
      "ev_v1_1": 0.73,
      "ev_buy_v1_1": false,
+     "win_prob_blend_bets_v1_1": 0.3151,
      "ev_streak": 0
     },
     {
@@ -41767,6 +41768,7 @@
      "win_prob_blend_v1_1": 0.2236,
      "ev_v1_1": 0.78,
      "ev_buy_v1_1": false,
+     "win_prob_blend_bets_v1_1": 0.1906,
      "ev_streak": 0
     },
     {
@@ -42625,6 +42627,7 @@
      "win_prob_blend_v1_1": 0.1535,
      "ev_v1_1": 0.78,
      "ev_buy_v1_1": false,
+     "win_prob_blend_bets_v1_1": 0.132,
      "ev_streak": 0
     },
     {
@@ -43411,6 +43414,7 @@
      "win_prob_blend_v1_1": 0.0861,
      "ev_v1_1": 0.84,
      "ev_buy_v1_1": false,
+     "win_prob_blend_bets_v1_1": 0.0831,
      "ev_streak": 0
     },
     {
@@ -44252,6 +44256,7 @@
      "win_prob_blend_v1_1": 0.0391,
      "ev_v1_1": 1.0,
      "ev_buy_v1_1": true,
+     "win_prob_blend_bets_v1_1": 0.033,
      "ev_streak": 3
     },
     {
@@ -45110,6 +45115,7 @@
      "win_prob_blend_v1_1": 0.0603,
      "ev_v1_1": 0.89,
      "ev_buy_v1_1": false,
+     "win_prob_blend_bets_v1_1": 0.0832,
      "ev_streak": 0
     },
     {
@@ -45972,6 +45978,7 @@
      "win_prob_blend_v1_1": 0.0534,
      "ev_v1_1": 0.9,
      "ev_buy_v1_1": false,
+     "win_prob_blend_bets_v1_1": 0.0893,
      "ev_streak": 0
     },
     {
@@ -46831,6 +46838,7 @@
      "win_prob_blend_v1_1": 0.0189,
      "ev_v1_1": 1.05,
      "ev_buy_v1_1": true,
+     "win_prob_blend_bets_v1_1": 0.015,
      "ev_streak": 3
     },
     {
@@ -47677,6 +47685,7 @@
      "win_prob_blend_v1_1": 0.038,
      "ev_v1_1": 0.85,
      "ev_buy_v1_1": false,
+     "win_prob_blend_bets_v1_1": 0.0296,
      "ev_streak": 0
     },
     {
@@ -48463,6 +48472,7 @@
      "win_prob_blend_v1_1": 0.034,
      "ev_v1_1": 0.73,
      "ev_buy_v1_1": false,
+     "win_prob_blend_bets_v1_1": 0.0291,
      "ev_streak": 0
     }
    ],
@@ -48472,6 +48482,17 @@
     88000,
     46000,
     25000
+   ],
+   "bets": [
+    {
+     "bet_type": "wide",
+     "bet_type_jp": "ワイド",
+     "combo": "1-7",
+     "odds": 18.9,
+     "ev": 1.87,
+     "prob": 0.1239,
+     "stake": 3000
+    }
    ]
   },
   {
