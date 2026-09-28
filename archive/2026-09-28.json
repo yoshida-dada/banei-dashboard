@@ -12074,7 +12074,11 @@
      "payout": 45040,
      "popularity": 327
     }
-   ]
+   ],
+   "track_offset": -28.1,
+   "track_z": -3.71,
+   "track_label": "軽",
+   "track_n": 3
   },
   {
    "date": "2026-09-28",
@@ -12089,7 +12093,7 @@
    "market_fav": 4,
    "winner": null,
    "update_stage": "evscan",
-   "updated_at": "2026-09-28 16:34",
+   "updated_at": "2026-09-28 16:36",
    "horses": [
     {
      "num": 4,
@@ -12132,11 +12136,11 @@
      "fh_min": 80.0,
      "fh_max": 103.0,
      "fh_n": 5,
-     "fh_cond_day": -23.1,
-     "fh_cond_upto": 3,
-     "fh_adj_avg": 67.2,
-     "fh_adj_min": 60.8,
-     "fh_adj_max": 74.2,
+     "fh_cond_day": -20.0,
+     "fh_cond_upto": 4,
+     "fh_adj_avg": 70.4,
+     "fh_adj_min": 64.0,
+     "fh_adj_max": 77.3,
      "fh_sled_delta": 18,
      "agari_avg": 41.9,
      "agari_n": 5,
@@ -12719,8 +12723,8 @@
       ]
      },
      "place3_time_avg": 125.0,
-     "p_market": 0.2821,
-     "win_prob_blend": 0.2611,
+     "p_market": 0.2822,
+     "win_prob_blend": 0.261,
      "ev": 0.73,
      "ev_buy": false,
      "win_prob_blend_v1_1": 0.2705,
@@ -12769,11 +12773,11 @@
      "fh_min": 97.0,
      "fh_max": 153.0,
      "fh_n": 4,
-     "fh_cond_day": -23.1,
-     "fh_cond_upto": 3,
-     "fh_adj_avg": 90.3,
-     "fh_adj_min": 71.8,
-     "fh_adj_max": 129.0,
+     "fh_cond_day": -20.0,
+     "fh_cond_upto": 4,
+     "fh_adj_avg": 93.4,
+     "fh_adj_min": 75.0,
+     "fh_adj_max": 132.2,
      "fh_sled_delta": 10,
      "agari_avg": 29.5,
      "agari_n": 4,
@@ -13325,7 +13329,7 @@
       ]
      },
      "place3_time_avg": 131.3,
-     "p_market": 0.1053,
+     "p_market": 0.1054,
      "win_prob_blend": 0.1315,
      "ev": 0.99,
      "ev_buy": false,
@@ -13341,7 +13345,7 @@
      "rank": 3,
      "win_prob_v2": 0.1327,
      "rank_v2": 3,
-     "odds": 8.7,
+     "odds": 8.5,
      "position": null,
      "result_time": null,
      "jockey": "中村太",
@@ -13375,11 +13379,11 @@
      "fh_min": 82.0,
      "fh_max": 102.0,
      "fh_n": 5,
-     "fh_cond_day": -23.1,
-     "fh_cond_upto": 3,
-     "fh_adj_avg": 64.7,
-     "fh_adj_min": 52.6,
-     "fh_adj_max": 73.2,
+     "fh_cond_day": -20.0,
+     "fh_cond_upto": 4,
+     "fh_adj_avg": 67.9,
+     "fh_adj_min": 55.7,
+     "fh_adj_max": 76.3,
      "fh_sled_delta": 18,
      "agari_avg": 41.8,
      "agari_n": 5,
@@ -13938,11 +13942,11 @@
       ]
      },
      "place3_time_avg": 131.9,
-     "p_market": 0.0908,
-     "win_prob_blend": 0.1056,
-     "ev": 0.92,
+     "p_market": 0.093,
+     "win_prob_blend": 0.1072,
+     "ev": 0.91,
      "ev_buy": false,
-     "win_prob_blend_v1_1": 0.0992,
+     "win_prob_blend_v1_1": 0.1011,
      "ev_v1_1": 0.86,
      "ev_buy_v1_1": false,
      "ev_streak": 0
@@ -13988,11 +13992,11 @@
      "fh_min": 76.0,
      "fh_max": 107.0,
      "fh_n": 5,
-     "fh_cond_day": -23.1,
-     "fh_cond_upto": 3,
-     "fh_adj_avg": 67.5,
-     "fh_adj_min": 62.2,
-     "fh_adj_max": 83.9,
+     "fh_cond_day": -20.0,
+     "fh_cond_upto": 4,
+     "fh_adj_avg": 70.7,
+     "fh_adj_min": 65.3,
+     "fh_adj_max": 87.0,
      "fh_sled_delta": 18,
      "agari_avg": 45.8,
      "agari_n": 5,
@@ -14569,7 +14573,7 @@
       ]
      },
      "place3_time_avg": 131.2,
-     "p_market": 0.158,
+     "p_market": 0.1581,
      "win_prob_blend": 0.1463,
      "ev": 0.73,
      "ev_buy": false,
@@ -14585,7 +14589,7 @@
      "rank": 5,
      "win_prob_v2": 0.1154,
      "rank_v2": 5,
-     "odds": 9.3,
+     "odds": 9.4,
      "position": null,
      "result_time": null,
      "jockey": "阿部武",
@@ -14619,11 +14623,11 @@
      "fh_min": 78.0,
      "fh_max": 95.0,
      "fh_n": 5,
-     "fh_cond_day": -23.1,
-     "fh_cond_upto": 3,
-     "fh_adj_avg": 69.4,
-     "fh_adj_min": 59.4,
-     "fh_adj_max": 81.7,
+     "fh_cond_day": -20.0,
+     "fh_cond_upto": 4,
+     "fh_adj_avg": 72.6,
+     "fh_adj_min": 62.5,
+     "fh_adj_max": 84.8,
      "fh_sled_delta": 18,
      "agari_avg": 40.0,
      "agari_n": 5,
@@ -15043,11 +15047,11 @@
       ]
      },
      "place3_time_avg": 112.1,
-     "p_market": 0.0849,
-     "win_prob_blend": 0.0963,
+     "p_market": 0.0841,
+     "win_prob_blend": 0.0956,
      "ev": 0.9,
      "ev_buy": false,
-     "win_prob_blend_v1_1": 0.0914,
+     "win_prob_blend_v1_1": 0.0907,
      "ev_v1_1": 0.85,
      "ev_buy_v1_1": false,
      "ev_streak": 0
@@ -15093,11 +15097,11 @@
      "fh_min": 95.0,
      "fh_max": 182.0,
      "fh_n": 5,
-     "fh_cond_day": -23.1,
-     "fh_cond_upto": 3,
-     "fh_adj_avg": 97.1,
-     "fh_adj_min": 64.8,
-     "fh_adj_max": 157.0,
+     "fh_cond_day": -20.0,
+     "fh_cond_upto": 4,
+     "fh_adj_avg": 100.3,
+     "fh_adj_min": 67.9,
+     "fh_adj_max": 160.2,
      "fh_sled_delta": 8,
      "agari_avg": 25.0,
      "agari_n": 5,
@@ -15620,7 +15624,7 @@
       ]
      },
      "place3_time_avg": 141.0,
-     "p_market": 0.1295,
+     "p_market": 0.1296,
      "win_prob_blend": 0.1136,
      "ev": 0.69,
      "ev_buy": false,
@@ -15636,7 +15640,7 @@
      "rank": 7,
      "win_prob_v2": 0.0726,
      "rank_v2": 7,
-     "odds": 7.2,
+     "odds": 7.3,
      "position": null,
      "result_time": null,
      "jockey": "西謙一",
@@ -15670,11 +15674,11 @@
      "fh_min": 82.0,
      "fh_max": 144.0,
      "fh_n": 5,
-     "fh_cond_day": -23.1,
-     "fh_cond_upto": 3,
-     "fh_adj_avg": 91.7,
-     "fh_adj_min": 59.6,
-     "fh_adj_max": 120.9,
+     "fh_cond_day": -20.0,
+     "fh_cond_upto": 4,
+     "fh_adj_avg": 94.9,
+     "fh_adj_min": 62.7,
+     "fh_adj_max": 124.0,
      "fh_sled_delta": 24,
      "agari_avg": 36.8,
      "agari_n": 5,
@@ -16040,11 +16044,11 @@
       ]
      },
      "place3_time_avg": 121.0,
-     "p_market": 0.1097,
-     "win_prob_blend": 0.0967,
+     "p_market": 0.1083,
+     "win_prob_blend": 0.0958,
      "ev": 0.7,
      "ev_buy": false,
-     "win_prob_blend_v1_1": 0.1023,
+     "win_prob_blend_v1_1": 0.1012,
      "ev_v1_1": 0.74,
      "ev_buy_v1_1": false,
      "ev_streak": 0
@@ -16056,7 +16060,7 @@
      "rank": 8,
      "win_prob_v2": 0.0364,
      "rank_v2": 8,
-     "odds": 31.1,
+     "odds": 31.4,
      "position": null,
      "result_time": null,
      "jockey": "村上章",
@@ -16090,11 +16094,11 @@
      "fh_min": 100.0,
      "fh_max": 128.0,
      "fh_n": 5,
-     "fh_cond_day": -23.1,
-     "fh_cond_upto": 3,
-     "fh_adj_avg": 90.2,
-     "fh_adj_min": 80.2,
-     "fh_adj_max": 104.6,
+     "fh_cond_day": -20.0,
+     "fh_cond_upto": 4,
+     "fh_adj_avg": 93.3,
+     "fh_adj_min": 83.3,
+     "fh_adj_max": 107.8,
      "fh_sled_delta": 24,
      "agari_avg": 36.0,
      "agari_n": 5,
@@ -16652,11 +16656,11 @@
       ]
      },
      "place3_time_avg": 128.0,
-     "p_market": 0.0254,
-     "win_prob_blend": 0.0293,
-     "ev": 0.91,
+     "p_market": 0.0252,
+     "win_prob_blend": 0.0291,
+     "ev": 0.92,
      "ev_buy": false,
-     "win_prob_blend_v1_1": 0.0276,
+     "win_prob_blend_v1_1": 0.0274,
      "ev_v1_1": 0.86,
      "ev_buy_v1_1": false,
      "ev_streak": 0
@@ -16668,7 +16672,7 @@
      "rank": 9,
      "win_prob_v2": 0.0341,
      "rank_v2": 9,
-     "odds": 55.8,
+     "odds": 55.2,
      "position": null,
      "result_time": null,
      "jockey": "中山直",
@@ -16702,11 +16706,11 @@
      "fh_min": 93.0,
      "fh_max": 124.0,
      "fh_n": 5,
-     "fh_cond_day": -23.1,
-     "fh_cond_upto": 3,
-     "fh_adj_avg": 86.0,
-     "fh_adj_min": 71.1,
-     "fh_adj_max": 96.4,
+     "fh_cond_day": -20.0,
+     "fh_cond_upto": 4,
+     "fh_adj_avg": 89.2,
+     "fh_adj_min": 74.2,
+     "fh_adj_max": 99.5,
      "fh_sled_delta": 32,
      "agari_avg": 39.2,
      "agari_n": 5,
@@ -17247,14 +17251,14 @@
       ]
      },
      "place3_time_avg": 137.0,
-     "p_market": 0.0142,
-     "win_prob_blend": 0.0196,
+     "p_market": 0.0143,
+     "win_prob_blend": 0.0197,
      "ev": 1.09,
      "ev_buy": true,
-     "win_prob_blend_v1_1": 0.0171,
+     "win_prob_blend_v1_1": 0.0172,
      "ev_v1_1": 0.95,
      "ev_buy_v1_1": false,
-     "ev_streak": 1
+     "ev_streak": 2
     }
    ],
    "prize_positions": [
@@ -17263,11 +17267,7 @@
     63000,
     33000,
     18000
-   ],
-   "track_offset": -28.1,
-   "track_z": -3.71,
-   "track_label": "軽",
-   "track_n": 3
+   ]
   },
   {
    "date": "2026-09-28",
@@ -21355,10 +21355,10 @@
     33000,
     18000
    ],
-   "track_offset": -28.1,
-   "track_z": -3.71,
+   "track_offset": -25.7,
+   "track_z": -3.22,
    "track_label": "軽",
-   "track_n": 3
+   "track_n": 4
   },
   {
    "date": "2026-09-28",
@@ -29155,10 +29155,10 @@
     36000,
     19000
    ],
-   "track_offset": -28.1,
-   "track_z": -3.71,
+   "track_offset": -25.7,
+   "track_z": -3.22,
    "track_label": "軽",
-   "track_n": 3
+   "track_n": 4
   },
   {
    "date": "2026-09-28",
@@ -31962,10 +31962,10 @@
     56000,
     30000
    ],
-   "track_offset": -28.1,
-   "track_z": -3.71,
+   "track_offset": -25.7,
+   "track_z": -3.22,
    "track_label": "軽",
-   "track_n": 3
+   "track_n": 4
   },
   {
    "date": "2026-09-28",
@@ -39802,10 +39802,10 @@
     37000,
     20000
    ],
-   "track_offset": -28.1,
-   "track_z": -3.71,
+   "track_offset": -25.7,
+   "track_z": -3.22,
    "track_label": "軽",
-   "track_n": 3
+   "track_n": 4
   },
   {
    "date": "2026-09-28",
@@ -48019,10 +48019,10 @@
     46000,
     25000
    ],
-   "track_offset": -28.1,
-   "track_z": -3.71,
+   "track_offset": -25.7,
+   "track_z": -3.22,
    "track_label": "軽",
-   "track_n": 3
+   "track_n": 4
   },
   {
    "date": "2026-09-28",
@@ -52589,10 +52589,10 @@
     105000,
     70000
    ],
-   "track_offset": -28.1,
-   "track_z": -3.71,
+   "track_offset": -25.7,
+   "track_z": -3.22,
    "track_label": "軽",
-   "track_n": 3
+   "track_n": 4
   },
   {
    "date": "2026-09-28",
@@ -58798,10 +58798,10 @@
     37000,
     20000
    ],
-   "track_offset": -28.1,
-   "track_z": -3.71,
+   "track_offset": -25.7,
+   "track_z": -3.22,
    "track_label": "軽",
-   "track_n": 3
+   "track_n": 4
   }
  ]
 }
