@@ -1,6 +1,6 @@
 {
  "date": "2026-09-28",
- "archived_at": "2026-09-28 17:40",
+ "archived_at": "2026-09-28 17:41",
  "races": [
   {
    "date": "2026-09-28",
@@ -17365,7 +17365,7 @@
    "market_fav": 5,
    "winner": 4,
    "update_stage": "result",
-   "updated_at": "2026-09-28 17:35",
+   "updated_at": "2026-09-28 17:41",
    "horses": [
     {
      "num": 7,
@@ -17392,10 +17392,10 @@
      "f_finish": 6.0,
      "f_weight": 3.2,
      "f_kuzure": 6.5,
-     "prize_program": 2981,
-     "prize_year": 954,
+     "prize_program": 3044,
+     "prize_year": 1017,
      "horse_class": "C1",
-     "year_form": 4.2,
+     "year_form": 4.8,
      "promo_watch": null,
      "win_prob_v1": 0.2503,
      "rank_v1": 1,
@@ -17818,10 +17818,10 @@
      "f_finish": 6.3,
      "f_weight": 3.2,
      "f_kuzure": 4.1,
-     "prize_program": 2620,
-     "prize_year": 981,
+     "prize_program": 2731,
+     "prize_year": 1092,
      "horse_class": "C1",
-     "year_form": 5.2,
+     "year_form": 6.0,
      "promo_watch": null,
      "win_prob_v1": 0.132,
      "rank_v1": 3,
@@ -18281,10 +18281,10 @@
      "f_finish": 6.6,
      "f_weight": 2.4,
      "f_kuzure": 5.3,
-     "prize_program": 2367,
-     "prize_year": 1038,
+     "prize_program": 2667,
+     "prize_year": 1338,
      "horse_class": "C1",
-     "year_form": 7.1,
+     "year_form": 9.5,
      "promo_watch": null,
      "win_prob_v1": 0.0939,
      "rank_v1": 5,
@@ -18737,10 +18737,10 @@
      "f_finish": 6.6,
      "f_weight": 2.2,
      "f_kuzure": 5.6,
-     "prize_program": 3023,
-     "prize_year": 1029,
+     "prize_program": 3056,
+     "prize_year": 1062,
      "horse_class": "C1",
-     "year_form": 6.8,
+     "year_form": 5.5,
      "promo_watch": null,
      "win_prob_v1": 0.136,
      "rank_v1": 2,
@@ -19172,7 +19172,7 @@
      "prize_program": 3174,
      "prize_year": 918,
      "horse_class": "C1",
-     "year_form": 2.9,
+     "year_form": 3.0,
      "promo_watch": {
       "position": 1,
       "next_class": "B4"
@@ -19619,7 +19619,7 @@
      "prize_program": 2566,
      "prize_year": 870,
      "horse_class": "C1",
-     "year_form": 1.1,
+     "year_form": 2.1,
      "promo_watch": null,
      "win_prob_v1": 0.0669,
      "rank_v1": 7,
@@ -20072,10 +20072,10 @@
      "f_finish": 7.4,
      "f_weight": 3.2,
      "f_kuzure": 4.5,
-     "prize_program": 2839,
-     "prize_year": 1017,
+     "prize_program": 2857,
+     "prize_year": 1035,
      "horse_class": "C1",
-     "year_form": 6.4,
+     "year_form": 5.1,
      "promo_watch": null,
      "win_prob_v1": 0.0717,
      "rank_v1": 6,
@@ -20537,7 +20537,7 @@
      "prize_program": 2378,
      "prize_year": 1047,
      "horse_class": "C1",
-     "year_form": 7.4,
+     "year_form": 5.3,
      "promo_watch": null,
      "win_prob_v1": 0.0599,
      "rank_v1": 8,
@@ -21011,7 +21011,7 @@
      "prize_program": 2702,
      "prize_year": 951,
      "horse_class": "C1",
-     "year_form": 4.1,
+     "year_form": 3.6,
      "promo_watch": null,
      "win_prob_v1": 0.0599,
      "rank_v1": 9,
@@ -21525,11 +21525,7 @@
      "payout": 103840,
      "popularity": 287
     }
-   ],
-   "track_offset": -24.8,
-   "track_z": -3.04,
-   "track_label": "軽",
-   "track_n": 5
+   ]
   },
   {
    "date": "2026-09-28",
@@ -29335,7 +29331,11 @@
     69000,
     36000,
     19000
-   ]
+   ],
+   "track_offset": -26.1,
+   "track_z": -3.29,
+   "track_label": "軽",
+   "track_n": 6
   },
   {
    "date": "2026-09-28",
