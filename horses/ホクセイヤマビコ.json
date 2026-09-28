@@ -4,10 +4,10 @@
  "age": 2,
  "trainer": "小林長",
  "owner": "（有）竹内産業",
- "sled_kg": 500.0,
- "weight": 881,
+ "sled_kg": 510.0,
+ "weight": 897,
  "weight_diff": 16,
- "last_race_date": "2026-09-14",
+ "last_race_date": "2026-09-28",
  "pedigree": {
   "sire": "アアモンドロシア",
   "dam": "春姫",
@@ -21,21 +21,21 @@
    "win": 0,
    "place2": 0,
    "place3": 1,
-   "other": 4,
-   "n": 5,
+   "other": 5,
+   "n": 6,
    "win_rate": 0.0,
    "quinella_rate": 0.0,
-   "show_rate": 0.2
+   "show_rate": 0.167
   },
   "2026": {
    "win": 0,
    "place2": 0,
    "place3": 1,
-   "other": 4,
-   "n": 5,
+   "other": 5,
+   "n": 6,
    "win_rate": 0.0,
    "quinella_rate": 0.0,
-   "show_rate": 0.2
+   "show_rate": 0.167
   }
  },
  "insider_label_count": 0,
@@ -58,6 +58,19 @@
   }
  ],
  "ratings_reconstructed": [
+  {
+   "date": "2026-09-28",
+   "race_no": 2,
+   "position": 9,
+   "earned_yen": 0,
+   "program_prize_k": 63,
+   "year_prize_k": 63,
+   "class": "C2",
+   "next_class": "C1",
+   "next_class_need_k": 2137,
+   "diff_k": 0,
+   "change": null
+  },
   {
    "date": "2026-09-14",
    "race_no": 2,
@@ -135,6 +148,34 @@
  "next_class": null,
  "races": [
   {
+   "date": "2026-09-28",
+   "race_no": 2,
+   "race_name": "ペトラナイトメア生誕記念２歳Ｄ－７",
+   "class": "D",
+   "moisture": 0.8,
+   "field_size": 10,
+   "num": 7,
+   "jockey": "大友一",
+   "trainer": "小林長",
+   "owner": "（有）竹内産業",
+   "sled_kg": 510.0,
+   "weight": 897,
+   "weight_diff": 16,
+   "odds": 85.0,
+   "popularity": 10,
+   "position": 9,
+   "time": "2:42.3",
+   "time_sec": 162.3,
+   "margin_sec": 57.8,
+   "race_level_z": 0.0,
+   "interval": "中2週",
+   "other": {
+    "label": "勝ち馬",
+    "name": "ビックドラゴン"
+   },
+   "insider_labels": []
+  },
+  {
    "date": "2026-09-14",
    "race_no": 2,
    "race_name": "さっぽろ卓ゲっと開催記念２歳Ｄ－７",
@@ -154,7 +195,7 @@
    "time": "3:08.5",
    "time_sec": 188.5,
    "margin_sec": 54.9,
-   "race_level_z": -1.17,
+   "race_level_z": -1.18,
    "interval": "中3週",
    "other": {
     "label": "勝ち馬",
@@ -182,7 +223,7 @@
    "time": "2:52.9",
    "time_sec": 172.9,
    "margin_sec": 42.6,
-   "race_level_z": -0.57,
+   "race_level_z": -0.58,
    "interval": "中2週",
    "other": {
     "label": "勝ち馬",
@@ -210,7 +251,7 @@
    "time": "2:59.6",
    "time_sec": 179.6,
    "margin_sec": 53.7,
-   "race_level_z": -0.79,
+   "race_level_z": -0.8,
    "interval": "中4週",
    "other": {
     "label": "勝ち馬",

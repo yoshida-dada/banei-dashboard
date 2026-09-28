@@ -4,10 +4,10 @@
  "age": 3,
  "trainer": "西弘美",
  "owner": "（有）ミヤビ通商",
- "sled_kg": 600.0,
- "weight": 990,
- "weight_diff": -3,
- "last_race_date": "2026-09-05",
+ "sled_kg": 610.0,
+ "weight": 991,
+ "weight_diff": 1,
+ "last_race_date": "2026-09-28",
  "pedigree": {
   "sire": "スピードフジ",
   "dam": "八重姫",
@@ -18,24 +18,24 @@
  },
  "stats": {
   "total": {
-   "win": 4,
+   "win": 5,
    "place2": 4,
    "place3": 1,
    "other": 14,
-   "n": 23,
-   "win_rate": 0.174,
-   "quinella_rate": 0.348,
-   "show_rate": 0.391
+   "n": 24,
+   "win_rate": 0.208,
+   "quinella_rate": 0.375,
+   "show_rate": 0.417
   },
   "2026": {
-   "win": 1,
+   "win": 2,
    "place2": 2,
    "place3": 0,
    "other": 13,
-   "n": 16,
-   "win_rate": 0.062,
-   "quinella_rate": 0.188,
-   "show_rate": 0.188
+   "n": 17,
+   "win_rate": 0.118,
+   "quinella_rate": 0.235,
+   "show_rate": 0.235
   },
   "2025": {
    "win": 3,
@@ -60,6 +60,19 @@
   }
  ],
  "ratings_reconstructed": [
+  {
+   "date": "2026-09-28",
+   "race_no": 5,
+   "position": 1,
+   "earned_yen": 300000,
+   "program_prize_k": 2774,
+   "year_prize_k": 411,
+   "class": "C1",
+   "next_class": "B4",
+   "next_class_need_k": 626,
+   "diff_k": 300,
+   "change": null
+  },
   {
    "date": "2026-09-05",
    "race_no": 1,
@@ -194,16 +207,44 @@
  "reconstructed_now": {
   "snapshot_date": "2026-07-12",
   "class_code": "C1",
-  "program_prize_k": 2474,
-  "year_prize_k": 111,
+  "program_prize_k": 2774,
+  "year_prize_k": 411,
   "reconstructed": true,
-  "reconstructed_races": 0
+  "reconstructed_races": 1
  },
  "next_class": {
   "next_class": "B4",
-  "need_k": 926
+  "need_k": 626
  },
  "races": [
+  {
+   "date": "2026-09-28",
+   "race_no": 5,
+   "race_name": "武６１歳元気で働いたで賞Ｃ１－１０",
+   "class": "C1",
+   "moisture": 2.5,
+   "field_size": 9,
+   "num": 1,
+   "jockey": "西謙一",
+   "trainer": "西弘美",
+   "owner": "（有）ミヤビ通商",
+   "sled_kg": 610.0,
+   "weight": 991,
+   "weight_diff": 1,
+   "odds": 10.6,
+   "popularity": 6,
+   "position": 1,
+   "time": "1:41.0",
+   "time_sec": 101.0,
+   "margin_sec": 0.0,
+   "race_level_z": 1.46,
+   "interval": "中3週",
+   "other": {
+    "label": "2着馬",
+    "name": "アラキオー"
+   },
+   "insider_labels": []
+  },
   {
    "date": "2026-09-05",
    "race_no": 1,
@@ -336,7 +377,7 @@
    "time": "1:54.2",
    "time_sec": 114.2,
    "margin_sec": 18.5,
-   "race_level_z": 0.37,
+   "race_level_z": 0.36,
    "interval": "中3週",
    "other": {
     "label": "勝ち馬",
@@ -812,7 +853,7 @@
    "time": "2:51.1",
    "time_sec": 171.1,
    "margin_sec": 4.9,
-   "race_level_z": -2.07,
+   "race_level_z": -2.06,
    "interval": "中1週",
    "other": {
     "label": "勝ち馬",

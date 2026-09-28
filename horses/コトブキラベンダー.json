@@ -4,10 +4,10 @@
  "age": 3,
  "trainer": "平田義",
  "owner": "竹久克明",
- "sled_kg": 610.0,
- "weight": 1054,
- "weight_diff": 9,
- "last_race_date": "2026-09-12",
+ "sled_kg": 640.0,
+ "weight": 1044,
+ "weight_diff": -10,
+ "last_race_date": "2026-09-28",
  "pedigree": {
   "sire": "ホンベツイチバン",
   "dam": "シャープ",
@@ -21,21 +21,21 @@
    "win": 8,
    "place2": 2,
    "place3": 3,
-   "other": 8,
-   "n": 21,
-   "win_rate": 0.381,
-   "quinella_rate": 0.476,
-   "show_rate": 0.619
+   "other": 9,
+   "n": 22,
+   "win_rate": 0.364,
+   "quinella_rate": 0.455,
+   "show_rate": 0.591
   },
   "2026": {
    "win": 4,
    "place2": 1,
    "place3": 3,
-   "other": 7,
-   "n": 15,
-   "win_rate": 0.267,
-   "quinella_rate": 0.333,
-   "show_rate": 0.533
+   "other": 8,
+   "n": 16,
+   "win_rate": 0.25,
+   "quinella_rate": 0.312,
+   "show_rate": 0.5
   },
   "2025": {
    "win": 4,
@@ -68,6 +68,19 @@
   }
  ],
  "ratings_reconstructed": [
+  {
+   "date": "2026-09-28",
+   "race_no": 11,
+   "position": 4,
+   "earned_yen": 105000,
+   "program_prize_k": 4877,
+   "year_prize_k": 990,
+   "class": "B3",
+   "next_class": "B2",
+   "next_class_need_k": 623,
+   "diff_k": 105,
+   "change": null
+  },
   {
    "date": "2026-09-12",
    "race_no": 10,
@@ -202,16 +215,44 @@
  "reconstructed_now": {
   "snapshot_date": "2026-09-25",
   "class_code": "B3",
-  "program_prize_k": 4772,
-  "year_prize_k": 885,
+  "program_prize_k": 4877,
+  "year_prize_k": 990,
   "reconstructed": true,
-  "reconstructed_races": 0
+  "reconstructed_races": 1
  },
  "next_class": {
   "next_class": "B2",
-  "need_k": 728
+  "need_k": 623
  },
  "races": [
+  {
+   "date": "2026-09-28",
+   "race_no": 11,
+   "race_name": "第２０回 秋桜賞３歳オープン別定",
+   "class": "オープン",
+   "moisture": 2.9,
+   "field_size": 10,
+   "num": 2,
+   "jockey": "西将太",
+   "trainer": "平田義",
+   "owner": "竹久克明",
+   "sled_kg": 640.0,
+   "weight": 1044,
+   "weight_diff": -10,
+   "odds": 54.6,
+   "popularity": 9,
+   "position": 4,
+   "time": "1:44.1",
+   "time_sec": 104.1,
+   "margin_sec": 3.8,
+   "race_level_z": 0.22,
+   "interval": "中2週",
+   "other": {
+    "label": "勝ち馬",
+    "name": "レッドウンカイ"
+   },
+   "insider_labels": []
+  },
   {
    "date": "2026-09-12",
    "race_no": 10,
@@ -652,7 +693,7 @@
    "time": "1:47.0",
    "time_sec": 107.0,
    "margin_sec": 6.3,
-   "race_level_z": -0.17,
+   "race_level_z": -0.18,
    "interval": "中4週",
    "other": {
     "label": "勝ち馬",
@@ -680,7 +721,7 @@
    "time": "1:43.1",
    "time_sec": 103.1,
    "margin_sec": 0.0,
-   "race_level_z": 0.35,
+   "race_level_z": 0.34,
    "interval": "中1週",
    "other": {
     "label": "2着馬",
@@ -792,7 +833,7 @@
    "time": "1:36.1",
    "time_sec": 96.1,
    "margin_sec": 0.0,
-   "race_level_z": 2.22,
+   "race_level_z": 2.21,
    "interval": null,
    "other": {
     "label": "2着馬",

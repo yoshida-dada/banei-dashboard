@@ -5,9 +5,9 @@
  "trainer": "小林長",
  "owner": "菅原洋充",
  "sled_kg": 520.0,
- "weight": 890,
- "weight_diff": -6,
- "last_race_date": "2026-09-13",
+ "weight": 911,
+ "weight_diff": 21,
+ "last_race_date": "2026-09-28",
  "pedigree": {
   "sire": "ホクショウメジャー",
   "dam": "プリンセスリカ",
@@ -21,21 +21,21 @@
    "win": 3,
    "place2": 0,
    "place3": 0,
-   "other": 5,
-   "n": 8,
-   "win_rate": 0.375,
-   "quinella_rate": 0.375,
-   "show_rate": 0.375
+   "other": 6,
+   "n": 9,
+   "win_rate": 0.333,
+   "quinella_rate": 0.333,
+   "show_rate": 0.333
   },
   "2026": {
    "win": 3,
    "place2": 0,
    "place3": 0,
-   "other": 5,
-   "n": 8,
-   "win_rate": 0.375,
-   "quinella_rate": 0.375,
-   "show_rate": 0.375
+   "other": 6,
+   "n": 9,
+   "win_rate": 0.333,
+   "quinella_rate": 0.333,
+   "show_rate": 0.333
   }
  },
  "insider_label_count": 0,
@@ -58,6 +58,19 @@
   }
  ],
  "ratings_reconstructed": [
+  {
+   "date": "2026-09-28",
+   "race_no": 8,
+   "position": 8,
+   "earned_yen": 0,
+   "program_prize_k": 1261,
+   "year_prize_k": 1261,
+   "class": "C2",
+   "next_class": "C1",
+   "next_class_need_k": 939,
+   "diff_k": 0,
+   "change": null
+  },
   {
    "date": "2026-09-13",
    "race_no": 10,
@@ -173,6 +186,34 @@
  },
  "next_class": null,
  "races": [
+  {
+   "date": "2026-09-28",
+   "race_no": 8,
+   "race_name": "タンタン帯広来たちぇど記念２歳Ａ－２",
+   "class": "A2",
+   "moisture": 2.9,
+   "field_size": 10,
+   "num": 7,
+   "jockey": "鈴木恵",
+   "trainer": "小林長",
+   "owner": "菅原洋充",
+   "sled_kg": 520.0,
+   "weight": 911,
+   "weight_diff": 21,
+   "odds": 8.1,
+   "popularity": 4,
+   "position": 8,
+   "time": "1:53.9",
+   "time_sec": 113.9,
+   "margin_sec": 24.4,
+   "race_level_z": -0.46,
+   "interval": "中2週",
+   "other": {
+    "label": "勝ち馬",
+    "name": "ニシオギオリジン"
+   },
+   "insider_labels": []
+  },
   {
    "date": "2026-09-13",
    "race_no": 10,

@@ -4,10 +4,10 @@
  "age": 3,
  "trainer": "久田守",
  "owner": "細川弘則",
- "sled_kg": 600.0,
- "weight": 973,
- "weight_diff": -5,
- "last_race_date": "2026-09-13",
+ "sled_kg": 610.0,
+ "weight": 980,
+ "weight_diff": 7,
+ "last_race_date": "2026-09-28",
  "pedigree": {
   "sire": "フクノカミカゼ",
   "dam": "貞姫",
@@ -21,21 +21,21 @@
    "win": 6,
    "place2": 4,
    "place3": 2,
-   "other": 18,
-   "n": 30,
-   "win_rate": 0.2,
-   "quinella_rate": 0.333,
-   "show_rate": 0.4
+   "other": 19,
+   "n": 31,
+   "win_rate": 0.194,
+   "quinella_rate": 0.323,
+   "show_rate": 0.387
   },
   "2026": {
    "win": 3,
    "place2": 3,
    "place3": 1,
-   "other": 10,
-   "n": 17,
-   "win_rate": 0.176,
-   "quinella_rate": 0.353,
-   "show_rate": 0.412
+   "other": 11,
+   "n": 18,
+   "win_rate": 0.167,
+   "quinella_rate": 0.333,
+   "show_rate": 0.389
   },
   "2025": {
    "win": 3,
@@ -68,6 +68,19 @@
   }
  ],
  "ratings_reconstructed": [
+  {
+   "date": "2026-09-28",
+   "race_no": 6,
+   "position": 5,
+   "earned_yen": 18000,
+   "program_prize_k": 2857,
+   "year_prize_k": 1035,
+   "class": "C1",
+   "next_class": "B4",
+   "next_class_need_k": 543,
+   "diff_k": 18,
+   "change": null
+  },
   {
    "date": "2026-09-13",
    "race_no": 6,
@@ -228,16 +241,44 @@
  "reconstructed_now": {
   "snapshot_date": "2026-09-25",
   "class_code": "C1",
-  "program_prize_k": 2839,
-  "year_prize_k": 1017,
+  "program_prize_k": 2857,
+  "year_prize_k": 1035,
   "reconstructed": true,
-  "reconstructed_races": 0
+  "reconstructed_races": 1
  },
  "next_class": {
   "next_class": "B4",
-  "need_k": 561
+  "need_k": 543
  },
  "races": [
+  {
+   "date": "2026-09-28",
+   "race_no": 6,
+   "race_name": "帯広ＬＯＶＥばん馬応援杯Ｃ１－２",
+   "class": "C1",
+   "moisture": 2.5,
+   "field_size": 9,
+   "num": 9,
+   "jockey": "赤塚健",
+   "trainer": "久田守",
+   "owner": "細川弘則",
+   "sled_kg": 610.0,
+   "weight": 980,
+   "weight_diff": 7,
+   "odds": 8.8,
+   "popularity": 4,
+   "position": 5,
+   "time": "1:41.9",
+   "time_sec": 101.9,
+   "margin_sec": 7.1,
+   "race_level_z": 1.42,
+   "interval": "中2週",
+   "other": {
+    "label": "勝ち馬",
+    "name": "ゲキリンドトウ"
+   },
+   "insider_labels": []
+  },
   {
    "date": "2026-09-13",
    "race_no": 6,
@@ -1067,7 +1108,7 @@
    "time": "2:38.8",
    "time_sec": 158.8,
    "margin_sec": 0.0,
-   "race_level_z": 0.17,
+   "race_level_z": 0.16,
    "interval": "中2週",
    "other": {
     "label": "2着馬",

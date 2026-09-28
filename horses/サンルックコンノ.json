@@ -4,10 +4,10 @@
  "age": 2,
  "trainer": "金田勇",
  "owner": "今野義雄",
- "sled_kg": 500.0,
- "weight": 892,
- "weight_diff": 0,
- "last_race_date": "2026-09-13",
+ "sled_kg": 510.0,
+ "weight": 909,
+ "weight_diff": 17,
+ "last_race_date": "2026-09-28",
  "pedigree": {
   "sire": "フレイムファイト",
   "dam": "フレイムダイヤ",
@@ -21,8 +21,8 @@
    "win": 0,
    "place2": 0,
    "place3": 0,
-   "other": 7,
-   "n": 7,
+   "other": 8,
+   "n": 8,
    "win_rate": 0.0,
    "quinella_rate": 0.0,
    "show_rate": 0.0
@@ -31,8 +31,8 @@
    "win": 0,
    "place2": 0,
    "place3": 0,
-   "other": 7,
-   "n": 7,
+   "other": 8,
+   "n": 8,
    "win_rate": 0.0,
    "quinella_rate": 0.0,
    "show_rate": 0.0
@@ -50,6 +50,19 @@
   }
  ],
  "ratings_reconstructed": [
+  {
+   "date": "2026-09-28",
+   "race_no": 2,
+   "position": 7,
+   "earned_yen": 0,
+   "program_prize_k": 78,
+   "year_prize_k": 78,
+   "class": "C2",
+   "next_class": "C1",
+   "next_class_need_k": 2122,
+   "diff_k": 0,
+   "change": null
+  },
   {
    "date": "2026-09-13",
    "race_no": 2,
@@ -153,6 +166,34 @@
  "next_class": null,
  "races": [
   {
+   "date": "2026-09-28",
+   "race_no": 2,
+   "race_name": "ペトラナイトメア生誕記念２歳Ｄ－７",
+   "class": "D",
+   "moisture": 0.8,
+   "field_size": 10,
+   "num": 3,
+   "jockey": "島津新",
+   "trainer": "金田勇",
+   "owner": "今野義雄",
+   "sled_kg": 510.0,
+   "weight": 909,
+   "weight_diff": 17,
+   "odds": 11.5,
+   "popularity": 8,
+   "position": 7,
+   "time": "2:10.6",
+   "time_sec": 130.6,
+   "margin_sec": 26.1,
+   "race_level_z": 1.35,
+   "interval": "中2週",
+   "other": {
+    "label": "勝ち馬",
+    "name": "ビックドラゴン"
+   },
+   "insider_labels": []
+  },
+  {
    "date": "2026-09-13",
    "race_no": 2,
    "race_name": "殿ごろもちきんありがとう２歳Ｄ－６",
@@ -228,7 +269,7 @@
    "time": "2:47.1",
    "time_sec": 167.1,
    "margin_sec": 46.8,
-   "race_level_z": -0.71,
+   "race_level_z": -0.72,
    "interval": "連闘",
    "other": {
     "label": "勝ち馬",

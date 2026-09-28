@@ -4,10 +4,10 @@
  "age": 4,
  "trainer": "坂本東",
  "owner": "干場正吉",
- "sled_kg": 630.0,
- "weight": 1104,
- "weight_diff": -11,
- "last_race_date": "2026-09-21",
+ "sled_kg": 640.0,
+ "weight": 1094,
+ "weight_diff": -10,
+ "last_race_date": "2026-09-28",
  "pedigree": {
   "sire": "コウシュハウンカイ",
   "dam": "センゴククィン",
@@ -18,22 +18,22 @@
  },
  "stats": {
   "total": {
-   "win": 9,
+   "win": 10,
    "place2": 3,
    "place3": 5,
    "other": 5,
-   "n": 22,
-   "win_rate": 0.409,
-   "quinella_rate": 0.545,
-   "show_rate": 0.773
+   "n": 23,
+   "win_rate": 0.435,
+   "quinella_rate": 0.565,
+   "show_rate": 0.783
   },
   "2026": {
-   "win": 5,
+   "win": 6,
    "place2": 2,
    "place3": 0,
    "other": 0,
-   "n": 7,
-   "win_rate": 0.714,
+   "n": 8,
+   "win_rate": 0.75,
    "quinella_rate": 1.0,
    "show_rate": 1.0
   },
@@ -78,6 +78,19 @@
   }
  ],
  "ratings_reconstructed": [
+  {
+   "date": "2026-09-28",
+   "race_no": 12,
+   "position": 1,
+   "earned_yen": 340000,
+   "program_prize_k": 5201,
+   "year_prize_k": 2157,
+   "class": "B3",
+   "next_class": "B2",
+   "next_class_need_k": 299,
+   "diff_k": 340,
+   "change": null
+  },
   {
    "date": "2026-09-21",
    "race_no": 10,
@@ -173,16 +186,44 @@
  "reconstructed_now": {
   "snapshot_date": "2026-09-25",
   "class_code": "B3",
-  "program_prize_k": 4861,
-  "year_prize_k": 1817,
+  "program_prize_k": 5201,
+  "year_prize_k": 2157,
   "reconstructed": true,
-  "reconstructed_races": 0
+  "reconstructed_races": 1
  },
  "next_class": {
   "next_class": "B2",
-  "need_k": 639
+  "need_k": 299
  },
  "races": [
+  {
+   "date": "2026-09-28",
+   "race_no": 12,
+   "race_name": "ありがとうハロンズ釧路Ｂ３－１",
+   "class": "B3",
+   "moisture": 2.9,
+   "field_size": 10,
+   "num": 8,
+   "jockey": "阿部武",
+   "trainer": "坂本東",
+   "owner": "干場正吉",
+   "sled_kg": 640.0,
+   "weight": 1094,
+   "weight_diff": -10,
+   "odds": 1.8,
+   "popularity": 1,
+   "position": 1,
+   "time": "1:26.3",
+   "time_sec": 86.3,
+   "margin_sec": 0.0,
+   "race_level_z": 1.28,
+   "interval": "連闘",
+   "other": {
+    "label": "2着馬",
+    "name": "フジエース"
+   },
+   "insider_labels": []
+  },
   {
    "date": "2026-09-21",
    "race_no": 10,
@@ -315,7 +356,7 @@
    "time": "1:32.9",
    "time_sec": 92.9,
    "margin_sec": 0.0,
-   "race_level_z": 1.63,
+   "race_level_z": 1.62,
    "interval": "中1週",
    "other": {
     "label": "2着馬",

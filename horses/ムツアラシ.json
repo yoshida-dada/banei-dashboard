@@ -4,10 +4,10 @@
  "age": 4,
  "trainer": "小北栄",
  "owner": "山火長蔵",
- "sled_kg": 610.0,
- "weight": 994,
- "weight_diff": -1,
- "last_race_date": "2026-09-14",
+ "sled_kg": 630.0,
+ "weight": 1011,
+ "weight_diff": 17,
+ "last_race_date": "2026-09-28",
  "pedigree": {
   "sire": "イズミオー",
   "dam": "エンポリオ",
@@ -21,21 +21,21 @@
    "win": 3,
    "place2": 6,
    "place3": 7,
-   "other": 39,
-   "n": 55,
-   "win_rate": 0.055,
-   "quinella_rate": 0.164,
-   "show_rate": 0.291
+   "other": 40,
+   "n": 56,
+   "win_rate": 0.054,
+   "quinella_rate": 0.161,
+   "show_rate": 0.286
   },
   "2026": {
    "win": 0,
    "place2": 1,
    "place3": 0,
-   "other": 17,
-   "n": 18,
+   "other": 18,
+   "n": 19,
    "win_rate": 0.0,
-   "quinella_rate": 0.056,
-   "show_rate": 0.056
+   "quinella_rate": 0.053,
+   "show_rate": 0.053
   },
   "2025": {
    "win": 2,
@@ -70,6 +70,19 @@
   }
  ],
  "ratings_reconstructed": [
+  {
+   "date": "2026-09-28",
+   "race_no": 5,
+   "position": 6,
+   "earned_yen": 0,
+   "program_prize_k": 2406,
+   "year_prize_k": 129,
+   "class": "C1",
+   "next_class": "B4",
+   "next_class_need_k": 994,
+   "diff_k": 0,
+   "change": null
+  },
   {
    "date": "2026-09-14",
    "race_no": 6,
@@ -240,6 +253,34 @@
   "need_k": 994
  },
  "races": [
+  {
+   "date": "2026-09-28",
+   "race_no": 5,
+   "race_name": "武６１歳元気で働いたで賞Ｃ１－１０",
+   "class": "C1",
+   "moisture": 2.5,
+   "field_size": 9,
+   "num": 3,
+   "jockey": "村上章",
+   "trainer": "小北栄",
+   "owner": "山火長蔵",
+   "sled_kg": 630.0,
+   "weight": 1011,
+   "weight_diff": 17,
+   "odds": 68.8,
+   "popularity": 8,
+   "position": 6,
+   "time": "1:59.9",
+   "time_sec": 119.9,
+   "margin_sec": 18.9,
+   "race_level_z": 0.72,
+   "interval": "中2週",
+   "other": {
+    "label": "勝ち馬",
+    "name": "ディオネダイヤ"
+   },
+   "insider_labels": []
+  },
   {
    "date": "2026-09-14",
    "race_no": 6,
@@ -596,7 +637,7 @@
    "time": "2:59.8",
    "time_sec": 179.8,
    "margin_sec": 59.5,
-   "race_level_z": -1.32,
+   "race_level_z": -1.33,
    "interval": "中2週",
    "other": {
     "label": "勝ち馬",
@@ -652,7 +693,7 @@
    "time": "2:31.7",
    "time_sec": 151.7,
    "margin_sec": 22.8,
-   "race_level_z": -0.35,
+   "race_level_z": -0.36,
    "interval": "中3週",
    "other": {
     "label": "勝ち馬",
@@ -792,7 +833,7 @@
    "time": "2:54.2",
    "time_sec": 174.2,
    "margin_sec": 35.7,
-   "race_level_z": -0.94,
+   "race_level_z": -0.95,
    "interval": "中2週",
    "other": {
     "label": "勝ち馬",

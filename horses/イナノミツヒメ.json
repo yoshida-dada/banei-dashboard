@@ -4,10 +4,10 @@
  "age": 8,
  "trainer": "小北栄",
  "owner": "稲場洋二",
- "sled_kg": 630.0,
- "weight": 1077,
- "weight_diff": -11,
- "last_race_date": "2026-09-13",
+ "sled_kg": 640.0,
+ "weight": 1074,
+ "weight_diff": -3,
+ "last_race_date": "2026-09-28",
  "pedigree": {
   "sire": "カネサテンリュウ",
   "dam": "タケノレディー",
@@ -19,23 +19,23 @@
  "stats": {
   "total": {
    "win": 8,
-   "place2": 7,
+   "place2": 8,
    "place3": 7,
    "other": 67,
-   "n": 89,
-   "win_rate": 0.09,
-   "quinella_rate": 0.169,
-   "show_rate": 0.247
+   "n": 90,
+   "win_rate": 0.089,
+   "quinella_rate": 0.178,
+   "show_rate": 0.256
   },
   "2026": {
    "win": 0,
-   "place2": 3,
+   "place2": 4,
    "place3": 0,
    "other": 15,
-   "n": 18,
+   "n": 19,
    "win_rate": 0.0,
-   "quinella_rate": 0.167,
-   "show_rate": 0.167
+   "quinella_rate": 0.211,
+   "show_rate": 0.211
   },
   "2025": {
    "win": 2,
@@ -88,6 +88,19 @@
   }
  ],
  "ratings_reconstructed": [
+  {
+   "date": "2026-09-28",
+   "race_no": 7,
+   "position": 2,
+   "earned_yen": 122000,
+   "program_prize_k": 3892,
+   "year_prize_k": 232,
+   "class": "B4",
+   "next_class": "B3",
+   "next_class_need_k": 408,
+   "diff_k": 122,
+   "change": null
+  },
   {
    "date": "2026-09-13",
    "race_no": 7,
@@ -261,16 +274,44 @@
  "reconstructed_now": {
   "snapshot_date": "2026-09-25",
   "class_code": "B4",
-  "program_prize_k": 3770,
-  "year_prize_k": 110,
+  "program_prize_k": 3892,
+  "year_prize_k": 232,
   "reconstructed": true,
-  "reconstructed_races": 0
+  "reconstructed_races": 1
  },
  "next_class": {
   "next_class": "B3",
-  "need_k": 530
+  "need_k": 408
  },
  "races": [
+  {
+   "date": "2026-09-28",
+   "race_no": 7,
+   "race_name": "第４回まぐたん＆ぶう来帯杯Ｂ４－７",
+   "class": "B4",
+   "moisture": 2.9,
+   "field_size": 10,
+   "num": 1,
+   "jockey": "中山直",
+   "trainer": "小北栄",
+   "owner": "稲場洋二",
+   "sled_kg": 640.0,
+   "weight": 1074,
+   "weight_diff": -3,
+   "odds": 3.7,
+   "popularity": 2,
+   "position": 2,
+   "time": "1:51.3",
+   "time_sec": 111.3,
+   "margin_sec": 2.4,
+   "race_level_z": 0.5,
+   "interval": "中2週",
+   "other": {
+    "label": "勝ち馬",
+    "name": "メトーフウマ"
+   },
+   "insider_labels": []
+  },
   {
    "date": "2026-09-13",
    "race_no": 7,
@@ -291,7 +332,7 @@
    "time": "2:17.5",
    "time_sec": 137.5,
    "margin_sec": 29.2,
-   "race_level_z": 0.03,
+   "race_level_z": 0.04,
    "interval": "連闘",
    "other": {
     "label": "勝ち馬",
@@ -795,7 +836,7 @@
    "time": "2:08.4",
    "time_sec": 128.4,
    "margin_sec": 15.4,
-   "race_level_z": -0.67,
+   "race_level_z": -0.68,
    "interval": "中1週",
    "other": {
     "label": "勝ち馬",
@@ -1248,7 +1289,7 @@
    "time": "2:05.5",
    "time_sec": 125.5,
    "margin_sec": 5.6,
-   "race_level_z": 0.2,
+   "race_level_z": 0.19,
    "interval": "中1週",
    "other": {
     "label": "勝ち馬",
@@ -1342,7 +1383,7 @@
    "time": "2:10.5",
    "time_sec": 130.5,
    "margin_sec": 17.7,
-   "race_level_z": -0.14,
+   "race_level_z": -0.15,
    "interval": "連闘",
    "other": {
     "label": "勝ち馬",
@@ -1548,7 +1589,7 @@
    "time": "2:25.1",
    "time_sec": 145.1,
    "margin_sec": 22.6,
-   "race_level_z": -0.82,
+   "race_level_z": -0.83,
    "interval": "中2週",
    "other": {
     "label": "勝ち馬",
@@ -1660,7 +1701,7 @@
    "time": "2:05.6",
    "time_sec": 125.6,
    "margin_sec": 23.5,
-   "race_level_z": -0.18,
+   "race_level_z": -0.19,
    "interval": "連闘",
    "other": {
     "label": "勝ち馬",
@@ -1744,7 +1785,7 @@
    "time": "1:53.1",
    "time_sec": 113.1,
    "margin_sec": 0.0,
-   "race_level_z": 0.79,
+   "race_level_z": 0.8,
    "interval": "中3週",
    "other": {
     "label": "2着馬",
@@ -2286,7 +2327,7 @@
    "time": "1:48.7",
    "time_sec": 108.7,
    "margin_sec": 9.6,
-   "race_level_z": 0.77,
+   "race_level_z": 0.76,
    "interval": "中3週",
    "other": {
     "label": "勝ち馬",

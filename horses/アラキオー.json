@@ -5,9 +5,9 @@
  "trainer": "谷あゆ",
  "owner": "矢藤秀樹",
  "sled_kg": 620.0,
- "weight": 965,
- "weight_diff": 4,
- "last_race_date": "2026-09-12",
+ "weight": 964,
+ "weight_diff": -1,
+ "last_race_date": "2026-09-28",
  "pedigree": {
   "sire": "チヨノシアトル",
   "dam": "アベリア",
@@ -19,23 +19,23 @@
  "stats": {
   "total": {
    "win": 4,
-   "place2": 7,
+   "place2": 8,
    "place3": 5,
    "other": 34,
-   "n": 50,
-   "win_rate": 0.08,
-   "quinella_rate": 0.22,
-   "show_rate": 0.32
+   "n": 51,
+   "win_rate": 0.078,
+   "quinella_rate": 0.235,
+   "show_rate": 0.333
   },
   "2026": {
    "win": 1,
-   "place2": 2,
+   "place2": 3,
    "place3": 1,
    "other": 13,
-   "n": 17,
-   "win_rate": 0.059,
-   "quinella_rate": 0.176,
-   "show_rate": 0.235
+   "n": 18,
+   "win_rate": 0.056,
+   "quinella_rate": 0.222,
+   "show_rate": 0.278
   },
   "2025": {
    "win": 2,
@@ -78,6 +78,19 @@
   }
  ],
  "ratings_reconstructed": [
+  {
+   "date": "2026-09-28",
+   "race_no": 5,
+   "position": 2,
+   "earned_yen": 111000,
+   "program_prize_k": 2536,
+   "year_prize_k": 336,
+   "class": "C1",
+   "next_class": "B4",
+   "next_class_need_k": 864,
+   "diff_k": 111,
+   "change": null
+  },
   {
    "date": "2026-09-12",
    "race_no": 7,
@@ -238,16 +251,44 @@
  "reconstructed_now": {
   "snapshot_date": "2026-09-25",
   "class_code": "C1",
-  "program_prize_k": 2425,
-  "year_prize_k": 225,
+  "program_prize_k": 2536,
+  "year_prize_k": 336,
   "reconstructed": true,
-  "reconstructed_races": 0
+  "reconstructed_races": 1
  },
  "next_class": {
   "next_class": "B4",
-  "need_k": 975
+  "need_k": 864
  },
  "races": [
+  {
+   "date": "2026-09-28",
+   "race_no": 5,
+   "race_name": "武６１歳元気で働いたで賞Ｃ１－１０",
+   "class": "C1",
+   "moisture": 2.5,
+   "field_size": 9,
+   "num": 7,
+   "jockey": "☆今井千",
+   "trainer": "谷あゆ",
+   "owner": "矢藤秀樹",
+   "sled_kg": 620.0,
+   "weight": 964,
+   "weight_diff": -1,
+   "odds": 7.6,
+   "popularity": 4,
+   "position": 2,
+   "time": "1:43.6",
+   "time_sec": 103.6,
+   "margin_sec": 2.6,
+   "race_level_z": 1.38,
+   "interval": "中2週",
+   "other": {
+    "label": "勝ち馬",
+    "name": "ディオネダイヤ"
+   },
+   "insider_labels": []
+  },
   {
    "date": "2026-09-12",
    "race_no": 7,
@@ -436,7 +477,7 @@
    "time": "2:08.4",
    "time_sec": 128.4,
    "margin_sec": 16.6,
-   "race_level_z": 0.05,
+   "race_level_z": 0.04,
    "interval": "中2週",
    "other": {
     "label": "勝ち馬",
@@ -548,7 +589,7 @@
    "time": "2:43.5",
    "time_sec": 163.5,
    "margin_sec": 26.6,
-   "race_level_z": -0.86,
+   "race_level_z": -0.87,
    "interval": "連闘",
    "other": {
     "label": "勝ち馬",
@@ -576,7 +617,7 @@
    "time": "2:45.2",
    "time_sec": 165.2,
    "margin_sec": 25.9,
-   "race_level_z": -0.77,
+   "race_level_z": -0.78,
    "interval": "中5週",
    "other": {
     "label": "勝ち馬",
@@ -797,7 +838,7 @@
    "time": "1:59.6",
    "time_sec": 119.6,
    "margin_sec": 0.0,
-   "race_level_z": 1.26,
+   "race_level_z": 1.25,
    "interval": "中3週",
    "other": {
     "label": "2着馬",
@@ -1301,7 +1342,7 @@
    "time": "2:19.7",
    "time_sec": 139.7,
    "margin_sec": 0.0,
-   "race_level_z": 1.03,
+   "race_level_z": 1.02,
    "interval": "中6週",
    "other": {
     "label": "2着馬",
@@ -1634,7 +1675,7 @@
    "time": "2:30.1",
    "time_sec": 150.1,
    "margin_sec": 0.0,
-   "race_level_z": 0.47,
+   "race_level_z": 0.46,
    "interval": "中2週",
    "other": {
     "label": "2着馬",

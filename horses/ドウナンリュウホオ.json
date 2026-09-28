@@ -5,9 +5,9 @@
  "trainer": "岩本利",
  "owner": "田山克廣",
  "sled_kg": 520.0,
- "weight": 1002,
- "weight_diff": -1,
- "last_race_date": "2026-09-13",
+ "weight": 1011,
+ "weight_diff": 9,
+ "last_race_date": "2026-09-28",
  "pedigree": {
   "sire": "ライデンロック",
   "dam": "ヒラリ",
@@ -21,21 +21,21 @@
    "win": 2,
    "place2": 0,
    "place3": 0,
-   "other": 3,
-   "n": 5,
-   "win_rate": 0.4,
-   "quinella_rate": 0.4,
-   "show_rate": 0.4
+   "other": 4,
+   "n": 6,
+   "win_rate": 0.333,
+   "quinella_rate": 0.333,
+   "show_rate": 0.333
   },
   "2026": {
    "win": 2,
    "place2": 0,
    "place3": 0,
-   "other": 3,
-   "n": 5,
-   "win_rate": 0.4,
-   "quinella_rate": 0.4,
-   "show_rate": 0.4
+   "other": 4,
+   "n": 6,
+   "win_rate": 0.333,
+   "quinella_rate": 0.333,
+   "show_rate": 0.333
   }
  },
  "insider_label_count": 0,
@@ -58,6 +58,19 @@
   }
  ],
  "ratings_reconstructed": [
+  {
+   "date": "2026-09-28",
+   "race_no": 8,
+   "position": 4,
+   "earned_yen": 56000,
+   "program_prize_k": 1358,
+   "year_prize_k": 1358,
+   "class": "C2",
+   "next_class": "C1",
+   "next_class_need_k": 842,
+   "diff_k": 56,
+   "change": null
+  },
   {
    "date": "2026-09-13",
    "race_no": 10,
@@ -127,13 +140,41 @@
  "reconstructed_now": {
   "snapshot_date": "2026-09-25",
   "class_code": "2sai",
-  "program_prize_k": 1302,
-  "year_prize_k": 1302,
+  "program_prize_k": 1358,
+  "year_prize_k": 1358,
   "reconstructed": true,
-  "reconstructed_races": 0
+  "reconstructed_races": 1
  },
  "next_class": null,
  "races": [
+  {
+   "date": "2026-09-28",
+   "race_no": 8,
+   "race_name": "タンタン帯広来たちぇど記念２歳Ａ－２",
+   "class": "A2",
+   "moisture": 2.9,
+   "field_size": 10,
+   "num": 4,
+   "jockey": "阿部武",
+   "trainer": "岩本利",
+   "owner": "田山克廣",
+   "sled_kg": 520.0,
+   "weight": 1011,
+   "weight_diff": 9,
+   "odds": 6.1,
+   "popularity": 3,
+   "position": 4,
+   "time": "1:33.9",
+   "time_sec": 93.9,
+   "margin_sec": 4.4,
+   "race_level_z": 0.39,
+   "interval": "中2週",
+   "other": {
+    "label": "勝ち馬",
+    "name": "ニシオギオリジン"
+   },
+   "insider_labels": []
+  },
   {
    "date": "2026-09-13",
    "race_no": 10,

@@ -5,9 +5,9 @@
  "trainer": "久田守",
  "owner": "山下高広",
  "sled_kg": 480.0,
- "weight": 761,
- "weight_diff": 10,
- "last_race_date": "2026-09-13",
+ "weight": 769,
+ "weight_diff": 8,
+ "last_race_date": "2026-09-28",
  "pedigree": {
   "sire": "ミノルシンザン",
   "dam": "ブラックラブ",
@@ -21,21 +21,21 @@
    "win": 0,
    "place2": 0,
    "place3": 1,
-   "other": 6,
-   "n": 7,
+   "other": 7,
+   "n": 8,
    "win_rate": 0.0,
    "quinella_rate": 0.0,
-   "show_rate": 0.143
+   "show_rate": 0.125
   },
   "2026": {
    "win": 0,
    "place2": 0,
    "place3": 1,
-   "other": 6,
-   "n": 7,
+   "other": 7,
+   "n": 8,
    "win_rate": 0.0,
    "quinella_rate": 0.0,
-   "show_rate": 0.143
+   "show_rate": 0.125
   }
  },
  "insider_label_count": 0,
@@ -58,6 +58,19 @@
   }
  ],
  "ratings_reconstructed": [
+  {
+   "date": "2026-09-28",
+   "race_no": 2,
+   "position": 5,
+   "earned_yen": 18000,
+   "program_prize_k": 99,
+   "year_prize_k": 99,
+   "class": "C2",
+   "next_class": "C1",
+   "next_class_need_k": 2101,
+   "diff_k": 18,
+   "change": null
+  },
   {
    "date": "2026-09-13",
    "race_no": 2,
@@ -153,13 +166,41 @@
  "reconstructed_now": {
   "snapshot_date": "2026-09-25",
   "class_code": "2sai",
-  "program_prize_k": 81,
-  "year_prize_k": 81,
+  "program_prize_k": 99,
+  "year_prize_k": 99,
   "reconstructed": true,
-  "reconstructed_races": 0
+  "reconstructed_races": 1
  },
  "next_class": null,
  "races": [
+  {
+   "date": "2026-09-28",
+   "race_no": 2,
+   "race_name": "ペトラナイトメア生誕記念２歳Ｄ－７",
+   "class": "D",
+   "moisture": 0.8,
+   "field_size": 10,
+   "num": 9,
+   "jockey": "☆吉田理",
+   "trainer": "久田守",
+   "owner": "山下高広",
+   "sled_kg": 480.0,
+   "weight": 769,
+   "weight_diff": 8,
+   "odds": 11.0,
+   "popularity": 6,
+   "position": 5,
+   "time": "2:07.3",
+   "time_sec": 127.3,
+   "margin_sec": 22.8,
+   "race_level_z": 1.4,
+   "interval": "中2週",
+   "other": {
+    "label": "勝ち馬",
+    "name": "ビックドラゴン"
+   },
+   "insider_labels": []
+  },
   {
    "date": "2026-09-13",
    "race_no": 2,
@@ -208,7 +249,7 @@
    "time": "2:36.6",
    "time_sec": 156.6,
    "margin_sec": 39.0,
-   "race_level_z": -0.16,
+   "race_level_z": -0.17,
    "interval": "中2週",
    "other": {
     "label": "勝ち馬",
@@ -264,7 +305,7 @@
    "time": "1:58.2",
    "time_sec": 118.2,
    "margin_sec": 12.1,
-   "race_level_z": 0.96,
+   "race_level_z": 0.95,
    "interval": "連闘",
    "other": {
     "label": "勝ち馬",
@@ -320,7 +361,7 @@
    "time": "2:50.8",
    "time_sec": 170.8,
    "margin_sec": 31.3,
-   "race_level_z": -0.47,
+   "race_level_z": -0.48,
    "interval": "中1週",
    "other": {
     "label": "勝ち馬",
@@ -348,7 +389,7 @@
    "time": "2:40.8",
    "time_sec": 160.8,
    "margin_sec": 58.2,
-   "race_level_z": -0.36,
+   "race_level_z": -0.37,
    "interval": null,
    "other": {
     "label": "勝ち馬",

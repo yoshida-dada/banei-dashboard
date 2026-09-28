@@ -5,9 +5,9 @@
  "trainer": "松田道",
  "owner": "秋田凌",
  "sled_kg": 540.0,
- "weight": 977,
- "weight_diff": 13,
- "last_race_date": "2026-09-20",
+ "weight": 963,
+ "weight_diff": -14,
+ "last_race_date": "2026-09-28",
  "pedigree": {
   "sire": "コウシュハウンカイ",
   "dam": "ミサキヒメ",
@@ -18,24 +18,24 @@
  },
  "stats": {
   "total": {
-   "win": 1,
+   "win": 2,
    "place2": 4,
    "place3": 0,
    "other": 5,
-   "n": 10,
-   "win_rate": 0.1,
-   "quinella_rate": 0.5,
-   "show_rate": 0.5
+   "n": 11,
+   "win_rate": 0.182,
+   "quinella_rate": 0.545,
+   "show_rate": 0.545
   },
   "2026": {
-   "win": 1,
+   "win": 2,
    "place2": 4,
    "place3": 0,
    "other": 5,
-   "n": 10,
-   "win_rate": 0.1,
-   "quinella_rate": 0.5,
-   "show_rate": 0.5
+   "n": 11,
+   "win_rate": 0.182,
+   "quinella_rate": 0.545,
+   "show_rate": 0.545
   }
  },
  "insider_label_count": 0,
@@ -58,6 +58,19 @@
   }
  ],
  "ratings_reconstructed": [
+  {
+   "date": "2026-09-28",
+   "race_no": 8,
+   "position": 1,
+   "earned_yen": 510000,
+   "program_prize_k": 1928,
+   "year_prize_k": 1928,
+   "class": "C2",
+   "next_class": "C1",
+   "next_class_need_k": 272,
+   "diff_k": 510,
+   "change": null
+  },
   {
    "date": "2026-09-20",
    "race_no": 10,
@@ -192,13 +205,41 @@
  "reconstructed_now": {
   "snapshot_date": "2026-09-25",
   "class_code": "2sai",
-  "program_prize_k": 1418,
-  "year_prize_k": 1418,
+  "program_prize_k": 1928,
+  "year_prize_k": 1928,
   "reconstructed": true,
-  "reconstructed_races": 0
+  "reconstructed_races": 1
  },
  "next_class": null,
  "races": [
+  {
+   "date": "2026-09-28",
+   "race_no": 8,
+   "race_name": "タンタン帯広来たちぇど記念２歳Ａ－２",
+   "class": "A2",
+   "moisture": 2.9,
+   "field_size": 10,
+   "num": 1,
+   "jockey": "渡来心",
+   "trainer": "松田道",
+   "owner": "秋田凌",
+   "sled_kg": 540.0,
+   "weight": 963,
+   "weight_diff": -14,
+   "odds": 8.3,
+   "popularity": 5,
+   "position": 1,
+   "time": "1:29.5",
+   "time_sec": 89.5,
+   "margin_sec": 0.0,
+   "race_level_z": 0.63,
+   "interval": "中1週",
+   "other": {
+    "label": "2着馬",
+    "name": "ワールドジパング"
+   },
+   "insider_labels": []
+  },
   {
    "date": "2026-09-20",
    "race_no": 10,
@@ -219,7 +260,7 @@
    "time": "1:34.3",
    "time_sec": 94.3,
    "margin_sec": 12.8,
-   "race_level_z": 0.45,
+   "race_level_z": 0.44,
    "interval": "中2週",
    "other": {
     "label": "勝ち馬",
@@ -359,7 +400,7 @@
    "time": "1:50.3",
    "time_sec": 110.3,
    "margin_sec": 6.5,
-   "race_level_z": 0.37,
+   "race_level_z": 0.38,
    "interval": "中2週",
    "other": {
     "label": "勝ち馬",
@@ -387,7 +428,7 @@
    "time": "1:55.6",
    "time_sec": 115.6,
    "margin_sec": 4.1,
-   "race_level_z": 0.05,
+   "race_level_z": 0.06,
    "interval": "連闘",
    "other": {
     "label": "勝ち馬",

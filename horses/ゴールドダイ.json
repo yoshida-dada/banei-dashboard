@@ -4,10 +4,10 @@
  "age": 3,
  "trainer": "西弘美",
  "owner": "斉藤惠子",
- "sled_kg": 610.0,
- "weight": 1037,
- "weight_diff": 23,
- "last_race_date": "2026-09-19",
+ "sled_kg": 620.0,
+ "weight": 1035,
+ "weight_diff": -2,
+ "last_race_date": "2026-09-28",
  "pedigree": {
   "sire": "キンメダル",
   "dam": "宝来",
@@ -19,23 +19,23 @@
  "stats": {
   "total": {
    "win": 2,
-   "place2": 2,
+   "place2": 3,
    "place3": 2,
    "other": 23,
-   "n": 29,
-   "win_rate": 0.069,
-   "quinella_rate": 0.138,
-   "show_rate": 0.207
+   "n": 30,
+   "win_rate": 0.067,
+   "quinella_rate": 0.167,
+   "show_rate": 0.233
   },
   "2026": {
    "win": 0,
-   "place2": 2,
+   "place2": 3,
    "place3": 0,
    "other": 13,
-   "n": 15,
+   "n": 16,
    "win_rate": 0.0,
-   "quinella_rate": 0.133,
-   "show_rate": 0.133
+   "quinella_rate": 0.188,
+   "show_rate": 0.188
   },
   "2025": {
    "win": 2,
@@ -60,6 +60,19 @@
   }
  ],
  "ratings_reconstructed": [
+  {
+   "date": "2026-09-28",
+   "race_no": 1,
+   "position": 2,
+   "earned_yen": 111000,
+   "program_prize_k": 1312,
+   "year_prize_k": 240,
+   "class": "C2",
+   "next_class": "C1",
+   "next_class_need_k": 888,
+   "diff_k": 111,
+   "change": null
+  },
   {
    "date": "2026-09-19",
    "race_no": 1,
@@ -207,16 +220,44 @@
  "reconstructed_now": {
   "snapshot_date": "2026-07-12",
   "class_code": "C2",
-  "program_prize_k": 1201,
-  "year_prize_k": 129,
+  "program_prize_k": 1312,
+  "year_prize_k": 240,
   "reconstructed": true,
-  "reconstructed_races": 0
+  "reconstructed_races": 1
  },
  "next_class": {
   "next_class": "C1",
-  "need_k": 999
+  "need_k": 888
  },
  "races": [
+  {
+   "date": "2026-09-28",
+   "race_no": 1,
+   "race_name": "ひろむちゃん頑張った記念Ｃ２－１０",
+   "class": "C2",
+   "moisture": 0.8,
+   "field_size": 8,
+   "num": 8,
+   "jockey": "赤塚健",
+   "trainer": "西弘美",
+   "owner": "斉藤惠子",
+   "sled_kg": 620.0,
+   "weight": 1035,
+   "weight_diff": -2,
+   "odds": 14.3,
+   "popularity": 5,
+   "position": 2,
+   "time": "2:35.5",
+   "time_sec": 155.5,
+   "margin_sec": 12.2,
+   "race_level_z": 0.34,
+   "interval": "中1週",
+   "other": {
+    "label": "勝ち馬",
+    "name": "ツガルキンフジ"
+   },
+   "insider_labels": []
+  },
   {
    "date": "2026-09-19",
    "race_no": 1,
@@ -542,7 +583,7 @@
    "time": "1:58.3",
    "time_sec": 118.3,
    "margin_sec": 7.1,
-   "race_level_z": 1.28,
+   "race_level_z": 1.27,
    "interval": "連闘",
    "other": {
     "label": "勝ち馬",
@@ -570,7 +611,7 @@
    "time": "2:15.7",
    "time_sec": 135.7,
    "margin_sec": 7.3,
-   "race_level_z": 0.28,
+   "race_level_z": 0.27,
    "interval": "中3週",
    "other": {
     "label": "勝ち馬",
@@ -623,7 +664,7 @@
    "time": "2:22.8",
    "time_sec": 142.8,
    "margin_sec": 28.1,
-   "race_level_z": -0.39,
+   "race_level_z": -0.4,
    "interval": "連闘",
    "other": {
     "label": "勝ち馬",
@@ -987,7 +1028,7 @@
    "time": "2:21.6",
    "time_sec": 141.6,
    "margin_sec": 0.0,
-   "race_level_z": -0.05,
+   "race_level_z": -0.06,
    "interval": "中1週",
    "other": {
     "label": "2着馬",

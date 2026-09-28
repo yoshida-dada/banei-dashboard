@@ -4,10 +4,10 @@
  "age": 3,
  "trainer": "松井浩",
  "owner": "松井浩",
- "sled_kg": 620.0,
- "weight": 926,
- "weight_diff": 1,
- "last_race_date": "2026-09-12",
+ "sled_kg": 630.0,
+ "weight": 937,
+ "weight_diff": 11,
+ "last_race_date": "2026-09-28",
  "pedigree": {
   "sire": "アサヒリュウセイ",
   "dam": "ヤマサンブラック",
@@ -21,21 +21,21 @@
    "win": 3,
    "place2": 2,
    "place3": 1,
-   "other": 26,
-   "n": 32,
-   "win_rate": 0.094,
-   "quinella_rate": 0.156,
-   "show_rate": 0.188
+   "other": 27,
+   "n": 33,
+   "win_rate": 0.091,
+   "quinella_rate": 0.152,
+   "show_rate": 0.182
   },
   "2026": {
    "win": 0,
    "place2": 1,
    "place3": 1,
-   "other": 17,
-   "n": 19,
+   "other": 18,
+   "n": 20,
    "win_rate": 0.0,
-   "quinella_rate": 0.053,
-   "show_rate": 0.105
+   "quinella_rate": 0.05,
+   "show_rate": 0.1
   },
   "2025": {
    "win": 3,
@@ -60,6 +60,19 @@
   }
  ],
  "ratings_reconstructed": [
+  {
+   "date": "2026-09-28",
+   "race_no": 5,
+   "position": 5,
+   "earned_yen": 18000,
+   "program_prize_k": 2724,
+   "year_prize_k": 192,
+   "class": "C1",
+   "next_class": "B4",
+   "next_class_need_k": 676,
+   "diff_k": 18,
+   "change": null
+  },
   {
    "date": "2026-09-12",
    "race_no": 12,
@@ -233,16 +246,44 @@
  "reconstructed_now": {
   "snapshot_date": "2026-07-12",
   "class_code": "C1",
-  "program_prize_k": 2706,
-  "year_prize_k": 174,
+  "program_prize_k": 2724,
+  "year_prize_k": 192,
   "reconstructed": true,
-  "reconstructed_races": 0
+  "reconstructed_races": 1
  },
  "next_class": {
   "next_class": "B4",
-  "need_k": 694
+  "need_k": 676
  },
  "races": [
+  {
+   "date": "2026-09-28",
+   "race_no": 5,
+   "race_name": "武６１歳元気で働いたで賞Ｃ１－１０",
+   "class": "C1",
+   "moisture": 2.5,
+   "field_size": 9,
+   "num": 9,
+   "jockey": "阿部武",
+   "trainer": "松井浩",
+   "owner": "松井浩",
+   "sled_kg": 630.0,
+   "weight": 937,
+   "weight_diff": 11,
+   "odds": 8.9,
+   "popularity": 5,
+   "position": 5,
+   "time": "1:59.8",
+   "time_sec": 119.8,
+   "margin_sec": 18.8,
+   "race_level_z": 0.72,
+   "interval": "中2週",
+   "other": {
+    "label": "勝ち馬",
+    "name": "ディオネダイヤ"
+   },
+   "insider_labels": []
+  },
   {
    "date": "2026-09-12",
    "race_no": 12,
@@ -319,7 +360,7 @@
    "time": "2:17.8",
    "time_sec": 137.8,
    "margin_sec": 20.4,
-   "race_level_z": 0.29,
+   "race_level_z": 0.28,
    "interval": "中1週",
    "other": {
     "label": "勝ち馬",
@@ -543,7 +584,7 @@
    "time": "1:45.8",
    "time_sec": 105.8,
    "margin_sec": 12.9,
-   "race_level_z": 1.08,
+   "race_level_z": 1.07,
    "interval": "中1週",
    "other": {
     "label": "勝ち馬",

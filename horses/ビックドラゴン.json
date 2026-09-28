@@ -4,31 +4,31 @@
  "age": 2,
  "trainer": "西弘美",
  "owner": "大石正和",
- "sled_kg": 500.0,
- "weight": 784,
- "weight_diff": 29,
- "last_race_date": "2026-08-31",
+ "sled_kg": 510.0,
+ "weight": 798,
+ "weight_diff": 14,
+ "last_race_date": "2026-09-28",
  "pedigree": null,
  "stats": {
   "total": {
-   "win": 0,
+   "win": 1,
    "place2": 0,
    "place3": 1,
    "other": 1,
-   "n": 2,
-   "win_rate": 0.0,
-   "quinella_rate": 0.0,
-   "show_rate": 0.5
+   "n": 3,
+   "win_rate": 0.333,
+   "quinella_rate": 0.333,
+   "show_rate": 0.667
   },
   "2026": {
-   "win": 0,
+   "win": 1,
    "place2": 0,
    "place3": 1,
    "other": 1,
-   "n": 2,
-   "win_rate": 0.0,
-   "quinella_rate": 0.0,
-   "show_rate": 0.5
+   "n": 3,
+   "win_rate": 0.333,
+   "quinella_rate": 0.333,
+   "show_rate": 0.667
   }
  },
  "insider_label_count": 0,
@@ -43,6 +43,19 @@
   }
  ],
  "ratings_reconstructed": [
+  {
+   "date": "2026-09-28",
+   "race_no": 2,
+   "position": 1,
+   "earned_yen": 300000,
+   "program_prize_k": 396,
+   "year_prize_k": 396,
+   "class": "C2",
+   "next_class": "C1",
+   "next_class_need_k": 1804,
+   "diff_k": 300,
+   "change": null
+  },
   {
    "date": "2026-08-31",
    "race_no": 2,
@@ -73,13 +86,41 @@
  "reconstructed_now": {
   "snapshot_date": "2026-09-25",
   "class_code": "2sai",
-  "program_prize_k": 96,
-  "year_prize_k": 96,
+  "program_prize_k": 396,
+  "year_prize_k": 396,
   "reconstructed": true,
-  "reconstructed_races": 0
+  "reconstructed_races": 1
  },
  "next_class": null,
  "races": [
+  {
+   "date": "2026-09-28",
+   "race_no": 2,
+   "race_name": "ペトラナイトメア生誕記念２歳Ｄ－７",
+   "class": "D",
+   "moisture": 0.8,
+   "field_size": 10,
+   "num": 1,
+   "jockey": "西将太",
+   "trainer": "西弘美",
+   "owner": "大石正和",
+   "sled_kg": 510.0,
+   "weight": 798,
+   "weight_diff": 14,
+   "odds": 8.3,
+   "popularity": 4,
+   "position": 1,
+   "time": "1:44.5",
+   "time_sec": 104.5,
+   "margin_sec": 0.0,
+   "race_level_z": 2.46,
+   "interval": "中4週",
+   "other": {
+    "label": "2着馬",
+    "name": "カイセイプリンス"
+   },
+   "insider_labels": []
+  },
   {
    "date": "2026-08-31",
    "race_no": 2,
@@ -100,7 +141,7 @@
    "time": "2:43.1",
    "time_sec": 163.1,
    "margin_sec": 19.3,
-   "race_level_z": -0.25,
+   "race_level_z": -0.26,
    "interval": "中3週",
    "other": {
     "label": "勝ち馬",
@@ -128,7 +169,7 @@
    "time": "2:43.7",
    "time_sec": 163.7,
    "margin_sec": 26.6,
-   "race_level_z": -0.34,
+   "race_level_z": -0.35,
    "interval": null,
    "other": {
     "label": "勝ち馬",

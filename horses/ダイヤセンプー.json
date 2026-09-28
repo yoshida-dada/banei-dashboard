@@ -5,9 +5,9 @@
  "trainer": "今井茂",
  "owner": "寺田敏子",
  "sled_kg": 650.0,
- "weight": 1040,
- "weight_diff": 3,
- "last_race_date": "2026-09-13",
+ "weight": 1062,
+ "weight_diff": 22,
+ "last_race_date": "2026-09-28",
  "pedigree": {
   "sire": "マルニセンプー",
   "dam": "ハヤサクラ",
@@ -21,21 +21,21 @@
    "win": 14,
    "place2": 8,
    "place3": 14,
-   "other": 41,
-   "n": 77,
-   "win_rate": 0.182,
-   "quinella_rate": 0.286,
-   "show_rate": 0.468
+   "other": 42,
+   "n": 78,
+   "win_rate": 0.179,
+   "quinella_rate": 0.282,
+   "show_rate": 0.462
   },
   "2026": {
    "win": 3,
    "place2": 2,
    "place3": 3,
-   "other": 11,
-   "n": 19,
-   "win_rate": 0.158,
-   "quinella_rate": 0.263,
-   "show_rate": 0.421
+   "other": 12,
+   "n": 20,
+   "win_rate": 0.15,
+   "quinella_rate": 0.25,
+   "show_rate": 0.4
   },
   "2025": {
    "win": 4,
@@ -88,6 +88,19 @@
   }
  ],
  "ratings_reconstructed": [
+  {
+   "date": "2026-09-28",
+   "race_no": 10,
+   "position": 5,
+   "earned_yen": 25000,
+   "program_prize_k": 6567,
+   "year_prize_k": 960,
+   "class": "B2",
+   "next_class": "B1",
+   "next_class_need_k": 133,
+   "diff_k": 25,
+   "change": null
+  },
   {
    "date": "2026-09-13",
    "race_no": 12,
@@ -261,16 +274,44 @@
  "reconstructed_now": {
   "snapshot_date": "2026-09-25",
   "class_code": "B2",
-  "program_prize_k": 6542,
-  "year_prize_k": 935,
+  "program_prize_k": 6567,
+  "year_prize_k": 960,
   "reconstructed": true,
-  "reconstructed_races": 0
+  "reconstructed_races": 1
  },
  "next_class": {
   "next_class": "B1",
-  "need_k": 158
+  "need_k": 133
  },
  "races": [
+  {
+   "date": "2026-09-28",
+   "race_no": 10,
+   "race_name": "祝結婚！もう引き返せんで賞Ｂ２－２",
+   "class": "B2",
+   "moisture": 2.9,
+   "field_size": 10,
+   "num": 9,
+   "jockey": "☆今井千",
+   "trainer": "今井茂",
+   "owner": "寺田敏子",
+   "sled_kg": 650.0,
+   "weight": 1062,
+   "weight_diff": 22,
+   "odds": 2.3,
+   "popularity": null,
+   "position": 5,
+   "time": "1:44.3",
+   "time_sec": 104.3,
+   "margin_sec": 8.7,
+   "race_level_z": 0.4,
+   "interval": "中2週",
+   "other": {
+    "label": "勝ち馬",
+    "name": "ハリケーン"
+   },
+   "insider_labels": []
+  },
   {
    "date": "2026-09-13",
    "race_no": 12,
@@ -375,7 +416,7 @@
    "time": "1:28.1",
    "time_sec": 88.1,
    "margin_sec": 6.5,
-   "race_level_z": 1.16,
+   "race_level_z": 1.15,
    "interval": "中2週",
    "other": {
     "label": "勝ち馬",
@@ -487,7 +528,7 @@
    "time": "1:30.9",
    "time_sec": 90.9,
    "margin_sec": 4.5,
-   "race_level_z": 0.72,
+   "race_level_z": 0.71,
    "interval": "中1週",
    "other": {
     "label": "勝ち馬",
@@ -823,7 +864,7 @@
    "time": "1:47.1",
    "time_sec": 107.1,
    "margin_sec": 0.0,
-   "race_level_z": 0.79,
+   "race_level_z": 0.78,
    "interval": "中1週",
    "other": {
     "label": "2着馬",
@@ -1243,7 +1284,7 @@
    "time": "1:56.4",
    "time_sec": 116.4,
    "margin_sec": 16.6,
-   "race_level_z": 0.76,
+   "race_level_z": 0.75,
    "interval": "中6週",
    "other": {
     "label": "勝ち馬",
@@ -1828,7 +1869,7 @@
    "time": "2:08.6",
    "time_sec": 128.6,
    "margin_sec": 3.4,
-   "race_level_z": 0.66,
+   "race_level_z": 0.65,
    "interval": "中1週",
    "other": {
     "label": "勝ち馬",
@@ -1884,7 +1925,7 @@
    "time": "2:12.3",
    "time_sec": 132.3,
    "margin_sec": 0.0,
-   "race_level_z": 0.44,
+   "race_level_z": 0.43,
    "interval": "中5週",
    "other": {
     "label": "2着馬",
@@ -2416,7 +2457,7 @@
    "time": "1:55.7",
    "time_sec": 115.7,
    "margin_sec": 14.7,
-   "race_level_z": 0.67,
+   "race_level_z": 0.66,
    "interval": "中2週",
    "other": {
     "label": "勝ち馬",
@@ -2444,7 +2485,7 @@
    "time": "2:16.0",
    "time_sec": 136.0,
    "margin_sec": 37.6,
-   "race_level_z": 1.05,
+   "race_level_z": 1.04,
    "interval": null,
    "other": {
     "label": "勝ち馬",

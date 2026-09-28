@@ -4,10 +4,10 @@
  "age": 3,
  "trainer": "谷あゆ",
  "owner": "石久保斉",
- "sled_kg": 620.0,
- "weight": 1074,
- "weight_diff": 13,
- "last_race_date": "2026-09-12",
+ "sled_kg": 660.0,
+ "weight": 1052,
+ "weight_diff": -22,
+ "last_race_date": "2026-09-28",
  "pedigree": {
   "sire": "イノリノチカラ",
   "dam": "ゴウケンレディ",
@@ -21,21 +21,21 @@
    "win": 6,
    "place2": 5,
    "place3": 2,
-   "other": 21,
-   "n": 34,
-   "win_rate": 0.176,
-   "quinella_rate": 0.324,
-   "show_rate": 0.382
+   "other": 22,
+   "n": 35,
+   "win_rate": 0.171,
+   "quinella_rate": 0.314,
+   "show_rate": 0.371
   },
   "2026": {
    "win": 1,
    "place2": 3,
    "place3": 1,
-   "other": 13,
-   "n": 18,
-   "win_rate": 0.056,
-   "quinella_rate": 0.222,
-   "show_rate": 0.278
+   "other": 14,
+   "n": 19,
+   "win_rate": 0.053,
+   "quinella_rate": 0.211,
+   "show_rate": 0.263
   },
   "2025": {
    "win": 5,
@@ -68,6 +68,19 @@
   }
  ],
  "ratings_reconstructed": [
+  {
+   "date": "2026-09-28",
+   "race_no": 11,
+   "position": 8,
+   "earned_yen": 0,
+   "program_prize_k": 3692,
+   "year_prize_k": 812,
+   "class": "B4",
+   "next_class": "B3",
+   "next_class_need_k": 608,
+   "diff_k": 0,
+   "change": null
+  },
   {
    "date": "2026-09-12",
    "race_no": 8,
@@ -251,6 +264,34 @@
   "need_k": 608
  },
  "races": [
+  {
+   "date": "2026-09-28",
+   "race_no": 11,
+   "race_name": "第２０回 秋桜賞３歳オープン別定",
+   "class": "オープン",
+   "moisture": 2.9,
+   "field_size": 10,
+   "num": 6,
+   "jockey": "今井千",
+   "trainer": "谷あゆ",
+   "owner": "石久保斉",
+   "sled_kg": 660.0,
+   "weight": 1052,
+   "weight_diff": -22,
+   "odds": 39.3,
+   "popularity": 8,
+   "position": 8,
+   "time": "1:53.8",
+   "time_sec": 113.8,
+   "margin_sec": 13.5,
+   "race_level_z": -0.13,
+   "interval": "中2週",
+   "other": {
+    "label": "勝ち馬",
+    "name": "レッドウンカイ"
+   },
+   "insider_labels": []
+  },
   {
    "date": "2026-09-12",
    "race_no": 8,

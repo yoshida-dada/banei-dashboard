@@ -4,10 +4,10 @@
  "age": 2,
  "trainer": "岩本利",
  "owner": "田山克廣",
- "sled_kg": 530.0,
- "weight": 917,
- "weight_diff": 2,
- "last_race_date": "2026-09-14",
+ "sled_kg": 540.0,
+ "weight": 907,
+ "weight_diff": -10,
+ "last_race_date": "2026-09-28",
  "pedigree": {
   "sire": "ホリセンショウ",
   "dam": "将美",
@@ -21,21 +21,21 @@
    "win": 2,
    "place2": 0,
    "place3": 0,
-   "other": 8,
-   "n": 10,
-   "win_rate": 0.2,
-   "quinella_rate": 0.2,
-   "show_rate": 0.2
+   "other": 9,
+   "n": 11,
+   "win_rate": 0.182,
+   "quinella_rate": 0.182,
+   "show_rate": 0.182
   },
   "2026": {
    "win": 2,
    "place2": 0,
    "place3": 0,
-   "other": 8,
-   "n": 10,
-   "win_rate": 0.2,
-   "quinella_rate": 0.2,
-   "show_rate": 0.2
+   "other": 9,
+   "n": 11,
+   "win_rate": 0.182,
+   "quinella_rate": 0.182,
+   "show_rate": 0.182
   }
  },
  "insider_label_count": 0,
@@ -58,6 +58,19 @@
   }
  ],
  "ratings_reconstructed": [
+  {
+   "date": "2026-09-28",
+   "race_no": 8,
+   "position": 9,
+   "earned_yen": 0,
+   "program_prize_k": 1152,
+   "year_prize_k": 1152,
+   "class": "C2",
+   "next_class": "C1",
+   "next_class_need_k": 1048,
+   "diff_k": 0,
+   "change": null
+  },
   {
    "date": "2026-09-14",
    "race_no": 8,
@@ -200,6 +213,34 @@
  "next_class": null,
  "races": [
   {
+   "date": "2026-09-28",
+   "race_no": 8,
+   "race_name": "タンタン帯広来たちぇど記念２歳Ａ－２",
+   "class": "A2",
+   "moisture": 2.9,
+   "field_size": 10,
+   "num": 3,
+   "jockey": "金田利",
+   "trainer": "岩本利",
+   "owner": "田山克廣",
+   "sled_kg": 540.0,
+   "weight": 907,
+   "weight_diff": -10,
+   "odds": 77.0,
+   "popularity": 10,
+   "position": 9,
+   "time": "1:58.5",
+   "time_sec": 118.5,
+   "margin_sec": 29.0,
+   "race_level_z": -0.6,
+   "interval": "中2週",
+   "other": {
+    "label": "勝ち馬",
+    "name": "ニシオギオリジン"
+   },
+   "insider_labels": []
+  },
+  {
    "date": "2026-09-14",
    "race_no": 8,
    "race_name": "坂ちゃん生誕前夜記念２歳Ａ－１",
@@ -331,7 +372,7 @@
    "time": "1:36.0",
    "time_sec": 96.0,
    "margin_sec": 2.9,
-   "race_level_z": 0.51,
+   "race_level_z": 0.5,
    "interval": "中2週",
    "other": {
     "label": "勝ち馬",

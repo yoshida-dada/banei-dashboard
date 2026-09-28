@@ -4,10 +4,10 @@
  "age": 2,
  "trainer": "久田守",
  "owner": "佐藤秀樹",
- "sled_kg": 500.0,
- "weight": 830,
- "weight_diff": 1,
- "last_race_date": "2026-09-20",
+ "sled_kg": 510.0,
+ "weight": 825,
+ "weight_diff": -5,
+ "last_race_date": "2026-09-28",
  "pedigree": {
   "sire": "コウシュハウンカイ",
   "dam": "メムロボブコ",
@@ -21,21 +21,21 @@
    "win": 0,
    "place2": 1,
    "place3": 1,
-   "other": 8,
-   "n": 10,
+   "other": 9,
+   "n": 11,
    "win_rate": 0.0,
-   "quinella_rate": 0.1,
-   "show_rate": 0.2
+   "quinella_rate": 0.091,
+   "show_rate": 0.182
   },
   "2026": {
    "win": 0,
    "place2": 1,
    "place3": 1,
-   "other": 8,
-   "n": 10,
+   "other": 9,
+   "n": 11,
    "win_rate": 0.0,
-   "quinella_rate": 0.1,
-   "show_rate": 0.2
+   "quinella_rate": 0.091,
+   "show_rate": 0.182
   }
  },
  "insider_label_count": 0,
@@ -58,6 +58,19 @@
   }
  ],
  "ratings_reconstructed": [
+  {
+   "date": "2026-09-28",
+   "race_no": 3,
+   "position": 8,
+   "earned_yen": 0,
+   "program_prize_k": 258,
+   "year_prize_k": 258,
+   "class": "C2",
+   "next_class": "C1",
+   "next_class_need_k": 1942,
+   "diff_k": 0,
+   "change": null
+  },
   {
    "date": "2026-09-20",
    "race_no": 2,
@@ -200,6 +213,34 @@
  "next_class": null,
  "races": [
   {
+   "date": "2026-09-28",
+   "race_no": 3,
+   "race_name": "２歳Ｄ－２",
+   "class": "D",
+   "moisture": 2.0,
+   "field_size": 10,
+   "num": 9,
+   "jockey": "菊池一",
+   "trainer": "久田守",
+   "owner": "佐藤秀樹",
+   "sled_kg": 510.0,
+   "weight": 825,
+   "weight_diff": -5,
+   "odds": 24.5,
+   "popularity": 8,
+   "position": 8,
+   "time": "1:57.2",
+   "time_sec": 117.2,
+   "margin_sec": 10.8,
+   "race_level_z": 1.53,
+   "interval": "中1週",
+   "other": {
+    "label": "勝ち馬",
+    "name": "グランプリスラム"
+   },
+   "insider_labels": []
+  },
+  {
    "date": "2026-09-20",
    "race_no": 2,
    "race_name": "革新された未来２歳Ｄ－１",
@@ -219,7 +260,7 @@
    "time": "1:47.5",
    "time_sec": 107.5,
    "margin_sec": 14.2,
-   "race_level_z": 1.73,
+   "race_level_z": 1.72,
    "interval": "中2週",
    "other": {
     "label": "勝ち馬",

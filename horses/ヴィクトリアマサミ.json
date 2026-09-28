@@ -4,10 +4,10 @@
  "age": 2,
  "trainer": "服部義",
  "owner": "鈴木正浩",
- "sled_kg": 480.0,
- "weight": 956,
- "weight_diff": 8,
- "last_race_date": "2026-09-13",
+ "sled_kg": 490.0,
+ "weight": 959,
+ "weight_diff": 3,
+ "last_race_date": "2026-09-28",
  "pedigree": null,
  "stats": {
   "total": {
@@ -43,6 +43,19 @@
   }
  ],
  "ratings_reconstructed": [
+  {
+   "date": "2026-09-28",
+   "race_no": 2,
+   "position": null,
+   "earned_yen": 0,
+   "program_prize_k": 63,
+   "year_prize_k": 63,
+   "class": "C2",
+   "next_class": "C1",
+   "next_class_need_k": 2137,
+   "diff_k": 0,
+   "change": null
+  },
   {
    "date": "2026-09-13",
    "race_no": 2,
@@ -93,6 +106,31 @@
  },
  "next_class": null,
  "races": [
+  {
+   "date": "2026-09-28",
+   "race_no": 2,
+   "race_name": "ペトラナイトメア生誕記念２歳Ｄ－７",
+   "class": "D",
+   "moisture": 0.8,
+   "field_size": 10,
+   "num": 8,
+   "jockey": "金田利",
+   "trainer": "服部義",
+   "owner": "鈴木正浩",
+   "sled_kg": 490.0,
+   "weight": 959,
+   "weight_diff": 3,
+   "odds": 7.5,
+   "popularity": 3,
+   "position": null,
+   "time": "4:05.2",
+   "time_sec": 245.2,
+   "margin_sec": 140.7,
+   "race_level_z": -3.59,
+   "interval": "中2週",
+   "other": null,
+   "insider_labels": []
+  },
   {
    "date": "2026-09-13",
    "race_no": 2,

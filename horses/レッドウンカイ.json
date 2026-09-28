@@ -5,9 +5,9 @@
  "trainer": "松井浩",
  "owner": "竹内宏人",
  "sled_kg": 670.0,
- "weight": 959,
- "weight_diff": -3,
- "last_race_date": "2026-08-23",
+ "weight": 977,
+ "weight_diff": 18,
+ "last_race_date": "2026-09-28",
  "pedigree": {
   "sire": "コウシュハウンカイ",
   "dam": "ミチノクイン",
@@ -18,24 +18,24 @@
  },
  "stats": {
   "total": {
-   "win": 4,
+   "win": 5,
    "place2": 5,
    "place3": 6,
    "other": 12,
-   "n": 27,
-   "win_rate": 0.148,
-   "quinella_rate": 0.333,
-   "show_rate": 0.556
+   "n": 28,
+   "win_rate": 0.179,
+   "quinella_rate": 0.357,
+   "show_rate": 0.571
   },
   "2026": {
-   "win": 2,
+   "win": 3,
    "place2": 1,
    "place3": 3,
    "other": 8,
-   "n": 14,
-   "win_rate": 0.143,
-   "quinella_rate": 0.214,
-   "show_rate": 0.429
+   "n": 15,
+   "win_rate": 0.2,
+   "quinella_rate": 0.267,
+   "show_rate": 0.467
   },
   "2025": {
    "win": 2,
@@ -68,6 +68,19 @@
   }
  ],
  "ratings_reconstructed": [
+  {
+   "date": "2026-09-28",
+   "race_no": 11,
+   "position": 1,
+   "earned_yen": 880000,
+   "program_prize_k": 7600,
+   "year_prize_k": 1718,
+   "class": "B1",
+   "next_class": "A2",
+   "next_class_need_k": 900,
+   "diff_k": 880,
+   "change": null
+  },
   {
    "date": "2026-08-23",
    "race_no": 11,
@@ -176,16 +189,44 @@
  "reconstructed_now": {
   "snapshot_date": "2026-09-25",
   "class_code": "B1",
-  "program_prize_k": 6720,
-  "year_prize_k": 838,
+  "program_prize_k": 7600,
+  "year_prize_k": 1718,
   "reconstructed": true,
-  "reconstructed_races": 0
+  "reconstructed_races": 1
  },
  "next_class": {
   "next_class": "A2",
-  "need_k": 1780
+  "need_k": 900
  },
  "races": [
+  {
+   "date": "2026-09-28",
+   "race_no": 11,
+   "race_name": "第２０回 秋桜賞３歳オープン別定",
+   "class": "オープン",
+   "moisture": 2.9,
+   "field_size": 10,
+   "num": 3,
+   "jockey": "金田利",
+   "trainer": "松井浩",
+   "owner": "竹内宏人",
+   "sled_kg": 670.0,
+   "weight": 977,
+   "weight_diff": 18,
+   "odds": 21.1,
+   "popularity": 6,
+   "position": 1,
+   "time": "1:40.3",
+   "time_sec": 100.3,
+   "margin_sec": 0.0,
+   "race_level_z": 0.47,
+   "interval": "中5週",
+   "other": {
+    "label": "2着馬",
+    "name": "ヤマノブラウン"
+   },
+   "insider_labels": []
+  },
   {
    "date": "2026-08-23",
    "race_no": 11,

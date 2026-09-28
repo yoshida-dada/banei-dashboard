@@ -4,10 +4,10 @@
  "age": 2,
  "trainer": "服部義",
  "owner": "鈴木正浩",
- "sled_kg": 500.0,
- "weight": 846,
- "weight_diff": 1,
- "last_race_date": "2026-09-13",
+ "sled_kg": 510.0,
+ "weight": 844,
+ "weight_diff": -2,
+ "last_race_date": "2026-09-28",
  "pedigree": {
   "sire": "ホクショウメジャー",
   "dam": "リリー",
@@ -20,22 +20,22 @@
   "total": {
    "win": 0,
    "place2": 0,
-   "place3": 0,
+   "place3": 1,
    "other": 10,
-   "n": 10,
+   "n": 11,
    "win_rate": 0.0,
    "quinella_rate": 0.0,
-   "show_rate": 0.0
+   "show_rate": 0.091
   },
   "2026": {
    "win": 0,
    "place2": 0,
-   "place3": 0,
+   "place3": 1,
    "other": 10,
-   "n": 10,
+   "n": 11,
    "win_rate": 0.0,
    "quinella_rate": 0.0,
-   "show_rate": 0.0
+   "show_rate": 0.091
   }
  },
  "insider_label_count": 0,
@@ -50,6 +50,19 @@
   }
  ],
  "ratings_reconstructed": [
+  {
+   "date": "2026-09-28",
+   "race_no": 2,
+   "position": 3,
+   "earned_yen": 63000,
+   "program_prize_k": 141,
+   "year_prize_k": 141,
+   "class": "C2",
+   "next_class": "C1",
+   "next_class_need_k": 2059,
+   "diff_k": 63,
+   "change": null
+  },
   {
    "date": "2026-09-13",
    "race_no": 2,
@@ -184,13 +197,41 @@
  "reconstructed_now": {
   "snapshot_date": "2026-07-12",
   "class_code": "2sai",
-  "program_prize_k": 78,
-  "year_prize_k": 78,
+  "program_prize_k": 141,
+  "year_prize_k": 141,
   "reconstructed": true,
-  "reconstructed_races": 0
+  "reconstructed_races": 1
  },
  "next_class": null,
  "races": [
+  {
+   "date": "2026-09-28",
+   "race_no": 2,
+   "race_name": "ペトラナイトメア生誕記念２歳Ｄ－７",
+   "class": "D",
+   "moisture": 0.8,
+   "field_size": 10,
+   "num": 4,
+   "jockey": "赤塚健",
+   "trainer": "服部義",
+   "owner": "鈴木正浩",
+   "sled_kg": 510.0,
+   "weight": 844,
+   "weight_diff": -2,
+   "odds": 70.1,
+   "popularity": 9,
+   "position": 3,
+   "time": "2:01.1",
+   "time_sec": 121.1,
+   "margin_sec": 16.6,
+   "race_level_z": 1.76,
+   "interval": "中2週",
+   "other": {
+    "label": "勝ち馬",
+    "name": "ビックドラゴン"
+   },
+   "insider_labels": []
+  },
   {
    "date": "2026-09-13",
    "race_no": 2,
@@ -211,7 +252,7 @@
    "time": "2:38.2",
    "time_sec": 158.2,
    "margin_sec": 24.6,
-   "race_level_z": 0.12,
+   "race_level_z": 0.11,
    "interval": "連闘",
    "other": {
     "label": "勝ち馬",
@@ -239,7 +280,7 @@
    "time": "2:37.0",
    "time_sec": 157.0,
    "margin_sec": 39.4,
-   "race_level_z": -0.12,
+   "race_level_z": -0.13,
    "interval": "中2週",
    "other": {
     "label": "勝ち馬",
@@ -295,7 +336,7 @@
    "time": "3:16.4",
    "time_sec": 196.4,
    "margin_sec": 47.3,
-   "race_level_z": -1.67,
+   "race_level_z": -1.68,
    "interval": "中2週",
    "other": {
     "label": "勝ち馬",
@@ -351,7 +392,7 @@
    "time": "3:06.1",
    "time_sec": 186.1,
    "margin_sec": 58.3,
-   "race_level_z": -1.65,
+   "race_level_z": -1.66,
    "interval": "中2週",
    "other": {
     "label": "勝ち馬",

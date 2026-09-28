@@ -4,10 +4,10 @@
  "age": 3,
  "trainer": "槻舘重",
  "owner": "細川弘則",
- "sled_kg": 620.0,
- "weight": 990,
+ "sled_kg": 630.0,
+ "weight": 994,
  "weight_diff": 4,
- "last_race_date": "2026-09-19",
+ "last_race_date": "2026-09-28",
  "pedigree": {
   "sire": "フクノカミカゼ",
   "dam": "ジアンデ",
@@ -21,21 +21,21 @@
    "win": 3,
    "place2": 7,
    "place3": 5,
-   "other": 17,
-   "n": 32,
-   "win_rate": 0.094,
-   "quinella_rate": 0.312,
-   "show_rate": 0.469
+   "other": 18,
+   "n": 33,
+   "win_rate": 0.091,
+   "quinella_rate": 0.303,
+   "show_rate": 0.455
   },
   "2026": {
    "win": 3,
    "place2": 4,
    "place3": 2,
-   "other": 8,
-   "n": 17,
-   "win_rate": 0.176,
-   "quinella_rate": 0.412,
-   "show_rate": 0.529
+   "other": 9,
+   "n": 18,
+   "win_rate": 0.167,
+   "quinella_rate": 0.389,
+   "show_rate": 0.5
   },
   "2025": {
    "win": 0,
@@ -68,6 +68,19 @@
   }
  ],
  "ratings_reconstructed": [
+  {
+   "date": "2026-09-28",
+   "race_no": 6,
+   "position": 7,
+   "earned_yen": 0,
+   "program_prize_k": 2378,
+   "year_prize_k": 1047,
+   "class": "C1",
+   "next_class": "B4",
+   "next_class_need_k": 1022,
+   "diff_k": 0,
+   "change": null
+  },
   {
    "date": "2026-09-19",
    "race_no": 6,
@@ -225,6 +238,34 @@
   "need_k": 1022
  },
  "races": [
+  {
+   "date": "2026-09-28",
+   "race_no": 6,
+   "race_name": "帯広ＬＯＶＥばん馬応援杯Ｃ１－２",
+   "class": "C1",
+   "moisture": 2.5,
+   "field_size": 9,
+   "num": 2,
+   "jockey": "中原蓮",
+   "trainer": "槻舘重",
+   "owner": "細川弘則",
+   "sled_kg": 630.0,
+   "weight": 994,
+   "weight_diff": 4,
+   "odds": 27.2,
+   "popularity": 8,
+   "position": 7,
+   "time": "1:54.1",
+   "time_sec": 114.1,
+   "margin_sec": 19.3,
+   "race_level_z": 0.96,
+   "interval": "中1週",
+   "other": {
+    "label": "勝ち馬",
+    "name": "ゲキリンドトウ"
+   },
+   "insider_labels": []
+  },
   {
    "date": "2026-09-19",
    "race_no": 6,

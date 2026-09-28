@@ -4,10 +4,10 @@
  "age": 8,
  "trainer": "村上慎",
  "owner": "鈴木忠",
- "sled_kg": 630.0,
- "weight": 1111,
- "weight_diff": 7,
- "last_race_date": "2026-09-13",
+ "sled_kg": 640.0,
+ "weight": 1116,
+ "weight_diff": 5,
+ "last_race_date": "2026-09-28",
  "pedigree": {
   "sire": "キタノタイショウ",
   "dam": "アマゾンプリンセス",
@@ -18,24 +18,24 @@
  },
  "stats": {
   "total": {
-   "win": 7,
+   "win": 8,
    "place2": 7,
    "place3": 8,
    "other": 73,
-   "n": 95,
-   "win_rate": 0.074,
-   "quinella_rate": 0.147,
-   "show_rate": 0.232
+   "n": 96,
+   "win_rate": 0.083,
+   "quinella_rate": 0.156,
+   "show_rate": 0.24
   },
   "2026": {
-   "win": 1,
+   "win": 2,
    "place2": 0,
    "place3": 1,
    "other": 16,
-   "n": 18,
-   "win_rate": 0.056,
-   "quinella_rate": 0.056,
-   "show_rate": 0.111
+   "n": 19,
+   "win_rate": 0.105,
+   "quinella_rate": 0.105,
+   "show_rate": 0.158
   },
   "2025": {
    "win": 2,
@@ -80,6 +80,19 @@
   }
  ],
  "ratings_reconstructed": [
+  {
+   "date": "2026-09-28",
+   "race_no": 7,
+   "position": 1,
+   "earned_yen": 330000,
+   "program_prize_k": 4093,
+   "year_prize_k": 418,
+   "class": "B4",
+   "next_class": "B3",
+   "next_class_need_k": 207,
+   "diff_k": 330,
+   "change": null
+  },
   {
    "date": "2026-09-13",
    "race_no": 7,
@@ -240,16 +253,44 @@
  "reconstructed_now": {
   "snapshot_date": "2026-07-12",
   "class_code": "B4",
-  "program_prize_k": 3763,
-  "year_prize_k": 88,
+  "program_prize_k": 4093,
+  "year_prize_k": 418,
   "reconstructed": true,
-  "reconstructed_races": 0
+  "reconstructed_races": 1
  },
  "next_class": {
   "next_class": "B3",
-  "need_k": 537
+  "need_k": 207
  },
  "races": [
+  {
+   "date": "2026-09-28",
+   "race_no": 7,
+   "race_name": "第４回まぐたん＆ぶう来帯杯Ｂ４－７",
+   "class": "B4",
+   "moisture": 2.9,
+   "field_size": 10,
+   "num": 10,
+   "jockey": "村上章",
+   "trainer": "村上慎",
+   "owner": "鈴木忠",
+   "sled_kg": 640.0,
+   "weight": 1116,
+   "weight_diff": 5,
+   "odds": 11.1,
+   "popularity": 7,
+   "position": 1,
+   "time": "1:48.9",
+   "time_sec": 108.9,
+   "margin_sec": 0.0,
+   "race_level_z": 0.6,
+   "interval": "中2週",
+   "other": {
+    "label": "2着馬",
+    "name": "イナノミツヒメ"
+   },
+   "insider_labels": []
+  },
   {
    "date": "2026-09-13",
    "race_no": 7,
@@ -494,7 +535,7 @@
    "time": "2:15.0",
    "time_sec": 135.0,
    "margin_sec": 0.6,
-   "race_level_z": 0.11,
+   "race_level_z": 0.12,
    "interval": "中2週",
    "other": {
     "label": "勝ち馬",
@@ -1026,7 +1067,7 @@
    "time": "3:10.5",
    "time_sec": 190.5,
    "margin_sec": 75.7,
-   "race_level_z": -2.66,
+   "race_level_z": -2.67,
    "interval": "中2週",
    "other": {
     "label": "勝ち馬",
@@ -2762,7 +2803,7 @@
    "time": "1:46.5",
    "time_sec": 106.5,
    "margin_sec": 1.5,
-   "race_level_z": 0.37,
+   "race_level_z": 0.36,
    "interval": "中1週",
    "other": {
     "label": "勝ち馬",

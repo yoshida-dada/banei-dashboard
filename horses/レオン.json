@@ -4,10 +4,10 @@
  "age": 2,
  "trainer": "久田守",
  "owner": "永井和弘",
- "sled_kg": 500.0,
- "weight": 865,
- "weight_diff": -12,
- "last_race_date": "2026-09-20",
+ "sled_kg": 510.0,
+ "weight": 867,
+ "weight_diff": 2,
+ "last_race_date": "2026-09-28",
  "pedigree": {
   "sire": "レットダイヤ",
   "dam": "サツキスピード",
@@ -20,22 +20,22 @@
   "total": {
    "win": 0,
    "place2": 0,
-   "place3": 1,
+   "place3": 2,
    "other": 9,
-   "n": 10,
+   "n": 11,
    "win_rate": 0.0,
    "quinella_rate": 0.0,
-   "show_rate": 0.1
+   "show_rate": 0.182
   },
   "2026": {
    "win": 0,
    "place2": 0,
-   "place3": 1,
+   "place3": 2,
    "other": 9,
-   "n": 10,
+   "n": 11,
    "win_rate": 0.0,
    "quinella_rate": 0.0,
-   "show_rate": 0.1
+   "show_rate": 0.182
   }
  },
  "insider_label_count": 0,
@@ -58,6 +58,19 @@
   }
  ],
  "ratings_reconstructed": [
+  {
+   "date": "2026-09-28",
+   "race_no": 3,
+   "position": 3,
+   "earned_yen": 63000,
+   "program_prize_k": 322,
+   "year_prize_k": 322,
+   "class": "C2",
+   "next_class": "C1",
+   "next_class_need_k": 1878,
+   "diff_k": 63,
+   "change": null
+  },
   {
    "date": "2026-09-20",
    "race_no": 2,
@@ -192,13 +205,41 @@
  "reconstructed_now": {
   "snapshot_date": "2026-09-25",
   "class_code": "2sai",
-  "program_prize_k": 259,
-  "year_prize_k": 259,
+  "program_prize_k": 322,
+  "year_prize_k": 322,
   "reconstructed": true,
-  "reconstructed_races": 0
+  "reconstructed_races": 1
  },
  "next_class": null,
  "races": [
+  {
+   "date": "2026-09-28",
+   "race_no": 3,
+   "race_name": "２歳Ｄ－２",
+   "class": "D",
+   "moisture": 2.0,
+   "field_size": 10,
+   "num": 5,
+   "jockey": "渡来心",
+   "trainer": "久田守",
+   "owner": "永井和弘",
+   "sled_kg": 510.0,
+   "weight": 867,
+   "weight_diff": 2,
+   "odds": 5.3,
+   "popularity": 3,
+   "position": 3,
+   "time": "1:49.0",
+   "time_sec": 109.0,
+   "margin_sec": 2.6,
+   "race_level_z": 1.88,
+   "interval": "中1週",
+   "other": {
+    "label": "勝ち馬",
+    "name": "グランプリスラム"
+   },
+   "insider_labels": []
+  },
   {
    "date": "2026-09-20",
    "race_no": 2,
@@ -247,7 +288,7 @@
    "time": "1:55.5",
    "time_sec": 115.5,
    "margin_sec": 9.3,
-   "race_level_z": 0.96,
+   "race_level_z": 0.95,
    "interval": "中1週",
    "other": {
     "label": "勝ち馬",
@@ -387,7 +428,7 @@
    "time": "2:07.3",
    "time_sec": 127.3,
    "margin_sec": 14.0,
-   "race_level_z": 0.39,
+   "race_level_z": 0.38,
    "interval": "中2週",
    "other": {
     "label": "勝ち馬",

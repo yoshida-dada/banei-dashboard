@@ -4,10 +4,10 @@
  "age": 2,
  "trainer": "大河和",
  "owner": "野村久",
- "sled_kg": 490.0,
- "weight": 821,
- "weight_diff": 19,
- "last_race_date": "2026-09-21",
+ "sled_kg": 500.0,
+ "weight": 829,
+ "weight_diff": 8,
+ "last_race_date": "2026-09-28",
  "pedigree": {
   "sire": "ミノルシンザン",
   "dam": "ヒカルピアス",
@@ -18,24 +18,24 @@
  },
  "stats": {
   "total": {
-   "win": 1,
+   "win": 2,
    "place2": 0,
    "place3": 0,
    "other": 6,
-   "n": 7,
-   "win_rate": 0.143,
-   "quinella_rate": 0.143,
-   "show_rate": 0.143
+   "n": 8,
+   "win_rate": 0.25,
+   "quinella_rate": 0.25,
+   "show_rate": 0.25
   },
   "2026": {
-   "win": 1,
+   "win": 2,
    "place2": 0,
    "place3": 0,
    "other": 6,
-   "n": 7,
-   "win_rate": 0.143,
-   "quinella_rate": 0.143,
-   "show_rate": 0.143
+   "n": 8,
+   "win_rate": 0.25,
+   "quinella_rate": 0.25,
+   "show_rate": 0.25
   }
  },
  "insider_label_count": 0,
@@ -58,6 +58,19 @@
   }
  ],
  "ratings_reconstructed": [
+  {
+   "date": "2026-09-28",
+   "race_no": 4,
+   "position": 1,
+   "earned_yen": 330000,
+   "program_prize_k": 649,
+   "year_prize_k": 649,
+   "class": "C2",
+   "next_class": "C1",
+   "next_class_need_k": 1551,
+   "diff_k": 330,
+   "change": null
+  },
   {
    "date": "2026-09-21",
    "race_no": 4,
@@ -153,13 +166,41 @@
  "reconstructed_now": {
   "snapshot_date": "2026-09-25",
   "class_code": "2sai",
-  "program_prize_k": 319,
-  "year_prize_k": 319,
+  "program_prize_k": 649,
+  "year_prize_k": 649,
   "reconstructed": true,
-  "reconstructed_races": 0
+  "reconstructed_races": 1
  },
  "next_class": null,
  "races": [
+  {
+   "date": "2026-09-28",
+   "race_no": 4,
+   "race_name": "ラウンドワンＦＩＲＥ記念２歳Ｃ－６",
+   "class": "C",
+   "moisture": 2.0,
+   "field_size": 10,
+   "num": 2,
+   "jockey": "島津新",
+   "trainer": "大河和",
+   "owner": "野村久",
+   "sled_kg": 500.0,
+   "weight": 829,
+   "weight_diff": 8,
+   "odds": 4.4,
+   "popularity": 3,
+   "position": 1,
+   "time": "1:39.3",
+   "time_sec": 99.3,
+   "margin_sec": 0.0,
+   "race_level_z": 1.68,
+   "interval": "連闘",
+   "other": {
+    "label": "2着馬",
+    "name": "キタノキボウ"
+   },
+   "insider_labels": []
+  },
   {
    "date": "2026-09-21",
    "race_no": 4,
@@ -292,7 +333,7 @@
    "time": "2:17.7",
    "time_sec": 137.7,
    "margin_sec": 0.0,
-   "race_level_z": 0.84,
+   "race_level_z": 0.83,
    "interval": "中2週",
    "other": {
     "label": "2着馬",

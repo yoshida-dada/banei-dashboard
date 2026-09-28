@@ -5,9 +5,9 @@
  "trainer": "大河和",
  "owner": "堤祥江",
  "sled_kg": 540.0,
- "weight": 946,
- "weight_diff": 18,
- "last_race_date": "2026-09-20",
+ "weight": 944,
+ "weight_diff": -2,
+ "last_race_date": "2026-09-28",
  "pedigree": {
   "sire": "ホリセンショウ",
   "dam": "松木姫",
@@ -21,21 +21,21 @@
    "win": 2,
    "place2": 0,
    "place3": 0,
-   "other": 4,
-   "n": 6,
-   "win_rate": 0.333,
-   "quinella_rate": 0.333,
-   "show_rate": 0.333
+   "other": 5,
+   "n": 7,
+   "win_rate": 0.286,
+   "quinella_rate": 0.286,
+   "show_rate": 0.286
   },
   "2026": {
    "win": 2,
    "place2": 0,
    "place3": 0,
-   "other": 4,
-   "n": 6,
-   "win_rate": 0.333,
-   "quinella_rate": 0.333,
-   "show_rate": 0.333
+   "other": 5,
+   "n": 7,
+   "win_rate": 0.286,
+   "quinella_rate": 0.286,
+   "show_rate": 0.286
   }
  },
  "insider_label_count": 0,
@@ -58,6 +58,19 @@
   }
  ],
  "ratings_reconstructed": [
+  {
+   "date": "2026-09-28",
+   "race_no": 8,
+   "position": 7,
+   "earned_yen": 0,
+   "program_prize_k": 1250,
+   "year_prize_k": 1250,
+   "class": "C2",
+   "next_class": "C1",
+   "next_class_need_k": 950,
+   "diff_k": 0,
+   "change": null
+  },
   {
    "date": "2026-09-20",
    "race_no": 10,
@@ -147,6 +160,34 @@
  },
  "next_class": null,
  "races": [
+  {
+   "date": "2026-09-28",
+   "race_no": 8,
+   "race_name": "タンタン帯広来たちぇど記念２歳Ａ－２",
+   "class": "A2",
+   "moisture": 2.9,
+   "field_size": 10,
+   "num": 8,
+   "jockey": "中村太",
+   "trainer": "大河和",
+   "owner": "堤祥江",
+   "sled_kg": 540.0,
+   "weight": 944,
+   "weight_diff": -2,
+   "odds": 57.4,
+   "popularity": 9,
+   "position": 7,
+   "time": "1:52.4",
+   "time_sec": 112.4,
+   "margin_sec": 22.9,
+   "race_level_z": -0.34,
+   "interval": "中1週",
+   "other": {
+    "label": "勝ち馬",
+    "name": "ニシオギオリジン"
+   },
+   "insider_labels": []
+  },
   {
    "date": "2026-09-20",
    "race_no": 10,
@@ -279,7 +320,7 @@
    "time": "1:36.2",
    "time_sec": 96.2,
    "margin_sec": 11.6,
-   "race_level_z": -0.15,
+   "race_level_z": -0.16,
    "interval": "中1週",
    "other": {
     "label": "勝ち馬",

@@ -4,10 +4,10 @@
  "age": 3,
  "trainer": "谷あゆ",
  "owner": "矢藤秀樹",
- "sled_kg": 645.0,
- "weight": 1071,
- "weight_diff": 9,
- "last_race_date": "2026-09-13",
+ "sled_kg": 670.0,
+ "weight": 1059,
+ "weight_diff": -12,
+ "last_race_date": "2026-09-28",
  "pedigree": {
   "sire": "ツガルスピード",
   "dam": "翔和姫",
@@ -21,21 +21,21 @@
    "win": 5,
    "place2": 4,
    "place3": 7,
-   "other": 13,
-   "n": 29,
-   "win_rate": 0.172,
-   "quinella_rate": 0.31,
-   "show_rate": 0.552
+   "other": 14,
+   "n": 30,
+   "win_rate": 0.167,
+   "quinella_rate": 0.3,
+   "show_rate": 0.533
   },
   "2026": {
    "win": 4,
    "place2": 0,
    "place3": 5,
-   "other": 7,
-   "n": 16,
-   "win_rate": 0.25,
-   "quinella_rate": 0.25,
-   "show_rate": 0.562
+   "other": 8,
+   "n": 17,
+   "win_rate": 0.235,
+   "quinella_rate": 0.235,
+   "show_rate": 0.529
   },
   "2025": {
    "win": 1,
@@ -68,6 +68,19 @@
   }
  ],
  "ratings_reconstructed": [
+  {
+   "date": "2026-09-28",
+   "race_no": 11,
+   "position": 9,
+   "earned_yen": 0,
+   "program_prize_k": 6427,
+   "year_prize_k": 3745,
+   "class": "B2",
+   "next_class": "B1",
+   "next_class_need_k": 273,
+   "diff_k": 0,
+   "change": null
+  },
   {
    "date": "2026-09-13",
    "race_no": 12,
@@ -225,6 +238,34 @@
   "need_k": 273
  },
  "races": [
+  {
+   "date": "2026-09-28",
+   "race_no": 11,
+   "race_name": "第２０回 秋桜賞３歳オープン別定",
+   "class": "オープン",
+   "moisture": 2.9,
+   "field_size": 10,
+   "num": 8,
+   "jockey": "中村太",
+   "trainer": "谷あゆ",
+   "owner": "矢藤秀樹",
+   "sled_kg": 670.0,
+   "weight": 1059,
+   "weight_diff": -12,
+   "odds": 8.2,
+   "popularity": 3,
+   "position": 9,
+   "time": "1:55.3",
+   "time_sec": 115.3,
+   "margin_sec": 15.0,
+   "race_level_z": -0.17,
+   "interval": "中2週",
+   "other": {
+    "label": "勝ち馬",
+    "name": "レッドウンカイ"
+   },
+   "insider_labels": []
+  },
   {
    "date": "2026-09-13",
    "race_no": 12,
@@ -469,7 +510,7 @@
    "time": "1:48.9",
    "time_sec": 108.9,
    "margin_sec": 2.5,
-   "race_level_z": 1.11,
+   "race_level_z": 1.1,
    "interval": "中1週",
    "other": {
     "label": "勝ち馬",
@@ -553,7 +594,7 @@
    "time": "1:36.2",
    "time_sec": 96.2,
    "margin_sec": 0.0,
-   "race_level_z": 0.88,
+   "race_level_z": 0.87,
    "interval": "中2週",
    "other": {
     "label": "2着馬",
@@ -777,7 +818,7 @@
    "time": "1:41.0",
    "time_sec": 101.0,
    "margin_sec": 0.9,
-   "race_level_z": 0.65,
+   "race_level_z": 0.66,
    "interval": "中1週",
    "other": {
     "label": "勝ち馬",

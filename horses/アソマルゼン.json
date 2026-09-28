@@ -4,10 +4,10 @@
  "age": 4,
  "trainer": "西弘美",
  "owner": "（有）古閑牧場",
- "sled_kg": 630.0,
- "weight": 1054,
- "weight_diff": 11,
- "last_race_date": "2026-09-20",
+ "sled_kg": 640.0,
+ "weight": 1059,
+ "weight_diff": 5,
+ "last_race_date": "2026-09-28",
  "pedigree": {
   "sire": "ミンナノマルゼン",
   "dam": "ブラックショウ",
@@ -21,21 +21,21 @@
    "win": 11,
    "place2": 4,
    "place3": 5,
-   "other": 30,
-   "n": 50,
-   "win_rate": 0.22,
-   "quinella_rate": 0.3,
-   "show_rate": 0.4
+   "other": 31,
+   "n": 51,
+   "win_rate": 0.216,
+   "quinella_rate": 0.294,
+   "show_rate": 0.392
   },
   "2026": {
    "win": 5,
    "place2": 3,
    "place3": 5,
-   "other": 6,
-   "n": 19,
-   "win_rate": 0.263,
-   "quinella_rate": 0.421,
-   "show_rate": 0.684
+   "other": 7,
+   "n": 20,
+   "win_rate": 0.25,
+   "quinella_rate": 0.4,
+   "show_rate": 0.65
   },
   "2025": {
    "win": 4,
@@ -78,6 +78,19 @@
   }
  ],
  "ratings_reconstructed": [
+  {
+   "date": "2026-09-28",
+   "race_no": 12,
+   "position": 5,
+   "earned_yen": 20000,
+   "program_prize_k": 4767,
+   "year_prize_k": 1528,
+   "class": "B3",
+   "next_class": "B2",
+   "next_class_need_k": 733,
+   "diff_k": 20,
+   "change": null
+  },
   {
    "date": "2026-09-20",
    "race_no": 7,
@@ -251,16 +264,44 @@
  "reconstructed_now": {
   "snapshot_date": "2026-09-25",
   "class_code": "B3",
-  "program_prize_k": 4747,
-  "year_prize_k": 1508,
+  "program_prize_k": 4767,
+  "year_prize_k": 1528,
   "reconstructed": true,
-  "reconstructed_races": 0
+  "reconstructed_races": 1
  },
  "next_class": {
   "next_class": "B2",
-  "need_k": 753
+  "need_k": 733
  },
  "races": [
+  {
+   "date": "2026-09-28",
+   "race_no": 12,
+   "race_name": "ありがとうハロンズ釧路Ｂ３－１",
+   "class": "B3",
+   "moisture": 2.9,
+   "field_size": 10,
+   "num": 1,
+   "jockey": "林康文",
+   "trainer": "西弘美",
+   "owner": "（有）古閑牧場",
+   "sled_kg": 640.0,
+   "weight": 1059,
+   "weight_diff": 5,
+   "odds": 34.1,
+   "popularity": 8,
+   "position": 5,
+   "time": "1:34.5",
+   "time_sec": 94.5,
+   "margin_sec": 8.2,
+   "race_level_z": 0.93,
+   "interval": "中1週",
+   "other": {
+    "label": "勝ち馬",
+    "name": "スタージャガー"
+   },
+   "insider_labels": []
+  },
   {
    "date": "2026-09-20",
    "race_no": 7,
@@ -505,7 +546,7 @@
    "time": "1:51.1",
    "time_sec": 111.1,
    "margin_sec": 1.6,
-   "race_level_z": 1.07,
+   "race_level_z": 1.08,
    "interval": "連闘",
    "other": {
     "label": "勝ち馬",
@@ -533,7 +574,7 @@
    "time": "1:53.1",
    "time_sec": 113.1,
    "margin_sec": 20.5,
-   "race_level_z": 0.79,
+   "race_level_z": 0.8,
    "interval": "中1週",
    "other": {
     "label": "勝ち馬",
@@ -645,7 +686,7 @@
    "time": "1:57.6",
    "time_sec": 117.6,
    "margin_sec": 0.0,
-   "race_level_z": 1.1,
+   "race_level_z": 1.09,
    "interval": "中2週",
    "other": {
     "label": "2着馬",
@@ -673,7 +714,7 @@
    "time": "1:46.4",
    "time_sec": 106.4,
    "margin_sec": 6.6,
-   "race_level_z": 0.9,
+   "race_level_z": 0.89,
    "interval": "中1週",
    "other": {
     "label": "勝ち馬",
@@ -757,7 +798,7 @@
    "time": "2:02.9",
    "time_sec": 122.9,
    "margin_sec": 5.1,
-   "race_level_z": 0.62,
+   "race_level_z": 0.61,
    "interval": "中2週",
    "other": {
     "label": "勝ち馬",
@@ -841,7 +882,7 @@
    "time": "1:33.7",
    "time_sec": 93.7,
    "margin_sec": 7.3,
-   "race_level_z": 1.51,
+   "race_level_z": 1.5,
    "interval": "連闘",
    "other": {
     "label": "勝ち馬",
@@ -869,7 +910,7 @@
    "time": "1:55.4",
    "time_sec": 115.4,
    "margin_sec": 8.1,
-   "race_level_z": 0.91,
+   "race_level_z": 0.9,
    "interval": "中3週",
    "other": {
     "label": "勝ち馬",
@@ -897,7 +938,7 @@
    "time": "2:08.2",
    "time_sec": 128.2,
    "margin_sec": 24.6,
-   "race_level_z": 0.43,
+   "race_level_z": 0.42,
    "interval": "中1週",
    "other": {
     "label": "勝ち馬",

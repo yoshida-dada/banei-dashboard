@@ -4,10 +4,10 @@
  "age": 2,
  "trainer": "坂本東",
  "owner": "葛西一郎",
- "sled_kg": 500.0,
- "weight": 921,
- "weight_diff": 0,
- "last_race_date": "2026-09-20",
+ "sled_kg": 520.0,
+ "weight": 926,
+ "weight_diff": 5,
+ "last_race_date": "2026-09-28",
  "pedigree": {
   "sire": "サクラダイチ",
   "dam": "メムロヒカル",
@@ -21,21 +21,21 @@
    "win": 2,
    "place2": 2,
    "place3": 0,
-   "other": 4,
-   "n": 8,
-   "win_rate": 0.25,
-   "quinella_rate": 0.5,
-   "show_rate": 0.5
+   "other": 5,
+   "n": 9,
+   "win_rate": 0.222,
+   "quinella_rate": 0.444,
+   "show_rate": 0.444
   },
   "2026": {
    "win": 2,
    "place2": 2,
    "place3": 0,
-   "other": 4,
-   "n": 8,
-   "win_rate": 0.25,
-   "quinella_rate": 0.5,
-   "show_rate": 0.5
+   "other": 5,
+   "n": 9,
+   "win_rate": 0.222,
+   "quinella_rate": 0.444,
+   "show_rate": 0.444
   }
  },
  "insider_label_count": 0,
@@ -58,6 +58,19 @@
   }
  ],
  "ratings_reconstructed": [
+  {
+   "date": "2026-09-28",
+   "race_no": 8,
+   "position": 6,
+   "earned_yen": 0,
+   "program_prize_k": 1186,
+   "year_prize_k": 1186,
+   "class": "C2",
+   "next_class": "C1",
+   "next_class_need_k": 1014,
+   "diff_k": 0,
+   "change": null
+  },
   {
    "date": "2026-09-20",
    "race_no": 4,
@@ -174,6 +187,34 @@
  "next_class": null,
  "races": [
   {
+   "date": "2026-09-28",
+   "race_no": 8,
+   "race_name": "タンタン帯広来たちぇど記念２歳Ａ－２",
+   "class": "A2",
+   "moisture": 2.9,
+   "field_size": 10,
+   "num": 9,
+   "jockey": "中原蓮",
+   "trainer": "坂本東",
+   "owner": "葛西一郎",
+   "sled_kg": 520.0,
+   "weight": 926,
+   "weight_diff": 5,
+   "odds": 19.0,
+   "popularity": 8,
+   "position": 6,
+   "time": "1:41.7",
+   "time_sec": 101.7,
+   "margin_sec": 12.2,
+   "race_level_z": 0.06,
+   "interval": "中1週",
+   "other": {
+    "label": "勝ち馬",
+    "name": "ニシオギオリジン"
+   },
+   "insider_labels": []
+  },
+  {
    "date": "2026-09-20",
    "race_no": 4,
    "race_name": "Ｃａｌｌ　ｍｅ　ＫＩＮＧ２歳Ｂ－１",
@@ -193,7 +234,7 @@
    "time": "1:30.3",
    "time_sec": 90.3,
    "margin_sec": 0.0,
-   "race_level_z": 0.61,
+   "race_level_z": 0.6,
    "interval": "中2週",
    "other": {
     "label": "2着馬",
@@ -249,7 +290,7 @@
    "time": "1:54.9",
    "time_sec": 114.9,
    "margin_sec": 11.1,
-   "race_level_z": 0.08,
+   "race_level_z": 0.09,
    "interval": "中2週",
    "other": {
     "label": "勝ち馬",

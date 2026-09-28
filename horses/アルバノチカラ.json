@@ -4,10 +4,10 @@
  "age": 2,
  "trainer": "田上忠",
  "owner": "（株）アルバトロス",
- "sled_kg": 510.0,
- "weight": 882,
- "weight_diff": 26,
- "last_race_date": "2026-09-19",
+ "sled_kg": 520.0,
+ "weight": 891,
+ "weight_diff": 9,
+ "last_race_date": "2026-09-28",
  "pedigree": {
   "sire": "イッチョクセン",
   "dam": "清明",
@@ -21,21 +21,21 @@
    "win": 1,
    "place2": 0,
    "place3": 0,
-   "other": 7,
-   "n": 8,
-   "win_rate": 0.125,
-   "quinella_rate": 0.125,
-   "show_rate": 0.125
+   "other": 8,
+   "n": 9,
+   "win_rate": 0.111,
+   "quinella_rate": 0.111,
+   "show_rate": 0.111
   },
   "2026": {
    "win": 1,
    "place2": 0,
    "place3": 0,
-   "other": 7,
-   "n": 8,
-   "win_rate": 0.125,
-   "quinella_rate": 0.125,
-   "show_rate": 0.125
+   "other": 8,
+   "n": 9,
+   "win_rate": 0.111,
+   "quinella_rate": 0.111,
+   "show_rate": 0.111
   }
  },
  "insider_label_count": 0,
@@ -58,6 +58,19 @@
   }
  ],
  "ratings_reconstructed": [
+  {
+   "date": "2026-09-28",
+   "race_no": 4,
+   "position": 8,
+   "earned_yen": 0,
+   "program_prize_k": 318,
+   "year_prize_k": 318,
+   "class": "C2",
+   "next_class": "C1",
+   "next_class_need_k": 1882,
+   "diff_k": 0,
+   "change": null
+  },
   {
    "date": "2026-09-19",
    "race_no": 3,
@@ -173,6 +186,34 @@
  },
  "next_class": null,
  "races": [
+  {
+   "date": "2026-09-28",
+   "race_no": 4,
+   "race_name": "ラウンドワンＦＩＲＥ記念２歳Ｃ－６",
+   "class": "C",
+   "moisture": 2.0,
+   "field_size": 10,
+   "num": 8,
+   "jockey": "船山蔵",
+   "trainer": "田上忠",
+   "owner": "（株）アルバトロス",
+   "sled_kg": 520.0,
+   "weight": 891,
+   "weight_diff": 9,
+   "odds": 48.7,
+   "popularity": 9,
+   "position": 8,
+   "time": "2:10.6",
+   "time_sec": 130.6,
+   "margin_sec": 31.3,
+   "race_level_z": 0.41,
+   "interval": "中1週",
+   "other": {
+    "label": "勝ち馬",
+    "name": "ダリア"
+   },
+   "insider_labels": []
+  },
   {
    "date": "2026-09-19",
    "race_no": 3,
@@ -333,7 +374,7 @@
    "time": "2:19.2",
    "time_sec": 139.2,
    "margin_sec": 22.2,
-   "race_level_z": 0.22,
+   "race_level_z": 0.21,
    "interval": "中1週",
    "other": {
     "label": "勝ち馬",

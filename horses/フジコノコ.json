@@ -4,10 +4,10 @@
  "age": 2,
  "trainer": "大橋和",
  "owner": "中島雅也",
- "sled_kg": 480.0,
- "weight": 912,
- "weight_diff": 1,
- "last_race_date": "2026-09-20",
+ "sled_kg": 490.0,
+ "weight": 908,
+ "weight_diff": -4,
+ "last_race_date": "2026-09-28",
  "pedigree": {
   "sire": "オホーツクノタカラ",
   "dam": "フジノウンカイ",
@@ -19,23 +19,23 @@
  "stats": {
   "total": {
    "win": 0,
-   "place2": 1,
+   "place2": 2,
    "place3": 0,
    "other": 8,
-   "n": 9,
+   "n": 10,
    "win_rate": 0.0,
-   "quinella_rate": 0.111,
-   "show_rate": 0.111
+   "quinella_rate": 0.2,
+   "show_rate": 0.2
   },
   "2026": {
    "win": 0,
-   "place2": 1,
+   "place2": 2,
    "place3": 0,
    "other": 8,
-   "n": 9,
+   "n": 10,
    "win_rate": 0.0,
-   "quinella_rate": 0.111,
-   "show_rate": 0.111
+   "quinella_rate": 0.2,
+   "show_rate": 0.2
   }
  },
  "insider_label_count": 0,
@@ -58,6 +58,19 @@
   }
  ],
  "ratings_reconstructed": [
+  {
+   "date": "2026-09-28",
+   "race_no": 3,
+   "position": 2,
+   "earned_yen": 111000,
+   "program_prize_k": 348,
+   "year_prize_k": 348,
+   "class": "C2",
+   "next_class": "C1",
+   "next_class_need_k": 1852,
+   "diff_k": 111,
+   "change": null
+  },
   {
    "date": "2026-09-20",
    "race_no": 2,
@@ -179,13 +192,41 @@
  "reconstructed_now": {
   "snapshot_date": "2026-09-25",
   "class_code": "2sai",
-  "program_prize_k": 237,
-  "year_prize_k": 237,
+  "program_prize_k": 348,
+  "year_prize_k": 348,
   "reconstructed": true,
-  "reconstructed_races": 0
+  "reconstructed_races": 1
  },
  "next_class": null,
  "races": [
+  {
+   "date": "2026-09-28",
+   "race_no": 3,
+   "race_name": "２歳Ｄ－２",
+   "class": "D",
+   "moisture": 2.0,
+   "field_size": 10,
+   "num": 2,
+   "jockey": "村上章",
+   "trainer": "大橋和",
+   "owner": "中島雅也",
+   "sled_kg": 490.0,
+   "weight": 908,
+   "weight_diff": -4,
+   "odds": 12.2,
+   "popularity": 5,
+   "position": 2,
+   "time": "1:46.7",
+   "time_sec": 106.7,
+   "margin_sec": 0.3,
+   "race_level_z": 1.92,
+   "interval": "中1週",
+   "other": {
+    "label": "勝ち馬",
+    "name": "グランプリスラム"
+   },
+   "insider_labels": []
+  },
   {
    "date": "2026-09-20",
    "race_no": 2,
@@ -206,7 +247,7 @@
    "time": "1:48.0",
    "time_sec": 108.0,
    "margin_sec": 14.7,
-   "race_level_z": 1.65,
+   "race_level_z": 1.64,
    "interval": "中3週",
    "other": {
     "label": "勝ち馬",
@@ -346,7 +387,7 @@
    "time": "2:28.9",
    "time_sec": 148.9,
    "margin_sec": 8.8,
-   "race_level_z": 0.43,
+   "race_level_z": 0.42,
    "interval": "中1週",
    "other": {
     "label": "勝ち馬",

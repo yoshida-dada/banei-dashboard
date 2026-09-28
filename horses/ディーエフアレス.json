@@ -4,10 +4,10 @@
  "age": 2,
  "trainer": "小林長",
  "owner": "池田賢治",
- "sled_kg": 500.0,
- "weight": 875,
- "weight_diff": 17,
- "last_race_date": "2026-09-20",
+ "sled_kg": 510.0,
+ "weight": 871,
+ "weight_diff": -4,
+ "last_race_date": "2026-09-28",
  "pedigree": {
   "sire": "カンシャノココロ",
   "dam": null,
@@ -21,21 +21,21 @@
    "win": 0,
    "place2": 1,
    "place3": 0,
-   "other": 5,
-   "n": 6,
+   "other": 6,
+   "n": 7,
    "win_rate": 0.0,
-   "quinella_rate": 0.167,
-   "show_rate": 0.167
+   "quinella_rate": 0.143,
+   "show_rate": 0.143
   },
   "2026": {
    "win": 0,
    "place2": 1,
    "place3": 0,
-   "other": 5,
-   "n": 6,
+   "other": 6,
+   "n": 7,
    "win_rate": 0.0,
-   "quinella_rate": 0.167,
-   "show_rate": 0.167
+   "quinella_rate": 0.143,
+   "show_rate": 0.143
   }
  },
  "insider_label_count": 0,
@@ -58,6 +58,19 @@
   }
  ],
  "ratings_reconstructed": [
+  {
+   "date": "2026-09-28",
+   "race_no": 3,
+   "position": 6,
+   "earned_yen": 0,
+   "program_prize_k": 255,
+   "year_prize_k": 255,
+   "class": "C2",
+   "next_class": "C1",
+   "next_class_need_k": 1945,
+   "diff_k": 0,
+   "change": null
+  },
   {
    "date": "2026-09-20",
    "race_no": 2,
@@ -148,6 +161,34 @@
  "next_class": null,
  "races": [
   {
+   "date": "2026-09-28",
+   "race_no": 3,
+   "race_name": "２歳Ｄ－２",
+   "class": "D",
+   "moisture": 2.0,
+   "field_size": 10,
+   "num": 10,
+   "jockey": "島津新",
+   "trainer": "小林長",
+   "owner": "池田賢治",
+   "sled_kg": 510.0,
+   "weight": 871,
+   "weight_diff": -4,
+   "odds": 4.4,
+   "popularity": 2,
+   "position": 6,
+   "time": "1:54.6",
+   "time_sec": 114.6,
+   "margin_sec": 8.2,
+   "race_level_z": 1.64,
+   "interval": "中1週",
+   "other": {
+    "label": "勝ち馬",
+    "name": "グランプリスラム"
+   },
+   "insider_labels": []
+  },
+  {
    "date": "2026-09-20",
    "race_no": 2,
    "race_name": "革新された未来２歳Ｄ－１",
@@ -167,7 +208,7 @@
    "time": "1:44.4",
    "time_sec": 104.4,
    "margin_sec": 11.1,
-   "race_level_z": 1.86,
+   "race_level_z": 1.85,
    "interval": "中3週",
    "other": {
     "label": "勝ち馬",
@@ -195,7 +236,7 @@
    "time": "2:09.2",
    "time_sec": 129.2,
    "margin_sec": 2.1,
-   "race_level_z": 1.13,
+   "race_level_z": 1.12,
    "interval": "中1週",
    "other": {
     "label": "勝ち馬",
@@ -223,7 +264,7 @@
    "time": "2:29.5",
    "time_sec": 149.5,
    "margin_sec": 15.2,
-   "race_level_z": 0.33,
+   "race_level_z": 0.32,
    "interval": "中3週",
    "other": {
     "label": "勝ち馬",

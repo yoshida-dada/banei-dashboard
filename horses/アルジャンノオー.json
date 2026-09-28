@@ -4,10 +4,10 @@
  "age": 8,
  "trainer": "中島敏",
  "owner": "安藤浩太朗",
- "sled_kg": 650.0,
- "weight": 1146,
- "weight_diff": 17,
- "last_race_date": "2026-09-14",
+ "sled_kg": 660.0,
+ "weight": 1150,
+ "weight_diff": 4,
+ "last_race_date": "2026-09-28",
  "pedigree": {
   "sire": "レットダイヤ",
   "dam": "旭灼",
@@ -21,21 +21,21 @@
    "win": 9,
    "place2": 10,
    "place3": 6,
-   "other": 69,
-   "n": 94,
-   "win_rate": 0.096,
-   "quinella_rate": 0.202,
-   "show_rate": 0.266
+   "other": 70,
+   "n": 95,
+   "win_rate": 0.095,
+   "quinella_rate": 0.2,
+   "show_rate": 0.263
   },
   "2026": {
    "win": 2,
    "place2": 1,
    "place3": 3,
-   "other": 11,
-   "n": 17,
-   "win_rate": 0.118,
-   "quinella_rate": 0.176,
-   "show_rate": 0.353
+   "other": 12,
+   "n": 18,
+   "win_rate": 0.111,
+   "quinella_rate": 0.167,
+   "show_rate": 0.333
   },
   "2025": {
    "win": 0,
@@ -88,6 +88,19 @@
   }
  ],
  "ratings_reconstructed": [
+  {
+   "date": "2026-09-28",
+   "race_no": 10,
+   "position": 10,
+   "earned_yen": 0,
+   "program_prize_k": 5578,
+   "year_prize_k": 950,
+   "class": "B2",
+   "next_class": "B1",
+   "next_class_need_k": 1122,
+   "diff_k": 0,
+   "change": null
+  },
   {
    "date": "2026-09-14",
    "race_no": 12,
@@ -259,6 +272,34 @@
  },
  "races": [
   {
+   "date": "2026-09-28",
+   "race_no": 10,
+   "race_name": "祝結婚！もう引き返せんで賞Ｂ２－２",
+   "class": "B2",
+   "moisture": 2.9,
+   "field_size": 10,
+   "num": 3,
+   "jockey": "西将太",
+   "trainer": "中島敏",
+   "owner": "安藤浩太朗",
+   "sled_kg": 660.0,
+   "weight": 1150,
+   "weight_diff": 4,
+   "odds": 39.7,
+   "popularity": null,
+   "position": 10,
+   "time": "2:01.1",
+   "time_sec": 121.1,
+   "margin_sec": 25.5,
+   "race_level_z": -0.29,
+   "interval": "中2週",
+   "other": {
+    "label": "勝ち馬",
+    "name": "ハリケーン"
+   },
+   "insider_labels": []
+  },
+  {
    "date": "2026-09-14",
    "race_no": 12,
    "race_name": "Ｂ３－１混合",
@@ -334,7 +375,7 @@
    "time": "2:03.2",
    "time_sec": 123.2,
    "margin_sec": 11.6,
-   "race_level_z": -0.02,
+   "race_level_z": -0.03,
    "interval": "連闘",
    "other": {
     "label": "勝ち馬",
@@ -418,7 +459,7 @@
    "time": "1:50.0",
    "time_sec": 110.0,
    "margin_sec": 21.6,
-   "race_level_z": 0.38,
+   "race_level_z": 0.37,
    "interval": "中3週",
    "other": {
     "label": "勝ち馬",
@@ -2904,7 +2945,7 @@
    "time": "1:32.0",
    "time_sec": 92.0,
    "margin_sec": 13.4,
-   "race_level_z": 1.06,
+   "race_level_z": 1.05,
    "interval": "中1週",
    "other": {
     "label": "勝ち馬",

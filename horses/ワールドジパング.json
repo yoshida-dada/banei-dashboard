@@ -4,10 +4,10 @@
  "age": 2,
  "trainer": "小林長",
  "owner": "内山哲也",
- "sled_kg": 540.0,
- "weight": 950,
- "weight_diff": 3,
- "last_race_date": "2026-09-20",
+ "sled_kg": 530.0,
+ "weight": 943,
+ "weight_diff": -7,
+ "last_race_date": "2026-09-28",
  "pedigree": {
   "sire": "フウジンライデン",
   "dam": "エンゼルフクヒメ",
@@ -19,23 +19,23 @@
  "stats": {
   "total": {
    "win": 1,
-   "place2": 1,
+   "place2": 2,
    "place3": 3,
    "other": 2,
-   "n": 7,
-   "win_rate": 0.143,
-   "quinella_rate": 0.286,
-   "show_rate": 0.714
+   "n": 8,
+   "win_rate": 0.125,
+   "quinella_rate": 0.375,
+   "show_rate": 0.75
   },
   "2026": {
    "win": 1,
-   "place2": 1,
+   "place2": 2,
    "place3": 3,
    "other": 2,
-   "n": 7,
-   "win_rate": 0.143,
-   "quinella_rate": 0.286,
-   "show_rate": 0.714
+   "n": 8,
+   "win_rate": 0.125,
+   "quinella_rate": 0.375,
+   "show_rate": 0.75
   }
  },
  "insider_label_count": 0,
@@ -58,6 +58,19 @@
   }
  ],
  "ratings_reconstructed": [
+  {
+   "date": "2026-09-28",
+   "race_no": 8,
+   "position": 2,
+   "earned_yen": 188000,
+   "program_prize_k": 1437,
+   "year_prize_k": 1437,
+   "class": "C2",
+   "next_class": "C1",
+   "next_class_need_k": 763,
+   "diff_k": 188,
+   "change": null
+  },
   {
    "date": "2026-09-20",
    "race_no": 10,
@@ -153,13 +166,41 @@
  "reconstructed_now": {
   "snapshot_date": "2026-09-25",
   "class_code": "2sai",
-  "program_prize_k": 1249,
-  "year_prize_k": 1249,
+  "program_prize_k": 1437,
+  "year_prize_k": 1437,
   "reconstructed": true,
-  "reconstructed_races": 0
+  "reconstructed_races": 1
  },
  "next_class": null,
  "races": [
+  {
+   "date": "2026-09-28",
+   "race_no": 8,
+   "race_name": "タンタン帯広来たちぇど記念２歳Ａ－２",
+   "class": "A2",
+   "moisture": 2.9,
+   "field_size": 10,
+   "num": 10,
+   "jockey": "☆臼杵龍",
+   "trainer": "小林長",
+   "owner": "内山哲也",
+   "sled_kg": 530.0,
+   "weight": 943,
+   "weight_diff": -7,
+   "odds": 3.4,
+   "popularity": 1,
+   "position": 2,
+   "time": "1:31.2",
+   "time_sec": 91.2,
+   "margin_sec": 1.7,
+   "race_level_z": 0.53,
+   "interval": "中1週",
+   "other": {
+    "label": "勝ち馬",
+    "name": "ニシオギオリジン"
+   },
+   "insider_labels": []
+  },
   {
    "date": "2026-09-20",
    "race_no": 10,

@@ -4,10 +4,10 @@
  "age": 2,
  "trainer": "松井浩",
  "owner": "（株）北西ファーム",
- "sled_kg": 510.0,
- "weight": 853,
- "weight_diff": -3,
- "last_race_date": "2026-09-13",
+ "sled_kg": 520.0,
+ "weight": 857,
+ "weight_diff": 4,
+ "last_race_date": "2026-09-28",
  "pedigree": {
   "sire": "グレンタイショウ",
   "dam": "メトーフクヒメ",
@@ -19,23 +19,23 @@
  "stats": {
   "total": {
    "win": 1,
-   "place2": 0,
+   "place2": 1,
    "place3": 0,
    "other": 7,
-   "n": 8,
-   "win_rate": 0.125,
-   "quinella_rate": 0.125,
-   "show_rate": 0.125
+   "n": 9,
+   "win_rate": 0.111,
+   "quinella_rate": 0.222,
+   "show_rate": 0.222
   },
   "2026": {
    "win": 1,
-   "place2": 0,
+   "place2": 1,
    "place3": 0,
    "other": 7,
-   "n": 8,
-   "win_rate": 0.125,
-   "quinella_rate": 0.125,
-   "show_rate": 0.125
+   "n": 9,
+   "win_rate": 0.111,
+   "quinella_rate": 0.222,
+   "show_rate": 0.222
   }
  },
  "insider_label_count": 0,
@@ -58,6 +58,19 @@
   }
  ],
  "ratings_reconstructed": [
+  {
+   "date": "2026-09-28",
+   "race_no": 4,
+   "position": 2,
+   "earned_yen": 122000,
+   "program_prize_k": 458,
+   "year_prize_k": 458,
+   "class": "C2",
+   "next_class": "C1",
+   "next_class_need_k": 1742,
+   "diff_k": 122,
+   "change": null
+  },
   {
    "date": "2026-09-13",
    "race_no": 3,
@@ -166,13 +179,41 @@
  "reconstructed_now": {
   "snapshot_date": "2026-09-25",
   "class_code": "2sai",
-  "program_prize_k": 336,
-  "year_prize_k": 336,
+  "program_prize_k": 458,
+  "year_prize_k": 458,
   "reconstructed": true,
-  "reconstructed_races": 0
+  "reconstructed_races": 1
  },
  "next_class": null,
  "races": [
+  {
+   "date": "2026-09-28",
+   "race_no": 4,
+   "race_name": "ラウンドワンＦＩＲＥ記念２歳Ｃ－６",
+   "class": "C",
+   "moisture": 2.0,
+   "field_size": 10,
+   "num": 3,
+   "jockey": "阿部優",
+   "trainer": "松井浩",
+   "owner": "（株）北西ファーム",
+   "sled_kg": 520.0,
+   "weight": 857,
+   "weight_diff": 4,
+   "odds": 53.5,
+   "popularity": 10,
+   "position": 2,
+   "time": "1:44.6",
+   "time_sec": 104.6,
+   "margin_sec": 5.3,
+   "race_level_z": 1.51,
+   "interval": "中2週",
+   "other": {
+    "label": "勝ち馬",
+    "name": "ダリア"
+   },
+   "insider_labels": []
+  },
   {
    "date": "2026-09-13",
    "race_no": 3,
@@ -193,7 +234,7 @@
    "time": "2:45.8",
    "time_sec": 165.8,
    "margin_sec": 45.7,
-   "race_level_z": -0.76,
+   "race_level_z": -0.77,
    "interval": "中1週",
    "other": {
     "label": "勝ち馬",
@@ -333,7 +374,7 @@
    "time": "2:02.3",
    "time_sec": 122.3,
    "margin_sec": 0.0,
-   "race_level_z": 1.1,
+   "race_level_z": 1.09,
    "interval": "連闘",
    "other": {
     "label": "2着馬",

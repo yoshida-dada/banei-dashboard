@@ -4,10 +4,10 @@
  "age": 2,
  "trainer": "藤野俊",
  "owner": "小森唯永",
- "sled_kg": 500.0,
- "weight": 858,
- "weight_diff": 15,
- "last_race_date": "2026-09-21",
+ "sled_kg": 510.0,
+ "weight": 853,
+ "weight_diff": -5,
+ "last_race_date": "2026-09-28",
  "pedigree": {
   "sire": "ジェイワン",
   "dam": "ネンジュノチカラ",
@@ -21,21 +21,21 @@
    "win": 0,
    "place2": 0,
    "place3": 2,
-   "other": 5,
-   "n": 7,
+   "other": 6,
+   "n": 8,
    "win_rate": 0.0,
    "quinella_rate": 0.0,
-   "show_rate": 0.286
+   "show_rate": 0.25
   },
   "2026": {
    "win": 0,
    "place2": 0,
    "place3": 2,
-   "other": 5,
-   "n": 7,
+   "other": 6,
+   "n": 8,
    "win_rate": 0.0,
    "quinella_rate": 0.0,
-   "show_rate": 0.286
+   "show_rate": 0.25
   }
  },
  "insider_label_count": 0,
@@ -58,6 +58,19 @@
   }
  ],
  "ratings_reconstructed": [
+  {
+   "date": "2026-09-28",
+   "race_no": 3,
+   "position": 10,
+   "earned_yen": 0,
+   "program_prize_k": 243,
+   "year_prize_k": 243,
+   "class": "C2",
+   "next_class": "C1",
+   "next_class_need_k": 1957,
+   "diff_k": 0,
+   "change": null
+  },
   {
    "date": "2026-09-21",
    "race_no": 3,
@@ -161,6 +174,34 @@
  "next_class": null,
  "races": [
   {
+   "date": "2026-09-28",
+   "race_no": 3,
+   "race_name": "２歳Ｄ－２",
+   "class": "D",
+   "moisture": 2.0,
+   "field_size": 10,
+   "num": 4,
+   "jockey": "鈴木恵",
+   "trainer": "藤野俊",
+   "owner": "小森唯永",
+   "sled_kg": 510.0,
+   "weight": 853,
+   "weight_diff": -5,
+   "odds": 6.1,
+   "popularity": 4,
+   "position": 10,
+   "time": "2:09.7",
+   "time_sec": 129.7,
+   "margin_sec": 23.3,
+   "race_level_z": 1.0,
+   "interval": "連闘",
+   "other": {
+    "label": "勝ち馬",
+    "name": "グランプリスラム"
+   },
+   "insider_labels": []
+  },
+  {
    "date": "2026-09-21",
    "race_no": 3,
    "race_name": "必勝！三上夫婦記念２歳Ｄ－２",
@@ -180,7 +221,7 @@
    "time": "1:49.9",
    "time_sec": 109.9,
    "margin_sec": 8.0,
-   "race_level_z": 1.66,
+   "race_level_z": 1.65,
    "interval": "中3週",
    "other": {
     "label": "勝ち馬",
@@ -348,7 +389,7 @@
    "time": "2:45.7",
    "time_sec": 165.7,
    "margin_sec": 64.8,
-   "race_level_z": -0.51,
+   "race_level_z": -0.52,
    "interval": null,
    "other": {
     "label": "勝ち馬",

@@ -4,10 +4,10 @@
  "age": 3,
  "trainer": "大橋和",
  "owner": "村上廣昭",
- "sled_kg": 610.0,
- "weight": 944,
- "weight_diff": 2,
- "last_race_date": "2026-09-13",
+ "sled_kg": 620.0,
+ "weight": 950,
+ "weight_diff": 6,
+ "last_race_date": "2026-09-28",
  "pedigree": {
   "sire": "マルニセンプー",
   "dam": "アフロディーテ",
@@ -21,21 +21,21 @@
    "win": 0,
    "place2": 2,
    "place3": 2,
-   "other": 29,
-   "n": 33,
+   "other": 30,
+   "n": 34,
    "win_rate": 0.0,
-   "quinella_rate": 0.061,
-   "show_rate": 0.121
+   "quinella_rate": 0.059,
+   "show_rate": 0.118
   },
   "2026": {
    "win": 0,
    "place2": 0,
    "place3": 2,
-   "other": 16,
-   "n": 18,
+   "other": 17,
+   "n": 19,
    "win_rate": 0.0,
    "quinella_rate": 0.0,
-   "show_rate": 0.111
+   "show_rate": 0.105
   },
   "2025": {
    "win": 0,
@@ -68,6 +68,19 @@
   }
  ],
  "ratings_reconstructed": [
+  {
+   "date": "2026-09-28",
+   "race_no": 1,
+   "position": 6,
+   "earned_yen": 0,
+   "program_prize_k": 458,
+   "year_prize_k": 132,
+   "class": "C2",
+   "next_class": "C1",
+   "next_class_need_k": 1742,
+   "diff_k": 0,
+   "change": null
+  },
   {
    "date": "2026-09-13",
    "race_no": 1,
@@ -238,6 +251,34 @@
   "need_k": 1742
  },
  "races": [
+  {
+   "date": "2026-09-28",
+   "race_no": 1,
+   "race_name": "ひろむちゃん頑張った記念Ｃ２－１０",
+   "class": "C2",
+   "moisture": 0.8,
+   "field_size": 8,
+   "num": 6,
+   "jockey": "松本秀",
+   "trainer": "大橋和",
+   "owner": "村上廣昭",
+   "sled_kg": 620.0,
+   "weight": 950,
+   "weight_diff": 6,
+   "odds": 15.2,
+   "popularity": 6,
+   "position": 6,
+   "time": "2:54.1",
+   "time_sec": 174.1,
+   "margin_sec": 30.8,
+   "race_level_z": -0.45,
+   "interval": "中2週",
+   "other": {
+    "label": "勝ち馬",
+    "name": "ツガルキンフジ"
+   },
+   "insider_labels": []
+  },
   {
    "date": "2026-09-13",
    "race_no": 1,
@@ -594,7 +635,7 @@
    "time": "2:58.7",
    "time_sec": 178.7,
    "margin_sec": 40.0,
-   "race_level_z": -0.77,
+   "race_level_z": -0.78,
    "interval": "中2週",
    "other": {
     "label": "勝ち馬",
@@ -650,7 +691,7 @@
    "time": "3:02.3",
    "time_sec": 182.3,
    "margin_sec": 34.4,
-   "race_level_z": -1.05,
+   "race_level_z": -1.06,
    "interval": "中2週",
    "other": {
     "label": "勝ち馬",
@@ -706,7 +747,7 @@
    "time": "2:56.8",
    "time_sec": 176.8,
    "margin_sec": 46.4,
-   "race_level_z": -1.14,
+   "race_level_z": -1.15,
    "interval": "中2週",
    "other": {
     "label": "勝ち馬",
@@ -734,7 +775,7 @@
    "time": "2:46.3",
    "time_sec": 166.3,
    "margin_sec": 23.1,
-   "race_level_z": -0.56,
+   "race_level_z": -0.57,
    "interval": "連闘",
    "other": {
     "label": "勝ち馬",
@@ -846,7 +887,7 @@
    "time": "2:08.9",
    "time_sec": 128.9,
    "margin_sec": 31.5,
-   "race_level_z": 0.78,
+   "race_level_z": 0.77,
    "interval": "中2週",
    "other": {
     "label": "勝ち馬",
@@ -874,7 +915,7 @@
    "time": "2:02.9",
    "time_sec": 122.9,
    "margin_sec": 13.1,
-   "race_level_z": 1.49,
+   "race_level_z": 1.48,
    "interval": "中2週",
    "other": {
     "label": "勝ち馬",
@@ -902,7 +943,7 @@
    "time": "2:17.2",
    "time_sec": 137.2,
    "margin_sec": 21.9,
-   "race_level_z": 0.82,
+   "race_level_z": 0.81,
    "interval": "中3週",
    "other": {
     "label": "勝ち馬",
@@ -930,7 +971,7 @@
    "time": "2:22.1",
    "time_sec": 142.1,
    "margin_sec": 27.4,
-   "race_level_z": 0.74,
+   "race_level_z": 0.73,
    "interval": "連闘",
    "other": {
     "label": "勝ち馬",
@@ -1014,7 +1055,7 @@
    "time": "2:57.5",
    "time_sec": 177.5,
    "margin_sec": 37.6,
-   "race_level_z": -1.09,
+   "race_level_z": -1.1,
    "interval": "中2週",
    "other": {
     "label": "勝ち馬",
@@ -1098,7 +1139,7 @@
    "time": "3:16.2",
    "time_sec": 196.2,
    "margin_sec": 70.5,
-   "race_level_z": -1.43,
+   "race_level_z": -1.44,
    "interval": "連闘",
    "other": {
     "label": "勝ち馬",
@@ -1154,7 +1195,7 @@
    "time": "3:32.5",
    "time_sec": 212.5,
    "margin_sec": 96.8,
-   "race_level_z": -1.8,
+   "race_level_z": -1.79,
    "interval": null,
    "other": {
     "label": "勝ち馬",

@@ -4,10 +4,10 @@
  "age": 3,
  "trainer": "大橋和",
  "owner": "葛西一郎",
- "sled_kg": 610.0,
- "weight": 951,
- "weight_diff": -58,
- "last_race_date": "2026-09-12",
+ "sled_kg": 620.0,
+ "weight": 948,
+ "weight_diff": -3,
+ "last_race_date": "2026-09-28",
  "pedigree": {
   "sire": "スピードフジ",
   "dam": "幸姫",
@@ -18,24 +18,24 @@
  },
  "stats": {
   "total": {
-   "win": 3,
+   "win": 4,
    "place2": 2,
    "place3": 3,
    "other": 19,
-   "n": 27,
-   "win_rate": 0.111,
-   "quinella_rate": 0.185,
-   "show_rate": 0.296
+   "n": 28,
+   "win_rate": 0.143,
+   "quinella_rate": 0.214,
+   "show_rate": 0.321
   },
   "2026": {
-   "win": 1,
+   "win": 2,
    "place2": 2,
    "place3": 1,
    "other": 9,
-   "n": 13,
-   "win_rate": 0.077,
-   "quinella_rate": 0.231,
-   "show_rate": 0.308
+   "n": 14,
+   "win_rate": 0.143,
+   "quinella_rate": 0.286,
+   "show_rate": 0.357
   },
   "2025": {
    "win": 2,
@@ -60,6 +60,19 @@
   }
  ],
  "ratings_reconstructed": [
+  {
+   "date": "2026-09-28",
+   "race_no": 1,
+   "position": 1,
+   "earned_yen": 300000,
+   "program_prize_k": 1781,
+   "year_prize_k": 429,
+   "class": "C2",
+   "next_class": "C1",
+   "next_class_need_k": 419,
+   "diff_k": 300,
+   "change": null
+  },
   {
    "date": "2026-09-12",
    "race_no": 1,
@@ -155,16 +168,44 @@
  "reconstructed_now": {
   "snapshot_date": "2026-07-12",
   "class_code": "C2",
-  "program_prize_k": 1481,
-  "year_prize_k": 129,
+  "program_prize_k": 1781,
+  "year_prize_k": 429,
   "reconstructed": true,
-  "reconstructed_races": 0
+  "reconstructed_races": 1
  },
  "next_class": {
   "next_class": "C1",
-  "need_k": 719
+  "need_k": 419
  },
  "races": [
+  {
+   "date": "2026-09-28",
+   "race_no": 1,
+   "race_name": "ひろむちゃん頑張った記念Ｃ２－１０",
+   "class": "C2",
+   "moisture": 0.8,
+   "field_size": 8,
+   "num": 4,
+   "jockey": "西将太",
+   "trainer": "大橋和",
+   "owner": "葛西一郎",
+   "sled_kg": 620.0,
+   "weight": 948,
+   "weight_diff": -3,
+   "odds": 3.8,
+   "popularity": 2,
+   "position": 1,
+   "time": "2:23.3",
+   "time_sec": 143.3,
+   "margin_sec": 0.0,
+   "race_level_z": 0.86,
+   "interval": "中2週",
+   "other": {
+    "label": "2着馬",
+    "name": "ゴールドダイ"
+   },
+   "insider_labels": []
+  },
   {
    "date": "2026-09-12",
    "race_no": 1,
@@ -633,7 +674,7 @@
    "time": "1:44.9",
    "time_sec": 104.9,
    "margin_sec": 0.0,
-   "race_level_z": 1.86,
+   "race_level_z": 1.85,
    "interval": "中2週",
    "other": {
     "label": "2着馬",
@@ -885,7 +926,7 @@
    "time": "2:14.3",
    "time_sec": 134.3,
    "margin_sec": 0.0,
-   "race_level_z": 0.56,
+   "race_level_z": 0.55,
    "interval": "連闘",
    "other": {
     "label": "2着馬",
