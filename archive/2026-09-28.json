@@ -1,6 +1,6 @@
 {
  "date": "2026-09-28",
- "archived_at": "2026-09-28 15:33",
+ "archived_at": "2026-09-28 15:34",
  "races": [
   {
    "date": "2026-09-28",
@@ -3821,7 +3821,7 @@
    "market_fav": 5,
    "winner": 1,
    "update_stage": "result",
-   "updated_at": "2026-09-28 15:26",
+   "updated_at": "2026-09-28 15:34",
    "horses": [
     {
      "num": 1,
@@ -9263,7 +9263,11 @@
     33000,
     18000
    ],
-   "bets": []
+   "bets": [],
+   "track_offset": -16.6,
+   "track_z": -1.35,
+   "track_label": "軽",
+   "track_n": 2
   },
   {
    "date": "2026-09-28",
