@@ -105,6 +105,8 @@ header{padding:calc(14px + env(safe-area-inset-top)) calc(14px + env(safe-area-i
 .chip b{color:var(--ink)}
 .chip.moist{background:var(--edge-soft);color:var(--edge);border-color:transparent;font-weight:700}
 .chip.pre{background:var(--accent-soft);color:var(--accent);border-color:transparent;font-weight:700}
+.chip.cd{border-color:transparent;background:var(--edge-soft);color:var(--edge);font-weight:700;font-variant-numeric:tabular-nums}
+.chip.cd:empty{display:none}
 .chip.cancel{background:color-mix(in srgb,var(--muted) 22%,var(--surface));color:var(--ink);border-color:transparent;font-weight:800}
 .chip.upd{background:var(--edge-soft);color:var(--edge);border-color:transparent;font-weight:700}
 .chip.trk{border-color:transparent;font-weight:700}
@@ -1020,9 +1022,11 @@ function render(){
     +`<span class="chip">${r.field_size}頭</span>`
     +(r.post_time?`<span class="chip">発走 <b>${r.post_time}</b></span>`:'')
     +(hasResult?`<span class="chip">決着 <b>${r.win_time||'—'}</b></span>`:'')
+    +(!hasResult&&!cancelled&&r.post_time?`<span class="chip cd" id="metaCd"></span>`:'')
     +preBadge+updChip+`</div>`
     +prizeHtml
     +asHtml+`</div>`;
+  startMetaCountdown(r, hasResult, cancelled);
   renderSuspicionAlert(r);
   renderResultTab(r, hasResult, resultRow);
   renderPayouts(r);
@@ -1065,6 +1069,24 @@ async function loadBackendConfig(){
       if(view==="bets"){ stopLive(); render(); }
     }
   }catch(e){}
+}
+// 発走までの締切カウントダウン（メタ情報欄、2026-09-28）。買い目タブのライブ版と違いバックエンド
+// 接続不要・r.post_time(HH:MM)から純粋にクライアント側の時計で計算する（オッズ取得締切=発走時刻の近似）。
+let metaCdTimer=null;
+function startMetaCountdown(r, hasResult, cancelled){
+  clearInterval(metaCdTimer); metaCdTimer=null;
+  const el=document.getElementById("metaCd"); if(!el) return;
+  const now=new Date();
+  const todayIso=now.getFullYear()+"-"+String(now.getMonth()+1).padStart(2,"0")+"-"+String(now.getDate()).padStart(2,"0");
+  const m=/^(\d{1,2}):(\d{2})/.exec(String(r.post_time||""));
+  if(hasResult||cancelled||!m||r.date!==todayIso) return;
+  const target=new Date(now); target.setHours(+m[1],+m[2],0,0);
+  const tick=()=>{
+    const s=Math.round((target-new Date())/1000);
+    el.innerHTML = s>0 ? `締切まで <b>${fmtCountdown(s)}</b>` : `<b>締切</b>`;
+    if(s<=0) clearInterval(metaCdTimer);
+  };
+  tick(); metaCdTimer=setInterval(tick,1000);
 }
 function fmtCountdown(s){
   if(s==null) return "—";
