@@ -1257,22 +1257,26 @@ function featBar(label,v){ const w=Math.max(0,Math.min(100,(v||0)*10));
 // 補正後の残差、過去5走の🔥/📉判定と同じ値）に適用する。着順ベースのform_trendと違い、クラスが
 // 上がって着順が落ちても「補正後のタイムは良化」を拾える。表示専用（勝率計算には未使用）。
 function formTrendInfo(trend){
-  const rows=(trend||[]).filter(t=>t.rz!=null).slice(-5);  // 古い→新しい、最大5走
-  if(rows.length<3) return null;
-  const nf=[...rows].reverse();  // 新しい→古いに揃える（_score_form_trendのpositions[]と同じ並び）
+  // 対象10走・2走移動平均で単発のブレを均してから直近/過去を比較（2026-09-29、ユーザー指定）。
+  const rows=(trend||[]).filter(t=>t.rz!=null).slice(-10);  // 古い→新しい、最大10走
+  if(rows.length<4) return null;  // 2走移動平均を3点以上作るのに必要な最小本数
+  const ma=[];
+  for(let i=1;i<rows.length;i++) ma.push((rows[i-1].rz+rows[i].rz)/2);  // 2走移動平均（古い→新しい）
+  if(ma.length<3) return null;
+  const nf=[...ma].reverse();  // 新しい→古いに揃える（_score_form_trendのpositions[]と同じ並び）
   const half=Math.floor(nf.length/2);
   const recent=nf.slice(0,half), older=nf.slice(half+(nf.length%2));
   if(!recent.length||!older.length) return null;
-  const avg=a=>a.reduce((s,t)=>s+t.rz,0)/a.length;
+  const avg=a=>a.reduce((s,v)=>s+v,0)/a.length;
   return {diff:Math.round((avg(recent)-avg(older))*100)/100, n:rows.length};
 }
 function formTrendHtml(trend){
   const info=formTrendInfo(trend);
   if(!info) return "";
   const TH=0.4;  // このくらいの差から「傾向あり」として表示（表示専用の目安値、未検証）
-  if(Math.abs(info.diff)<TH) return `<div class="p5trend p5trend-flat" title="直近${info.n}走のzスコア推移からの目安（表示専用、勝率計算には未反映）">調子➡️</div>`;
+  if(Math.abs(info.diff)<TH) return `<div class="p5trend p5trend-flat" title="直近${info.n}走のzスコア(2走移動平均)推移からの目安（表示専用、勝率計算には未反映）">調子➡️</div>`;
   const up=info.diff>0;
-  return `<div class="p5trend ${up?'p5trend-up':'p5trend-dn'}" title="直近${info.n}走のzスコア推移からの目安（表示専用、勝率計算には未反映）">調子${up?'↗️':'↘️'}(${info.diff>0?'+':''}${info.diff})</div>`;
+  return `<div class="p5trend ${up?'p5trend-up':'p5trend-dn'}" title="直近${info.n}走のzスコア(2走移動平均)推移からの目安（表示専用、勝率計算には未反映）">調子${up?'↗️':'↘️'}(${info.diff>0?'+':''}${info.diff})</div>`;
 }
 function past5Html(h){
   const rows=(h.trend||[]).slice(-5).reverse();
