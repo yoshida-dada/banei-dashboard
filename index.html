@@ -197,12 +197,12 @@ table.ht .fin{font-size:.68rem;color:var(--muted)}
 table.ht .fin.top{color:var(--good);font-weight:800}
 /* 過去5走（簡易）列（2026-09-26、日付/着順/1着とのタイム差の3行×5走） */
 .p5grid{display:flex;gap:5px}
-.p5col{display:flex;flex-direction:column;align-items:center;min-width:46px;cursor:pointer;
+.p5col{display:flex;flex-direction:column;align-items:center;min-width:64px;cursor:pointer;
   border-radius:5px;background:var(--surface2);padding:2px 3px;line-height:1.35}
 .p5col.p5top{background:var(--good-soft)}
 .p5col.p5win{background:var(--accent-soft)}
 .p5d{font-size:.6rem;color:var(--muted)}
-.p5p{font-size:.66rem;font-weight:800;color:var(--ink)}
+.p5p{font-size:.66rem;font-weight:800;color:var(--ink);white-space:nowrap}
 .p5col.p5top .p5p{color:var(--good)}
 .p5col.p5win .p5p{color:var(--accent)}
 .p5il{margin-left:2px;font-size:.6rem}
@@ -1299,9 +1299,10 @@ function past5Html(h){
     const il = t.il ? '<span class="p5il" title="このレースに八百長ラベル付与馬あり">🚨</span>' : "";
     const zTxt = t.rz!=null ? `z${t.rz>=0?'+':''}${t.rz}` : "";
     const zCls = t.rz!=null ? (t.rz>=1.5?'p5z-high':(t.rz<=-1.5?'p5z-low':'')) : '';
+    // 3行構成に圧縮（2026-09-29、行数が増えてきたためユーザー要望）: 日付／着順(zスコア)／印タイム(着差)。
     return `<div class="p5col ${cls}" data-date="${t.d||''}" data-horse="${(h.name||'').replace(/"/g,'&quot;')}" title="${title}"><span class="p5d">${dateTxt}${il}</span>`
-      +`<span class="p5p ${lvlCls}">${posTxt}</span><span class="p5t"><b class="p5mk">${mk}</b>${timeTxt}</span><span class="p5g">${gapTxt}</span>`
-      +(zTxt?`<span class="p5z ${zCls}">${zTxt}</span>`:'')+`</div>`;
+      +`<span class="p5p ${lvlCls}">${posTxt}${zTxt?`<span class="p5z ${zCls}">(${zTxt})</span>`:''}</span>`
+      +`<span class="p5t"><b class="p5mk">${mk}</b>${timeTxt}${t.gs!=null?`<span class="p5g">(${gapTxt})</span>`:''}</span></div>`;
   }).join('');
   return `<td class="l">${formTrendHtml(h.trend)}<div class="p5grid">${cols}</div></td>`;
 }
