@@ -46,6 +46,7 @@ body::before{content:"";position:fixed;top:0;left:0;right:0;height:env(safe-area
    セクション内の帯別ヒートマップ(#heatmap)と想定条件スライダー(#slider)のみ、同じ
    情報の別表現同士なので左右2カラム（.aptgrid、末尾で定義）に並べる。 */
 :root[data-layout="desktop"] .wrap,
+:root[data-layout="desktop"] .subtabs,
 :root[data-layout="desktop"] header,
 :root[data-layout="desktop"] .nav-in{max-width:1120px}
 /* データ分析タブ（2026-09-26）: 拡大するだけで見にくいとのフィードバックにより、
@@ -449,6 +450,34 @@ table.ht .numcell{display:inline-flex;align-items:center;gap:4px}
 .toptabs button{background:var(--surface);border:none;color:var(--muted);font-family:inherit;font-size:.74rem;font-weight:700;padding:5px 12px;cursor:pointer}
 .toptabs button[aria-pressed="true"]{background:var(--accent);color:#fff}
 .toptabs button:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
+/* 2階層メニューのサブタブ（2026-09-30、メニュー構成見直し）: レース予測=予測/馬別データ、
+   データ分析=レース結果/オッズ分析/馬場分析、管理者メニュー=成績/八百長ラベル/変更履歴 */
+.subtabs{max-width:560px;margin:0 auto 6px;padding:0 12px;display:flex;gap:6px;flex-wrap:wrap}
+.subtabs:empty{display:none}
+.subtabs button{background:var(--surface);border:1px solid var(--border);border-radius:999px;color:var(--muted);
+  font-family:inherit;font-size:.74rem;font-weight:700;padding:5px 13px;cursor:pointer}
+.subtabs button[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+/* レース結果（過去全期間の閲覧ページ） */
+.rsbar{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin:4px 0 8px}
+.rsbar select{font-family:inherit;font-size:.82rem;padding:6px 8px;border:1px solid var(--border);border-radius:8px;background:var(--surface);color:var(--ink)}
+.rsdays,.rsraces{display:flex;gap:6px;overflow-x:auto;padding-bottom:4px;margin-bottom:8px;scrollbar-width:none}
+.rsdays::-webkit-scrollbar,.rsraces::-webkit-scrollbar{display:none}
+.rsdays button,.rsraces button{flex:none;background:var(--surface);border:1px solid var(--border);border-radius:9px;
+  font-family:inherit;font-size:.78rem;font-weight:700;color:var(--ink);padding:6px 10px;cursor:pointer;line-height:1.2}
+.rsdays button[aria-pressed="true"],.rsraces button[aria-pressed="true"]{background:var(--accent);color:#fff;border-color:var(--accent)}
+.rsraces button small{display:block;font-size:.62rem;font-weight:600;opacity:.8}
+.rsraces button.hit small{color:var(--good)}
+.rsraces button[aria-pressed="true"].hit small{color:#fff}
+.rstitle{font-weight:800;font-size:.95rem;margin:2px 0 4px}
+/* 変更履歴 */
+.clitem{border-bottom:1px solid var(--border2);padding:10px 2px}
+.clhead{display:flex;gap:8px;align-items:baseline;flex-wrap:wrap}
+.cldate{font-size:.74rem;color:var(--muted);font-variant-numeric:tabular-nums}
+.clcat{font-size:.66rem;font-weight:800;padding:1px 7px;border-radius:999px;background:var(--surface2);color:var(--muted);border:1px solid var(--border)}
+.clcat.model{background:var(--accent-soft);color:var(--accent);border-color:transparent}
+.clcat.page{background:var(--edge-soft);color:var(--edge);border-color:transparent}
+.cltitle{font-weight:700;font-size:.86rem}
+.cldetail{font-size:.76rem;color:var(--muted);margin-top:3px;line-height:1.55}
 /* 成績タブ */
 #track{padding-top:16px}
 .tkh{font-weight:800;font-size:1.05rem}
@@ -696,14 +725,12 @@ table.ht .numcell{display:inline-flex;align-items:center;gap:4px}
   <div class="brand"><span class="dot"></span>ばんえーあい<small id="gen"></small><button class="notify-btn" id="notifyBtn" type="button" title="発走10分前にスマホへ通知" aria-pressed="false">🔔 通知</button><button class="layout-btn" id="layoutToggle" type="button" aria-pressed="false">🖥 PC表示</button></div>
   <div class="toptabs" id="toptabs">
     <button data-t="race" aria-pressed="true">レース予測</button>
-    <button data-t="result" aria-pressed="false">レース結果</button>
     <button data-t="analysis" aria-pressed="false">データ分析</button>
-    <button data-t="track" aria-pressed="false">成績</button>
-    <button data-t="odds" aria-pressed="false">オッズ履歴</button>
-    <button data-t="labels" aria-pressed="false">八百長ラベル</button>
+    <button data-t="admin" aria-pressed="false">管理者メニュー</button>
     <button data-t="settings" aria-pressed="false">設定</button>
   </div>
 </header>
+<div class="subtabs" id="subtabs"></div>
 <div id="beStatus" class="bestatus off" hidden></div>
 
 <div class="nav">
@@ -765,15 +792,13 @@ table.ht .numcell{display:inline-flex;align-items:center;gap:4px}
   </div>
 </div>
 
-<div class="wrap" id="resultTab" style="display:none">
-  <div id="resultMeta"></div>
-  <div id="resultCards"></div>
-  <div id="payouts"></div>
-</div>
 <div class="wrap" id="analysis" style="display:none"></div>
-<div class="wrap" id="track" style="display:none"></div>
+<div class="wrap" id="results" style="display:none"></div>
 <div class="wrap" id="odds" style="display:none"></div>
+<div class="wrap" id="baba" style="display:none"></div>
+<div class="wrap" id="track" style="display:none"></div>
 <div class="wrap" id="labels" style="display:none"></div>
+<div class="wrap" id="changelog" style="display:none"></div>
 <div class="wrap" id="settings" style="display:none"></div>
 
 <div id="iflagModal" class="iflagmodal" style="display:none">
@@ -937,35 +962,24 @@ function showInsiderLabelModal(h){
   modal.style.display="flex";
 }
 function hideInsiderLabelModal(){ const m=document.getElementById("iflagModal"); if(m) m.style.display="none"; }
-// レース結果タブ（結果カード＋払戻金。2026-09-23、レース予測タブから分離）
-function renderResultTab(r, hasResult, resultRow){
-  const el=document.getElementById("resultMeta"); if(!el) return;
-  const statusChip = r.cancelled ? `<span class="chip cancel">🌧 中止（悪天候）</span>`
-    : (hasResult ? `<span class="chip">決着 <b>${r.win_time||'—'}</b></span>` : `<span class="chip pre">発走前・未確定</span>`);
-  el.innerHTML =
-    `<div class="meta"><div class="top"><span class="rname">${r.race_no}R ${r.race_name||''}</span></div>`
-    +`<div class="chips"><span class="chip">クラス <b>${classLabel(r.class, r.horses)}</b></span>${statusChip}</div></div>`;
-  document.getElementById("resultCards").innerHTML = `<div class="result">${resultRow}</div>`+resultFieldTableHtml(r,hasResult);
-}
-// レース結果タブの全頭タイム・着順表（成績タブのレース詳細モーダルと同じ列構成、2026-09-27）。
-function resultFieldTableHtml(r,hasResult){
-  const hs=[...(r.horses||[])].filter(h=>h.position!=null).sort((a,b)=>a.position-b.position);
-  if(!hasResult || !hs.length) return "";
+// 全頭の着順・タイム表（データ分析 > レース結果、2026-09-30）。horsesは正規化済み
+// {pos,num,gate,name,time,popularity,odds,jockey,sex,age,sled_kg,weight,weight_diff,rank,il}。
+function resultTableHtml(horses){
+  const hs=[...(horses||[])].sort((a,b)=>(a.pos==null)-(b.pos==null)||(a.pos||99)-(b.pos||99)||a.num-b.num);
   const MARKS=["◎","◯","▲","△","☆"];
   const rows=hs.map(h=>{
     const mk = h.rank>=1 && h.rank<=5 ? MARKS[h.rank-1] : "";
     const wTxt = h.weight!=null ? h.weight+(h.weight_diff!=null?"("+(h.weight_diff>0?"+":"")+h.weight_diff+")":"") : "—";
-    return `<tr class="${h.position===1?'pick':''}"><td>${h.gate??'—'}</td><td><span class="hmn" style="${capStyle(h.gate)}">${h.num}</span></td>`
-      +`<td class="${h.position===1?'rbtop':''}">${h.position}</td>`
-      +`<td><span class="hlink" data-horse="${h.name||''}">${h.name||''}</span>${mk?`<span class="rbpick">${mk}</span>`:''}</td>`
-      +`<td>${h.result_time||'—'}</td><td>${h.popularity??'—'}</td>`
+    return `<tr class="${h.pos===1?'pick':''}"><td>${h.gate??'—'}</td><td><span class="hmn" style="${capStyle(h.gate)}">${h.num}</span></td>`
+      +`<td class="${h.pos===1?'rbtop':''}">${h.pos??'除外'}</td>`
+      +`<td class="l"><span class="hlink" data-horse="${h.name||''}">${h.name||''}</span>${mk?`<span class="rbpick">${mk}</span>`:''}${h.il?'<span class="p5il" title="八百長ラベル付与馬">🚨</span>':''}</td>`
+      +`<td>${h.time||'—'}</td><td>${h.popularity??'—'}</td>`
       +`<td>${h.odds!=null?h.odds.toFixed(1):'—'}</td><td>${h.jockey||'—'}</td>`
-      +`<td>${wTxt}</td><td>${(h.sex||'')+(h.age??'')}</td><td>${h.sled_kg!=null?h.sled_kg.toFixed(0):'—'}</td></tr>`;
+      +`<td>${wTxt}</td><td>${(h.sex||'')+(h.age??'')}</td><td>${h.sled_kg!=null?Number(h.sled_kg).toFixed(0):'—'}</td></tr>`;
   }).join("");
   return `<div class="rbtblwrap"><table class="rbtbl"><thead><tr><th>枠</th><th>番</th><th>着</th><th class="l">馬名</th>`
     +`<th>タイム</th><th>人気</th><th>単勝</th><th>騎手</th><th>馬体重</th><th>性齢</th><th>そり</th></tr></thead>`
-    +`<tbody>${rows}</tbody></table></div>`
-    +`<div class="tknote">馬名をタップすると通算成績・過去成績・血統を表示します。</div>`;
+    +`<tbody>${rows}</tbody></table></div>`;
 }
 // 払戻金セクション（結果確定後・全券種）。レース結果タブと日別成績のレース詳細モーダルで共用。
 function payoutsHtml(p){
@@ -983,17 +997,11 @@ function payoutsHtml(p){
     +`<table class="paytbl"><thead><tr><th>券種</th><th>組合せ</th><th>払戻</th><th>人気</th></tr></thead><tbody>${rows}</tbody></table>`
     +`<div class="paynote">払戻は100円あたり（単勝・複勝・ワイド・馬連・馬単・三連複・三連単）。</div></div>`;
 }
-function renderPayouts(r){
-  const el=document.getElementById("payouts"); if(!el) return;
-  el.innerHTML=payoutsHtml(r.payouts);
-}
 function render(){
   const r = get(); if(!r) return;
   // meta
   const cancelled = !!r.cancelled;
   const hasResult = r.horses.some(h=>h.position!=null);
-  const hit = r.winner!=null && r.predicted_top===r.winner;
-  const favHit = r.winner!=null && r.market_fav===r.winner;
   const moistChip = r.moisture!=null
     ? `<span class="chip moist">馬場水分 ${r.moisture}%</span>`
     : `<span class="chip pre">馬場水分 未定</span>`;
@@ -1006,24 +1014,6 @@ function render(){
   const updChip = r.updated_at
     ? `<span class="chip upd">🕛 ${(STAGE[r.update_stage]||'更新')} ${String(r.updated_at).slice(5,16).replace('-','/')}</span>` : "";
   const asHtml = "";
-  let resultRow;
-  if(hasResult){
-    resultRow =
-      `<div class="rescell"><div class="t">予測1位</div><div class="v num">${r.predicted_top??'—'}</div>`
-      +`<div class="hitmark ${hit?'o':'x'}">${hit?'的中○':'不的中'}</div></div>`
-      +`<div class="rescell"><div class="t">市場1番人気</div><div class="v num">${r.market_fav??'—'}</div>`
-      +`<div class="hitmark ${favHit?'o':'x'}">${favHit?'的中○':'—'}</div></div>`
-      +`<div class="rescell win"><div class="t">結果1着</div><div class="v num">${r.winner??'—'}</div>`
-      +`<div class="hitmark o">確定</div></div>`;
-  } else {
-    resultRow =
-      `<div class="rescell"><div class="t">予測1位</div><div class="v num">${r.predicted_top??'—'}</div>`
-      +`<div class="hitmark x">本命</div></div>`
-      +`<div class="rescell"><div class="t">市場1番人気</div><div class="v num">${r.market_fav??'—'}</div>`
-      +`<div class="hitmark x">${r.market_fav?'':'オッズ未定'}</div></div>`
-      +`<div class="rescell"><div class="t">結果1着</div><div class="v num">—</div>`
-      +`<div class="hitmark x">発走前</div></div>`;
-  }
   // このレースの着順別本賞金（発走前から公開されているレース固定属性、2026-09-24）。
   const prizeHtml = (r.prize_positions && r.prize_positions.length)
     ? `<div class="prizeline">${r.prize_positions.map((y,i)=>`${i+1}着 ${(y/10000).toFixed(1)}万円`).join("　")}</div>`
@@ -1042,8 +1032,6 @@ function render(){
     +asHtml+`</div>`;
   startMetaCountdown(r, hasResult, cancelled);
   renderSuspicionAlert(r);
-  renderResultTab(r, hasResult, resultRow);
-  renderPayouts(r);
 
   // horses
   const maxW = Math.max(...r.horses.map(h=>h.win_prob||0), .0001);
@@ -1060,7 +1048,7 @@ function render(){
   renderTrackAptitudeScatter(r);
   renderRaceFlowTime(r);
   renderAptitude(r);
-  if(window.__curTop==="analysis") renderAnalysis();
+  if(isHorsesView()) renderAnalysis();
 }
 window.__rerenderRace = render;  // loadSuspicion()等、boot()外からの再描画トリガー用
 loadSuspicion();  // 初回ページ読込時からsuspicion_scores.jsonを取得（オッズ履歴タブを開く前でも警告が出るように）
@@ -2583,23 +2571,142 @@ const _hmc=document.getElementById("histClose");
 if(_hmc) _hmc.addEventListener("click", closeHistModal);
 const _hmm=document.getElementById("histModal");
 if(_hmm) _hmm.addEventListener("click", e=>{ if(e.target===_hmm) closeHistModal(); });
-function switchTop(t){
-  const isRace=t==="race";
+// 2階層メニュー（2026-09-30、メニュー構成見直し）。上段=グループ、下段=そのグループ内のページ。
+var NAV = {
+  race: [["pred","予測"],["horses","馬別データ"]],
+  analysis: [["results","レース結果"],["odds","オッズ分析"],["baba","馬場分析"]],
+  admin: [["track","成績"],["labels","八百長ラベル"],["changelog","変更履歴"]],
+  settings: null,
+};
+window.__curSub = {race:"pred", analysis:"results", admin:"track"};
+// boot()内で上から順に実行されるため、render()から先に呼ばれても使えるよう関数宣言(巻き上げ)にしておく。
+function isHorsesView(){ return window.__curTop==="race" && !!window.__curSub && window.__curSub.race==="horses"; }
+function renderSubtabs(t){
+  const el=document.getElementById("subtabs"); if(!el) return;
+  const items=NAV[t];
+  if(!items){ el.innerHTML=""; return; }
+  el.innerHTML=items.map(([k,l])=>`<button data-s="${k}" aria-pressed="${window.__curSub[t]===k}">${l}</button>`).join("");
+  el.querySelectorAll("button").forEach(b=>b.onclick=()=>switchTop(t,b.dataset.s));
+}
+function switchTop(t, sub){
+  if(!(t in NAV)) t="race";
   window.__curTop=t;  // render()から参照（boot内のlet宣言はTDZになり得るためwindowに持つ）
-  document.querySelector(".nav").style.display=(isRace||t==="result"||t==="analysis")?"":"none";
-  document.getElementById("mainwrap").style.display=isRace?"":"none";
-  document.getElementById("resultTab").style.display=t==="result"?"block":"none";
-  document.getElementById("analysis").style.display=t==="analysis"?"block":"none";
-  if(t==="analysis") renderAnalysis();
-  document.getElementById("track").style.display=t==="track"?"block":"none";
-  document.getElementById("odds").style.display=t==="odds"?"block":"none";
-  document.getElementById("labels").style.display=t==="labels"?"block":"none";
-  document.getElementById("settings").style.display=t==="settings"?"block":"none";
+  if(sub) window.__curSub[t]=sub;
+  const s = NAV[t] ? window.__curSub[t] : null;
+  document.querySelector(".nav").style.display = t==="race" ? "" : "none";
+  document.getElementById("mainwrap").style.display = (t==="race" && s==="pred") ? "" : "none";
+  const show=(id,on)=>{ const el=document.getElementById(id); if(el) el.style.display=on?"block":"none"; };
+  show("analysis", t==="race" && s==="horses");
+  show("results", t==="analysis" && s==="results");
+  show("odds", t==="analysis" && s==="odds");
+  show("baba", t==="analysis" && s==="baba");
+  show("track", t==="admin" && s==="track");
+  show("labels", t==="admin" && s==="labels");
+  show("changelog", t==="admin" && s==="changelog");
+  show("settings", t==="settings");
   document.querySelectorAll("#toptabs button").forEach(x=>x.setAttribute("aria-pressed", x.dataset.t===t));
-  if(t==="track" && !window.__TRACK_LOADED) loadTracking();
-  if(t==="odds" && !window.__ODDS_LOADED) loadOdds();
-  if(t==="labels" && !window.__LABELS_LOADED) loadInsiderLabels();
+  renderSubtabs(t);
+  if(t==="race" && s==="horses") renderAnalysis();
+  if(t==="analysis" && s==="results") renderResultsPage();
+  if(t==="analysis" && s==="odds" && !window.__ODDS_LOADED) loadOdds();
+  if(t==="analysis" && s==="baba") renderBaba();
+  if(t==="admin" && s==="track" && !window.__TRACK_LOADED) loadTracking();
+  if(t==="admin" && s==="labels" && !window.__LABELS_LOADED) loadInsiderLabels();
+  if(t==="admin" && s==="changelog") renderChangelog();
   if(t==="settings") renderSettingsTab();
+}
+// ===== データ分析 > レース結果（過去全期間の閲覧、2026-09-30）=====
+// 過去分は build_results_archive.py の月別ファイル(results/YYYY-MM.json、DBの確定結果＋当時の印)、
+// 直近数日は data.json(当日の結果が翌朝の集計前でも見られるように)から表示する。
+window.__RES={index:null, months:{}, date:null, race:null};
+function resNormLive(r){
+  return {race_no:r.race_no, race_name:r.race_name, class:r.class, moisture:r.moisture, post_time:r.post_time,
+    win_time:r.win_time, payouts:r.payouts||[], has_marks:true,
+    horses:(r.horses||[]).map(h=>({pos:h.position, num:h.num, gate:h.gate, name:h.name, time:h.result_time,
+      popularity:h.popularity, odds:h.odds, jockey:h.jockey, sex:h.sex, age:h.age, sled_kg:h.sled_kg,
+      weight:h.weight, weight_diff:h.weight_diff, rank:h.rank, il:0}))};
+}
+function resLiveDays(){
+  const DB=window.__BANEI_DB, out={};
+  ((DB&&DB.races)||[]).forEach(r=>{
+    if((r.horses||[]).some(h=>h.position!=null)) (out[r.date]=out[r.date]||[]).push(resNormLive(r));
+  });
+  Object.values(out).forEach(a=>a.sort((x,y)=>x.race_no-y.race_no));
+  return out;
+}
+function resLoadMonth(m, cb){
+  const S=window.__RES;
+  if(S.months[m]){ cb(S.months[m]); return; }
+  fetch("./results/"+m+".json?t="+Date.now()).then(r=>{ if(!r.ok) throw 0; return r.json(); })
+    .then(j=>{ S.months[m]=j; cb(j); })
+    .catch(()=>{ S.months[m]={month:m, days:{}}; cb(S.months[m]); });
+}
+function renderResultsPage(){
+  const host=document.getElementById("results"); if(!host) return;
+  const S=window.__RES;
+  if(!S.index){
+    host.innerHTML='<div class="meta">レース結果を読込中…</div>';
+    fetch("./results/index.json?t="+Date.now()).then(r=>{ if(!r.ok) throw 0; return r.json(); })
+      .then(j=>{ S.index=j; renderResultsPage(); })
+      .catch(()=>{ S.index={months:[]}; renderResultsPage(); });
+    return;
+  }
+  const live=resLiveDays(), set=new Set(Object.keys(live));
+  (S.index.months||[]).forEach(m=>(m.days||[]).forEach(d=>set.add(d.date)));
+  const dates=[...set].sort().reverse();
+  if(!dates.length){ host.innerHTML='<div class="meta">レース結果データがありません。</div>'; return; }
+  if(!S.date || dates.indexOf(S.date)<0) S.date=dates[0];
+  const month=S.date.slice(0,7);
+  const months=[...new Set(dates.map(d=>d.slice(0,7)))];
+  const draw=races=>{
+    if(S.race==null || !races.some(r=>r.race_no===S.race)) S.race=races.length?races[0].race_no:null;
+    const race=races.find(r=>r.race_no===S.race);
+    const monthSel=`<select id="rsMonth" aria-label="月">${months.map(m=>`<option value="${m}"${m===month?' selected':''}>${m.slice(0,4)}年${m.slice(5)}月</option>`).join("")}</select>`;
+    const dayBtns=dates.filter(d=>d.slice(0,7)===month).map(d=>{
+      const wd=WD_JP[new Date(d+"T00:00:00").getDay()];
+      return `<button data-d="${d}" aria-pressed="${d===S.date}">${d.slice(5).replace('-','/')}(${wd})</button>`;
+    }).join("");
+    const raceBtns=races.map(r=>{
+      const pick=r.horses.find(h=>h.rank===1), win=r.horses.find(h=>h.pos===1);
+      const hit=!!(pick && pick.pos===1);
+      return `<button data-r="${r.race_no}" aria-pressed="${r.race_no===S.race}" class="${hit?'hit':''}">${r.race_no}R`
+        +`<small>${hit?'◎的中':(win?win.num+'番1着':'')}</small></button>`;
+    }).join("");
+    let body='<div class="meta">この日のレース結果がありません。</div>';
+    if(race){
+      const vid=`http://keiba-lv-st.jp/movie/player?date=${S.date.replace(/-/g,'')}&race=${race.race_no}&track=obihiro`;
+      body=`<div class="rstitle">${S.date.slice(5).replace('-','/')} ${race.race_no}R ${race.race_name||''}</div>`
+        +`<div class="rbmeta">${race.class?classLabel(race.class, race.horses):''}`
+        +`${race.moisture!=null?' ・馬場水分'+race.moisture+'%':''}${race.post_time?' ・発走'+race.post_time:''}`
+        +`${race.win_time?' ・決着'+race.win_time:''}</div>`
+        +`<a class="rbvideo" href="${vid}" target="_blank" rel="noopener">🎬 レース映像</a>`
+        +resultTableHtml(race.horses)
+        +(race.has_marks?'':'<div class="tknote">この日は予想の保存が無いため印は表示されません（2026-07-11より前）。</div>')
+        +'<div class="tknote">馬名をタップすると通算成績・過去成績・血統を表示します。</div>'
+        +payoutsHtml(race.payouts);
+    }
+    host.innerHTML=`<div class="rsbar">${monthSel}</div><div class="rsdays">${dayBtns}</div>`
+      +`<div class="rsraces">${raceBtns}</div>`+body;
+    host.querySelector("#rsMonth").onchange=e=>{ const m=e.target.value; S.date=dates.find(d=>d.slice(0,7)===m); S.race=null; renderResultsPage(); };
+    host.querySelectorAll(".rsdays button").forEach(b=>b.onclick=()=>{ S.date=b.dataset.d; S.race=null; renderResultsPage(); });
+    host.querySelectorAll(".rsraces button").forEach(b=>b.onclick=()=>{ S.race=+b.dataset.r; renderResultsPage(); });
+  };
+  if(live[S.date]){ draw(live[S.date]); return; }
+  host.innerHTML='<div class="meta">レース結果を読込中…</div>';
+  resLoadMonth(month, j=>draw((j.days||{})[S.date]||[]));
+}
+// ===== 管理者メニュー > 変更履歴（2026-09-30）。changelog.json（ページ内容・予測モデルの変更記録）=====
+function renderChangelog(){
+  const host=document.getElementById("changelog"); if(!host) return;
+  host.innerHTML='<div class="meta">変更履歴を読込中…</div>';
+  fetch("./changelog.json?t="+Date.now()).then(r=>r.json()).then(j=>{
+    const CAT={page:"ページ", model:"予測モデル", data:"データ"};
+    const items=(j.entries||[]).map(e=>`<div class="clitem"><div class="clhead"><span class="cldate">${e.date}</span>`
+      +`<span class="clcat ${e.category}">${CAT[e.category]||e.category}</span><span class="cltitle">${e.title}</span></div>`
+      +(e.detail?`<div class="cldetail">${e.detail}</div>`:'')+`</div>`).join("");
+    host.innerHTML=`<div class="ahead"><span class="at1">変更履歴</span><span class="at2">ページ内容・予測モデルの変更記録（新しい順）</span></div>`
+      +(items||'<div class="meta">変更履歴はまだありません。</div>');
+  }).catch(()=>{ host.innerHTML='<div class="meta">変更履歴(changelog.json)の読込に失敗しました。</div>'; });
 }
 function loadTracking(){
   window.__TRACK_LOADED=true;
@@ -2619,7 +2726,7 @@ var SUSPICION_ROW_THRESHOLD=7.0;  // |signed_score|がこれ以上の馬は行�
 function loadOdds(){
   window.__ODDS_LOADED=true;
   const host=document.getElementById("odds");
-  host.innerHTML='<div class="meta">オッズ履歴を読込中…</div>';
+  host.innerHTML='<div class="meta">オッズ分析データを読込中…</div>';
   refreshOdds(true);
 }
 // 八百長怪しさスコア（suspicion_scores.json）。読込失敗時は列を「—」表示にするだけで
@@ -2651,7 +2758,7 @@ function refreshOdds(resetSelection){
   }).catch(()=>{
     S.updating=false; S.updateError=true;
     if(S.data) renderOdds();
-    else document.getElementById("odds").innerHTML='<div class="meta">オッズ履歴(odds_history.json)はまだありません。開催後に生成されます。</div>';
+    else document.getElementById("odds").innerHTML='<div class="meta">オッズ分析データ(odds_history.json)はまだありません。開催後に生成されます。</div>';
   });
 }
 // レース予測タブの race レコード(date="YYYY-MM-DD", race_no)から、オッズ系JSONのキーである
@@ -2681,7 +2788,7 @@ function renderSuspicionAlert(r){
       +`</div>`;
   }).join("");
   box.innerHTML=`<div class="suspicion-alert"><div class="sa-head">⚠ 八百長検知アラート（怪しさスコアがしきい値${SUSPICION_ROW_THRESHOLD}超え）</div>${items}`
-    +`<div class="sa-note">検証サンプルがまだ少ないため参考値です。券種別の全推移は「オッズ履歴」タブでも確認できます。</div></div>`;
+    +`<div class="sa-note">検証サンプルがまだ少ないため参考値です。券種別の全推移は「データ分析 > オッズ分析」タブでも確認できます。</div></div>`;
   box.querySelectorAll(".sa-toggle").forEach(btn=>{
     btn.onclick=()=>{
       const el=document.getElementById("sa-detail-"+btn.dataset.i);
@@ -3012,7 +3119,7 @@ function wireOddsRefreshBtn(){
 }
 function renderOdds(){
   const S=window.__ODDS,d=S.data,host=document.getElementById("odds");
-  if(!d||!d.days||!d.days.length){ host.innerHTML='<div class="meta">オッズ履歴データがありません。</div>'; return; }
+  if(!d||!d.days||!d.days.length){ host.innerHTML='<div class="meta">オッズ分析データがありません。</div>'; return; }
   S.day=Math.min(S.day,d.days.length-1); const day=d.days[S.day];
   S.race=Math.min(S.race,day.races.length-1); const race=day.races[S.race];
   const bets=race.bets||{};
@@ -3089,7 +3196,7 @@ function loadInsiderLabels(){
 }
 function renderInsiderLabels(){
   const S=window.__LABELS, host=document.getElementById("labels"), all=S.data||[];
-  if(!all.length){ host.innerHTML='<div class="meta">登録済みのラベルがありません。オッズ履歴タブから登録できます。</div>'; return; }
+  if(!all.length){ host.innerHTML='<div class="meta">登録済みのラベルがありません。データ分析 > オッズ分析から登録できます。</div>'; return; }
 
   const counts={}; ODDS_LABEL_DEFS.forEach(d=>counts[d.type]=0);
   all.forEach(l=>{ if(counts[l.label_type]!=null) counts[l.label_type]++; });
@@ -3278,6 +3385,15 @@ function trackHistChartSvg(days,wantW,detailed){
     +`<polyline points="${linePts}" fill="none" stroke="var(--edge)" stroke-width="${1.6*S}"/>${dots}`
     +`${xticks}${yticksT}${yticksZ}</svg>`;
 }
+// 馬場分析ページ（データ分析 > 馬場分析、2026-09-30にデータ分析タブ末尾から独立）。
+function renderBaba(){
+  const host=document.getElementById("baba"); if(!host) return;
+  if(!document.getElementById("trackhistbox")){
+    host.innerHTML=`<div class="ahead"><span class="at1">馬場分析</span><span class="at2">今年度の開催日別・馬場指数と平均タイムの推移</span></div>`
+      +`<div id="trackhistbox"></div>`;
+  }
+  renderTrackHistBox();
+}
 function renderTrackHistBox(){
   const box=document.getElementById("trackhistbox"); if(!box) return;
   loadTrackHistory(j=>{
@@ -3433,22 +3549,28 @@ function renderAnalysis(){
   host.innerHTML=anaOverviewGrid(hs)
     +`<div class="ahead csec"><span class="at1">近走の推移</span><span class="at2">${r.date.slice(5).replace('-','/')} ${r.race_no}R ${r.race_name||""} ・番号を押すと馬を切り替え</span></div>`
     +`<div class="arow">${btns}</div>`
-    +`<div class="aname">${h.num} <span class="hlink" data-horse="${h.name}">${h.name}</span><small>近${trend.length}走</small></div>`+body+condHtml(hs)
-    +`<div class="ahead csec"><span class="at1">馬場データ</span><span class="at2">今年度の開催日別・馬場指数と平均タイムの推移</span></div>`
-    +`<div id="trackhistbox"></div>`;
-  renderTrackHistBox();
+    +`<div class="aname">${h.num} <span class="hlink" data-horse="${h.name}">${h.name}</span><small>近${trend.length}走</small></div>`+body+condHtml(hs);
   host.querySelectorAll(".abtn").forEach(b=>b.onclick=()=>{ S.num=+b.dataset.n; S.pt=null; renderAnalysis(); });
   host.querySelectorAll(".ahit").forEach(e=>e.onclick=()=>{ S.pt=+e.dataset.i; renderAnalysis(); });
 }
 document.querySelectorAll("#toptabs button").forEach(b=>b.addEventListener("click",()=>switchTop(b.dataset.t)));
+switchTop("race");  // 初期表示でサブタブ(予測/馬別データ)を描画する
 
 // redraw canvases on resize（幅で描き直すSVG=展開イメージ・データ分析チャートも含む）
 let rz; window.addEventListener("resize",()=>{clearTimeout(rz);rz=setTimeout(()=>{
   if(view==="card"){ const r=get(); r.horses.forEach(h=>drawCardDots(document.getElementById("cd_"+h.num), h)); }
   render();
-  if(window.__curTop==="analysis") renderAnalysis();
+  if(isHorsesView()) renderAnalysis();
+  if(window.__curTop==="analysis" && window.__curSub.analysis==="baba") renderBaba();
   if(histState.horse) renderHorseProfile();
 },160);});
+// boot()の外（PC/スマホ表示切替）から幅依存のチャートを描き直すためのフック。
+window.__onLayoutChange = ()=>{
+  render();
+  if(isHorsesView()) renderAnalysis();
+  if(window.__curTop==="analysis" && window.__curSub.analysis==="baba") renderBaba();
+  if(histState.horse) renderHorseProfile();
+};
 }
 // データ読込: 埋め込み(アーティファクト) or ローカルの data.json(ローカルサーバで自動更新)
 (function(){
@@ -3481,11 +3603,7 @@ if ("serviceWorker" in navigator) {
     btn.textContent = mode==="desktop" ? "📱 スマホ表示" : "🖥 PC表示";
     // 幅が変わるSVGチャート(展開イメージ・データ分析)はコンテナの実測幅で描き直す必要があるため、
     // レイアウト切替後に再レンダリングする（次のフレームでCSSの幅変更を確定させてから測る）。
-    requestAnimationFrame(()=>{
-      if(typeof render==="function") render();
-      if(window.__curTop==="analysis" && typeof renderAnalysis==="function") renderAnalysis();
-      if(histState.horse && typeof renderHorseProfile==="function") renderHorseProfile();
-    });
+    requestAnimationFrame(()=>{ if(window.__onLayoutChange) window.__onLayoutChange(); });
   }
   let saved = localStorage.getItem(LS_KEY);
   if(saved !== "desktop" && saved !== "mobile"){
