@@ -3209,7 +3209,7 @@ function trackHistChartSvg(days,wantW,detailed){
   const S = isDesktop ? 1.3 : 1;
   // 直近1か月(detailed)は本数が少ないため、各点にラベルを出す分だけ上下に余白を広げる（2026-09-29）。
   const W = Math.max(320, wantW||360);
-  const padL=30*S, padR=34*S, padT=(detailed?24:14)*S, padB=(detailed?42:34)*S, H=(detailed?228:188)*S;
+  const padL=30*S, padR=34*S, padT=(detailed?24:14)*S, padB=(detailed?34:26)*S, H=(detailed?220:180)*S;
   const plotW=W-padL-padR, plotH=H-padT-padB;
   const zs=days.map(d=>d.track_z).filter(v=>v!=null);
   const ts=days.map(d=>d.avg_time).filter(v=>v!=null);
@@ -3251,12 +3251,12 @@ function trackHistChartSvg(days,wantW,detailed){
   // 日付ラベルの下に馬場水分率を併記する（2026-09-29、背景バー方式は分かりにくいとのフィードバックで変更）。
   const xticks=days.map((d,i)=>{
     if(i%step!==0) return "";
-    const x=xFor(i).toFixed(1), y=H-(detailed?18:12)*S;
+    const x=xFor(i).toFixed(1), y=H-6*S;
     const rot=detailed?`transform="rotate(-40 ${x} ${y})"`:"";
-    const moistTxt=d.avg_moisture!=null?`(${d.avg_moisture}%)`:"—";
+    const moistTxt=d.avg_moisture!=null?`(${d.avg_moisture}%)`:"";
     return `<text x="${x}" y="${y}" text-anchor="middle" fill="var(--muted)" ${rot}>`
       +`<tspan font-size="${6.5*S}">${d.date.slice(5).replace('-','/')}</tspan>`
-      +`<tspan x="${x}" dy="${8*S}" font-size="${5.5*S}" fill="var(--wet)">${moistTxt}</tspan></text>`;
+      +`<tspan font-size="${5.5*S}" fill="var(--wet)">${moistTxt}</tspan></text>`;
   }).join("");
   // 1軸(左)=平均タイム、2軸(右)=馬場指数zスコア（2026-09-28、ユーザー指定で左右を入替）
   const yticksT=[tMin,(tMin+tMax)/2,tMax].map(v=>`<text x="${(padL-4*S).toFixed(1)}" y="${(yForT(v)+2.5*S).toFixed(1)}" font-size="${6.5*S}" text-anchor="end" fill="var(--edge)">${secFmt(v)}</text>`).join("");
@@ -3288,7 +3288,7 @@ function renderTrackHistBox(){
       +`<span style="color:${TRK_COLOR['軽']}">■軽</span> <span style="color:${TRK_COLOR['標準']}">■標準</span>`
       +` ＝馬場指数(zスコア、直近開催との相対比較。棒グラフ、左軸)。`
       +`<span style="color:var(--edge)">●―</span>＝平均決着タイム(右軸)。`
-      +`日付の下の<span style="color:var(--wet)">(X.X%)</span>＝馬場水分率(その日の平均)。`
+      +`日付の横の<span style="color:var(--wet)">(X.X%)</span>＝馬場水分率(その日の平均)。`
       +`${j.season_start?j.season_start.slice(5).replace('-','/')+'〜今年度':''}の開催日別集計。`
       +`馬場指数は「クラス・ソリ重量・水分率」で補正した基準タイムとの残差を直近開催と比較したもの`
       +`（レース予測タブの「本日想定馬場指数」等と同じ算出式。この画面は振り返り用で当日制約は無し）。</div>`;
