@@ -197,16 +197,16 @@ table.ht .fin{font-size:.68rem;color:var(--muted)}
 table.ht .fin.top{color:var(--good);font-weight:800}
 /* 過去5走（簡易）列（2026-09-26、日付/着順/1着とのタイム差の3行×5走） */
 .p5grid{display:flex;gap:5px}
-.p5col{display:flex;flex-direction:column;align-items:center;min-width:64px;cursor:pointer;
-  border-radius:5px;background:var(--surface2);padding:2px 3px;line-height:1.35}
+.p5col{display:flex;flex-direction:column;align-items:center;width:80px;flex:none;cursor:pointer;
+  border-radius:5px;background:var(--surface2);padding:2px 3px;line-height:1.35;overflow:hidden}
 .p5col.p5top{background:var(--good-soft)}
 .p5col.p5win{background:var(--accent-soft)}
 .p5d{font-size:.6rem;color:var(--muted)}
-.p5p{font-size:.66rem;font-weight:800;color:var(--ink);white-space:nowrap}
+.p5p{font-size:.66rem;font-weight:800;color:var(--ink);white-space:nowrap;max-width:100%;overflow:hidden;text-overflow:ellipsis}
 .p5col.p5top .p5p{color:var(--good)}
 .p5col.p5win .p5p{color:var(--accent)}
 .p5il{margin-left:2px;font-size:.6rem}
-.p5t{font-size:.6rem;color:var(--ink);font-variant-numeric:tabular-nums;white-space:nowrap}
+.p5t{font-size:.6rem;color:var(--ink);font-variant-numeric:tabular-nums;white-space:nowrap;max-width:100%;overflow:hidden;text-overflow:ellipsis;display:inline-block}
 .p5mk{color:var(--accent);font-weight:800;margin-right:2px}
 .p5g{font-size:.6rem;color:var(--muted);font-variant-numeric:tabular-nums}
 .p5p.p5-high{border:1.5px solid var(--accent);border-radius:4px;padding:0 3px}
