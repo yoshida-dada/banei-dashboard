@@ -1275,11 +1275,12 @@ function formTrendInfo(trend){
 function formTrendHtml(trend){
   const info=formTrendInfo(trend);
   if(!info) return "";
-  const snapTxt = `【${info.snap.join('→')}】`;
-  const TH=0.4;  // このくらいの差から「傾向あり」として表示（表示専用の目安値、未検証）
-  if(Math.abs(info.diff)<TH) return `<div class="p5trend p5trend-flat" title="直近${info.n}走のzスコア(3走移動平均)推移からの目安（表示専用、勝率計算には未反映）">調子➡️${snapTxt}</div>`;
-  const up=info.diff>0;
-  return `<div class="p5trend ${up?'p5trend-up':'p5trend-dn'}" title="直近${info.n}走のzスコア(3走移動平均)推移からの目安（表示専用、勝率計算には未反映）">調子${up?'↗️':'↘️'}(${info.diff>0?'+':''}${info.diff})${snapTxt}</div>`;
+  const snapTxt = `(${info.snap.join('/')})`;
+  const diffTxt = `【${info.diff>0?'+':''}${info.diff}】`;
+  const TH=0.4;  // このくらいの差から矢印の向きを出す目安（表示専用の目安値、未検証。横ばいでも数値は出す）
+  const arrow = Math.abs(info.diff)<TH ? '➡️' : (info.diff>0?'↗️':'↘️');
+  const cls = Math.abs(info.diff)<TH ? 'p5trend-flat' : (info.diff>0?'p5trend-up':'p5trend-dn');
+  return `<div class="p5trend ${cls}" title="直近${info.n}走のzスコア(3走移動平均)推移からの目安（表示専用、勝率計算には未反映）">デキ${arrow}${diffTxt}${snapTxt}</div>`;
 }
 function past5Html(h){
   const rows=(h.trend||[]).slice(-5).reverse();
