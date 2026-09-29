@@ -457,6 +457,45 @@ table.ht .numcell{display:inline-flex;align-items:center;gap:4px}
 .subtabs button{background:var(--surface);border:1px solid var(--border);border-radius:999px;color:var(--muted);
   font-family:inherit;font-size:.74rem;font-weight:700;padding:5px 13px;cursor:pointer}
 .subtabs button[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+/* 下部タブバー（スマホ表示のみ、2026-09-30）。PC表示は従来どおり上部タブ。 */
+.tabbar{position:fixed;left:0;right:0;bottom:0;z-index:40;display:flex;justify-content:space-around;
+  background:color-mix(in srgb,var(--surface) 94%,transparent);backdrop-filter:blur(10px);
+  border-top:1px solid var(--border);padding:5px 4px calc(5px + env(safe-area-inset-bottom))}
+.tabbar button{flex:1;background:none;border:none;font-family:inherit;color:var(--muted);cursor:pointer;
+  display:flex;flex-direction:column;align-items:center;gap:1px;padding:3px 0}
+.tabbar .ti{font-size:1.2rem;line-height:1.2;filter:grayscale(1);opacity:.7}
+.tabbar .tl{font-size:.62rem;font-weight:700}
+.tabbar button[aria-pressed="true"]{color:var(--accent)}
+.tabbar button[aria-pressed="true"] .ti{filter:none;opacity:1}
+:root[data-layout="desktop"] .tabbar{display:none}
+:root:not([data-layout="desktop"]) #toptabs{display:none}
+:root:not([data-layout="desktop"]) body{padding-bottom:calc(66px + env(safe-area-inset-bottom))}
+/* Top ページ */
+.hmhead{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;margin:4px 0 8px}
+.hmdate{font-weight:800;font-size:1.02rem}
+.hmnext{font-size:.78rem;color:var(--edge);font-weight:700;font-variant-numeric:tabular-nums}
+.hmrace{background:var(--surface);border:1px solid var(--border);border-radius:11px;padding:8px 10px;margin-bottom:7px;cursor:pointer}
+.hmrace.done{background:var(--surface2)}
+.hmrace.next{border-color:var(--accent);box-shadow:0 0 0 1px var(--accent)}
+.hmr1{display:flex;align-items:baseline;gap:8px;flex-wrap:wrap}
+.hmrno{font-weight:800;font-size:.95rem}
+.hmpt{font-size:.74rem;color:var(--muted);font-variant-numeric:tabular-nums}
+.hmcls{font-size:.7rem;color:var(--muted)}
+.hmst{margin-left:auto;font-size:.72rem;font-weight:700;color:var(--muted)}
+.hmsus{font-size:.7rem;font-weight:700;color:var(--muted);font-variant-numeric:tabular-nums}
+.hmsus.strong{color:var(--accent)}
+.hmst.hit{color:var(--good)}
+.hmr2{display:flex;align-items:center;gap:6px;flex-wrap:wrap;margin-top:5px;font-size:.78rem}
+.hmmk{display:inline-flex;align-items:center;gap:3px;white-space:nowrap}
+.hmmk b{color:var(--accent)}
+.hmmk .hmn{width:17px;height:17px;font-size:.62rem}
+.hmname{font-weight:700}
+.hmlinks{display:grid;grid-template-columns:repeat(4,1fr);gap:7px;margin:14px 0 6px}
+:root[data-layout="desktop"] .hmlinks{grid-template-columns:repeat(8,1fr)}
+.hmlinks button{background:var(--surface);border:1px solid var(--border);border-radius:11px;font-family:inherit;
+  color:var(--ink);cursor:pointer;padding:9px 2px;display:flex;flex-direction:column;align-items:center;gap:3px}
+.hmlinks .li{font-size:1.25rem;line-height:1}
+.hmlinks .ll{font-size:.64rem;font-weight:700}
 /* レース結果（過去全期間の閲覧ページ） */
 .rsbar{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin:4px 0 8px}
 .rsbar select{font-family:inherit;font-size:.82rem;padding:6px 8px;border:1px solid var(--border);border-radius:8px;background:var(--surface);color:var(--ink)}
@@ -724,7 +763,8 @@ table.ht .numcell{display:inline-flex;align-items:center;gap:4px}
 <header>
   <div class="brand"><span class="dot"></span>ばんえーあい<small id="gen"></small><button class="notify-btn" id="notifyBtn" type="button" title="発走10分前にスマホへ通知" aria-pressed="false">🔔 通知</button><button class="layout-btn" id="layoutToggle" type="button" aria-pressed="false">🖥 PC表示</button></div>
   <div class="toptabs" id="toptabs">
-    <button data-t="race" aria-pressed="true">レース予測</button>
+    <button data-t="home" aria-pressed="true">Top</button>
+    <button data-t="race" aria-pressed="false">レース予測</button>
     <button data-t="analysis" aria-pressed="false">データ分析</button>
     <button data-t="admin" aria-pressed="false">管理者メニュー</button>
     <button data-t="settings" aria-pressed="false">設定</button>
@@ -792,6 +832,7 @@ table.ht .numcell{display:inline-flex;align-items:center;gap:4px}
   </div>
 </div>
 
+<div class="wrap" id="home" style="display:none"></div>
 <div class="wrap" id="analysis" style="display:none"></div>
 <div class="wrap" id="results" style="display:none"></div>
 <div class="wrap" id="odds" style="display:none"></div>
@@ -800,6 +841,13 @@ table.ht .numcell{display:inline-flex;align-items:center;gap:4px}
 <div class="wrap" id="labels" style="display:none"></div>
 <div class="wrap" id="changelog" style="display:none"></div>
 <div class="wrap" id="settings" style="display:none"></div>
+<nav class="tabbar" id="tabbar" aria-label="メニュー">
+  <button data-t="home"><span class="ti">🏠</span><span class="tl">Top</span></button>
+  <button data-t="race"><span class="ti">🏇</span><span class="tl">レース予測</span></button>
+  <button data-t="analysis"><span class="ti">📊</span><span class="tl">データ分析</span></button>
+  <button data-t="admin"><span class="ti">🔒</span><span class="tl">管理者</span></button>
+  <button data-t="settings"><span class="ti">⚙️</span><span class="tl">設定</span></button>
+</nav>
 
 <div id="iflagModal" class="iflagmodal" style="display:none">
   <div class="iflagbox">
@@ -1049,6 +1097,7 @@ function render(){
   renderRaceFlowTime(r);
   renderAptitude(r);
   if(isHorsesView()) renderAnalysis();
+  if(window.__curTop==="home") renderHome();  // 怪しさスコア等の非同期読込後にTopの🚨も更新する
 }
 window.__rerenderRace = render;  // loadSuspicion()等、boot()外からの再描画トリガー用
 loadSuspicion();  // 初回ページ読込時からsuspicion_scores.jsonを取得（オッズ履歴タブを開く前でも警告が出るように）
@@ -2573,6 +2622,7 @@ const _hmm=document.getElementById("histModal");
 if(_hmm) _hmm.addEventListener("click", e=>{ if(e.target===_hmm) closeHistModal(); });
 // 2階層メニュー（2026-09-30、メニュー構成見直し）。上段=グループ、下段=そのグループ内のページ。
 var NAV = {
+  home: null,
   race: [["pred","予測"],["horses","馬別データ"]],
   analysis: [["results","レース結果"],["odds","オッズ分析"],["baba","馬場分析"]],
   admin: [["track","成績"],["labels","八百長ラベル"],["changelog","変更履歴"]],
@@ -2589,13 +2639,14 @@ function renderSubtabs(t){
   el.querySelectorAll("button").forEach(b=>b.onclick=()=>switchTop(t,b.dataset.s));
 }
 function switchTop(t, sub){
-  if(!(t in NAV)) t="race";
+  if(!(t in NAV)) t="home";
   window.__curTop=t;  // render()から参照（boot内のlet宣言はTDZになり得るためwindowに持つ）
   if(sub) window.__curSub[t]=sub;
   const s = NAV[t] ? window.__curSub[t] : null;
   document.querySelector(".nav").style.display = t==="race" ? "" : "none";
   document.getElementById("mainwrap").style.display = (t==="race" && s==="pred") ? "" : "none";
   const show=(id,on)=>{ const el=document.getElementById(id); if(el) el.style.display=on?"block":"none"; };
+  show("home", t==="home");
   show("analysis", t==="race" && s==="horses");
   show("results", t==="analysis" && s==="results");
   show("odds", t==="analysis" && s==="odds");
@@ -2604,8 +2655,9 @@ function switchTop(t, sub){
   show("labels", t==="admin" && s==="labels");
   show("changelog", t==="admin" && s==="changelog");
   show("settings", t==="settings");
-  document.querySelectorAll("#toptabs button").forEach(x=>x.setAttribute("aria-pressed", x.dataset.t===t));
+  document.querySelectorAll("#toptabs button, #tabbar button").forEach(x=>x.setAttribute("aria-pressed", x.dataset.t===t));
   renderSubtabs(t);
+  if(t==="home") renderHome(); else { clearInterval(homeCdTimer); homeCdTimer=null; }
   if(t==="race" && s==="horses") renderAnalysis();
   if(t==="analysis" && s==="results") renderResultsPage();
   if(t==="analysis" && s==="odds" && !window.__ODDS_LOADED) loadOdds();
@@ -2614,6 +2666,65 @@ function switchTop(t, sub){
   if(t==="admin" && s==="labels" && !window.__LABELS_LOADED) loadInsiderLabels();
   if(t==="admin" && s==="changelog") renderChangelog();
   if(t==="settings") renderSettingsTab();
+}
+// ===== Top ページ（2026-09-30）: 各ページへのリンク＋当日の全レースの印サマリ =====
+let homeCdTimer=null;
+function homeTargetDate(){ return nextDateFor(); }  // 未確定レースが残る最初の日（全日確定済みなら最終日）
+function renderHome(){
+  const host=document.getElementById("home"); if(!host) return;
+  clearInterval(homeCdTimer); homeCdTimer=null;
+  const d=homeTargetDate(), rs=racesFor(d);
+  const wd=WD_JP[new Date(d+"T00:00:00").getDay()];
+  const MARKS=["◎","◯","▲","△","☆"];
+  const now=new Date(), todayIso=now.getFullYear()+"-"+String(now.getMonth()+1).padStart(2,"0")+"-"+String(now.getDate()).padStart(2,"0");
+  const next=rs.find(r=>!r.cancelled && r.winner==null);
+  const rows=rs.map(r=>{
+    const hs=r.horses||[];
+    const marks=[1,2,3,4,5].map(k=>{
+      const h=hs.find(x=>x.rank===k); if(!h) return "";
+      return `<span class="hmmk"><b>${MARKS[k-1]}</b><span class="hmn" style="${capStyle(h.gate)}">${h.num}</span>`
+        +(k===1?`<span class="hmname">${h.name||''}</span>`:'')+`</span>`;
+    }).join("");
+    // 🚨＝八百長検知アラート（締切前オッズ由来の怪しさスコアがしきい値超え。レース予測画面上部の警告と同じ判定）。
+    const raceId=raceIdFor(r);
+    const sus=(window.__ODDS && window.__ODDS.suspicion) ? hs.filter(h=>{ const x=suspicionFor(raceId,h.num);
+      return x && x.signed_score!=null && Math.abs(x.signed_score)>=SUSPICION_ROW_THRESHOLD; }) : [];
+    let st, stCls="";
+    if(r.cancelled) st="中止";
+    else if(r.winner!=null){ const hit=r.predicted_top===r.winner; st=`${r.winner}番1着${hit?' ◎的中':''}`; if(hit) stCls="hit"; }
+    else st=(next && r.race_no===next.race_no)?"次のレース":"発走前";
+    const cls=(r.winner!=null||r.cancelled)?"done":((next && r.race_no===next.race_no)?"next":"");
+    return `<div class="hmrace ${cls}" data-d="${d}" data-r="${r.race_no}">`
+      +`<div class="hmr1"><span class="hmrno">${r.race_no}R</span><span class="hmpt">${r.post_time||''}</span>`
+      +`<span class="hmcls">${r.class?classLabel(r.class, hs):''}</span>`
+      +(sus.length?(()=>{ const mx=Math.max(...sus.map(h=>Math.abs(suspicionFor(raceId,h.num).signed_score)));
+          return `<span class="hmsus${mx>=9?' strong':''}" title="八百長検知アラート: ${sus.map(h=>h.num+'番').join('・')}（最大の怪しさ ${mx.toFixed(1)}）">🚨${mx.toFixed(1)}</span>`; })():'')
+      +`<span class="hmst ${stCls}">${st}</span></div>`
+      +`<div class="hmr2">${marks||'<span class="tsub">印なし</span>'}</div></div>`;
+  }).join("");
+  const LINKS=[["race","pred","🏇","レース予測"],["analysis","results","📋","レース結果"],["analysis","odds","📈","オッズ分析"],
+    ["analysis","baba","🌡️","馬場分析"],["admin","track","📊","成績"],["admin","labels","🚨","八百長ラベル"],
+    ["admin","changelog","📝","変更履歴"],["settings","","⚙️","設定"]];
+  host.innerHTML=`<div class="hmhead"><span class="hmdate">${d.slice(5).replace('-','/')}(${wd}) のレース</span>`
+    +`<span class="hmnext" id="hmNext"></span></div>`
+    +(rows||'<div class="meta">この日のレースデータがありません。</div>')
+    +`<div class="hmlinks">${LINKS.map(([t,sb,ic,lb])=>`<button data-t="${t}" data-s="${sb}"><span class="li">${ic}</span><span class="ll">${lb}</span></button>`).join("")}</div>`
+    +`<div class="tknote">レースをタップするとレース予測を開きます。◎〇▲△☆＝主予測の1〜5位。🚨＝八百長検知アラート（締切前オッズの動きから算出した怪しさスコアがしきい値超えの馬あり）。</div>`;
+  host.querySelectorAll(".hmrace").forEach(el=>el.onclick=()=>{
+    curDate=el.dataset.d; curRno=+el.dataset.r; renderRacePills(); switchTop("race","pred"); sync(); window.scrollTo(0,0);
+  });
+  host.querySelectorAll(".hmlinks button").forEach(b=>b.onclick=()=>{ switchTop(b.dataset.t, b.dataset.s||undefined); window.scrollTo(0,0); });
+  // 次のレースの発走までのカウントダウン（当日のみ）
+  const el=document.getElementById("hmNext");
+  const m=next && /^(\d{1,2}):(\d{2})/.exec(String(next.post_time||""));
+  if(!el || !m || d!==todayIso){ if(el && next) el.textContent=`次: ${next.race_no}R ${next.post_time||''}`; return; }
+  const target=new Date(); target.setHours(+m[1],+m[2],0,0);
+  const tick=()=>{
+    const e=document.getElementById("hmNext"); if(!e){ clearInterval(homeCdTimer); return; }
+    const sec=Math.round((target-new Date())/1000);
+    e.textContent = sec>0 ? `次: ${next.race_no}R 発走まで ${fmtCountdown(sec)}` : `次: ${next.race_no}R 発走時刻`;
+  };
+  tick(); homeCdTimer=setInterval(tick,1000);
 }
 // ===== データ分析 > レース結果（過去全期間の閲覧、2026-09-30）=====
 // 過去分は build_results_archive.py の月別ファイル(results/YYYY-MM.json、DBの確定結果＋当時の印)、
@@ -3554,7 +3665,8 @@ function renderAnalysis(){
   host.querySelectorAll(".ahit").forEach(e=>e.onclick=()=>{ S.pt=+e.dataset.i; renderAnalysis(); });
 }
 document.querySelectorAll("#toptabs button").forEach(b=>b.addEventListener("click",()=>switchTop(b.dataset.t)));
-switchTop("race");  // 初期表示でサブタブ(予測/馬別データ)を描画する
+document.querySelectorAll("#tabbar button").forEach(b=>b.addEventListener("click",()=>{ switchTop(b.dataset.t); window.scrollTo(0,0); }));
+switchTop("home");  // 起動時はTopページ
 
 // redraw canvases on resize（幅で描き直すSVG=展開イメージ・データ分析チャートも含む）
 let rz; window.addEventListener("resize",()=>{clearTimeout(rz);rz=setTimeout(()=>{
