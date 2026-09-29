@@ -1257,11 +1257,11 @@ function featBar(label,v){ const w=Math.max(0,Math.min(100,(v||0)*10));
 // 補正後の残差、過去5走の🔥/📉判定と同じ値）に適用する。着順ベースのform_trendと違い、クラスが
 // 上がって着順が落ちても「補正後のタイムは良化」を拾える。表示専用（勝率計算には未使用）。
 function formTrendInfo(trend){
-  // 対象10走・2走移動平均で単発のブレを均してから直近/過去を比較（2026-09-29、ユーザー指定）。
+  // 対象10走・3走移動平均で単発のブレを均してから直近/過去を比較（2026-09-29、ユーザー指定）。
   const rows=(trend||[]).filter(t=>t.rz!=null).slice(-10);  // 古い→新しい、最大10走
-  if(rows.length<4) return null;  // 2走移動平均を3点以上作るのに必要な最小本数
+  if(rows.length<5) return null;  // 3走移動平均を3点以上作るのに必要な最小本数
   const ma=[];
-  for(let i=1;i<rows.length;i++) ma.push((rows[i-1].rz+rows[i].rz)/2);  // 2走移動平均（古い→新しい）
+  for(let i=2;i<rows.length;i++) ma.push((rows[i-2].rz+rows[i-1].rz+rows[i].rz)/3);  // 3走移動平均（古い→新しい）
   if(ma.length<3) return null;
   const nf=[...ma].reverse();  // 新しい→古いに揃える（_score_form_trendのpositions[]と同じ並び）
   const half=Math.floor(nf.length/2);
