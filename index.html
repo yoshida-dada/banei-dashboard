@@ -1327,8 +1327,6 @@ const COLS = [
    td:h=>`<td class="l"><span class="numcell">${medal(h.position)}<span class="tnum" style="${capStyle(h.gate)}">${h.num}</span></span></td>`},
   {key:"name", label:"馬名・馬齢・厩舎・馬主", always:true, th:'<th class="l">馬名 / 馬齢・厩舎・馬主</th>',
    td:h=>`<td class="l"><div class="c2"><span class="tname clickable" data-num="${h.num}"><span class="tname-txt">${h.name||''}</span>${insiderFlagIcon(h)}</span><span class="tsub">${(h.sex||'')+(h.age!=null?h.age:'')}${h.trainer?'・'+cleanInst(h.trainer):''}</span>${h.owner&&h.owner!=='不明'?`<span class="tsub towner${h.owner_flagged?' flagged':''}"${h.owner_flagged?' title="この馬主は過去に八百長ラベル対象になったことがあります"':''}>${h.owner}</span>`:''}${promoWatchLine(h,"tsub")}</div></td>`},
-  {key:"form", label:"デキ", always:true, th:'<th title="直近走のzスコア(3走移動平均)推移から見た調子。表示専用、勝率計算には未反映">デキ</th>',
-   td:h=>formTrendCellHtml(h.trend)},
   {key:"jockey", label:"騎手・成績", th:'<th class="l">騎手 / 成績</th>',
    td:h=>`<td class="l"><div class="c2"><span class="tjk">${h.jockey||'—'}${jockeySwitchIcon(h)}</span><span class="tsub num">${recFmt(h.jockey_record)}</span></div></td>`},
   {key:"sled", label:"斤量", th:'<th>斤量</th>',
@@ -1339,6 +1337,8 @@ const COLS = [
      const d=(v2&&h.rank!=null&&h.rank_v1!=null)?h.rank_v1-h.rank:0;
      const arrow=d>0?`<span class="v2up">▲${d}</span>`:(d<0?`<span class="v2dn">▼${-d}</span>`:"");
      return `<td class="win-c num">${pct(h.win_prob)}<div class="tsub">${h.rank!=null?h.rank+'位':''}${v2?' <span class="verbadge">v2</span>':''}${arrow}</div></td>`; }},
+  {key:"form", label:"デキ", always:true, th:'<th title="直近走のzスコア(3走移動平均)推移から見た調子。表示専用、勝率計算には未反映">デキ</th>',
+   td:h=>formTrendCellHtml(h.trend)},
   {key:"winref", label:"勝率（参考：もう一方のバージョン）", th:'<th title="主予測でない側のバージョンの勝率と順位（v2主の日はv1、v1主の日はv2）">参考</th>',
    td:h=>{ const v2=h.win_ver==="v2";
      const p=v2?h.win_prob_v1:h.win_prob_v2, rk=v2?h.rank_v1:h.rank_v2;
@@ -3204,11 +3204,12 @@ function loadTrackHistory(cb){
       if(b) b.innerHTML='<div class="tknote">馬場データ(track_history.json)の読込に失敗しました。</div>'; });
 }
 const TRK_COLOR = { "軽":"#4c9be8", "重":"#d9822b", "標準":"var(--muted)" };
-function trackHistChartSvg(days,wantW){
+function trackHistChartSvg(days,wantW,detailed){
   const isDesktop = document.documentElement.dataset.layout==="desktop";
   const S = isDesktop ? 1.3 : 1;
+  // 直近1か月(detailed)は本数が少ないため、各点にラベルを出す分だけ上下に余白を広げる（2026-09-29）。
   const W = Math.max(320, wantW||360);
-  const padL=30*S, padR=34*S, padT=14*S, padB=26*S, H=180*S;
+  const padL=30*S, padR=34*S, padT=(detailed?24:14)*S, padB=(detailed?34:26)*S, H=(detailed?220:180)*S;
   const plotW=W-padL-padR, plotH=H-padT-padB;
   const zs=days.map(d=>d.track_z).filter(v=>v!=null);
   const ts=days.map(d=>d.avg_time).filter(v=>v!=null);
@@ -3225,18 +3226,29 @@ function trackHistChartSvg(days,wantW){
     if(d.track_z==null) return "";
     const x=xFor(i), y0=yZero, y1=yForZ(d.track_z);
     const col=TRK_COLOR[d.track_label]||"var(--muted)";
-    return `<rect x="${(x-bw/2).toFixed(1)}" y="${Math.min(y0,y1).toFixed(1)}" width="${bw.toFixed(1)}" `
+    const rect=`<rect x="${(x-bw/2).toFixed(1)}" y="${Math.min(y0,y1).toFixed(1)}" width="${bw.toFixed(1)}" `
       +`height="${Math.max(0.5,Math.abs(y1-y0)).toFixed(1)}" fill="${col}" opacity="0.75">`
       +`<title>${d.date} 馬場指数 ${d.track_z>=0?'+':''}${d.track_z}(${d.track_label}) n=${d.n}</title></rect>`;
+    if(!detailed) return rect;
+    // 直近1か月は本数が少ないので、棒の先端に馬場指数の数値ラベルを直接出す。
+    const above = d.track_z>=0;
+    const ly = above ? y1-3*S : y1+7*S;
+    const lbl=`<text x="${x.toFixed(1)}" y="${ly.toFixed(1)}" font-size="${6*S}" text-anchor="middle" fill="${col}">${d.track_z>=0?'+':''}${d.track_z}</text>`;
+    return rect+lbl;
   }).join("");
   const linePts=days.map((d,i)=>d.avg_time!=null?`${xFor(i).toFixed(1)},${yForT(d.avg_time).toFixed(1)}`:null).filter(Boolean).join(" ");
-  const dots=days.map((d,i)=>d.avg_time==null?"":
-    `<circle cx="${xFor(i).toFixed(1)}" cy="${yForT(d.avg_time).toFixed(1)}" r="${1.6*S}" fill="var(--edge)">`
-    +`<title>${d.date} 平均タイム${secFmt(d.avg_time)} n=${d.n}</title></circle>`).join("");
-  // 横軸の日付ラベルは間引いて表示(概ね6〜8本)
-  const step=Math.max(1, Math.ceil(n/7));
+  const dots=days.map((d,i)=>{
+    if(d.avg_time==null) return "";
+    const cy=yForT(d.avg_time);
+    let c=`<circle cx="${xFor(i).toFixed(1)}" cy="${cy.toFixed(1)}" r="${(detailed?2.2:1.6)*S}" fill="var(--edge)">`
+      +`<title>${d.date} 平均タイム${secFmt(d.avg_time)} n=${d.n}</title></circle>`;
+    if(detailed) c+=`<text x="${xFor(i).toFixed(1)}" y="${(cy-6*S).toFixed(1)}" font-size="${6*S}" text-anchor="middle" fill="var(--edge)">${secFmt(d.avg_time)}</text>`;
+    return c;
+  }).join("");
+  // 横軸の日付ラベルは間引いて表示(直近1か月は全日表示、それ以外は概ね6〜8本)
+  const step=detailed ? 1 : Math.max(1, Math.ceil(n/7));
   const xticks=days.map((d,i)=> i%step===0
-    ? `<text x="${xFor(i).toFixed(1)}" y="${H-6*S}" font-size="${6.5*S}" text-anchor="middle" fill="var(--muted)">${d.date.slice(5).replace('-','/')}</text>` : "").join("");
+    ? `<text x="${xFor(i).toFixed(1)}" y="${H-6*S}" font-size="${6.5*S}" text-anchor="middle" fill="var(--muted)" ${detailed?'transform="rotate(-40 '+xFor(i).toFixed(1)+' '+(H-6*S).toFixed(1)+')"':''}>${d.date.slice(5).replace('-','/')}</text>` : "").join("");
   // 1軸(左)=平均タイム、2軸(右)=馬場指数zスコア（2026-09-28、ユーザー指定で左右を入替）
   const yticksT=[tMin,(tMin+tMax)/2,tMax].map(v=>`<text x="${(padL-4*S).toFixed(1)}" y="${(yForT(v)+2.5*S).toFixed(1)}" font-size="${6.5*S}" text-anchor="end" fill="var(--edge)">${secFmt(v)}</text>`).join("");
   const yticksZ=[-zMax,0,zMax].map(v=>`<text x="${(W-padR+4*S).toFixed(1)}" y="${(yForZ(v)+2.5*S).toFixed(1)}" font-size="${6.5*S}" text-anchor="start" fill="var(--muted)">${v>0?'+':''}${v.toFixed(1)}</text>`).join("");
@@ -3251,15 +3263,18 @@ function renderTrackHistBox(){
     const all=j.days||[];
     if(!all.length){ box.innerHTML='<div class="tknote">今年度の馬場データがまだありません。</div>'; return; }
     let days=all;
-    if(window.__TRACKHIST_RANGE==="3m"){
-      const last=new Date(all[all.length-1].date+"T00:00:00"), cut=new Date(last); cut.setMonth(cut.getMonth()-3);
+    if(window.__TRACKHIST_RANGE!=="season"){
+      const months={"3m":3,"1m":1}[window.__TRACKHIST_RANGE]||3;
+      const last=new Date(all[all.length-1].date+"T00:00:00"), cut=new Date(last); cut.setMonth(cut.getMonth()-months);
       const cutIso=cut.toISOString().slice(0,10);
       days=all.filter(d=>d.date>=cutIso);
     }
+    const detailed = window.__TRACKHIST_RANGE==="1m";
     const w=box.clientWidth||360;
     const toggle=`<div class="vtoggle trackrange"><button data-r="season" aria-pressed="${window.__TRACKHIST_RANGE==="season"}">今年度</button>`
-      +`<button data-r="3m" aria-pressed="${window.__TRACKHIST_RANGE==="3m"}">直近3か月</button></div>`;
-    box.innerHTML = toggle + trackHistChartSvg(days,w)
+      +`<button data-r="3m" aria-pressed="${window.__TRACKHIST_RANGE==="3m"}">直近3か月</button>`
+      +`<button data-r="1m" aria-pressed="${window.__TRACKHIST_RANGE==="1m"}">直近1か月(詳細)</button></div>`;
+    box.innerHTML = toggle + trackHistChartSvg(days,w,detailed)
       +`<div class="tknote"><span style="color:${TRK_COLOR['重']}">■重</span> `
       +`<span style="color:${TRK_COLOR['軽']}">■軽</span> <span style="color:${TRK_COLOR['標準']}">■標準</span>`
       +` ＝馬場指数(zスコア、直近開催との相対比較。棒グラフ、左軸)。`
