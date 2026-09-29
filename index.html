@@ -211,6 +211,13 @@ table.ht .fin.top{color:var(--good);font-weight:800}
 .p5g{font-size:.6rem;color:var(--muted);font-variant-numeric:tabular-nums}
 .p5p.p5-high{border:1.5px solid var(--accent);border-radius:4px;padding:0 3px}
 .p5p.p5-low{border:1.5px solid var(--wet);border-radius:4px;padding:0 3px}
+.p5z{font-size:.58rem;color:var(--muted);font-variant-numeric:tabular-nums}
+.p5z.p5z-high{color:var(--accent);font-weight:700}
+.p5z.p5z-low{color:var(--wet);font-weight:700}
+.p5trend{font-size:.66rem;font-weight:700;margin-bottom:4px}
+.p5trend-up{color:var(--good)}
+.p5trend-dn{color:var(--accent)}
+.p5trend-flat{color:var(--muted);font-weight:600}
 /* 単勝ROI>1 ハイライト（スキャン連続でだんだん濃く） */
 table.ht tr.ev1{background:color-mix(in srgb,var(--ev-hue) 13%,transparent)}
 table.ht tr.ev2{background:color-mix(in srgb,var(--ev-hue) 26%,transparent)}
@@ -308,6 +315,7 @@ table.ht .roi{color:color-mix(in srgb,var(--ev-hue) 78%,var(--ink));font-weight:
 .hplevel{font-size:.68rem;font-weight:700;padding:1px 6px;border-radius:999px;white-space:nowrap}
 .hplevel.high{background:var(--accent-soft);color:var(--accent)}
 .hplevel.low{background:var(--border2);color:var(--muted)}
+.hpzval{font-size:.66rem;color:var(--muted);font-variant-numeric:tabular-nums}
 .hppop{color:var(--muted);font-weight:600;margin-left:auto}
 .hpto{color:var(--muted)}
 .hpto.hit{color:var(--good)}
@@ -1244,6 +1252,28 @@ function featBar(label,v){ const w=Math.max(0,Math.min(100,(v||0)*10));
 // (h.trend[].gs)を使い、1着の走は2着との勝ち幅を+、それ以外は勝ち馬との負け幅を-で表す
 // （データ分析タブの箱ひげと同じ定義）。レースレベル判定(rz)が|z|>=1.5の走には着順の後ろに
 // 🔥(高レベル)/📉(低レベル)を付ける。詳細は馬別成績モーダル（馬名タップ）で確認する想定の簡易版。
+// 調子トレンド（2026-09-29、ユーザー要望）: analyzer/phase2_scorer._score_form_trendと同じ
+// 「直近半分 vs 過去半分」の比較を、着順の代わりにrz（レースレベルzスコア＝馬場・ソリ重量・水分率
+// 補正後の残差、過去5走の🔥/📉判定と同じ値）に適用する。着順ベースのform_trendと違い、クラスが
+// 上がって着順が落ちても「補正後のタイムは良化」を拾える。表示専用（勝率計算には未使用）。
+function formTrendInfo(trend){
+  const rows=(trend||[]).filter(t=>t.rz!=null).slice(-5);  // 古い→新しい、最大5走
+  if(rows.length<3) return null;
+  const nf=[...rows].reverse();  // 新しい→古いに揃える（_score_form_trendのpositions[]と同じ並び）
+  const half=Math.floor(nf.length/2);
+  const recent=nf.slice(0,half), older=nf.slice(half+(nf.length%2));
+  if(!recent.length||!older.length) return null;
+  const avg=a=>a.reduce((s,t)=>s+t.rz,0)/a.length;
+  return {diff:Math.round((avg(recent)-avg(older))*100)/100, n:rows.length};
+}
+function formTrendHtml(trend){
+  const info=formTrendInfo(trend);
+  if(!info) return "";
+  const TH=0.4;  // このくらいの差から「傾向あり」として表示（表示専用の目安値、未検証）
+  if(Math.abs(info.diff)<TH) return `<div class="p5trend p5trend-flat" title="直近${info.n}走のzスコア推移からの目安（表示専用、勝率計算には未反映）">調子→横ばい</div>`;
+  const up=info.diff>0;
+  return `<div class="p5trend ${up?'p5trend-up':'p5trend-dn'}" title="直近${info.n}走のzスコア推移からの目安（表示専用、勝率計算には未反映）">調子${up?'↑上向き':'↓下降'}(${info.diff>0?'+':''}${info.diff})</div>`;
+}
 function past5Html(h){
   const rows=(h.trend||[]).slice(-5).reverse();
   if(!rows.length) return `<td class="l"><span class="tsub">—</span></td>`;
@@ -1260,10 +1290,13 @@ function past5Html(h){
     const mk = t.mk>=1 && t.mk<=5 ? MK[t.mk-1] : "";
     const timeTxt = t.t!=null ? secFmt(t.t).replace(/s$/,"") : "—";
     const il = t.il ? '<span class="p5il" title="このレースに八百長ラベル付与馬あり">🚨</span>' : "";
+    const zTxt = t.rz!=null ? `z${t.rz>=0?'+':''}${t.rz}` : "";
+    const zCls = t.rz!=null ? (t.rz>=1.5?'p5z-high':(t.rz<=-1.5?'p5z-low':'')) : '';
     return `<div class="p5col ${cls}" data-date="${t.d||''}" data-horse="${(h.name||'').replace(/"/g,'&quot;')}" title="${title}"><span class="p5d">${dateTxt}${il}</span>`
-      +`<span class="p5p ${lvlCls}">${posTxt}</span><span class="p5t"><b class="p5mk">${mk}</b>${timeTxt}</span><span class="p5g">${gapTxt}</span></div>`;
+      +`<span class="p5p ${lvlCls}">${posTxt}</span><span class="p5t"><b class="p5mk">${mk}</b>${timeTxt}</span><span class="p5g">${gapTxt}</span>`
+      +(zTxt?`<span class="p5z ${zCls}">${zTxt}</span>`:'')+`</div>`;
   }).join('');
-  return `<td class="l"><div class="p5grid">${cols}</div></td>`;
+  return `<td class="l">${formTrendHtml(h.trend)}<div class="p5grid">${cols}</div></td>`;
 }
 // テーブルの列定義（always=常時表示。それ以外は「⚙列」で表示/非表示できる）。
 // 配列の並び=既定の列順（2026-09-26、ユーザー指定のレイアウトに合わせて並び替え）。
@@ -2443,6 +2476,10 @@ function renderHorseProfile(){
           ? `<span class="hplevel high" title="クラス・条件から見た期待タイムより速い(z=${r.race_level_z})">🔥高レベル</span>`
           : `<span class="hplevel low" title="クラス・条件から見た期待タイムより遅い(z=${r.race_level_z})">📉低レベル</span>`)
       : "";
+    // レースごとのzスコア数値（2026-09-29、ユーザー要望）: |z|>=1.5未満でも常に数値を出す
+    // （レベルバッジは明確な差だけに絞るが、調子の判断材料として生の値も見たいという要望）。
+    const zNumTxt = r.race_level_z!=null
+      ? `<span class="hpzval" title="実タイム-期待タイム(クラス×ソリ重量×水分率)の残差をzスコア化">z${r.race_level_z>=0?'+':''}${r.race_level_z}</span>` : "";
     return `<div class="hprace">`
       +`<div class="hpr1"><span class="hpdate">${r.date.slice(2).replace(/-/g,'/')}</span>`
       +`<span class="hprno">帯広${r.race_no}R</span>`
@@ -2450,7 +2487,7 @@ function renderHorseProfile(){
       +`<span class="hppop">人気${r.popularity??'—'}</span>`
       +`<span class="hpto ${r.position===1?'hit':''}">→${posTxt}${marginTxt}</span></div>`
       +`<div class="hprname">${r.race_name||''}</div>`
-      +`<div class="hprline">${r.class||''}　200m　${r.time||'—'} ${levelBadge}</div>`
+      +`<div class="hprline">${r.class||''}　200m　${r.time||'—'} ${zNumTxt} ${levelBadge}</div>`
       +`<div class="hprline">頭数${r.field_size??'—'}　`
       +`<span class="hmn" style="${capStyle(gate)}">${r.num}</span>　`
       +`<b>${r.jockey||'—'}</b>　そり${r.sled_kg!=null?r.sled_kg.toFixed(0):'—'}　馬場水分${r.moisture??'—'}%</div>`
