@@ -1270,9 +1270,9 @@ function formTrendHtml(trend){
   const info=formTrendInfo(trend);
   if(!info) return "";
   const TH=0.4;  // このくらいの差から「傾向あり」として表示（表示専用の目安値、未検証）
-  if(Math.abs(info.diff)<TH) return `<div class="p5trend p5trend-flat" title="直近${info.n}走のzスコア推移からの目安（表示専用、勝率計算には未反映）">調子→横ばい</div>`;
+  if(Math.abs(info.diff)<TH) return `<div class="p5trend p5trend-flat" title="直近${info.n}走のzスコア推移からの目安（表示専用、勝率計算には未反映）">調子➡️</div>`;
   const up=info.diff>0;
-  return `<div class="p5trend ${up?'p5trend-up':'p5trend-dn'}" title="直近${info.n}走のzスコア推移からの目安（表示専用、勝率計算には未反映）">調子${up?'↑上向き':'↓下降'}(${info.diff>0?'+':''}${info.diff})</div>`;
+  return `<div class="p5trend ${up?'p5trend-up':'p5trend-dn'}" title="直近${info.n}走のzスコア推移からの目安（表示専用、勝率計算には未反映）">調子${up?'↗️':'↘️'}(${info.diff>0?'+':''}${info.diff})</div>`;
 }
 function past5Html(h){
   const rows=(h.trend||[]).slice(-5).reverse();
