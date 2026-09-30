@@ -504,8 +504,8 @@ table.ht .numcell{display:inline-flex;align-items:center;gap:4px}
 .hmwp{font-weight:800}
 .hmpos{font-weight:800}
 .hmmore{display:block;width:100%;background:none;border:none;font-family:inherit;font-size:.72rem;color:var(--muted);padding:7px;cursor:pointer}
-.hmlinks{display:grid;grid-template-columns:repeat(4,1fr);gap:7px;margin:14px 0 6px}
-:root[data-layout="desktop"] .hmlinks{grid-template-columns:repeat(8,1fr)}
+.hmlinks{display:grid;grid-template-columns:repeat(3,1fr);gap:7px;margin:14px 0 6px}
+:root[data-layout="desktop"] .hmlinks{grid-template-columns:repeat(9,1fr)}
 .hmlinks button{background:var(--surface);border:1px solid var(--border);border-radius:11px;font-family:inherit;
   color:var(--ink);cursor:pointer;padding:9px 2px;display:flex;flex-direction:column;align-items:center;gap:3px}
 .hmlinks .li{font-size:1.25rem;line-height:1}
@@ -553,6 +553,26 @@ table.ht .numcell{display:inline-flex;align-items:center;gap:4px}
 .tktbl th,.tktbl td{padding:6px 6px;text-align:right;border-bottom:1px solid var(--border2);white-space:nowrap}
 .tktbl th:first-child,.tktbl td:first-child{text-align:left}
 .tktbl th{color:var(--muted);font-size:.64rem;font-weight:700}
+.slctl{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:10px 0 6px}
+.slctl select{font-family:inherit;font-size:.74rem;padding:6px 8px;border:1px solid var(--border);border-radius:8px;background:var(--surface);color:var(--ink)}
+.slkpi{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin:8px 0}
+:root[data-layout="desktop"] .slkpi{grid-template-columns:repeat(4,1fr)}
+.slkpi div{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:8px 10px}
+.slkpi span{display:block;font-size:.66rem;color:var(--muted)}
+.slkpi b{font-size:1.02rem;font-variant-numeric:tabular-nums}
+.slnav{margin:8px 0}
+.slwrap{overflow-x:auto;background:var(--surface);border:1px solid var(--border);border-radius:10px;margin-top:6px}
+.sltbl{width:100%;border-collapse:collapse;font-size:.76rem}
+.sltbl th{font-size:.64rem;color:var(--muted);font-weight:700;padding:6px;text-align:right;border-bottom:1px solid var(--border2);white-space:nowrap}
+.sltbl td{padding:6px;text-align:right;border-bottom:1px solid var(--border2);font-variant-numeric:tabular-nums;white-space:nowrap}
+.sltbl th.l,.sltbl td.l{text-align:left}
+.sltbl .slsum{font-weight:800}
+.sltbl tr.slmax td{background:color-mix(in srgb,var(--accent) 9%,var(--surface))}
+.sltbl tr.slfoot td{font-weight:800;border-top:2px solid var(--ink)}
+.sltbl tr.slcur td{background:color-mix(in srgb,var(--accent) 9%,var(--surface))}
+.slbarc{min-width:110px}
+.slbar{display:inline-block;width:60px;height:7px;background:var(--border2);border-radius:4px;overflow:hidden;vertical-align:middle;margin-right:5px}
+.slbar i{display:block;height:100%;background:var(--accent)}
 .tksvg{width:100%;height:auto;display:block;margin-top:4px;background:var(--surface);border:1px solid var(--border);border-radius:12px}
 .tknote{font-size:.68rem;color:var(--muted);margin-top:8px;line-height:1.6}
 .tkwarn{background:var(--accent-soft);border:1px solid var(--accent);border-radius:9px;padding:8px 11px;font-size:.7rem;color:var(--ink);margin-bottom:14px}
@@ -851,6 +871,7 @@ table.ht .numcell{display:inline-flex;align-items:center;gap:4px}
 <div class="wrap" id="results" style="display:none"></div>
 <div class="wrap" id="odds" style="display:none"></div>
 <div class="wrap" id="baba" style="display:none"></div>
+<div class="wrap" id="sales" style="display:none"></div>
 <div class="wrap" id="track" style="display:none"></div>
 <div class="wrap" id="labels" style="display:none"></div>
 <div class="wrap" id="changelog" style="display:none"></div>
@@ -2638,7 +2659,7 @@ if(_hmm) _hmm.addEventListener("click", e=>{ if(e.target===_hmm) closeHistModal(
 var NAV = {
   home: null,
   race: [["pred","予測"],["horses","馬別データ"]],
-  analysis: [["results","レース結果"],["odds","オッズ分析"],["baba","馬場分析"]],
+  analysis: [["results","レース結果"],["odds","オッズ分析"],["baba","馬場分析"],["sales","売上分析"]],
   admin: [["track","成績"],["labels","八百長ラベル"],["changelog","変更履歴"]],
   settings: null,
 };
@@ -2665,6 +2686,7 @@ function switchTop(t, sub){
   show("results", t==="analysis" && s==="results");
   show("odds", t==="analysis" && s==="odds");
   show("baba", t==="analysis" && s==="baba");
+  show("sales", t==="analysis" && s==="sales");
   show("track", t==="admin" && s==="track");
   show("labels", t==="admin" && s==="labels");
   show("changelog", t==="admin" && s==="changelog");
@@ -2676,6 +2698,7 @@ function switchTop(t, sub){
   if(t==="analysis" && s==="results") renderResultsPage();
   if(t==="analysis" && s==="odds" && !window.__ODDS_LOADED) loadOdds();
   if(t==="analysis" && s==="baba") renderBaba();
+  if(t==="analysis" && s==="sales") renderSales();
   if(t==="admin" && s==="track" && !window.__TRACK_LOADED) loadTracking();
   if(t==="admin" && s==="labels" && !window.__LABELS_LOADED) loadInsiderLabels();
   if(t==="admin" && s==="changelog") renderChangelog();
@@ -2762,7 +2785,7 @@ function drawHome(host, d, rs, live, list, prev, nextDay){
       +`</div>`;
   }).join("");
   const LINKS=[["race","pred","🏇","レース予測"],["analysis","results","📋","レース結果"],["analysis","odds","📈","オッズ分析"],
-    ["analysis","baba","🌡️","馬場分析"],["admin","track","📊","成績"],["admin","labels","🚨","八百長ラベル"],
+    ["analysis","baba","🌡️","馬場分析"],["analysis","sales","💴","売上分析"],["admin","track","📊","成績"],["admin","labels","🚨","八百長ラベル"],
     ["admin","changelog","📝","変更履歴"],["settings","","⚙️","設定"]];
   // 開催日の前後移動・日付指定（2026-09-30）。日付指定は透明なinput[type=date]をボタンに重ね、
   // タップでOSの日付ピッカーを開く。開催の無い日を選んだ場合は直前（無ければ直後）の開催日に合わせる。
@@ -3620,6 +3643,155 @@ function renderTrackHistBox(){
     box.querySelectorAll(".trackrange button").forEach(b=>b.onclick=()=>{ window.__TRACKHIST_RANGE=b.dataset.r; renderTrackHistBox(); });
   });
 }
+// ===== データ分析 > 売上分析（2026-09-30）=====
+// dashboard/sales.json（build_sales.py。楽天競馬の払戻金ページの券種別「総票数」。1票=100円、返還分は差し引かない発売票数）。
+window.__SALES = null;
+window.__SALES_ST = {range:"season", agg:"day", type:"all", unit:"yen", sel:null};
+var SL_LABEL = {win:"単勝",place:"複勝",bracket_quinella:"枠複",bracket_exacta:"枠単",quinella:"馬複",exacta:"馬単",wide:"ワイド",trio:"三連複",trifecta:"三連単"};
+function loadSales(cb){
+  if(window.__SALES){ cb(window.__SALES); return; }
+  fetch("./sales.json?t="+Date.now()).then(r=>{ if(!r.ok) throw 0; return r.json(); }).then(j=>{
+    const tot=j.types.map(()=>0);
+    j.days.forEach(d=>{
+      d.tot=j.types.map(()=>0); d.n=d.races.length;
+      d.races.forEach(r=>{ r.t=r.v.reduce((a,b)=>a+b,0); r.v.forEach((v,i)=>{ d.tot[i]+=v; tot[i]+=v; }); });
+    });
+    j.used=j.types.map((t,i)=>i).filter(i=>tot[i]>0);  // 全期間で1票も無い券種（帯広の枠単）は出さない
+    window.__SALES=j; cb(j);
+  }).catch(()=>{ const b=document.getElementById("sales");
+    if(b) b.innerHTML='<div class="tknote">売上データ(sales.json)の読込に失敗しました。</div>'; });
+}
+function slIso(d){ return d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")+"-"+String(d.getDate()).padStart(2,"0"); }
+function slVal(v){ return window.__SALES_ST.unit==="yen" ? v*100 : v; }
+// 軸・KPI用の短縮表記
+function slShort(x){
+  if(window.__SALES_ST.unit==="yen"){
+    return x>=1e8 ? (x/1e8).toFixed(2)+"億円" : Math.round(x/1e4).toLocaleString()+"万円";
+  }
+  return x>=1e6 ? Math.round(x/1e4).toLocaleString()+"万票" : x>=1e4 ? (x/1e4).toFixed(1)+"万票" : Math.round(x).toLocaleString()+"票";
+}
+// 表のセル用（金額は万円、票数はそのまま）
+function slCell(votes){ return (window.__SALES_ST.unit==="yen" ? Math.round(votes/100) : votes).toLocaleString(); }
+function slPick(j, arr){
+  const t=window.__SALES_ST.type;
+  return t==="all" ? arr.reduce((a,b)=>a+b,0) : arr[j.types.indexOf(t)];
+}
+function slDays(j){
+  const st=window.__SALES_ST, all=j.days; if(!all.length) return [];
+  if(st.range==="all") return all;
+  const c=new Date(all[all.length-1].date+"T00:00:00");
+  let cut;
+  if(st.range==="season") cut=hpSeasonStart(c); else { c.setMonth(c.getMonth()-3); cut=slIso(c); }
+  return all.filter(d=>d.date>=cut);
+}
+function slNiceMax(m){
+  if(m<=0) return 1;
+  const p=Math.pow(10,Math.floor(Math.log10(m)));
+  return Math.ceil(m/p*4)/4*p;
+}
+// 縦棒グラフ（1系列）。items=[{key,label,val,title}]、selKey=強調する棒、hit=タップで選べるか
+function slBarSvg(items, wantW, selKey, hit){
+  const isDesktop=document.documentElement.dataset.layout==="desktop";
+  const S=isDesktop?1.3:1;
+  const W=Math.max(320,wantW||360), padL=52*S, padR=8*S, padT=12*S, padB=24*S, H=176*S;
+  const plotW=W-padL-padR, plotH=H-padT-padB, n=items.length;
+  if(!n) return "";
+  const mx=slNiceMax(Math.max(...items.map(i=>i.val))), colW=plotW/n, bw=Math.max(1,colW*0.7);
+  const yFor=v=>padT+plotH-(v/mx)*plotH;
+  const grid=[0,mx/2,mx].map(v=>`<line x1="${padL}" y1="${yFor(v).toFixed(1)}" x2="${W-padR}" y2="${yFor(v).toFixed(1)}" stroke="var(--border)" stroke-width="1"/>`
+    +`<text x="${(padL-4*S).toFixed(1)}" y="${(yFor(v)+2.5*S).toFixed(1)}" font-size="${7.5*S}" text-anchor="end" fill="var(--muted)">${slShort(v)}</text>`).join("");
+  const bars=items.map((it,i)=>{
+    const x=padL+i*colW+(colW-bw)/2, y=yFor(it.val), sel=it.key===selKey;
+    return `<rect x="${x.toFixed(1)}" y="${y.toFixed(1)}" width="${bw.toFixed(1)}" height="${Math.max(0.5,padT+plotH-y).toFixed(1)}" `
+      +`fill="var(--accent)" opacity="${selKey==null||sel?1:0.5}"><title>${it.title}</title></rect>`;
+  }).join("");
+  const hits=hit?items.map((it,i)=>`<rect class="slhit" data-k="${it.key}" x="${(padL+i*colW).toFixed(1)}" y="${padT}" width="${colW.toFixed(1)}" height="${plotH}" fill="transparent"><title>${it.title}</title></rect>`).join(""):"";
+  const step=Math.max(1,Math.ceil(n/7));
+  const xt=items.map((it,i)=>i%step?"":`<text x="${(padL+(i+0.5)*colW).toFixed(1)}" y="${(H-8*S).toFixed(1)}" font-size="${7.5*S}" text-anchor="middle" fill="var(--muted)">${it.label}</text>`).join("");
+  return `<svg class="tksvg" viewBox="0 0 ${W} ${H}">${grid}${bars}${xt}${hits}</svg>`;
+}
+function slDetailHtml(j, days){
+  const st=window.__SALES_ST;
+  const k=Math.max(0,days.findIndex(x=>x.date===st.sel)), d=days[k>=0?k:days.length-1];
+  const idx=days.indexOf(d), used=j.used;
+  const wd=WD_JP[new Date(d.date+"T00:00:00").getDay()];
+  const maxT=Math.max(...d.races.map(r=>r.t));
+  const rows=d.races.map(r=>`<tr class="${r.t===maxT?'slmax':''}"><td>${r.r}R</td><td class="l">${r.c||''}</td>`
+    +used.map(i=>`<td>${slCell(r.v[i])}</td>`).join("")
+    +`<td class="slsum">${slCell(r.t)}</td></tr>`).join("");
+  const foot=`<tr class="slfoot"><td colspan="2">合計</td>`+used.map(i=>`<td>${slCell(d.tot[i])}</td>`).join("")
+    +`<td class="slsum">${slCell(d.tot.reduce((a,b)=>a+b,0))}</td></tr>`;
+  return `<div class="ahead csec"><span class="at1">日別の内訳</span><span class="at2">${d.date.replace(/-/g,'/')}(${wd}) ${d.n}レース ・単位: ${st.unit==="yen"?"万円":"票"}</span></div>`
+    +`<div class="hmnav slnav"><button id="slPrev"${idx>0?'':' disabled'}>⬅️前の日</button><button id="slNext"${idx<days.length-1?'':' disabled'}>次の日➡️</button></div>`
+    +`<div class="slwrap"><table class="sltbl"><thead><tr><th>R</th><th class="l">クラス</th>${used.map(i=>`<th>${SL_LABEL[j.types[i]]}</th>`).join("")}<th>合計</th></tr></thead>`
+    +`<tbody>${rows}${foot}</tbody></table></div>`;
+}
+function renderSales(){
+  const host=document.getElementById("sales"); if(!host) return;
+  if(!window.__SALES){ host.innerHTML='<div class="meta">読込中…</div>'; loadSales(()=>{ if(window.__curTop==="analysis" && window.__curSub.analysis==="sales") renderSales(); }); return; }
+  const j=window.__SALES, st=window.__SALES_ST, days=slDays(j), used=j.used;
+  if(!days.length){ host.innerHTML='<div class="tknote">売上データがまだありません。</div>'; return; }
+  if(!st.sel || !days.some(x=>x.date===st.sel)) st.sel=days[days.length-1].date;
+  const dayVal=d=>slVal(slPick(j,d.tot));
+  // 期間サマリ
+  const total=days.reduce((a,d)=>a+dayVal(d),0), nRaces=days.reduce((a,d)=>a+d.n,0);
+  const typeName = st.type==="all" ? "全券種合計" : SL_LABEL[st.type];
+  const kpi=`<div class="slkpi"><div><span>期間の売上(${typeName})</span><b>${slShort(total)}</b></div>`
+    +`<div><span>開催日数</span><b>${days.length}日 / ${nRaces}R</b></div>`
+    +`<div><span>1日あたり</span><b>${slShort(total/days.length)}</b></div>`
+    +`<div><span>1レースあたり</span><b>${slShort(total/nRaces)}</b></div></div>`;
+  // 推移グラフ（日別/月別）
+  let items;
+  if(st.agg==="day"){
+    items=days.map(d=>({key:d.date,label:d.date.slice(5).replace('-','/'),val:dayVal(d),
+      title:`${d.date} ${slShort(dayVal(d))}（${d.n}R）`}));
+  }else{
+    const m=new Map();
+    days.forEach(d=>{ const k=d.date.slice(0,7), e=m.get(k)||{v:0,n:0,r:0}; e.v+=dayVal(d); e.n++; e.r+=d.n; m.set(k,e); });
+    items=[...m].map(([k,e])=>({key:k,label:k.slice(2).replace('-','/'),val:e.v,
+      title:`${k.replace('-','/')} ${slShort(e.v)}（${e.n}開催日・1日平均${slShort(e.v/e.n)}）`}));
+  }
+  const w=host.clientWidth||360;
+  // 券種構成（期間合計）
+  const sums=used.map(i=>days.reduce((a,d)=>a+d.tot[i],0));
+  const grand=sums.reduce((a,b)=>a+b,0)||1;
+  const comp=used.map((i,k)=>{
+    const t=j.types[i], share=sums[k]/grand*100;
+    return `<tr class="${st.type===t?'slcur':''}"><td class="l">${SL_LABEL[t]}</td><td>${slShort(slVal(sums[k]))}</td>`
+      +`<td class="slbarc"><span class="slbar"><i style="width:${share.toFixed(1)}%"></i></span><span>${share.toFixed(1)}%</span></td>`
+      +`<td>${slShort(slVal(sums[k]/nRaces))}</td></tr>`;
+  }).join("");
+  // レース番号別の平均売上（選択中の券種）
+  const byR={};
+  days.forEach(d=>d.races.forEach(r=>{ const e=byR[r.r]||(byR[r.r]={v:0,n:0}); e.v+=slVal(slPick(j,r.v)); e.n++; }));
+  const rItems=Object.keys(byR).map(Number).sort((a,b)=>a-b).map(r=>({key:String(r),label:r+"R",val:byR[r].v/byR[r].n,
+    title:`${r}R 平均${slShort(byR[r].v/byR[r].n)}（${byR[r].n}レース）`}));
+  const tg=(key,cur,opts)=>`<div class="vtoggle" data-k="${key}">${opts.map(([v,l])=>`<button data-v="${v}" aria-pressed="${cur===v}">${l}</button>`).join("")}</div>`;
+  const typeSel=`<select id="slType" aria-label="券種"><option value="all"${st.type==="all"?" selected":""}>全券種合計</option>`
+    +used.map(i=>`<option value="${j.types[i]}"${st.type===j.types[i]?" selected":""}>${SL_LABEL[j.types[i]]}</option>`).join("")+`</select>`;
+  host.innerHTML=`<div class="ahead"><span class="at1">売上分析</span><span class="at2">券種別の売上（票数×100円）。開催日別・月別の推移</span></div>`
+    +`<div class="slctl">${tg("range",st.range,[["season","今年度"],["3m","直近3か月"],["all","全期間"]])}`
+    +`${tg("agg",st.agg,[["day","日別"],["month","月別"]])}${tg("unit",st.unit,[["yen","金額"],["votes","票数"]])}${typeSel}</div>`
+    +kpi
+    +`<div class="ahead csec"><span class="at1">${st.agg==="day"?"日別":"月別"}の売上推移</span><span class="at2">${typeName}${st.agg==="day"?" ・棒をタップで日別の内訳へ":""}</span></div>`
+    +slBarSvg(items,w,st.agg==="day"?st.sel:null,st.agg==="day")
+    +slDetailHtml(j,days)
+    +`<div class="ahead csec"><span class="at1">券種の構成</span><span class="at2">期間合計・${days[0].date.slice(0,7).replace('-','/')}〜${days[days.length-1].date.slice(0,7).replace('-','/')}</span></div>`
+    +`<div class="slwrap"><table class="sltbl"><thead><tr><th class="l">券種</th><th>売上</th><th>構成比</th><th>1Rあたり</th></tr></thead><tbody>${comp}</tbody></table></div>`
+    +`<div class="ahead csec"><span class="at1">レース番号別の平均売上</span><span class="at2">${typeName}</span></div>`
+    +slBarSvg(rItems,w,null,false)
+    +`<div class="tknote">出典＝楽天競馬の払戻金ページの券種別「総票数」（公式成績表の発売票数と一致を確認）。1票=100円で金額に換算しています。`
+    +`返還分は差し引かない発売ベースで、枠単は帯広では発売が無いため表示していません。データは2023/1〜。`
+    +`期間は最終開催日から数えた「今年度(4/17〜)」「直近3か月」「全期間」です。</div>`;
+  host.querySelectorAll(".vtoggle[data-k] button").forEach(b=>b.onclick=()=>{
+    st[b.parentNode.dataset.k]=b.dataset.v; renderSales();
+  });
+  const ts=document.getElementById("slType"); if(ts) ts.onchange=()=>{ st.type=ts.value; renderSales(); };
+  host.querySelectorAll(".slhit").forEach(el=>el.onclick=()=>{ st.sel=el.dataset.k; renderSales(); });
+  const step=dlt=>{ const k=days.findIndex(x=>x.date===st.sel)+dlt; if(k>=0&&k<days.length){ st.sel=days[k].date; renderSales(); } };
+  const pv=document.getElementById("slPrev"), nx=document.getElementById("slNext");
+  if(pv) pv.onclick=()=>step(-1); if(nx) nx.onclick=()=>step(1);
+}
 function condHtml(hs){
   const rec=(t,zeroLabel)=>{
     if(!t) return "—";
@@ -3760,6 +3932,7 @@ let rz; window.addEventListener("resize",()=>{clearTimeout(rz);rz=setTimeout(()=
   render();
   if(isHorsesView()) renderAnalysis();
   if(window.__curTop==="analysis" && window.__curSub.analysis==="baba") renderBaba();
+  if(window.__curTop==="analysis" && window.__curSub.analysis==="sales") renderSales();
   if(histState.horse) renderHorseProfile();
 },160);});
 // boot()の外（PC/スマホ表示切替）から幅依存のチャートを描き直すためのフック。
@@ -3767,6 +3940,7 @@ window.__onLayoutChange = ()=>{
   render();
   if(isHorsesView()) renderAnalysis();
   if(window.__curTop==="analysis" && window.__curSub.analysis==="baba") renderBaba();
+  if(window.__curTop==="analysis" && window.__curSub.analysis==="sales") renderSales();
   if(histState.horse) renderHorseProfile();
 };
 }
