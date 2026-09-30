@@ -28,6 +28,10 @@
 }}
 :root[data-theme="light"]{--bg:#f5efe4;--surface:#fffdf9;--surface2:#faf5ec;--ink:#231d13;--muted:#6f6353;--border:#e7ddca;--border2:#efe7d7;--accent:#c1462a;--accent-soft:#f3ddd3;--good:#2f7d55;--good-soft:#dcefe1;--edge:#137a7a;--edge-soft:#d5ecec;--track:#e6dcc7;--dry:#c08a3e;--wet:#2f7fae;--ev-hue:#c8891f;--shadow:0 1px 2px rgba(60,40,10,.06),0 8px 22px -12px rgba(60,40,10,.16);}
 :root[data-theme="dark"]{--bg:#15110b;--surface:#1f1911;--surface2:#251e14;--ink:#efe7d8;--muted:#a2917a;--border:#332a1d;--border2:#2a2216;--accent:#e0663f;--accent-soft:#3a221a;--good:#57b07f;--good-soft:#1b2f22;--edge:#3fb0b0;--edge-soft:#123030;--track:#3a3020;--dry:#d19a4e;--wet:#4d9fce;--ev-hue:#e6b450;--shadow:0 1px 2px rgba(0,0,0,.3),0 10px 28px -14px rgba(0,0,0,.65);}
+:root{--abn:#d11a1a}
+@media (prefers-color-scheme:dark){:root{--abn:#ff6b6b}}
+:root[data-theme="light"]{--abn:#d11a1a}
+:root[data-theme="dark"]{--abn:#ff6b6b}
 *{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%}
 body{margin:0;background:var(--bg);color:var(--ink);
@@ -577,6 +581,8 @@ table.ht .numcell{display:inline-flex;align-items:center;gap:4px}
 .sltbl td.slil,.sltbl td.slhi{text-align:center;padding:6px 2px}
 .sltbl td.slhi small{font-size:.62rem;color:var(--muted);margin-left:1px}
 .sltbl td.slhi2 small{color:var(--accent);font-weight:800}
+.sltbl td.slabn,.paytbl td.slabn,b.slabn{color:var(--abn);font-weight:800}
+.rsback{display:inline-flex;align-items:center;gap:4px;margin:4px 0 8px;padding:7px 12px;border:1px solid var(--border);border-radius:8px;background:var(--surface);color:var(--accent);font:inherit;font-size:.85rem;font-weight:700;cursor:pointer}
 .slbarc{min-width:110px}
 .slbar{display:inline-block;width:60px;height:7px;background:var(--border2);border-radius:4px;overflow:hidden;vertical-align:middle;margin-right:5px}
 .slbar i{display:block;height:100%;background:var(--accent)}
@@ -2680,7 +2686,24 @@ function renderSubtabs(t){
   el.innerHTML=items.map(([k,l])=>`<button data-s="${k}" aria-pressed="${window.__curSub[t]===k}">${l}</button>`).join("");
   el.querySelectorAll("button").forEach(b=>b.onclick=()=>switchTop(t,b.dataset.s));
 }
-function switchTop(t, sub){
+// 別ページ（レース結果）へ飛ぶ前に呼び、元の画面（Top/売上分析）へ戻れるようにする。
+function jumpToResult(date, raceNo, label){
+  window.__NAVBACK={t:window.__curTop, s:window.__curSub[window.__curTop], y:window.scrollY, label:label};
+  window.__RES.date=date; window.__RES.race=raceNo;
+  try{ history.pushState({navback:1}, ""); }catch(e){}
+  switchTop("analysis","results",true);
+  window.scrollTo(0,0);
+}
+function goBackFromResult(){
+  const nb=window.__NAVBACK; if(!nb) return;
+  window.__NAVBACK=null;
+  switchTop(nb.t, nb.s);
+  window.scrollTo(0,nb.y);
+  setTimeout(()=>window.scrollTo(0,nb.y),60);
+}
+window.addEventListener("popstate", ()=>{ if(window.__NAVBACK) goBackFromResult(); });
+function switchTop(t, sub, keepBack){
+  if(!keepBack) window.__NAVBACK=null;
   if(!(t in NAV)) t="home";
   window.__curTop=t;  // render()から参照（boot内のlet宣言はTDZになり得るためwindowに持つ）
   if(sub) window.__curSub[t]=sub;
@@ -2811,7 +2834,7 @@ function drawHome(host, d, rs, live, list, prev, nextDay){
     +`<div class="tknote">レース番号の行をタップすると${live?'レース予測':'レース結果'}を開きます。◎〇▲△☆＝当時の主予測の1〜5位。🚨＝過去5走以内に八百長ラベルが付いた馬。遡れるのは予想を保存している2026-07-11以降です。</div>`;
   host.querySelectorAll(".hmch").forEach(el=>el.onclick=()=>{
     if(live){ curDate=d; curRno=+el.dataset.r; renderRacePills(); switchTop("race","pred"); sync(); }
-    else { window.__RES.date=d; window.__RES.race=+el.dataset.r; switchTop("analysis","results"); }
+    else { jumpToResult(d, +el.dataset.r, "Top"); return; }
     window.scrollTo(0,0);
   });
   host.querySelectorAll(".hmmore").forEach(b=>b.onclick=()=>{ OPEN[b.dataset.k]=!OPEN[b.dataset.k]; renderHome(); });
@@ -2872,16 +2895,16 @@ function resLoadMonth(m, cb){
 function salesSectionHtml(j, date, raceNo){
   const day=j.days.find(x=>x.date===date), r=day&&day.races.find(x=>x.r===raceNo);
   if(!r) return "";
-  const tot=r.t, rows=j.used.map(i=>({t:j.types[i],v:r.v[i]})).filter(x=>x.v>0).map(x=>
-    `<tr><td class="pt-bt">${SL_LABEL[x.t]}</td><td class="num">${x.v.toLocaleString()}票</td>`
-    +`<td class="num pt-sum">¥${(x.v*100).toLocaleString()}</td><td class="num">${(x.v/tot*100).toFixed(1)}%</td></tr>`).join("");
+  const tot=r.t, rows=j.used.map(i=>({t:j.types[i],v:r.v[i],ab:!!(r.a&&(r.a[4]||[]).includes(i))})).filter(x=>x.v>0).map(x=>
+    `<tr><td class="pt-bt">${SL_LABEL[x.t]}</td><td class="num${x.ab?' slabn':''}">${x.v.toLocaleString()}票</td>`
+    +`<td class="num pt-sum${x.ab?' slabn':''}">¥${(x.v*100).toLocaleString()}</td><td class="num">${(x.v/tot*100).toFixed(1)}%</td></tr>`).join("");
   const rank=day.races.filter(x=>x.t>tot).length+1;
   let flag="";
   if(r.a){
     const tip=[];
     if(r.a[0]!=null) tip.push(`前後Rの平均の${r.a[1].toFixed(2)}倍`);
     if(r.a[2]!=null) tip.push(`同曜日・同Rの過去12回の中央値の${r.a[3].toFixed(2)}倍`);
-    flag=`<div class="paynote">📈 売上が高めのレース（${tip.join('／')}）</div>`;
+    flag=`<div class="paynote">📈 売上が高めのレース（${tip.join('／')}）${(r.a[4]||[]).length?'。<b class="slabn">赤字</b>の券種が特に高め':''}</div>`;
   }
   return `<div class="paysect"><div class="payhead">💴 売上（発売票数）</div>`
     +`<table class="paytbl"><thead><tr><th>券種</th><th>票数</th><th>売上</th><th>構成比</th></tr></thead><tbody>${rows}`
@@ -2933,8 +2956,11 @@ function renderResultsPage(){
         +payoutsHtml(race.payouts)
         +'<div id="rsSales"></div>';
     }
-    host.innerHTML=`<div class="rsbar">${monthSel}</div><div class="rsdays">${dayBtns}</div>`
+    const nb=window.__NAVBACK;
+    host.innerHTML=(nb?`<button class="rsback" id="rsBack">← ${nb.label}に戻る</button>`:'')
+      +`<div class="rsbar">${monthSel}</div><div class="rsdays">${dayBtns}</div>`
       +`<div class="rsraces">${raceBtns}</div>`+body;
+    const bk=host.querySelector("#rsBack"); if(bk) bk.onclick=()=>history.back();
     host.querySelector("#rsMonth").onchange=e=>{ const m=e.target.value; S.date=dates.find(d=>d.slice(0,7)===m); S.race=null; renderResultsPage(); };
     host.querySelectorAll(".rsdays button").forEach(b=>b.onclick=()=>{ S.date=b.dataset.d; S.race=null; renderResultsPage(); });
     host.querySelectorAll(".rsraces button").forEach(b=>b.onclick=()=>{ S.race=+b.dataset.r; renderResultsPage(); });
@@ -3758,7 +3784,7 @@ function slDetailHtml(j, days){
   const wd=WD_JP[new Date(d.date+"T00:00:00").getDay()];
   const maxT=Math.max(...d.races.map(r=>r.t));
   const rows=d.races.map(r=>`<tr class="${r.t===maxT?'slmax':''}"><td class="slrace"><span class="slrlink" data-d="${d.date}" data-r="${r.r}" title="このレースの結果を開く">${r.r}R</span></td><td class="slil">${r.l?`<span title="八百長ラベル付与馬 ${r.l.length}頭（${r.l.join('・')}）">🚨</span>`:''}</td>${slHighCell(r)}<td class="l">${r.c||''}</td>`
-    +used.map(i=>`<td>${slCell(r.v[i])}</td>`).join("")
+    +used.map(i=>`<td${r.a&&(r.a[4]||[]).includes(i)?' class="slabn" title="この券種の売上が高め"':''}>${slCell(r.v[i])}</td>`).join("")
     +`<td class="slsum">${slCell(r.t)}</td></tr>`).join("");
   const foot=`<tr class="slfoot"><td colspan="4">合計</td>`+used.map(i=>`<td>${slCell(d.tot[i])}</td>`).join("")
     +`<td class="slsum">${slCell(d.tot.reduce((a,b)=>a+b,0))}</td></tr>`;
@@ -3823,13 +3849,13 @@ function renderSales(){
     +slBarSvg(rItems,w,null,false)
     +`<div class="tknote">出典＝楽天競馬の払戻金ページの券種別「総票数」（公式成績表の発売票数と一致を確認）。1票=100円で金額に換算しています。`
     +`返還分は差し引かない発売ベースで、枠単は帯広では発売が無いため表示していません。データは2023/1〜。`
-    +`📈＝そのレースの総売上が「前後Rの平均」または「同曜日・同R番号の過去12回」より明らかに高い（+2σ・1.25倍以上、×は倍率。両方に該当すると倍率が強調）。オープン戦は特別戦のため対象外で、売上が高い＝八百長という意味ではありません。期間は最終開催日から数えた「今年度(4/17〜)」「直近3か月」「全期間」です。</div>`;
+    +`📈＝そのレースの総売上が「前後Rの平均」または「同曜日・同R番号の過去12回」より明らかに高い（+2σ・1.25倍以上、×は倍率。両方に該当すると倍率が強調）。📈のレースでは、券種ごとに同じ基準で判定して高めの券種の数字を<b class="slabn">赤字・太字</b>にしています。オープン戦は特別戦のため対象外で、売上が高い＝八百長という意味ではありません。期間は最終開催日から数えた「今年度(4/17〜)」「直近3か月」「全期間」です。</div>`;
   host.querySelectorAll(".vtoggle[data-k] button").forEach(b=>b.onclick=()=>{
     st[b.parentNode.dataset.k]=b.dataset.v; renderSales();
   });
   const ts=document.getElementById("slType"); if(ts) ts.onchange=()=>{ st.type=ts.value; renderSales(); };
   host.querySelectorAll(".slrlink").forEach(el=>el.onclick=()=>{
-    window.__RES.date=el.dataset.d; window.__RES.race=+el.dataset.r; switchTop("analysis","results"); window.scrollTo(0,0);
+    jumpToResult(el.dataset.d, +el.dataset.r, "売上分析");
   });
   host.querySelectorAll(".slhit").forEach(el=>el.onclick=()=>{ st.sel=el.dataset.k; renderSales(); });
   const step=dlt=>{ const k=days.findIndex(x=>x.date===st.sel)+dlt; if(k>=0&&k<days.length){ st.sel=days[k].date; renderSales(); } };
