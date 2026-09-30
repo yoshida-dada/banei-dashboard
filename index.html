@@ -456,7 +456,9 @@ table.ht .numcell{display:inline-flex;align-items:center;gap:4px}
 .notify-btn:disabled{opacity:.55;cursor:default}
 .chgrow{margin-left:auto;display:flex}
 .chgrow .chg-btn{margin-left:0}
-:root[data-layout="desktop"] .chgrow{flex:0 0 100%;justify-content:flex-end}
+/* PC表示では他のヘッダーボタン(通知/スマホ表示)と同じ行に収める（2026-09-30、以前は強制改行して
+   ばんえーあいとメニューの間に不要な余白ができていた）。スマホ表示は元のまま(狭幅では自然に改行)。*/
+:root[data-layout="desktop"] .chgrow{flex:0 0 auto;margin-left:0}
 .agate{max-width:340px;margin:28px auto;padding:18px 16px;border:1px solid var(--border);border-radius:12px;background:var(--surface);text-align:center}
 .agate .agt{font-weight:800;font-size:.95rem;margin-bottom:4px}
 .agate .ags{font-size:.74rem;color:var(--muted);margin-bottom:12px}
