@@ -570,7 +570,9 @@ table.ht .numcell{display:inline-flex;align-items:center;gap:4px}
 .sltbl tr.slmax td{background:color-mix(in srgb,var(--accent) 9%,var(--surface))}
 .sltbl tr.slfoot td{font-weight:800;border-top:2px solid var(--ink)}
 .sltbl tr.slcur td{background:color-mix(in srgb,var(--accent) 9%,var(--surface))}
-.sltbl td.slil{text-align:center;padding:6px 2px}
+.sltbl td.slil,.sltbl td.slhi{text-align:center;padding:6px 2px}
+.sltbl td.slhi small{font-size:.62rem;color:var(--muted);margin-left:1px}
+.sltbl td.slhi2 small{color:var(--accent);font-weight:800}
 .slbarc{min-width:110px}
 .slbar{display:inline-block;width:60px;height:7px;background:var(--border2);border-radius:4px;overflow:hidden;vertical-align:middle;margin-right:5px}
 .slbar i{display:block;height:100%;background:var(--accent)}
@@ -3711,20 +3713,29 @@ function slBarSvg(items, wantW, selKey, hit){
   const xt=items.map((it,i)=>i%step?"":`<text x="${(padL+(i+0.5)*colW).toFixed(1)}" y="${(H-8*S).toFixed(1)}" font-size="${7.5*S}" text-anchor="middle" fill="var(--muted)">${it.label}</text>`).join("");
   return `<svg class="tksvg" viewBox="0 0 ${W} ${H}">${grid}${bars}${xt}${hits}</svg>`;
 }
+// 売上が高いレースの印（前後R/同曜日比。build_sales.pyのr.a=[前後z,前後比,同曜日z,同曜日比]）
+function slHighCell(r){
+  const a=r.a; if(!a) return '<td class="slhi"></td>';
+  const tip=[];
+  if(a[0]!=null) tip.push(`前後Rの平均の${a[1].toFixed(2)}倍（+${a[0].toFixed(1)}σ）`);
+  if(a[2]!=null) tip.push(`同曜日・同Rの過去12回の中央値の${a[3].toFixed(2)}倍（+${a[2].toFixed(1)}σ）`);
+  const x=Math.max(a[1]||0,a[3]||0), both=a[0]!=null&&a[2]!=null;
+  return `<td class="slhi${both?' slhi2':''}"><span title="売上が高め: ${tip.join(' ／ ')}">📈<small>×${x.toFixed(1)}</small></span></td>`;
+}
 function slDetailHtml(j, days){
   const st=window.__SALES_ST;
   const k=Math.max(0,days.findIndex(x=>x.date===st.sel)), d=days[k>=0?k:days.length-1];
   const idx=days.indexOf(d), used=j.used;
   const wd=WD_JP[new Date(d.date+"T00:00:00").getDay()];
   const maxT=Math.max(...d.races.map(r=>r.t));
-  const rows=d.races.map(r=>`<tr class="${r.t===maxT?'slmax':''}"><td>${r.r}R</td><td class="slil">${r.l?`<span title="八百長ラベル付与馬 ${r.l.length}頭（${r.l.join('・')}）">🚨</span>`:''}</td><td class="l">${r.c||''}</td>`
+  const rows=d.races.map(r=>`<tr class="${r.t===maxT?'slmax':''}"><td>${r.r}R</td><td class="slil">${r.l?`<span title="八百長ラベル付与馬 ${r.l.length}頭（${r.l.join('・')}）">🚨</span>`:''}</td>${slHighCell(r)}<td class="l">${r.c||''}</td>`
     +used.map(i=>`<td>${slCell(r.v[i])}</td>`).join("")
     +`<td class="slsum">${slCell(r.t)}</td></tr>`).join("");
-  const foot=`<tr class="slfoot"><td colspan="3">合計</td>`+used.map(i=>`<td>${slCell(d.tot[i])}</td>`).join("")
+  const foot=`<tr class="slfoot"><td colspan="4">合計</td>`+used.map(i=>`<td>${slCell(d.tot[i])}</td>`).join("")
     +`<td class="slsum">${slCell(d.tot.reduce((a,b)=>a+b,0))}</td></tr>`;
   return `<div class="ahead csec"><span class="at1">日別の内訳</span><span class="at2">${d.date.replace(/-/g,'/')}(${wd}) ${d.n}レース ・単位: ${st.unit==="yen"?"万円":"票"}</span></div>`
     +`<div class="hmnav slnav"><button id="slPrev"${idx>0?'':' disabled'}>⬅️前の日</button><button id="slNext"${idx<days.length-1?'':' disabled'}>次の日➡️</button></div>`
-    +`<div class="slwrap"><table class="sltbl"><thead><tr><th>R</th><th>🚨</th><th class="l">クラス</th>${used.map(i=>`<th>${SL_LABEL[j.types[i]]}</th>`).join("")}<th>合計</th></tr></thead>`
+    +`<div class="slwrap"><table class="sltbl"><thead><tr><th>R</th><th>🚨</th><th title="売上が前後R・同曜日比で高いレース">📈</th><th class="l">クラス</th>${used.map(i=>`<th>${SL_LABEL[j.types[i]]}</th>`).join("")}<th>合計</th></tr></thead>`
     +`<tbody>${rows}${foot}</tbody></table></div>`;
 }
 function renderSales(){
@@ -3783,7 +3794,7 @@ function renderSales(){
     +slBarSvg(rItems,w,null,false)
     +`<div class="tknote">出典＝楽天競馬の払戻金ページの券種別「総票数」（公式成績表の発売票数と一致を確認）。1票=100円で金額に換算しています。`
     +`返還分は差し引かない発売ベースで、枠単は帯広では発売が無いため表示していません。データは2023/1〜。`
-    +`期間は最終開催日から数えた「今年度(4/17〜)」「直近3か月」「全期間」です。</div>`;
+    +`📈＝そのレースの総売上が「前後Rの平均」または「同曜日・同R番号の過去12回」より明らかに高い（+2σ・1.25倍以上、×は倍率。両方に該当すると倍率が強調）。オープン戦は特別戦のため対象外で、売上が高い＝八百長という意味ではありません。期間は最終開催日から数えた「今年度(4/17〜)」「直近3か月」「全期間」です。</div>`;
   host.querySelectorAll(".vtoggle[data-k] button").forEach(b=>b.onclick=()=>{
     st[b.parentNode.dataset.k]=b.dataset.v; renderSales();
   });
