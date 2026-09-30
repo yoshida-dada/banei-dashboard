@@ -55,17 +55,18 @@ body::before{content:"";position:fixed;top:0;left:0;right:0;height:env(safe-area
 :root[data-layout="desktop"] .subtabs,
 :root[data-layout="desktop"] .header-in,
 :root[data-layout="desktop"] .nav-in{max-width:1440px}
-/* PC表示のヘッダーを黒背景・白文字に、端から端までフルブリードで（2026-09-30、nar.yukochi.com
-   参考。バックエンド稼働バナー(.bestatus)と同じ「背景はフル幅、中身は.wrap相当で中央寄せ」の
-   構造に統一：header自体は全幅の帯、.header-inが中央寄せされた実コンテンツ）。
-   サイト自体のライト/ダークテーマとは独立した固定色（ヘッダーだけ常に黒バー）。 */
-:root[data-layout="desktop"] header{background:#14110c}
+/* ヘッダーを黒背景・白文字に、端から端までフルブリードで（2026-09-30、nar.yukochi.com参考。
+   バックエンド稼働バナー(.bestatus)と同じ「背景はフル幅、中身は.wrap相当で中央寄せ」の構造に
+   統一：header自体は全幅の帯、.header-inが中央寄せされた実コンテンツ）。PC表示限定だったが、
+   スマホ表示にも適用（2026-09-30、ユーザー要望）。サイト自体のライト/ダークテーマとは
+   独立した固定色（ヘッダーだけ常に黒バー）。 */
+header{background:#14110c}
+.brand,
+.brand .brandname{color:#f0e9dc}
+.brand small{color:#a99d86}
+header .notify-btn,
+header .layout-btn{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.22);color:#f0e9dc}
 :root[data-layout="desktop"] .header-in{padding-left:24px;padding-right:24px}
-:root[data-layout="desktop"] .brand,
-:root[data-layout="desktop"] .brand .brandname{color:#f0e9dc}
-:root[data-layout="desktop"] .brand small{color:#a99d86}
-:root[data-layout="desktop"] header .notify-btn,
-:root[data-layout="desktop"] header .layout-btn{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.22);color:#f0e9dc}
 /* データ分析タブ（2026-09-26）: 拡大するだけで見にくいとのフィードバックにより、
    チャート+詳細（左）と過去3走/10走サマリー表（右）を並べ、条件別(condHtml)は下に全幅で表示 */
 .anagrid{display:block}
