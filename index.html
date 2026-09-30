@@ -470,26 +470,35 @@ table.ht .numcell{display:inline-flex;align-items:center;gap:4px}
 :root[data-layout="desktop"] .tabbar{display:none}
 :root:not([data-layout="desktop"]) #toptabs{display:none}
 :root:not([data-layout="desktop"]) body{padding-bottom:calc(66px + env(safe-area-inset-bottom))}
-/* Top ページ */
-.hmhead{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;margin:4px 0 8px}
+/* Top ページ（2026-09-30、ユーザー提示のカード＋表スタイル。PCは2列） */
+.hmhead{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;margin:4px 0 10px}
+.hmdot{width:9px;height:9px;border-radius:50%;background:var(--accent);align-self:center}
 .hmdate{font-weight:800;font-size:1.02rem}
-.hmnext{font-size:.78rem;color:var(--edge);font-weight:700;font-variant-numeric:tabular-nums}
-.hmrace{background:var(--surface);border:1px solid var(--border);border-radius:11px;padding:8px 10px;margin-bottom:7px;cursor:pointer}
-.hmrace.done{background:var(--surface2)}
-.hmrace.next{border-color:var(--accent);box-shadow:0 0 0 1px var(--accent)}
-.hmr1{display:flex;align-items:baseline;gap:8px;flex-wrap:wrap}
-.hmrno{font-weight:800;font-size:.95rem}
-.hmpt{font-size:.74rem;color:var(--muted);font-variant-numeric:tabular-nums}
-.hmcls{font-size:.7rem;color:var(--muted)}
-.hmst{margin-left:auto;font-size:.72rem;font-weight:700;color:var(--muted)}
-.hmsus{font-size:.7rem;font-weight:700;color:var(--muted);font-variant-numeric:tabular-nums}
-.hmsus.strong{color:var(--accent)}
-.hmst.hit{color:var(--good)}
-.hmr2{display:flex;align-items:center;gap:6px;flex-wrap:wrap;margin-top:5px;font-size:.78rem}
-.hmmk{display:inline-flex;align-items:center;gap:3px;white-space:nowrap}
-.hmmk b{color:var(--accent)}
-.hmmk .hmn{width:17px;height:17px;font-size:.62rem}
-.hmname{font-weight:700}
+.hmcount{font-size:.76rem;color:var(--muted)}
+.hmnext{font-size:.76rem;color:var(--edge);font-weight:700;font-variant-numeric:tabular-nums}
+.hmall{margin-left:auto;background:none;border:none;font-family:inherit;font-size:.74rem;color:var(--muted);text-decoration:underline;cursor:pointer}
+.hmgrid{display:grid;grid-template-columns:1fr;gap:12px}
+:root[data-layout="desktop"] .hmgrid{grid-template-columns:repeat(2,1fr)}
+.hmcard{background:var(--surface);border:1px solid var(--border);border-radius:10px;overflow:hidden}
+.hmcard.next{border-color:var(--accent);box-shadow:0 0 0 1px var(--accent)}
+.hmch{display:flex;align-items:baseline;gap:8px;padding:8px 10px;background:var(--surface2);border-bottom:2px solid var(--ink);cursor:pointer}
+.hmrno{font-weight:800;font-size:.95rem;text-decoration:underline;text-underline-offset:3px}
+.hmpt{font-size:.72rem;color:var(--muted);font-variant-numeric:tabular-nums}
+.hmcls{font-size:.68rem;color:var(--muted)}
+.hmst{margin-left:auto;font-size:.72rem;color:var(--muted);font-variant-numeric:tabular-nums;white-space:nowrap}
+.hmst.hit{color:var(--good);font-weight:700}
+.hmtbl{width:100%;border-collapse:collapse;font-size:.8rem}
+.hmtbl th{font-size:.64rem;color:var(--muted);font-weight:700;padding:5px 6px;text-align:center;border-bottom:1px solid var(--border2)}
+.hmtbl td{padding:6px;text-align:center;border-bottom:1px solid var(--border2);font-variant-numeric:tabular-nums}
+.hmtbl th.l,.hmtbl td.l{text-align:left}
+.hmtbl tr.hmwin td{background:color-mix(in srgb,var(--good) 10%,var(--surface))}
+.hmmkc{width:22px;color:var(--accent);font-weight:800}
+.hmgate{white-space:nowrap;width:40px}
+.hmgate .hmn{width:17px;height:17px;font-size:.62rem}
+.hmnum{font-size:.72rem;margin-left:3px;font-weight:700}
+.hmwp{font-weight:800}
+.hmpos{font-weight:800}
+.hmmore{display:block;width:100%;background:none;border:none;font-family:inherit;font-size:.72rem;color:var(--muted);padding:7px;cursor:pointer}
 .hmlinks{display:grid;grid-template-columns:repeat(4,1fr);gap:7px;margin:14px 0 6px}
 :root[data-layout="desktop"] .hmlinks{grid-template-columns:repeat(8,1fr)}
 .hmlinks button{background:var(--surface);border:1px solid var(--border);border-radius:11px;font-family:inherit;
@@ -2670,49 +2679,59 @@ function switchTop(t, sub){
 // ===== Top ページ（2026-09-30）: 各ページへのリンク＋当日の全レースの印サマリ =====
 let homeCdTimer=null;
 function homeTargetDate(){ return nextDateFor(); }  // 未確定レースが残る最初の日（全日確定済みなら最終日）
+window.__HOME_OPEN = window.__HOME_OPEN || {};  // レース番号 -> 全頭表示中か
 function renderHome(){
   const host=document.getElementById("home"); if(!host) return;
   clearInterval(homeCdTimer); homeCdTimer=null;
-  const d=homeTargetDate(), rs=racesFor(d);
+  const d=homeTargetDate(), rs=racesFor(d), OPEN=window.__HOME_OPEN;
   const wd=WD_JP[new Date(d+"T00:00:00").getDay()];
   const MARKS=["◎","◯","▲","△","☆"];
   const now=new Date(), todayIso=now.getFullYear()+"-"+String(now.getMonth()+1).padStart(2,"0")+"-"+String(now.getDate()).padStart(2,"0");
   const next=rs.find(r=>!r.cancelled && r.winner==null);
-  const rows=rs.map(r=>{
-    const hs=r.horses||[];
-    const marks=[1,2,3,4,5].map(k=>{
-      const h=hs.find(x=>x.rank===k); if(!h) return "";
-      return `<span class="hmmk"><b>${MARKS[k-1]}</b><span class="hmn" style="${capStyle(h.gate)}">${h.num}</span>`
-        +(k===1?`<span class="hmname">${h.name||''}</span>`:'')+`</span>`;
+  const allOpen=rs.length>0 && rs.every(r=>OPEN[d+"#"+r.race_no]);
+  // レースごとのカード（2026-09-30、ユーザー提示のスタイル: 見出し＋印/枠/馬名/勝率/人気/単勝/着の表。
+  // 既定は◎〇▲△の4頭、「全頭を見る」で全頭）。🚨＝過去5走以内に八百長ラベルが付いた馬（h.insider_flag）。
+  const cards=rs.map(r=>{
+    const key=d+"#"+r.race_no, open=!!OPEN[key];
+    const hs=[...(r.horses||[])].sort((a,b)=>(a.rank??99)-(b.rank??99)||a.num-b.num);
+    const shown=open?hs:hs.filter(h=>h.rank>=1 && h.rank<=4);
+    const rows=shown.map(h=>{
+      const mk=h.rank>=1 && h.rank<=5 ? MARKS[h.rank-1] : "";
+      const pos=h.position!=null?h.position:"—";
+      return `<tr class="${h.position===1?'hmwin':''}"><td class="hmmkc">${mk}</td>`
+        +`<td class="hmgate"><span class="hmn" style="${capStyle(h.gate)}">${h.gate??''}</span><span class="hmnum">${h.num}</span></td>`
+        +`<td class="l"><span class="hlink" data-horse="${h.name||''}">${h.name||''}</span>${h.insider_flag?' <span title="過去5走以内に八百長ラベルあり">🚨</span>':''}</td>`
+        +`<td class="hmwp">${h.win_prob!=null?(h.win_prob*100).toFixed(1)+'%':'—'}</td>`
+        +`<td>${h.popularity??'—'}</td><td>${h.odds!=null?h.odds.toFixed(1):'—'}</td><td class="hmpos">${pos}</td></tr>`;
     }).join("");
-    // 🚨＝八百長検知アラート（締切前オッズ由来の怪しさスコアがしきい値超え。レース予測画面上部の警告と同じ判定）。
-    const raceId=raceIdFor(r);
-    const sus=(window.__ODDS && window.__ODDS.suspicion) ? hs.filter(h=>{ const x=suspicionFor(raceId,h.num);
-      return x && x.signed_score!=null && Math.abs(x.signed_score)>=SUSPICION_ROW_THRESHOLD; }) : [];
-    let st, stCls="";
-    if(r.cancelled) st="中止";
-    else if(r.winner!=null){ const hit=r.predicted_top===r.winner; st=`${r.winner}番1着${hit?' ◎的中':''}`; if(hit) stCls="hit"; }
-    else st=(next && r.race_no===next.race_no)?"次のレース":"発走前";
-    const cls=(r.winner!=null||r.cancelled)?"done":((next && r.race_no===next.race_no)?"next":"");
-    return `<div class="hmrace ${cls}" data-d="${d}" data-r="${r.race_no}">`
-      +`<div class="hmr1"><span class="hmrno">${r.race_no}R</span><span class="hmpt">${r.post_time||''}</span>`
-      +`<span class="hmcls">${r.class?classLabel(r.class, hs):''}</span>`
-      +(sus.length?(()=>{ const mx=Math.max(...sus.map(h=>Math.abs(suspicionFor(raceId,h.num).signed_score)));
-          return `<span class="hmsus${mx>=9?' strong':''}" title="八百長検知アラート: ${sus.map(h=>h.num+'番').join('・')}（最大の怪しさ ${mx.toFixed(1)}）">🚨${mx.toFixed(1)}</span>`; })():'')
-      +`<span class="hmst ${stCls}">${st}</span></div>`
-      +`<div class="hmr2">${marks||'<span class="tsub">印なし</span>'}</div></div>`;
+    let st;
+    if(r.cancelled) st='<span class="hmst">中止</span>';
+    else if(r.winner!=null){ const hit=r.predicted_top===r.winner; st=`<span class="hmst${hit?' hit':''}">${hit?'◎的中 ':''}結果確定</span>`; }
+    else st=`<span class="hmst">${STAGE[r.update_stage]||'事前予測'} ${r.updated_at?String(r.updated_at).slice(11,16):''}</span>`;
+    const isNext=next && r.race_no===next.race_no;
+    return `<div class="hmcard${isNext?' next':''}">`
+      +`<div class="hmch" data-r="${r.race_no}"><span class="hmrno">${r.race_no}R</span><span class="hmpt">${r.post_time?r.post_time+' 発走':''}</span>`
+      +`<span class="hmcls">${r.class?classLabel(r.class, r.horses):''}</span>${st}</div>`
+      +`<table class="hmtbl"><thead><tr><th>印</th><th>枠</th><th class="l">馬名</th><th>勝率</th><th>人気</th><th>単勝</th><th>着</th></tr></thead>`
+      +`<tbody>${rows||'<tr><td colspan="7" class="tsub">印なし</td></tr>'}</tbody></table>`
+      +(hs.length>shown.length||open?`<button class="hmmore" data-k="${key}">${open?'閉じる ▴':'全頭を見る ▾'}</button>`:'')
+      +`</div>`;
   }).join("");
   const LINKS=[["race","pred","🏇","レース予測"],["analysis","results","📋","レース結果"],["analysis","odds","📈","オッズ分析"],
     ["analysis","baba","🌡️","馬場分析"],["admin","track","📊","成績"],["admin","labels","🚨","八百長ラベル"],
     ["admin","changelog","📝","変更履歴"],["settings","","⚙️","設定"]];
-  host.innerHTML=`<div class="hmhead"><span class="hmdate">${d.slice(5).replace('-','/')}(${wd}) のレース</span>`
-    +`<span class="hmnext" id="hmNext"></span></div>`
-    +(rows||'<div class="meta">この日のレースデータがありません。</div>')
+  host.innerHTML=`<div class="hmhead"><span class="hmdot"></span><span class="hmdate">帯広 ${d.slice(5).replace('-','/')}(${wd})</span>`
+    +`<span class="hmcount">${rs.length}レース</span><span class="hmnext" id="hmNext"></span>`
+    +(rs.length?`<button class="hmall" id="hmAll">${allOpen?'この場を全部閉じる':'この場を全部開く'}</button>`:'')+`</div>`
+    +(cards?`<div class="hmgrid">${cards}</div>`:'<div class="meta">この日のレースデータがありません。</div>')
     +`<div class="hmlinks">${LINKS.map(([t,sb,ic,lb])=>`<button data-t="${t}" data-s="${sb}"><span class="li">${ic}</span><span class="ll">${lb}</span></button>`).join("")}</div>`
-    +`<div class="tknote">レースをタップするとレース予測を開きます。◎〇▲△☆＝主予測の1〜5位。🚨＝八百長検知アラート（締切前オッズの動きから算出した怪しさスコアがしきい値超えの馬あり）。</div>`;
-  host.querySelectorAll(".hmrace").forEach(el=>el.onclick=()=>{
-    curDate=el.dataset.d; curRno=+el.dataset.r; renderRacePills(); switchTop("race","pred"); sync(); window.scrollTo(0,0);
+    +`<div class="tknote">レース番号の行をタップするとレース予測を開きます。◎〇▲△☆＝主予測の1〜5位。🚨＝過去5走以内に八百長ラベルが付いた馬。</div>`;
+  host.querySelectorAll(".hmch").forEach(el=>el.onclick=()=>{
+    curDate=d; curRno=+el.dataset.r; renderRacePills(); switchTop("race","pred"); sync(); window.scrollTo(0,0);
   });
+  host.querySelectorAll(".hmmore").forEach(b=>b.onclick=()=>{ OPEN[b.dataset.k]=!OPEN[b.dataset.k]; renderHome(); });
+  const ab=document.getElementById("hmAll");
+  if(ab) ab.onclick=()=>{ rs.forEach(r=>{ OPEN[d+"#"+r.race_no]=!allOpen; }); renderHome(); };
   host.querySelectorAll(".hmlinks button").forEach(b=>b.onclick=()=>{ switchTop(b.dataset.t, b.dataset.s||undefined); window.scrollTo(0,0); });
   // 次のレースの発走までのカウントダウン（当日のみ）
   const el=document.getElementById("hmNext");
