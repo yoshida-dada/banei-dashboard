@@ -2110,8 +2110,8 @@ async function loadBackendStatus(){
     el.className="bestatus "+(fresh?"on":"off");
     const t=upd? upd.toLocaleTimeString('ja-JP',{hour:'2-digit',minute:'2-digit'}):"—";
     el.innerHTML='<span class="bdot"></span>'+(fresh
-      ? `バックエンド稼働中 — ${j.message||"オッズ収集"}（更新 ${t}）`
-      : `バックエンド停止中${j.updated_at?`（最終 ${t}）`:""}`);
+      ? `オッズ収集ポーラー稼働中 — ${j.message||"オッズ収集"}（更新 ${t}）`
+      : `オッズ収集ポーラー停止中${j.updated_at?`（最終 ${t}）`:""}`);
   }catch(e){ el.hidden=true; }
 }
 loadBackendStatus(); setInterval(loadBackendStatus, 60000);
@@ -2127,10 +2127,10 @@ async function checkVotingBackend(){
     const r=await withTimeout(fetch(cfg.url+"/health",{cache:"no-store"}), 5000, "timeout");
     if(!r.ok) throw new Error("not ok");
     el.hidden=false; el.className="bestatus on";
-    el.innerHTML='<span class="bdot"></span>投票バックエンド接続中';
+    el.innerHTML='<span class="bdot"></span>バックエンド接続中';
   }catch(e){
     el.hidden=false; el.className="bestatus err";
-    el.innerHTML='<span class="bdot"></span>投票バックエンドに接続できません（PCの再起動をご検討ください）';
+    el.innerHTML='<span class="bdot"></span>バックエンドに接続できません（PCの再起動をご検討ください）';
   }
 }
 checkVotingBackend(); setInterval(checkVotingBackend, 30000);
