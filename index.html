@@ -2857,6 +2857,12 @@ function switchTop(t, sub, keepBack){
   if(locked){ document.getElementById("subtabs").innerHTML=""; renderAdminGate(); } else renderSubtabs(t);
   if(t==="home") renderHome(); else { clearInterval(homeCdTimer); homeCdTimer=null; }
   if(t==="race" && s==="horses") renderAnalysis();
+  // 馬場指数マップ・展開イメージ(2026-09-30バグ修正): render()はタブ非表示中(display:none)にも
+  // 呼ばれうるため、その間はhost.clientWidthが0になりviewBoxが極小(フォールバック340px)で
+  // 確定してしまう。以後CSSでは実際の表示幅までwidth:100%で引き伸ばされ、文字や点が単に
+  // 拡大されただけの見た目になる（PC表示への幅拡大後にユーザー報告）。同じ理由で不具合が
+  // 出ていたrenderAnalysis(直上)と同様、このタブが実際に見える瞬間に測り直す。
+  if(t==="race" && s==="pred"){ const r=get(); if(r){ renderTrackAptitudeScatter(r); renderRaceFlowTime(r); } }
   if(t==="analysis" && s==="results") renderResultsPage();
   if(t==="analysis" && s==="odds" && !window.__ODDS_LOADED) loadOdds();
   if(t==="analysis" && s==="baba") renderBaba();
