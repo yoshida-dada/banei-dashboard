@@ -507,15 +507,16 @@ table.ht .numcell{display:inline-flex;align-items:center;gap:4px}
    ヘッダー(.header-in)と揃える（padding-leftを24pxで統一）。 */
 :root[data-layout="desktop"] .subtabs{padding:0 24px;gap:10px;margin-top:16px;margin-bottom:16px}
 :root[data-layout="desktop"] .subtabs button{font-size:.92rem;padding:9px 20px}
-/* 下部タブバー（スマホ表示のみ、2026-09-30）。PC表示は従来どおり上部タブ。 */
+/* 下部タブバー（スマホ表示のみ、2026-09-30）。PC表示は従来どおり上部タブ。
+   ヘッダーと同じ黒基調に統一（2026-09-30、ユーザー要望）。 */
 .tabbar{position:fixed;left:0;right:0;bottom:0;z-index:40;display:flex;justify-content:space-around;
-  background:color-mix(in srgb,var(--surface) 94%,transparent);backdrop-filter:blur(10px);
-  border-top:1px solid var(--border);padding:5px 4px calc(5px + env(safe-area-inset-bottom))}
-.tabbar button{flex:1;background:none;border:none;font-family:inherit;color:var(--muted);cursor:pointer;
+  background:#14110c;
+  border-top:1px solid rgba(255,255,255,.12);padding:5px 4px calc(5px + env(safe-area-inset-bottom))}
+.tabbar button{flex:1;background:none;border:none;font-family:inherit;color:#b8ae9a;cursor:pointer;
   display:flex;flex-direction:column;align-items:center;gap:1px;padding:3px 0}
 .tabbar .ti{font-size:1.2rem;line-height:1.2;filter:grayscale(1);opacity:.7}
 .tabbar .tl{font-size:.62rem;font-weight:700}
-.tabbar button[aria-pressed="true"]{color:var(--accent)}
+.tabbar button[aria-pressed="true"]{color:#fff}
 .tabbar button[aria-pressed="true"] .ti{filter:none;opacity:1}
 :root[data-layout="desktop"] .tabbar{display:none}
 :root:not([data-layout="desktop"]) #toptabs{display:none}
