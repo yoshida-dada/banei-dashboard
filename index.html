@@ -497,6 +497,13 @@ table.ht .numcell{display:inline-flex;align-items:center;gap:4px}
 .hmrno{font-weight:800;font-size:.95rem;text-decoration:underline;text-underline-offset:3px}
 .hmpt{font-size:.72rem;color:var(--muted);font-variant-numeric:tabular-nums}
 .hmcls{font-size:.68rem;color:var(--muted)}
+.hmic{font-size:.8rem;white-space:nowrap}
+.hmic small{font-size:.62rem;color:var(--muted);margin-left:1px}
+.hmsales{display:flex;flex-wrap:wrap;gap:2px 10px;padding:6px 10px;font-size:.72rem;color:var(--muted);border-top:1px solid var(--border2);font-variant-numeric:tabular-nums}
+.hmsales[hidden]{display:none}
+.hmsales b{color:var(--ink);font-weight:600}
+.hmsales .hmslt b{font-weight:800}
+.hmsales .slabn,.hmsales .slabn b{color:var(--abn);font-weight:800}
 .hmst{margin-left:auto;font-size:.72rem;color:var(--muted);font-variant-numeric:tabular-nums;white-space:nowrap}
 .hmst.hit{color:var(--good);font-weight:700}
 .hmtbl{width:100%;border-collapse:collapse;font-size:.8rem}
@@ -2779,6 +2786,29 @@ function renderHome(){
   });
   if(!racesFor(d).length && !window.__HOME_ARC[d]) host.innerHTML='<div class="meta">読込中…</div>';
 }
+// Topのレースカードに売上（券種別・万円）と🚨📈を後から埋める（sales.jsonは開催日の翌朝に取り込まれるため当日分は無し）。
+function homeSalesFill(host, d){
+  loadSales(j=>{
+    if(!host.isConnected) return;
+    const day=j.days.find(x=>x.date===d); if(!day) return;
+    day.races.forEach(r=>{
+      const ic=host.querySelector(`.hmic[data-ic="${r.r}"]`), box=host.querySelector(`.hmsales[data-sl="${r.r}"]`);
+      if(ic){
+        const a=r.a, tip=[];
+        if(a&&a[0]!=null) tip.push(`前後Rの平均の${a[1].toFixed(2)}倍`);
+        if(a&&a[2]!=null) tip.push(`同曜日・同Rの過去12回の中央値の${a[3].toFixed(2)}倍`);
+        ic.innerHTML=(r.l?`<span title="八百長ラベル付与馬 ${r.l.length}頭（${r.l.join('・')}）">🚨</span>`:'')
+          +(a?`<span title="売上が高め: ${tip.join(' ／ ')}">📈<small>×${Math.max(a[1]||0,a[3]||0).toFixed(1)}</small></span>`:'');
+      }
+      if(box){
+        const ab=new Set(r.a?(r.a[4]||[]):[]);
+        box.innerHTML=`<span class="hmslt">💴 売上 <b>${Math.round(r.t/100).toLocaleString()}</b>万円</span>`
+          +j.used.filter(i=>r.v[i]>0).map(i=>`<span class="hmslc${ab.has(i)?' slabn':''}">${SL_LABEL[j.types[i]]} <b>${Math.round(r.v[i]/100).toLocaleString()}</b></span>`).join("");
+        box.hidden=false;
+      }
+    });
+  });
+}
 function drawHome(host, d, rs, live, list, prev, nextDay){
   const OPEN=window.__HOME_OPEN;
   const wd=WD_JP[new Date(d+"T00:00:00").getDay()];
@@ -2808,9 +2838,10 @@ function drawHome(host, d, rs, live, list, prev, nextDay){
     const isNext=live && next && r.race_no===next.race_no;
     return `<div class="hmcard${isNext?' next':''}">`
       +`<div class="hmch" data-r="${r.race_no}"><span class="hmrno">${r.race_no}R</span><span class="hmpt">${r.post_time?r.post_time+' 発走':''}</span>`
-      +`<span class="hmcls">${r.class?classLabel(r.class, r.horses):''}</span>${st}</div>`
+      +`<span class="hmcls">${r.class?classLabel(r.class, r.horses):''}</span><span class="hmic" data-ic="${r.race_no}"></span>${st}</div>`
       +`<table class="hmtbl"><thead><tr><th>印</th><th>馬番</th><th class="l">馬名</th><th>勝率</th><th>人気</th><th>単勝</th><th>着</th></tr></thead>`
       +`<tbody>${rows||'<tr><td colspan="7" class="tsub">印なし</td></tr>'}</tbody></table>`
+      +`<div class="hmsales" data-sl="${r.race_no}" hidden></div>`
       +(hs.length>shown.length||open?`<button class="hmmore" data-k="${key}">${open?'閉じる ▴':'全頭を見る ▾'}</button>`:'')
       +`</div>`;
   }).join("");
@@ -2831,12 +2862,13 @@ function drawHome(host, d, rs, live, list, prev, nextDay){
     +(rs.length?`<button class="hmall" id="hmAll">${allOpen?'この場を全部閉じる':'この場を全部開く'}</button>`:'')+`</div>`
     +(cards?`<div class="hmgrid">${cards}</div>`:'<div class="meta">この日の予想データがありません。</div>')
     +`<div class="hmlinks">${LINKS.map(([t,sb,ic,lb])=>`<button data-t="${t}" data-s="${sb}"><span class="li">${ic}</span><span class="ll">${lb}</span></button>`).join("")}</div>`
-    +`<div class="tknote">レース番号の行をタップすると${live?'レース予測':'レース結果'}を開きます。◎〇▲△☆＝当時の主予測の1〜5位。🚨＝過去5走以内に八百長ラベルが付いた馬。遡れるのは予想を保存している2026-07-11以降です。</div>`;
+    +`<div class="tknote">レース番号の行をタップすると${live?'レース予測':'レース結果'}を開きます。◎〇▲△☆＝当時の主予測の1〜5位。🚨（馬名横）＝過去5走以内に八百長ラベルが付いた馬。レース見出しの🚨＝そのレースに八百長ラベル付与馬がいる、📈＝売上が高めのレース（詳細は売上分析）。売上は券種別・万円で、高めの券種は赤字・太字です（売上は開催翌朝に反映）。遡れるのは予想を保存している2026-07-11以降です。</div>`;
   host.querySelectorAll(".hmch").forEach(el=>el.onclick=()=>{
     if(live){ curDate=d; curRno=+el.dataset.r; renderRacePills(); switchTop("race","pred"); sync(); }
     else { jumpToResult(d, +el.dataset.r, "Top"); return; }
     window.scrollTo(0,0);
   });
+  homeSalesFill(host, d);
   host.querySelectorAll(".hmmore").forEach(b=>b.onclick=()=>{ OPEN[b.dataset.k]=!OPEN[b.dataset.k]; renderHome(); });
   const ab=document.getElementById("hmAll");
   if(ab) ab.onclick=()=>{ rs.forEach(r=>{ OPEN[d+"#"+r.race_no]=!allOpen; }); renderHome(); };
