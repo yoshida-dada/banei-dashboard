@@ -468,6 +468,12 @@ table.ht .numcell{display:inline-flex;align-items:center;gap:4px}
 .toptabs button{background:var(--surface);border:none;color:var(--muted);font-family:inherit;font-size:.74rem;font-weight:700;padding:5px 12px;cursor:pointer}
 .toptabs button[aria-pressed="true"]{background:var(--accent);color:#fff}
 .toptabs button:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
+/* PC表示のメニューを大きく・全幅に（2026-09-30、nar.yukochi.comのメニュー構成を参考に規模感を調整）。
+   小さなピルボタン群ではなく、下線で現在地を示す横並びの大きなタブに変更。*/
+:root[data-layout="desktop"] .toptabs{margin-top:12px;margin-left:0;border:none;border-radius:0;border-bottom:1px solid var(--border);gap:4px}
+:root[data-layout="desktop"] .toptabs button{flex:1;background:none;color:var(--muted);font-size:1rem;padding:13px 6px;border-bottom:3px solid transparent;border-radius:0;transition:color .15s}
+:root[data-layout="desktop"] .toptabs button[aria-pressed="true"]{background:none;color:var(--ink);border-bottom-color:var(--accent)}
+:root[data-layout="desktop"] .toptabs button:hover{color:var(--ink)}
 /* 2階層メニューのサブタブ（2026-09-30、メニュー構成見直し）: レース予測=予測/馬別データ、
    データ分析=レース結果/オッズ分析/馬場分析、管理者メニュー=成績/八百長ラベル/変更履歴 */
 .subtabs{max-width:560px;margin:0 auto 6px;padding:0 12px;display:flex;gap:6px;flex-wrap:wrap}
