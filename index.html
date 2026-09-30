@@ -2961,6 +2961,13 @@ function drawHome(host, d, rs, live, list, prev, nextDay){
     else { jumpToResult(d, +el.dataset.r, "Top"); return; }
     window.scrollTo(0,0);
   });
+  // 馬名タップ→個別成績（2026-09-30）。他のdata-horse要素はdocument委譲(1995行)で処理しているが、
+  // Topページのカード内だけスマホPWAで委譲イベントが届かない実機報告があったため、他のタップ
+  // （.hmch/.hmmore）と同じ「要素へ直接バインド」方式に変更。stopPropagationで委譲側の二重発火も防ぐ。
+  host.querySelectorAll(".hlink[data-horse]").forEach(el=>el.onclick=ev=>{
+    ev.stopPropagation();
+    if(el.dataset.horse) openHorseProfileStandalone(el.dataset.horse);
+  });
   homeSalesFill(host, d);
   host.querySelectorAll(".hmmore").forEach(b=>b.onclick=()=>{ OPEN[b.dataset.k]=!OPEN[b.dataset.k]; renderHome(); });
   const ab=document.getElementById("hmAll");
