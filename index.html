@@ -49,10 +49,12 @@ body::before{content:"";position:fixed;top:0;left:0;right:0;height:env(safe-area
    (#raceflowtime)も全幅（横に並べると窮屈になるとのフィードバックのため）。馬場適性
    セクション内の帯別ヒートマップ(#heatmap)と想定条件スライダー(#slider)のみ、同じ
    情報の別表現同士なので左右2カラム（.aptgrid、末尾で定義）に並べる。 */
+/* PC表示のコンテンツ幅（2026-09-30、1120px→1440pxに拡大）: 中央寄せの枠を広げ、
+   横幅の広い画面での左右の余白を減らした（ユーザー指摘）。 */
 :root[data-layout="desktop"] .wrap,
 :root[data-layout="desktop"] .subtabs,
 :root[data-layout="desktop"] .header-in,
-:root[data-layout="desktop"] .nav-in{max-width:1120px}
+:root[data-layout="desktop"] .nav-in{max-width:1440px}
 /* PC表示のヘッダーを黒背景・白文字に、端から端までフルブリードで（2026-09-30、nar.yukochi.com
    参考。バックエンド稼働バナー(.bestatus)と同じ「背景はフル幅、中身は.wrap相当で中央寄せ」の
    構造に統一：header自体は全幅の帯、.header-inが中央寄せされた実コンテンツ）。
