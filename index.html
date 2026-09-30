@@ -4035,7 +4035,7 @@ function slEntBody(){
   const rows=shown.map(({e,i})=>{
     const key=S.period+"#"+S.kind+"#"+i, open=!!S.open[key], x=e.f/Math.max(e.e,0.01);
     const badge=e.q<0.1?'<span class="sleb sleb2" title="並べ替え検定で有意な偏り（q&lt;0.1）">偏り</span>':e.q<0.3?'<span class="sleb" title="弱い傾向（q&lt;0.3）">傾向</span>':'';
-    return `<tr class="sleRow${open?' sleopen':''}" data-k="${key}"><td class="l sleNm">${open?'▾':'▸'} ${e.n}${e.lab?`<span class="sleb slelab" title="八百長ラベルの付与 ${e.lab}件">🚨${e.lab}</span>`:''}${badge}</td>`
+    return `<tr class="sleRow${open?' sleopen':''}" data-k="${key}"><td class="l sleNm">${open?'▾':'▸'} ${e.n}${e.lab?`<span class="sleb slelab" title="この期間の八百長ラベル付与 ${e.lab}件">🚨${e.lab}</span>`:''}${badge}</td>`
       +`<td>${e.s}</td><td><b>${e.f}</b></td><td>${(e.f/e.s*100).toFixed(0)}%</td><td class="${x>=1.5?'sleup':''}">${x.toFixed(1)}×</td>`
       +`<td class="slesc">${sleSpark(e,J)}</td><td>${sleDate(e.last)}</td></tr>`
       +(open?`<tr class="sleDet"><td colspan="7">${sleDetailHtml(e,J,key)}</td></tr>`:'');
@@ -4065,7 +4065,7 @@ function renderSlEnt(){
     +`<div class="tknote">対象＝帯広・オープン戦を除く${J.n_races.toLocaleString()}レース（${J.from.replace(/-/g,'/')}〜${J.to.replace(/-/g,'/')}）のうち📈が付いた${J.n_flag}レース（この期間の${(J.base*100).toFixed(1)}%）。`
     +`期間は最終開催日から数えた「今年度(4/17〜)」「直近3か月」「全期間」で、期間ごとに検定し直しています（短い期間は件数が少なく結果が不安定です）。`
     +`「倍率」は、この期間の📈率どおりなら期待される📈数（R番号で補正）に対する実際の📈数。「偏り／傾向」は並べ替え検定＋BH法（種別内）で偶然と言いにくいもの（q&lt;0.1／0.3）で、`
-    +`多数を同時に検定するため偶然の混入があります。📈は売上が高いという事実だけで、八百長を示すものではありません。📈が${J.min_flagged}回未満の主体は非表示。🚨Nはその主体（馬なら本馬、馬主・厩舎・騎手ならその関係馬）への八百長ラベル付与件数で、「🚨ラベル付与のみ」で絞り込めます。`
+    +`多数を同時に検定するため偶然の混入があります。📈は売上が高いという事実だけで、八百長を示すものではありません。📈が${J.min_flagged}回未満の主体は非表示。🚨Nはその主体（馬なら本馬、馬主・厩舎・騎手ならその関係馬）への、選択した期間内の八百長ラベル付与件数で、「🚨ラベル付与のみ」で絞り込めます。`
     +`行をタップで推移と📈レース一覧を表示し、レースをタップすると全出走馬（馬名・馬主・厩舎・騎手・結果）を表示します。</div>`;
   host.querySelectorAll("#slePeriod button").forEach(b=>b.onclick=()=>{ S.period=b.dataset.v; S.more=30; renderSlEnt(); });
   host.querySelectorAll("#sleKind button").forEach(b=>b.onclick=()=>{ S.kind=b.dataset.v; S.more=30; renderSlEnt(); });
