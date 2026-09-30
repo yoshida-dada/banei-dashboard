@@ -4161,7 +4161,7 @@ function renderSlEnt(){
   const D=window.__SLENT_DATA, S=window.__SLENT, J=D.periods[S.period];
   const tgl=(id,cur,arr)=>`<div class="vtoggle" id="${id}">`+arr.map(([k,l])=>`<button data-v="${k}" aria-pressed="${cur===k}">${l}</button>`).join("")+`</div>`;
   const opts=[["bias","偏りが大きい順"],["cnt","📈回数順"],["rate","📈率順"],["last","直近📈順"]].map(([v,l])=>`<option value="${v}"${S.sort===v?' selected':''}>${l}</option>`).join("");
-  host.innerHTML=`<div class="ahead csec"><span class="at1">📈レースの登場傾向</span><span class="at2">馬主・厩舎・騎手・馬ごとの📈レース出走と推移</span></div>`
+  host.innerHTML=`<div class="ahead csec"><span class="at1">売上異常レース📈の登場傾向</span><span class="at2">馬主・厩舎・騎手・馬ごとの📈レース出走と推移</span></div>`
     +`<div class="slctl sle-ctl">${tgl("slePeriod",S.period,[["season","今年度"],["3m","直近3か月"],["all","全期間"]])}${tgl("sleKind",S.kind,SLE_KINDS)}`
     +`<select id="sleSort" aria-label="並び順">${opts}</select>`
     +`<button id="sleLab" class="slelabbtn" aria-pressed="${S.lab}" title="八百長ラベルが付与された馬・その馬主・厩舎・騎手のみ表示">🚨ラベル付与のみ</button>`
