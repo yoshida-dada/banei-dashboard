@@ -53,6 +53,14 @@ body::before{content:"";position:fixed;top:0;left:0;right:0;height:env(safe-area
 :root[data-layout="desktop"] .subtabs,
 :root[data-layout="desktop"] header,
 :root[data-layout="desktop"] .nav-in{max-width:1120px}
+/* PC表示のヘッダーを黒背景・白文字に（2026-09-30、nar.yukochi.com参考、ユーザー指定の配色）。
+   サイト自体のライト/ダークテーマとは独立した固定色（ヘッダーだけ常に黒バー）。 */
+:root[data-layout="desktop"] header{background:#14110c;border-radius:14px;padding-left:24px;padding-right:24px;padding-bottom:0}
+:root[data-layout="desktop"] .brand,
+:root[data-layout="desktop"] .brand .brandname{color:#f0e9dc}
+:root[data-layout="desktop"] .brand small{color:#a99d86}
+:root[data-layout="desktop"] header .notify-btn,
+:root[data-layout="desktop"] header .layout-btn{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.22);color:#f0e9dc}
 /* データ分析タブ（2026-09-26）: 拡大するだけで見にくいとのフィードバックにより、
    チャート+詳細（左）と過去3走/10走サマリー表（右）を並べ、条件別(condHtml)は下に全幅で表示 */
 .anagrid{display:block}
@@ -472,10 +480,10 @@ table.ht .numcell{display:inline-flex;align-items:center;gap:4px}
 .toptabs button:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
 /* PC表示のメニューを大きく・全幅に（2026-09-30、nar.yukochi.comのメニュー構成を参考に規模感を調整）。
    小さなピルボタン群ではなく、下線で現在地を示す横並びの大きなタブに変更。*/
-:root[data-layout="desktop"] .toptabs{margin-top:12px;margin-left:0;border:none;border-radius:0;border-bottom:1px solid var(--border);gap:4px}
-:root[data-layout="desktop"] .toptabs button{flex:1;background:none;color:var(--muted);font-size:1rem;padding:13px 6px;border-bottom:3px solid transparent;border-radius:0;transition:color .15s}
-:root[data-layout="desktop"] .toptabs button[aria-pressed="true"]{background:none;color:var(--ink);border-bottom-color:var(--accent)}
-:root[data-layout="desktop"] .toptabs button:hover{color:var(--ink)}
+:root[data-layout="desktop"] .toptabs{margin-top:12px;margin-left:0;border:none;border-radius:0;border-top:1px solid rgba(255,255,255,.12);gap:4px}
+:root[data-layout="desktop"] .toptabs button{flex:1;background:none;color:#b8ae9a;font-size:1rem;padding:13px 6px;border-bottom:3px solid transparent;border-radius:0;transition:color .15s}
+:root[data-layout="desktop"] .toptabs button[aria-pressed="true"]{background:none;color:#fff;border-bottom-color:#e0663f}
+:root[data-layout="desktop"] .toptabs button:hover{color:#fff}
 /* 2階層メニューのサブタブ（2026-09-30、メニュー構成見直し）: レース予測=予測/馬別データ、
    データ分析=レース結果/オッズ分析/馬場分析、管理者メニュー=成績/八百長ラベル/変更履歴 */
 .subtabs{max-width:560px;margin:0 auto 6px;padding:0 12px;display:flex;gap:6px;flex-wrap:wrap}
