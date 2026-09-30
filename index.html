@@ -452,6 +452,15 @@ table.ht .numcell{display:inline-flex;align-items:center;gap:4px}
 .notify-btn{margin-left:8px;background:var(--surface);border:1px solid var(--border);color:var(--ink);border-radius:9px;padding:5px 11px;font-size:.74rem;font-weight:700;font-family:inherit;cursor:pointer;white-space:nowrap}
 .notify-btn[aria-pressed="true"]{background:var(--good);border-color:var(--good);color:#fff}
 .notify-btn:disabled{opacity:.55;cursor:default}
+.chgrow{margin-left:auto;display:flex}
+.chgrow .chg-btn{margin-left:0}
+:root[data-layout="desktop"] .chgrow{flex:0 0 100%;justify-content:flex-end}
+.agate{max-width:340px;margin:28px auto;padding:18px 16px;border:1px solid var(--border);border-radius:12px;background:var(--surface);text-align:center}
+.agate .agt{font-weight:800;font-size:.95rem;margin-bottom:4px}
+.agate .ags{font-size:.74rem;color:var(--muted);margin-bottom:12px}
+.agate input{width:100%;box-sizing:border-box;padding:9px 10px;border:1px solid var(--border);border-radius:8px;background:var(--surface);color:var(--ink);font:inherit;font-size:.9rem}
+.agate button{margin-top:10px;width:100%;padding:9px;border:0;border-radius:8px;background:var(--accent);color:#fff;font:inherit;font-weight:800;cursor:pointer}
+.agate .age{margin-top:8px;font-size:.76rem;color:var(--abn,#c00);min-height:1.2em}
 .notify-btn:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 .toptabs{display:flex;gap:0;border:1px solid var(--border);border-radius:8px;overflow:hidden;margin-left:auto}
 .toptabs button{background:var(--surface);border:none;color:var(--muted);font-family:inherit;font-size:.74rem;font-weight:700;padding:5px 12px;cursor:pointer}
@@ -844,7 +853,7 @@ table.ht .numcell{display:inline-flex;align-items:center;gap:4px}
 </style>
 
 <header>
-  <div class="brand"><span class="dot"></span>ばんえーあい<small id="gen"></small><button class="notify-btn" id="notifyBtn" type="button" title="発走10分前にスマホへ通知" aria-pressed="false">🔔 通知</button><button class="layout-btn" id="layoutToggle" type="button" aria-pressed="false">🖥 PC表示</button></div>
+  <div class="brand"><span class="dot"></span>ばんえーあい<small id="gen"></small><button class="notify-btn" id="notifyBtn" type="button" title="発走10分前にスマホへ通知" aria-pressed="false">🔔 通知</button><button class="layout-btn" id="layoutToggle" type="button" aria-pressed="false">🖥 PC表示</button><span class="chgrow"><button class="notify-btn chg-btn" id="chgBtn" type="button" title="ページ内容・予測モデルの変更履歴">📝 変更履歴</button></span></div>
   <div class="toptabs" id="toptabs">
     <button data-t="home" aria-pressed="true">Top</button>
     <button data-t="race" aria-pressed="false">レース予測</button>
@@ -923,6 +932,7 @@ table.ht .numcell{display:inline-flex;align-items:center;gap:4px}
 <div class="wrap" id="sales" style="display:none"></div>
 <div class="wrap" id="track" style="display:none"></div>
 <div class="wrap" id="labels" style="display:none"></div>
+<div class="wrap" id="adminGate" style="display:none"></div>
 <div class="wrap" id="changelog" style="display:none"></div>
 <div class="wrap" id="settings" style="display:none"></div>
 <nav class="tabbar" id="tabbar" aria-label="メニュー">
@@ -2709,7 +2719,8 @@ var NAV = {
   home: null,
   race: [["pred","予測"],["horses","馬別データ"]],
   analysis: [["results","レース結果"],["odds","オッズ分析"],["baba","馬場分析"],["sales","売上分析"]],
-  admin: [["track","成績"],["labels","八百長ラベル"],["changelog","変更履歴"]],
+  admin: [["track","成績"],["labels","八百長ラベル"]],
+  changelog: null,   // ヘッダーの「変更履歴」ボタンから開く（2026-09-30、管理者メニューから移動）
   settings: null,
 };
 window.__curSub = {race:"pred", analysis:"results", admin:"track"};
@@ -2738,6 +2749,30 @@ function goBackFromResult(){
   setTimeout(()=>window.scrollTo(0,nb.y),60);
 }
 window.addEventListener("popstate", ()=>{ if(window.__NAVBACK) goBackFromResult(); });
+// ===== 管理者メニューのパスワードゲート（2026-09-30）。平文は持たずSHA-256で照合し、通れば端末に30日間記憶する。
+// 静的ホスティング上のクライアント側の鍵なので、データ自体(tracking.json等)の秘匿ではなく画面の出し分け用。=====
+var ADMIN_HASH = "40bacbd002fa2102d3dbdf3bdb33a408187a1ff8ebe44ceb978bac61c4f7b897", ADMIN_KEY = "banei_admin_ok", ADMIN_DAYS = 30;
+function adminUnlocked(){
+  try{ const t=+localStorage.getItem(ADMIN_KEY); return !!t && Date.now()-t < ADMIN_DAYS*86400000; }catch(e){ return false; }
+}
+function adminSha(pw){
+  const buf=new TextEncoder().encode("banei-admin:"+pw);
+  return crypto.subtle.digest("SHA-256", buf).then(h=>Array.from(new Uint8Array(h)).map(b=>b.toString(16).padStart(2,"0")).join(""));
+}
+function renderAdminGate(){
+  const host=document.getElementById("adminGate"); if(!host) return;
+  host.innerHTML='<form class="agate" id="agForm" autocomplete="off"><div class="agt">🔒 管理者メニュー</div><div class="ags">パスワードを入力してください</div>'
+    +'<input type="password" id="agPw" placeholder="パスワード" autocomplete="current-password"><button type="submit">開く</button><div class="age" id="agErr"></div></form>';
+  const err=document.getElementById("agErr");
+  document.getElementById("agForm").onsubmit=ev=>{
+    ev.preventDefault();
+    if(!(window.crypto&&crypto.subtle)){ err.textContent="この環境では認証できません（https でアクセスしてください）。"; return; }
+    adminSha(document.getElementById("agPw").value).then(h=>{
+      if(h===ADMIN_HASH){ try{ localStorage.setItem(ADMIN_KEY, String(Date.now())); }catch(e){} switchTop("admin"); }
+      else { err.textContent="パスワードが違います。"; document.getElementById("agPw").select(); }
+    });
+  };
+}
 function switchTop(t, sub, keepBack){
   if(!keepBack) window.__NAVBACK=null;
   if(!(t in NAV)) t="home";
@@ -2753,21 +2788,23 @@ function switchTop(t, sub, keepBack){
   show("odds", t==="analysis" && s==="odds");
   show("baba", t==="analysis" && s==="baba");
   show("sales", t==="analysis" && s==="sales");
-  show("track", t==="admin" && s==="track");
-  show("labels", t==="admin" && s==="labels");
-  show("changelog", t==="admin" && s==="changelog");
+  const locked = t==="admin" && !adminUnlocked();   // 管理者メニューはパスワード入力後のみ
+  show("adminGate", locked);
+  show("track", t==="admin" && s==="track" && !locked);
+  show("labels", t==="admin" && s==="labels" && !locked);
+  show("changelog", t==="changelog");
   show("settings", t==="settings");
   document.querySelectorAll("#toptabs button, #tabbar button").forEach(x=>x.setAttribute("aria-pressed", x.dataset.t===t));
-  renderSubtabs(t);
+  if(locked){ document.getElementById("subtabs").innerHTML=""; renderAdminGate(); } else renderSubtabs(t);
   if(t==="home") renderHome(); else { clearInterval(homeCdTimer); homeCdTimer=null; }
   if(t==="race" && s==="horses") renderAnalysis();
   if(t==="analysis" && s==="results") renderResultsPage();
   if(t==="analysis" && s==="odds" && !window.__ODDS_LOADED) loadOdds();
   if(t==="analysis" && s==="baba") renderBaba();
   if(t==="analysis" && s==="sales") renderSales();
-  if(t==="admin" && s==="track" && !window.__TRACK_LOADED) loadTracking();
-  if(t==="admin" && s==="labels" && !window.__LABELS_LOADED) loadInsiderLabels();
-  if(t==="admin" && s==="changelog") renderChangelog();
+  if(t==="admin" && s==="track" && !locked && !window.__TRACK_LOADED) loadTracking();
+  if(t==="admin" && s==="labels" && !locked && !window.__LABELS_LOADED) loadInsiderLabels();
+  if(t==="changelog") renderChangelog();
   if(t==="settings") renderSettingsTab();
 }
 // ===== Top ページ（2026-09-30）: 各ページへのリンク＋当日の全レースの印サマリ =====
@@ -2876,7 +2913,7 @@ function drawHome(host, d, rs, live, list, prev, nextDay){
   }).join("");
   const LINKS=[["race","pred","🏇","レース予測"],["analysis","results","📋","レース結果"],["analysis","odds","📈","オッズ分析"],
     ["analysis","baba","🌡️","馬場分析"],["analysis","sales","💴","売上分析"],["admin","track","📊","成績"],["admin","labels","🚨","八百長ラベル"],
-    ["admin","changelog","📝","変更履歴"],["settings","","⚙️","設定"]];
+    ["settings","","⚙️","設定"]];
   // 開催日の前後移動・日付指定（2026-09-30）。日付指定は透明なinput[type=date]をボタンに重ね、
   // タップでOSの日付ピッカーを開く。開催の無い日を選んだ場合は直前（無ければ直後）の開催日に合わせる。
   const nav=`<div class="hmnav">`
@@ -3034,7 +3071,7 @@ function renderResultsPage(){
   host.innerHTML='<div class="meta">レース結果を読込中…</div>';
   resLoadMonth(month, j=>draw((j.days||{})[S.date]||[]));
 }
-// ===== 管理者メニュー > 変更履歴（2026-09-30）。changelog.json（ページ内容・予測モデルの変更記録）=====
+// ===== 変更履歴（ヘッダーのボタンから開く、2026-09-30）。changelog.json（ページ内容・予測モデルの変更記録）=====
 function renderChangelog(){
   const host=document.getElementById("changelog"); if(!host) return;
   host.innerHTML='<div class="meta">変更履歴を読込中…</div>';
@@ -4205,6 +4242,7 @@ function renderAnalysis(){
   host.querySelectorAll(".ahit").forEach(e=>e.onclick=()=>{ S.pt=+e.dataset.i; renderAnalysis(); });
 }
 document.querySelectorAll("#toptabs button").forEach(b=>b.addEventListener("click",()=>switchTop(b.dataset.t)));
+document.getElementById("chgBtn").addEventListener("click",()=>{ switchTop("changelog"); window.scrollTo(0,0); });
 document.querySelectorAll("#tabbar button").forEach(b=>b.addEventListener("click",()=>{ switchTop(b.dataset.t); window.scrollTo(0,0); }));
 switchTop("home");  // 起動時はTopページ
 
