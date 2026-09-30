@@ -478,6 +478,11 @@ table.ht .numcell{display:inline-flex;align-items:center;gap:4px}
 .hmnext{font-size:.76rem;color:var(--edge);font-weight:700;font-variant-numeric:tabular-nums}
 .hmall{margin-left:auto;background:none;border:none;font-family:inherit;font-size:.74rem;color:var(--muted);text-decoration:underline;cursor:pointer}
 .hmgrid{display:grid;grid-template-columns:1fr;gap:12px}
+.hmnav{display:flex;gap:8px;margin:4px 0 10px}
+.hmnav button,.hmpick{flex:1;background:var(--surface);border:1px solid var(--border);border-radius:9px;font-family:inherit;
+  font-size:.8rem;font-weight:700;color:var(--ink);padding:8px 4px;cursor:pointer;text-align:center;position:relative;white-space:nowrap}
+.hmnav button:disabled{opacity:.4;cursor:default}
+.hmpick input{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:pointer;border:none}
 :root[data-layout="desktop"] .hmgrid{grid-template-columns:repeat(2,1fr)}
 .hmcard{background:var(--surface);border:1px solid var(--border);border-radius:10px;overflow:hidden}
 .hmcard.next{border-color:var(--accent);box-shadow:0 0 0 1px var(--accent)}
@@ -2679,17 +2684,56 @@ function switchTop(t, sub){
 // ===== Top ページ（2026-09-30）: 各ページへのリンク＋当日の全レースの印サマリ =====
 let homeCdTimer=null;
 function homeTargetDate(){ return nextDateFor(); }  // 未確定レースが残る最初の日（全日確定済みなら最終日）
-window.__HOME_OPEN = window.__HOME_OPEN || {};  // レース番号 -> 全頭表示中か
+window.__HOME_OPEN = window.__HOME_OPEN || {};  // "日付#R" -> 全頭表示中か
+window.__HOME_DATE = null;  // 表示中の開催日（null=既定＝未確定レースが残る最初の日）
+window.__HOME_ARC = {};     // 過去開催日のスナップショット(archive/<日付>.json)のキャッシュ
+window.__HOME_MSG = "";
+// Topで遡れる開催日＝data.jsonの日付＋予想スナップショットのある過去日（results/index.jsonのmarks）。
+function homeDateList(){
+  const set=new Set(dates);
+  const idx=window.__RES && window.__RES.index;
+  ((idx&&idx.months)||[]).forEach(m=>(m.days||[]).forEach(x=>{ if(x.marks) set.add(x.date); }));
+  return [...set].sort();
+}
+function homeLoadIndex(cb){
+  const S=window.__RES;
+  if(S.index){ cb(); return; }
+  if(S._idxLoading){ return; }
+  S._idxLoading=true;
+  fetch("./results/index.json?t="+Date.now()).then(r=>{ if(!r.ok) throw 0; return r.json(); })
+    .then(j=>{ S.index=j; S._idxLoading=false; cb(); })
+    .catch(()=>{ S.index={months:[]}; S._idxLoading=false; cb(); });
+}
+function homeRaces(d, cb){
+  const live=racesFor(d);
+  if(live.length){ cb(live, true); return; }
+  if(window.__HOME_ARC[d]){ cb(window.__HOME_ARC[d], false); return; }
+  fetch("./archive/"+d+".json?t="+Date.now()).then(r=>{ if(!r.ok) throw 0; return r.json(); })
+    .then(j=>{ const rs=(j.races||[]).slice().sort((a,b)=>a.race_no-b.race_no); window.__HOME_ARC[d]=rs; cb(rs, false); })
+    .catch(()=>{ window.__HOME_ARC[d]=[]; cb([], false); });
+}
 function renderHome(){
   const host=document.getElementById("home"); if(!host) return;
   clearInterval(homeCdTimer); homeCdTimer=null;
-  const d=homeTargetDate(), rs=racesFor(d), OPEN=window.__HOME_OPEN;
+  if(!window.__RES.index) homeLoadIndex(()=>{ if(window.__curTop==="home") renderHome(); });
+  const list=homeDateList();
+  let d=window.__HOME_DATE || homeTargetDate();
+  if(list.indexOf(d)<0 && list.length) d=list[list.length-1];
+  const k=list.indexOf(d), prev=k>0?list[k-1]:null, nextDay=(k>=0&&k<list.length-1)?list[k+1]:null;
+  homeRaces(d, (rs, live)=>{
+    if(window.__curTop!=="home") return;
+    drawHome(host, d, rs, live, list, prev, nextDay);
+  });
+  if(!racesFor(d).length && !window.__HOME_ARC[d]) host.innerHTML='<div class="meta">読込中…</div>';
+}
+function drawHome(host, d, rs, live, list, prev, nextDay){
+  const OPEN=window.__HOME_OPEN;
   const wd=WD_JP[new Date(d+"T00:00:00").getDay()];
   const MARKS=["◎","◯","▲","△","☆"];
   const now=new Date(), todayIso=now.getFullYear()+"-"+String(now.getMonth()+1).padStart(2,"0")+"-"+String(now.getDate()).padStart(2,"0");
   const next=rs.find(r=>!r.cancelled && r.winner==null);
   const allOpen=rs.length>0 && rs.every(r=>OPEN[d+"#"+r.race_no]);
-  // レースごとのカード（2026-09-30、ユーザー提示のスタイル: 見出し＋印/枠/馬名/勝率/人気/単勝/着の表。
+  // レースごとのカード（2026-09-30、ユーザー提示のスタイル: 見出し＋印/馬番/馬名/勝率/人気/単勝/着の表。
   // 既定は◎〇▲△☆の5頭、「全頭を見る」で全頭）。🚨＝過去5走以内に八百長ラベルが付いた馬（h.insider_flag）。
   const cards=rs.map(r=>{
     const key=d+"#"+r.race_no, open=!!OPEN[key];
@@ -2708,7 +2752,7 @@ function renderHome(){
     if(r.cancelled) st='<span class="hmst">中止</span>';
     else if(r.winner!=null){ const hit=r.predicted_top===r.winner; st=`<span class="hmst${hit?' hit':''}">${hit?'◎的中 ':''}結果確定</span>`; }
     else st=`<span class="hmst">${STAGE[r.update_stage]||'事前予測'} ${r.updated_at?String(r.updated_at).slice(11,16):''}</span>`;
-    const isNext=next && r.race_no===next.race_no;
+    const isNext=live && next && r.race_no===next.race_no;
     return `<div class="hmcard${isNext?' next':''}">`
       +`<div class="hmch" data-r="${r.race_no}"><span class="hmrno">${r.race_no}R</span><span class="hmpt">${r.post_time?r.post_time+' 発走':''}</span>`
       +`<span class="hmcls">${r.class?classLabel(r.class, r.horses):''}</span>${st}</div>`
@@ -2720,23 +2764,46 @@ function renderHome(){
   const LINKS=[["race","pred","🏇","レース予測"],["analysis","results","📋","レース結果"],["analysis","odds","📈","オッズ分析"],
     ["analysis","baba","🌡️","馬場分析"],["admin","track","📊","成績"],["admin","labels","🚨","八百長ラベル"],
     ["admin","changelog","📝","変更履歴"],["settings","","⚙️","設定"]];
-  host.innerHTML=`<div class="hmhead"><span class="hmdot"></span><span class="hmdate">帯広 ${d.slice(5).replace('-','/')}(${wd})</span>`
+  // 開催日の前後移動・日付指定（2026-09-30）。日付指定は透明なinput[type=date]をボタンに重ね、
+  // タップでOSの日付ピッカーを開く。開催の無い日を選んだ場合は直前（無ければ直後）の開催日に合わせる。
+  const nav=`<div class="hmnav">`
+    +`<button id="hmPrev"${prev?'':' disabled'}>⬅️前開催</button>`
+    +`<label class="hmpick">開催日指定📅<input type="date" id="hmPick" value="${d}" min="${list[0]||d}" max="${list[list.length-1]||d}"></label>`
+    +`<button id="hmNextBtn"${nextDay?'':' disabled'}>翌開催➡️</button></div>`
+    +(window.__HOME_MSG?`<div class="tknote">${window.__HOME_MSG}</div>`:'');
+  window.__HOME_MSG="";
+  host.innerHTML=nav
+    +`<div class="hmhead"><span class="hmdot"></span><span class="hmdate">帯広 ${d.slice(0,4)}/${d.slice(5).replace('-','/')}(${wd})</span>`
     +`<span class="hmcount">${rs.length}レース</span><span class="hmnext" id="hmNext"></span>`
     +(rs.length?`<button class="hmall" id="hmAll">${allOpen?'この場を全部閉じる':'この場を全部開く'}</button>`:'')+`</div>`
-    +(cards?`<div class="hmgrid">${cards}</div>`:'<div class="meta">この日のレースデータがありません。</div>')
+    +(cards?`<div class="hmgrid">${cards}</div>`:'<div class="meta">この日の予想データがありません。</div>')
     +`<div class="hmlinks">${LINKS.map(([t,sb,ic,lb])=>`<button data-t="${t}" data-s="${sb}"><span class="li">${ic}</span><span class="ll">${lb}</span></button>`).join("")}</div>`
-    +`<div class="tknote">レース番号の行をタップするとレース予測を開きます。◎〇▲△☆＝主予測の1〜5位。🚨＝過去5走以内に八百長ラベルが付いた馬。</div>`;
+    +`<div class="tknote">レース番号の行をタップすると${live?'レース予測':'レース結果'}を開きます。◎〇▲△☆＝当時の主予測の1〜5位。🚨＝過去5走以内に八百長ラベルが付いた馬。遡れるのは予想を保存している2026-07-11以降です。</div>`;
   host.querySelectorAll(".hmch").forEach(el=>el.onclick=()=>{
-    curDate=d; curRno=+el.dataset.r; renderRacePills(); switchTop("race","pred"); sync(); window.scrollTo(0,0);
+    if(live){ curDate=d; curRno=+el.dataset.r; renderRacePills(); switchTop("race","pred"); sync(); }
+    else { window.__RES.date=d; window.__RES.race=+el.dataset.r; switchTop("analysis","results"); }
+    window.scrollTo(0,0);
   });
   host.querySelectorAll(".hmmore").forEach(b=>b.onclick=()=>{ OPEN[b.dataset.k]=!OPEN[b.dataset.k]; renderHome(); });
   const ab=document.getElementById("hmAll");
   if(ab) ab.onclick=()=>{ rs.forEach(r=>{ OPEN[d+"#"+r.race_no]=!allOpen; }); renderHome(); };
+  const go=nd=>{ window.__HOME_DATE=nd; renderHome(); };
+  const pb=document.getElementById("hmPrev"); if(pb && prev) pb.onclick=()=>go(prev);
+  const nb=document.getElementById("hmNextBtn"); if(nb && nextDay) nb.onclick=()=>go(nextDay);
+  const pk=document.getElementById("hmPick");
+  if(pk) pk.onchange=()=>{
+    const v=pk.value; if(!v || !list.length) return;
+    if(list.indexOf(v)>=0){ go(v); return; }
+    const before=list.filter(x=>x<v), after=list.filter(x=>x>v);
+    const pick=before.length?before[before.length-1]:after[0];
+    window.__HOME_MSG=`${v.replace(/-/g,'/')} は開催（予想データ）が無いため、${before.length?'直前':'直後'}の開催日 ${pick.replace(/-/g,'/')} を表示しています。`;
+    go(pick);
+  };
   host.querySelectorAll(".hmlinks button").forEach(b=>b.onclick=()=>{ switchTop(b.dataset.t, b.dataset.s||undefined); window.scrollTo(0,0); });
   // 次のレースの発走までのカウントダウン（当日のみ）
   const el=document.getElementById("hmNext");
-  const m=next && /^(\d{1,2}):(\d{2})/.exec(String(next.post_time||""));
-  if(!el || !m || d!==todayIso){ if(el && next) el.textContent=`次: ${next.race_no}R ${next.post_time||''}`; return; }
+  const m=live && next && /^(\d{1,2}):(\d{2})/.exec(String(next.post_time||""));
+  if(!el || !m || d!==todayIso){ if(el && live && next) el.textContent=`次: ${next.race_no}R ${next.post_time||''}`; return; }
   const target=new Date(); target.setHours(+m[1],+m[2],0,0);
   const tick=()=>{
     const e=document.getElementById("hmNext"); if(!e){ clearInterval(homeCdTimer); return; }
