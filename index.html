@@ -4129,7 +4129,7 @@ function slEntBody(){
   const rows=shown.map(({e,i})=>{
     const key=S.period+"#"+S.kind+"#"+i, open=!!S.open[key], x=e.f/Math.max(e.e,0.01);
     const badge=e.q<0.1?'<span class="sleb sleb2" title="並べ替え検定で有意な偏り（q&lt;0.1）">偏り</span>':e.q<0.3?'<span class="sleb" title="弱い傾向（q&lt;0.3）">傾向</span>':'';
-    const rhCell=showRh?`<td class="l">${e.rh?`<span class="hlink" data-horse="${e.rh[0]}">${e.rh[0]}</span><small> (${e.rh[1]}/${e.rh[2]}回)</small>`:'—'}</td>`:'';
+    const rhCell=showRh?`<td class="l">${e.rh?e.rh.map(([hn,hc])=>`<span class="hlink" data-horse="${hn}">${hn}</span><small> (${hc}回)</small>`).join('<br>'):'—'}</td>`:'';
     return `<tr class="sleRow${open?' sleopen':''}" data-k="${key}"><td class="l sleNm">${open?'▾':'▸'} ${e.n}${e.lab?`<span class="sleb slelab" title="この期間の八百長ラベル付与 ${e.lab}件">🚨${e.lab}</span>`:''}${badge}</td>`
       +`<td>${e.s}</td><td><b>${e.f}</b></td><td>${(e.f/e.s*100).toFixed(0)}%</td><td class="${x>=1.5?'sleup':''}">${x.toFixed(1)}×</td>`
       +`<td class="slesc">${sleSpark(e,J)}</td><td>${sleDate(e.last)}</td>${rhCell}</tr>`
@@ -4137,7 +4137,7 @@ function slEntBody(){
   }).join("");
   host.innerHTML=(total?`<div class="slwrap"><table class="sltbl sletbl"><thead><tr><th class="l">${(SLE_KINDS.find(k=>k[0]===S.kind)||[])[1]}</th><th>出走</th><th title="📈になったレースへの出走数">📈</th><th>📈率</th>`
     +`<th title="全体の📈率どおりなら期待される📈数に対する倍率（R番号で補正）">倍率</th><th title="推移（破線＝全体の📈率）">推移</th><th title="最後に📈レースへ出走した日">直近📈</th>`
-    +(showRh?`<th class="l" title="📈レースで最も多く出走していた馬（同数なら直近のもの）。( )内＝その馬が出走した📈数/自身の📈総数">代表馬</th>`:'')
+    +(showRh?`<th class="l" title="📈レースへの出走頻度が多い順に2頭まで（同数なら直近優先）。( )内＝その馬が出走した📈レース数">代表馬</th>`:'')
     +`</tr></thead><tbody>${rows}</tbody></table></div>`
     :'<div class="tknote">該当なし（この期間は📈レースへの出走が'+J.min_flagged+'回以上の対象のみ表示しています）。</div>')
     +(total>shown.length?`<button class="slemore" id="sleMore">もっと見る（残り${total-shown.length}件）</button>`:'');
