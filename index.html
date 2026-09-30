@@ -486,6 +486,11 @@ table.ht .numcell{display:inline-flex;align-items:center;gap:4px}
 :root[data-layout="desktop"] .tabbar{display:none}
 :root:not([data-layout="desktop"]) #toptabs{display:none}
 :root:not([data-layout="desktop"]) body{padding-bottom:calc(66px + env(safe-area-inset-bottom))}
+/* 管理者/設定タブのように中身が短いページだと、iOS Safariはページ自体がスクロール不可と判断して
+   自前のツールバー(URLバー等)を畳まないため、position:fixedの下部タブバーがSafari側ツールバーの
+   上に乗って表示位置がずれて見える(2026-09-30発見)。ページ全体の最小高さを常にビューポート超に
+   することで、どのタブでもスクロール可能な状態を保ち、Safariのツールバー折りたたみ挙動を揃える。 */
+:root:not([data-layout="desktop"]) body{min-height:calc(100dvh + 1px)}
 /* Top ページ（2026-09-30、ユーザー提示のカード＋表スタイル。PCは2列） */
 .hmhead{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;margin:4px 0 10px}
 .hmdot{width:9px;height:9px;border-radius:50%;background:var(--accent);align-self:center}
@@ -621,6 +626,7 @@ table.ht .numcell{display:inline-flex;align-items:center;gap:4px}
 .slerh .slec{font-size:.68rem;color:var(--muted);border:1px solid var(--border);border-radius:8px;padding:0 5px}
 .slerh .slex{font-weight:700}
 .slerh .slev{font-size:.7rem;color:var(--muted)}
+.slerh .slesales{text-decoration:underline;text-decoration-color:color-mix(in srgb,var(--muted) 70%,transparent);text-underline-offset:2px}
 .sleent{margin:2px 0 0 14px;line-height:1.55;font-size:.76rem}
 .sles{margin:0 3px 0 8px;font-size:.64rem;color:var(--muted)}
 .sleself{color:var(--accent)}
@@ -2944,13 +2950,12 @@ function drawHome(host, d, rs, live, list, prev, nextDay){
     +`<button id="hmNextBtn"${nextDay?'':' disabled'}>翌開催➡️</button></div>`
     +(window.__HOME_MSG?`<div class="tknote">${window.__HOME_MSG}</div>`:'');
   window.__HOME_MSG="";
-  host.innerHTML=nav
+  host.innerHTML=`<div class="hmlinks">${LINKS.map(([t,sb,ic,lb])=>`<button data-t="${t}" data-s="${sb}"><span class="li">${ic}</span><span class="ll">${lb}</span></button>`).join("")}</div>`
+    +nav
     +`<div class="hmhead"><span class="hmdot"></span><span class="hmdate">帯広 ${d.slice(0,4)}/${d.slice(5).replace('-','/')}(${wd})</span>`
     +`<span class="hmcount">${rs.length}レース</span><span class="hmnext" id="hmNext"></span>`
     +(rs.length?`<button class="hmall" id="hmAll">${allOpen?'この場を全部閉じる':'この場を全部開く'}</button>`:'')+`</div>`
-    +(cards?`<div class="hmgrid">${cards}</div>`:'<div class="meta">この日の予想データがありません。</div>')
-    +`<div class="hmlinks">${LINKS.map(([t,sb,ic,lb])=>`<button data-t="${t}" data-s="${sb}"><span class="li">${ic}</span><span class="ll">${lb}</span></button>`).join("")}</div>`
-    +`<div class="tknote">レース番号の行をタップすると${live?'レース予測':'レース結果'}を開きます。◎〇▲△☆＝当時の主予測の1〜5位。🚨（馬名横）＝過去5走以内に八百長ラベルが付いた馬。レース見出しの🚨＝そのレースに八百長ラベル付与馬がいる、📈＝売上が高めのレース（詳細は売上分析）。売上は券種別・万円で、高めの券種は赤字・太字です（売上は開催翌朝に反映）。遡れるのは予想を保存している2026-07-11以降です。</div>`;
+    +(cards?`<div class="hmgrid">${cards}</div>`:'<div class="meta">この日の予想データがありません。</div>');
   host.querySelectorAll(".hmch").forEach(el=>el.onclick=()=>{
     if(live){ curDate=d; curRno=+el.dataset.r; renderRacePills(); switchTop("race","pred"); sync(); }
     else { jumpToResult(d, +el.dataset.r, "Top"); return; }
@@ -3888,6 +3893,11 @@ function slBarSvg(items, wantW, selKey, hit){
   const xt=items.map((it,i)=>i%step?"":`<text x="${(padL+(i+0.5)*colW).toFixed(1)}" y="${(H-8*S).toFixed(1)}" font-size="${7.5*S}" text-anchor="middle" fill="var(--muted)">${it.label}</text>`).join("");
   return `<svg class="tksvg" viewBox="0 0 ${W} ${H}">${grid}${bars}${xt}${hits}</svg>`;
 }
+// 券種i がそのレースで売上高め判定されていれば倍率を返す（build_sales.pyのr.a[4]=[[券種添字,倍率],...]、2026-09-30）
+function slTypeHigh(r, i){
+  const t=r.a && r.a[4] && r.a[4].find(x=>x[0]===i);
+  return t ? t[1] : null;
+}
 // 売上が高いレースの印（前後R/同曜日比。build_sales.pyのr.a=[前後z,前後比,同曜日z,同曜日比]）
 function slHighCell(r){
   const a=r.a; if(!a) return '<td class="slhi"></td>';
@@ -3904,7 +3914,7 @@ function slDetailHtml(j, days){
   const wd=WD_JP[new Date(d.date+"T00:00:00").getDay()];
   const maxT=Math.max(...d.races.map(r=>r.t));
   const rows=d.races.map(r=>`<tr class="${r.t===maxT?'slmax':''}"><td class="slrace"><span class="slrlink" data-d="${d.date}" data-r="${r.r}" title="このレースの結果を開く">${r.r}R</span></td><td class="slil">${r.l?`<span title="八百長ラベル付与馬 ${r.l.length}頭（${r.l.join('・')}）">🚨</span>`:''}</td>${slHighCell(r)}<td class="l">${r.c||''}</td>`
-    +used.map(i=>`<td${r.a&&(r.a[4]||[]).includes(i)?' class="slabn" title="この券種の売上が高め"':''}>${slCell(r.v[i])}</td>`).join("")
+    +used.map(i=>{ const hi=slTypeHigh(r,i); return `<td${hi?` class="slabn" title="通常の${hi.toFixed(1)}倍"`:''}>${slCell(r.v[i])}</td>`; }).join("")
     +`<td class="slsum">${slCell(r.t)}</td></tr>`).join("");
   const foot=`<tr class="slfoot"><td colspan="4">合計</td>`+used.map(i=>`<td>${slCell(d.tot[i])}</td>`).join("")
     +`<td class="slsum">${slCell(d.tot.reduce((a,b)=>a+b,0))}</td></tr>`;
@@ -4039,6 +4049,27 @@ function sleSalesOf(d, r){
   const rc=day.races.find(x=>x.r===r); if(!rc) return null;
   return {t:rc.t, x:rc.a?Math.max(rc.a[1]||0, rc.a[3]||0):0};
 }
+// 📈レースの登場傾向から、そのレースの券種別売上をモーダルで表示（2026-09-30、日別の内訳と同じデータ源）。
+function salesRaceBreakdownHtml(d, r){
+  const S=window.__SALES;
+  if(!S) return '<div class="tknote">売上データを読み込み中…</div>';
+  const day=S.days.find(x=>x.date===d);
+  const rc=day && day.races.find(x=>x.r===r);
+  if(!rc) return '<div class="tknote">このレースの売上データがありません。</div>';
+  const rows=S.used.map(i=>{
+    const hi=slTypeHigh(rc,i);
+    return `<tr><td class="l">${SL_LABEL[S.types[i]]}</td><td${hi?' class="slabn"':''}>${rc.v[i]?Math.round(rc.v[i]/100).toLocaleString():'—'}万円</td>`
+      +`<td class="l">${hi?`📈通常の${hi.toFixed(1)}倍`:''}</td></tr>`;
+  }).join("");
+  return `<div class="slwrap"><table class="sltbl"><thead><tr><th class="l">券種</th><th>売上</th><th class="l"></th></tr></thead>`
+    +`<tbody>${rows}<tr class="slfoot"><td class="l">合計</td><td>${Math.round(rc.t/100).toLocaleString()}万円</td><td></td></tr></tbody></table></div>`;
+}
+function openSalesRaceModal(d, r){
+  document.getElementById("histModal").style.display="flex";
+  document.getElementById("histTitle").textContent=`${d.replace(/-/g,"/")} ${r}R 売上内訳`;
+  document.getElementById("histBody").innerHTML='<div class="tknote">読込中…</div>';
+  loadSales(()=>{ document.getElementById("histBody").innerHTML=salesRaceBreakdownHtml(d, r); });
+}
 function sleEntry(x, kind, self){
   const f=SLE_FIELD[kind];
   const cell=(i,v)=>{ v=v||"—"; return i===f?`<b class="sleself">${v}</b>`:v; };
@@ -4053,7 +4084,7 @@ function sleRaceHtml(d, r, kind, name, rk){
   const mine=det?det.e.filter(x=>x[f]===name):[];
   const head=`<div class="slerh" data-rk="${rk}"><span class="sled">${open?'▾':'▸'} ${sleDate(d)} ${r}R</span>`
     +(det&&det.c?`<span class="slec">${det.c}</span>`:'')
-    +(sv?`<span class="slex">📈${sv.x?'×'+sv.x.toFixed(1):''}</span><span class="slev">売上${Math.round(sv.t/100).toLocaleString()}万円</span>`:'')+`</div>`;
+    +(sv?`<span class="slex">📈${sv.x?'×'+sv.x.toFixed(1):''}</span><span class="slev slesales" data-d="${d}" data-r="${r}">💴 売上${Math.round(sv.t/100).toLocaleString()}万円</span>`:'')+`</div>`;
   const own=mine.map(x=>sleEntry(x, kind)).join("");
   let full="";
   if(open&&det){
@@ -4091,21 +4122,29 @@ function slEntBody(){
     rate:(a,b)=>b.e.f/b.e.s-a.e.f/a.e.s, last:(a,b)=>b.e.last<a.e.last?-1:b.e.last>a.e.last?1:0}[S.sort];
   list.sort(cmp);
   const total=list.length, shown=list.slice(0,S.more);
+  // 代表馬列(2026-09-30): 馬主・厩舎・騎手ではその主体の📈レースで最も多く出走していた馬を表示
+  // （build_sales_entities.pyのe.rh=[馬名,その馬が出走した📈数,自身の📈総数]）。馬(kind=horse)は
+  // 自分自身が馬名になり冗長なので列ごと出さない。
+  const showRh=S.kind!=="horse";
   const rows=shown.map(({e,i})=>{
     const key=S.period+"#"+S.kind+"#"+i, open=!!S.open[key], x=e.f/Math.max(e.e,0.01);
     const badge=e.q<0.1?'<span class="sleb sleb2" title="並べ替え検定で有意な偏り（q&lt;0.1）">偏り</span>':e.q<0.3?'<span class="sleb" title="弱い傾向（q&lt;0.3）">傾向</span>':'';
+    const rhCell=showRh?`<td class="l">${e.rh?`<span class="hlink" data-horse="${e.rh[0]}">${e.rh[0]}</span><small> (${e.rh[1]}/${e.rh[2]}回)</small>`:'—'}</td>`:'';
     return `<tr class="sleRow${open?' sleopen':''}" data-k="${key}"><td class="l sleNm">${open?'▾':'▸'} ${e.n}${e.lab?`<span class="sleb slelab" title="この期間の八百長ラベル付与 ${e.lab}件">🚨${e.lab}</span>`:''}${badge}</td>`
       +`<td>${e.s}</td><td><b>${e.f}</b></td><td>${(e.f/e.s*100).toFixed(0)}%</td><td class="${x>=1.5?'sleup':''}">${x.toFixed(1)}×</td>`
-      +`<td class="slesc">${sleSpark(e,J)}</td><td>${sleDate(e.last)}</td></tr>`
-      +(open?`<tr class="sleDet"><td colspan="7">${sleDetailHtml(e,J,key)}</td></tr>`:'');
+      +`<td class="slesc">${sleSpark(e,J)}</td><td>${sleDate(e.last)}</td>${rhCell}</tr>`
+      +(open?`<tr class="sleDet"><td colspan="${showRh?8:7}">${sleDetailHtml(e,J,key)}</td></tr>`:'');
   }).join("");
   host.innerHTML=(total?`<div class="slwrap"><table class="sltbl sletbl"><thead><tr><th class="l">${(SLE_KINDS.find(k=>k[0]===S.kind)||[])[1]}</th><th>出走</th><th title="📈になったレースへの出走数">📈</th><th>📈率</th>`
-    +`<th title="全体の📈率どおりなら期待される📈数に対する倍率（R番号で補正）">倍率</th><th title="推移（破線＝全体の📈率）">推移</th><th title="最後に📈レースへ出走した日">直近📈</th></tr></thead><tbody>${rows}</tbody></table></div>`
+    +`<th title="全体の📈率どおりなら期待される📈数に対する倍率（R番号で補正）">倍率</th><th title="推移（破線＝全体の📈率）">推移</th><th title="最後に📈レースへ出走した日">直近📈</th>`
+    +(showRh?`<th class="l" title="📈レースで最も多く出走していた馬（同数なら直近のもの）。( )内＝その馬が出走した📈数/自身の📈総数">代表馬</th>`:'')
+    +`</tr></thead><tbody>${rows}</tbody></table></div>`
     :'<div class="tknote">該当なし（この期間は📈レースへの出走が'+J.min_flagged+'回以上の対象のみ表示しています）。</div>')
     +(total>shown.length?`<button class="slemore" id="sleMore">もっと見る（残り${total-shown.length}件）</button>`:'');
   host.querySelectorAll(".sleRow").forEach(el=>el.onclick=()=>{ S.open[el.dataset.k]=!S.open[el.dataset.k]; slEntBody(); });
   host.querySelectorAll(".slerh").forEach(el=>el.onclick=ev=>{ ev.stopPropagation(); S.race[el.dataset.rk]=!S.race[el.dataset.rk]; slEntBody(); });
   host.querySelectorAll(".slegoto").forEach(el=>el.onclick=ev=>{ ev.stopPropagation(); jumpToResult(el.dataset.d, +el.dataset.r, "売上分析"); });
+  host.querySelectorAll(".slesales").forEach(el=>el.onclick=ev=>{ ev.stopPropagation(); openSalesRaceModal(el.dataset.d, +el.dataset.r); });
   host.querySelectorAll(".slemore2").forEach(el=>el.onclick=ev=>{ ev.stopPropagation(); S.all[el.dataset.k]=true; slEntBody(); });
   const mb=document.getElementById("sleMore"); if(mb) mb.onclick=()=>{ S.more+=30; slEntBody(); };
 }
