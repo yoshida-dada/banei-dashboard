@@ -49,6 +49,11 @@ body::before{content:"";position:fixed;top:0;left:0;right:0;height:env(safe-area
    (#raceflowtime)も全幅（横に並べると窮屈になるとのフィードバックのため）。馬場適性
    セクション内の帯別ヒートマップ(#heatmap)と想定条件スライダー(#slider)のみ、同じ
    情報の別表現同士なので左右2カラム（.aptgrid、末尾で定義）に並べる。 */
+/* PC表示の文字サイズ全体を拡大（2026-09-30、ユーザー指摘: 出馬表予測・馬場指数マップ等が小さい）。
+   このファイルのfont-sizeはほぼ全てrem指定(233箇所)のため、ルート要素のfont-sizeを上げるだけで
+   ボタン・表・見出し等ほぼ全ての文字に一括で効く（1em=16px→18px相当）。SVGチャート内のテキスト
+   (JS側でpx指定、下記のS係数)はrem外なので別途調整。 */
+:root[data-layout="desktop"]{font-size:112.5%}
 /* PC表示のコンテンツ幅（2026-09-30、1120px→1440pxに拡大）: 中央寄せの枠を広げ、
    横幅の広い画面での左右の余白を減らした（ユーザー指摘）。 */
 :root[data-layout="desktop"] .wrap,
@@ -794,6 +799,7 @@ table.ht .numcell{display:inline-flex;align-items:center;gap:4px}
 .ochart .ocht{font-size:.74rem;font-weight:700;color:var(--ink);margin-bottom:6px;line-height:1.4}
 .ochart svg{display:block;width:100%;height:auto}
 .oaxis{fill:var(--muted);font-size:9px}
+:root[data-layout="desktop"] .oaxis{font-size:11px}
 .olgd{display:flex;flex-wrap:wrap;gap:8px 12px;margin-top:8px;justify-content:center}
 .olg{font-size:.72rem;color:var(--ink);display:inline-flex;align-items:center;gap:4px}
 .olg i{width:12px;height:3px;border-radius:2px;display:inline-block}
@@ -845,6 +851,8 @@ table.ht .numcell{display:inline-flex;align-items:center;gap:4px}
 .asvg{width:100%;height:auto;display:block;-webkit-tap-highlight-color:transparent}
 .asvg text{fill:var(--muted);font-size:9.5px;font-family:inherit}
 .asvg .apt{fill:var(--ink);font-weight:800;font-size:11px}
+:root[data-layout="desktop"] .asvg text{font-size:12px}
+:root[data-layout="desktop"] .asvg .apt{font-size:14px}
 .asvg .apt,.asvg .alab{paint-order:stroke;stroke:var(--surface);stroke-width:3px;stroke-linejoin:round}
 .asvg .agrid{stroke:var(--border);stroke-width:1}
 .asvg .aguide{stroke:var(--accent);stroke-width:1;stroke-dasharray:3 3}
@@ -1670,7 +1678,7 @@ function renderTrackAptitudeScatter(r){
   const pts=all.filter(h=>h.ren_time_avg!=null && h.ren_track_index!=null);
   if(pts.length<2){ host.innerHTML=""; return; }
   const isDesktop = document.documentElement.dataset.layout==="desktop";
-  const S = isDesktop ? 1.3 : 1;
+  const S = isDesktop ? 1.5 : 1;
   const W=Math.max(340, host.clientWidth||340), Hh=320*S;
   const padL=40*S, padR=20*S, padT=20*S, padB=50*S;
   const plotW=W-padL-padR, plotH=Hh-padT-padB;
@@ -3760,7 +3768,7 @@ function loadTrackHistory(cb){
 const TRK_COLOR = { "軽":"#4c9be8", "重":"#d9822b", "標準":"var(--muted)" };
 function trackHistChartSvg(days,wantW,detailed){
   const isDesktop = document.documentElement.dataset.layout==="desktop";
-  const S = isDesktop ? 1.3 : 1;
+  const S = isDesktop ? 1.5 : 1;
   // 直近1か月(detailed)は本数が少ないため、各点にラベルを出す分だけ上下に余白を広げる（2026-09-29）。
   const W = Math.max(320, wantW||360);
   const padL=30*S, padR=34*S, padT=(detailed?24:14)*S, padB=(detailed?56:32)*S, H=(detailed?232:186)*S;
@@ -3919,7 +3927,7 @@ function slNiceMax(m){
 // 縦棒グラフ（1系列）。items=[{key,label,val,title}]、selKey=強調する棒、hit=タップで選べるか
 function slBarSvg(items, wantW, selKey, hit){
   const isDesktop=document.documentElement.dataset.layout==="desktop";
-  const S=isDesktop?1.3:1;
+  const S=isDesktop?1.5:1;
   const W=Math.max(320,wantW||360), padL=52*S, padR=8*S, padT=12*S, padB=24*S, H=176*S;
   const plotW=W-padL-padR, plotH=H-padT-padB, n=items.length;
   if(!n) return "";
