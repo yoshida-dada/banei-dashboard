@@ -664,6 +664,8 @@ table.ht .numcell{display:inline-flex;align-items:center;gap:4px}
 .bestatus.on .bdot{background:#2ea043;box-shadow:0 0 0 3px rgba(46,160,67,.20);animation:bpulse 2s infinite}
 .bestatus.off{background:rgba(127,127,127,.08);color:var(--muted,#888)}
 .bestatus.off .bdot{background:var(--muted,#888)}
+.bestatus.err{background:rgba(218,54,51,.12);color:#da3633}
+.bestatus.err .bdot{background:#da3633;box-shadow:0 0 0 3px rgba(218,54,51,.20)}
 @keyframes bpulse{0%,100%{opacity:1}50%{opacity:.35}}
 /* オッズ履歴ビューア（P2） */
 #odds{padding-top:14px}
@@ -864,6 +866,7 @@ table.ht .numcell{display:inline-flex;align-items:center;gap:4px}
 </header>
 <div class="subtabs" id="subtabs"></div>
 <div id="beStatus" class="bestatus off" hidden></div>
+<div id="votingStatus" class="bestatus off" hidden></div>
 
 <div class="nav">
   <div class="nav-in">
@@ -2106,6 +2109,25 @@ async function loadBackendStatus(){
   }catch(e){ el.hidden=true; }
 }
 loadBackendStatus(); setInterval(loadBackendStatus, 60000);
+
+// P8(PC一本化)以降、画面配信も投票バックエンド(voting_server.py)が兼ねるため、PCが生きていて
+// キャッシュ(Service Worker)から古い画面が開かれた場合や、API/WSだけ落ちた場合を検知できるよう、
+// /health への到達性を別途ポーリングして表示する（PCがダウンしていれば手動再起動で復旧する暫定運用）。
+async function checkVotingBackend(){
+  const el=document.getElementById("votingStatus"); if(!el) return;
+  const cfg=backendCfg();
+  if(!cfg.url){ el.hidden=true; return; }
+  try{
+    const r=await withTimeout(fetch(cfg.url+"/health",{cache:"no-store"}), 5000, "timeout");
+    if(!r.ok) throw new Error("not ok");
+    el.hidden=false; el.className="bestatus on";
+    el.innerHTML='<span class="bdot"></span>投票バックエンド接続中';
+  }catch(e){
+    el.hidden=false; el.className="bestatus err";
+    el.innerHTML='<span class="bdot"></span>投票バックエンドに接続できません（PCの再起動をご検討ください）';
+  }
+}
+checkVotingBackend(); setInterval(checkVotingBackend, 30000);
 
 // ===== 成績タブ（P2） =====
 const tkPct = v => v==null ? "—" : (v*100).toFixed(1)+"%";
