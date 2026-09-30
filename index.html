@@ -598,6 +598,9 @@ table.ht .numcell{display:inline-flex;align-items:center;gap:4px}
 .sletbl td.slesc{padding:2px 4px}
 .slesp{width:64px;height:20px;display:block;margin-left:auto}
 .sleb{display:inline-block;margin-left:5px;padding:0 5px;border-radius:8px;font-size:.62rem;font-weight:700;color:var(--muted);border:1px solid var(--border);vertical-align:1px}
+.slelab{color:var(--abn,#c00);border-color:var(--abn,#c00)}
+.slelabbtn{padding:6px 10px;border:1px solid var(--border);border-radius:8px;background:var(--surface);color:var(--muted);font:inherit;font-size:.78rem;font-weight:700;cursor:pointer}
+.slelabbtn[aria-pressed="true"]{background:var(--abn,#c00);border-color:var(--abn,#c00);color:#fff}
 .sleb2{color:var(--accent);border-color:var(--accent)}
 .sletbl tr.sleDet td{white-space:normal;text-align:left;padding:8px 8px 12px}
 .sleln{font-size:.76rem;line-height:1.6;margin-bottom:4px}
@@ -3926,7 +3929,7 @@ function renderSales(){
 // dashboard/sales_entities.json（build_sales_entities.py）。馬主・厩舎・騎手・馬ごとの📈レース出走数と推移。
 // periods.{season,3m,all} は期間ごとに検定し直したもの、races は📈レースの出走一覧（展開表示用）。
 window.__SLENT_DATA = null;
-window.__SLENT = {period:"season", kind:"owner", sort:"bias", q:"", open:{}, more:30, all:{}, race:{}};
+window.__SLENT = {period:"season", kind:"owner", sort:"bias", q:"", lab:false, open:{}, more:30, all:{}, race:{}};
 var SLE_KINDS = [["owner","馬主"],["trainer","厩舎"],["jockey","騎手"],["horse","馬"]];
 var SLE_FIELD = {horse:1, owner:2, trainer:3, jockey:4};   // races[].e の列: [馬番,馬名,馬主,厩舎,騎手,着順,人気,ラベル有]
 function loadSalesEnt(cb){
@@ -4023,6 +4026,7 @@ function slEntBody(){
   const J=D.periods[S.period];
   let list=J.kinds[S.kind].map((e,i)=>({e,i}));
   const q=S.q.trim();
+  if(S.lab) list=list.filter(o=>o.e.lab>0);
   if(q) list=list.filter(o=>o.e.n.indexOf(q)>=0);
   const cmp={bias:(a,b)=>a.e.p-b.e.p||b.e.f-a.e.f, cnt:(a,b)=>b.e.f-a.e.f||a.e.p-b.e.p,
     rate:(a,b)=>b.e.f/b.e.s-a.e.f/a.e.s, last:(a,b)=>b.e.last<a.e.last?-1:b.e.last>a.e.last?1:0}[S.sort];
@@ -4031,7 +4035,7 @@ function slEntBody(){
   const rows=shown.map(({e,i})=>{
     const key=S.period+"#"+S.kind+"#"+i, open=!!S.open[key], x=e.f/Math.max(e.e,0.01);
     const badge=e.q<0.1?'<span class="sleb sleb2" title="並べ替え検定で有意な偏り（q&lt;0.1）">偏り</span>':e.q<0.3?'<span class="sleb" title="弱い傾向（q&lt;0.3）">傾向</span>':'';
-    return `<tr class="sleRow${open?' sleopen':''}" data-k="${key}"><td class="l sleNm">${open?'▾':'▸'} ${e.n}${badge}</td>`
+    return `<tr class="sleRow${open?' sleopen':''}" data-k="${key}"><td class="l sleNm">${open?'▾':'▸'} ${e.n}${e.lab?`<span class="sleb slelab" title="八百長ラベルの付与 ${e.lab}件">🚨${e.lab}</span>`:''}${badge}</td>`
       +`<td>${e.s}</td><td><b>${e.f}</b></td><td>${(e.f/e.s*100).toFixed(0)}%</td><td class="${x>=1.5?'sleup':''}">${x.toFixed(1)}×</td>`
       +`<td class="slesc">${sleSpark(e,J)}</td><td>${sleDate(e.last)}</td></tr>`
       +(open?`<tr class="sleDet"><td colspan="7">${sleDetailHtml(e,J,key)}</td></tr>`:'');
@@ -4055,16 +4059,18 @@ function renderSlEnt(){
   host.innerHTML=`<div class="ahead csec"><span class="at1">📈レースの登場傾向</span><span class="at2">馬主・厩舎・騎手・馬ごとの📈レース出走と推移</span></div>`
     +`<div class="slctl sle-ctl">${tgl("slePeriod",S.period,[["season","今年度"],["3m","直近3か月"],["all","全期間"]])}${tgl("sleKind",S.kind,SLE_KINDS)}`
     +`<select id="sleSort" aria-label="並び順">${opts}</select>`
+    +`<button id="sleLab" class="slelabbtn" aria-pressed="${S.lab}" title="八百長ラベルが付与された馬・その馬主・厩舎・騎手のみ表示">🚨ラベル付与のみ</button>`
     +`<input type="search" id="sleQ" placeholder="名前で絞り込み" value="${S.q.replace(/"/g,'&quot;')}"></div>`
     +`<div id="slEntBody"></div>`
     +`<div class="tknote">対象＝帯広・オープン戦を除く${J.n_races.toLocaleString()}レース（${J.from.replace(/-/g,'/')}〜${J.to.replace(/-/g,'/')}）のうち📈が付いた${J.n_flag}レース（この期間の${(J.base*100).toFixed(1)}%）。`
     +`期間は最終開催日から数えた「今年度(4/17〜)」「直近3か月」「全期間」で、期間ごとに検定し直しています（短い期間は件数が少なく結果が不安定です）。`
     +`「倍率」は、この期間の📈率どおりなら期待される📈数（R番号で補正）に対する実際の📈数。「偏り／傾向」は並べ替え検定＋BH法（種別内）で偶然と言いにくいもの（q&lt;0.1／0.3）で、`
-    +`多数を同時に検定するため偶然の混入があります。📈は売上が高いという事実だけで、八百長を示すものではありません。📈が${J.min_flagged}回未満の主体は非表示。`
+    +`多数を同時に検定するため偶然の混入があります。📈は売上が高いという事実だけで、八百長を示すものではありません。📈が${J.min_flagged}回未満の主体は非表示。🚨Nはその主体（馬なら本馬、馬主・厩舎・騎手ならその関係馬）への八百長ラベル付与件数で、「🚨ラベル付与のみ」で絞り込めます。`
     +`行をタップで推移と📈レース一覧を表示し、レースをタップすると全出走馬（馬名・馬主・厩舎・騎手・結果）を表示します。</div>`;
   host.querySelectorAll("#slePeriod button").forEach(b=>b.onclick=()=>{ S.period=b.dataset.v; S.more=30; renderSlEnt(); });
   host.querySelectorAll("#sleKind button").forEach(b=>b.onclick=()=>{ S.kind=b.dataset.v; S.more=30; renderSlEnt(); });
   document.getElementById("sleSort").onchange=e=>{ S.sort=e.target.value; S.more=30; slEntBody(); };
+  document.getElementById("sleLab").onclick=()=>{ S.lab=!S.lab; S.more=30; renderSlEnt(); };
   document.getElementById("sleQ").oninput=e=>{ S.q=e.target.value; S.more=30; slEntBody(); };
   slEntBody();
 }
