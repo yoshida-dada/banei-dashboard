@@ -493,7 +493,7 @@ table.ht .numcell{display:inline-flex;align-items:center;gap:4px}
 .hmtbl th.l,.hmtbl td.l{text-align:left}
 .hmtbl tr.hmwin td{background:color-mix(in srgb,var(--good) 10%,var(--surface))}
 .hmmkc{width:22px;color:var(--accent);font-weight:800}
-.hmgate{white-space:nowrap;width:40px}
+.hmgate{white-space:nowrap;width:36px}
 .hmgate .hmn{width:17px;height:17px;font-size:.62rem}
 .hmnum{font-size:.72rem;margin-left:3px;font-weight:700}
 .hmwp{font-weight:800}
@@ -2690,16 +2690,16 @@ function renderHome(){
   const next=rs.find(r=>!r.cancelled && r.winner==null);
   const allOpen=rs.length>0 && rs.every(r=>OPEN[d+"#"+r.race_no]);
   // レースごとのカード（2026-09-30、ユーザー提示のスタイル: 見出し＋印/枠/馬名/勝率/人気/単勝/着の表。
-  // 既定は◎〇▲△の4頭、「全頭を見る」で全頭）。🚨＝過去5走以内に八百長ラベルが付いた馬（h.insider_flag）。
+  // 既定は◎〇▲△☆の5頭、「全頭を見る」で全頭）。🚨＝過去5走以内に八百長ラベルが付いた馬（h.insider_flag）。
   const cards=rs.map(r=>{
     const key=d+"#"+r.race_no, open=!!OPEN[key];
     const hs=[...(r.horses||[])].sort((a,b)=>(a.rank??99)-(b.rank??99)||a.num-b.num);
-    const shown=open?hs:hs.filter(h=>h.rank>=1 && h.rank<=4);
+    const shown=open?hs:hs.filter(h=>h.rank>=1 && h.rank<=5);
     const rows=shown.map(h=>{
       const mk=h.rank>=1 && h.rank<=5 ? MARKS[h.rank-1] : "";
       const pos=h.position!=null?h.position:"—";
       return `<tr class="${h.position===1?'hmwin':''}"><td class="hmmkc">${mk}</td>`
-        +`<td class="hmgate"><span class="hmn" style="${capStyle(h.gate)}">${h.gate??''}</span><span class="hmnum">${h.num}</span></td>`
+        +`<td class="hmgate"><span class="hmn" style="${capStyle(h.gate)}">${h.num}</span></td>`
         +`<td class="l"><span class="hlink" data-horse="${h.name||''}">${h.name||''}</span>${h.insider_flag?' <span title="過去5走以内に八百長ラベルあり">🚨</span>':''}</td>`
         +`<td class="hmwp">${h.win_prob!=null?(h.win_prob*100).toFixed(1)+'%':'—'}</td>`
         +`<td>${h.popularity??'—'}</td><td>${h.odds!=null?h.odds.toFixed(1):'—'}</td><td class="hmpos">${pos}</td></tr>`;
@@ -2712,7 +2712,7 @@ function renderHome(){
     return `<div class="hmcard${isNext?' next':''}">`
       +`<div class="hmch" data-r="${r.race_no}"><span class="hmrno">${r.race_no}R</span><span class="hmpt">${r.post_time?r.post_time+' 発走':''}</span>`
       +`<span class="hmcls">${r.class?classLabel(r.class, r.horses):''}</span>${st}</div>`
-      +`<table class="hmtbl"><thead><tr><th>印</th><th>枠</th><th class="l">馬名</th><th>勝率</th><th>人気</th><th>単勝</th><th>着</th></tr></thead>`
+      +`<table class="hmtbl"><thead><tr><th>印</th><th>馬番</th><th class="l">馬名</th><th>勝率</th><th>人気</th><th>単勝</th><th>着</th></tr></thead>`
       +`<tbody>${rows||'<tr><td colspan="7" class="tsub">印なし</td></tr>'}</tbody></table>`
       +(hs.length>shown.length||open?`<button class="hmmore" data-k="${key}">${open?'閉じる ▴':'全頭を見る ▾'}</button>`:'')
       +`</div>`;
