@@ -436,8 +436,11 @@ table.ht .numcell{display:inline-flex;align-items:center;gap:4px}
 .paytbl th:first-child,.paytbl td:first-child{text-align:left}
 .paytbl .pt-bt{font-weight:700;white-space:nowrap}
 .paytbl .pt-combo{text-align:left;white-space:nowrap}
+.paytbl .pt-sum{font-weight:700}
 .paytbl .pt-pay{font-weight:800;color:var(--good)}
 .paynote{font-size:.64rem;color:var(--muted);margin-top:7px}
+.paytbl tr.slfoot td{font-weight:800;border-top:2px solid var(--ink)}
+.paytbl td.num{white-space:nowrap}
 .foot{font-size:.72rem;color:var(--muted);line-height:1.7;margin-top:26px;border-top:1px solid var(--border);padding-top:14px}
 /* トップタブ（レース予測 / 成績） */
 .brand{display:flex;align-items:center;gap:9px;flex-wrap:wrap}
@@ -570,6 +573,7 @@ table.ht .numcell{display:inline-flex;align-items:center;gap:4px}
 .sltbl tr.slmax td{background:color-mix(in srgb,var(--accent) 9%,var(--surface))}
 .sltbl tr.slfoot td{font-weight:800;border-top:2px solid var(--ink)}
 .sltbl tr.slcur td{background:color-mix(in srgb,var(--accent) 9%,var(--surface))}
+.sltbl .slrlink{color:var(--accent);font-weight:700;cursor:pointer;text-decoration:underline;text-underline-offset:2px}
 .sltbl td.slil,.sltbl td.slhi{text-align:center;padding:6px 2px}
 .sltbl td.slhi small{font-size:.62rem;color:var(--muted);margin-left:1px}
 .sltbl td.slhi2 small{color:var(--accent);font-weight:800}
@@ -2864,6 +2868,26 @@ function resLoadMonth(m, cb){
     .then(j=>{ S.months[m]=j; cb(j); })
     .catch(()=>{ S.months[m]={month:m, days:{}}; cb(S.months[m]); });
 }
+// レース結果ページの売上セクション（sales.json＝楽天競馬の券種別総票数。1票=100円）。sales.jsonは遅延読込。
+function salesSectionHtml(j, date, raceNo){
+  const day=j.days.find(x=>x.date===date), r=day&&day.races.find(x=>x.r===raceNo);
+  if(!r) return "";
+  const tot=r.t, rows=j.used.map(i=>({t:j.types[i],v:r.v[i]})).filter(x=>x.v>0).map(x=>
+    `<tr><td class="pt-bt">${SL_LABEL[x.t]}</td><td class="num">${x.v.toLocaleString()}票</td>`
+    +`<td class="num pt-sum">¥${(x.v*100).toLocaleString()}</td><td class="num">${(x.v/tot*100).toFixed(1)}%</td></tr>`).join("");
+  const rank=day.races.filter(x=>x.t>tot).length+1;
+  let flag="";
+  if(r.a){
+    const tip=[];
+    if(r.a[0]!=null) tip.push(`前後Rの平均の${r.a[1].toFixed(2)}倍`);
+    if(r.a[2]!=null) tip.push(`同曜日・同Rの過去12回の中央値の${r.a[3].toFixed(2)}倍`);
+    flag=`<div class="paynote">📈 売上が高めのレース（${tip.join('／')}）</div>`;
+  }
+  return `<div class="paysect"><div class="payhead">💴 売上（発売票数）</div>`
+    +`<table class="paytbl"><thead><tr><th>券種</th><th>票数</th><th>売上</th><th>構成比</th></tr></thead><tbody>${rows}`
+    +`<tr class="slfoot"><td class="pt-bt">合計</td><td class="num">${tot.toLocaleString()}票</td><td class="num pt-sum">¥${(tot*100).toLocaleString()}</td><td class="num">100%</td></tr></tbody></table>`
+    +`<div class="paynote">この日の${day.races.length}レース中、売上は${rank}位。1票=100円（返還分は差し引かない発売ベース）。出典＝楽天競馬。</div>${flag}</div>`;
+}
 function renderResultsPage(){
   const host=document.getElementById("results"); if(!host) return;
   const S=window.__RES;
@@ -2906,13 +2930,18 @@ function renderResultsPage(){
         +resultTableHtml(race.horses)
         +(race.has_marks?'':'<div class="tknote">この日は予想の保存が無いため印は表示されません（2026-07-11より前）。</div>')
         +'<div class="tknote">馬名をタップすると通算成績・過去成績・血統を表示します。</div>'
-        +payoutsHtml(race.payouts);
+        +payoutsHtml(race.payouts)
+        +'<div id="rsSales"></div>';
     }
     host.innerHTML=`<div class="rsbar">${monthSel}</div><div class="rsdays">${dayBtns}</div>`
       +`<div class="rsraces">${raceBtns}</div>`+body;
     host.querySelector("#rsMonth").onchange=e=>{ const m=e.target.value; S.date=dates.find(d=>d.slice(0,7)===m); S.race=null; renderResultsPage(); };
     host.querySelectorAll(".rsdays button").forEach(b=>b.onclick=()=>{ S.date=b.dataset.d; S.race=null; renderResultsPage(); });
     host.querySelectorAll(".rsraces button").forEach(b=>b.onclick=()=>{ S.race=+b.dataset.r; renderResultsPage(); });
+    if(race){
+      const dt=S.date, rn=race.race_no;
+      loadSales(j=>{ const el=document.getElementById("rsSales"); if(el && S.date===dt && S.race===rn) el.innerHTML=salesSectionHtml(j,dt,rn); });
+    }
   };
   if(live[S.date]){ draw(live[S.date]); return; }
   host.innerHTML='<div class="meta">レース結果を読込中…</div>';
@@ -3728,7 +3757,7 @@ function slDetailHtml(j, days){
   const idx=days.indexOf(d), used=j.used;
   const wd=WD_JP[new Date(d.date+"T00:00:00").getDay()];
   const maxT=Math.max(...d.races.map(r=>r.t));
-  const rows=d.races.map(r=>`<tr class="${r.t===maxT?'slmax':''}"><td>${r.r}R</td><td class="slil">${r.l?`<span title="八百長ラベル付与馬 ${r.l.length}頭（${r.l.join('・')}）">🚨</span>`:''}</td>${slHighCell(r)}<td class="l">${r.c||''}</td>`
+  const rows=d.races.map(r=>`<tr class="${r.t===maxT?'slmax':''}"><td class="slrace"><span class="slrlink" data-d="${d.date}" data-r="${r.r}" title="このレースの結果を開く">${r.r}R</span></td><td class="slil">${r.l?`<span title="八百長ラベル付与馬 ${r.l.length}頭（${r.l.join('・')}）">🚨</span>`:''}</td>${slHighCell(r)}<td class="l">${r.c||''}</td>`
     +used.map(i=>`<td>${slCell(r.v[i])}</td>`).join("")
     +`<td class="slsum">${slCell(r.t)}</td></tr>`).join("");
   const foot=`<tr class="slfoot"><td colspan="4">合計</td>`+used.map(i=>`<td>${slCell(d.tot[i])}</td>`).join("")
@@ -3799,6 +3828,9 @@ function renderSales(){
     st[b.parentNode.dataset.k]=b.dataset.v; renderSales();
   });
   const ts=document.getElementById("slType"); if(ts) ts.onchange=()=>{ st.type=ts.value; renderSales(); };
+  host.querySelectorAll(".slrlink").forEach(el=>el.onclick=()=>{
+    window.__RES.date=el.dataset.d; window.__RES.race=+el.dataset.r; switchTop("analysis","results"); window.scrollTo(0,0);
+  });
   host.querySelectorAll(".slhit").forEach(el=>el.onclick=()=>{ st.sel=el.dataset.k; renderSales(); });
   const step=dlt=>{ const k=days.findIndex(x=>x.date===st.sel)+dlt; if(k>=0&&k<days.length){ st.sel=days[k].date; renderSales(); } };
   const pv=document.getElementById("slPrev"), nx=document.getElementById("slNext");
