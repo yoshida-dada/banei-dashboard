@@ -1,6 +1,6 @@
 {
  "date": "2026-10-03",
- "archived_at": "2026-10-02 12:32",
+ "archived_at": "2026-10-02 19:39",
  "races": [
   {
    "date": "2026-10-03",
@@ -14,8 +14,10 @@
    "predicted_top": 7,
    "market_fav": null,
    "winner": null,
+   "race_pattern": "通常",
+   "race_pattern_gap12": 0.0511,
    "update_stage": "pre",
-   "updated_at": "2026-10-02 12:30",
+   "updated_at": "2026-10-02 19:37",
    "horses": [
     {
      "num": 7,
@@ -4205,8 +4207,10 @@
    "predicted_top": 9,
    "market_fav": null,
    "winner": null,
+   "race_pattern": "通常",
+   "race_pattern_gap12": 0.0722,
    "update_stage": "pre",
-   "updated_at": "2026-10-02 12:30",
+   "updated_at": "2026-10-02 19:37",
    "horses": [
     {
      "num": 9,
@@ -11443,8 +11447,10 @@
    "predicted_top": 1,
    "market_fav": null,
    "winner": null,
+   "race_pattern": "通常",
+   "race_pattern_gap12": 0.0953,
    "update_stage": "pre",
-   "updated_at": "2026-10-02 12:30",
+   "updated_at": "2026-10-02 19:37",
    "horses": [
     {
      "num": 1,
@@ -11560,6 +11566,23 @@
        "rz": -1.97,
        "t": 203.4,
        "mk": 4,
+       "il": 0
+      },
+      {
+       "d": "2026-08-10",
+       "c": "D",
+       "p": null,
+       "n": 10,
+       "g": null,
+       "gs": null,
+       "fh": null,
+       "lh": null,
+       "bw": 925,
+       "sl": 500.0,
+       "m": 1.6,
+       "rz": null,
+       "t": null,
+       "mk": 5,
        "il": 0
       },
       {
@@ -11755,6 +11778,23 @@
        "m": 0.8,
        "rz": 0.51,
        "t": 159.9,
+       "mk": null,
+       "il": 0
+      },
+      {
+       "d": "2026-06-15",
+       "c": "C1",
+       "p": null,
+       "n": 9,
+       "g": null,
+       "gs": null,
+       "fh": null,
+       "lh": null,
+       "bw": 923,
+       "sl": 490.0,
+       "m": 0.7,
+       "rz": null,
+       "t": null,
        "mk": null,
        "il": 0
       },
@@ -12293,6 +12333,23 @@
        "rz": -1.36,
        "t": 178.1,
        "mk": 10,
+       "il": 0
+      },
+      {
+       "d": "2026-08-22",
+       "c": "D",
+       "p": null,
+       "n": 9,
+       "g": null,
+       "gs": null,
+       "fh": null,
+       "lh": null,
+       "bw": 844,
+       "sl": 500.0,
+       "m": 1.1,
+       "rz": null,
+       "t": null,
+       "mk": 9,
        "il": 0
       },
       {
@@ -13492,6 +13549,23 @@
      ],
      "trend": [
       {
+       "d": "2026-06-15",
+       "c": "新馬",
+       "p": null,
+       "n": 10,
+       "g": null,
+       "gs": null,
+       "fh": null,
+       "lh": null,
+       "bw": null,
+       "sl": 490.0,
+       "m": 0.7,
+       "rz": null,
+       "t": null,
+       "mk": null,
+       "il": 0
+      },
+      {
        "d": "2026-06-29",
        "c": "D",
        "p": 8,
@@ -14140,8 +14214,10 @@
    "predicted_top": 4,
    "market_fav": null,
    "winner": null,
+   "race_pattern": "一強",
+   "race_pattern_gap12": 0.1904,
    "update_stage": "pre",
-   "updated_at": "2026-10-02 12:31",
+   "updated_at": "2026-10-02 19:37",
    "horses": [
     {
      "num": 4,
@@ -14549,6 +14625,23 @@
       }
      ],
      "trend": [
+      {
+       "d": "2026-06-13",
+       "c": "新馬",
+       "p": null,
+       "n": 10,
+       "g": null,
+       "gs": null,
+       "fh": null,
+       "lh": null,
+       "bw": 785,
+       "sl": 470.0,
+       "m": 1.1,
+       "rz": null,
+       "t": null,
+       "mk": null,
+       "il": 0
+      },
       {
        "d": "2026-07-13",
        "c": "D",
@@ -15751,6 +15844,23 @@
      ],
      "trend": [
       {
+       "d": "2026-06-01",
+       "c": "新馬",
+       "p": null,
+       "n": 10,
+       "g": null,
+       "gs": null,
+       "fh": null,
+       "lh": null,
+       "bw": 881,
+       "sl": 490.0,
+       "m": 0.7,
+       "rz": null,
+       "t": null,
+       "mk": null,
+       "il": 0
+      },
+      {
        "d": "2026-06-15",
        "c": "D",
        "p": 8,
@@ -15799,6 +15909,23 @@
        "rz": -3.84,
        "t": 230.8,
        "mk": null,
+       "il": 0
+      },
+      {
+       "d": "2026-07-19",
+       "c": "D",
+       "p": null,
+       "n": 10,
+       "g": null,
+       "gs": null,
+       "fh": null,
+       "lh": null,
+       "bw": null,
+       "sl": 500.0,
+       "m": 3.6,
+       "rz": null,
+       "t": null,
+       "mk": 8,
        "il": 0
       },
       {
@@ -17195,8 +17322,10 @@
    "predicted_top": 4,
    "market_fav": null,
    "winner": null,
+   "race_pattern": "通常",
+   "race_pattern_gap12": 0.0506,
    "update_stage": "pre",
-   "updated_at": "2026-10-02 12:31",
+   "updated_at": "2026-10-02 19:37",
    "horses": [
     {
      "num": 4,
@@ -21765,8 +21894,10 @@
    "predicted_top": 1,
    "market_fav": null,
    "winner": null,
+   "race_pattern": "通常",
+   "race_pattern_gap12": 0.074,
    "update_stage": "pre",
-   "updated_at": "2026-10-02 12:31",
+   "updated_at": "2026-10-02 19:37",
    "horses": [
     {
      "num": 1,
@@ -24669,6 +24800,23 @@
        "il": 0
       },
       {
+       "d": "2026-07-06",
+       "c": "B4",
+       "p": null,
+       "n": 10,
+       "g": null,
+       "gs": null,
+       "fh": null,
+       "lh": null,
+       "bw": null,
+       "sl": 500.0,
+       "m": 0.8,
+       "rz": null,
+       "t": null,
+       "mk": null,
+       "il": 0
+      },
+      {
        "d": "2026-07-18",
        "c": "B",
        "p": 1,
@@ -24815,8 +24963,10 @@
    "predicted_top": 6,
    "market_fav": null,
    "winner": null,
+   "race_pattern": "通常",
+   "race_pattern_gap12": 0.1251,
    "update_stage": "pre",
-   "updated_at": "2026-10-02 12:31",
+   "updated_at": "2026-10-02 19:37",
    "horses": [
     {
      "num": 6,
@@ -25065,23 +25215,6 @@
      ],
      "trend": [
       {
-       "d": "2026-04-18",
-       "c": "C2",
-       "p": 8,
-       "n": 10,
-       "g": 35.7,
-       "gs": -35.7,
-       "fh": 119.0,
-       "lh": 54.7,
-       "bw": 942,
-       "sl": 570.0,
-       "m": 1.1,
-       "rz": -0.29,
-       "t": 173.7,
-       "mk": null,
-       "il": 0
-      },
-      {
        "d": "2026-04-25",
        "c": "C2",
        "p": 9,
@@ -25095,6 +25228,23 @@
        "m": 1.6,
        "rz": -0.52,
        "t": 160.5,
+       "mk": null,
+       "il": 0
+      },
+      {
+       "d": "2026-05-18",
+       "c": "C2",
+       "p": null,
+       "n": 10,
+       "g": null,
+       "gs": null,
+       "fh": null,
+       "lh": null,
+       "bw": 935,
+       "sl": 570.0,
+       "m": 0.7,
+       "rz": null,
+       "t": null,
        "mk": null,
        "il": 0
       },
@@ -26454,23 +26604,6 @@
      ],
      "trend": [
       {
-       "d": "2026-04-18",
-       "c": "C2",
-       "p": 1,
-       "n": 10,
-       "g": 0.0,
-       "gs": 16.0,
-       "fh": 100.0,
-       "lh": 38.0,
-       "bw": 1032,
-       "sl": 550.0,
-       "m": 1.1,
-       "rz": 1.17,
-       "t": 138.0,
-       "mk": null,
-       "il": 0
-      },
-      {
        "d": "2026-05-02",
        "c": "C2",
        "p": 2,
@@ -26586,6 +26719,23 @@
        "m": 1.9,
        "rz": 1.54,
        "t": 88.8,
+       "mk": 1,
+       "il": 0
+      },
+      {
+       "d": "2026-08-08",
+       "c": "C1",
+       "p": null,
+       "n": 10,
+       "g": null,
+       "gs": null,
+       "fh": null,
+       "lh": null,
+       "bw": null,
+       "sl": 590.0,
+       "m": 2.8,
+       "rz": null,
+       "t": null,
        "mk": 1,
        "il": 0
       },
@@ -29538,8 +29688,10 @@
    "predicted_top": 9,
    "market_fav": null,
    "winner": null,
+   "race_pattern": "通常",
+   "race_pattern_gap12": 0.0385,
    "update_stage": "pre",
-   "updated_at": "2026-10-02 12:31",
+   "updated_at": "2026-10-02 19:37",
    "horses": [
     {
      "num": 9,
@@ -29983,6 +30135,23 @@
        "rz": -0.04,
        "t": 114.3,
        "mk": 8,
+       "il": 0
+      },
+      {
+       "d": "2026-09-14",
+       "c": "A1",
+       "p": null,
+       "n": 9,
+       "g": null,
+       "gs": null,
+       "fh": null,
+       "lh": null,
+       "bw": null,
+       "sl": 530.0,
+       "m": 0.8,
+       "rz": null,
+       "t": null,
+       "mk": 7,
        "il": 0
       }
      ],
@@ -30723,6 +30892,23 @@
        "rz": -0.68,
        "t": 166.9,
        "mk": null,
+       "il": 0
+      },
+      {
+       "d": "2026-07-19",
+       "c": "D",
+       "p": null,
+       "n": 10,
+       "g": null,
+       "gs": null,
+       "fh": null,
+       "lh": null,
+       "bw": null,
+       "sl": 480.0,
+       "m": 3.6,
+       "rz": null,
+       "t": null,
+       "mk": 5,
        "il": 0
       },
       {
@@ -32311,8 +32497,10 @@
    "predicted_top": 5,
    "market_fav": null,
    "winner": null,
+   "race_pattern": "通常",
+   "race_pattern_gap12": 0.0601,
    "update_stage": "pre",
-   "updated_at": "2026-10-02 12:31",
+   "updated_at": "2026-10-02 19:37",
    "horses": [
     {
      "num": 5,
@@ -40285,8 +40473,10 @@
    "predicted_top": 3,
    "market_fav": null,
    "winner": null,
+   "race_pattern": "混戦",
+   "race_pattern_gap12": 0.0173,
    "update_stage": "pre",
-   "updated_at": "2026-10-02 12:31",
+   "updated_at": "2026-10-02 19:38",
    "horses": [
     {
      "num": 3,
@@ -47575,23 +47765,6 @@
      ],
      "trend": [
       {
-       "d": "2026-05-03",
-       "c": "B2",
-       "p": 3,
-       "n": 8,
-       "g": 8.0,
-       "gs": -8.0,
-       "fh": 73.0,
-       "lh": 35.0,
-       "bw": 1033,
-       "sl": 620.0,
-       "m": 2.1,
-       "rz": 0.34,
-       "t": 108.0,
-       "mk": null,
-       "il": 0
-      },
-      {
        "d": "2026-05-18",
        "c": "B2",
        "p": 3,
@@ -47742,6 +47915,23 @@
        "rz": -1.3,
        "t": 148.7,
        "mk": 9,
+       "il": 0
+      },
+      {
+       "d": "2026-09-13",
+       "c": "B1",
+       "p": null,
+       "n": 10,
+       "g": null,
+       "gs": null,
+       "fh": null,
+       "lh": null,
+       "bw": null,
+       "sl": 660.0,
+       "m": 0.8,
+       "rz": null,
+       "t": null,
+       "mk": 6,
        "il": 0
       }
      ],
@@ -48632,8 +48822,10 @@
    "predicted_top": 7,
    "market_fav": null,
    "winner": null,
+   "race_pattern": "通常",
+   "race_pattern_gap12": 0.0653,
    "update_stage": "pre",
-   "updated_at": "2026-10-02 12:31",
+   "updated_at": "2026-10-02 19:38",
    "horses": [
     {
      "num": 7,
@@ -52951,23 +53143,6 @@
      ],
      "trend": [
       {
-       "d": "2026-04-27",
-       "c": "A2",
-       "p": 5,
-       "n": 10,
-       "g": 10.8,
-       "gs": -10.8,
-       "fh": 66.0,
-       "lh": 46.4,
-       "bw": 1130,
-       "sl": 640.0,
-       "m": 1.0,
-       "rz": 0.44,
-       "t": 112.4,
-       "mk": null,
-       "il": 0
-      },
-      {
        "d": "2026-05-16",
        "c": "A2",
        "p": 4,
@@ -53101,6 +53276,23 @@
        "rz": -0.04,
        "t": 116.9,
        "mk": 2,
+       "il": 0
+      },
+      {
+       "d": "2026-08-30",
+       "c": "A2",
+       "p": null,
+       "n": 9,
+       "g": null,
+       "gs": null,
+       "fh": null,
+       "lh": null,
+       "bw": null,
+       "sl": 700.0,
+       "m": 1.6,
+       "rz": null,
+       "t": null,
+       "mk": 5,
        "il": 0
       },
       {
@@ -56174,23 +56366,6 @@
      ],
      "trend": [
       {
-       "d": "2026-04-25",
-       "c": "B2",
-       "p": 2,
-       "n": 10,
-       "g": 2.3,
-       "gs": -2.3,
-       "fh": 71.0,
-       "lh": 36.0,
-       "bw": 1102,
-       "sl": 620.0,
-       "m": 1.4,
-       "rz": 0.48,
-       "t": 107.0,
-       "mk": null,
-       "il": 0
-      },
-      {
        "d": "2026-05-03",
        "c": "B2",
        "p": 1,
@@ -56289,6 +56464,23 @@
        "m": 0.7,
        "rz": 1.05,
        "t": 105.2,
+       "mk": null,
+       "il": 0
+      },
+      {
+       "d": "2026-06-27",
+       "c": "B1",
+       "p": null,
+       "n": 10,
+       "g": null,
+       "gs": null,
+       "fh": null,
+       "lh": null,
+       "bw": null,
+       "sl": 665.0,
+       "m": 3.6,
+       "rz": null,
+       "t": null,
        "mk": null,
        "il": 0
       },
@@ -56405,8 +56597,10 @@
    "predicted_top": 8,
    "market_fav": null,
    "winner": null,
+   "race_pattern": "通常",
+   "race_pattern_gap12": 0.0562,
    "update_stage": "pre",
-   "updated_at": "2026-10-02 12:31",
+   "updated_at": "2026-10-02 19:38",
    "horses": [
     {
      "num": 8,
