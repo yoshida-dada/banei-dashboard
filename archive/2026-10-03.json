@@ -1,6 +1,6 @@
 {
  "date": "2026-10-03",
- "archived_at": "2026-10-03 15:14",
+ "archived_at": "2026-10-03 15:16",
  "races": [
   {
    "date": "2026-10-03",
@@ -4316,7 +4316,7 @@
    "race_pattern": "通常",
    "race_pattern_gap12": 0.1021,
    "update_stage": "evscan",
-   "updated_at": "2026-10-03 15:14",
+   "updated_at": "2026-10-03 15:16",
    "horses": [
     {
      "num": 9,
@@ -5570,7 +5570,7 @@
      "win_prob_v1": 0.1112,
      "rank_v1": 3,
      "win_ver": "v2",
-     "suspicion_direction": "sell",
+     "suspicion_direction": "not_sell",
      "anauma_sell": false,
      "place2": 0.2776,
      "place3": 0.4178,
@@ -7724,8 +7724,8 @@
      "win_prob_v1": 0.0947,
      "rank_v1": 4,
      "win_ver": "v2",
-     "suspicion_direction": "not_sell",
-     "anauma_sell": false,
+     "suspicion_direction": "sell",
+     "anauma_sell": true,
      "place2": 0.1655,
      "place3": 0.2601,
      "ability": 57.4,
@@ -9153,8 +9153,8 @@
      "win_prob_v1": 0.0635,
      "rank_v1": 6,
      "win_ver": "v2",
-     "suspicion_direction": "not_sell",
-     "anauma_sell": false,
+     "suspicion_direction": "sell",
+     "anauma_sell": true,
      "place2": 0.1305,
      "place3": 0.2076,
      "ability": 54.2,
