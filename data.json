@@ -75580,14 +75580,14 @@
    "moisture": 1.2,
    "field_size": 10,
    "post_time": "16:15",
-   "win_time": null,
+   "win_time": "2:00.8",
    "predicted_top": 10,
    "market_fav": 10,
-   "winner": null,
+   "winner": 10,
    "race_pattern": "通常",
    "race_pattern_gap12": 0.1358,
-   "update_stage": "odds",
-   "updated_at": "2026-10-04 16:13",
+   "update_stage": "result",
+   "updated_at": "2026-10-04 16:35",
    "horses": [
     {
      "num": 10,
@@ -75601,9 +75601,9 @@
      "rank_v2_prev": 1,
      "v2_prev_version": "v2.1",
      "win_prob_v1_2": 0.2207,
-     "odds": 2.5,
-     "position": null,
-     "result_time": null,
+     "odds": 2.0,
+     "position": 1,
+     "result_time": "2:00.8",
      "jockey": "渡来心",
      "gate": 8,
      "weight": 877,
@@ -75860,14 +75860,13 @@
       ]
      },
      "place3_time_avg": 109.2,
-     "p_market": 0.3167,
-     "win_prob_blend": 0.3082,
-     "ev": 0.77,
+     "p_market": 0.3951,
+     "win_prob_blend": 0.359,
+     "ev": 0.72,
      "ev_buy": false,
-     "win_prob_blend_v1_1": 0.3123,
-     "ev_v1_1": 0.78,
+     "win_prob_blend_v1_1": 0.3749,
+     "ev_v1_1": 0.75,
      "ev_buy_v1_1": false,
-     "win_prob_blend_bets_v1_1": 0.3123,
      "ev_streak": 0
     },
     {
@@ -75882,15 +75881,15 @@
      "rank_v2_prev": 2,
      "v2_prev_version": "v2.1",
      "win_prob_v1_2": 0.1304,
-     "odds": 4.4,
-     "position": null,
-     "result_time": null,
+     "odds": 7.0,
+     "position": 5,
+     "result_time": "2:19.9",
      "jockey": "船山蔵",
      "gate": 4,
      "weight": 953,
      "weight_diff": 8,
      "sled_kg": 530.0,
-     "popularity": 2,
+     "popularity": 3,
      "age": 2,
      "sex": "牡",
      "trainer": "西邑春（ばんえい）",
@@ -76187,14 +76186,13 @@
       ]
      },
      "place3_time_avg": 129.1,
-     "p_market": 0.18,
-     "win_prob_blend": 0.1697,
-     "ev": 0.75,
+     "p_market": 0.1129,
+     "win_prob_blend": 0.1264,
+     "ev": 0.88,
      "ev_buy": false,
-     "win_prob_blend_v1_1": 0.1743,
-     "ev_v1_1": 0.77,
+     "win_prob_blend_v1_1": 0.1207,
+     "ev_v1_1": 0.85,
      "ev_buy_v1_1": false,
-     "win_prob_blend_bets_v1_1": 0.1653,
      "ev_streak": 0
     },
     {
@@ -76209,15 +76207,15 @@
      "rank_v2_prev": 3,
      "v2_prev_version": "v2.1",
      "win_prob_v1_2": 0.1557,
-     "odds": 4.6,
-     "position": null,
-     "result_time": null,
+     "odds": 4.2,
+     "position": 4,
+     "result_time": "2:15.8",
      "jockey": "鈴木恵",
      "gate": 5,
      "weight": 945,
      "weight_diff": 11,
      "sled_kg": 530.0,
-     "popularity": 3,
+     "popularity": 2,
      "age": 2,
      "sex": "牡",
      "trainer": "松井浩（ばんえい）",
@@ -76508,14 +76506,13 @@
       ]
      },
      "place3_time_avg": 115.2,
-     "p_market": 0.1721,
-     "win_prob_blend": 0.1583,
-     "ev": 0.73,
+     "p_market": 0.1881,
+     "win_prob_blend": 0.1692,
+     "ev": 0.71,
      "ev_buy": false,
-     "win_prob_blend_v1_1": 0.1643,
-     "ev_v1_1": 0.76,
+     "win_prob_blend_v1_1": 0.1775,
+     "ev_v1_1": 0.75,
      "ev_buy_v1_1": false,
-     "win_prob_blend_bets_v1_1": 0.1644,
      "ev_streak": 0
     },
     {
@@ -76530,9 +76527,9 @@
      "rank_v2_prev": 4,
      "v2_prev_version": "v2.1",
      "win_prob_v1_2": 0.1423,
-     "odds": 8.8,
-     "position": null,
-     "result_time": null,
+     "odds": 7.5,
+     "position": 6,
+     "result_time": "2:23.1",
      "jockey": "中村太",
      "gate": 2,
      "weight": 945,
@@ -76720,14 +76717,13 @@
       ]
      },
      "place3_time_avg": 112.7,
-     "p_market": 0.09,
-     "win_prob_blend": 0.0994,
-     "ev": 0.87,
+     "p_market": 0.1054,
+     "win_prob_blend": 0.1111,
+     "ev": 0.83,
      "ev_buy": false,
-     "win_prob_blend_v1_1": 0.0954,
-     "ev_v1_1": 0.84,
+     "win_prob_blend_v1_1": 0.1089,
+     "ev_v1_1": 0.82,
      "ev_buy_v1_1": false,
-     "win_prob_blend_bets_v1_1": 0.1019,
      "ev_streak": 0
     },
     {
@@ -76742,9 +76738,9 @@
      "rank_v2_prev": 6,
      "v2_prev_version": "v2.1",
      "win_prob_v1_2": 0.0763,
-     "odds": 16.7,
-     "position": null,
-     "result_time": null,
+     "odds": 20.9,
+     "position": 3,
+     "result_time": "2:09.9",
      "jockey": "阿部優",
      "gate": 7,
      "weight": 856,
@@ -77070,14 +77066,13 @@
       ]
      },
      "place3_time_avg": 135.1,
-     "p_market": 0.0474,
-     "win_prob_blend": 0.0586,
-     "ev": 0.98,
-     "ev_buy": false,
-     "win_prob_blend_v1_1": 0.0536,
-     "ev_v1_1": 0.9,
+     "p_market": 0.0378,
+     "win_prob_blend": 0.051,
+     "ev": 1.07,
+     "ev_buy": true,
+     "win_prob_blend_v1_1": 0.045,
+     "ev_v1_1": 0.94,
      "ev_buy_v1_1": false,
-     "win_prob_blend_bets_v1_1": 0.06,
      "ev_streak": 0
     },
     {
@@ -77092,9 +77087,9 @@
      "rank_v2_prev": 5,
      "v2_prev_version": "v2.1",
      "win_prob_v1_2": 0.0794,
-     "odds": 8.9,
-     "position": null,
-     "result_time": null,
+     "odds": 9.3,
+     "position": 10,
+     "result_time": "3:18.6",
      "jockey": "菊池一",
      "gate": 3,
      "weight": 935,
@@ -77368,14 +77363,13 @@
       ]
      },
      "place3_time_avg": 119.5,
-     "p_market": 0.089,
-     "win_prob_blend": 0.0826,
-     "ev": 0.74,
+     "p_market": 0.085,
+     "win_prob_blend": 0.0809,
+     "ev": 0.75,
      "ev_buy": false,
-     "win_prob_blend_v1_1": 0.0854,
-     "ev_v1_1": 0.76,
+     "win_prob_blend_v1_1": 0.0828,
+     "ev_v1_1": 0.77,
      "ev_buy_v1_1": false,
-     "win_prob_blend_bets_v1_1": 0.0854,
      "ev_streak": 0
     },
     {
@@ -77390,9 +77384,9 @@
      "rank_v2_prev": 7,
      "v2_prev_version": "v2.1",
      "win_prob_v1_2": 0.0521,
-     "odds": 20.8,
-     "position": null,
-     "result_time": null,
+     "odds": 31.1,
+     "position": 7,
+     "result_time": "2:26.7",
      "jockey": "阿部武",
      "gate": 1,
      "weight": 930,
@@ -77416,8 +77410,8 @@
      "win_prob_v1": 0.0523,
      "rank_v1": 9,
      "win_ver": "v2",
-     "suspicion_direction": "not_sell",
-     "anauma_sell": false,
+     "suspicion_direction": "sell",
+     "anauma_sell": true,
      "place2": 0.136,
      "place3": 0.217,
      "ability": 42.1,
@@ -77695,14 +77689,13 @@
       ]
      },
      "place3_time_avg": 156.4,
-     "p_market": 0.0381,
-     "win_prob_blend": 0.0462,
-     "ev": 0.96,
-     "ev_buy": false,
-     "win_prob_blend_v1_1": 0.0426,
-     "ev_v1_1": 0.89,
+     "p_market": 0.0254,
+     "win_prob_blend": 0.0359,
+     "ev": 1.12,
+     "ev_buy": true,
+     "win_prob_blend_v1_1": 0.031,
+     "ev_v1_1": 0.96,
      "ev_buy_v1_1": false,
-     "win_prob_blend_bets_v1_1": 0.0434,
      "ev_streak": 0
     },
     {
@@ -77717,15 +77710,15 @@
      "rank_v2_prev": 8,
      "v2_prev_version": "v2.1",
      "win_prob_v1_2": 0.0762,
-     "odds": 42.3,
-     "position": null,
-     "result_time": null,
+     "odds": 32.9,
+     "position": 2,
+     "result_time": "2:09.1",
      "jockey": "金田利",
      "gate": 8,
      "weight": 993,
      "weight_diff": -1,
      "sled_kg": 530.0,
-     "popularity": 10,
+     "popularity": 8,
      "age": 2,
      "sex": "牡",
      "trainer": "服部義（ばんえい）",
@@ -77743,8 +77736,8 @@
      "win_prob_v1": 0.0758,
      "rank_v1": 7,
      "win_ver": "v2",
-     "suspicion_direction": "not_sell",
-     "anauma_sell": false,
+     "suspicion_direction": "sell",
+     "anauma_sell": true,
      "place2": 0.1176,
      "place3": 0.1888,
      "ability": 44.2,
@@ -77948,14 +77941,13 @@
       ]
      },
      "place3_time_avg": 107.2,
-     "p_market": 0.0187,
-     "win_prob_blend": 0.0277,
-     "ev": 1.17,
+     "p_market": 0.024,
+     "win_prob_blend": 0.0328,
+     "ev": 1.08,
      "ev_buy": true,
-     "win_prob_blend_v1_1": 0.0234,
-     "ev_v1_1": 0.99,
+     "win_prob_blend_v1_1": 0.0288,
+     "ev_v1_1": 0.95,
      "ev_buy_v1_1": false,
-     "win_prob_blend_bets_v1_1": 0.0217,
      "ev_streak": 3
     },
     {
@@ -77970,15 +77962,15 @@
      "rank_v2_prev": 9,
      "v2_prev_version": "v2.1",
      "win_prob_v1_2": 0.0531,
-     "odds": 30.2,
-     "position": null,
-     "result_time": null,
+     "odds": 54.1,
+     "position": 8,
+     "result_time": "2:45.6",
      "jockey": "西将太",
      "gate": 7,
      "weight": 843,
      "weight_diff": -5,
      "sled_kg": 510.0,
-     "popularity": 8,
+     "popularity": 9,
      "age": 2,
      "sex": "牝",
      "trainer": "平田義（ばんえい）",
@@ -78229,14 +78221,13 @@
       ]
      },
      "place3_time_avg": 132.5,
-     "p_market": 0.0262,
-     "win_prob_blend": 0.0304,
-     "ev": 0.92,
-     "ev_buy": false,
-     "win_prob_blend_v1_1": 0.0286,
-     "ev_v1_1": 0.86,
+     "p_market": 0.0146,
+     "win_prob_blend": 0.021,
+     "ev": 1.13,
+     "ev_buy": true,
+     "win_prob_blend_v1_1": 0.018,
+     "ev_v1_1": 0.97,
      "ev_buy_v1_1": false,
-     "win_prob_blend_bets_v1_1": 0.0266,
      "ev_streak": 0
     },
     {
@@ -78251,15 +78242,15 @@
      "rank_v2_prev": 10,
      "v2_prev_version": "v2.1",
      "win_prob_v1_2": 0.0138,
-     "odds": 36.4,
-     "position": null,
-     "result_time": null,
+     "odds": 67.2,
+     "position": 9,
+     "result_time": "2:51.9",
      "jockey": "大友一",
      "gate": 6,
      "weight": 1036,
      "weight_diff": 27,
      "sled_kg": 510.0,
-     "popularity": 9,
+     "popularity": 10,
      "age": 2,
      "sex": "牝",
      "trainer": "大友人（ばんえい）",
@@ -78533,14 +78524,13 @@
       ]
      },
      "place3_time_avg": 131.3,
-     "p_market": 0.0218,
-     "win_prob_blend": 0.0189,
-     "ev": 0.69,
+     "p_market": 0.0118,
+     "win_prob_blend": 0.0128,
+     "ev": 0.86,
      "ev_buy": false,
-     "win_prob_blend_v1_1": 0.0201,
-     "ev_v1_1": 0.73,
+     "win_prob_blend_v1_1": 0.0124,
+     "ev_v1_1": 0.83,
      "ev_buy_v1_1": false,
-     "win_prob_blend_bets_v1_1": 0.019,
      "ev_streak": 0
     }
    ],
@@ -78551,15 +78541,83 @@
     42000,
     23000
    ],
-   "bets": [
+   "payouts": [
+    {
+     "bet_type": "win",
+     "bet_type_jp": "単勝",
+     "combo": "10",
+     "payout": 200,
+     "popularity": 1
+    },
+    {
+     "bet_type": "place",
+     "bet_type_jp": "複勝",
+     "combo": "10",
+     "payout": 130,
+     "popularity": 1
+    },
+    {
+     "bet_type": "place",
+     "bet_type_jp": "複勝",
+     "combo": "8",
+     "payout": 290,
+     "popularity": 6
+    },
+    {
+     "bet_type": "place",
+     "bet_type_jp": "複勝",
+     "combo": "9",
+     "payout": 620,
+     "popularity": 8
+    },
     {
      "bet_type": "wide",
      "bet_type_jp": "ワイド",
-     "combo": "1-4",
-     "odds": 30.0,
-     "ev": 1.41,
-     "prob": 0.0589,
-     "stake": 3000
+     "combo": "8-10",
+     "payout": 630,
+     "popularity": 8
+    },
+    {
+     "bet_type": "wide",
+     "bet_type_jp": "ワイド",
+     "combo": "9-10",
+     "payout": 1200,
+     "popularity": 15
+    },
+    {
+     "bet_type": "wide",
+     "bet_type_jp": "ワイド",
+     "combo": "8-9",
+     "payout": 3320,
+     "popularity": 31
+    },
+    {
+     "bet_type": "quinella",
+     "bet_type_jp": "馬連",
+     "combo": "9-10",
+     "payout": 3280,
+     "popularity": 14
+    },
+    {
+     "bet_type": "exacta",
+     "bet_type_jp": "馬単",
+     "combo": "10→9",
+     "payout": 4480,
+     "popularity": 20
+    },
+    {
+     "bet_type": "trio",
+     "bet_type_jp": "三連複",
+     "combo": "8-9-10",
+     "payout": 8530,
+     "popularity": 28
+    },
+    {
+     "bet_type": "trifecta",
+     "bet_type_jp": "三連単",
+     "combo": "10→9→8",
+     "payout": 23550,
+     "popularity": 83
     }
    ],
    "track_offset": 8.7,
@@ -83259,10 +83317,10 @@
     33000,
     18000
    ],
-   "track_offset": 8.7,
-   "track_z": 3.13,
+   "track_offset": 12.5,
+   "track_z": 3.82,
    "track_label": "重",
-   "track_n": 3
+   "track_n": 4
   },
   {
    "date": "2026-10-04",
@@ -87398,10 +87456,10 @@
     33000,
     18000
    ],
-   "track_offset": 8.7,
-   "track_z": 3.13,
+   "track_offset": 12.5,
+   "track_z": 3.82,
    "track_label": "重",
-   "track_n": 3
+   "track_n": 4
   },
   {
    "date": "2026-10-04",
@@ -93422,10 +93480,10 @@
     36000,
     19000
    ],
-   "track_offset": 8.7,
-   "track_z": 3.13,
+   "track_offset": 12.5,
+   "track_z": 3.82,
    "track_label": "重",
-   "track_n": 3
+   "track_n": 4
   },
   {
    "date": "2026-10-04",
@@ -96176,10 +96234,10 @@
     56000,
     30000
    ],
-   "track_offset": 8.7,
-   "track_z": 3.13,
+   "track_offset": 12.5,
+   "track_z": 3.82,
    "track_label": "重",
-   "track_n": 3
+   "track_n": 4
   },
   {
    "date": "2026-10-04",
@@ -104301,10 +104359,10 @@
     37000,
     20000
    ],
-   "track_offset": 8.7,
-   "track_z": 3.13,
+   "track_offset": 12.5,
+   "track_z": 3.82,
    "track_label": "重",
-   "track_n": 3
+   "track_n": 4
   },
   {
    "date": "2026-10-04",
@@ -112432,10 +112490,10 @@
     37000,
     20000
    ],
-   "track_offset": 8.7,
-   "track_z": 3.13,
+   "track_offset": 12.5,
+   "track_z": 3.82,
    "track_label": "重",
-   "track_n": 3
+   "track_n": 4
   },
   {
    "date": "2026-10-04",
@@ -120098,10 +120156,10 @@
     102000,
     68000
    ],
-   "track_offset": 8.7,
-   "track_z": 3.13,
+   "track_offset": 12.5,
+   "track_z": 3.82,
    "track_label": "重",
-   "track_n": 3
+   "track_n": 4
   },
   {
    "date": "2026-10-04",
@@ -126894,10 +126952,10 @@
     46000,
     25000
    ],
-   "track_offset": 8.7,
-   "track_z": 3.13,
+   "track_offset": 12.5,
+   "track_z": 3.82,
    "track_label": "重",
-   "track_n": 3
+   "track_n": 4
   },
   {
    "date": "2026-10-05",
