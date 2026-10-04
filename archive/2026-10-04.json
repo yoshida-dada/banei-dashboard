@@ -1,6 +1,6 @@
 {
  "date": "2026-10-04",
- "archived_at": "2026-10-04 17:45",
+ "archived_at": "2026-10-04 17:47",
  "races": [
   {
    "date": "2026-10-04",
@@ -22380,7 +22380,7 @@
    "race_pattern": "通常",
    "race_pattern_gap12": 0.1026,
    "update_stage": "evscan",
-   "updated_at": "2026-10-04 17:45",
+   "updated_at": "2026-10-04 17:47",
    "horses": [
     {
      "num": 3,
@@ -24688,7 +24688,7 @@
      "win_prob_blend_v1_1": 0.0469,
      "ev_v1_1": 0.92,
      "ev_buy_v1_1": false,
-     "ev_streak": 1
+     "ev_streak": 2
     },
     {
      "num": 9,
@@ -25286,7 +25286,7 @@
      "win_prob_blend_v1_1": 0.049,
      "ev_v1_1": 0.91,
      "ev_buy_v1_1": false,
-     "ev_streak": 1
+     "ev_streak": 2
     },
     {
      "num": 10,
@@ -25895,8 +25895,8 @@
      "win_prob_v1": 0.0386,
      "rank_v1": 8,
      "win_ver": "v2",
-     "suspicion_direction": "sell",
-     "anauma_sell": true,
+     "suspicion_direction": "not_sell",
+     "anauma_sell": false,
      "place2": 0.114,
      "place3": 0.1888,
      "ability": 57.8,
@@ -26482,7 +26482,7 @@
      "win_prob_blend_v1_1": 0.0183,
      "ev_v1_1": 1.06,
      "ev_buy_v1_1": true,
-     "ev_streak": 1
+     "ev_streak": 2
     },
     {
      "num": 8,
@@ -27119,7 +27119,7 @@
      "win_prob_blend_v1_1": 0.0326,
      "ev_v1_1": 0.91,
      "ev_buy_v1_1": false,
-     "ev_streak": 1
+     "ev_streak": 2
     },
     {
      "num": 6,
@@ -28384,7 +28384,7 @@
      "win_prob_blend_v1_1": 0.0107,
      "ev_v1_1": 1.03,
      "ev_buy_v1_1": true,
-     "ev_streak": 1
+     "ev_streak": 2
     }
    ],
    "prize_positions": [
