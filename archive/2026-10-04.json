@@ -1,6 +1,6 @@
 {
  "date": "2026-10-04",
- "archived_at": "2026-10-04 17:24",
+ "archived_at": "2026-10-04 17:25",
  "races": [
   {
    "date": "2026-10-04",
@@ -18133,7 +18133,11 @@
      "payout": 9970,
      "popularity": 25
     }
-   ]
+   ],
+   "track_offset": 12.5,
+   "track_z": 3.82,
+   "track_label": "重",
+   "track_n": 4
   },
   {
    "date": "2026-10-04",
@@ -22296,39 +22300,39 @@
    "race_no": 7,
    "race_name": "賢哉くん祝２４歳記念Ｂ４－１混合",
    "class": "B4",
-   "moisture": null,
+   "moisture": 1.2,
    "field_size": 10,
    "post_time": "17:55",
    "win_time": null,
    "predicted_top": 3,
-   "market_fav": 10,
+   "market_fav": 3,
    "winner": null,
    "race_pattern": "通常",
-   "race_pattern_gap12": 0.046,
-   "update_stage": "pre",
-   "updated_at": "2026-10-04 12:30",
+   "race_pattern_gap12": 0.1027,
+   "update_stage": "moist",
+   "updated_at": "2026-10-04 17:25",
    "horses": [
     {
      "num": 3,
      "name": "クリスタルスペリオ",
-     "win_prob": 0.2924,
+     "win_prob": 0.324,
      "rank": 1,
-     "win_prob_v2": 0.2924,
+     "win_prob_v2": 0.324,
      "rank_v2": 1,
      "v2_version": "v2.2",
-     "win_prob_v2_prev": 0.2887,
+     "win_prob_v2_prev": 0.3249,
      "rank_v2_prev": 1,
      "v2_prev_version": "v2.1",
-     "win_prob_v1_2": 0.1571,
-     "odds": 0.0,
+     "win_prob_v1_2": 0.1664,
+     "odds": 2.9,
      "position": null,
      "result_time": null,
      "jockey": "鈴木恵",
      "gate": 3,
-     "weight": null,
-     "weight_diff": null,
+     "weight": 1112,
+     "weight_diff": 15,
      "sled_kg": 620.0,
-     "popularity": 6,
+     "popularity": 1,
      "age": 4,
      "sex": "牝",
      "trainer": "岩本利（ばんえい）",
@@ -22343,24 +22347,24 @@
      "horse_class": "B3",
      "year_form": 4.7,
      "promo_watch": null,
-     "win_prob_v1": 0.1573,
+     "win_prob_v1": 0.1661,
      "rank_v1": 2,
      "win_ver": "v2",
      "suspicion_direction": null,
      "anauma_sell": false,
-     "place2": 0.532,
-     "place3": 0.713,
+     "place2": 0.5734,
+     "place3": 0.7508,
      "ability": 59.6,
      "jockey_switched": false,
      "fh_avg": 66.0,
      "fh_min": 59.0,
      "fh_max": 73.0,
      "fh_n": 5,
-     "fh_cond_day": null,
-     "fh_cond_upto": null,
-     "fh_adj_avg": 75.4,
-     "fh_adj_min": 70.0,
-     "fh_adj_max": 81.6,
+     "fh_cond_day": 6.7,
+     "fh_cond_upto": 5,
+     "fh_adj_avg": 84.2,
+     "fh_adj_min": 80.4,
+     "fh_adj_max": 86.7,
      "fh_sled_delta": 16,
      "agari_avg": 35.9,
      "agari_n": 5,
@@ -22906,35 +22910,36 @@
       ]
      },
      "place3_time_avg": 108.0,
-     "p_market": null,
-     "win_prob_blend": null,
-     "ev": null,
+     "p_market": 0.2734,
+     "win_prob_blend": 0.3005,
+     "ev": 0.87,
      "ev_buy": false,
-     "win_prob_blend_v1_1": null,
-     "ev_v1_1": null,
-     "ev_buy_v1_1": false
+     "win_prob_blend_v1_1": 0.2898,
+     "ev_v1_1": 0.84,
+     "ev_buy_v1_1": false,
+     "ev_streak": 0
     },
     {
      "num": 1,
      "name": "オレニマカセロ",
-     "win_prob": 0.2464,
+     "win_prob": 0.2213,
      "rank": 2,
-     "win_prob_v2": 0.2464,
+     "win_prob_v2": 0.2213,
      "rank_v2": 2,
      "v2_version": "v2.2",
-     "win_prob_v2_prev": 0.1983,
+     "win_prob_v2_prev": 0.1793,
      "rank_v2_prev": 2,
      "v2_prev_version": "v2.1",
-     "win_prob_v1_2": 0.1832,
-     "odds": 0.0,
+     "win_prob_v1_2": 0.1895,
+     "odds": 7.8,
      "position": null,
      "result_time": null,
      "jockey": "松本秀",
      "gate": 1,
-     "weight": null,
-     "weight_diff": null,
+     "weight": 1127,
+     "weight_diff": -3,
      "sled_kg": 640.0,
-     "popularity": 6,
+     "popularity": 5,
      "age": 4,
      "sex": "牡",
      "trainer": "大橋和（ばんえい）",
@@ -22952,24 +22957,24 @@
       "position": 1,
       "next_class": "B2"
      },
-     "win_prob_v1": 0.1827,
+     "win_prob_v1": 0.1892,
      "rank_v1": 1,
      "win_ver": "v2",
      "suspicion_direction": null,
      "anauma_sell": false,
-     "place2": 0.4695,
-     "place3": 0.6529,
+     "place2": 0.4348,
+     "place3": 0.6183,
      "ability": 59.7,
      "jockey_switched": false,
      "fh_avg": 71.5,
      "fh_min": 60.0,
      "fh_max": 83.0,
      "fh_n": 4,
-     "fh_cond_day": null,
-     "fh_cond_upto": null,
-     "fh_adj_avg": 79.6,
-     "fh_adj_min": 73.9,
-     "fh_adj_max": 82.2,
+     "fh_cond_day": 6.7,
+     "fh_cond_upto": 5,
+     "fh_adj_avg": 90.3,
+     "fh_adj_min": 88.6,
+     "fh_adj_max": 91.2,
      "fh_sled_delta": 18,
      "agari_avg": 29.7,
      "agari_n": 4,
@@ -23545,630 +23550,34 @@
       ]
      },
      "place3_time_avg": 114.4,
-     "p_market": null,
-     "win_prob_blend": null,
-     "ev": null,
-     "ev_buy": false,
-     "win_prob_blend_v1_1": null,
-     "ev_v1_1": null,
-     "ev_buy_v1_1": false
-    },
-    {
-     "num": 9,
-     "name": "ドラゴンブライアン",
-     "win_prob": 0.0842,
-     "rank": 3,
-     "win_prob_v2": 0.0842,
-     "rank_v2": 3,
-     "v2_version": "v2.2",
-     "win_prob_v2_prev": 0.0825,
-     "rank_v2_prev": 5,
-     "v2_prev_version": "v2.1",
-     "win_prob_v1_2": 0.1008,
-     "odds": 12.8,
-     "position": null,
-     "result_time": null,
-     "jockey": "中原蓮",
-     "gate": 8,
-     "weight": null,
-     "weight_diff": null,
-     "sled_kg": 630.0,
-     "popularity": 3,
-     "age": 4,
-     "sex": "牡",
-     "trainer": "松井浩（ばんえい）",
-     "owner": "坂田秀一",
-     "elo": 1937,
-     "f_obstacle": 7.3,
-     "f_finish": 5.6,
-     "f_weight": 3.4,
-     "f_kuzure": 5.3,
-     "prize_program": 4147,
-     "prize_year": 1537,
-     "horse_class": "B4",
-     "year_form": 8.1,
-     "promo_watch": {
-      "position": 1,
-      "next_class": "B3"
-     },
-     "win_prob_v1": 0.1013,
-     "rank_v1": 6,
-     "win_ver": "v2",
-     "suspicion_direction": null,
-     "anauma_sell": false,
-     "place2": 0.1802,
-     "place3": 0.2908,
-     "ability": 58.6,
-     "jockey_switched": true,
-     "fh_avg": 69.8,
-     "fh_min": 62.0,
-     "fh_max": 82.0,
-     "fh_n": 5,
-     "fh_cond_day": null,
-     "fh_cond_upto": null,
-     "fh_adj_avg": 75.1,
-     "fh_adj_min": 67.3,
-     "fh_adj_max": 86.6,
-     "fh_sled_delta": 16,
-     "agari_avg": 37.2,
-     "agari_n": 5,
-     "insider_flag": false,
-     "insider_label_details": [],
-     "owner_flagged": false,
-     "sled_prev": 620.0,
-     "sled_diff": 10,
-     "jockey_record": [
-      0,
-      0,
-      1,
-      1
-     ],
-     "ren_n": 15,
-     "ren_time_avg": 119.8,
-     "ren_time_min": 87.2,
-     "ren_time_max": 142.4,
-     "ren_moist_avg": 1.53,
-     "ren_track_index": 1.68,
-     "ren_track_n": 15,
-     "past": [
-      {
-       "m": 0.9,
-       "p": 2,
-       "t": 123.9,
-       "wt": 111.8
-      },
-      {
-       "m": 1.3,
-       "p": 3,
-       "t": 107.4,
-       "wt": 103.3
-      },
-      {
-       "m": 1.3,
-       "p": 6,
-       "t": 107.8,
-       "wt": 92.9
-      },
-      {
-       "m": 3.0,
-       "p": 4,
-       "t": 94.0,
-       "wt": 87.8
-      },
-      {
-       "m": 2.6,
-       "p": 7,
-       "t": 101.8,
-       "wt": 93.3
-      },
-      {
-       "m": 0.8,
-       "p": 1,
-       "t": 105.5,
-       "wt": 105.5
-      },
-      {
-       "m": 3.7,
-       "p": 2,
-       "t": 87.2,
-       "wt": 83.8
-      },
-      {
-       "m": 3.6,
-       "p": 4,
-       "t": 89.0,
-       "wt": 84.2
-      },
-      {
-       "m": 0.7,
-       "p": 2,
-       "t": 111.2,
-       "wt": 108.5
-      },
-      {
-       "m": 0.7,
-       "p": 1,
-       "t": 108.7,
-       "wt": 108.7
-      },
-      {
-       "m": 1.4,
-       "p": 1,
-       "t": 111.8,
-       "wt": 111.8
-      },
-      {
-       "m": 1.2,
-       "p": 7,
-       "t": 129.4,
-       "wt": 114.6
-      },
-      {
-       "m": 1.2,
-       "p": 2,
-       "t": 137.1,
-       "wt": 135.5
-      },
-      {
-       "m": 1.3,
-       "p": 6,
-       "t": 139.3,
-       "wt": 123.9
-      },
-      {
-       "m": 3.1,
-       "p": 4,
-       "t": 139.5,
-       "wt": 120.5
-      },
-      {
-       "m": 2.2,
-       "p": 3,
-       "t": 132.0,
-       "wt": 125.0
-      },
-      {
-       "m": 2.4,
-       "p": 10,
-       "t": 133.0,
-       "wt": 111.7
-      },
-      {
-       "m": 3.0,
-       "p": 6,
-       "t": 112.8,
-       "wt": 95.6
-      },
-      {
-       "m": 2.9,
-       "p": 9,
-       "t": 126.4,
-       "wt": 103.5
-      },
-      {
-       "m": 1.5,
-       "p": 9,
-       "t": 136.9,
-       "wt": 105.5
-      },
-      {
-       "m": 2.1,
-       "p": 10,
-       "t": 167.4,
-       "wt": 117.3
-      },
-      {
-       "m": 2.5,
-       "p": 7,
-       "t": 101.2,
-       "wt": 84.5
-      },
-      {
-       "m": 1.5,
-       "p": 5,
-       "t": 113.3,
-       "wt": 98.9
-      },
-      {
-       "m": 1.4,
-       "p": 9,
-       "t": 136.3,
-       "wt": 105.8
-      },
-      {
-       "m": 1.7,
-       "p": 1,
-       "t": 118.5,
-       "wt": 118.5
-      },
-      {
-       "m": 1.7,
-       "p": 3,
-       "t": 134.8,
-       "wt": 134.0
-      },
-      {
-       "m": 1.7,
-       "p": 4,
-       "t": 132.1,
-       "wt": 129.7
-      },
-      {
-       "m": 1.8,
-       "p": 1,
-       "t": 142.4,
-       "wt": 142.4
-      },
-      {
-       "m": 2.2,
-       "p": 2,
-       "t": 125.1,
-       "wt": 119.7
-      },
-      {
-       "m": 0.5,
-       "p": 6,
-       "t": 147.5,
-       "wt": 128.1
-      },
-      {
-       "m": 0.5,
-       "p": 7,
-       "t": 142.6,
-       "wt": 129.2
-      },
-      {
-       "m": 0.9,
-       "p": 4,
-       "t": 119.4,
-       "wt": 111.4
-      },
-      {
-       "m": 1.1,
-       "p": 3,
-       "t": 128.2,
-       "wt": 120.3
-      },
-      {
-       "m": 1.2,
-       "p": 1,
-       "t": 137.0,
-       "wt": 137.0
-      },
-      {
-       "m": 2.0,
-       "p": 9,
-       "t": 168.9,
-       "wt": 136.1
-      },
-      {
-       "m": 2.1,
-       "p": 2,
-       "t": 126.5,
-       "wt": 126.1
-      },
-      {
-       "m": 1.1,
-       "p": 1,
-       "t": 128.7,
-       "wt": 128.7
-      },
-      {
-       "m": 2.5,
-       "p": 9,
-       "t": 149.3,
-       "wt": 131.2
-      },
-      {
-       "m": 2.7,
-       "p": 9,
-       "t": 134.3,
-       "wt": 110.8
-      },
-      {
-       "m": 1.2,
-       "p": 8,
-       "t": 155.9,
-       "wt": 124.8
-      },
-      {
-       "m": 2.5,
-       "p": 4,
-       "t": 104.6,
-       "wt": 101.9
-      },
-      {
-       "m": 1.2,
-       "p": 8,
-       "t": 133.3,
-       "wt": 110.7
-      },
-      {
-       "m": 1.3,
-       "p": 6,
-       "t": 134.3,
-       "wt": 119.4
-      },
-      {
-       "m": 2.1,
-       "p": 2,
-       "t": 118.8,
-       "wt": 115.8
-      },
-      {
-       "m": 2.2,
-       "p": 10,
-       "t": 201.5,
-       "wt": 123.4
-      },
-      {
-       "m": 2.4,
-       "p": 9,
-       "t": 135.4,
-       "wt": 111.2
-      },
-      {
-       "m": 1.8,
-       "p": 10,
-       "t": 181.0,
-       "wt": 115.0
-      },
-      {
-       "m": 1.0,
-       "p": 8,
-       "t": 126.8,
-       "wt": 99.9
-      },
-      {
-       "m": 1.6,
-       "p": 3,
-       "t": 130.5,
-       "wt": 120.1
-      },
-      {
-       "m": 2.0,
-       "p": 5,
-       "t": 112.6,
-       "wt": 90.7
-      },
-      {
-       "m": 1.4,
-       "p": 1,
-       "t": 114.7,
-       "wt": 114.7
-      }
-     ],
-     "trend": [
-      {
-       "d": "2026-05-16",
-       "c": "C1",
-       "p": 1,
-       "n": 10,
-       "g": 0.0,
-       "gs": 6.6,
-       "fh": 72.0,
-       "lh": 36.7,
-       "bw": 1038,
-       "sl": 580.0,
-       "m": 0.7,
-       "rz": 1.35,
-       "t": 108.7,
-       "mk": null,
-       "il": 0
-      },
-      {
-       "d": "2026-06-01",
-       "c": "C1",
-       "p": 2,
-       "n": 9,
-       "g": 2.7,
-       "gs": -2.7,
-       "fh": 72.0,
-       "lh": 39.2,
-       "bw": 1047,
-       "sl": 590.0,
-       "m": 0.7,
-       "rz": 1.62,
-       "t": 111.2,
-       "mk": null,
-       "il": 0
-      },
-      {
-       "d": "2026-06-08",
-       "c": "B4",
-       "p": 4,
-       "n": 10,
-       "g": 4.8,
-       "gs": -4.8,
-       "fh": 55.0,
-       "lh": 34.0,
-       "bw": 1058,
-       "sl": 600.0,
-       "m": 3.6,
-       "rz": 0.81,
-       "t": 89.0,
-       "mk": null,
-       "il": 0
-      },
-      {
-       "d": "2026-06-27",
-       "c": "B4",
-       "p": 2,
-       "n": 10,
-       "g": 3.4,
-       "gs": -3.4,
-       "fh": 54.0,
-       "lh": 33.2,
-       "bw": 1065,
-       "sl": 600.0,
-       "m": 3.7,
-       "rz": 0.83,
-       "t": 87.2,
-       "mk": null,
-       "il": 0
-      },
-      {
-       "d": "2026-07-06",
-       "c": "B4",
-       "p": 1,
-       "n": 10,
-       "g": 0.0,
-       "gs": 3.4,
-       "fh": 70.0,
-       "lh": 35.5,
-       "bw": 1055,
-       "sl": 610.0,
-       "m": 0.8,
-       "rz": 1.02,
-       "t": 105.5,
-       "mk": null,
-       "il": 0
-      },
-      {
-       "d": "2026-07-20",
-       "c": "B4",
-       "p": 7,
-       "n": 10,
-       "g": 8.5,
-       "gs": -8.5,
-       "fh": 64.0,
-       "lh": 37.8,
-       "bw": 1050,
-       "sl": 610.0,
-       "m": 2.6,
-       "rz": 0.79,
-       "t": 101.8,
-       "mk": 1,
-       "il": 0
-      },
-      {
-       "d": "2026-08-01",
-       "c": "B4",
-       "p": 4,
-       "n": 10,
-       "g": 6.2,
-       "gs": -6.2,
-       "fh": 62.0,
-       "lh": 32.0,
-       "bw": 1041,
-       "sl": 610.0,
-       "m": 3.0,
-       "rz": 0.6,
-       "t": 94.0,
-       "mk": 3,
-       "il": 0
-      },
-      {
-       "d": "2026-08-17",
-       "c": "B3",
-       "p": 6,
-       "n": 10,
-       "g": 14.9,
-       "gs": -14.9,
-       "fh": 71.0,
-       "lh": 36.8,
-       "bw": 1029,
-       "sl": 610.0,
-       "m": 1.3,
-       "rz": 0.6,
-       "t": 107.8,
-       "mk": 3,
-       "il": 0
-      },
-      {
-       "d": "2026-08-31",
-       "c": "B4",
-       "p": 3,
-       "n": 10,
-       "g": 4.1,
-       "gs": -4.1,
-       "fh": 70.0,
-       "lh": 37.4,
-       "bw": 1043,
-       "sl": 620.0,
-       "m": 1.3,
-       "rz": 1.13,
-       "t": 107.4,
-       "mk": 5,
-       "il": 1
-      },
-      {
-       "d": "2026-09-12",
-       "c": "B4",
-       "p": 2,
-       "n": 10,
-       "g": 12.1,
-       "gs": -12.1,
-       "fh": 82.0,
-       "lh": 41.9,
-       "bw": 1038,
-       "sl": 620.0,
-       "m": 0.9,
-       "rz": 0.5,
-       "t": 123.9,
-       "mk": 2,
-       "il": 1
-      }
-     ],
-     "cond": {
-      "g": [
-       6,
-       0,
-       2
-      ],
-      "z": {
-       "in": {
-        "n": 21,
-        "top3": 10
-       },
-       "mid": {
-        "n": 18,
-        "top3": 8
-       },
-       "out": {
-        "n": 12,
-        "top3": 2
-       }
-      },
-      "j": [
-       2,
-       0,
-       1
-      ],
-      "c": [
-       51,
-       8,
-       20
-      ]
-     },
-     "place3_time_avg": 121.5,
-     "p_market": 0.0617,
-     "win_prob_blend": 0.1107,
-     "ev": 1.42,
+     "p_market": 0.1017,
+     "win_prob_blend": 0.1382,
+     "ev": 1.08,
      "ev_buy": true,
-     "win_prob_blend_v1_1": 0.0869,
-     "ev_v1_1": 1.11,
-     "ev_buy_v1_1": true
+     "win_prob_blend_v1_1": 0.1217,
+     "ev_v1_1": 0.95,
+     "ev_buy_v1_1": false,
+     "ev_streak": 1
     },
     {
      "num": 7,
      "name": "プリンセスミミ",
-     "win_prob": 0.0807,
-     "rank": 4,
-     "win_prob_v2": 0.0807,
-     "rank_v2": 4,
+     "win_prob": 0.0762,
+     "rank": 3,
+     "win_prob_v2": 0.0762,
+     "rank_v2": 3,
      "v2_version": "v2.2",
-     "win_prob_v2_prev": 0.1124,
+     "win_prob_v2_prev": 0.1034,
      "rank_v2_prev": 3,
      "v2_prev_version": "v2.1",
-     "win_prob_v1_2": 0.1407,
-     "odds": 2.1,
+     "win_prob_v1_2": 0.1363,
+     "odds": 4.8,
      "position": null,
      "result_time": null,
      "jockey": "今井千",
      "gate": 7,
-     "weight": null,
-     "weight_diff": null,
+     "weight": 1010,
+     "weight_diff": 6,
      "sled_kg": 600.0,
      "popularity": 2,
      "age": 3,
@@ -24185,24 +23594,24 @@
      "horse_class": "B4",
      "year_form": 5.6,
      "promo_watch": null,
-     "win_prob_v1": 0.1409,
+     "win_prob_v1": 0.136,
      "rank_v1": 3,
      "win_ver": "v2",
      "suspicion_direction": null,
      "anauma_sell": false,
-     "place2": 0.1731,
-     "place3": 0.28,
+     "place2": 0.1651,
+     "place3": 0.2689,
      "ability": 64.2,
      "jockey_switched": true,
      "fh_avg": 70.0,
      "fh_min": 60.0,
      "fh_max": 77.0,
      "fh_n": 4,
-     "fh_cond_day": null,
-     "fh_cond_upto": null,
-     "fh_adj_avg": 75.8,
-     "fh_adj_min": 65.5,
-     "fh_adj_max": 87.5,
+     "fh_cond_day": 6.7,
+     "fh_cond_upto": 5,
+     "fh_adj_avg": 86.2,
+     "fh_adj_min": 80.4,
+     "fh_adj_max": 95.9,
      "fh_sled_delta": 20,
      "agari_avg": 39.0,
      "agari_n": 4,
@@ -24586,35 +23995,36 @@
       ]
      },
      "place3_time_avg": 111.4,
-     "p_market": 0.3761,
-     "win_prob_blend": 0.3531,
-     "ev": 0.74,
+     "p_market": 0.1652,
+     "win_prob_blend": 0.1305,
+     "ev": 0.63,
      "ev_buy": false,
-     "win_prob_blend_v1_1": 0.366,
-     "ev_v1_1": 0.77,
-     "ev_buy_v1_1": false
+     "win_prob_blend_v1_1": 0.145,
+     "ev_v1_1": 0.7,
+     "ev_buy_v1_1": false,
+     "ev_streak": 0
     },
     {
      "num": 4,
      "name": "ツガルケッパレフジ",
-     "win_prob": 0.0669,
-     "rank": 5,
-     "win_prob_v2": 0.0669,
-     "rank_v2": 5,
+     "win_prob": 0.0746,
+     "rank": 4,
+     "win_prob_v2": 0.0746,
+     "rank_v2": 4,
      "v2_version": "v2.2",
-     "win_prob_v2_prev": 0.0833,
+     "win_prob_v2_prev": 0.094,
      "rank_v2_prev": 4,
      "v2_prev_version": "v2.1",
-     "win_prob_v1_2": 0.1024,
-     "odds": 12.8,
+     "win_prob_v1_2": 0.1095,
+     "odds": 10.3,
      "position": null,
      "result_time": null,
      "jockey": "島津新",
      "gate": 4,
-     "weight": null,
-     "weight_diff": null,
+     "weight": 1137,
+     "weight_diff": 15,
      "sled_kg": 630.0,
-     "popularity": 3,
+     "popularity": 7,
      "age": 4,
      "sex": "牡",
      "trainer": "長部幸（ばんえい）",
@@ -24632,24 +24042,24 @@
       "position": 1,
       "next_class": "B3"
      },
-     "win_prob_v1": 0.1023,
-     "rank_v1": 5,
+     "win_prob_v1": 0.1103,
+     "rank_v1": 4,
      "win_ver": "v2",
      "suspicion_direction": null,
      "anauma_sell": false,
-     "place2": 0.1446,
-     "place3": 0.2361,
+     "place2": 0.1618,
+     "place3": 0.2638,
      "ability": 61.4,
      "jockey_switched": true,
      "fh_avg": 65.2,
      "fh_min": 57.0,
      "fh_max": 74.0,
      "fh_n": 5,
-     "fh_cond_day": null,
-     "fh_cond_upto": null,
-     "fh_adj_avg": 73.3,
-     "fh_adj_min": 67.7,
-     "fh_adj_max": 80.6,
+     "fh_cond_day": 6.7,
+     "fh_cond_upto": 5,
+     "fh_adj_avg": 84.0,
+     "fh_adj_min": 81.2,
+     "fh_adj_max": 87.9,
      "fh_sled_delta": 26,
      "agari_avg": 40.3,
      "agari_n": 5,
@@ -25201,35 +24611,634 @@
       ]
      },
      "place3_time_avg": 117.5,
-     "p_market": 0.0617,
-     "win_prob_blend": 0.1021,
-     "ev": 1.31,
-     "ev_buy": true,
-     "win_prob_blend_v1_1": 0.083,
-     "ev_v1_1": 1.06,
-     "ev_buy_v1_1": true
+     "p_market": 0.077,
+     "win_prob_blend": 0.0788,
+     "ev": 0.81,
+     "ev_buy": false,
+     "win_prob_blend_v1_1": 0.0784,
+     "ev_v1_1": 0.81,
+     "ev_buy_v1_1": false,
+     "ev_streak": 0
+    },
+    {
+     "num": 9,
+     "name": "ドラゴンブライアン",
+     "win_prob": 0.0743,
+     "rank": 5,
+     "win_prob_v2": 0.0743,
+     "rank_v2": 5,
+     "v2_version": "v2.2",
+     "win_prob_v2_prev": 0.0726,
+     "rank_v2_prev": 5,
+     "v2_prev_version": "v2.1",
+     "win_prob_v1_2": 0.095,
+     "odds": 8.7,
+     "position": null,
+     "result_time": null,
+     "jockey": "中原蓮",
+     "gate": 8,
+     "weight": 1041,
+     "weight_diff": 3,
+     "sled_kg": 630.0,
+     "popularity": 6,
+     "age": 4,
+     "sex": "牡",
+     "trainer": "松井浩（ばんえい）",
+     "owner": "坂田秀一",
+     "elo": 1937,
+     "f_obstacle": 7.3,
+     "f_finish": 5.6,
+     "f_weight": 3.4,
+     "f_kuzure": 5.3,
+     "prize_program": 4147,
+     "prize_year": 1537,
+     "horse_class": "B4",
+     "year_form": 8.1,
+     "promo_watch": {
+      "position": 1,
+      "next_class": "B3"
+     },
+     "win_prob_v1": 0.0949,
+     "rank_v1": 6,
+     "win_ver": "v2",
+     "suspicion_direction": null,
+     "anauma_sell": false,
+     "place2": 0.1612,
+     "place3": 0.2628,
+     "ability": 58.6,
+     "jockey_switched": true,
+     "fh_avg": 69.8,
+     "fh_min": 62.0,
+     "fh_max": 82.0,
+     "fh_n": 5,
+     "fh_cond_day": 6.7,
+     "fh_cond_upto": 5,
+     "fh_adj_avg": 85.4,
+     "fh_adj_min": 80.3,
+     "fh_adj_max": 91.6,
+     "fh_sled_delta": 16,
+     "agari_avg": 37.2,
+     "agari_n": 5,
+     "insider_flag": false,
+     "insider_label_details": [],
+     "owner_flagged": false,
+     "sled_prev": 620.0,
+     "sled_diff": 10,
+     "jockey_record": [
+      0,
+      0,
+      1,
+      1
+     ],
+     "ren_n": 15,
+     "ren_time_avg": 119.8,
+     "ren_time_min": 87.2,
+     "ren_time_max": 142.4,
+     "ren_moist_avg": 1.53,
+     "ren_track_index": 1.68,
+     "ren_track_n": 15,
+     "past": [
+      {
+       "m": 0.9,
+       "p": 2,
+       "t": 123.9,
+       "wt": 111.8
+      },
+      {
+       "m": 1.3,
+       "p": 3,
+       "t": 107.4,
+       "wt": 103.3
+      },
+      {
+       "m": 1.3,
+       "p": 6,
+       "t": 107.8,
+       "wt": 92.9
+      },
+      {
+       "m": 3.0,
+       "p": 4,
+       "t": 94.0,
+       "wt": 87.8
+      },
+      {
+       "m": 2.6,
+       "p": 7,
+       "t": 101.8,
+       "wt": 93.3
+      },
+      {
+       "m": 0.8,
+       "p": 1,
+       "t": 105.5,
+       "wt": 105.5
+      },
+      {
+       "m": 3.7,
+       "p": 2,
+       "t": 87.2,
+       "wt": 83.8
+      },
+      {
+       "m": 3.6,
+       "p": 4,
+       "t": 89.0,
+       "wt": 84.2
+      },
+      {
+       "m": 0.7,
+       "p": 2,
+       "t": 111.2,
+       "wt": 108.5
+      },
+      {
+       "m": 0.7,
+       "p": 1,
+       "t": 108.7,
+       "wt": 108.7
+      },
+      {
+       "m": 1.4,
+       "p": 1,
+       "t": 111.8,
+       "wt": 111.8
+      },
+      {
+       "m": 1.2,
+       "p": 7,
+       "t": 129.4,
+       "wt": 114.6
+      },
+      {
+       "m": 1.2,
+       "p": 2,
+       "t": 137.1,
+       "wt": 135.5
+      },
+      {
+       "m": 1.3,
+       "p": 6,
+       "t": 139.3,
+       "wt": 123.9
+      },
+      {
+       "m": 3.1,
+       "p": 4,
+       "t": 139.5,
+       "wt": 120.5
+      },
+      {
+       "m": 2.2,
+       "p": 3,
+       "t": 132.0,
+       "wt": 125.0
+      },
+      {
+       "m": 2.4,
+       "p": 10,
+       "t": 133.0,
+       "wt": 111.7
+      },
+      {
+       "m": 3.0,
+       "p": 6,
+       "t": 112.8,
+       "wt": 95.6
+      },
+      {
+       "m": 2.9,
+       "p": 9,
+       "t": 126.4,
+       "wt": 103.5
+      },
+      {
+       "m": 1.5,
+       "p": 9,
+       "t": 136.9,
+       "wt": 105.5
+      },
+      {
+       "m": 2.1,
+       "p": 10,
+       "t": 167.4,
+       "wt": 117.3
+      },
+      {
+       "m": 2.5,
+       "p": 7,
+       "t": 101.2,
+       "wt": 84.5
+      },
+      {
+       "m": 1.5,
+       "p": 5,
+       "t": 113.3,
+       "wt": 98.9
+      },
+      {
+       "m": 1.4,
+       "p": 9,
+       "t": 136.3,
+       "wt": 105.8
+      },
+      {
+       "m": 1.7,
+       "p": 1,
+       "t": 118.5,
+       "wt": 118.5
+      },
+      {
+       "m": 1.7,
+       "p": 3,
+       "t": 134.8,
+       "wt": 134.0
+      },
+      {
+       "m": 1.7,
+       "p": 4,
+       "t": 132.1,
+       "wt": 129.7
+      },
+      {
+       "m": 1.8,
+       "p": 1,
+       "t": 142.4,
+       "wt": 142.4
+      },
+      {
+       "m": 2.2,
+       "p": 2,
+       "t": 125.1,
+       "wt": 119.7
+      },
+      {
+       "m": 0.5,
+       "p": 6,
+       "t": 147.5,
+       "wt": 128.1
+      },
+      {
+       "m": 0.5,
+       "p": 7,
+       "t": 142.6,
+       "wt": 129.2
+      },
+      {
+       "m": 0.9,
+       "p": 4,
+       "t": 119.4,
+       "wt": 111.4
+      },
+      {
+       "m": 1.1,
+       "p": 3,
+       "t": 128.2,
+       "wt": 120.3
+      },
+      {
+       "m": 1.2,
+       "p": 1,
+       "t": 137.0,
+       "wt": 137.0
+      },
+      {
+       "m": 2.0,
+       "p": 9,
+       "t": 168.9,
+       "wt": 136.1
+      },
+      {
+       "m": 2.1,
+       "p": 2,
+       "t": 126.5,
+       "wt": 126.1
+      },
+      {
+       "m": 1.1,
+       "p": 1,
+       "t": 128.7,
+       "wt": 128.7
+      },
+      {
+       "m": 2.5,
+       "p": 9,
+       "t": 149.3,
+       "wt": 131.2
+      },
+      {
+       "m": 2.7,
+       "p": 9,
+       "t": 134.3,
+       "wt": 110.8
+      },
+      {
+       "m": 1.2,
+       "p": 8,
+       "t": 155.9,
+       "wt": 124.8
+      },
+      {
+       "m": 2.5,
+       "p": 4,
+       "t": 104.6,
+       "wt": 101.9
+      },
+      {
+       "m": 1.2,
+       "p": 8,
+       "t": 133.3,
+       "wt": 110.7
+      },
+      {
+       "m": 1.3,
+       "p": 6,
+       "t": 134.3,
+       "wt": 119.4
+      },
+      {
+       "m": 2.1,
+       "p": 2,
+       "t": 118.8,
+       "wt": 115.8
+      },
+      {
+       "m": 2.2,
+       "p": 10,
+       "t": 201.5,
+       "wt": 123.4
+      },
+      {
+       "m": 2.4,
+       "p": 9,
+       "t": 135.4,
+       "wt": 111.2
+      },
+      {
+       "m": 1.8,
+       "p": 10,
+       "t": 181.0,
+       "wt": 115.0
+      },
+      {
+       "m": 1.0,
+       "p": 8,
+       "t": 126.8,
+       "wt": 99.9
+      },
+      {
+       "m": 1.6,
+       "p": 3,
+       "t": 130.5,
+       "wt": 120.1
+      },
+      {
+       "m": 2.0,
+       "p": 5,
+       "t": 112.6,
+       "wt": 90.7
+      },
+      {
+       "m": 1.4,
+       "p": 1,
+       "t": 114.7,
+       "wt": 114.7
+      }
+     ],
+     "trend": [
+      {
+       "d": "2026-05-16",
+       "c": "C1",
+       "p": 1,
+       "n": 10,
+       "g": 0.0,
+       "gs": 6.6,
+       "fh": 72.0,
+       "lh": 36.7,
+       "bw": 1038,
+       "sl": 580.0,
+       "m": 0.7,
+       "rz": 1.35,
+       "t": 108.7,
+       "mk": null,
+       "il": 0
+      },
+      {
+       "d": "2026-06-01",
+       "c": "C1",
+       "p": 2,
+       "n": 9,
+       "g": 2.7,
+       "gs": -2.7,
+       "fh": 72.0,
+       "lh": 39.2,
+       "bw": 1047,
+       "sl": 590.0,
+       "m": 0.7,
+       "rz": 1.62,
+       "t": 111.2,
+       "mk": null,
+       "il": 0
+      },
+      {
+       "d": "2026-06-08",
+       "c": "B4",
+       "p": 4,
+       "n": 10,
+       "g": 4.8,
+       "gs": -4.8,
+       "fh": 55.0,
+       "lh": 34.0,
+       "bw": 1058,
+       "sl": 600.0,
+       "m": 3.6,
+       "rz": 0.81,
+       "t": 89.0,
+       "mk": null,
+       "il": 0
+      },
+      {
+       "d": "2026-06-27",
+       "c": "B4",
+       "p": 2,
+       "n": 10,
+       "g": 3.4,
+       "gs": -3.4,
+       "fh": 54.0,
+       "lh": 33.2,
+       "bw": 1065,
+       "sl": 600.0,
+       "m": 3.7,
+       "rz": 0.83,
+       "t": 87.2,
+       "mk": null,
+       "il": 0
+      },
+      {
+       "d": "2026-07-06",
+       "c": "B4",
+       "p": 1,
+       "n": 10,
+       "g": 0.0,
+       "gs": 3.4,
+       "fh": 70.0,
+       "lh": 35.5,
+       "bw": 1055,
+       "sl": 610.0,
+       "m": 0.8,
+       "rz": 1.02,
+       "t": 105.5,
+       "mk": null,
+       "il": 0
+      },
+      {
+       "d": "2026-07-20",
+       "c": "B4",
+       "p": 7,
+       "n": 10,
+       "g": 8.5,
+       "gs": -8.5,
+       "fh": 64.0,
+       "lh": 37.8,
+       "bw": 1050,
+       "sl": 610.0,
+       "m": 2.6,
+       "rz": 0.79,
+       "t": 101.8,
+       "mk": 1,
+       "il": 0
+      },
+      {
+       "d": "2026-08-01",
+       "c": "B4",
+       "p": 4,
+       "n": 10,
+       "g": 6.2,
+       "gs": -6.2,
+       "fh": 62.0,
+       "lh": 32.0,
+       "bw": 1041,
+       "sl": 610.0,
+       "m": 3.0,
+       "rz": 0.6,
+       "t": 94.0,
+       "mk": 3,
+       "il": 0
+      },
+      {
+       "d": "2026-08-17",
+       "c": "B3",
+       "p": 6,
+       "n": 10,
+       "g": 14.9,
+       "gs": -14.9,
+       "fh": 71.0,
+       "lh": 36.8,
+       "bw": 1029,
+       "sl": 610.0,
+       "m": 1.3,
+       "rz": 0.6,
+       "t": 107.8,
+       "mk": 3,
+       "il": 0
+      },
+      {
+       "d": "2026-08-31",
+       "c": "B4",
+       "p": 3,
+       "n": 10,
+       "g": 4.1,
+       "gs": -4.1,
+       "fh": 70.0,
+       "lh": 37.4,
+       "bw": 1043,
+       "sl": 620.0,
+       "m": 1.3,
+       "rz": 1.13,
+       "t": 107.4,
+       "mk": 5,
+       "il": 1
+      },
+      {
+       "d": "2026-09-12",
+       "c": "B4",
+       "p": 2,
+       "n": 10,
+       "g": 12.1,
+       "gs": -12.1,
+       "fh": 82.0,
+       "lh": 41.9,
+       "bw": 1038,
+       "sl": 620.0,
+       "m": 0.9,
+       "rz": 0.5,
+       "t": 123.9,
+       "mk": 2,
+       "il": 1
+      }
+     ],
+     "cond": {
+      "g": [
+       6,
+       0,
+       2
+      ],
+      "z": {
+       "in": {
+        "n": 21,
+        "top3": 10
+       },
+       "mid": {
+        "n": 18,
+        "top3": 8
+       },
+       "out": {
+        "n": 12,
+        "top3": 2
+       }
+      },
+      "j": [
+       2,
+       0,
+       1
+      ],
+      "c": [
+       51,
+       8,
+       20
+      ]
+     },
+     "place3_time_avg": 121.5,
+     "p_market": 0.0911,
+     "win_prob_blend": 0.0879,
+     "ev": 0.76,
+     "ev_buy": false,
+     "win_prob_blend_v1_1": 0.0896,
+     "ev_v1_1": 0.78,
+     "ev_buy_v1_1": false,
+     "ev_streak": 0
     },
     {
      "num": 10,
      "name": "フクノハレルヤ",
-     "win_prob": 0.0626,
+     "win_prob": 0.0644,
      "rank": 6,
-     "win_prob_v2": 0.0626,
+     "win_prob_v2": 0.0644,
      "rank_v2": 6,
      "v2_version": "v2.2",
-     "win_prob_v2_prev": 0.0537,
+     "win_prob_v2_prev": 0.0545,
      "rank_v2_prev": 7,
      "v2_prev_version": "v2.1",
-     "win_prob_v1_2": 0.0986,
-     "odds": 1.8,
+     "win_prob_v1_2": 0.0989,
+     "odds": 7.3,
      "position": null,
      "result_time": null,
      "jockey": "中村太",
      "gate": 8,
-     "weight": null,
-     "weight_diff": null,
+     "weight": 1053,
+     "weight_diff": 10,
      "sled_kg": 610.0,
-     "popularity": 1,
+     "popularity": 3,
      "age": 4,
      "sex": "牝",
      "trainer": "服部義（ばんえい）",
@@ -25244,24 +25253,24 @@
      "horse_class": "B4",
      "year_form": 6.9,
      "promo_watch": null,
-     "win_prob_v1": 0.0983,
-     "rank_v1": 7,
+     "win_prob_v1": 0.0988,
+     "rank_v1": 5,
      "win_ver": "v2",
      "suspicion_direction": null,
      "anauma_sell": false,
-     "place2": 0.1356,
-     "place3": 0.2221,
+     "place2": 0.1404,
+     "place3": 0.2306,
      "ability": 63.4,
      "jockey_switched": true,
      "fh_avg": 61.2,
      "fh_min": 59.0,
      "fh_max": 65.0,
      "fh_n": 4,
-     "fh_cond_day": null,
-     "fh_cond_upto": null,
-     "fh_adj_avg": 72.5,
-     "fh_adj_min": 64.9,
-     "fh_adj_max": 79.2,
+     "fh_cond_day": 6.7,
+     "fh_cond_upto": 5,
+     "fh_adj_avg": 85.1,
+     "fh_adj_min": 80.2,
+     "fh_adj_max": 90.4,
      "fh_sled_delta": 28,
      "agari_avg": 35.2,
      "agari_n": 4,
@@ -25766,35 +25775,666 @@
       ]
      },
      "place3_time_avg": 115.9,
-     "p_market": 0.4388,
-     "win_prob_blend": 0.3571,
-     "ev": 0.64,
+     "p_market": 0.1086,
+     "win_prob_blend": 0.0937,
+     "ev": 0.68,
      "ev_buy": false,
-     "win_prob_blend_v1_1": 0.3935,
-     "ev_v1_1": 0.71,
-     "ev_buy_v1_1": false
+     "win_prob_blend_v1_1": 0.1002,
+     "ev_v1_1": 0.73,
+     "ev_buy_v1_1": false,
+     "ev_streak": 0
+    },
+    {
+     "num": 5,
+     "name": "マツサンブラック",
+     "win_prob": 0.0522,
+     "rank": 7,
+     "win_prob_v2": 0.0522,
+     "rank_v2": 7,
+     "v2_version": "v2.2",
+     "win_prob_v2_prev": 0.0433,
+     "rank_v2_prev": 8,
+     "v2_prev_version": "v2.1",
+     "win_prob_v1_2": 0.0385,
+     "odds": 42.6,
+     "position": null,
+     "result_time": null,
+     "jockey": "西将太",
+     "gate": 5,
+     "weight": 1097,
+     "weight_diff": 21,
+     "sled_kg": 610.0,
+     "popularity": 9,
+     "age": 4,
+     "sex": "牝",
+     "trainer": "槻舘重（ばんえい）",
+     "owner": "松井紀行",
+     "elo": 1671,
+     "f_obstacle": 6.9,
+     "f_finish": 5.9,
+     "f_weight": 3.4,
+     "f_kuzure": 5.8,
+     "prize_program": 4060,
+     "prize_year": 1070,
+     "horse_class": "B4",
+     "year_form": 2.0,
+     "promo_watch": {
+      "position": 1,
+      "next_class": "B3"
+     },
+     "win_prob_v1": 0.0386,
+     "rank_v1": 8,
+     "win_ver": "v2",
+     "suspicion_direction": null,
+     "anauma_sell": false,
+     "place2": 0.1145,
+     "place3": 0.1897,
+     "ability": 57.8,
+     "jockey_switched": true,
+     "fh_avg": 76.6,
+     "fh_min": 64.0,
+     "fh_max": 92.0,
+     "fh_n": 5,
+     "fh_cond_day": 6.7,
+     "fh_cond_upto": 5,
+     "fh_adj_avg": 89.2,
+     "fh_adj_min": 82.3,
+     "fh_adj_max": 101.6,
+     "fh_sled_delta": 16,
+     "agari_avg": 36.4,
+     "agari_n": 5,
+     "insider_flag": true,
+     "insider_label_details": [
+      {
+       "date": "2026-09-12",
+       "race_no": 9,
+       "label_type": "引き",
+       "note": "ペガサス仕掛け、マツサン引き"
+      },
+      {
+       "date": "2026-08-02",
+       "race_no": 8,
+       "label_type": "仕掛け",
+       "note": ""
+      }
+     ],
+     "owner_flagged": true,
+     "sled_prev": 600.0,
+     "sled_diff": 10,
+     "jockey_record": null,
+     "ren_n": 13,
+     "ren_time_avg": 114.4,
+     "ren_time_min": 95.2,
+     "ren_time_max": 149.9,
+     "ren_moist_avg": 1.55,
+     "ren_track_index": 0.6,
+     "ren_track_n": 13,
+     "past": [
+      {
+       "m": 0.9,
+       "p": 7,
+       "t": 131.7,
+       "wt": 111.8
+      },
+      {
+       "m": 1.3,
+       "p": 6,
+       "t": 115.0,
+       "wt": 103.3
+      },
+      {
+       "m": 0.6,
+       "p": 2,
+       "t": 99.2,
+       "wt": 96.1
+      },
+      {
+       "m": 2.2,
+       "p": 1,
+       "t": 95.2,
+       "wt": 95.2
+      },
+      {
+       "m": 1.0,
+       "p": 7,
+       "t": 123.7,
+       "wt": 115.0
+      },
+      {
+       "m": 0.8,
+       "p": 6,
+       "t": 121.0,
+       "wt": 102.9
+      },
+      {
+       "m": 2.3,
+       "p": 10,
+       "t": 105.8,
+       "wt": 92.2
+      },
+      {
+       "m": 0.9,
+       "p": 1,
+       "t": 111.2,
+       "wt": 111.2
+      },
+      {
+       "m": 0.5,
+       "p": 1,
+       "t": 110.1,
+       "wt": 110.1
+      },
+      {
+       "m": 2.6,
+       "p": 6,
+       "t": 110.2,
+       "wt": 100.9
+      },
+      {
+       "m": 2.9,
+       "p": 5,
+       "t": 114.1,
+       "wt": 102.6
+      },
+      {
+       "m": 0.8,
+       "p": 9,
+       "t": 144.4,
+       "wt": 120.9
+      },
+      {
+       "m": 2.0,
+       "p": 7,
+       "t": 141.5,
+       "wt": 117.6
+      },
+      {
+       "m": 4.0,
+       "p": 5,
+       "t": 107.7,
+       "wt": 99.8
+      },
+      {
+       "m": 1.3,
+       "p": 6,
+       "t": 127.7,
+       "wt": 114.4
+      },
+      {
+       "m": 2.2,
+       "p": 1,
+       "t": 125.0,
+       "wt": 125.0
+      },
+      {
+       "m": 2.4,
+       "p": 6,
+       "t": 121.1,
+       "wt": 111.7
+      },
+      {
+       "m": 3.0,
+       "p": 3,
+       "t": 99.4,
+       "wt": 95.6
+      },
+      {
+       "m": 2.9,
+       "p": 7,
+       "t": 120.5,
+       "wt": 103.5
+      },
+      {
+       "m": 2.3,
+       "p": 3,
+       "t": 134.8,
+       "wt": 116.3
+      },
+      {
+       "m": 2.6,
+       "p": 3,
+       "t": 111.5,
+       "wt": 107.3
+      },
+      {
+       "m": 2.0,
+       "p": 1,
+       "t": 117.5,
+       "wt": 117.5
+      },
+      {
+       "m": 1.4,
+       "p": 5,
+       "t": 117.9,
+       "wt": 104.2
+      },
+      {
+       "m": 1.6,
+       "p": 7,
+       "t": 116.7,
+       "wt": 91.2
+      },
+      {
+       "m": 1.3,
+       "p": 9,
+       "t": 153.4,
+       "wt": 111.8
+      },
+      {
+       "m": 1.7,
+       "p": 7,
+       "t": 132.7,
+       "wt": 118.5
+      },
+      {
+       "m": 1.6,
+       "p": 10,
+       "t": 125.8,
+       "wt": 93.8
+      },
+      {
+       "m": 2.3,
+       "p": 2,
+       "t": 124.7,
+       "wt": 115.0
+      },
+      {
+       "m": 1.7,
+       "p": 6,
+       "t": 165.8,
+       "wt": 124.6
+      },
+      {
+       "m": 1.0,
+       "p": 4,
+       "t": 145.8,
+       "wt": 129.3
+      },
+      {
+       "m": 0.8,
+       "p": 1,
+       "t": 133.5,
+       "wt": 133.5
+      },
+      {
+       "m": 1.1,
+       "p": 6,
+       "t": 132.2,
+       "wt": 120.3
+      },
+      {
+       "m": 2.2,
+       "p": 1,
+       "t": 116.0,
+       "wt": 116.0
+      },
+      {
+       "m": 2.1,
+       "p": 8,
+       "t": 143.9,
+       "wt": 122.6
+      },
+      {
+       "m": 1.2,
+       "p": 8,
+       "t": 127.2,
+       "wt": 106.2
+      },
+      {
+       "m": 1.1,
+       "p": 7,
+       "t": 134.5,
+       "wt": 102.5
+      },
+      {
+       "m": 2.5,
+       "p": 9,
+       "t": 207.1,
+       "wt": 142.7
+      },
+      {
+       "m": 1.2,
+       "p": 8,
+       "t": 133.2,
+       "wt": 109.5
+      },
+      {
+       "m": 1.3,
+       "p": 7,
+       "t": 115.2,
+       "wt": 96.5
+      },
+      {
+       "m": 1.7,
+       "p": 7,
+       "t": 96.7,
+       "wt": 77.5
+      },
+      {
+       "m": 1.5,
+       "p": 8,
+       "t": 101.4,
+       "wt": 72.7
+      },
+      {
+       "m": 1.4,
+       "p": 10,
+       "t": 136.0,
+       "wt": 91.0
+      },
+      {
+       "m": 1.8,
+       "p": 9,
+       "t": 108.1,
+       "wt": 83.8
+      },
+      {
+       "m": 1.3,
+       "p": 8,
+       "t": 136.7,
+       "wt": 104.8
+      },
+      {
+       "m": 1.9,
+       "p": 4,
+       "t": 108.0,
+       "wt": 102.3
+      },
+      {
+       "m": 2.2,
+       "p": 1,
+       "t": 104.3,
+       "wt": 104.3
+      },
+      {
+       "m": 1.6,
+       "p": 8,
+       "t": 141.3,
+       "wt": 105.7
+      },
+      {
+       "m": 1.8,
+       "p": 6,
+       "t": 123.8,
+       "wt": 103.2
+      },
+      {
+       "m": 1.9,
+       "p": 3,
+       "t": 109.8,
+       "wt": 106.4
+      },
+      {
+       "m": 1.6,
+       "p": 1,
+       "t": 98.3,
+       "wt": 98.3
+      },
+      {
+       "m": 0.9,
+       "p": 5,
+       "t": 120.7,
+       "wt": 111.2
+      },
+      {
+       "m": 1.3,
+       "p": 1,
+       "t": 102.8,
+       "wt": 102.8
+      },
+      {
+       "m": 2.4,
+       "p": 5,
+       "t": 100.7,
+       "wt": 87.7
+      },
+      {
+       "m": 1.6,
+       "p": 9,
+       "t": 143.3,
+       "wt": 98.7
+      },
+      {
+       "m": 1.3,
+       "p": 2,
+       "t": 149.9,
+       "wt": 125.6
+      }
+     ],
+     "trend": [
+      {
+       "d": "2026-05-09",
+       "c": "C1",
+       "p": 6,
+       "n": 10,
+       "g": 9.3,
+       "gs": -9.3,
+       "fh": 74.0,
+       "lh": 36.2,
+       "bw": 997,
+       "sl": 560.0,
+       "m": 2.6,
+       "rz": 0.28,
+       "t": 110.2,
+       "mk": null,
+       "il": 0
+      },
+      {
+       "d": "2026-05-24",
+       "c": "C1",
+       "p": 1,
+       "n": 9,
+       "g": 0.0,
+       "gs": 6.1,
+       "fh": 78.0,
+       "lh": 32.1,
+       "bw": 1016,
+       "sl": 570.0,
+       "m": 0.5,
+       "rz": 0.76,
+       "t": 110.1,
+       "mk": null,
+       "il": 0
+      },
+      {
+       "d": "2026-06-14",
+       "c": "C1",
+       "p": 1,
+       "n": 10,
+       "g": 0.0,
+       "gs": 9.9,
+       "fh": 77.0,
+       "lh": 34.2,
+       "bw": 1018,
+       "sl": 570.0,
+       "m": 0.9,
+       "rz": 1.2,
+       "t": 111.2,
+       "mk": null,
+       "il": 0
+      },
+      {
+       "d": "2026-06-22",
+       "c": "B4",
+       "p": 10,
+       "n": 10,
+       "g": 13.6,
+       "gs": -13.6,
+       "fh": 69.0,
+       "lh": 36.8,
+       "bw": 1035,
+       "sl": 580.0,
+       "m": 2.3,
+       "rz": 0.12,
+       "t": 105.8,
+       "mk": null,
+       "il": 0
+      },
+      {
+       "d": "2026-07-05",
+       "c": "B4",
+       "p": 6,
+       "n": 10,
+       "g": 18.1,
+       "gs": -18.1,
+       "fh": 83.0,
+       "lh": 38.0,
+       "bw": 1050,
+       "sl": 590.0,
+       "m": 0.8,
+       "rz": 0.5,
+       "t": 121.0,
+       "mk": null,
+       "il": 0
+      },
+      {
+       "d": "2026-07-27",
+       "c": "B4",
+       "p": 7,
+       "n": 10,
+       "g": 8.7,
+       "gs": -8.7,
+       "fh": 90.0,
+       "lh": 33.7,
+       "bw": 1060,
+       "sl": 590.0,
+       "m": 1.0,
+       "rz": 0.52,
+       "t": 123.7,
+       "mk": 2,
+       "il": 1
+      },
+      {
+       "d": "2026-08-02",
+       "c": "B4",
+       "p": 1,
+       "n": 10,
+       "g": 0.0,
+       "gs": 7.0,
+       "fh": 64.0,
+       "lh": 31.2,
+       "bw": 1044,
+       "sl": 590.0,
+       "m": 2.2,
+       "rz": 1.0,
+       "t": 95.2,
+       "mk": 5,
+       "il": 1
+      },
+      {
+       "d": "2026-08-24",
+       "c": "B4",
+       "p": 2,
+       "n": 10,
+       "g": 3.1,
+       "gs": -3.1,
+       "fh": 65.0,
+       "lh": 34.2,
+       "bw": 1059,
+       "sl": 590.0,
+       "m": 0.6,
+       "rz": 1.01,
+       "t": 99.2,
+       "mk": 7,
+       "il": 1
+      },
+      {
+       "d": "2026-08-31",
+       "c": "B4",
+       "p": 6,
+       "n": 10,
+       "g": 11.7,
+       "gs": -11.7,
+       "fh": 72.0,
+       "lh": 43.0,
+       "bw": 1075,
+       "sl": 600.0,
+       "m": 1.3,
+       "rz": 0.75,
+       "t": 115.0,
+       "mk": 4,
+       "il": 1
+      },
+      {
+       "d": "2026-09-12",
+       "c": "B4",
+       "p": 7,
+       "n": 10,
+       "g": 19.9,
+       "gs": -19.9,
+       "fh": 92.0,
+       "lh": 39.7,
+       "bw": 1076,
+       "sl": 600.0,
+       "m": 0.9,
+       "rz": 0.11,
+       "t": 131.7,
+       "mk": 3,
+       "il": 1
+      }
+     ],
+     "cond": {
+      "g": [
+       6,
+       2,
+       3
+      ],
+      "z": {
+       "in": {
+        "n": 21,
+        "top3": 8
+       },
+       "mid": {
+        "n": 15,
+        "top3": 4
+       },
+       "out": {
+        "n": 19,
+        "top3": 5
+       }
+      },
+      "j": [
+       0,
+       0,
+       0
+      ],
+      "c": [
+       55,
+       10,
+       17
+      ]
+     },
+     "place3_time_avg": 114.3,
+     "p_market": 0.0186,
+     "win_prob_blend": 0.0277,
+     "ev": 1.18,
+     "ev_buy": true,
+     "win_prob_blend_v1_1": 0.0234,
+     "ev_v1_1": 1.0,
+     "ev_buy_v1_1": false,
+     "ev_streak": 1
     },
     {
      "num": 8,
      "name": "ミオリブロッサム",
-     "win_prob": 0.0584,
-     "rank": 7,
-     "win_prob_v2": 0.0584,
-     "rank_v2": 7,
+     "win_prob": 0.0491,
+     "rank": 8,
+     "win_prob_v2": 0.0491,
+     "rank_v2": 8,
      "v2_version": "v2.2",
-     "win_prob_v2_prev": 0.0771,
+     "win_prob_v2_prev": 0.0625,
      "rank_v2_prev": 6,
      "v2_prev_version": "v2.1",
-     "win_prob_v1_2": 0.104,
-     "odds": 0.0,
+     "win_prob_v1_2": 0.0929,
+     "odds": 7.6,
      "position": null,
      "result_time": null,
      "jockey": "阿部優",
      "gate": 7,
-     "weight": null,
-     "weight_diff": null,
+     "weight": 972,
+     "weight_diff": 8,
      "sled_kg": 610.0,
-     "popularity": 6,
+     "popularity": 4,
      "age": 4,
      "sex": "牝",
      "trainer": "松井浩（ばんえい）",
@@ -25809,24 +26449,24 @@
      "horse_class": "B4",
      "year_form": 4.7,
      "promo_watch": null,
-     "win_prob_v1": 0.1044,
-     "rank_v1": 4,
+     "win_prob_v1": 0.093,
+     "rank_v1": 7,
      "win_ver": "v2",
      "suspicion_direction": null,
      "anauma_sell": false,
-     "place2": 0.1268,
-     "place3": 0.2082,
+     "place2": 0.1079,
+     "place3": 0.179,
      "ability": 65.3,
      "jockey_switched": true,
      "fh_avg": 70.2,
      "fh_min": 65.0,
      "fh_max": 75.0,
      "fh_n": 5,
-     "fh_cond_day": null,
-     "fh_cond_upto": null,
-     "fh_adj_avg": 82.1,
-     "fh_adj_min": 76.0,
-     "fh_adj_max": 89.2,
+     "fh_cond_day": 6.7,
+     "fh_cond_upto": 5,
+     "fh_adj_avg": 89.8,
+     "fh_adj_min": 81.8,
+     "fh_adj_max": 95.9,
      "fh_sled_delta": 26,
      "agari_avg": 38.2,
      "agari_n": 5,
@@ -26402,664 +27042,36 @@
       ]
      },
      "place3_time_avg": 119.3,
-     "p_market": null,
-     "win_prob_blend": null,
-     "ev": null,
+     "p_market": 0.1043,
+     "win_prob_blend": 0.083,
+     "ev": 0.63,
      "ev_buy": false,
-     "win_prob_blend_v1_1": null,
-     "ev_v1_1": null,
-     "ev_buy_v1_1": false
-    },
-    {
-     "num": 5,
-     "name": "マツサンブラック",
-     "win_prob": 0.0394,
-     "rank": 8,
-     "win_prob_v2": 0.0394,
-     "rank_v2": 8,
-     "v2_version": "v2.2",
-     "win_prob_v2_prev": 0.0322,
-     "rank_v2_prev": 9,
-     "v2_prev_version": "v2.1",
-     "win_prob_v1_2": 0.0363,
-     "odds": 0.0,
-     "position": null,
-     "result_time": null,
-     "jockey": "西将太",
-     "gate": 5,
-     "weight": null,
-     "weight_diff": null,
-     "sled_kg": 610.0,
-     "popularity": 6,
-     "age": 4,
-     "sex": "牝",
-     "trainer": "槻舘重（ばんえい）",
-     "owner": "松井紀行",
-     "elo": 1671,
-     "f_obstacle": 6.9,
-     "f_finish": 5.9,
-     "f_weight": 3.4,
-     "f_kuzure": 5.8,
-     "prize_program": 4060,
-     "prize_year": 1070,
-     "horse_class": "B4",
-     "year_form": 2.0,
-     "promo_watch": {
-      "position": 1,
-      "next_class": "B3"
-     },
-     "win_prob_v1": 0.0362,
-     "rank_v1": 10,
-     "win_ver": "v2",
-     "suspicion_direction": null,
-     "anauma_sell": false,
-     "place2": 0.0863,
-     "place3": 0.1436,
-     "ability": 57.8,
-     "jockey_switched": true,
-     "fh_avg": 76.6,
-     "fh_min": 64.0,
-     "fh_max": 92.0,
-     "fh_n": 5,
-     "fh_cond_day": null,
-     "fh_cond_upto": null,
-     "fh_adj_avg": 82.5,
-     "fh_adj_min": 71.0,
-     "fh_adj_max": 96.6,
-     "fh_sled_delta": 16,
-     "agari_avg": 36.4,
-     "agari_n": 5,
-     "insider_flag": true,
-     "insider_label_details": [
-      {
-       "date": "2026-09-12",
-       "race_no": 9,
-       "label_type": "引き",
-       "note": "ペガサス仕掛け、マツサン引き"
-      },
-      {
-       "date": "2026-08-02",
-       "race_no": 8,
-       "label_type": "仕掛け",
-       "note": ""
-      }
-     ],
-     "owner_flagged": true,
-     "sled_prev": 600.0,
-     "sled_diff": 10,
-     "jockey_record": null,
-     "ren_n": 13,
-     "ren_time_avg": 114.4,
-     "ren_time_min": 95.2,
-     "ren_time_max": 149.9,
-     "ren_moist_avg": 1.55,
-     "ren_track_index": 0.6,
-     "ren_track_n": 13,
-     "past": [
-      {
-       "m": 0.9,
-       "p": 7,
-       "t": 131.7,
-       "wt": 111.8
-      },
-      {
-       "m": 1.3,
-       "p": 6,
-       "t": 115.0,
-       "wt": 103.3
-      },
-      {
-       "m": 0.6,
-       "p": 2,
-       "t": 99.2,
-       "wt": 96.1
-      },
-      {
-       "m": 2.2,
-       "p": 1,
-       "t": 95.2,
-       "wt": 95.2
-      },
-      {
-       "m": 1.0,
-       "p": 7,
-       "t": 123.7,
-       "wt": 115.0
-      },
-      {
-       "m": 0.8,
-       "p": 6,
-       "t": 121.0,
-       "wt": 102.9
-      },
-      {
-       "m": 2.3,
-       "p": 10,
-       "t": 105.8,
-       "wt": 92.2
-      },
-      {
-       "m": 0.9,
-       "p": 1,
-       "t": 111.2,
-       "wt": 111.2
-      },
-      {
-       "m": 0.5,
-       "p": 1,
-       "t": 110.1,
-       "wt": 110.1
-      },
-      {
-       "m": 2.6,
-       "p": 6,
-       "t": 110.2,
-       "wt": 100.9
-      },
-      {
-       "m": 2.9,
-       "p": 5,
-       "t": 114.1,
-       "wt": 102.6
-      },
-      {
-       "m": 0.8,
-       "p": 9,
-       "t": 144.4,
-       "wt": 120.9
-      },
-      {
-       "m": 2.0,
-       "p": 7,
-       "t": 141.5,
-       "wt": 117.6
-      },
-      {
-       "m": 4.0,
-       "p": 5,
-       "t": 107.7,
-       "wt": 99.8
-      },
-      {
-       "m": 1.3,
-       "p": 6,
-       "t": 127.7,
-       "wt": 114.4
-      },
-      {
-       "m": 2.2,
-       "p": 1,
-       "t": 125.0,
-       "wt": 125.0
-      },
-      {
-       "m": 2.4,
-       "p": 6,
-       "t": 121.1,
-       "wt": 111.7
-      },
-      {
-       "m": 3.0,
-       "p": 3,
-       "t": 99.4,
-       "wt": 95.6
-      },
-      {
-       "m": 2.9,
-       "p": 7,
-       "t": 120.5,
-       "wt": 103.5
-      },
-      {
-       "m": 2.3,
-       "p": 3,
-       "t": 134.8,
-       "wt": 116.3
-      },
-      {
-       "m": 2.6,
-       "p": 3,
-       "t": 111.5,
-       "wt": 107.3
-      },
-      {
-       "m": 2.0,
-       "p": 1,
-       "t": 117.5,
-       "wt": 117.5
-      },
-      {
-       "m": 1.4,
-       "p": 5,
-       "t": 117.9,
-       "wt": 104.2
-      },
-      {
-       "m": 1.6,
-       "p": 7,
-       "t": 116.7,
-       "wt": 91.2
-      },
-      {
-       "m": 1.3,
-       "p": 9,
-       "t": 153.4,
-       "wt": 111.8
-      },
-      {
-       "m": 1.7,
-       "p": 7,
-       "t": 132.7,
-       "wt": 118.5
-      },
-      {
-       "m": 1.6,
-       "p": 10,
-       "t": 125.8,
-       "wt": 93.8
-      },
-      {
-       "m": 2.3,
-       "p": 2,
-       "t": 124.7,
-       "wt": 115.0
-      },
-      {
-       "m": 1.7,
-       "p": 6,
-       "t": 165.8,
-       "wt": 124.6
-      },
-      {
-       "m": 1.0,
-       "p": 4,
-       "t": 145.8,
-       "wt": 129.3
-      },
-      {
-       "m": 0.8,
-       "p": 1,
-       "t": 133.5,
-       "wt": 133.5
-      },
-      {
-       "m": 1.1,
-       "p": 6,
-       "t": 132.2,
-       "wt": 120.3
-      },
-      {
-       "m": 2.2,
-       "p": 1,
-       "t": 116.0,
-       "wt": 116.0
-      },
-      {
-       "m": 2.1,
-       "p": 8,
-       "t": 143.9,
-       "wt": 122.6
-      },
-      {
-       "m": 1.2,
-       "p": 8,
-       "t": 127.2,
-       "wt": 106.2
-      },
-      {
-       "m": 1.1,
-       "p": 7,
-       "t": 134.5,
-       "wt": 102.5
-      },
-      {
-       "m": 2.5,
-       "p": 9,
-       "t": 207.1,
-       "wt": 142.7
-      },
-      {
-       "m": 1.2,
-       "p": 8,
-       "t": 133.2,
-       "wt": 109.5
-      },
-      {
-       "m": 1.3,
-       "p": 7,
-       "t": 115.2,
-       "wt": 96.5
-      },
-      {
-       "m": 1.7,
-       "p": 7,
-       "t": 96.7,
-       "wt": 77.5
-      },
-      {
-       "m": 1.5,
-       "p": 8,
-       "t": 101.4,
-       "wt": 72.7
-      },
-      {
-       "m": 1.4,
-       "p": 10,
-       "t": 136.0,
-       "wt": 91.0
-      },
-      {
-       "m": 1.8,
-       "p": 9,
-       "t": 108.1,
-       "wt": 83.8
-      },
-      {
-       "m": 1.3,
-       "p": 8,
-       "t": 136.7,
-       "wt": 104.8
-      },
-      {
-       "m": 1.9,
-       "p": 4,
-       "t": 108.0,
-       "wt": 102.3
-      },
-      {
-       "m": 2.2,
-       "p": 1,
-       "t": 104.3,
-       "wt": 104.3
-      },
-      {
-       "m": 1.6,
-       "p": 8,
-       "t": 141.3,
-       "wt": 105.7
-      },
-      {
-       "m": 1.8,
-       "p": 6,
-       "t": 123.8,
-       "wt": 103.2
-      },
-      {
-       "m": 1.9,
-       "p": 3,
-       "t": 109.8,
-       "wt": 106.4
-      },
-      {
-       "m": 1.6,
-       "p": 1,
-       "t": 98.3,
-       "wt": 98.3
-      },
-      {
-       "m": 0.9,
-       "p": 5,
-       "t": 120.7,
-       "wt": 111.2
-      },
-      {
-       "m": 1.3,
-       "p": 1,
-       "t": 102.8,
-       "wt": 102.8
-      },
-      {
-       "m": 2.4,
-       "p": 5,
-       "t": 100.7,
-       "wt": 87.7
-      },
-      {
-       "m": 1.6,
-       "p": 9,
-       "t": 143.3,
-       "wt": 98.7
-      },
-      {
-       "m": 1.3,
-       "p": 2,
-       "t": 149.9,
-       "wt": 125.6
-      }
-     ],
-     "trend": [
-      {
-       "d": "2026-05-09",
-       "c": "C1",
-       "p": 6,
-       "n": 10,
-       "g": 9.3,
-       "gs": -9.3,
-       "fh": 74.0,
-       "lh": 36.2,
-       "bw": 997,
-       "sl": 560.0,
-       "m": 2.6,
-       "rz": 0.28,
-       "t": 110.2,
-       "mk": null,
-       "il": 0
-      },
-      {
-       "d": "2026-05-24",
-       "c": "C1",
-       "p": 1,
-       "n": 9,
-       "g": 0.0,
-       "gs": 6.1,
-       "fh": 78.0,
-       "lh": 32.1,
-       "bw": 1016,
-       "sl": 570.0,
-       "m": 0.5,
-       "rz": 0.76,
-       "t": 110.1,
-       "mk": null,
-       "il": 0
-      },
-      {
-       "d": "2026-06-14",
-       "c": "C1",
-       "p": 1,
-       "n": 10,
-       "g": 0.0,
-       "gs": 9.9,
-       "fh": 77.0,
-       "lh": 34.2,
-       "bw": 1018,
-       "sl": 570.0,
-       "m": 0.9,
-       "rz": 1.2,
-       "t": 111.2,
-       "mk": null,
-       "il": 0
-      },
-      {
-       "d": "2026-06-22",
-       "c": "B4",
-       "p": 10,
-       "n": 10,
-       "g": 13.6,
-       "gs": -13.6,
-       "fh": 69.0,
-       "lh": 36.8,
-       "bw": 1035,
-       "sl": 580.0,
-       "m": 2.3,
-       "rz": 0.12,
-       "t": 105.8,
-       "mk": null,
-       "il": 0
-      },
-      {
-       "d": "2026-07-05",
-       "c": "B4",
-       "p": 6,
-       "n": 10,
-       "g": 18.1,
-       "gs": -18.1,
-       "fh": 83.0,
-       "lh": 38.0,
-       "bw": 1050,
-       "sl": 590.0,
-       "m": 0.8,
-       "rz": 0.5,
-       "t": 121.0,
-       "mk": null,
-       "il": 0
-      },
-      {
-       "d": "2026-07-27",
-       "c": "B4",
-       "p": 7,
-       "n": 10,
-       "g": 8.7,
-       "gs": -8.7,
-       "fh": 90.0,
-       "lh": 33.7,
-       "bw": 1060,
-       "sl": 590.0,
-       "m": 1.0,
-       "rz": 0.52,
-       "t": 123.7,
-       "mk": 2,
-       "il": 1
-      },
-      {
-       "d": "2026-08-02",
-       "c": "B4",
-       "p": 1,
-       "n": 10,
-       "g": 0.0,
-       "gs": 7.0,
-       "fh": 64.0,
-       "lh": 31.2,
-       "bw": 1044,
-       "sl": 590.0,
-       "m": 2.2,
-       "rz": 1.0,
-       "t": 95.2,
-       "mk": 5,
-       "il": 1
-      },
-      {
-       "d": "2026-08-24",
-       "c": "B4",
-       "p": 2,
-       "n": 10,
-       "g": 3.1,
-       "gs": -3.1,
-       "fh": 65.0,
-       "lh": 34.2,
-       "bw": 1059,
-       "sl": 590.0,
-       "m": 0.6,
-       "rz": 1.01,
-       "t": 99.2,
-       "mk": 7,
-       "il": 1
-      },
-      {
-       "d": "2026-08-31",
-       "c": "B4",
-       "p": 6,
-       "n": 10,
-       "g": 11.7,
-       "gs": -11.7,
-       "fh": 72.0,
-       "lh": 43.0,
-       "bw": 1075,
-       "sl": 600.0,
-       "m": 1.3,
-       "rz": 0.75,
-       "t": 115.0,
-       "mk": 4,
-       "il": 1
-      },
-      {
-       "d": "2026-09-12",
-       "c": "B4",
-       "p": 7,
-       "n": 10,
-       "g": 19.9,
-       "gs": -19.9,
-       "fh": 92.0,
-       "lh": 39.7,
-       "bw": 1076,
-       "sl": 600.0,
-       "m": 0.9,
-       "rz": 0.11,
-       "t": 131.7,
-       "mk": 3,
-       "il": 1
-      }
-     ],
-     "cond": {
-      "g": [
-       6,
-       2,
-       3
-      ],
-      "z": {
-       "in": {
-        "n": 21,
-        "top3": 8
-       },
-       "mid": {
-        "n": 15,
-        "top3": 4
-       },
-       "out": {
-        "n": 19,
-        "top3": 5
-       }
-      },
-      "j": [
-       0,
-       0,
-       0
-      ],
-      "c": [
-       55,
-       10,
-       17
-      ]
-     },
-     "place3_time_avg": 114.3,
-     "p_market": null,
-     "win_prob_blend": null,
-     "ev": null,
-     "ev_buy": false,
-     "win_prob_blend_v1_1": null,
-     "ev_v1_1": null,
-     "ev_buy_v1_1": false
+     "win_prob_blend_v1_1": 0.0919,
+     "ev_v1_1": 0.7,
+     "ev_buy_v1_1": false,
+     "ev_streak": 0
     },
     {
      "num": 6,
      "name": "ミストレンタ",
-     "win_prob": 0.0394,
+     "win_prob": 0.0371,
      "rank": 9,
-     "win_prob_v2": 0.0394,
+     "win_prob_v2": 0.0371,
      "rank_v2": 9,
      "v2_version": "v2.2",
-     "win_prob_v2_prev": 0.0437,
-     "rank_v2_prev": 8,
+     "win_prob_v2_prev": 0.0409,
+     "rank_v2_prev": 9,
      "v2_prev_version": "v2.1",
-     "win_prob_v1_2": 0.0377,
-     "odds": 0.0,
+     "win_prob_v1_2": 0.0368,
+     "odds": 54.8,
      "position": null,
      "result_time": null,
      "jockey": "菊池一",
      "gate": 6,
-     "weight": null,
-     "weight_diff": null,
+     "weight": 1031,
+     "weight_diff": 9,
      "sled_kg": 610.0,
-     "popularity": 6,
+     "popularity": 10,
      "age": 4,
      "sex": "牝",
      "trainer": "岩本利（ばんえい）",
@@ -27074,24 +27086,24 @@
      "horse_class": "B4",
      "year_form": 2.1,
      "promo_watch": null,
-     "win_prob_v1": 0.0376,
+     "win_prob_v1": 0.0367,
      "rank_v1": 9,
      "win_ver": "v2",
      "suspicion_direction": null,
      "anauma_sell": false,
-     "place2": 0.0863,
-     "place3": 0.1436,
+     "place2": 0.082,
+     "place3": 0.1372,
      "ability": 56.5,
      "jockey_switched": false,
      "fh_avg": 75.3,
      "fh_min": 66.0,
      "fh_max": 82.0,
      "fh_n": 3,
-     "fh_cond_day": null,
-     "fh_cond_upto": null,
-     "fh_adj_avg": 82.2,
-     "fh_adj_min": 80.2,
-     "fh_adj_max": 85.0,
+     "fh_cond_day": 6.7,
+     "fh_cond_upto": 5,
+     "fh_adj_avg": 90.6,
+     "fh_adj_min": 83.5,
+     "fh_adj_max": 96.0,
      "fh_sled_delta": 17,
      "agari_avg": 42.5,
      "agari_n": 3,
@@ -27661,35 +27673,36 @@
       ]
      },
      "place3_time_avg": 128.2,
-     "p_market": null,
-     "win_prob_blend": null,
-     "ev": null,
-     "ev_buy": false,
-     "win_prob_blend_v1_1": null,
-     "ev_v1_1": null,
-     "ev_buy_v1_1": false
+     "p_market": 0.0145,
+     "win_prob_blend": 0.0208,
+     "ev": 1.14,
+     "ev_buy": true,
+     "win_prob_blend_v1_1": 0.0179,
+     "ev_v1_1": 0.98,
+     "ev_buy_v1_1": false,
+     "ev_streak": 1
     },
     {
      "num": 2,
      "name": "イチマツ",
-     "win_prob": 0.0298,
+     "win_prob": 0.0265,
      "rank": 10,
-     "win_prob_v2": 0.0298,
+     "win_prob_v2": 0.0265,
      "rank_v2": 10,
      "v2_version": "v2.2",
-     "win_prob_v2_prev": 0.028,
+     "win_prob_v2_prev": 0.0246,
      "rank_v2_prev": 10,
      "v2_prev_version": "v2.1",
-     "win_prob_v1_2": 0.0392,
-     "odds": 12.8,
+     "win_prob_v1_2": 0.0363,
+     "odds": 17.4,
      "position": null,
      "result_time": null,
      "jockey": "臼杵龍",
      "gate": 2,
-     "weight": null,
-     "weight_diff": null,
+     "weight": 1012,
+     "weight_diff": 9,
      "sled_kg": 620.0,
-     "popularity": 3,
+     "popularity": 8,
      "age": 4,
      "sex": "牡",
      "trainer": "大河和（ばんえい）",
@@ -27707,24 +27720,24 @@
       "position": 2,
       "next_class": "B3"
      },
-     "win_prob_v1": 0.0392,
-     "rank_v1": 8,
+     "win_prob_v1": 0.0363,
+     "rank_v1": 10,
      "win_ver": "v2",
      "suspicion_direction": null,
      "anauma_sell": false,
-     "place2": 0.0656,
-     "place3": 0.1098,
+     "place2": 0.0589,
+     "place3": 0.0991,
      "ability": 57.5,
      "jockey_switched": true,
      "fh_avg": 67.2,
      "fh_min": 58.0,
      "fh_max": 87.0,
      "fh_n": 4,
-     "fh_cond_day": null,
-     "fh_cond_upto": null,
-     "fh_adj_avg": 74.9,
-     "fh_adj_min": 62.3,
-     "fh_adj_max": 90.0,
+     "fh_cond_day": 6.7,
+     "fh_cond_upto": 5,
+     "fh_adj_avg": 85.4,
+     "fh_adj_min": 77.0,
+     "fh_adj_max": 97.3,
      "fh_sled_delta": 18,
      "agari_avg": 40.8,
      "agari_n": 4,
@@ -28294,13 +28307,14 @@
       ]
      },
      "place3_time_avg": 124.6,
-     "p_market": 0.0617,
-     "win_prob_blend": 0.077,
-     "ev": 0.99,
+     "p_market": 0.0456,
+     "win_prob_blend": 0.039,
+     "ev": 0.68,
      "ev_buy": false,
-     "win_prob_blend_v1_1": 0.0706,
-     "ev_v1_1": 0.9,
-     "ev_buy_v1_1": false
+     "win_prob_blend_v1_1": 0.0419,
+     "ev_v1_1": 0.73,
+     "ev_buy_v1_1": false,
+     "ev_streak": 0
     }
    ],
    "prize_positions": [
@@ -28309,11 +28323,7 @@
     69000,
     36000,
     19000
-   ],
-   "track_offset": 8.6,
-   "track_z": 3.11,
-   "track_label": "重",
-   "track_n": 5
+   ]
   },
   {
    "date": "2026-10-04",
