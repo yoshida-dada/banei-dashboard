@@ -140,6 +140,9 @@ header{padding-top:env(safe-area-inset-top)}
 .chip.trk-l{background:rgba(76,155,232,.16);color:#4c9be8}
 .chip.trk-h{background:rgba(240,136,62,.18);color:#d9822b}
 .chip.trk-s{background:rgba(127,127,127,.12);color:var(--muted)}
+.chip.pat-tight{background:var(--accent-soft);color:var(--accent);border-color:transparent;font-weight:700}
+.chip.pat-strong{background:var(--good-soft);color:var(--good);border-color:transparent;font-weight:700}
+.chip.pat-normal{color:var(--muted)}
 .assess{display:flex;align-items:center;gap:9px;margin-top:11px;font-size:.84rem;flex-wrap:wrap}
 .prizeline{margin-top:9px;font-size:.72rem;color:var(--muted);line-height:1.6}
 .assess .al{font-weight:800;padding:3px 12px;border-radius:999px;font-size:.82rem;white-space:nowrap}
@@ -273,6 +276,7 @@ table.ht .roi{color:color-mix(in srgb,var(--ev-hue) 78%,var(--ink));font-weight:
 .hname{font-weight:700;font-size:.94rem;min-width:0;display:flex;align-items:center;gap:2px}
 .hname .hname-txt{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0}
 .iflag{flex:none;font-size:.85em;cursor:pointer}
+.asell{flex:none;font-size:.85em}
 .tname.clickable,.hname.clickable{cursor:pointer}
 .tname.clickable .tname-txt,.hname.clickable .hname-txt{text-decoration:underline;text-decoration-color:var(--muted);text-underline-offset:2px}
 .iflagmodal{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:200;display:flex;align-items:center;justify-content:center;padding:16px}
@@ -328,6 +332,9 @@ table.ht .roi{color:color-mix(in srgb,var(--ev-hue) 78%,var(--ink));font-weight:
 .rbtbl tr.rbfocus td{font-weight:800;color:var(--ink)}
 .rbtbl tr.rbfocus .hnamelink{font-weight:800}
 .rbvideo{display:inline-block;margin:0 0 10px 8px;padding:4px 10px;border:1px solid var(--border);border-radius:7px;font-size:.7rem;color:var(--accent);text-decoration:none;font-weight:700}
+/* 予測モデル世代バッジ（2026-10-02）: 過去の印・成績が予測当時のどのモデルによるものかを示す */
+.mvbadge{display:inline-block;margin:0 0 10px 6px;padding:4px 9px;border:1px solid var(--border);border-radius:7px;font-size:.68rem;color:var(--muted);background:var(--surface)}
+.dtver{font-size:.72rem;color:var(--muted);white-space:nowrap}
 .rbtbl td.rbtop{color:var(--good);font-weight:800}
 .rbtbl .rbpick{color:var(--accent);font-weight:800;margin-left:3px}
 .hnamelink{cursor:pointer;text-decoration:underline;text-decoration-color:var(--muted);text-underline-offset:2px}
@@ -555,6 +562,10 @@ table.ht .numcell{display:inline-flex;align-items:center;gap:4px}
 .hmsales .slabn,.hmsales .slabn b{color:var(--abn);font-weight:800}
 .hmst{margin-left:auto;font-size:.72rem;color:var(--muted);font-variant-numeric:tabular-nums;white-space:nowrap}
 .hmst.hit{color:var(--good);font-weight:700}
+.hmpat{font-size:.66rem;font-weight:700;padding:1px 6px;border-radius:8px;white-space:nowrap}
+.hmpat-tight{background:var(--accent-soft);color:var(--accent)}
+.hmpat-strong{background:var(--good-soft);color:var(--good)}
+.hmpat-normal{background:var(--surface2);color:var(--muted);border:1px solid var(--border2)}
 .hmtbl{width:100%;border-collapse:collapse;font-size:.8rem}
 .hmtbl th{font-size:.64rem;color:var(--muted);font-weight:700;padding:5px 6px;text-align:center;border-bottom:1px solid var(--border2)}
 .hmtbl td{padding:6px;text-align:center;border-bottom:1px solid var(--border2);font-variant-numeric:tabular-nums}
@@ -698,6 +709,9 @@ table.ht .numcell{display:inline-flex;align-items:center;gap:4px}
 .lgtbl .lgname{white-space:normal;font-weight:600;max-width:190px;line-height:1.35}
 .lgtbl .lgpos{color:var(--good);font-weight:800}
 .lgtbl .lgneg{color:var(--muted);font-weight:700}
+/* モデル比較タブ（2026-10-01）: 差分セル・勝敗セルの色分け（tktbl内のtd.pos/neg共通） */
+.tktbl td.pos{color:var(--good);font-weight:700}
+.tktbl td.neg{color:var(--accent)}
 /* バックエンド（オッズ収集ポーラー）稼働表示バナー（P2） */
 .bestatus{display:flex;align-items:center;gap:8px;justify-content:center;font-size:12px;font-weight:700;padding:5px 10px;border-bottom:1px solid var(--line,#2a2a2a)}
 .bestatus .bdot{width:9px;height:9px;border-radius:50%;flex:none}
@@ -980,6 +994,7 @@ table.ht .numcell{display:inline-flex;align-items:center;gap:4px}
 <div class="wrap" id="baba" style="display:none"></div>
 <div class="wrap" id="sales" style="display:none"></div>
 <div class="wrap" id="track" style="display:none"></div>
+<div class="wrap" id="models" style="display:none"></div>
 <div class="wrap" id="labels" style="display:none"></div>
 <div class="wrap" id="adminGate" style="display:none"></div>
 <div class="wrap" id="changelog" style="display:none"></div>
@@ -1126,6 +1141,12 @@ const insiderFlagIcon = h => h.insider_flag
 // （前走の騎手と当日騎手を比較。前走情報が無い/不明な場合はfalse＝表示しない）。
 const jockeySwitchIcon = h => h.jockey_switched
   ? `<span class="jsw" title="乗り替わり（前走から騎手が変わっています）">⚠️</span>` : '';
+// 穴馬sellシグナル(2026-10-04): build_dashboard_data.pyがh.anauma_sellとして事前計算。
+// win_probランク4位以下かつ怪しさスコアのdirection='sell'(連系オッズが買われている方向)の馬。
+// 勝率9.03%(通常5.75%、not_sell比3倍、p<0.000001)と判明([[reference_banei_anauma_sell_signal]])。
+// 表示専用でwin_prob/rank/EVには使わない。締切前オッズ時系列が無い段階では出ない。
+const anaumaSellIcon = h => h.anauma_sell
+  ? `<span class="asell" title="穴馬sellシグナル: 印順位は低いが連系オッズに買われている動き(的中率は通常の約1.6倍、EVは未確定の実験的指標)">🕵️</span>` : '';
 // 入着すれば昇級する馬のウォッチ表示（P3-2拡張 Stage5、2026-08-24…2026-09-24）。
 // build_dashboard_data.pyがh.promo_watchとして事前計算（発走前から分かるレース固定属性のみ使用＝リーク無し）。
 // 2026-09-26修正: 全件同じ濃さだと「1着以内でないと昇級しない馬」と「5着以内でも昇級する馬」の
@@ -1212,6 +1233,7 @@ function render(){
   document.getElementById("meta").innerHTML =
     `<div class="meta"><div class="top"><span class="rname">${r.race_no}R ${r.race_name||''}</span></div>`
     +`<div class="chips"><span class="chip">クラス <b>${classLabel(r.class, r.horses)}</b></span>`
+    +racePatternBadge(r, true)
     +moistChip
     +trackChip
     +`<span class="chip">${r.field_size}頭</span>`
@@ -1502,28 +1524,47 @@ function past5Html(h){
 // 配列の並び=既定の列順（2026-09-26、ユーザー指定のレイアウトに合わせて並び替え）。
 // 賞金は内部データが千円単位。表では万円単位（小数が出る場合のみ1桁）で表示する。
 const manFmt = k => { const m=k/10; return (Number.isInteger(m)?m:Number(m.toFixed(1))).toLocaleString(); };
+// 現在表示中のレースの主予測バージョン（2026-10-01、列設定パネルの列名にバージョンを明記するため）。
+// h.win_ver（build_dashboard_data.pyが日付に応じて"v1"/"v2"をセット）を現在のレースから読む。
+// データ未取得時は既定(v1主・2026-09-26より前)にフォールバック。
+function currentWinVer(){
+  const r=get(); const h=(r&&r.horses||[]).find(x=>x.win_ver);
+  if(!h) return "v1";
+  // win_verは内部的な系統判定("v1"/"v2")。表示には実際のバージョン番号(例: v2.1)を使う
+  // （2026-10-01、fit_weights_v2.py --bump-versionによるバージョン管理対応）。
+  return h.win_ver==="v2" ? (h.v2_version||"v2") : "v1";
+}
+function refWinVer(){
+  // 参考列が表示するバージョン。2026-10-01以降は「主予測の直前バージョン」固定
+  // （fit_weights_v2.py --bump-versionで記録されたv2_prev_version）。無ければ「なし」。
+  const r=get(); const h=(r&&r.horses||[]).find(x=>x.v2_prev_version);
+  return h?h.v2_prev_version:"なし";
+}
 const COLS = [
   {key:"num", label:"馬番", always:true, th:'<th class="l">馬</th>',
    td:h=>`<td class="l"><span class="numcell">${medal(h.position)}<span class="tnum" style="${capStyle(h.gate)}">${h.num}</span></span></td>`},
   {key:"name", label:"馬名・馬齢・厩舎・馬主", always:true, th:'<th class="l">馬名 / 馬齢・厩舎・馬主</th>',
-   td:h=>`<td class="l"><div class="c2"><span class="tname clickable" data-num="${h.num}"><span class="tname-txt">${h.name||''}</span>${insiderFlagIcon(h)}</span><span class="tsub">${(h.sex||'')+(h.age!=null?h.age:'')}${h.trainer?'・'+cleanInst(h.trainer):''}</span>${h.owner&&h.owner!=='不明'?`<span class="tsub towner${h.owner_flagged?' flagged':''}"${h.owner_flagged?' title="この馬主は過去に八百長ラベル対象になったことがあります"':''}>${h.owner}</span>`:''}${promoWatchLine(h,"tsub")}</div></td>`},
+   td:h=>`<td class="l"><div class="c2"><span class="tname clickable" data-num="${h.num}"><span class="tname-txt">${h.name||''}</span>${insiderFlagIcon(h)}${anaumaSellIcon(h)}</span><span class="tsub">${(h.sex||'')+(h.age!=null?h.age:'')}${h.trainer?'・'+cleanInst(h.trainer):''}</span>${h.owner&&h.owner!=='不明'?`<span class="tsub towner${h.owner_flagged?' flagged':''}"${h.owner_flagged?' title="この馬主は過去に八百長ラベル対象になったことがあります"':''}>${h.owner}</span>`:''}${promoWatchLine(h,"tsub")}</div></td>`},
   {key:"jockey", label:"騎手・成績", th:'<th class="l">騎手 / 成績</th>',
    td:h=>`<td class="l"><div class="c2"><span class="tjk">${h.jockey||'—'}${jockeySwitchIcon(h)}</span><span class="tsub num">${recFmt(h.jockey_record)}</span></div></td>`},
   {key:"sled", label:"斤量", th:'<th>斤量</th>',
    td:h=>`<td class="num"><div class="c2 c2r"><span>${sledTop(h)}</span><span class="tsub num">${sledSub(h)}</span></div></td>`},
-  {key:"win", label:"勝率（主予測）", always:true, th:'<th title="主予測の勝率と予測順位。2026-09-26以降はv2（学習ウェイト）、それ以前はv1。▲▼=v1からの順位変化">勝率</th>',
+  {key:"win", label:()=>`勝率(${currentWinVer()})`, always:true, th:'<th title="主予測の勝率と予測順位。2026-09-26以降はv2（学習ウェイト）、それ以前はv1。▲▼=v1からの順位変化">勝率</th>',
    td:h=>{ if(h.win_prob==null) return `<td class="num"><span class="tsub">—</span></td>`;
      const v2=h.win_ver==="v2";
      const d=(v2&&h.rank!=null&&h.rank_v1!=null)?h.rank_v1-h.rank:0;
      const arrow=d>0?`<span class="v2up">▲${d}</span>`:(d<0?`<span class="v2dn">▼${-d}</span>`:"");
-     return `<td class="win-c num">${pct(h.win_prob)}<div class="tsub">${h.rank!=null?h.rank+'位':''}${v2?' <span class="verbadge">v2</span>':''}${arrow}</div></td>`; }},
+     return `<td class="win-c num">${pct(h.win_prob)}<div class="tsub">${h.rank!=null?h.rank+'位':''}${v2?` <span class="verbadge">${h.v2_version||'v2'}</span>`:''}${arrow}</div></td>`; }},
   {key:"form", label:"デキ", always:true, th:'<th title="直近走のzスコア(3走移動平均)推移から見た調子。表示専用、勝率計算には未反映">デキ</th>',
    td:h=>formTrendCellHtml(h.trend)},
-  {key:"winref", label:"勝率（参考：もう一方のバージョン）", th:'<th title="主予測でない側のバージョンの勝率と順位（v2主の日はv1、v1主の日はv2）">参考</th>',
-   td:h=>{ const v2=h.win_ver==="v2";
-     const p=v2?h.win_prob_v1:h.win_prob_v2, rk=v2?h.rank_v1:h.rank_v2;
-     if(p==null) return `<td class="num"><span class="tsub">—</span></td>`;
-     return `<td class="num">${pct(p)}<div class="tsub">${v2?'v1':'v2'} ${rk!=null?rk+'位':''}</div></td>`; }},
+  {key:"winref", label:()=>`勝率(${refWinVer()})`,
+   th:'<th title="主予測の直前バージョンでの勝率と順位（fit_weights_v2.py --bump-versionで新バージョンを記録した時だけ値が入る。モデル変更の影響を新旧比較する用途）">v2旧</th>',
+   td:h=>{ if(h.win_prob_v2_prev==null) return `<td class="num"><span class="tsub">—</span></td>`;
+     return `<td class="num">${pct(h.win_prob_v2_prev)}<div class="tsub">${h.v2_prev_version||''} ${h.rank_v2_prev!=null?h.rank_v2_prev+'位':''}</div></td>`; }},
+  {key:"winv1", label:"勝率(v1)",
+   th:'<th title="v1（手決めウェイト）での勝率と順位。主予測がv2系に切り替わった後も、手決めウェイト版の参考値として常に算出・保持している">v1</th>',
+   td:h=>{ if(h.win_prob_v1==null) return `<td class="num"><span class="tsub">—</span></td>`;
+     return `<td class="num">${pct(h.win_prob_v1)}<div class="tsub">${h.rank_v1!=null?h.rank_v1+'位':''}</div></td>`; }},
   {key:"abil", label:"能力/Elo", th:'<th>能力/Elo</th>',
    td:h=>`<td class="num"><div class="c2 c2r"><span class="abil">${h.ability!=null?h.ability.toFixed(1):'—'}</span><span class="tsub num">${h.elo!=null?h.elo:'—'}</span></div></td>`},
   {key:"obstacle", label:"障害力", th:'<th>障害</th>', td:h=>`<td class="num">${featSpan(h.f_obstacle)}</td>`},
@@ -1570,11 +1611,13 @@ function renderColsPanel(){
   const hidden=colHidden();
   const ord=orderedCols();
   p.innerHTML = `<div class="colshint">表示する列と順序（チェック=表示、▲▼で並び替え。この端末に保存・表ビューに適用）</div>`
-    + `<div class="collist">` + ord.map((c,i)=>
-        `<div class="colrow">`
-        +`<label class="colchk"><input type="checkbox" data-col="${c.key}" ${c.always?'checked disabled':(hidden.has(c.key)?'':'checked')}>${c.label}${c.always?' <span class="fixed">固定</span>':''}</label>`
+    + `<div class="collist">` + ord.map((c,i)=>{
+      const label=typeof c.label==="function"?c.label():c.label;
+      return `<div class="colrow">`
+        +`<label class="colchk"><input type="checkbox" data-col="${c.key}" ${c.always?'checked disabled':(hidden.has(c.key)?'':'checked')}>${label}${c.always?' <span class="fixed">固定</span>':''}</label>`
         +`<span class="colmove"><button class="mv" data-col="${c.key}" data-dir="-1" ${i===0?'disabled':''}>▲</button>`
-        +`<button class="mv" data-col="${c.key}" data-dir="1" ${i===ord.length-1?'disabled':''}>▼</button></span></div>`).join("")
+        +`<button class="mv" data-col="${c.key}" data-dir="1" ${i===ord.length-1?'disabled':''}>▼</button></span></div>`;
+    }).join("")
     + `</div><button class="colreset" id="colReset">既定の列・順序に戻す</button>`;
   p.querySelectorAll("input[data-col]:not([disabled])").forEach(cb=>cb.addEventListener("change",()=>{
     const h=colHidden(); if(cb.checked) h.delete(cb.dataset.col); else h.add(cb.dataset.col);
@@ -1615,7 +1658,7 @@ function cardView(hs, maxW, hasResult){
       : `<div class="aptline">連対履歴なし（適性データ不足）</div>`;
     return `<div class="horse ${isWin?'winner':''} ${scratched?'scratched':''} ${evCls(h)}">`
       +`<div class="hh">${medal(h.position)}<span class="rk">${h.rank}</span><span class="hnum num" style="${capStyle(h.gate)}">${h.num}</span>`
-      +`<span class="hnamewrap"><span class="hname clickable" data-num="${h.num}"><span class="hname-txt">${h.name||''}</span>${insiderFlagIcon(h)}</span>`
+      +`<span class="hnamewrap"><span class="hname clickable" data-num="${h.num}"><span class="hname-txt">${h.name||''}</span>${insiderFlagIcon(h)}${anaumaSellIcon(h)}</span>`
       +`<span class="hsub">${(h.sex||'')+(h.age!=null?h.age:'')}${h.trainer?' ・ '+cleanInst(h.trainer):''}</span>`
       +(h.owner&&h.owner!=='不明'?`<span class="hsub howner${h.owner_flagged?' flagged':''}"${h.owner_flagged?' title="この馬主は過去に八百長ラベル対象になったことがあります"':''}>${h.owner}</span>`:'')
       +promoWatchLine(h,"hsub")
@@ -2109,6 +2152,26 @@ const classLabel = (code, horses) => {
   const hi = CLASS_BAND_HI_K[code];
   return hi!=null ? `${code}(${(hi/10).toFixed(0)}万未満)` : code;
 };
+// 混戦度バッジ（2026-10-04、ユーザー要望）: build_dashboard_data.pyのrace_pattern
+// (◎-○のwin_prob差gap12から判定、全期間5,701Rバックテストのしきい値)をひと目で表示する。
+// 混戦(gap12<0.03)=◎の4着以下率46%だが単勝ROIは他帯より有意に高い、一強(gap12>=0.15)=
+// ◎の的中率が最も高い帯（詳細: docs/bet_construction_investigation_2026-10.md 5節）。
+const RACE_PATTERN_CSS = {"混戦": "tight", "通常": "normal", "一強": "strong"};
+const RACE_PATTERN_TITLE = {
+  "混戦": "混戦(◎-○の勝率差<3pt): 的中率は下がるが単勝ROIは他帯より有意に高い",
+  "通常": "通常(◎-○の勝率差3〜15pt未満)",
+  "一強": "一強(◎-○の勝率差15pt以上): ◎の的中率が最も高い帯",
+};
+// asChip=true: レース予測ページの.chips列に馴染む見た目(.chip.pat-*)。
+// false(既定): トップページのカード見出しに馴染む見た目(.hmpat.hmpat-*)。
+function racePatternBadge(r, asChip){
+  const pat = r && r.race_pattern;
+  if(!pat || !RACE_PATTERN_CSS[pat]) return "";
+  const gap = r.race_pattern_gap12;
+  const title = RACE_PATTERN_TITLE[pat] + (gap!=null ? `（gap=${(gap*100).toFixed(1)}pt）` : "");
+  const base = asChip ? "chip" : "hmpat", mod = asChip ? "pat-" : "hmpat-";
+  return `<span class="${base} ${mod}${RACE_PATTERN_CSS[pat]}" title="${title}">${pat}</span>`;
+}
 function refreshRaceData(){
   if(raceDataUpdating) return;
   raceDataUpdating=true; raceDataUpdateError=false; updateRaceRefreshUI();
@@ -2178,6 +2241,10 @@ checkVotingBackend(); setInterval(checkVotingBackend, 30000);
 // ===== 成績タブ（P2） =====
 const tkPct = v => v==null ? "—" : (v*100).toFixed(1)+"%";
 const tkRoi = v => v==null ? "—" : (v*100).toFixed(0)+"%";
+// 過去の印・成績がどの世代の予測モデルに基づくかを示すバッジ（2026-10-02、ユーザー要望）。
+// 印は予測当時のモデルのまま保存されるため、最新バージョンとは異なる場合がある。
+// レース結果タブ・日別成績モーダル・成績タブの日別テーブルで共通使用。
+const modelVerBadgeHtml = v => v ? `<span class="mvbadge" title="この印・成績は予測当時のモデル(${v})によるもので、最新バージョンとは異なる場合があります">予測モデル:${v}</span>` : "";
 function svgCalib(cal){
   const W=300,H=200,pad=28;
   const sx=v=>pad+(v/100)*(W-pad-8), sy=v=>H-pad-(v/100)*(H-pad-8);
@@ -2214,11 +2281,13 @@ function dailyTableHtml(daily){
     return `<tr class="dtrow" data-date="${d.date}"><td class="dtdate">${d.date.slice(5).replace('-','/')}(${wd})</td>`
       +`<td>${d.races}</td><td>${d.win_hits}</td>`
       +`<td><span class="dtwrate"><span class="dtbar"><i style="width:${w.toFixed(0)}%"></i></span>${tkPct(d.win_rate)}</span></td>`
-      +`<td>${tkPct(d.place_rate)}</td><td>${roiCell(d.win_roi)}</td><td>${roiCell(d.place_roi)}</td></tr>`;
+      +`<td>${tkPct(d.place_rate)}</td><td>${roiCell(d.win_roi)}</td><td>${roiCell(d.place_roi)}</td>`
+      +`<td class="dtver">${d.model_version||'—'}</td></tr>`;
   }).join("");
   return `<div class="tksect">📅 日別成績（直近${daily.length}開催日・AI本命の的中実績）</div>`
     +`<div class="dttblwrap"><table class="dttbl"><thead><tr>`
     +`<th>開催日</th><th>対象R</th><th>1着</th><th>勝率</th><th>複勝率</th><th>単勝回収率</th><th>複勝回収率</th>`
+    +`<th title="その日の予測に使われた主予測モデルの世代">予測モデル</th>`
     +`</tr></thead><tbody>${rows}</tbody></table></div>`
     +`<div class="tknote">開催日をタップすると、その日に予想したレースを1レースずつ確認できます。「1着」「勝率」「複勝率」はAI本命(予測1位)がそのまま1着/3着以内だった実績。回収率はAI本命を単勝・複勝100円ずつ買った場合（100%超＝黒字、緑太字）。「複勝回収率」が「—」の日は払戻データ未収集（後日反映）。</div>`;
 }
@@ -2372,7 +2441,7 @@ function renderHistModal(){
     }).join("");
     body.innerHTML=
       `<button class="histback" type="button" id="histBackBtn">← ${histState.date.slice(5).replace('-','/')}の一覧へ</button>`
-      +`<a class="rbvideo" href="http://keiba-lv-st.jp/movie/player?date=${histState.date.replace(/-/g,'')}&race=${race.race_no}&track=obihiro" target="_blank" rel="noopener">🎬 レース映像</a>`
+      +`<a class="rbvideo" href="http://keiba-lv-st.jp/movie/player?date=${histState.date.replace(/-/g,'')}&race=${race.race_no}&track=obihiro" target="_blank" rel="noopener">🎬 レース映像</a>${modelVerBadgeHtml(race.model_version)}`
       +`<div class="rbmeta">${race.race_name||''}${race.class?' ・'+race.class:''}`
       +`${race.moisture!=null?' ・馬場水分'+race.moisture+'%':''}${race.post_time?' ・発走'+race.post_time:''}${race.win_time?' ・決着'+race.win_time:''}</div>`
       +`<div class="rbtblwrap"><table class="rbtbl"><thead><tr><th>枠</th><th>番</th><th>着</th><th class="l">馬名</th><th>タイム</th>`
@@ -2787,7 +2856,7 @@ var NAV = {
   home: null,
   race: [["pred","予測"],["horses","馬別データ"]],
   analysis: [["results","レース結果"],["odds","オッズ分析"],["baba","馬場分析"],["sales","売上分析"]],
-  admin: [["track","成績"],["labels","八百長ラベル"]],
+  admin: [["track","成績"],["models","モデル比較"],["labels","八百長ラベル"]],
   changelog: null,   // ヘッダーの「変更履歴」ボタンから開く（2026-09-30、管理者メニューから移動）
   settings: null,
 };
@@ -2859,6 +2928,7 @@ function switchTop(t, sub, keepBack){
   const locked = t==="admin" && !adminUnlocked();   // 管理者メニューはパスワード入力後のみ
   show("adminGate", locked);
   show("track", t==="admin" && s==="track" && !locked);
+  show("models", t==="admin" && s==="models" && !locked);
   show("labels", t==="admin" && s==="labels" && !locked);
   show("changelog", t==="changelog");
   show("settings", t==="settings");
@@ -2877,6 +2947,7 @@ function switchTop(t, sub, keepBack){
   if(t==="analysis" && s==="baba") renderBaba();
   if(t==="analysis" && s==="sales") renderSales();
   if(t==="admin" && s==="track" && !locked && !window.__TRACK_LOADED) loadTracking();
+  if(t==="admin" && s==="models" && !locked && !window.__MODELS_LOADED) loadModelCompare();
   if(t==="admin" && s==="labels" && !locked && !window.__LABELS_LOADED) loadInsiderLabels();
   if(t==="changelog") renderChangelog();
   if(t==="settings") renderSettingsTab();
@@ -2967,7 +3038,7 @@ function drawHome(host, d, rs, live, list, prev, nextDay){
       const pos=h.position!=null?h.position:"—";
       return `<tr class="${h.position===1?'hmwin':''}"><td class="hmmkc">${mk}</td>`
         +`<td class="hmgate"><span class="hmn" style="${capStyle(h.gate)}">${h.num}</span></td>`
-        +`<td class="l"><span class="hlink" data-horse="${h.name||''}">${h.name||''}</span>${h.insider_flag?' <span title="過去5走以内に八百長ラベルあり">🚨</span>':''}</td>`
+        +`<td class="l"><span class="hlink" data-horse="${h.name||''}">${h.name||''}</span>${h.insider_flag?' <span title="過去5走以内に八百長ラベルあり">🚨</span>':''}${anaumaSellIcon(h)}</td>`
         +`<td class="hmwp">${h.win_prob!=null?(h.win_prob*100).toFixed(1)+'%':'—'}</td>`
         +`<td>${h.popularity??'—'}</td><td>${h.odds!=null?h.odds.toFixed(1):'—'}</td><td class="hmpos">${pos}</td></tr>`;
     }).join("");
@@ -2978,7 +3049,7 @@ function drawHome(host, d, rs, live, list, prev, nextDay){
     const isNext=live && next && r.race_no===next.race_no;
     return `<div class="hmcard${isNext?' next':''}">`
       +`<div class="hmch" data-r="${r.race_no}"><span class="hmrno">${r.race_no}R</span><span class="hmpt">${r.post_time?r.post_time+' 発走':''}</span>`
-      +`<span class="hmcls">${r.class?classLabel(r.class, r.horses):''}</span><span class="hmic" data-ic="${r.race_no}"></span>${st}</div>`
+      +`<span class="hmcls">${r.class?classLabel(r.class, r.horses):''}</span>${racePatternBadge(r)}<span class="hmic" data-ic="${r.race_no}"></span>${st}</div>`
       +`<table class="hmtbl"><thead><tr><th>印</th><th>馬番</th><th class="l">馬名</th><th>勝率</th><th>人気</th><th>単勝</th><th>着</th></tr></thead>`
       +`<tbody>${rows||'<tr><td colspan="7" class="tsub">印なし</td></tr>'}</tbody></table>`
       +`<div class="hmsales" data-sl="${r.race_no}" hidden></div>`
@@ -3000,7 +3071,7 @@ function drawHome(host, d, rs, live, list, prev, nextDay){
     +nav
     +`<div class="hmhead"><span class="hmdot"></span><span class="hmdate">帯広 ${d.slice(0,4)}/${d.slice(5).replace('-','/')}(${wd})</span>`
     +`<span class="hmcount">${rs.length}レース</span><span class="hmnext" id="hmNext"></span>`
-    +(rs.length?`<button class="hmall" id="hmAll">${allOpen?'この場を全部閉じる':'この場を全部開く'}</button>`:'')+`</div>`
+    +(rs.length?`<button class="hmall" id="hmAll">${allOpen?'この場を全部閉じる':'全て開く'}</button>`:'')+`</div>`
     +(cards?`<div class="hmgrid">${cards}</div>`:'<div class="meta">この日の予想データがありません。</div>');
   host.querySelectorAll(".hmch").forEach(el=>el.onclick=()=>{
     if(live){ curDate=d; curRno=+el.dataset.r; renderRacePills(); switchTop("race","pred"); sync(); }
@@ -3127,7 +3198,7 @@ function renderResultsPage(){
         +`<div class="rbmeta">${race.class?classLabel(race.class, race.horses):''}`
         +`${race.moisture!=null?' ・馬場水分'+race.moisture+'%':''}${race.post_time?' ・発走'+race.post_time:''}`
         +`${race.win_time?' ・決着'+race.win_time:''}</div>`
-        +`<a class="rbvideo" href="${vid}" target="_blank" rel="noopener">🎬 レース映像</a>`
+        +`<a class="rbvideo" href="${vid}" target="_blank" rel="noopener">🎬 レース映像</a>${modelVerBadgeHtml(race.model_version)}`
         +resultTableHtml(race.horses)
         +(race.has_marks?'':'<div class="tknote">この日は予想の保存が無いため印は表示されません（2026-07-11より前）。</div>')
         +'<div class="tknote">馬名をタップすると通算成績・過去成績・血統を表示します。</div>'
@@ -3172,6 +3243,159 @@ function loadTracking(){
   document.getElementById("track").innerHTML='<div class="meta">成績データ読込中…</div>';
   fetch("./tracking.json?t="+Date.now()).then(r=>r.json()).then(renderTrack)
     .catch(()=>{ document.getElementById("track").innerHTML='<div class="meta">成績データ(tracking.json)はまだありません。開催後に生成されます。</div>'; });
+}
+// ===== モデル比較タブ（管理者メニュー、2026-10-01）=====
+// archive/*.jsonの各モデルのwin_prob_*(v1/v2/v2_prev/v1.2)にDB確定着順を突き合わせた
+// build_model_compare.py の出力(model_compare.json)を表示する。「成績」タブ(renderTrack)と
+// 同じ設計・同じCSSクラスを流用した低コストな追加ビュー。
+function loadModelCompare(){
+  window.__MODELS_LOADED=true;
+  document.getElementById("models").innerHTML='<div class="mcsect" id="mcArchive"><div class="meta">モデル比較データ読込中…</div></div>'
+    +'<div class="mcsect" id="mcBacktest"></div>';
+  fetch("./model_compare.json?t="+Date.now()).then(r=>r.json()).then(renderModelCompare)
+    .catch(()=>{ document.getElementById("mcArchive").innerHTML='<div class="meta">モデル比較データ(model_compare.json)はまだありません。</div>'; });
+  loadModelCompareBacktest();
+}
+function renderModelCompare(MC){
+  const el=document.getElementById("mcArchive");
+  if(!MC || !(MC.models||[]).length){ el.innerHTML='<div class="meta">モデル比較データがありません。</div>'; return; }
+  const cls=v=>v==null?"":(v>=1?"pos":"neg");
+  const primary=MC.models.find(m=>m.key==="v2") || MC.models[0];
+  let html=`<div class="tkh">モデル比較</div>`
+    +`<div class="tksub">期間 ${MC.period.from||'—'} 〜 ${MC.period.to||'—'}（${MC.period.race_days}開催日・確定${MC.races_settled}レース中、各モデルの予測データがある範囲で集計）</div>`;
+  html+=`<div class="tiles">`+MC.models.map(m=>{
+    const isP=m.key===primary.key;
+    return `<div class="tile"><div class="tl">${m.label}${isP?'（主予測）':''} ◎的中率</div>`
+      +`<div class="tv ${cls(m.hit_rate!=null && m.hit_rate>=primary.hit_rate?1:0)}">${tkPct(m.hit_rate)}</div>`
+      +`<div class="tn">${m.hits}/${m.n}　単勝ROI ${tkRoi(m.roi)}</div></div>`;
+  }).join("")+`</div>`;
+  if(MC.races_settled<30 || Math.max(...MC.models.map(m=>m.n))<30)
+    html+=`<div class="tkwarn">⚠ モデルによってはサンプルが小さいため数値は暫定です。</div>`;
+
+  html+=`<div class="tksect">モデル別成績（${primary.label}=主予測との差分）</div>`
+    +`<table class="tktbl"><thead><tr><th>モデル</th><th>R数</th><th>◎的中率</th><th>差分</th><th>単勝ROI</th><th>差分</th></tr></thead><tbody>`;
+  MC.models.forEach(m=>{
+    const dHit = m.key===primary.key ? null : (m.hit_rate!=null && primary.hit_rate!=null ? m.hit_rate-primary.hit_rate : null);
+    const dRoi = m.key===primary.key ? null : (m.roi!=null && primary.roi!=null ? m.roi-primary.roi : null);
+    const fmtD=(v,fmt)=>v==null?"—":(v>0?"+":"")+fmt(v);
+    html+=`<tr><td>${m.label}${m.key===primary.key?' ⭐':''}</td><td>${m.n}</td>`
+      +`<td>${tkPct(m.hit_rate)}</td><td class="${dHit>0?'pos':dHit<0?'neg':''}">${fmtD(dHit,tkPct)}</td>`
+      +`<td>${tkRoi(m.roi)}</td><td class="${dRoi>0?'pos':dRoi<0?'neg':''}">${fmtD(dRoi,tkRoi)}</td></tr>`;
+  });
+  html+=`</tbody></table>`;
+
+  if((MC.pairs||[]).length){
+    html+=`<div class="tksect">予想が割れたレースの勝敗（${primary.label} vs 他モデル）</div>`
+      +`<table class="tktbl"><thead><tr><th>比較</th><th>共通R数</th><th>◎が別馬</th><th>主予測が勝ち</th><th>比較先が勝ち</th><th>どちらも外れ</th></tr></thead><tbody>`;
+    MC.pairs.forEach(p=>{
+      html+=`<tr><td>${p.a_label} vs ${p.b_label}</td><td>${p.n_common}</td><td>${p.n_diff}</td>`
+        +`<td class="pos">${p.a_win}</td><td class="neg">${p.b_win}</td><td>${p.neither}</td></tr>`;
+    });
+    html+=`</tbody></table><div class="tknote">「◎が別馬」件数のうちの内訳。両モデルとも予測データがあるレースのみが対象のため、R数はモデルごとに異なります。</div>`;
+  }
+
+  if((MC.disagreements||[]).length){
+    html+=`<div class="tksect">直近：予想が割れたレースの明細（最大50件）</div><div class="tblwrap"><table class="tktbl"><thead><tr><th>日付</th><th>R</th><th>比較</th><th>主予測◎</th><th>比較先◎</th><th>結果(1着)</th></tr></thead><tbody>`;
+    MC.disagreements.forEach(x=>{
+      const bLabel=(MC.models.find(m=>m.key===x.vs)||{}).label||x.vs;
+      const aHit=x.winner_num===x.a_num, bHit=x.winner_num===x.b_num;
+      html+=`<tr><td>${x.date.slice(5).replace('-','/')}</td><td>${x.race_no}R</td><td>${primary.label} vs ${bLabel}</td>`
+        +`<td class="${aHit?'pos':''}">${x.a_num} ${x.a_name||''}</td>`
+        +`<td class="${bHit?'pos':''}">${x.b_num} ${x.b_name||''}</td>`
+        +`<td>${x.winner_num??'—'} ${x.winner_name||''}</td></tr>`;
+    });
+    html+=`</tbody></table></div>`;
+  }
+  html+=`<div class="foot">archive/*.json の各モデル予測に、DB の確定着順を突き合わせて集計。v2(旧)/v1.2は2026-10-01以降に生成されたarchiveのみ対象のためR数が少なめです。生成 ${(MC.generated||'').replace('T',' ').slice(0,16)}</div>`;
+  el.innerHTML=html;
+}
+// ----- 大規模バックテスト比較（2026-10-01、build_model_compare_backtest.py）-----
+// archiveベースの実運用トラッキングはサンプルが小さいため、holdout期間(2026年〜)を
+// as_ofスコアリングで再現した大サンプル(約1300R)の比較を別セクションとして追加。
+// v2.1相当/v2.0相当はtrain期間(〜2025年)だけで再学習した係数（本番ファイルそのものではない。
+// 本番は2026-09-30まで学習済みのため、holdoutにそのまま使うとリークになるため）。
+// 期間フィルタは「馬券ロジック検証」(renderLogic)と同じプリセット+セレクトのUIを流用。
+window.__MCBT=null;
+let mcbtFrom=null, mcbtTo=null;
+function loadModelCompareBacktest(){
+  const el=document.getElementById("mcBacktest");
+  el.innerHTML='<div class="tksect">大規模バックテスト比較（2026年〜）</div><div class="tknote">読込中…</div>';
+  fetch("./model_compare_backtest.json?t="+Date.now()).then(r=>r.json()).then(BT=>{ window.__MCBT=BT; renderMCBT(); })
+    .catch(()=>{ el.innerHTML='<div class="tksect">大規模バックテスト比較（2026年〜）</div>'
+      +'<div class="tknote">データ(model_compare_backtest.json)はまだありません。生成には30分程度かかります（build_model_compare_backtest.py）。</div>'; });
+}
+function mcbtAgg(records, keys, from, to){
+  const agg={}; keys.forEach(k=>agg[k]={n:0,hits:0,stake:0,ret:0});
+  records.forEach(r=>{
+    if(r.date<from||r.date>to) return;
+    keys.forEach(k=>{ const p=r[k]; if(!p) return; const a=agg[k];
+      a.n++; if(p.hit) a.hits++;
+      if(p.odds){ a.stake+=100; if(p.hit) a.ret+=100*p.odds; } });
+  });
+  return agg;
+}
+function renderMCBT(){
+  const el=document.getElementById("mcBacktest");
+  const BT=window.__MCBT;
+  if(!BT || !(BT.records||[]).length){ el.innerHTML='<div class="tksect">大規模バックテスト比較（2026年〜）</div><div class="tknote">データがありません。</div>'; return; }
+  const dates=[...new Set(BT.records.map(r=>r.date))].sort();
+  if(!mcbtFrom || dates.indexOf(mcbtFrom)<0) mcbtFrom=dates[0];
+  if(!mcbtTo || dates.indexOf(mcbtTo)<0) mcbtTo=dates[dates.length-1];
+  if(mcbtFrom>mcbtTo){ const t=mcbtFrom; mcbtFrom=mcbtTo; mcbtTo=t; }
+  const keys=BT.model_order||["v1","v2_0","v2_1","v2_2","v1_2"];
+  const labels=BT.model_labels||{};
+  const agg=mcbtAgg(BT.records, keys, mcbtFrom, mcbtTo);
+  const models=keys.map(k=>{ const a=agg[k];
+    return {key:k, label:labels[k]||k, n:a.n, hits:a.hits,
+      hit_rate:a.n?a.hits/a.n:null, roi:a.stake?a.ret/a.stake:null}; }).filter(m=>m.n>0);
+  // 「主予測相当」＝v2系チェックポイント(v2_0/v2_1/v2_2/...)のうち最新のもの。
+  // キー名をハードコードせず常に最後のv2_*エントリを拾うことで、新しいバージョン(v2.3等)が
+  // CHECKPOINTSに追加されてもコード変更なしで追従する。
+  const v2Keys=keys.filter(k=>k.startsWith("v2_"));
+  const primary=models.find(m=>m.key===v2Keys[v2Keys.length-1])||models[0];
+  const primaryLabel=primary?primary.label:"";
+  const nD=dates.filter(d=>d>=mcbtFrom&&d<=mcbtTo).length;
+  const cls=v=>v==null?"":(v>=1?"pos":"neg");
+
+  const v2LabelList=v2Keys.map(k=>labels[k]||k).join("/");
+  let html=`<div class="tksect">大規模バックテスト比較（2026年〜、学習期間はtrain再学習でリーク回避）</div>`
+    +`<div class="tksub">学習 ${(BT.train_period||{}).from||'—'}〜${(BT.train_period||{}).to||'—'}（${(BT.train_period||{}).n||0}R）で再学習した${v2LabelList}を、ホールドアウト ${(BT.holdout_period||{}).from||'—'}〜${(BT.holdout_period||{}).to||'—'}（全${(BT.holdout_period||{}).n||0}R）で評価。v1/v1.2は学習しない手決めウェイトのため同一期間でも公平。</div>`;
+
+  const opt=sel=>dates.map(d=>`<option value="${d}" ${d===sel?'selected':''}>${d.slice(5).replace('-','/')}</option>`).join("");
+  html+=`<div class="lgpreset" id="mcbtPreset"><button data-mp="all">全期間</button><button data-mp="m3">直近3ヶ月</button><button data-mp="m1">直近1ヶ月</button><button data-mp="w2">直近2週</button></div>`
+    +`<div class="lgfilt"><span>期間</span><select id="mcbtFrom">${opt(mcbtFrom)}</select><span>〜</span><select id="mcbtTo">${opt(mcbtTo)}</select><span>（${nD}日・フィルタ後${models.length?models[0].n:0}R前後）</span></div>`;
+
+  html+=`<div class="tiles">`+models.map(m=>{
+    const isP=primary&&m.key===primary.key;
+    return `<div class="tile"><div class="tl">${m.label}${isP?'（主予測相当）':''} ◎的中率</div>`
+      +`<div class="tv ${cls(primary&&m.hit_rate!=null&&m.hit_rate>=primary.hit_rate?1:0)}">${tkPct(m.hit_rate)}</div>`
+      +`<div class="tn">${m.hits}/${m.n}　単勝ROI ${tkRoi(m.roi)}</div></div>`;
+  }).join("")+`</div>`;
+
+  html+=`<table class="tktbl"><thead><tr><th>モデル</th><th>R数</th><th>◎的中率</th><th>差分</th><th>単勝ROI</th><th>差分</th></tr></thead><tbody>`;
+  models.forEach(m=>{
+    const dHit = (!primary||m.key===primary.key) ? null : (m.hit_rate!=null&&primary.hit_rate!=null ? m.hit_rate-primary.hit_rate : null);
+    const dRoi = (!primary||m.key===primary.key) ? null : (m.roi!=null&&primary.roi!=null ? m.roi-primary.roi : null);
+    const fmtD=(v,fmt)=>v==null?"—":(v>0?"+":"")+fmt(v);
+    html+=`<tr><td>${m.label}${primary&&m.key===primary.key?' ⭐':''}</td><td>${m.n}</td>`
+      +`<td>${tkPct(m.hit_rate)}</td><td class="${dHit>0?'pos':dHit<0?'neg':''}">${fmtD(dHit,tkPct)}</td>`
+      +`<td>${tkRoi(m.roi)}</td><td class="${dRoi>0?'pos':dRoi<0?'neg':''}">${fmtD(dRoi,tkRoi)}</td></tr>`;
+  });
+  html+=`</tbody></table>`;
+  html+=`<div class="foot">backtest._score_races()によるas_of再スコアリング(約${BT.records.length}R超のholdout)。${v2LabelList}は本番の学習済みファイルではなく、train期間だけで独立に再学習した係数（リーク防止）。生成 ${(BT.generated||'').replace('T',' ').slice(0,16)}</div>`;
+  el.innerHTML=html;
+
+  document.querySelectorAll("#mcbtFrom,#mcbtTo").forEach(s=>s.addEventListener("change",()=>{
+    mcbtFrom=document.getElementById("mcbtFrom").value; mcbtTo=document.getElementById("mcbtTo").value; renderMCBT(); }));
+  document.querySelectorAll("#mcbtPreset button").forEach(b=>b.addEventListener("click",()=>{
+    const last=dates[dates.length-1];
+    const back=x=>{ const dt=new Date(last); dt.setDate(dt.getDate()-x); return dt.toISOString().slice(0,10); };
+    const mp=b.dataset.mp;
+    if(mp==="all"){ mcbtFrom=dates[0]; mcbtTo=last; }
+    else if(mp==="m3"){ mcbtFrom=dates.find(d=>d>=back(90))||dates[0]; mcbtTo=last; }
+    else if(mp==="m1"){ mcbtFrom=dates.find(d=>d>=back(30))||dates[0]; mcbtTo=last; }
+    else if(mp==="w2"){ mcbtFrom=dates.find(d=>d>=back(14))||dates[0]; mcbtTo=last; }
+    renderMCBT(); }));
 }
 // ===== オッズ履歴ビューア（P2、締切前オッズ時系列） =====
 window.__ODDS={data:null,day:0,race:0,bet:"win",horse:null,labels:null,labelsRaceId:null,labelsFetching:null,labelBusy:null,suspicion:null,
@@ -3243,7 +3467,7 @@ function renderSuspicionAlert(r){
       +`<div class="sa-detail" id="sa-detail-${i}" style="display:none">${suspicionDetailHtml(s)}<div class="sa-chart" id="sa-chart-${i}"></div></div>`
       +`</div>`;
   }).join("");
-  box.innerHTML=`<div class="suspicion-alert"><div class="sa-head">⚠ 八百長検知アラート（怪しさスコアがしきい値${SUSPICION_ROW_THRESHOLD}超え）</div>${items}`
+  box.innerHTML=`<div class="suspicion-alert"><div class="sa-head">⚠ 八百長検知アラート（ヤオメーターがしきい値${SUSPICION_ROW_THRESHOLD}超え）</div>${items}`
     +`<div class="sa-note">検証サンプルがまだ少ないため参考値です。券種別の全推移は「データ分析 > オッズ分析」タブでも確認できます。</div></div>`;
   box.querySelectorAll(".sa-toggle").forEach(btn=>{
     btn.onclick=()=>{
@@ -3294,7 +3518,7 @@ function _suspicionParts(s){
   if(!s) return [];
   const dirLabel = s.direction==="sell" ? "売れる方向（資金流入・仕掛け候補）"
                  : s.direction==="not_sell" ? "売れない方向（資金流出・引き候補）" : "方向なし";
-  const parts=[`符号付き怪しさスコア ${s.signed_score>0?"+":""}${s.signed_score.toFixed(1)}（${dirLabel}／大きさ${s.composite_score.toFixed(1)}）`];
+  const parts=[`符号付きヤオメーター ${s.signed_score>0?"+":""}${s.signed_score.toFixed(1)}（${dirLabel}／大きさ${s.composite_score.toFixed(1)}）`];
   if(s.direction==="sell" && s.max_velocity!=null){
     const bn=ODDS_BET_LABELS[s.max_velocity_bet_type]||s.max_velocity_bet_type||"";
     const mn=s.minutes_to_post_at_peak!=null?s.minutes_to_post_at_peak.toFixed(1):"?";
@@ -3549,8 +3773,8 @@ function renderOddsChart(race,num){
   const legend=set.map(s=>`<span class="olg"><i style="background:${ODDS_BET_COLORS[s.bt]}"></i>${s.name}</span>`).join("");
   const nm=(race.bets.win.find(r=>r.num===num)||{}).name||"";
   const susp=suspicionFor(race.race_id,num);
-  const susHtml=`<div class="osusbox"><div class="osushead">怪しさスコア内訳（インサイダー投票検知）</div>`
-    +(susp?`<div class="osustext">${suspicionText(susp)}</div>`:`<div class="osustext muted">この馬の怪しさスコアはまだありません。</div>`)
+  const susHtml=`<div class="osusbox"><div class="osushead">ヤオメーター内訳（インサイダー投票検知）</div>`
+    +(susp?`<div class="osustext">${suspicionText(susp)}</div>`:`<div class="osustext muted">この馬のヤオメーターはまだありません。</div>`)
     +`<div class="osusnote">※検証サンプルがまだ少ないため参考値です（統計的な重み学習は未実施の透明ルール）。</div></div>`;
   return `<div class="ochart"><div class="ocht">${num}番 ${nm} ・ 全券種オッズ推移（初回=1.0基準の比率／縦線=2分周期。複数券種が同一縦線で揃って下降＝資金同時流入＝インサイダー疑い）</div>`
     +`<svg width="100%" viewBox="0 0 ${W} ${H}" preserveAspectRatio="xMidYMid meet">${vlines}${base}${lines}${yl}${xlabels}</svg>`
@@ -3608,7 +3832,7 @@ function renderOdds(){
       ? (susScore<0?" orow-sell":" orow-notsell") : "";
     return `<tr class="orowc${selCls}${rowFlagCls}" data-num="${h.num}"><td class="onum">${h.num}</td><td class="l"><span class="hlink" data-horse="${h.name}">${h.name}</span>${anom}</td>`
       +`<td>${h.pop!=null?h.pop:"—"}</td>`
-      +`<td class="${susCls}" title="八百長検知の符号付き怪しさスコア(参考値)。負=売れる方向(赤)、正=売れない方向(緑)">${susTxt}</td>`
+      +`<td class="${susCls}" title="八百長検知の符号付きヤオメーター(参考値)。負=売れる方向(赤)、正=売れない方向(緑)">${susTxt}</td>`
       +`<td class="oiflast"><div class="c2 c2r"><span>${h.first!=null?h.first.toFixed(1):"—"}</span><span class="tsub">${h.last!=null?h.last.toFixed(1):"—"}</span></div></td>`
       +`<td class="${drCls}">${drTxt}</td><td class="ospk">${oddsSpark(h.series)}</td>`
       +`<td class="${posCls}">${posTxt}</td></tr>`;
@@ -3619,7 +3843,7 @@ function renderOdds(){
     : `${ODDS_BET_LABELS[S.bet]}オッズの推移`;
   host.innerHTML=`<div class="osel"><div class="orow" id="odays">${dayBtns}</div><div class="orow" id="oraces">${raceBtns}</div><div class="orow obetrow">${betBtns}</div>${oddsRefreshRowHtml()}</div>`
     +`<div class="ometa">${day.date} ${race.no}R ${race.class||""}${race.post?" ・ 発走"+race.post:""}<br><span class="muted">${desc}（<b style="color:#d1495b">赤=短縮(資金流入・売れる)</b> / <b style="color:#2ea043">緑=上昇(売れない)</b> / ⚠=低オッズなのに着外）・終オッズ順</span></div>`
-    +`<div class="ipushrow"><button class="obtn" id="insiderPushBtn">🚨 インサイダー警報</button><span class="ipushnote">怪しさスコアが急上昇した際にスマホへ通知（要バックエンド接続・PC稼働中のみ届きます）</span></div>`
+    +`<div class="ipushrow"><button class="obtn" id="insiderPushBtn">🚨 インサイダー警報</button><span class="ipushnote">ヤオメーターが急上昇した際にスマホへ通知（要バックエンド接続・PC稼働中のみ届きます）</span></div>`
     +`<div class="otblwrap"><table class="otbl"><thead><tr><th>馬番</th><th class="l">馬名</th><th>人気</th><th>怪しさ</th><th>${oddsHead}/${oddsHead2}</th><th>変動</th><th>推移</th><th>着</th></tr></thead><tbody>${rows}</tbody></table></div>`
     +`<div class="osusnote">怪しさ列は八百長（インサイダー投票）検知の実験的スコアです（赤=売れる方向/仕掛け候補、緑=売れない方向/引き候補）。検証サンプルがまだ少ないため参考値としてご覧ください。</div>`
     +`<div class="ochint">▼ 馬をタップすると全券種のオッズ推移を1枚で比較</div>`
@@ -4572,7 +4796,7 @@ async function toggleInsiderPush(){
       {method:"POST",headers:{"Content-Type":"application/json"},
        body:JSON.stringify({endpoint:raw.endpoint, keys:raw.keys})});
     refreshInsiderPushBtn(sub);
-    alert("インサイダー警報を有効にしました。怪しさスコアが閾値を超えた際、PCが稼働していればスマホに通知します。");
+    alert("インサイダー警報を有効にしました。ヤオメーターが閾値を超えた際、PCが稼働していればスマホに通知します。");
   }catch(e){ alert("購読に失敗しました: "+e); }
 }
 </script>
