@@ -1893,10 +1893,14 @@ function renderRaceFlowTime(r){
     +(adj && h.fh_sled_delta!=null
       ? `<text x="${padL-10*S}" y="${(cy+9*S).toFixed(1)}" font-size="${6.5*S}" text-anchor="end" fill="${h.fh_sled_delta<0?'var(--good)':(h.fh_sled_delta>0?'var(--accent)':'var(--muted)')}">斤量${h.fh_sled_delta>0?'+':''}${h.fh_sled_delta}kg</text>` : "");
   const numLabel=(h,cy)=>{
-    if(h.fh_avg==null) return "";
+    // 決着タイム（実績、確定後のみ）: 第2障害降下時点の予測の下に【決】として並べる（2026-10-06、ユーザー要望）。
+    const fin = h.result_time
+      ? `<text x="${W-padR+8*S}" y="${(cy+19*S).toFixed(1)}" font-size="${6.5*S}" text-anchor="start" fill="var(--ink)">【決】${h.result_time}</text>`
+      : "";
+    if(h.fh_avg==null) return fin;
     const mm = (h.fh_min!=null && h.fh_max!=null) ? `(${secFmtWhole(h.fh_min)}–${secFmtWhole(h.fh_max)})` : "";
     let line1 = `<text x="${W-padR+8*S}" y="${(cy-1.5*S).toFixed(1)}" font-size="${7*S}" text-anchor="start" fill="var(--muted)">`
-      +`<tspan font-weight="700" fill="var(--ink)">${secFmt(h.fh_avg)}</tspan> ${mm}</text>`;
+      +`【二】<tspan font-weight="700" fill="var(--ink)">${secFmt(h.fh_avg)}</tspan> ${mm}</text>`;
     let line2 = "";
     if(h.agari_avg!=null && fieldAgari!=null){
       const diff = fieldAgari - h.agari_avg; // +=平均より上りが速い(詰める)
@@ -1905,7 +1909,7 @@ function renderRaceFlowTime(r){
       line2 = `<text x="${W-padR+8*S}" y="${(cy+9*S).toFixed(1)}" font-size="${6.5*S}" text-anchor="start" fill="${col}">`
         +`上り${secFmt(h.agari_avg)} ${glyph}${Math.abs(diff).toFixed(1)}s</text>`;
     }
-    return line1 + line2;
+    return line1 + line2 + fin;
   };
   // 上がりタイムによる詰め/後退の矢印: 前半タイムの位置(丸)から、平均上がりタイムとの差の分だけ
   // 左(詰める＝終いが平均より速い)/右(後退＝終いが平均より遅い)にずらした矢印を重ねて示す。
@@ -1947,7 +1951,7 @@ function renderRaceFlowTime(r){
     +`<span class="tsub flowupd">🕛 更新 ${updTxt}${adj?' ・'+trackTxt:''}</span></div>`
     +`<svg class="tksvg" viewBox="0 0 ${W} ${H+14*S}">${heads}<g transform="translate(0,${4*S})">${zebra}${grid}${body}${ticks}</g></svg>`
     +`<div class="tknote">縦＝馬番順、横＝直近5走の前半タイム(総合−上り、第1・第2障害を含む＝第2障害降下時点まで)の`
-    +`平均/最速/最遅。<br>緑の矢印＝上がりが出走馬平均より速く終いで差を詰める傾向、`
+    +`平均/最速/最遅。【二】＝第2障害降下時点の予測タイム、【決】＝決着タイム（実績。確定後のみ表示）。<br>緑の矢印＝上がりが出走馬平均より速く終いで差を詰める傾向、`
     +`赤の矢印＝平均より遅く差が開く傾向（矢印の長さ＝詰め/後退の目安秒数）。`
     +(adj?`<br>今日の条件補正＝各走の前半タイムを、今日のソリ重量・馬場水分・馬場指数だった場合の値に補正（前半タイムの回帰係数×今日との差。馬場指数＝その開催日の全走の前半タイム残差。今日の分は先行レースの着順タイムから前半タイム換算で推定し、直近のレースほど重く反映。序盤で推定できない場合は平均的な馬場として扱う）した上で、5走平均の馬どうしの差は実際の差より大きく出やすいため、レース平均からの差を×0.6に縮めて表示（帯の幅・順位は不変）。左の「斤量±kg」は過去走との平均差。上りは補正していません。`:``)
     +`</div>`;
