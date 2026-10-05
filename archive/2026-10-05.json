@@ -1,6 +1,6 @@
 {
  "date": "2026-10-05",
- "archived_at": "2026-10-05 15:30",
+ "archived_at": "2026-10-05 15:31",
  "races": [
   {
    "date": "2026-10-05",
@@ -4238,7 +4238,7 @@
    "race_pattern": "混戦",
    "race_pattern_gap12": 0.0091,
    "update_stage": "result",
-   "updated_at": "2026-10-05 15:25",
+   "updated_at": "2026-10-05 15:31",
    "horses": [
     {
      "num": 4,
@@ -9362,7 +9362,11 @@
     63000,
     33000,
     18000
-   ]
+   ],
+   "track_offset": 5.7,
+   "track_z": 2.21,
+   "track_label": "重",
+   "track_n": 2
   },
   {
    "date": "2026-10-05",
