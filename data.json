@@ -137116,7 +137116,7 @@
    "race_pattern": "通常",
    "race_pattern_gap12": 0.1004,
    "update_stage": "evscan",
-   "updated_at": "2026-10-05 16:05",
+   "updated_at": "2026-10-05 16:07",
    "horses": [
     {
      "num": 1,
@@ -138432,7 +138432,7 @@
      "win_prob_blend_v1_1": 0.059,
      "ev_v1_1": 0.94,
      "ev_buy_v1_1": false,
-     "ev_streak": 2
+     "ev_streak": 3
     },
     {
      "num": 8,
@@ -138472,8 +138472,8 @@
      "win_prob_v1": 0.1021,
      "rank_v1": 5,
      "win_ver": "v2",
-     "suspicion_direction": "sell",
-     "anauma_sell": true,
+     "suspicion_direction": "not_sell",
+     "anauma_sell": false,
      "place2": 0.2225,
      "place3": 0.3538,
      "ability": 52.9,
