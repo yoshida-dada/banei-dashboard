@@ -1,6 +1,6 @@
 {
  "date": "2026-10-05",
- "archived_at": "2026-10-05 17:58",
+ "archived_at": "2026-10-05 17:59",
  "races": [
   {
    "date": "2026-10-05",
@@ -15696,7 +15696,7 @@
    "race_pattern": "通常",
    "race_pattern_gap12": 0.0624,
    "update_stage": "result",
-   "updated_at": "2026-10-05 17:51",
+   "updated_at": "2026-10-05 17:59",
    "horses": [
     {
      "num": 9,
@@ -20630,11 +20630,7 @@
      "payout": 303520,
      "popularity": 467
     }
-   ],
-   "track_offset": -3.3,
-   "track_z": 0.77,
-   "track_label": "重",
-   "track_n": 5
+   ]
   },
   {
    "date": "2026-10-05",
@@ -25787,7 +25783,11 @@
      "prob": 0.0305,
      "stake": 3000
     }
-   ]
+   ],
+   "track_offset": -7.2,
+   "track_z": 0.15,
+   "track_label": "標準",
+   "track_n": 6
   },
   {
    "date": "2026-10-05",
